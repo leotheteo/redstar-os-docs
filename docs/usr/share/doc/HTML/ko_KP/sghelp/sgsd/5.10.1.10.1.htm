@@ -1,0 +1,41 @@
+﻿<html dir='ltr'>
+	<head>
+		<META http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+		<title>수식에서 이름과 렬표식자의 사용</title>
+		<link rel='stylesheet' type='text/css' href='../css/main.css'/>
+		<script type='text/javascript' language='Javascript' src='../js/mexpcol.js'></script>
+		<script type='text/javascript' language='JavaScript' src='../js/glossary.js'></script>
+	</head>
+	<body>
+		<h1>&nbsp;<img align="absbottom" src="../image/external_images/crystal/svtools/res/new_doc.png"/>&nbsp;수식에서 이름과 렬표식자의 사용</h1>
+		<p id='ExpandAllLine' class='ExpFav'>
+			<a href='#' onClick='ExpandAll()' onKeyPress='ExpandAll()' class='DropDown'>
+				<img id='picHeader' border='0' src='../image/image/common/expandtri.gif' alt='모두 표시'>
+				<span id='ExpandAll'>모두 표시</span>
+			</a>
+		</p>
+		<p>표용지에서 렬표식자를 사용하여 해당 렬안에 있는 세포를 참조할수 있습니다. 그리고 세포, 세포범위, 수식, <a href="#" class="glossary" onClick="AppendPopup(this,'IDG_LITERAL')" onKeyPress="AppendPopup(this,'IDG_LITERAL')">상수</a>값 등을 정의하는 <a href="#" class="glossary" onClick="AppendPopup(this,'IDG_NAME')" onKeyPress="AppendPopup(this,'IDG_NAME')">이름</a>을 만들수 있습니다. 
+			렬표식자는 하나의 표용지안에서 자료를 참조하는 수식에만 사용할수 있습니다.
+		</p>
+		<h2>정의된 이름을 사용하여 세포나 상수, 수식의 나타내기</h2>
+			<p>수식에서 정의된 이름을 사용하면 수식의 용도를 쉽게 알수 있습니다. 례를 들면 수식 =SUM(생산량)이 =SUM(C20:C30)보다 리해하기 쉽습니다.</p>
+			<p>이름은 모든 표용지에서 사용할수 있습니다. 
+				례를 들어 《계획》이라는 이름이 자료표문서에서 첫째 표용지의 A20:A30 범위를 참조하는 경우에는 같은 자료표문서의 다른 모든 표용지에서 《계획》이름을 사용하여 첫째 표용지의 A20:A30 범위를 참조할수 있습니다.
+			</p>
+			<p>이름을 사용하여 수식이나 상수를 정의할수도 있습니다. 례를 들어 수자 3.141592나 함수 <b class="bterm">PI</b>()를  《원주률》이라는 이름으로 정의할수 있습니다.</p>
+			<p></p>
+			<p><b class="bterm">이름정의에서 주의점</b></p>
+			<ul>
+				<li><b class="bterm">사용할수 있는 문자:&emsp;   이름</b>은 문자나 밑줄로 시작되여야 하며 나머지글자는 문자, 수자, 끝점, 밑줄 등이 될수 있습니다.</li>
+				<li><b class="bterm">여러 단어 사용가능 여부:</b>&emsp;   여러개의 단어를 사용할수는 있지만 공백은 사용할수 없습니다. 《년간_계획》이나 《년간.실적》과 같이 밑줄이나 끝점으로 각 단어를 구분할수 있습니다.</li>
+				<li><b class="bterm">길이 제한:</b>&emsp;   255자까지 사용할수 있습니다.</li>
+				<li><b class="bterm">대소문자 구분:</b>&emsp;   대소문자를 모두 사용할수 있으며 대소문자를 구분하지 않습니다. 례를 들어 《비률》이라는 이름을 만든 다음 같은 자료표문서에 《비률》이라는 이름을 만들면 후에 만든 이름이 처음에 만든 이름에 덧씌여 집니다.</li>
+			</ul>
+		<h2>렬표식자를 사용하여 수식의 나타내기</h2>
+			<p>한 표용지안에 있는 세포만을 참조하는 수식을 만들 때에는 그 자료를 포함하는 렬표식자를 참조로 사용할수도 있습니다. 례를 들어 <b class="bterm">제품</b>렬의 합을 계산하려면 수식 =SUM(‘제품’)을 사용합니다.</p>
+			<p><img border='0' src='../image/image/sgsd/form1-3.gif' alt='표시'></p>
+			<p>렬표식자 사용</p>
+		<script type="text/javascript" language="Javascript">footerView()</script>
+	
+</body>
+</html>

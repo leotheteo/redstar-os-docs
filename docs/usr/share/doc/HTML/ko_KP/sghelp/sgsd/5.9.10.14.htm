@@ -1,0 +1,130 @@
+﻿<html dir='ltr'>
+	<head>
+		<META http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+		<title>COUNT</title>
+		<link rel='stylesheet' type='text/css' href='../css/main.css'/>
+		<script type='text/javascript' language='Javascript' src='../js/mexpcol.js'></script>
+		<script type='text/javascript' language='JavaScript' src='../js/glossary.js'></script>
+	</head>
+	<body>
+		<h1>&nbsp;<img align="absbottom" src="../image/external_images/crystal/svtools/res/new_doc.png"/>&nbsp;COUNT</h1>
+		<p id='ExpandAllLine' class='ExpFav'>
+			<a href='#' onClick='ExpandAll()' onKeyPress='ExpandAll()' class='DropDown'>
+				<img id='picHeader' border='0' src='../image/image/common/expandtri.gif' alt='모두 표시'>
+				<span id='ExpandAll'>모두 표시</span>
+			</a>
+		</p>
+		<p><b class="bterm">참고항목</b>&emsp;
+			<a href="5.9.10.1.htm">통계함수목록</a>,
+			<a href="5.9.10.3.htm">AVERAGE</a>,
+			<a href="5.9.3.5.htm">DCOUNT</a>,
+			<a href="5.9.3.6.htm">DCOUNTA</a>,
+			<a href="5.9.8.58.htm">SUM</a>
+		</p>
+		<p>인수목록에 있는 수의 개수를 계산합니다.</p>
+		<p><b class="bterm">문법:&emsp;&emsp;		COUNT(값1,값2,...)</b></p>
+		<table>
+			<tr>
+				<th>인수명</th>
+				<th>설명</th>
+			</tr>
+			<tr>
+				<td>값1,값2,... </td>
+				<td>서로 다른 자료류형을 포함하는 1부터 30까지의 인수입니다.</td>
+			</tr>
+		</table>
+		<p><b class="bterm">주의</b></p>
+			<ul>
+				<li>수자나 날자 또는 수자를 나타내는 본문인수는 개수계산에 포함됩니다. 오유값 또는 수자로 바꿀수 없는 본문은 무시됩니다.</li>
+				<li>인수가 배렬 또는 참조인 경우 해당 배렬 또는 참조범위에 있는 수자만 계산됩니다. 배렬 또는 참조내에 있는 빈 세포, 본문 또는 오유값은 무시됩니다. 본문 또는 오유값을 계산해야 하는 경우 <b class="bterm">COUNTA</b>함수를 사용하십시오.</li>
+			</ul>
+		<p><b class="bterm">실례</b></p>
+			<p><a href="1.5.1.htm">실례의 리용방법</a>을 참고하십시오.</p>
+			<table>
+				<tr>
+					<td>
+						<table>
+							<tr>
+								<td class="noborder">&nbsp;
+								</td>
+							</tr>
+							<tr>
+								<th>1</th>
+							</tr>
+							<tr>
+								<th>2</th>
+							</tr>
+							<tr>
+								<th>3</th>
+							</tr>
+							<tr>
+								<th>4</th>
+							</tr>
+							<tr>
+								<th>5</th>
+							</tr>
+							<tr>
+								<th>6</th>
+							</tr>
+							<tr>
+								<th>7</th>
+							</tr>
+							<tr>
+								<th>8</th>
+							</tr>
+						</table>
+					</td>
+					<td>
+						<table>
+							<tr>
+								<th>A</th>
+							</tr>
+							<tr>
+								<th>자료</th>
+							</tr>
+							<tr>
+								<td>판매</td>
+							</tr>
+							<tr>
+								<td>12/8/2008</td>
+							</tr>
+							<tr>
+								<td>&nbsp;
+								</td>
+							</tr>
+							<tr>
+								<td>19</td>
+							</tr>
+							<tr>
+								<td>22.24</td>
+							</tr>
+							<tr>
+								<td>=TRUE()</td>
+							</tr>
+							<tr>
+								<td>오유:503</td>
+							</tr>
+							<tr>
+								<th>수식</th>
+								<th>설명(결과)</th>
+							</tr>
+							<tr>
+								<td>=COUNT(A2:A8)</td>
+								<td>우에 있는 목록에서 수자가 포함된 세포의 개수를 계산합니다. (3)</td>
+							</tr>
+							<tr>
+								<td>=COUNT(A5:A8)</td>
+								<td>목록의 마지막4행에서 수자가 포함된 세포의 개수를 계산합니다. (3)</td>
+							</tr>
+							<tr>
+								<td>=COUNT(A2:A8,2)</td>
+								<td>목록에 수자가 포함된 세포의 개수와 값2의 개수를 더합니다. (4)</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+		<script type="text/javascript" language="Javascript">footerView()</script>
+	
+</body>
+</html>				

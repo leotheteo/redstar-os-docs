@@ -1,0 +1,249 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+	<TITLE></TITLE>
+	<META NAME="GENERATOR" CONTENT="《Sogwang 3.0》  (Linux)">
+	<META NAME="CREATED" CONTENT="20091205;15361500">
+	<META NAME="CHANGED" CONTENT="20091205;17055000">
+	<STYLE TYPE="text/css">
+	<!--
+		H2 { margin-bottom: 0.18cm; font-family: "Bitstream Vera Sans", "Arial", "Helvetica", "Lucida", "Geneva", "Helmet", sans-serif, "Andale Sans UI", "Arial Unicode MS", "Lucida Sans Unicode", "Tahoma"; font-size: 14pt }
+		P.listitem { font-family: "Bitstream Vera Sans", "Arial", "Helvetica", "Lucida", "Geneva", "Helmet", sans-serif, "Andale Sans UI", "Arial Unicode MS", "Lucida Sans Unicode", "Tahoma" }
+		TD P.tableheadintable { margin-bottom: 0.05cm; font-weight: bold }
+		TD P.tablecontentintable { font-family: "Bitstream Vera Sans", "Arial", "Helvetica", "Lucida", "Geneva", "Helmet", sans-serif, "Andale Sans UI", "Arial Unicode MS", "Lucida Sans Unicode", "Tahoma" }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="ko-KP" DIR="LTR"><DIV style="margin-left: 25">
+<H1><A NAME="weitere"></A><A NAME="bm_id3154581"></A><FONT FACE="Thorndale, serif"><SPAN LANG="en-US">Event-Driven
+Macros</SPAN></FONT></H1>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">This
+section describes how to assign Basic programs to program events.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">You can
+automatically execute a macro when a specified software event occurs
+by assigning the desired macro to the event. The following table
+provides an overview of program events and at what point an assigned
+macro is executed.</SPAN></FONT></P>
+<TABLE WIDTH=905 BORDER=1 CELLPADDING=2 CELLSPACING=0>
+	<COL WIDTH=114>
+	<COL WIDTH=517>
+	<TR VALIGN=TOP>
+		<TD WIDTH=205>
+			<P CLASS="tableheadintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Event</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=686>
+			<P CLASS="tableheadintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">An
+			assigned macro is executed...</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=205>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Program Start</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=686>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">... after a
+			</SPAN>Sogwang <SPAN LANG="en-US">application
+			is started.</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=205>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Program End</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=686>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">...before a
+			</SPAN>Sogwang <SPAN LANG="en-US">application
+			is terminated.</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=205>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Create Document</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=686>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">...after a new
+			document is created with <B>File - New</B> or with the <B>New</B>
+			icon.</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=205>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Open Document</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=686>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">...after a
+			document is opened with <B>File - Open</B> or with the <B>Open</B>
+			icon.</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=205>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Save Document As</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=686>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">...before a
+			document is saved under a specified name (with <B>File - Save As</B>,
+			or with <B>File - Save</B> or the <B>Save</B> icon, if a document
+			name has not yet been specified).</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=205>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Document has
+			been saved as</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=686>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">... after a
+			document was saved under a specified name (with <B>File - Save As</B>,
+			or with <B>File - Save</B> or with the <B>Save</B> icon, if a
+			document name has not yet been specified).</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=205>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Save Document</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=686>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">...before a
+			document is saved with <B>File - Save</B> or the <B>Save</B> icon,
+			provided that a document name has already been specified.</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=205>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Document has
+			been saved</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=686>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">...after a
+			document is saved with <B>File - Save</B> or the <B>Save</B> icon,
+			provided that a document name has already been specified.</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=205>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Close Document</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=686>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">...before a
+			document is closed.</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=205>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Document is
+			being closed</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=686>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">...after a
+			document was closed. Note that the &quot;Save Document&quot; event
+			may also occur when the document is saved before closing.</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=205>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Activate
+			Document</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=686>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">...after a
+			document is brought to the foreground.</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=205>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Deactivate
+			Document</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=686>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">...after another
+			document is brought to the foreground.</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=205>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Print Document</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=686>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">...after the
+			<B>Print</B> dialog is closed, but before the actual print process
+			begins.</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=205>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">JavaScript
+			run-time error</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=686>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">...when a
+			JavaScript run-time error occurs.</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=205>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Print Mail Merge</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=686>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">...after the
+			<B>Print</B> dialog is closed, but before the actual print process
+			begins. This event occurs for each copy printed.</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=205>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Change of the
+			page count</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=686>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">...when the page
+			count changes.</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=205>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Message received</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=686>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">...if a message
+			was received.</SPAN></FONT></P>
+		</TD>
+	</TR>
+</TABLE>
+<P><BR><BR>
+</P>
+<H2><SPAN LANG="en-US">Assigning a Macro to an Event</SPAN></H2>
+<OL>
+	<LI><P CLASS="listitem"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Choose <B>Tools -
+	Customize</B> and click the <B>Events</B> tab.</SPAN></FONT></P>
+	<LI><P CLASS="listitem"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Select whether you want
+	the assignment to be globally valid or just valid in the current
+	document in the <B>Save In</B> listbox.</SPAN></FONT></P>
+	<LI><P CLASS="listitem"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Select the event from the
+	<B>Event</B> list.</SPAN></FONT></P>
+	<LI><P CLASS="listitem"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Click <B>Macro</B> and
+	select the macro to be assigned to the selected event.</SPAN></FONT></P>
+	<LI><P CLASS="listitem"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Click <B>OK</B> to assign
+	the macro.</SPAN></FONT></P>
+	<LI><P CLASS="listitem"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Click <B>OK</B> to close
+	the dialog.</SPAN></FONT></P>
+</OL>
+<H2><SPAN LANG="en-US">Removing the Assignment of a Macro to an Event</SPAN></H2>
+<OL>
+	<LI><P CLASS="listitem"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Choose <B>Tools -
+	Customize</B> and click the <B>Events</B> tab.</SPAN></FONT></P>
+	<LI><P CLASS="listitem"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Select whether you want
+	to remove a global assignment or an assignment that is just valid in
+	the current document by selecting the option in the <B>Save In</B>
+	listbox.</SPAN></FONT></P>
+	<LI><P CLASS="listitem"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Select the event that
+	contains the assignment to be removed from the <B>Event</B> list.</SPAN></FONT></P>
+	<LI><P CLASS="listitem"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Click <B>Remove</B>.</SPAN></FONT></P>
+	<LI><P CLASS="listitem"><FONT FACE="청봉, serif"><SPAN LANG="en-US"><SPAN STYLE="font-weight: medium">Click
+	</SPAN><B>OK</B><SPAN STYLE="font-weight: medium"> to close the
+	dialog.</SPAN></SPAN></FONT></P>
+</OL>
+
+</DIV></BODY>
+</HTML>

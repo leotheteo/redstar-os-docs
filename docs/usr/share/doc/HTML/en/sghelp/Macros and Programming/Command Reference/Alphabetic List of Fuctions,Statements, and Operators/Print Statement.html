@@ -1,0 +1,84 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+	<TITLE></TITLE>
+	<META NAME="GENERATOR" CONTENT="《Sogwang 3.0》  (Linux)">
+	<META NAME="CREATED" CONTENT="20091205;15361500">
+	<META NAME="CHANGED" CONTENT="20091205;15373500">
+	<STYLE TYPE="text/css">
+	<!--
+		P.code { margin-top: 0.04cm; margin-bottom: 0.04cm; font-family: "Bitstream Vera Sans Mono", "Cumberland", "Courier New", "Courier", "Lucida Sans Typewriter", "Lucida Typewriter", "Monaco", "Monospaced" }
+		H2 { margin-bottom: 0.18cm; font-family: "Bitstream Vera Sans", "Arial", "Helvetica", "Lucida", "Geneva", "Helmet", sans-serif, "Andale Sans UI", "Arial Unicode MS", "Lucida Sans Unicode", "Tahoma"; font-size: 14pt }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="ko-KP" DIR="LTR"><DIV style="margin-left: 25">
+<H1><A NAME="print"></A><A NAME="bm_id3147230"></A><FONT FACE="Thorndale, serif"><SPAN LANG="en-US">Print
+Statement [Runtime]</SPAN></FONT></H1>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Outputs
+the specified strings or numeric expressions to a dialog or to a
+file.</SPAN></FONT></P>
+<H2><SPAN LANG="en-US">Syntax:</SPAN></H2>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Print [#FileName,]
+Expression1[{;|,} [Spc(Number As Integer);] [Tab(pos As Integer);]
+[Expression2[...]] </SPAN></FONT></P>
+<H2><SPAN LANG="en-US">Parameter:</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>FileName:</B>
+Any numeric expression that contains the file number that was set by
+the Open statement for the respective file.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Expression</B>:
+Any numeric or string expression to be printed. Multiple expressions
+can be separated by a semicolon. If separated by a comma, the
+expressions are indented to the next tab stop. The tab stops cannot
+be adjusted.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Number</B>:
+Number of spaces to be inserted by the <B>Spc</B> function.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Pos</B>:
+Spaces are inserted until the specified position.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">If a
+semicolon or comma appears after the last expression to be printed,
+</SPAN></FONT><FONT FACE="청봉, serif"><SPAN LANG="en-US">Sogwang Basic
+stores the text in an internal buffer and continues program execution
+without printing. When another Print statement without a semicolon or
+comma at the end is encountered, all text to be printed is printed at
+once.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Positive
+numeric expressions are printed with a leading space. Negative
+expressions are printed with a leading minus sign. If a certain range
+is exceeded for floating-point values, the respective numeric
+expression is printed in exponential notation.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">If the
+expression to be printed exceeds a certain length, the display will
+automatically wrap to the next line.</SPAN></FONT></P>
+<TABLE WIDTH=941 BORDER=0 CELLPADDING=5 CELLSPACING=0>
+	<COL WIDTH=33>
+	<COL WIDTH=588>
+	<TR>
+		<TD WIDTH=33>
+			<P><IMG SRC="../../../Image/note.png" NAME="graphics1" ALT="Note Icon " ALIGN=BOTTOM WIDTH=33 HEIGHT=42 BORDER=0></P>
+		</TD>
+		<TD WIDTH=888>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">You
+			can insert the Tab function, enclosed by semicolons, between
+			arguments to indent the output to a specific position, or you can
+			use the <B>Spc</B> function to insert a specified number of
+			spaces.</SPAN></FONT></P>
+		</TD>
+	</TR>
+</TABLE>
+<P><BR><BR>
+</P>
+<H2><SPAN LANG="en-US">Example:</SPAN></H2>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Sub ExamplePrint</SPAN></FONT></P>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Print &quot;ABC&quot;</SPAN></FONT></P>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Print &quot;ABC&quot;,&quot;123&quot;</SPAN></FONT></P>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">i = FreeFile()</SPAN></FONT></P>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Open &quot;~/temp.txt&quot; For
+Output As i</SPAN></FONT></P>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Print #i, &quot;ABC&quot;</SPAN></FONT></P>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Close #i</SPAN></FONT></P>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">end Sub</SPAN></FONT></P>
+
+</DIV></BODY>
+</HTML>

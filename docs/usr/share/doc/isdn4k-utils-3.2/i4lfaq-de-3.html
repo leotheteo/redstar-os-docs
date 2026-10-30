@@ -1,0 +1,138 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <META NAME="GENERATOR" CONTENT="LinuxDoc-Tools 0.9.21">
+ <TITLE>ISDN4LINUX - FAQ (deutsche Version): distrib: Distribution </TITLE>
+ <LINK HREF="i4lfaq-de-4.html" REL=next>
+ <LINK HREF="i4lfaq-de-2.html" REL=previous>
+ <LINK HREF="i4lfaq-de.html#toc3" REL=contents>
+</HEAD>
+<BODY>
+<A HREF="i4lfaq-de-4.html">Next</A>
+<A HREF="i4lfaq-de-2.html">Previous</A>
+<A HREF="i4lfaq-de.html#toc3">Contents</A>
+<HR>
+<H2><A NAME="distrib"></A> <A NAME="s3">3.</A> <A HREF="i4lfaq-de.html#toc3">distrib: Distribution </A> </H2>
+
+<H2><A NAME="distrib_getlatest"></A> <A NAME="ss3.1">3.1</A> <A HREF="i4lfaq-de.html#toc3.1">distrib_getlatest: Wie bekomme ich das neueste ISDN4LINUX? </A>
+</H2>
+
+<P>Es gibt verschiedene Wege, abh&auml;ngig von Deinem Kernel. Du
+solltest einen aktuellen Kernel benutzen (= erste Option), es sei
+denn, Du bist ein erfahrener Linux-User.</P>
+<P>
+<UL>
+<LI>Du hast einen aktuellen Kernel (zumindest 2.0.36/2.2.11/2.3.14):
+Gute Wahl, Du hast bereits die aktuelle Version von ISDN4LINUX, was
+den Kernel angeht. Zus&auml;tzlich ben&ouml;tigst Du nur noch das
+aktuelle Paket isdn4k-utils von 
+<A HREF="ftp://ftp.isdn4linux.de/pub/isdn4linux/utils/">ftp://ftp.isdn4linux.de/pub/isdn4linux/utils/</A> - wenn es nicht
+schon in Deiner Distribution enthalten ist.
+</LI>
+<LI>Du hast einen &auml;lteren Kernel (vor 2.0.36/2.2.11/2.3.14): Du
+solltest auf einen aktuellen Kernel umsteigen. Ein Aktualisieren des
+Kernels ist VIEL leichter als der Versuch, ISDN mit Deinem alten
+Kernel zum Arbeiten zu &uuml;berreden. 
+
+Nun gut, wenn Du trotzdem Deinen alten Kernel behalten willst, so
+wird's gemacht: Zuerst musst Du den richtigen CVS-Auszug f&uuml;r
+Deine Kernelversion bestimmen (CVS ist das von den ISDN-Entwicklern
+benutzte System zur Versionsverwaltung). Benutze einen CVS-Snapshot
+mit dem ungef&auml;hren Datum der Entstehung Deines Kernels. Du
+findest die Kernel-Patches und die alten isdn4k-utils Pakete auf 
+<A HREF="ftp://ftp.isdn4linux.de/pub/isdn4linux/">ftp://ftp.isdn4linux.de/pub/isdn4linux/</A> oder auf einem der
+Spiegel-Server (
+<A HREF="http://www.isdn4linux.de/download.php3">http://www.isdn4linux.de/download.php3</A>
+zeigt Dir, wie Du die Spiegelserver findest).
+</LI>
+<LI>Als Entwickler: Wenn Du an der Entwicklung von I4L teilhaben
+willst, kannst Du Dir die neueste Version via CVS besorgen. Dabei
+hilft Dir die Frage zum Zugang zu CVS: 
+<A HREF="#distrib_cvs">distrib_cvs</A>.
+</LI>
+</UL>
+</P>
+
+
+<H2><A NAME="distrib_cvs"></A> <A NAME="ss3.2">3.2</A> <A HREF="i4lfaq-de.html#toc3.2">distrib_cvs: Wie erhalte ich Zugang zu den Quellen der aktuellen Entwicklung / Worum geht es bei dem CVS Baum?</A>
+</H2>
+
+<P>CVS - Concurrent Version System:</P>
+<P>Das ist eine Multiuser/Server-Erweiterung des RCS (Revision Control
+System). Die I4L-Treiber werden unter dem CVS entwickelt und es gibt
+einen Server (cvs.isdn4linux.de) mit einem CVS-Verzeichnisbaum, auf
+den alle Entwickler zugreifen k&ouml;nnen. Zus&auml;tzlich hat Fritz
+einen anonymen Nur-Lese-Zugriff auf den CVS-Baum eingerichtet. Wenn Du
+die allerneueste Version brauchst, bekommst Du sie hier. Sie kann
+allerdings mehr Fehler enthalten als die offiziell herausgegebenen
+Versionen!!!</P>
+<P>So bekommst Du die neueste Version:
+<OL>
+<LI>Erstelle ein Verzeichnis f&uuml;r I4L und wechsle dorthin 
+<HR>
+<PRE>
+mkdir ~/cvs 
+cd ~/cvs 
+cvs -d :pserver:guest@cvs.isdn4linux.de:/i4ldev login
+</PRE>
+<HR>
+ </LI>
+<LI>Login (die Frage nach dem Password beantworte mit
+<EM>readonly</EM>) 
+</LI>
+<LI>Hol Dir die ISDN Kerneltreiber (in der gleichen Hierarchie wie
+in den Linux Quellen)
+<HR>
+<PRE>
+cvs -d:pserver:guest@cvs.isdn4linux.de:/i4ldev checkout isdn
+</PRE>
+<HR>
+  </LI>
+<LI>Hol Dir das Utility-Paket und speichere es im aktuellen
+Verzeichnis
+<HR>
+<PRE>
+cvs -d :pserver:guest@cvs.isdn4linux.de:/i4ldev checkout isdn4k-utils
+</PRE>
+<HR>
+ 
+Wenn Du die neueste Version f&uuml;r Kernel 2.0.x und nicht f&uuml;r den
+neuesten Kernel brauchst, musst Du die Option '-r' setzen:
+<HR>
+<PRE>
+cvs -d :pserver:guest@cvs.isdn4linux.de:/i4ldev checkout -r \
+isdn4kernel_2_0 isdn
+</PRE>
+<HR>
+ 
+</LI>
+<LI>Nach dem Auschecken k&ouml;nnen weitere Updates
+durchgef&uuml;hrt werden, indem man erst in das Verzeichnis
+<CODE>isdn</CODE> oder <CODE>isdn4k-utils</CODE> wechselt und dann eingibt:
+<HR>
+<PRE>
+cvs update -P -d
+</PRE>
+<HR>
+ 
+Tip: Du brauchst beim Update keinen neuen Login durchzuf&uuml;hren, da
+CVS das Passwort beim ersten Login speichert.</LI>
+</OL>
+</P>
+<P>WARNUNG!! DER NEUESTE CODE KANN SEHR UNSTABIL SEIN UND SICH VIELLEICHT
+NICHT EINMAL OHNE PROGRAMMIER-KENNTNISSE KOMPILIEREN LASSEN - Also
+BITTE dazu keine Anf&auml;ngerfragen!</P>
+<P>Leute, die bei der Entwicklung von ISDN4LINUX <B>kontinuierlich</B>
+durch das Erstellen von neuen Treibern oder &auml;hnlich helfen
+wollen, k&ouml;nnen einen Account mit vollem Zugriff bekommen. Dazu
+schicke bitte eine Mail an Fritz Elfert <CODE>
+<A HREF="mailto:fritz@isdn4linux.de">fritz@isdn4linux.de</A></CODE></P>
+
+
+
+<HR>
+<A HREF="i4lfaq-de-4.html">Next</A>
+<A HREF="i4lfaq-de-2.html">Previous</A>
+<A HREF="i4lfaq-de.html#toc3">Contents</A>
+</BODY>
+</HTML>

@@ -1,0 +1,96 @@
+﻿<html dir='ltr'>
+	<head>
+		<META http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+		<title>DURATION</title>
+		<link rel='stylesheet' type='text/css' href='../css/main.css'/>
+		<script type='text/javascript' language='Javascript' src='../js/mexpcol.js'></script>
+		<script type='text/javascript' language='JavaScript' src='../js/glossary.js'></script>
+	</head>
+	<body>
+		<h1>&nbsp;<img align="absbottom" src="../image/external_images/crystal/svtools/res/new_doc.png"/>&nbsp;DURATION</h1>
+		<p id='ExpandAllLine' class='ExpFav'>
+			<a href='#' onClick='ExpandAll()' onKeyPress='ExpandAll()' class='DropDown'>
+				<img id='picHeader' border='0' src='../image/image/common/expandtri.gif' alt='모두 표시'>
+				<span id='ExpandAll'>모두 표시</span>
+			</a>
+		</p>
+		<p><b class="bterm">참고항목</b>&emsp; 
+			<a href="5.9.5.1.htm">재정함수목록</a>,
+			<a href="5.9.4.3.htm">DATE</a>, 
+			<a href="5.9.5.32.htm">MDURATION</a> 
+		</p>
+		<p>기간입니다. 원하는 가치를 달성하기 위하여 투자에 필요한 회수를 계산합니다.</p>
+		<p><b class="bterm">문법:&emsp;&emsp;		DURATION(리자률,현재가치,미래가치)</b></p>
+		<p>
+			<b class="bterm">중요:</b>&emsp;   날자는 
+			<b class="bterm">DATE</b>함수를 사용하거나 다른 수식 또는 함수의 결과로 입력하여야 합니다. 례를 들어 2008년 5월 23일의 경우 DATE(2008,5,23)을 사용합니다.
+		</p>
+		<table>
+			<tr>
+				<th>인수명</th>
+				<th>설명</th>
+			</tr>
+			<tr>
+				<td>리자률</td>
+				<td>일정한 리자률입니다. 리자률은 전체 기간(지속 기간)에 대해 계산됩니다. 기간별 리자률은 리자률을 계산된 기간으로 나누어 계산합니다. 년금에 대한 내부리자률은 내부리자률/12로 입력됩니다.</td>
+			</tr>
+			<tr>
+				<td>현재가치</td>
+				<td>현재가치입니다. 현재가치는 현금예금액 또는 정기납입액의 현재 현금가치입니다. 예금액은 0 또는 0보다 작을수 없으므로 예금액가치를 입력할 때에는 정수값을 사용해야 합니다.</td>
+			</tr>
+			<tr>
+				<td>미래가치</td>
+				<td>투자의 미래가치입니다.</td>
+			</tr>
+		</table>
+		<p><b class="bterm">실례</b></p>
+			<p><a href='1.5.1.htm'>실례의 리용방법</a>을 참고하십시오.</p>
+			<table>
+				<tr>
+					<td>
+						<table>
+							<tr><td>&nbsp;</td></tr>
+							<tr><th>1</th></tr>
+							<tr><th>2</th></tr>
+							<tr><th>3</th></tr>
+							<tr><th>4</th></tr>
+						</table>
+					</td>
+					<td>
+						<table>
+							<tr>
+								<th>A</th>
+								<th>B</th>
+							</tr>
+							<tr>
+								<th>자료</th>
+								<th>설명</th>
+							</tr>
+							<tr>
+								<td>4.75%</td>
+								<td>리자률입니다.</td>
+							</tr>
+							<tr>
+								<td>25000</td>
+								<td>현재가치입니다.</td>
+							</tr>
+							<tr>
+								<td>1 000 000</td>
+								<td>미래가치입니다.</td>
+							</tr>
+							<tr>
+								<th>수식</th>
+								<th>설명(결과)</th>
+							</tr>
+							<tr>
+								<td>=DURATION(A2,A3,A4)</td>
+								<td>우와 같은 조건에서 원하는 가치를 달성하기 위하여 투자에 필요한 회수입니다. (79.49)</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>	
+		<script type="text/javascript" language="Javascript">footerView()</script>
+	
+</body>
+</html>

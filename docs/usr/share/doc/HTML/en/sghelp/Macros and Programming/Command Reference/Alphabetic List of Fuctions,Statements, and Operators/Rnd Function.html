@@ -1,0 +1,78 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+	<TITLE></TITLE>
+	<META NAME="GENERATOR" CONTENT="《Sogwang 3.0》  (Linux)">
+	<META NAME="CREATED" CONTENT="20091205;15361500">
+	<META NAME="CHANGED" CONTENT="20091205;15434700">
+	<STYLE TYPE="text/css">
+	<!--
+		H2 { margin-bottom: 0.18cm; font-family: "Bitstream Vera Sans", "Arial", "Helvetica", "Lucida", "Geneva", "Helmet", sans-serif, "Andale Sans UI", "Arial Unicode MS", "Lucida Sans Unicode", "Tahoma"; font-size: 14pt }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="ko-KP" DIR="LTR"><DIV style="margin-left: 25">
+<H1><A NAME="rnd"></A><A NAME="bm_id3148685"></A><FONT FACE="Thorndale, serif"><SPAN LANG="en-US">Rnd
+Function [Runtime]</SPAN></FONT></H1>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Returns
+a random number between 0 and 1.</SPAN></FONT></P>
+<H2><SPAN LANG="en-US">Syntax:</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Rnd
+[(Expression)]</SPAN></FONT></P>
+<H2><SPAN LANG="en-US">Return value:</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Double</SPAN></FONT></P>
+<H2><SPAN LANG="en-US">Parameters:</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Expression:</B>
+Any numeric expression that defines how to generate random numbers.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Less
+than zero:</B> Always returns the same random number.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Greater
+than zero:</B> Returns the next random number in the sequence.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Zero:</B>
+Returns the random number that was last generated.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Omitted:</B>
+Returns the next random number in the sequence.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">If the
+same number is passed for each successive call to the Rnd function,
+the same random-number sequence is generated. This is because the
+Expression parameter is used as a starting point for the next number.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">The <B>Rnd</B>
+function only returns values ranging from 0 to 1. To generate random
+integers in a given range, use the formula in the following example:</SPAN></FONT></P>
+<H2><A NAME="errorcode"></A><SPAN LANG="en-US">Error Codes </SPAN>
+</H2>
+<P><A NAME="err5"></A><FONT FACE="청봉, serif"><SPAN LANG="en-US">5
+Invalid procedure call </SPAN></FONT>
+</P>
+<H2><SPAN LANG="en-US">Example:</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Sub
+ExampleRandomSelect</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Dim iVar
+As Integer</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">iVar =
+Int((15 * Rnd) -2)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Select
+Case iVar</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Case 1
+To 5</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Print
+&quot;Number from 1 to 5&quot;</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Case 6,
+7, 8</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Print
+&quot;Number from 6 to 8&quot;</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Case Is
+&gt; 8 And iVar &lt; 11</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Print
+&quot;Greater than 8&quot;</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Case
+Else</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Print
+&quot;Outside range 1 to 10&quot;</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">End
+Select</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">end sub</SPAN></FONT></P>
+
+</DIV></BODY>
+</HTML>

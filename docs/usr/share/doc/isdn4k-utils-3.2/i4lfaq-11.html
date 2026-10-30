@@ -1,0 +1,96 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <META NAME="GENERATOR" CONTENT="LinuxDoc-Tools 0.9.21">
+ <TITLE>FAQ for isdn4linux: pap: Authenticate properly (especially with PAP) </TITLE>
+ <LINK HREF="i4lfaq-12.html" REL=next>
+ <LINK HREF="i4lfaq-10.html" REL=previous>
+ <LINK HREF="i4lfaq.html#toc11" REL=contents>
+</HEAD>
+<BODY>
+<A HREF="i4lfaq-12.html">Next</A>
+<A HREF="i4lfaq-10.html">Previous</A>
+<A HREF="i4lfaq.html#toc11">Contents</A>
+<HR>
+<H2><A NAME="pap"></A> <A NAME="s11">11.</A> <A HREF="i4lfaq.html#toc11">pap: Authenticate properly (especially with PAP) </A></H2>
+
+<H2><A NAME="pap_optionauth"></A> <A NAME="ss11.1">11.1</A> <A HREF="i4lfaq.html#toc11.1">pap_optionauth: When dialing out, I get the message &quot;pppd: peer authentication required but no authentication files accessible.&quot; What does this mean? </A>
+</H2>
+
+<P>Most likely the option &quot;auth&quot; was set by mistake. Then the
+<EM>other</EM> side is required to be authorized.</P>
+
+<H2><A NAME="pap_requestauth"></A> <A NAME="ss11.2">11.2</A> <A HREF="i4lfaq.html#toc11.2">pap_requestauth: I cannot establish a connection -  it's rejected by the other side. In the log file I find a message that's something like: &quot;sent (0) (LCP ConfReq id=0x1 mru 1500 auth pap magic 0xcd12e9c4&quot; </A>
+</H2>
+
+<P>Like in the last question, an option has been set that requires the
+<EM>other</EM> side to be authorized. These options shouldn't be set.
+Possible candidates are: &quot;+pap&quot; as well as &quot;+chap&quot;.</P>
+
+<H2><A NAME="pap_rejectauth"></A> <A NAME="ss11.3">11.3</A> <A HREF="i4lfaq.html#toc11.3">pap_rejectauth: I cannot establish a connection -  it's rejected by the other side. In the log file I find a message that's something like: &quot;sent (0) (LCP ConfRej id=0x1 auth pap&quot; </A>
+</H2>
+
+<P>Your computer is refusing to identify itself with user name (e.g. XXX)
+and password (e.g. YYY). That only works with the authorization options
+&quot;user XXX&quot; and &quot;remotename YYY&quot; for ipppd or pppd
+together with a correct (!) /etc/ppp/pap-secrets. With a password of ZZZ it
+should ideally look like this:
+<HR>
+<PRE>
+XXX YYY ZZZ *
+</PRE>
+<HR>
+
+If you have special characters in XXX, YYY, or ZZZ, try to use quotes
+around them. If that doesn't work for getting XXX or YYY correct, you can
+use wild cards, something like:
+<HR>
+<PRE>
+* * ZZZ *
+</PRE>
+<HR>
+
+Then <EM>every</EM> partner has the password ZZZ. If chap is required
+for authorization, then /etc/ppp/chap-secrets must be set up correctly.
+Important: the format is different from that of pap-secrets!
+One important point is to use only the tabulator instead of space to
+separate username, computer, password.
+Make sure to consult the README's, or check out:
+<CODE>
+<A HREF="http://www.lrz-muenchen.de/~ui161ab/www/isdn/">http://www.lrz-muenchen.de/~ui161ab/www/isdn/</A></CODE>
+Also have a look at the next question: 
+<A HREF="#pap_passwd">pap_passwd</A>.</P>
+
+<H2><A NAME="pap_checkpwd"></A> <A NAME="ss11.4">11.4</A> <A HREF="i4lfaq.html#toc11.4">pap_checkpwd: How can I check which password is actually sent to the remote side? </A>
+</H2>
+
+<P>Use the options <CODE>debug</CODE> and <CODE>+pwlog</CODE> for ipppd or pppd. Then you can
+see your password in the log file.</P>
+
+<H2><A NAME="pap_passwd"></A> <A NAME="ss11.5">11.5</A> <A HREF="i4lfaq.html#toc11.5">pap_passwd: I have problems with PAP or CHAP authentication. It does not work although I'm sure I entered passwords etc. correctly. </A>
+</H2>
+
+<P>Stefan A. Muehlenweg <CODE>
+<A HREF="mailto:Stefan.A.Muehlenweg@samhh.hanse.de">Stefan.A.Muehlenweg@samhh.hanse.de</A></CODE> wrote on
+4 Oct 1996:
+<BLOCKQUOTE>
+I had exactly the same problem/the same error message. The cause for it
+was that I had three entries in chap-secrets/pap-secrets (for client,
+server, secret), but not a fourth one (IP addresses). BUT: after the third
+entry were some BLANKs. After removing the trailing BLANKs and/or TABs
+(i)pppd is now very satisfied with my auth-files.
+</BLOCKQUOTE>
+
+A further source of problems can be the password itself. If it contains
+the &quot;#&quot; character, then everything after than is understood as a
+comment. Spaces or tabs can cause similar problems. Solution: put
+the password in quotes!</P>
+
+
+
+<HR>
+<A HREF="i4lfaq-12.html">Next</A>
+<A HREF="i4lfaq-10.html">Previous</A>
+<A HREF="i4lfaq.html#toc11">Contents</A>
+</BODY>
+</HTML>

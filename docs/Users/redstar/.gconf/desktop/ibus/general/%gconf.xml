@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<gconf>
+	<entry name="global_engine" mtime="1793385071" type="string">
+		<stringvalue>hana</stringvalue>
+	</entry>
+	<entry name="preload_engines" mtime="1793384165" type="list" ltype="string">
+		<li type="string">
+			<stringvalue>hana</stringvalue>
+		</li>
+	</entry>
+</gconf>

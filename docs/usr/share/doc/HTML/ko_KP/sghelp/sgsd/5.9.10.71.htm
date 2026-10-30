@@ -1,0 +1,150 @@
+<html dir='ltr'>
+	<head>
+		<META http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+		<title>TRIMMEAN</title>
+		<link rel='stylesheet' type='text/css' href='../css/main.css'/>
+		<script type='text/javascript' language='Javascript' src='../js/mexpcol.js'></script>
+		<script type='text/javascript' language='JavaScript' src='../js/glossary.js'></script>
+	</head>
+	<body>
+		<h1>&nbsp;<img align="absbottom" src="../image/external_images/crystal/svtools/res/new_doc.png"/>&nbsp;TRIMMEAN</h1>
+		<p id='ExpandAllLine' class='ExpFav'>
+			<a href='#' onClick='ExpandAll()' onKeyPress='ExpandAll()' class='DropDown'>
+				<img id='picHeader' border='0' src='../image/image/common/expandtri.gif' alt='모두 표시'>
+				<span id='ExpandAll'>모두 표시</span>
+			</a>
+		</p>
+		<p><b class="bterm">참고항목</b>&emsp;
+			<a href="5.9.10.1.htm">통계함수목록</a>,
+			<a href="5.9.10.4.htm">AVERAGEA</a>,
+			<a href="5.9.10.30.htm">GEOMEAN</a>,
+			<a href="5.9.10.31.htm">HARMEAN</a>,
+			<a href="5.9.10.40.htm">MEDIAN</a>,
+			<a href="5.9.10.43.htm">MODE</a>
+		</p>
+		<p>경계값을 포함하지 않는 표본집단의 평균값을 구합니다.</p>
+		<p><b class="bterm">문법:&emsp;&emsp;		TRIMMEAN(자료,α)</b></p>
+		<table>
+			<tr>
+				<th>인수명</th>
+				<th>설명</th>
+			</tr>
+			<tr>
+				<td>자료</td>
+				<td>표본집단의 자료배렬입니다. 량끝에 있는 자료는 제외하고 평균을 구하려는 자료배렬 또는 범위입니다.</td>
+			</tr>
+			<tr>
+				<td>α</td>
+				<td>계산하지 않을 경계자료의 백분률입니다. 례를 들어 <b class="bterm">α</b> = 0.2면 20요소로 된 자료집합중 량끝에서 두개씩 4요소를 제외시킵니다(20 x 0.2).</td>
+			</tr>
+		</table>
+		<p><b class="bterm">주의</b></p>
+			<ul>
+				<li><b class="bterm">α</b> < 0거나 <b class="bterm">α</b> > 1이면 <b class="bterm">오유:[오유번호]</b>를 표시합니다.</li>
+				<li><b class="bterm">TRIMMEAN</b>함수는 가장 가까운 2의 배수로 내림하여 제외시키려는 자료의 수를 정합니다. <b class="bterm">α</b> = 0.1이면 30개의 10%는 3개이지만 아래와 우의 대칭을 고려하여 각각 1개씩을 제외합니다.</li>
+			</ul>
+		<p><b class="bterm">실례</b></p>
+			<p><a href="1.5.1.htm">실례의 리용방법</a>을 참고하십시오.</p>
+			<table>
+				<tr>
+					<td>
+						<table>
+							<tr>
+								<td class="noborder">&nbsp;
+								</td>
+							</tr>
+							<tr>
+								<th>1</th>
+							</tr>
+							<tr>
+								<th>2</th>
+							</tr>
+							<tr>
+								<th>3</th>
+							</tr>
+							<tr>
+								<th>4</th>
+							</tr>
+							<tr>
+								<th>5</th>
+							</tr>
+							<tr>
+								<th>6</th>
+							</tr>
+							<tr>
+								<th>7</th>
+							</tr>
+							<tr>
+								<th>8</th>
+							</tr>
+							<tr>
+								<th>9</th>
+							</tr>
+							<tr>
+								<th>10</th>
+							</tr>
+							<tr>
+								<th>11</th>
+							</tr>
+							<tr>
+								<th>12</th>
+							</tr>
+						</table>
+					</td>
+					<td>
+						<table>
+							<tr>
+								<th>A</th>
+							</tr>
+							<tr>
+								<th>자료</th>
+							</tr>
+							<tr>
+								<td>4</td>
+							</tr>
+							<tr>
+								<td>5</td>
+							</tr>
+							<tr>
+								<td>6</td>
+							</tr>
+							<tr>
+								<td>7</td>
+							</tr>
+							<tr>
+								<td>2</td>
+							</tr>
+							<tr>
+								<td>3</td>
+							</tr>
+							<tr>
+								<td>4</td>
+							</tr>
+							<tr>
+								<td>5</td>
+							</tr>
+							<tr>
+								<td>1</td>
+							</tr>
+							<tr>
+								<td>2</td>
+							</tr>
+							<tr>
+								<td>3</td>
+							</tr>
+							<tr>
+								<th>수식</th>
+								<th>설명(결과)</th>
+							</tr>
+							<tr>
+								<td>=TRIMMEAN(A2:A12,0.2)</td>
+								<td>우에 있는 자료집합의 내부평균 20%를 계산에서 제외합니다. (3.78)</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+		<script type="text/javascript" language="Javascript">footerView()</script>
+	
+</body>
+</html>				

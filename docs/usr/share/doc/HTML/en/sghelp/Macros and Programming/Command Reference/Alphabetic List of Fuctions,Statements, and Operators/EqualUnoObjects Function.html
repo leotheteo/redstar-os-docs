@@ -1,0 +1,45 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+	<TITLE></TITLE>
+	<META NAME="GENERATOR" CONTENT="《Sogwang 3.0》  (Linux)">
+	<META NAME="CREATED" CONTENT="20091205;11384400">
+	<META NAME="CHANGED" CONTENT="20091205;12032100">
+	<STYLE TYPE="text/css">
+	<!--
+		H2 { margin-bottom: 0.18cm; font-family: "Bitstream Vera Sans", "Arial", "Helvetica", "Lucida", "Geneva", "Helmet", sans-serif, "Andale Sans UI", "Arial Unicode MS", "Lucida Sans Unicode", "Tahoma"; font-size: 14pt }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="ko-KP" DIR="LTR"><DIV style="margin-left: 25">
+<H1><A NAME="equalunoobjects"></A><A NAME="bm_id3149205"></A><FONT FACE="Thorndale, serif"><SPAN LANG="en-US">EqualUnoObjects
+Function [Runtime]</SPAN></FONT></H1>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Returns
+True if the two specified Basic Uno objects represent the same Uno
+object instance.</SPAN></FONT></P>
+<H2><SPAN LANG="en-US">Syntax:</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">EqualUnoObjects(
+oObj1, oObj2 )</SPAN></FONT></P>
+<H2><SPAN LANG="en-US">Return value:</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Bool</SPAN></FONT></P>
+<H2><SPAN LANG="en-US">Example:</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">// Copy
+of objects -&gt; same instance</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">oIntrospection
+= CreateUnoService( &quot;com.sun.star.beans.Introspection&quot; )</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">oIntro2
+= oIntrospection</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">print
+EqualUnoObjects( oIntrospection, oIntro2 )</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">// Copy
+of structs as value -&gt; new instance</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Dim
+Struct1 as new com.sun.star.beans.Property</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Struct2
+= Struct1</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><SPAN STYLE="font-weight: medium">print
+EqualUnoObjects( Struct1, Struct2 )</SPAN></SPAN></FONT></P>
+
+</DIV></BODY>
+</HTML>

@@ -1,0 +1,107 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <META NAME="GENERATOR" CONTENT="LinuxDoc-Tools 0.9.21">
+ <TITLE>FAQ for isdn4linux: chargeint: Chargeint </TITLE>
+ <LINK HREF="i4lfaq-18.html" REL=next>
+ <LINK HREF="i4lfaq-16.html" REL=previous>
+ <LINK HREF="i4lfaq.html#toc17" REL=contents>
+</HEAD>
+<BODY>
+<A HREF="i4lfaq-18.html">Next</A>
+<A HREF="i4lfaq-16.html">Previous</A>
+<A HREF="i4lfaq.html#toc17">Contents</A>
+<HR>
+<H2><A NAME="chargeint"></A> <A NAME="s17">17.</A> <A HREF="i4lfaq.html#toc17">chargeint: Chargeint </A></H2>
+
+<H2><A NAME="chargeint_whatis"></A> <A NAME="ss17.1">17.1</A> <A HREF="i4lfaq.html#toc17.1">chargeint_whatis: What does Chargeint? </A>
+</H2>
+
+<P>Chargeint is a way to reduce your costs when you have charges based on your
+<B>time online</B>, and the interval between two charges (the Charge Interval) is
+relatively large (e.g. per minute).</P>
+<P>Chargeint only hangs up two seconds before the end of a charge unit. isdnlog
+can be used to set the length of the charge unit (i.e. Charge Interval)
+according to the time of day and the date.</P>
+
+<H2><A NAME="chargeint_config"></A> <A NAME="ss17.2">17.2</A> <A HREF="i4lfaq.html#toc17.2">chargeint_config: How should I configure Chargeint? </A>
+</H2>
+
+<P>You can set the length of a charge unit manually via the isdnctrl parameter
+<CODE>chargeset</CODE>, or set up isdnlog to do this automatically for you:
+<OL>
+<LI>Set up isdnlog, so that it has all the information about your location
+and your telephone company (so that it knows your rates).</LI>
+<LI>Start isdnlog with the options <CODE>-h0</CODE> and <CODE>-w</CODE>.</LI>
+<LI>Set your huptimeout as you like (idle time needed before i4l will
+consider a hangup). E.g.:
+<HR>
+<PRE>
+/sbin/isdnctrl huptimeout ippp0 5
+</PRE>
+<HR>
+
+Then i4l will hang up 2 seconds before the end of your charge unit, if the 5
+seconds before (huptimeout) no activity has happened on the line.</LI>
+</OL>
+</P>
+
+<H2><A NAME="chargeint_whennot"></A> <A NAME="ss17.3">17.3</A> <A HREF="i4lfaq.html#toc17.3">chargeint_whennot: When does it <B>not</B> make sense to use the chargeint? </A>
+</H2>
+
+<P>
+<OL>
+<LI>It does not make sense to use Chargeint when you are charged <B>per data
+volume</B>, or per <B>flat fee</B>. Chargeint can only reduce your costs when you
+are charged <B>per time online</B>.</LI>
+<LI>Also it makes no sense if you are charged in small units (e.g. per second
+rather than per minute).</LI>
+<LI>Chargeint may or may not make sense when every new dialup costs you fixed
+amount on top of the variable charges (depending on the rates).</LI>
+<LI>There are problems when the ip address is assigned dynamically. A broken
+connection cannot simply be restarted (since the IP address has changed). The
+interrupted FTP, telnet or WWW connection must then be newly established.</LI>
+</OL>
+</P>
+
+<H2><A NAME="chargeint_correcttime"></A> <A NAME="ss17.4">17.4</A> <A HREF="i4lfaq.html#toc17.4">chargeint_correcttime: How can I be sure that the chargeint patch is using the correct time? </A>
+</H2>
+
+<P>It's best to synchronize the clock in your own computer with that of the
+switching station by calling isdnlog with option <CODE>-t2</CODE>.</P>
+
+<H2><A NAME="chargeint_nohangup"></A> <A NAME="ss17.5">17.5</A> <A HREF="i4lfaq.html#toc17.5">chargeint_nohangup: The connection doesn't end with timeout. </A>
+</H2>
+
+<P>Chargeint will only hangup if there was no activity on the line. Possibly your
+service provider uses a router (e.g. Cisco) which sends a &quot;keep
+alive&quot; packets every ten seconds. If the Cisco doesn't get an answer for
+its keep alive packets then it will stop routing. This normally happens after
+the 4. or 5. keep alive packet. Very recently (begin of 2001), support for
+Cisco's keep alive packages has been corrected, so you can either use it,
+or tell the provider not to use keep alive packets
+(<CODE>&quot;no keepalive&quot;</CODE> in the Cisco configuration).</P>
+<P>It could also be that it's not the keep alive packets that are keeping the
+connection open, but rather OSPF routing updates. The sending of these
+updates can only be switched off on the Cisco. You can configure
+&quot;snapshot server&quot; on the BRI interface. That means it will
+send out routing updates only when they are received through this interface.</P>
+<P>However, nowadays the most likely cause for open connection is that
+connection requests looking for a backdoor or a file sharing application
+cause issues like this. You can use the <CODE>active-filter</CODE> option
+of ipppd to indicate which packets should be regarded as link activity.
+See the man page for more details. A configuration could be like this:
+<HR>
+<PRE>
+active-filter 'outbound and not icmp[0] == 3 and not tcp[13] &amp; 4 != 0'
+</PRE>
+<HR>
+</P>
+
+
+<HR>
+<A HREF="i4lfaq-18.html">Next</A>
+<A HREF="i4lfaq-16.html">Previous</A>
+<A HREF="i4lfaq.html#toc17">Contents</A>
+</BODY>
+</HTML>

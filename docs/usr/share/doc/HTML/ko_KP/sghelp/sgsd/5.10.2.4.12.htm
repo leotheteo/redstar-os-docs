@@ -1,0 +1,86 @@
+﻿<html dir='ltr'>
+	<head>
+		<META http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+		<title>세포의 오유값</title>
+		<link rel='stylesheet' type='text/css' href='../css/main.css'/>
+		<script type='text/javascript' language='Javascript' src='../js/mexpcol.js'></script>
+		<script type='text/javascript' language='JavaScript' src='../js/glossary.js'></script>
+	</head>
+	<body>
+		<h1>&nbsp;<img align="absbottom" src="../image/external_images/crystal/svtools/res/new_doc.png"/>&nbsp;세포의 오유값</h1>
+		<p id='ExpandAllLine' class='ExpFav'>
+			<a href='#' onClick='ExpandAll()' onKeyPress='ExpandAll()' class='DropDown'>
+				<img id='picHeader' border='0' src='../image/image/common/expandtri.gif' alt='모두 표시'>
+				<span id='ExpandAll'>모두 표시</span>
+			</a>
+		</p>
+		<p>례를 들어 수식 =1/0은 <b class="bterm">#DIV/0!</b>을 반환합니다. 오유값으로는 <b class="bterm">#NAME?</b>, <b class="bterm">#REF!</b>, <b class="bterm">#VALUE!</b> 등이 있습니다.</p>
+		<h2>오유값 대신 다른 값을 표시</h2>
+			<p>이 작업을 수행하려면 <b class="bterm">IF</b>, <b class="bterm">ISERROR</b>, <b class="bterm">NA</b>함수를 사용합니다.</p>
+			<ol>
+				<li>오유값이 들어있는 세포를 선택합니다.</li>
+				<li>세포의 수식에 다음과 같은 수식을 덧붙입니다. 여기서 《수식》은 이전에 세포에 있었던 수식을 의미합니다.</li>
+					<p>=IF(ISERROR(수식);"";수식)</p>
+			</ol>
+			<p><b class="bterm">실례</b></p>
+			<p><a href='1.5.1.htm'>실례의 리용방법</a>을 참고하십시오.</p>
+			<table>
+				<tr>
+					<td>
+						<table>
+							<tr>
+								<td class="noborder">&nbsp;</td>
+							</tr>
+							<tr>
+								<th>1</th>
+							</tr>
+							<tr>
+								<th>2</th>
+							</tr>
+							<tr>
+								<th>3</th>
+							</tr>
+						</table>
+					</td>
+					<td>
+						<table>
+							<tr>
+								<th>A</th>
+							</tr>
+							<tr>
+								<th>자료</th>
+							</tr>
+							<tr>
+								<td>10</td>
+							</tr>
+							<tr>
+								<td>0</td>
+							</tr>
+							<tr>
+								<th>수식</th>
+								<th>설명(결과)</th>
+							</tr>
+							<tr>
+								<td>=A2/A3</td>
+								<td>오유가 발생합니다. (#DIV/0!)</td>
+							</tr>
+							<tr>
+								<td>=IF(ISERROR(A2/A3);"NA";A2/A3)</td>
+								<td>값이 오유이면 <b class="bterm">NA</b>가 반환됩니다.</td>
+							</tr>
+							<tr>
+								<td>=IF(ISERROR(A2/A3);NA();A2/A3)</td>
+								<td>값이 오유이면 #<b class="bterm">N/A</b>가 반환됩니다.</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+			<p><b class="bterm">참조함수</b></p>
+			<p><a href='5.9.7.4.htm'>IF</a></p>
+			<p><a href='5.9.6.7.htm'>ISERROR</a></p>
+			<p><a href='5.9.6.18.htm'>NA</a></p>			
+		<script type="text/javascript" language="Javascript">footerView()</script>
+	
+</body>
+</html>																

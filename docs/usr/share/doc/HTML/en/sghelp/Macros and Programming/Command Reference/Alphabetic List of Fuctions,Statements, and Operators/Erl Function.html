@@ -1,0 +1,69 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+	<TITLE></TITLE>
+	<META NAME="GENERATOR" CONTENT="《Sogwang 3.0》  (Linux)">
+	<META NAME="CREATED" CONTENT="20091205;11384400">
+	<META NAME="CHANGED" CONTENT="20091205;12034800">
+	<STYLE TYPE="text/css">
+	<!--
+		H2 { margin-bottom: 0.18cm; font-family: "Bitstream Vera Sans", "Arial", "Helvetica", "Lucida", "Geneva", "Helmet", sans-serif, "Andale Sans UI", "Arial Unicode MS", "Lucida Sans Unicode", "Tahoma"; font-size: 14pt }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="ko-KP" DIR="LTR"><DIV style="margin-left: 25">
+<H1><A NAME="erl"></A><A NAME="bm_id3157896"></A><FONT FACE="Thorndale, serif"><SPAN LANG="en-US">Erl
+Function [Runtime]</SPAN></FONT></H1>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Returns
+the line number where an error occurred during program execution.</SPAN></FONT></P>
+<H2><SPAN LANG="en-US">Syntax:</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Erl</SPAN></FONT></P>
+<H2><SPAN LANG="en-US">Return value:</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Integer</SPAN></FONT></P>
+<H2><SPAN LANG="en-US">Parameters:</SPAN></H2>
+<TABLE WIDTH=616 BORDER=0 CELLPADDING=5 CELLSPACING=0>
+	<COL WIDTH=33>
+	<COL WIDTH=368>
+	<TR>
+		<TD WIDTH=33>
+			<P><IMG SRC="../../../Image/note.png" NAME="graphics1" ALT="Note Icon " ALIGN=BOTTOM WIDTH=33 HEIGHT=42 BORDER=0></P>
+		</TD>
+		<TD WIDTH=563>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">The
+			Erl function only returns a line number, and not a line label.</SPAN></FONT></P>
+		</TD>
+	</TR>
+</TABLE>
+<P><BR><BR>
+</P>
+<H2><SPAN LANG="en-US">Example:</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">sub
+ExampleError</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">on error
+goto ErrorHandler REM Set up error handler</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Dim iVar
+as Integer</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Dim sVar
+As String</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">REM
+Error caused by non-existent file</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">iVar =
+Freefile</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Open
+&quot;\file9879.txt&quot; for Input as #iVar</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Line
+Input #iVar, sVar</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Close
+#iVar</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">exit sub</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">ErrorHandler:</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">MsgBox
+&quot;Error &quot; &amp; err &amp; &quot;: &quot; &amp; error$ +
+chr(13) + &quot;In line : &quot; + Erl + chr(13) + Now , 16 ,&quot;An
+error occurred&quot;</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><SPAN STYLE="font-weight: medium">end
+sub</SPAN></SPAN></FONT></P>
+
+</DIV></BODY>
+</HTML>

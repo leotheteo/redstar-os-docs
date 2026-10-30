@@ -1,0 +1,96 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <META NAME="GENERATOR" CONTENT="LinuxDoc-Tools 0.9.21">
+ <TITLE>ISDN4LINUX - FAQ (deutsche Version): general: Allgemeine Informationen &uuml;ber ISDN4LINUX </TITLE>
+ <LINK HREF="i4lfaq-de-3.html" REL=next>
+ <LINK HREF="i4lfaq-de-1.html" REL=previous>
+ <LINK HREF="i4lfaq-de.html#toc2" REL=contents>
+</HEAD>
+<BODY>
+<A HREF="i4lfaq-de-3.html">Next</A>
+<A HREF="i4lfaq-de-1.html">Previous</A>
+<A HREF="i4lfaq-de.html#toc2">Contents</A>
+<HR>
+<H2><A NAME="general"></A> <A NAME="s2">2.</A> <A HREF="i4lfaq-de.html#toc2">general: Allgemeine Informationen &uuml;ber ISDN4LINUX </A></H2>
+
+<H2><A NAME="general_i4l"></A> <A NAME="ss2.1">2.1</A> <A HREF="i4lfaq-de.html#toc2.1">general_i4l: Was ist ISDN4LINUX? </A>
+</H2>
+
+<P>ISDN4LINUX ist ein Paket von Kernelmodulen, die im Linux-Kernel
+enthalten sind. Es besteht aus dem Hauptmodul <CODE>isdn</CODE> und dem
+eigentlichen Hardware-Treiber f&uuml;r die jeweilige
+Karte. Zus&auml;tzlich gibt es noch das Paket <CODE>isdn4k-utils</CODE> mit
+den notwendigen Werkzeugen, um die ISDN-spezifischen Eigenschaften
+benutzen zu k&ouml;nnen.</P>
+
+<H2><A NAME="general_hardware"></A> <A NAME="ss2.2">2.2</A> <A HREF="i4lfaq-de.html#toc2.2">general_hardware: Welche Hardware wird von ISDN4LINUX unterst&uuml;tzt? </A>
+</H2>
+
+<P>Im Allgemeinen unterst&uuml;tzt ISDN4LINUX sowohl ISDN-Karten f&uuml;r
+den ISA- oder PCI-Bus als auch einige PCMCIA-Karten. Sogenannte
+"Terminal Adapter", d.h., Ger&auml;te am seriellen oder parallelen
+Port k&ouml;nnen mit ISDN4LINUX jedoch <B>nicht</B> benutzt werden. Die
+einzige Ausnahme bildet derzeit die Creatix/Teles S0 Box mit
+Parallelport-Anschlu&szlig;. Weitere Details &uuml;ber
+unterst&uuml;tzte Karten findest Du in dem Abschnitt 
+<A HREF="i4lfaq-de-6.html#hardware">Hardware</A>.</P>
+
+<H2><A NAME="general_features"></A> <A NAME="ss2.3">2.3</A> <A HREF="i4lfaq-de.html#toc2.3">general_features: Welche Leistungsmerkmale unterst&uuml;tzt ISDN4LINUX?</A>
+</H2>
+
+<P>Grunds&auml;tzlich kann ISDN4LINUX Daten via ISDN auf verschiedene Art
+und Weise senden und empfangen (X.75, HDLC, raw ip, synchronous ppp,
+asynchronous ppp, V.110). Einige der Werkzeuge bieten zus&auml;tzliche
+Features an. <CODE>isdnlog</CODE> z.B., mit dem ISDN Ereignisse dokumentiert
+werden und das es erlaubt, auf diese Ereignisse zu reagieren
+(inklusive Geb&uuml;hrenermittlung); und <CODE>vbox</CODE>, ein
+Anrufbeantworter-Programm. Weitere Details findest Du im Abschnitt
+<A HREF="i4lfaq-de-4.html#feature">feature</A>.</P>
+
+<H2><A NAME="general_countries"></A> <A NAME="ss2.4">2.4</A> <A HREF="i4lfaq-de.html#toc2.4">general_countries: In welchen L&auml;ndern funktioniert ISDN4LINUX? </A>
+</H2>
+
+<P>Zumindest in allen L&auml;ndern, in denen Euro-ISDN benutzt wird. Es
+gibt jedoch einige Besonderheiten. In dem Abschnitt 
+<A HREF="i4lfaq-de-26.html#countries">countries</A> findest Du mehr Infos &uuml;ber Dein
+Land.</P>
+
+<H2><A NAME="general_docu"></A> <A NAME="ss2.5">2.5</A> <A HREF="i4lfaq-de.html#toc2.5">general_docu: Wo finde ich weitere Dokumentationen, HOW-TOs und hilfreiche Tips &amp; Tricks?</A>
+</H2>
+
+<P>Neben dieser FAQ solltest Du Dir die verschiedenen Man-Seiten und
+READMEs des ISDN4LINUX-Paketes anschauen. Dann gibt es noch die
+Website von ISDN4LINUX: 
+<A HREF="http://www.isdn4linux.de">http://www.isdn4linux.de</A>. Zus&auml;tzlich existiert eine
+Newsgroup und eine Mailingliste zu ISDN4LINUX, die Dir die neuesten
+Informationen vermitteln. Weitere Informationen &uuml;ber diese guten
+Quellen findest Du im Abschnitt 
+<A HREF="i4lfaq-de-5.html#docu">docu</A>.  
+Sieh Dir auch die hervorragenden Links bei der Frage 
+<A HREF="i4lfaq-de-7.html#config_links">config_links</A> an! Du findest dort sowohl
+Informationen in Deiner Sprache als auch distributions-spezifische
+Antworten.</P>
+
+<H2><A NAME="general_getlatest"></A> <A NAME="ss2.6">2.6</A> <A HREF="i4lfaq-de.html#toc2.6">general_getlatest: Wo bekomme ich die aktuelle Version von ISDN4LINUX?</A>
+</H2>
+
+<P>Die aktuelle Version der Kernel-Treiber sollte im Linuxkernel
+enthalten sein. Manchmal ist das jedoch nicht der Fall oder der
+aktuelle Kernel unterst&uuml;tzt Deine ISDN-Karte noch
+nicht. Zus&auml;tzlich ben&ouml;tigst Du eventuell das Paket
+isdn4k-util. In diesen F&auml;llen kannst Du die allerneueste, gerade
+in Entwicklung befindliche Version ausprobieren. Siehe Abschnitt 
+<A HREF="i4lfaq-de-3.html#distrib">distrib</A>.</P>
+
+<H2><A NAME="general_contacts"></A> <A NAME="ss2.7">2.7</A> <A HREF="i4lfaq-de.html#toc2.7">general_contacts: Wie bekomme ich Kontakt zu den Entwicklern? </A>
+</H2>
+
+<P>Durch die Website www.isdn4linux.de auf 
+<A HREF="http://www.isdn4linux.de/contacts.php3">http://www.isdn4linux.de/contacts.php3</A>.</P>
+<HR>
+<A HREF="i4lfaq-de-3.html">Next</A>
+<A HREF="i4lfaq-de-1.html">Previous</A>
+<A HREF="i4lfaq-de.html#toc2">Contents</A>
+</BODY>
+</HTML>

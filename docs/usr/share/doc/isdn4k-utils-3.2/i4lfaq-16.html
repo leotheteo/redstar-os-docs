@@ -1,0 +1,414 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <META NAME="GENERATOR" CONTENT="LinuxDoc-Tools 0.9.21">
+ <TITLE>FAQ for isdn4linux: dod: Unwanted dialout on demand </TITLE>
+ <LINK HREF="i4lfaq-17.html" REL=next>
+ <LINK HREF="i4lfaq-15.html" REL=previous>
+ <LINK HREF="i4lfaq.html#toc16" REL=contents>
+</HEAD>
+<BODY>
+<A HREF="i4lfaq-17.html">Next</A>
+<A HREF="i4lfaq-15.html">Previous</A>
+<A HREF="i4lfaq.html#toc16">Contents</A>
+<HR>
+<H2><A NAME="dod"></A> <A NAME="s16">16.</A> <A HREF="i4lfaq.html#toc16">dod: Unwanted dialout on demand </A></H2>
+
+<H2><A NAME="dod_how"></A> <A NAME="ss16.1">16.1</A> <A HREF="i4lfaq.html#toc16.1">dod_how: How does dialout on demand work? </A>
+</H2>
+
+<P>After you habe set up a network interface, and defined a route to it, then all
+ip packages will be routed to this interface. If the <CODE>autodial</CODE> mode has
+been enabled (see question 
+<A HREF="i4lfaq-10.html#dialout_dialmode">dialout_dialmode</A> on
+the dialmodes) then the interface will automatically trigger a dialout when it
+receives ip packages. (This means that <B>any</B> user can trigger a
+dialout.)</P>
+<P>Example: You open a browser with no or a local homepage. Nothing happens. You
+enter some url to connect to, this will send ip packages to the network
+interface - thereby triggering a dialout.</P>
+<P>Using dial on demand is a potentially dangerous (means expensive) feature:
+see question 
+<A HREF="#dod_disaster">dod_disaster</A>.</P>
+
+<H2><A NAME="dod_disaster"></A> <A NAME="ss16.2">16.2</A> <A HREF="i4lfaq.html#toc16.2">dod_disaster: What is a charge unit disaster? </A>
+</H2>
+
+<P>The charge unit disaster can happen for many reasons (see question
+<A HREF="#dod_causes">dod_causes</A> for more details). However the results are identical:
+your computer dials out to your Internet Provider more often than you want,
+thereby increasing your telephone bill by a large amount (especially when
+you are not only charged for time online, but also a minimum amount/charge unit
+for every dialin). The term 'large amount' is rather flexible. Anything is
+possible:
+<UL>
+<LI>"Cheap": any DNS request opens the line, causing several dialouts per
+day (depending on your programs). If this happens 10 times a day, this makes
+up about 300 unneeded dialouts per month.</LI>
+<LI>"Not so cheap": Some Windows 95 computer in your LAN triggers a dialout
+every 15 minutes for one of its silly broadcasts (see question
+<A HREF="#dod_winclient">dod_win95</A>). Makes up 96 dialouts per day, or 2880 per month.</LI>
+<LI>"Medium": Your email client is configured to check every 5 minutes
+whether you have new emails at your Internet Service Provider. Makes up
+288 dialouts per day, 8640 per month.</LI>
+<LI>"Expensive": Keep alive packets prevent that your line ever hangs up.
+Your line is always on. Note: THIS IS NOT THE WORST CASE!</LI>
+<LI>"More Expensive": Something goes wrong with dynamic addresses,
+leaving sockets open when hanging up. The sockets trigger another dialout
+when they try to resolve this, but since now you have a new ip address, the
+issue can't be resolved. The line will eventually hang up (when depends on
+your timeouts), but then re-open - since the sockets trigger another dialout.
+If you are unlucky, you never get the same ip address back, so this repeats
+continuously. Your line is almost always on, but on top of it you have to pay
+for many dialouts: if your timeout is 30 seconds, this makes up 2880 dialouts
+per day, 86400 per month.</LI>
+<LI>"Most Expensive - Worst Case": You misconfigure dialout/callback, so
+that when your (the initiating) computer dials out to your Internet Provider,
+who then hangs up on you (e.g. authorization failed - maybe he also has some
+misconfiguration or unhooks despite being down), your computer immediately
+dials out again. This is only limited by the amount of time needed to dial
+out. If we assume 2 seconds for each attempt (conservative estimate), this
+makes up 43200 dialouts per day, or 1296000 per month!</LI>
+</UL>
+</P>
+<P>This is no joke, and all these things have actually happened, even to real
+isdn4linux experts! See question 
+<A HREF="#dod_off">dod_off</A> on how
+to avoid any risk of this happening to you.</P>
+
+<H2><A NAME="dod_causes"></A> <A NAME="ss16.3">16.3</A> <A HREF="i4lfaq.html#toc16.3">dod_causes: What can cause a charge unit disaster? </A>
+</H2>
+
+<P>There are many possibilities. See question 
+<A HREF="#dod_strategy">dod_strategy</A> on how
+to track down what is happening to you. See question 
+<A HREF="#dod_disaster">dod_disaster</A>
+on how expensive that could be. Here a non-comprehensive list of causes:
+<OL>
+<LI>You compiled your kernel with the option Bridging by mistake.</LI>
+<LI>ARP requests or broadcasts? You should run ifconfig with the options
+<CODE>-arp</CODE> and <CODE>-broadcast</CODE> to keep from opening connections in this
+way. You can recognize this one when you have a dialout, but <EM>no</EM> data is
+transferred.</LI>
+<LI>Other Broadcasts from the interfaces were being forwarded by ISDN.</LI>
+<LI>If IP connections are still open with the line is disconnected and
+IP addresses are dynamically assigned, then the disaster is inevitable.
+Then a new connection is started to bring down the open IP connections,
+which fails because the IP address is now different. The line is hung up,
+but the IP connections are still open, the line is dialed again, and
+so on... This can only be avoided with the RST-provoking mode (see question
+<A HREF="#dod_rstprovoking">dod_rstprovoking</A>. A patch for it may be
+needed if it is not included in your distribution. The patch had found
+its way into the 2.0.x kernels, but not into 2.1/2.2/2.3. However, you can get
+an adjusted patch for 2.2.x kernels and some background information about it
+from: 
+<A HREF="http://www.another.de/linux/router/">http://www.another.de/linux/router/</A>. See also question
+<A HREF="i4lfaq-12.html#syncppp_1stpacket">syncppp_1stpacket</A>.
+Also make sure to use ipppd's "defaultroute" option rather than
+<CODE>route add/del default</CODE> in ip-up/ip-down with it.</LI>
+<LI>TCP retries trigger dialout: when the kernel tries to send tcp packets
+and does not receive any answer, then it will retry to send them (usually
+every 120 seconds). Check out whether you want to adjust the following
+parameters:
+<UL>
+<LI>/proc/sys/net/ipv4/tcp_syn_retries</LI>
+<LI>/proc/sys/net/ipv4/tcp_retries1</LI>
+<LI>/proc/sys/net/ipv4/tcp_retries2</LI>
+</UL>
+
+Documentation can be found in <CODE>/usr/src/linux/Documentation/proc.txt</CODE>.</LI>
+<LI>Requests from your local DNS trigger a dialout: see question
+<A HREF="#dod_localdns">dod_localdns</A>.</LI>
+<LI>Sendmail triggers the dialout: see question
+<A HREF="#dod_sendmail">dod_sendmail</A>.</LI>
+<LI>Windows 95 clients trigger the dialout: see questions
+<A HREF="#dod_winclient">dod_win95</A>,
+<A HREF="#dod_localdns">dod_localdns</A>,
+and 
+<A HREF="#dod_winclient">dod_win95b</A>.</LI>
+<LI>Samba triggers the dialout: see question 
+<A HREF="#dod_samba">dod_samba</A>.</LI>
+<LI>Netscape triggers a dialout when started: see question
+<A HREF="#dod_netscape">dod_netscape</A>.</LI>
+<LI>dhcpd triggers dialouts: switch it off, and verify your configuration...</LI>
+<LI>Manually close IP connections which are still open when the line
+goes down: see question 
+<A HREF="#dod_closeipconnect">dod_closeipconnect</A>.</LI>
+<LI>Your computer is crashed, but still processes interrupts: see
+question 
+<A HREF="#dod_onlineoncrash">dod_onlineoncrash</A>.</LI>
+</OL>
+</P>
+
+<H2><A NAME="dod_off"></A> <A NAME="ss16.4">16.4</A> <A HREF="i4lfaq.html#toc16.4">dod_off: How can I safely turn off dialout on demand? </A>
+</H2>
+
+<P>
+<OL>
+<LI>To always dial out manually, set your dialmode to <CODE>manual</CODE> (see
+question 
+<A HREF="i4lfaq-10.html#dialout_dialmode">dialout_dialmode</A>).
+Then use <CODE>isdnctrl dial &lt;device&gt;</CODE> to dial out, and
+<CODE>isdnctrl hangup &lt;device&gt;</CODE> to hangup.</LI>
+<LI>Set your dialmode properly (see question
+<A HREF="i4lfaq-10.html#dialout_dialmode">dialout_dialmode</A>). For example, set
+dialmode to <CODE>manual</CODE> in <CODE>ip-down</CODE>. Then dialouts will only be possible
+once after setting dialmode to <CODE>auto</CODE>.</LI>
+<LI>Delete the telephone number of the interface, or set an invalid one.
+Then you can see from the complaints in the syslog whether a process wants
+to send packets out to the world.</LI>
+<LI>Switch the system off.</LI>
+<LI>Delete your route to the ISDN device.
+For example, to disable any automatic dialouts:
+<HR>
+<PRE>
+/sbin/route del default
+/sbin/isdnctrl system off
+/sbin/ifconfig ippp0 down
+</PRE>
+<HR>
+
+To get things running again:
+<HR>
+<PRE>
+/sbin/isdnctrl system on
+/sbin/ifconfig ippp0 up
+/sbin/route add $GATE-IP dev ippp0
+/sbin/route add default ippp0
+</PRE>
+<HR>
+
+The latter method has the disadvantage that dialin is then no longer
+possible.</LI>
+</OL>
+</P>
+
+<H2><A NAME="dod_strategy"></A> <A NAME="ss16.5">16.5</A> <A HREF="i4lfaq.html#toc16.5">dod_strategy: How can I track down unexplainable dialouts? </A>
+</H2>
+
+<P>Finding the reason of unexpected dialouts is the first step to stopping it.
+However, finding is usually more difficult than fixing the problem. This is
+what you can do to track it down:
+<UL>
+<LI> First disconnect your dialout server from your LAN to find out who
+is responsible for the dialouts: the dialout server himself, or some
+clients in your LAN. For Windows clients, see question
+<A HREF="#dod_winclient">dod_winclient</A>.</LI>
+<LI> Try to find out which TCP/IP packet triggers the connection with
+&quot;isdnctrl verbose 3&quot;. A message should appear in
+the kernel message queue (visible with <CODE>dmesg</CODE>), like:
+<CODE>OPEN: 141.76.60.54 - 193.171.67.253 TCP, port: 1686 - 540</CODE>
+In this example, our computer is trying to pick up mail on
+port 540 (UUCP over TCP/IP over ISDN) - the port number can be looked up
+in <CODE>/etc/services</CODE>. Please note: only the triggering packet will
+be logged.</LI>
+<LI> If you are using ipppd: get a tcpdump which can show data with the
+syncPPP encapsulation (this may require a patch - see question
+<A HREF="i4lfaq-7.html#trouble_tcpdump">trouble_tcpdump</A>).</LI>
+<LI> Try to turn off one daemon after the other and see if things have finally
+quieted down. named, sendmail, and also smbd (Samba) are likely candidates to
+open connections (see questions 
+<A HREF="#dod_localdns">dod_localdns</A>,
+<A HREF="#dod_sendmail">dod_sendmail</A>, 
+<A HREF="#dod_samba">dod_samba</A>).</LI>
+<LI> If broadcasts are your problem, you can also redirect the
+broadcast address to the dummy0 interface. It's not clean, but it works.</LI>
+</UL>
+</P>
+
+<H2><A NAME="dod_winclient"></A> <A NAME="ss16.6">16.6</A> <A HREF="i4lfaq.html#toc16.6">dod_winclient: Can it be that the Win95 machine on my LAN is causing automatic dialouts? </A>
+</H2>
+
+<P>Yes. When Windows 3.11/95 is started, then it tries to talks to the name
+server of your provider (if known), trying to look up some domains
+(e.g. WORKGROUP.xxx). To avoid this, these are your options:
+<UL>
+<LI> Switch off the feature <CODE>Use DNS for Windows Names Resolution</CODE>
+on all Windows computers on your LAN.</LI>
+<LI> Set up a local DNS name server such that it will answer all requests.
+See question 
+<A HREF="#dod_localdns">dod_localdns</A>.</LI>
+</UL>
+</P>
+
+<H2><A NAME="dod_localdns"></A> <A NAME="ss16.7">16.7</A> <A HREF="i4lfaq.html#toc16.7">dod_localdns: I have set up a local DNS name server. Why does it cause unwanted dialouts? How can I find the cause? </A>
+</H2>
+
+<P>Turn on debug level 1 in named and look at the logfile in <CODE>/var/tmp</CODE>.
+Often, you can find regular DNS requests from Windows machines.
+The problem is that names like "WORKGROUP.domain.de" are requested,
+i.e. names that the DNS could not know. Windows seems to be looking for
+its master browser or a domain controller (if you are fluent in German, see
+ct 12/99, page 224: "Schnitzeljagd - Netzwerkumgebung und Browserdienst
+im Windows-Netzwerk" for more details). To work around this problem, you can
+set up your domain name server with cname = "WORKGROUP.domain.de" (other
+domain names are also possible). Or set up a Primary Domain Controller
+within your LAN. You can also use diald to control dialouts for DNS request.</P>
+
+<H2><A NAME="dod_forwarddns"></A> <A NAME="ss16.8">16.8</A> <A HREF="i4lfaq.html#toc16.8">dod_forwarddns: I have set up my name server in 'forward' mode, with one forward address. Now it dials out about every minute? </A>
+</H2>
+
+<P>From time to time, the name server will query its forwarder, which will
+trigger a dialout. Since your ISP uses dynamic ip addresses, the request
+is sent out with the wrong ip address at startup of the dial-in connection.
+Therefore, no answer will be received. Bind waits for one minute
+before resubmitting. If your line has come down in the mean time, this
+will trigger a new dialout, resulting in a different ip address, and so on...</P>
+<P>For a workaround to this problem you can shorten the retransmission time
+as described in question 
+<A HREF="i4lfaq-10.html#dialout_bind">dialout_bind</A>.</P>
+<P>Alternatively, you can set the option &quot;dialup yes;&quot; in the
+options block of named.conf. This will cause named to do only one
+interaction with a forwarder (triggering a dod) at startup. After that it
+will wait for some very long interval (24h?) before another query with
+the forwarder. Only during actual lookup it will do negotiations with the
+forwarder (this is usually when you have already dialed out anyway).</P>
+
+<H2><A NAME="dod_sendmail"></A> <A NAME="ss16.9">16.9</A> <A HREF="i4lfaq.html#toc16.9">dod_sendmail: How can I get sendmail to not initiate any connections without local mail being left undelivered? </A>
+</H2>
+
+<P>First you have to get sendmail to no long open any DNS connections.
+You need to activate the following features: &quot;nodns&quot;,
+&quot;nocanonify&quot;.</P>
+<P>If you have a smarthost, you need to make sure that this name does not
+call the name server. You can either set it directly as an IP address,
+or add the name to /etc/hosts (/etc/host.conf should then contain
+&quot;order hosts bind&quot;)</P>
+<P>You should set all non-local mailers as &quot;expensive&quot;
+(&quot;define(SMTP_MAILER_FLAGS, e)&quot;), and then forbid sendmail with
+&quot;define(`confCON_EXPENSIVE', `True')&quot; from automatically connection
+to expensive mailers. The call to sendmail should no longer include
+a time for the &quot;-q&quot; option (e.g. only &quot;-bd -os
+-q&quot;). &quot;-os&quot; means that all mail will be queued (which won't
+prevent local mail from being delivered immediately). The only catch is that
+when booting, mail that might still be in the queue will be sent by sendmail,
+even though the network is not yet up. Therefore, when booting you should
+remove all mail from /var/mqueue before starting sendmail, and then return it
+once sendmail has been started.</P>
+<P>Mail to expensive mailers will now only be send with the explicit
+call &quot;sendmail -q&quot;.</P>
+
+<H2><A NAME="dod_samba"></A> <A NAME="ss16.10">16.10</A> <A HREF="i4lfaq.html#toc16.10">dod_samba: The samba package always triggers dialouts for me. How can I prevent this? </A>
+</H2>
+
+<P>When nmbd starts up it tries to bind to 0.0.0.0 or all interfaces, which
+is what triggers the ISDN dialup.
+The best way to solve this is to set "bind interfaces only = yes" and
+"interfaces = eth0" in smb.conf (in case you want to use Samba only in
+your LAN).
+Alternatively, you can give the samba daemon an internal ip address upon
+startup. First find out which ip address samba is trying to connect to
+(e.g. with netstat or tcpdump). Then start samba with:
+<HR>
+<PRE>
+nmdb -S -B 192.168.99.255 -I 192.168.99.99
+</PRE>
+<HR>
+
+if your Linux computer has 192.168.99.99 as ip address, and all users
+are in the same subnet (192.168.99.255).</P>
+<P>See also the above question:  set -broadcast and possibly -arp
+when defining the interfaces!</P>
+<P>Check out the help pages for the Samba configuration file for further
+possibilities on preventing dialout (I was told there should be some
+explicit dialup parameter which prevents it to cause many dialouts).</P>
+
+<H2><A NAME="dod_netscape"></A> <A NAME="ss16.11">16.11</A> <A HREF="i4lfaq.html#toc16.11">dod_netscape: How can I get Netscape to quit initiating dialouts when starting? </A>
+</H2>
+
+<P>Most likely in the preferences a non-local home page has been listed.
+Only a home page that Netscape is able to load immediately (e.g.
+&quot;file://localhost/xxx&quot;) won't cause an immediate
+dialout. Alternatively you can also set up a cache daemon that saves pages that
+are often needed.</P>
+<P>Second check your proxy settings. When giving a complete name instead of an
+ip address, Netscape may try to do a DNS lookup to resolve the name to an
+ip address on startup. In this case provide Netscape with an ip address.</P>
+<P>Another thing is that Netscape tries to contact its news server. If you don't
+want to use this feature then you can enter the name Netscape uses for lookup
+(probably 'news') in your local DNS or in your /etc/hosts, and let it point
+to localhost.</P>
+
+<H2><A NAME="dod_rstprovoking"></A> <A NAME="ss16.12">16.12</A> <A HREF="i4lfaq.html#toc16.12">dod_rstprovoking: Why should I use the RST-provoking mode/patch? </A>
+</H2>
+
+<P>If on every dialup (in auto dialout mode) you get a different ip address
+(dynamic ip), and the dialup connection gets terminated (e.g due to
+inactivity) while some ip connections have not yet been closed, then the
+following problem will occur:
+when the program tries to close the connection this will trigger a new dialout.
+Since this will yield in a new ip address, the closing attempt will fail.
+After the timeout period another dialout will be attempted, with the same
+result, leading to a dial on demand disaster.
+To prevent this problem the RST-provoking mode has been invented.
+If on the closing attempt a new dialout is opened and the ip address changes,
+then the kernel will send a ip packet with the reset flag on. This will close
+down the open connection, preventing the dial on demand disaster.
+To activate the RST-provoking mode use the command
+<HR>
+<PRE>
+echo 7 > /proc/sys/net/ipv4/ip_dynaddr
+</PRE>
+<HR>
+
+Use 5 instead of 7 to prevent syslog warnings. Check the current status with:
+<HR>
+<PRE>
+cat /proc/sys/net/ipv4/ip_dynaddr
+</PRE>
+<HR>
+
+Your distribution may or may not have the patch for this rst-provoking mode
+included, it was not liked in the kernel code for kernels newer than 2.0.x.</P>
+
+<H2><A NAME="dod_closeipconnect"></A> <A NAME="ss16.13">16.13</A> <A HREF="i4lfaq.html#toc16.13">dod_closeipconnect: After closing the line, I discover with <CODE>netstat -nt</CODE> that IP connections are still open. How can I close these manually? </A>
+</H2>
+
+<P>This may only work with the RST-provoking mode (mentioned in question
+<A HREF="#dod_causes">dod_causes</A>): You can bring the interface
+&quot;down&quot; then back &quot;up&quot;. When you do this, it will
+try to dial out. But if you have removed the outgoing telephone number,
+then &quot;no outgoing number...&quot; appears in the syslog, and as
+soon as the interface is &quot;up&quot;, all connections will be closed.</P>
+<P>You can prevent those open IP connections to trigger new dialouts if you
+add a special firewall rule in <CODE>/etc/ppp/ip-down</CODE>, and remove it
+in <CODE>/etc/ppp/ip-up</CODE>. This firewall rule drops all tcp packets
+which are not in SYNSENT state. Add this in <CODE>/etc/ppp/ip-down</CODE> for
+a 2.2.x kernel:
+<HR>
+<PRE>
+ipchains -A output -j DENY -p tcp -i &lt;interface&gt; ! -y
+</PRE>
+<HR>
+
+Add this in <CODE>/etc/ppp/ip-up</CODE>:
+<HR>
+<PRE>
+ipchains -A output -j DENY -p tcp -i &lt;interface&gt; ! -y
+</PRE>
+<HR>
+
+(As is the case for all firewall rules: it is best to put this into a
+separate script which is called with either a start or a stop parameter.)
+Please note that this firewall rule only matches whole packets, no fragments.
+A fragment will always bypass the firewall and trigger a dialout.</P>
+
+<H2><A NAME="dod_onlineoncrash"></A> <A NAME="ss16.14">16.14</A> <A HREF="i4lfaq.html#toc16.14">dod_onlineoncrash: Is it possible that even with a crashed computer a ISDN connection remains open (and the charge units accumulate)? </A>
+</H2>
+
+<P>The ISAC chipset, which is in use on many ISDN cards, can be run in either
+auto mode, or in non-auto mode. When run in auto mode, the connection could
+be up when the computer is crashed (the card keeps it up and running).
+Since the HiSax driver uses nonauto mode, this should not happen with
+ISDN4LINUX. Once no interrupt is processed on your machine, the connection
+will stop at maximum half a minute later. Only in the unlikely event that
+your machine is crashed, while interrupts are still processed normally, this
+could happen.</P>
+
+
+<HR>
+<A HREF="i4lfaq-17.html">Next</A>
+<A HREF="i4lfaq-15.html">Previous</A>
+<A HREF="i4lfaq.html#toc16">Contents</A>
+</BODY>
+</HTML>

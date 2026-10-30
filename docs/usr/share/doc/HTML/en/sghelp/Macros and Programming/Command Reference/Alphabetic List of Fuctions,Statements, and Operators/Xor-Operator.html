@@ -1,0 +1,57 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+	<TITLE></TITLE>
+	<META NAME="GENERATOR" CONTENT="《Sogwang 3.0》  (Linux)">
+	<META NAME="CREATED" CONTENT="20091205;15361500">
+	<META NAME="CHANGED" CONTENT="20091205;17000700">
+	<STYLE TYPE="text/css">
+	<!--
+		H2 { margin-bottom: 0.18cm; font-family: "Bitstream Vera Sans", "Arial", "Helvetica", "Lucida", "Geneva", "Helmet", sans-serif, "Andale Sans UI", "Arial Unicode MS", "Lucida Sans Unicode", "Tahoma"; font-size: 14pt }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="ko-KP" DIR="LTR"><DIV style="margin-left: 25">
+<H1><A NAME="xor"></A><A NAME="bm_id3156024"></A><FONT FACE="Thorndale, serif"><SPAN LANG="en-US">Xor-Operator
+[Runtime]</SPAN></FONT></H1>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Performs
+a logical Exclusive-Or combination of two expressions.</SPAN></FONT></P>
+<H2><SPAN LANG="en-US">Syntax:</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Result =
+Expression1 Xor Expression2</SPAN></FONT></P>
+<H2><SPAN LANG="en-US">Parameters:</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Result:</B>
+Any numeric variable that contains the result of the combination.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Expression1,
+Expression2:</B> Any numeric expressions that you want to combine.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">A
+logical Exclusive-Or conjunction of two Boolean expressions returns
+the value True only if both expressions are different from each
+other.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">A
+bitwise Exclusive-Or conjunction returns a bit if the corresponding
+bit is set in only one of the two expressions.</SPAN></FONT></P>
+<H2><SPAN LANG="en-US">Example:</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Sub
+ExampleXor</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Dim vA
+as Variant, vB as Variant, vC as Variant, vD as Variant</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Dim vOut
+as Variant</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">vA = 10:
+vB = 8: vC = 6: vD = Null</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">vOut =
+vA &gt; vB Xor vB &gt; vC REM returns 0</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">vOut =
+vB &gt; vA Xor vB &gt; vC REM returns -1</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">vOut =
+vA &gt; vB Xor vB &gt; vD REM returns -1</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">vOut =
+(vB &gt; vD Xor vB &gt; vA) REM returns 0</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">vOut =
+vB Xor vA REM returns 2</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">End Sub</SPAN></FONT></P>
+
+</DIV></BODY>
+</HTML>

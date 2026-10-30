@@ -1,0 +1,144 @@
+<html dir='ltr'>
+	<head>
+		<META http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+		<title>STDEVPA</title>
+		<link rel='stylesheet' type='text/css' href='../css/main.css'/>
+		<script type='text/javascript' language='Javascript' src='../js/mexpcol.js'></script>
+		<script type='text/javascript' language='JavaScript' src='../js/glossary.js'></script>
+	</head>
+	<body>
+		<h1>&nbsp;<img align="absbottom" src="../image/external_images/crystal/svtools/res/new_doc.png"/>&nbsp;STDEVPA</h1>
+		<p id='ExpandAllLine' class='ExpFav'>
+			<a href='#' onClick='ExpandAll()' onKeyPress='ExpandAll()' class='DropDown'>
+				<img id='picHeader' border='0' src='../image/image/common/expandtri.gif' alt='모두 표시'>
+				<span id='ExpandAll'>모두 표시</span>
+			</a>
+		</p>
+		<p><b class="bterm">참고항목</b>&emsp;
+			<a href="5.9.10.1.htm">통계함수목록</a>,
+			<a href="5.9.3.11.htm">DSTDEV</a>,
+			<a href="5.9.3.12.htm">DSTDEVP</a>,
+			<a href="5.9.10.65.htm">STDEVA</a>,
+			<a href="5.9.10.64.htm">STDEV</a>
+		</p>
+		<p>전체 모집단에 기초하여 표준편차를 구합니다. 본문은 0으로 평가합니다.</p>
+		<p><b class="bterm">문법:&emsp;&emsp;		STDEVPA(값1,값2,...)</b></p>
+		<table>
+			<tr>
+				<th>인수명</th>
+				<th>설명</th>
+			</tr>
+			<tr>
+				<td>값1,값2,...</td>
+				<td>모집단에 해당하는 1부터 30까지의 인수입니다. 배렬의 참조 또는 단일배렬을 사용할수도 있습니다.</td>
+			</tr>
+		</table>
+		<p><b class="bterm">주의</b></p>
+			<ul>
+				<li>대규모표본일 때에는 <b class="bterm">STDEVA</b>함수와 <b class="bterm">STDEVPA</b>함수의 값은 거의 같습니다.</li>
+				<li>계산에 본문이나 론리값이 없으면 <b class="bterm">STDEVP</b>함수를 사용합니다.</li>
+				<li>표준편차는 <b class="bterm">편중(biased)</b> 또는 <b class="bterm">n</b> 방법을 사용하여 계산합니다.</li>
+				<li><b class="bterm">STDEVPA</b>함수식은 다음과 같습니다.
+					<p><img border='0' src='../image/image/sgsd/formula-75.gif' alt='표시'></p>
+					<p>여기서 x는 표본평균 <b class="bterm">AVERAGE</b>(값1,값2,…)이고 n은 표본크기입니다.</p>
+				</li>
+			</ul>
+		<p><b class="bterm">실례</b></p>
+			<p><a href="1.5.1.htm">실례의 리용방법</a>을 참고하십시오.</p>
+			<table>
+				<tr>
+					<td>
+						<table>
+							<tr>
+								<td class="noborder">&nbsp;
+								</td>
+							</tr>
+							<tr>
+								<th>1</th>
+							</tr>
+							<tr>
+								<th>2</th>
+							</tr>
+							<tr>
+								<th>3</th>
+							</tr>
+							<tr>
+								<th>4</th>
+							</tr>
+							<tr>
+								<th>5</th>
+							</tr>
+							<tr>
+								<th>6</th>
+							</tr>
+							<tr>
+								<th>7</th>
+							</tr>
+							<tr>
+								<th>8</th>
+							</tr>
+							<tr>
+								<th>9</th>
+							</tr>
+							<tr>
+								<th>10</th>
+							</tr>
+							<tr>
+								<th>11</th>
+							</tr>
+						</table>
+					</td>
+					<td>
+						<table>
+							<tr>
+								<th>A</th>
+							</tr>
+							<tr>
+								<th>강도</th>
+							</tr>
+							<tr>
+								<td>1345</td>
+							</tr>
+							<tr>
+								<td>1301</td>
+							</tr>
+							<tr>
+								<td>1368</td>
+							</tr>
+							<tr>
+								<td>1322</td>
+							</tr>
+							<tr>
+								<td>1310</td>
+							</tr>
+							<tr>
+								<td>1370</td>
+							</tr>
+							<tr>
+								<td>1318</td>
+							</tr>
+							<tr>
+								<td>1350</td>
+							</tr>
+							<tr>
+								<td>1303</td>
+							</tr>
+							<tr>
+								<td>1299</td>
+							</tr>
+							<tr>
+								<th>수식</th>
+								<th>설명(결과)</th>
+							</tr>
+							<tr>
+								<td>=STDEVPA(A2:A11)</td>
+								<td>분쇄강도의 표준편차공구를 10개만 생산한다고 가정합니다. (26.05)</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+		<script type="text/javascript" language="Javascript">footerView()</script>
+	
+</body>
+</html>				

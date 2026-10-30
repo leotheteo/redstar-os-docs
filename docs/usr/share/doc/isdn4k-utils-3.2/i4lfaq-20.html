@@ -1,0 +1,97 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <META NAME="GENERATOR" CONTENT="LinuxDoc-Tools 0.9.21">
+ <TITLE>FAQ for isdn4linux: leased: Leased lines </TITLE>
+ <LINK HREF="i4lfaq-21.html" REL=next>
+ <LINK HREF="i4lfaq-19.html" REL=previous>
+ <LINK HREF="i4lfaq.html#toc20" REL=contents>
+</HEAD>
+<BODY>
+<A HREF="i4lfaq-21.html">Next</A>
+<A HREF="i4lfaq-19.html">Previous</A>
+<A HREF="i4lfaq.html#toc20">Contents</A>
+<HR>
+<H2><A NAME="leased"></A> <A NAME="s20">20.</A> <A HREF="i4lfaq.html#toc20">leased: Leased lines </A> </H2>
+
+<H2><A NAME="leased_flatrate"></A> <A NAME="ss20.1">20.1</A> <A HREF="i4lfaq.html#toc20.1">leased_flatrate: What's the difference between a leased line and a flat rate? </A>
+</H2>
+
+<P>A leased line requires a special setup of your S0 interface. After that,
+you can not reach any other destination than the one the leased line is
+set up for. It's also rather expensive.</P>
+<P>A flat rate is still a normal dialup, therefore the setup should be done
+like any dialup connection. The only difference from a normal dialup is
+the pricing. See section 
+<A HREF="i4lfaq-10.html#dialout">dialout</A>. Also please
+note that the connection on a flat rate will usually be stopped by your
+internet provider if you stay on for too long - so you can not rely on
+being online all the time, if this is what you desire.</P>
+
+<H2><A NAME="leased_nosignal"></A> <A NAME="ss20.2">20.2</A> <A HREF="i4lfaq.html#toc20.2">leased_nosignal: How does establishing and ending a connection work with D64S without signaling? </A>
+</H2>
+
+<P>The data is simply sent out! Other than a ping, there is no way to find out
+whether the D64S or 2MB line is up or not. Only S01 or S02 lines have a D
+channel and have something to use with signaling, however the best
+known solutions also use this 16kb for data transfers to get 144kb
+instead of 128kb (i4l can only to 128kb).</P>
+
+<H2><A NAME="leased_hisaxconfig"></A> <A NAME="ss20.3">20.3</A> <A HREF="i4lfaq.html#toc20.3">leased_hisaxconfig: With i4l, how do I configure my card on a D64 leased line? </A>
+</H2>
+
+<P>A later version of the new HiSax driver supports D64. Configuration is normal
+with the following specialities. HiSax has to be run in leased mode:
+<HR>
+<PRE>
+/sbin/hisaxctrl HiSax 5 &lt;channel&gt;
+</PRE>
+<HR>
+
+in case HiSax was loaded with &quot;id=HiSax&quot;, where &lt;channel&gt;
+can be 0 or 1. Additionally to the normal configuration, the following
+commands are important:
+<HR>
+<PRE>
+/sbin/isdnctrl bind HiSax,&lt;channel&gt;/sbin/isdnctrl eaz isdn0 1
+/sbin/isdnctrl addphone isdn0 out 2
+/sbin/isdnctrl addphone isdn0 in  3
+</PRE>
+<HR>
+
+if &quot;isdn0&quot; was used as interface name. The interface has to be
+set to &quot;up&quot; and a route associated with it. See the Readme's
+in the HiSax package.</P>
+
+<H2><A NAME="leased_x75"></A> <A NAME="ss20.4">20.4</A> <A HREF="i4lfaq.html#toc20.4">leased_x75: How do I configure X.75 on a D64 leased line? </A>
+</H2>
+
+<P>Use a later HiSax version. First initialize the ttyI* device you want to use
+with &quot;AT&amp;E0&quot; (set usage of first B-channel) and
+&quot;ATS0=1&quot; (autoanswer on first ring). Then set HiSax in leased mode:
+<HR>
+<PRE>
+/sbin/hisaxctrl HiSax 5 &lt;channel&gt;
+</PRE>
+<HR>
+
+This will simulate a call for MSN1 on the configured channel (0 or 1)
+(incoming number = LEASED0).</P>
+
+<H2><A NAME="leased_splitline"></A> <A NAME="ss20.5">20.5</A> <A HREF="i4lfaq.html#toc20.5">leased_splitline: With i4l, can I use one channel as a leased line and the other as a dialup line? </A>
+</H2>
+
+<P>Yes and no. You can configure HiSax for both at the same time, however you can
+only use one of them at any point in time (you have to switch off the leased
+line before dialing out). It may work occasionally simultaneously, however
+the driver has not been written for it so the results are not deterministic.
+Also make sure that you use the correct channel.</P>
+
+
+
+<HR>
+<A HREF="i4lfaq-21.html">Next</A>
+<A HREF="i4lfaq-19.html">Previous</A>
+<A HREF="i4lfaq.html#toc20">Contents</A>
+</BODY>
+</HTML>

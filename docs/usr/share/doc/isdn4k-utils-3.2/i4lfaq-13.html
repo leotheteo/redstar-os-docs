@@ -1,0 +1,85 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <META NAME="GENERATOR" CONTENT="LinuxDoc-Tools 0.9.21">
+ <TITLE>FAQ for isdn4linux: asyncppp: Configuration Async PPP </TITLE>
+ <LINK HREF="i4lfaq-14.html" REL=next>
+ <LINK HREF="i4lfaq-12.html" REL=previous>
+ <LINK HREF="i4lfaq.html#toc13" REL=contents>
+</HEAD>
+<BODY>
+<A HREF="i4lfaq-14.html">Next</A>
+<A HREF="i4lfaq-12.html">Previous</A>
+<A HREF="i4lfaq.html#toc13">Contents</A>
+<HR>
+<H2><A NAME="asyncppp"></A> <A NAME="s13">13.</A> <A HREF="i4lfaq.html#toc13">asyncppp: Configuration Async PPP </A></H2>
+
+<H2><A NAME="asyncppp_whichppp"></A> <A NAME="ss13.1">13.1</A> <A HREF="i4lfaq.html#toc13.1">asyncppp_whichppp: pppd, ipppd, async PPP, sync PPP - what are they? Which should I use? </A>
+</H2>
+
+<P><B>async PPP</B> is a character-based protocol which is usually used over
+analog serial lines (async = asynchronous). You have to use the program
+<CODE>pppd</CODE> for it, and use it with the ttyI* devices.</P>
+<P>In contrast, <B>Sync PPP</B> is a bit-oriented protocol (sync = synchronous),
+for which the original <CODE>pppd</CODE> cannot be used. Michael Hipp has written an
+adapted version called <CODE>ipppd</CODE> which will use ipppd* net devices.</P>
+<P>With i4l you can have both. It all depends on what your ISDN counterpart
+supports. If it immediately begins to send frames, then you've probably reached
+an sync PPP machine. If you can log in via same terminal screen, and then can
+start <CODE>pppd</CODE>, this can be an indication of async PPP.</P>
+<P>Usually using <B>sync PPP</B> works fine, and it is slightly more efficient. To
+take advantage of newer features of the <CODE>pppd</CODE>, use <B>async PPP</B>.</P>
+
+<H2><A NAME="asyncppp_config"></A> <A NAME="ss13.2">13.2</A> <A HREF="i4lfaq.html#toc13.2">asyncppp_config: How do I configure async PPP? </A>
+</H2>
+
+<P>Just set up a normal pppd, but tell it to use one of the ttyI* devices,
+e.g. /dev/ttyI0. You can set up several pppd's with different configuration on
+different ttyI* devices.</P>
+<P>It is very important to set up the authentication information
+properly. Improper authentication is probably the most frequently
+reported problem on the mailing list. Please, work through section
+<A HREF="i4lfaq-11.html#pap">pap</A> completely yourself, before asking others for
+help.</P>
+<P>On problems also check out the section about the syncppp problems, since many
+configuration problems are common for pppd (async PPP) and ipppd (sync PPP).</P>
+
+<H2><A NAME="asyncppp_logindelay"></A> <A NAME="ss13.3">13.3</A> <A HREF="i4lfaq.html#toc13.3">asyncppp_logindelay: How can I reduce login delay? </A>
+</H2>
+
+<P>You can write out a login session with (&quot;Debug-Log&quot;), and see which
+options the other computer is refusing. Next time, configure ipppd
+without these unused options. A further side effect is that such
+unused options increase the redundance (e.g. when the other computer
+has bugs and refuses the options incorrectly). To create a log file,
+see &quot;How to I create a log for ipppd&quot;.</P>
+
+<H2><A NAME="asyncppp_fast"></A> <A NAME="ss13.4">13.4</A> <A HREF="i4lfaq.html#toc13.4">asyncppp_fast: How can I increase my transfer rates with PPP? </A>
+</H2>
+
+<P>You can add more channels with MPPP (see question
+<A HREF="i4lfaq-18.html#2channel_mppp">2channel_mppp</A>).
+For everyone for whom that's to expensive and who use <EM>async PPP</EM>,
+there's a little trick. With the option &quot;asyncmap 0&quot; you can avoid
+escaping all control characters (ASCII32). If the other side goes
+along with this, you can increase the transfer rate by about 12%.</P>
+
+<H2><A NAME="asyncppp_log"></A> <A NAME="ss13.5">13.5</A> <A HREF="i4lfaq.html#toc13.5">asyncppp_log: How can I get a log for pppd? </A>
+</H2>
+
+<P>See this question for Sync PPP, it works the same way for pppd.</P>
+
+<H2><A NAME="asyncppp_suddendeath"></A> <A NAME="ss13.6">13.6</A> <A HREF="i4lfaq.html#toc13.6">asyncppp_suddendeath: Establishing the connection works fine, but pppd crashes just after that (i.e. the first bytes gets through, but then everything stops) </A>
+</H2>
+
+<P>This is probably due to an incorrect block size on your side. Initialize your
+ttyI* device with <CODE>AT&amp;B512</CODE> or even smaller block sizes.</P>
+
+
+
+<HR>
+<A HREF="i4lfaq-14.html">Next</A>
+<A HREF="i4lfaq-12.html">Previous</A>
+<A HREF="i4lfaq.html#toc13">Contents</A>
+</BODY>
+</HTML>

@@ -1,0 +1,153 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <META NAME="GENERATOR" CONTENT="LinuxDoc-Tools 0.9.21">
+ <TITLE>FAQ for isdn4linux: audio: Handling Voice with ISDN </TITLE>
+ <LINK HREF="i4lfaq-25.html" REL=next>
+ <LINK HREF="i4lfaq-23.html" REL=previous>
+ <LINK HREF="i4lfaq.html#toc24" REL=contents>
+</HEAD>
+<BODY>
+<A HREF="i4lfaq-25.html">Next</A>
+<A HREF="i4lfaq-23.html">Previous</A>
+<A HREF="i4lfaq.html#toc24">Contents</A>
+<HR>
+<H2><A NAME="audio"></A> <A NAME="s24">24.</A> <A HREF="i4lfaq.html#toc24">audio: Handling Voice with ISDN </A></H2>
+
+<P>(Most of the answers you will find here are taken from the - now
+unfortunately outdated - vbox manual by
+Matthias Hessler <CODE>
+<A HREF="mailto:hessler@isdn4linux.de">hessler@isdn4linux.de</A></CODE> and
+Bernhard Hailer <CODE>
+<A HREF="mailto:dl4mhk@lrz.uni-muenchen.de">dl4mhk@lrz.uni-muenchen.de</A></CODE>; you can get the manual at:</P>
+<P><CODE>
+<A HREF="http://www.lrz-muenchen.de/~ui161ab/www/isdn/">http://www.lrz-muenchen.de/~ui161ab/www/isdn/</A></CODE></P>
+<P>- click on &quot;Audio!&quot; (still in German we're afraid - sorry...)
+They are currently very outdated, but may give you a few hints?</P>
+<P>A newer place has now come up as a place for further vbox development.
+Please check it out:
+<CODE>
+<A HREF="http://innominate.org/projects/vbox/index.php3">http://innominate.org/projects/vbox/index.php3</A></CODE></P>
+
+<H2><A NAME="audio_links"></A> <A NAME="ss24.1">24.1</A> <A HREF="i4lfaq.html#toc24.1">audio_links: Where can I find helpful links regarding vbox? </A>
+</H2>
+
+<P>There are several scripts available to be used in connection to vbox,
+but the author is not up to date. Here is the latest one I received
+information about:
+<CODE>
+<A HREF="http://innominate.org/projects/vbox/index.php3">http://innominate.org/projects/vbox/index.php3</A></CODE>
+Please send me information if you know more helpful links, or howtos,
+or whatever useful...</P>
+<P>Also please note the documentation in the kernel source package:
+<CODE>/usr/src/linux/Documentation/isdn/README.audio</CODE></P>
+
+<H2><A NAME="audio_format"></A> <A NAME="ss24.2">24.2</A> <A HREF="i4lfaq.html#toc24.2">audio_format: What is the format of the audio messages (.msg) vbox plays when it answers a call? </A>
+</H2>
+
+<P>You can get the format from the messages with rmdgetheader. The samples
+messages in the packages are recorded using format 4 (the latest
+Zyxel-Compression)</P>
+
+
+<H2><A NAME="audio_recordmsg"></A> <A NAME="ss24.3">24.3</A> <A HREF="i4lfaq.html#toc24.3">audio_recordmsg: How can I record my own messages for vboxgetty? </A>
+</H2>
+
+<P>First call yourself on the number you configured vboxgetty to answer and
+leave a message. Then rename the message to *.msg (standard.msg for the
+main answering message) and copy it to the directory where all the
+messages are kept (usually /var/spool/vbox/user/messages where user is
+the user for which vboxgetty is configured).
+You can also record a message using a microphone and the soundcard.</P>
+
+<H2><A NAME="audio_play"></A> <A NAME="ss24.4">24.4</A> <A HREF="i4lfaq.html#toc24.4">audio_play: How can I play audio messages locally using /dev/audio? </A>
+</H2>
+
+<P>This is best achieved with vbox using format 6 (uLaw - must be compiled
+in). You can then easily play the messages using:
+<HR>
+<PRE>
+cat xxx  /dev/audio
+</PRE>
+<HR>
+
+where xxx is the message-file.</P>
+
+<H2><A NAME="audio_convertto"></A> <A NAME="ss24.5">24.5</A> <A HREF="i4lfaq.html#toc24.5">audio_convertto: How can I convert audio messages which where recorded by vbox to other formats (i.e. from uLaw to WAV)? </A>
+</H2>
+
+<P>The standard tool for converting all sound formats is SOX. SOX is
+available as source code for both UNIX and DOS. You can get it at:</P>
+<P><CODE>
+<A HREF="http://www.powerweb.de/mpeg/util/msdos/sox10c.zip">http://www.powerweb.de/mpeg/util/msdos/sox10c.zip</A></CODE></P>
+<P>(including sources that compile under Linux).</P>
+
+<H2><A NAME="audio_convertfrom"></A> <A NAME="ss24.6">24.6</A> <A HREF="i4lfaq.html#toc24.6">audio_convertfrom: How can I format WAV for uLaw (for my vbox announcement message)? </A>
+</H2>
+
+<P>We receive the following tip form Christian Stueble
+<CODE>
+<A HREF="mailto:stueble@ls6.informatik.uni-dortmund.de">stueble@ls6.informatik.uni-dortmund.de</A></CODE> on 15 Jan 1997:</P>
+<P>For me, the following (somewhat indirect) method works:
+<HR>
+<PRE>
+sox file.wav -r 8000 file.ul rate
+rmdcatheader -u file.ul  file.msg
+cat file.ul  file.msg
+</PRE>
+<HR>
+
+It could be that you have to give different parameters to sox.
+As a first test you can try file.msg  /dev/audio, you should
+be able to hear something.</P>
+
+<H2><A NAME="audio_dtmf"></A> <A NAME="ss24.7">24.7</A> <A HREF="i4lfaq.html#toc24.7">audio_dtmf: How can I improve the recognition of (DTMF) dial tones? </A>
+</H2>
+
+<P>You can adjust the parameters DTMF_TRESH, SILENCE_TRESH, and H2_TRESH in file
+<CODE>linux/drivers/isdn/isdn_audio.c</CODE>. A DTMF tone is recognized
+if the amplitude of the correct frequency is larger than DTMF_TRESH
+and the amplitude of the second harmonian frequency is smaller than
+H2_TRESH.
+If a dial tone is recognized when no dialing took place, try to increase
+DTMF_TRESH and/or decrease H2_TRESH. However, test with many
+telephones - the current parameters were already set after some tuning.</P>
+
+
+
+<H2><A NAME="audio_e0265"></A> <A NAME="ss24.8">24.8</A> <A HREF="i4lfaq.html#toc24.8">audio_e0265: My vboxgetty gets a modem timeout, and reports error E0265. </A>
+</H2>
+
+<P>Probably you need a patch that has been posted recently (8th December 1999)
+on the mailing list.</P>
+
+<H2><A NAME="audio_noanswer"></A> <A NAME="ss24.9">24.9</A> <A HREF="i4lfaq.html#toc24.9">audio_noanswer: My vboxgetty does not answer any incoming calls. </A>
+</H2>
+
+<P>vboxgetty needs &quot;.vboxrc&quot; in the home directory of the user for which
+vboxgetty is configured. The number of rings is taken from this file.</P>
+
+<H2><A NAME="audio_nocat"></A> <A NAME="ss24.10">24.10</A> <A HREF="i4lfaq.html#toc24.10">audio_nocat: If vboxgetty has recorded a message in a format which can not be played using &quot;cat xxx/dev/audio&quot; how can I still hear the message? </A>
+</H2>
+
+<P>Vboxgetty can play all formats. You can copy the message as the
+standard message (standard.msg in the messages directory) and call
+yourself, the message will be played then. (Don't forget to copy back the
+original message when you are done :-) ). See question
+<A HREF="#audio_recordmsg">audio_recordmsg</A>.</P>
+
+<H2><A NAME="audio_earlyrecording"></A> <A NAME="ss24.11">24.11</A> <A HREF="i4lfaq.html#toc24.11">audio_earlyrecording: At the beginning of a message recorded by vboxgetty, there's often a part of my own announcement? </A>
+</H2>
+
+<P>This is a known bug that occurs when switching between the playing of
+the announcement and recording the message. Up to now there is no
+known workaround.</P>
+
+
+
+<HR>
+<A HREF="i4lfaq-25.html">Next</A>
+<A HREF="i4lfaq-23.html">Previous</A>
+<A HREF="i4lfaq.html#toc24">Contents</A>
+</BODY>
+</HTML>

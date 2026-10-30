@@ -1,0 +1,102 @@
+﻿<html dir='ltr'>
+	<head>
+		<META http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+		<title>CHISQDIST</title>
+		<link rel='stylesheet' type='text/css' href='../css/main.css'/>
+		<script type='text/javascript' language='Javascript' src='../js/mexpcol.js'></script>
+		<script type='text/javascript' language='JavaScript' src='../js/glossary.js'></script>
+	</head>
+	<body>
+		<p id='ExpandAllLine' class='ExpFav'>
+			<a href='#' onClick='ExpandAll()' onKeyPress='ExpandAll()' class='DropDown'>
+				<img id='picHeader' border='0' src='../image/image/common/expandtri.gif' alt='모두 표시'>
+				<span id='ExpandAll'>모두 표시</span>
+			</a>
+		</p>
+		<h1>&nbsp;<img align="absbottom" src="../image/external_images/crystal/svtools/res/new_doc.png"/>&nbsp;CHISQDIST</h1>
+		<p><b class="bterm">참고항목</b>&emsp;
+			<a href="5.9.10.1.htm">통계함수목록</a>,
+			<a href="5.9.10.80.htm">CHISQINV</a>
+		</p>
+		<p>루적분포함수의 왼쪽꼬리확률이나 χ²분포의 확률밀도함수의 값을 구합니다.</p>
+		<p><b class="bterm">문법:&emsp;&emsp;		CHISQDIST(수값,자유도,루적)</b></p>
+		<table>
+			<tr>
+				<th>인수명</th>
+				<th>설명</th>
+			</tr>
+			<tr>
+				<td>수값</td>
+				<td>확률밀도함수 또는 루적분포함수를 계산할 값입니다.</td>
+			</tr>
+			<tr>
+				<td>자유도</td>
+				<td>χ²분포의 자유도입니다.</td>
+			</tr>
+			<tr>
+				<td>루적</td>
+				<td>0이나 거짓이면 확률밀도함수를 계산합니다. 다른 값이나 참 혹은 생략한 경우에는 루적분포함수를 계산합니다. 추가선택인수입니다.</td>
+			</tr>
+		</table>
+		<p><b class="bterm">실례</b></p>
+			<p><a href="1.5.1.htm">실례의 리용방법</a>을 참고하십시오.</p>
+			<table>
+				<tr>
+					<td>
+						<table>
+							<tr>
+								<td class="noborder">&nbsp;
+								</td>
+							</tr>
+							<tr>
+								<th>1</th>
+							</tr>
+							<tr>
+								<th>2</th>
+							</tr>
+							<tr>
+								<th>3</th>
+							</tr>
+							<tr>
+								<th>4</th>
+							</tr>
+						</table>
+					</td>
+					<td>
+						<table>
+							<tr>
+								<th>A</th>
+								<th>B</th>
+							</tr>
+							<tr>
+								<th>자료</th>
+								<th>설명</th>
+							</tr>
+							<tr>
+								<td>100</td>
+								<td>분포를 계산하려는 값입니다.</td>
+							</tr>
+							<tr>
+								<td>2</td>
+								<td>자유도입니다.</td>
+							</tr>
+							<tr>
+								<td>1</td>
+								<td>루적에 대한 추가선택인수입니다.</td>
+							</tr>
+							<tr>
+								<th>수식</th>
+								<th>설명(결과)</th>
+							</tr>
+							<tr>
+								<td>=CHISQDIST(A2,A3,A4)</td>
+								<td>루적분포함수의 왼쪽꼬리확률을 구합니다. (1)</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+		<script type="text/javascript" language="Javascript">footerView()</script>
+	
+</body>
+</html>				

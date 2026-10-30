@@ -1,0 +1,177 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <META NAME="GENERATOR" CONTENT="LinuxDoc-Tools 0.9.21">
+ <TITLE>ISDN4LINUX - FAQ (deutsche Version): ttyI: Konfiguration der ttyI* Devices ('Modememulation') </TITLE>
+ <LINK HREF="i4lfaq-de-17.html" REL=next>
+ <LINK HREF="i4lfaq-de-15.html" REL=previous>
+ <LINK HREF="i4lfaq-de.html#toc16" REL=contents>
+</HEAD>
+<BODY>
+<A HREF="i4lfaq-de-17.html">Next</A>
+<A HREF="i4lfaq-de-15.html">Previous</A>
+<A HREF="i4lfaq-de.html#toc16">Contents</A>
+<HR>
+<H2><A NAME="ttyI"></A> <A NAME="s16">16.</A> <A HREF="i4lfaq-de.html#toc16">ttyI: Konfiguration der ttyI* Devices ('Modememulation') </A></H2>
+
+<H2><A NAME="ttyI_nomodem"></A> <A NAME="ss16.1">16.1</A> <A HREF="i4lfaq-de.html#toc16.1">ttyI_nomodem: Die ttyI* Devices emulieren doch ein analoges Modem, oder nicht? </A>
+</H2>
+
+<P>Nein! Die ttyI* Devices bieten nur ein &auml;hnliches
+Kommunikations-Interface, f&uuml;r das alle Befehle mit <EM>AT</EM>
+beginnen. Das vereinfacht die Benutzung alter Software, die f&uuml;r
+Modems geschrieben wurde. <B>Die Verbindung mit einem entfernten
+analogen Modem mittels ttyI* Devices ist nicht m&ouml;glich!</B> Die
+tats&auml;chliche Verbindung l&auml;uft digital, nicht analog.</P>
+
+<H2><A NAME="ttyI_dev"></A> <A NAME="ss16.2">16.2</A> <A HREF="i4lfaq-de.html#toc16.2">ttyI_dev: Welche Devices sollte ich f&uuml;r ausgehende/eingehende Rufe verwenden? </A>
+</H2>
+
+<P>Es sollten nur die ttyI* Devices verwendet werden. Die cui* Devices
+werden nur aus Kompatibilit&auml;tsgr&uuml;nden angelegt. Seit es
+mgetty gibt besteht kein Grund, die cui* Devices weiterhin zu
+benutzen. Bei ihrer Verwendung funktioniert das locking nicht
+einwandfrei (mehrere Programme k&ouml;nnten gleichzeitig versuchen,
+auf das gleiche Device zuzugreifen).</P>
+
+<H2><A NAME="ttyI_hdlc"></A> <A NAME="ss16.3">16.3</A> <A HREF="i4lfaq-de.html#toc16.3">ttyI_hdlc: Wie stelle ich die Modememulation von X.75 um auf HDLC? </A>
+</H2>
+
+<P>Mit der Option S14=3; z.B. 'ATS14=3'.</P>
+
+<H2><A NAME="ttyI_uucp"></A> <A NAME="ss16.4">16.4</A> <A HREF="i4lfaq-de.html#toc16.4">ttyI_uucp: Wie kann ich mit Taylor-UUCP unter Verwendung von ISDN4LINUX Nachrichten holen? </A>
+</H2>
+
+<P>Wie gewohnt, genauso wie mit seriellen Schnittstellen. Benutze einfach
+/dev/ttyI* als Device. Du musst nur die richtige MSN oder EAZ f&uuml;r
+die Modememulation per Init-String setzen: 'AT&amp;Emsn/eaz'.</P>
+
+<H2><A NAME="ttyI_speed"></A> <A NAME="ss16.5">16.5</A> <A HREF="i4lfaq-de.html#toc16.5">ttyI_speed: Welche Geschwindigkeit sollte ich f&uuml;r die ttyI* Devices einstellen? </A>
+</H2>
+
+<P>Das spielt keine Rolle. Der Treiber nutzt intern immer die volle
+Geschwindigkeit von ISDN. Das wird auch in der Verbindungsmeldung
+angezeigt.</P>
+
+<H2><A NAME="ttyI_max"></A> <A NAME="ss16.6">16.6</A> <A HREF="i4lfaq-de.html#toc16.6">ttyI_max: Wieviele Devices werden maximal unterst&uuml;tzt?</A>
+</H2>
+
+<P>Die maximale Anzahl kann w&auml;hrend der Kompilierung mit einem Wert
+f&uuml;r ISDN_MAX gesetzt werden. Z.Zt. ist der Wert auf 64
+voreingestellt, d.h., es werden maximal 64 ttyI Devices
+unterst&uuml;tzt.</P>
+
+
+
+
+<H2><A NAME="ttyI_nocarrier"></A> <A NAME="ss16.7">16.7</A> <A HREF="i4lfaq-de.html#toc16.7">ttyI_nocarrier: Beim W&auml;hlen mit 'ATD.....' bekomme ich immer die Antwort 'NO CARRIER'. </A>
+</H2>
+
+<P>Vor dem W&auml;hlen musst Du den String 'AT&amp;E123456' eingeben
+(wobei 123456 Deiner MSN entspricht; bei 1TR6 muss die einstellige EAZ
+angegeben werden).</P>
+
+
+<H2><A NAME="ttyI_noincall"></A> <A NAME="ss16.8">16.8</A> <A HREF="i4lfaq-de.html#toc16.8">ttyI_noincall: Mein ttyI* Device/pppd registriert keine ankommenden Gespr&auml;che. </A>
+</H2>
+
+<P>Vermutlich hast Du Deiner Modememulation nicht mitgeteilt (mit
+<CODE>AT&amp;E</CODE>), welche MSN benutzt werden soll. Wenn Deine MSN
+z.B. 123456 lautet, musst Du <CODE>AT&amp;E123456</CODE> eingeben.</P>
+
+<H2><A NAME="ttyI_callphone"></A> <A NAME="ss16.9">16.9</A> <A HREF="i4lfaq-de.html#toc16.9">ttyI_callphone: Warum kann ich nicht &uuml;ber die ttyI* Devices mit meinem Telefon oder Fax w&auml;hlen? </A>
+</H2>
+
+<P>Das kannst Du. ISDN unterscheidet jedoch die verschiedenen
+Dienste. Alle &uuml;ber die ttyI* Devices hinausgehenden Rufe benutzen
+den Dienst 'Digital Data', der zu Telefon und Fax inkompatibel
+ist. Dadurch geht der Ruf nie hinaus. &Auml;ndere die Diensteerkennung
+mit dem Befehl <CODE>ATS18=1</CODE> auf Audio, dann kannst Du das Telefon
+oder das Fax w&auml;hlen lassen.</P>
+
+<H2><A NAME="ttyI_noconnect"></A> <A NAME="ss16.10">16.10</A> <A HREF="i4lfaq-de.html#toc16.10">ttyI_noconnect: Ich bekomme keine Verbindung zu meiner ISDN Mailbox/BBS. </A>
+</H2>
+
+<P>Da gibt es mehrere m&ouml;gliche Protokolleinstellungen. Es gibt HDLC,
+X.75 und mehrere m&ouml;gliche Blockgr&ouml;&szlig;en bei X.75. Die
+Blockgr&ouml;&szlig;e &uuml;bergibst Du der Modememulation mit
+<CODE>AT&amp;B</CODE>. Gebr&auml;uchlich ist eine Blockgr&ouml;&szlig;e
+von 2048 Byte: <CODE>AT&amp;B2048</CODE>.</P>
+
+<H2><A NAME="ttyI_forcehangup"></A> <A NAME="ss16.11">16.11</A> <A HREF="i4lfaq-de.html#toc16.11">ttyI_forcehangup: Meine Modememulation h&auml;ngt. Wie kann ich meine Karte zum Auflegen zwingen? </A>
+</H2>
+
+<P>Wenn tats&auml;chlich kein Prozess mehr Deine Modememulation benutzt,
+versuche dieses:
+<HR>
+<PRE>
+cu -l /dev/ttyI0 dir
++++
+ath0
+~.
+</PRE>
+<HR>
+
+Vor und nach '+++' musst Du eine Sekunde warten, sonst erkennt Deine
+Modememulation die Escapesequenz nicht (wie bei einem normalen
+Modem). Beachte Prozesse (mit 'ps -ax'), die sowas wie 'I0' oder 'I1'
+in der zweiten Spalte zeigen. Sie haben ein ISDN Terminal als
+kontrollierendes Terminal. Du musst sie eventuell mit kill beenden.</P>
+
+
+<H2><A NAME="ttyI_channelclosed"></A> <A NAME="ss16.12">16.12</A> <A HREF="i4lfaq-de.html#toc16.12">ttyI_channelclosed: W&auml;hrend einer Verbindung &uuml;ber ttyI bekomme ich eine Meldung des Kernels: 'teles_writebuf: channel not open'. Danach wird keine Eingabe mehr von der Verbindung angenommen. </A>
+</H2>
+
+<P>Das kann geschehen, wenn der Partner die gro&szlig;en Frames von I4L
+nicht annehmen kann und den B-Kanal w&auml;hrend der &Uuml;bertragung
+schlie&szlig;t. Versuche, die Frames mit 'AT&amp;B512' zu verkleinern.</P>
+
+<H2><A NAME="ttyI_uucp"></A> <A NAME="ss16.13">16.13</A> <A HREF="i4lfaq-de.html#toc16.13">ttyI_uucp: Beim Gebrauch von UUCP mit X.75 bekomme ich immer &Uuml;bertragungsfehler! </A>
+</H2>
+
+<P>Andreas Gutzwiller <CODE>
+<A HREF="mailto:andy@hippo.proxyon.imp.com">andy@hippo.proxyon.imp.com</A></CODE> schrieb am 5. Dezember 1996:
+<BLOCKQUOTE>
+Ich musste folgende Einstellungen benutzen, sonst bekam ich nur
+Fehlermeldungen.
+<HR>
+<PRE>
+# Prot
+protocol-parameter g packet-size 512
+protocol-parameter g short-packets y
+protocol-parameter g window 7
+protocol-parameter g remote-window 7
+protocol-parameter v packet-size 512
+</PRE>
+<HR>
+
+Nun erreiche ich mit gro&szlig;en Paketen ca. 7300 cps.
+</BLOCKQUOTE>
+
+Holger Burbach <CODE>
+<A HREF="mailto:holly@cthulhu.pfalz.de">holly@cthulhu.pfalz.de</A></CODE> bot am 5. Februar 1997 eine andere
+L&ouml;sung an:
+<BLOCKQUOTE>
+Ich habe mehrere XP-User, die ohne Probleme pollen. Ich tat das
+Folgende: Zuerst setzte ich die Gr&ouml;&szlig;e der zu sendenden
+Pakete f&uuml;r ttyI? auf 1024 ('AT&amp;B1024') und anschlie&szlig;end
+die Paketgr&ouml;&szlig;e f&uuml;r das g Protokoll in UUCP:
+<HR>
+<PRE>
+protocol-parameter g packet-size 2048
+protocol-parameter g remote-packet-size 0
+</PRE>
+<HR>
+
+Wie gesagt, es funktioniert gut..
+</BLOCKQUOTE>
+</P>
+
+
+
+<HR>
+<A HREF="i4lfaq-de-17.html">Next</A>
+<A HREF="i4lfaq-de-15.html">Previous</A>
+<A HREF="i4lfaq-de.html#toc16">Contents</A>
+</BODY>
+</HTML>

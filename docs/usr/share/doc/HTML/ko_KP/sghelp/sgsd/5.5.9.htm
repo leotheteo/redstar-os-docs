@@ -1,0 +1,55 @@
+﻿<html dir='ltr'>
+	<head>
+		<META http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+		<title>정렬에서 발생하는 문제의 해결</title>
+		<link rel='stylesheet' type='text/css' href='../css/main.css'/>
+		<script type='text/javascript' language='Javascript' src='../js/mexpcol.js'></script>
+		<script type='text/javascript' language='JavaScript' src='../js/glossary.js'></script>
+	</head>
+	<body>
+		<h1>&nbsp;<img align="absbottom" src="../image/external_images/crystal/svtools/res/new_doc.png"/>&nbsp;정렬에서 발생하는 문제의 해결</h1>
+		<p id='ExpandAllLine' class='ExpFav'>
+			<a href='#' onClick='ExpandAll()' onKeyPress='ExpandAll()' class='DropDown'>
+				<img id='picHeader' border='0' src='../image/image/common/expandtri.gif' alt='모두 표시'>
+				<span id='ExpandAll'>모두 표시</span>
+			</a>
+		</p>
+		<ul>
+			<li><b class="bterm">기본정렬순서규칙을 확인</b>
+				<p><a href='5.5.7.htm'><b class="bterm">기본정렬순서</b></a>를 참고하십시오.</p>
+			</li>
+			<li><b class="bterm">본문과 수자가 혼합된 자료에 본문서식을 지정했는가를 확인</b>
+				<p>정렬할 렬에 수자와 본문문자가 들어있는 수자(례: 100, 100a, 200, 200a)가 있는 경우 모두 본문으로 서식을 지정해야 합니다. 
+					그렇지 않은 경우 수자가 먼저 정렬되고 그다음으로 본문이 포함된 수자가 정렬됩니다. 
+					수자에 본문서식을 지정하려면 <b class="bterm">&lt;서식&gt;</b>차림표에서 <b class="bterm">&lt;세포&gt;</b>를 찰칵하고 <b class="bterm">&lt;수자&gt;</b>표쪽을 찰칵한 다음 <b class="bterm">&lt;종류&gt;</b>목록에서 <b class="bterm">&lt;본문&gt;</b>을 선택하고 <b class="bterm">&lt;확인&gt;</b>단추를 찰칵합니다. 
+					그다음 세포에 값을 다시 입력합니다. 새로운 자료를 입력할 때 수자를 본문처럼 입력하려면 먼저 세포에 본문서식을 지정한 다음에 입력을 시작합니다.
+				</p>
+			</li>
+			<li><b class="bterm">날자와 시간의 서식확인</b>
+				<P>표용지에서는 날자와 시간이 수자로 처리됩니다. 표용지가 인식하는 날자와 시간을 입력하면 세포의 서식은 일반 수자서식에서 기본제공날자 또는 시간서식으로 바뀝니다. 
+					정렬을 옳게 진행하려면 렬에 있는 모든 날자와 시간은 해당 서식을 사용해야 합니다. 값이 날자나 시간, 수자로 인식되지 않으면 본문으로 서식이 지정됩니다. 
+					서식을 정확하게 지정하려면 세포를 선택하고 <b class="bterm">&lt;서식&gt;</b>차림표에서 <b class="bterm">&lt;세포&gt;</b>를 찰칵한 다음 <b class="bterm">&lt;수자&gt;</b>표쪽을 찰칵합니다. 
+					세포서식이 본문으로 지정된 경우 <b class="bterm">&lt;날자&gt;</b>나 <b class="bterm">&lt;시간&gt;</b>을 찰칵하고 적절한 형식을 선택한 다음 <b class="bterm">&lt;확인&gt;</b>단추를 찰칵합니다. 
+					그다음 선택한 서식의 세포에 값을 다시 입력합니다.
+				</P>
+			</li>
+			<li><b class="bterm">정렬하기 전에 행/렬 숨기기 취소</b>
+				<p>행이나 렬을 정렬할 때 숨겨진 행이나 렬은 이동하지 않습니다. 
+					그러나 행을 정렬할 때 숨겨진 렬에 있는 자료도 정렬되고 반대로 렬을 정렬할 때 숨겨진 행에 있는 자료도 정렬됩니다. 
+					범위를 정렬하기 전에 숨겨진 행과 렬의 숨기기를 취소하십시오.
+				</p>
+			</li>
+			<li><b class="bterm">앞에 있는 공백 제거</b>
+				<p>다른 응용프로그람에서 반입한 자료앞에 공백이 있으면 자료를 정렬하기 전에 공백을 제거합니다.</p>
+			</li>
+			<li><b class="bterm">지역설정 확인</b>
+				<p>정렬순서는 언어설정에 따라 달라집니다.</p>
+			</li>
+			<li><b class="bterm">하나의 행에만 렬표식자 입력</b>
+				<p>긴 표식자의 경우 해당 세포안에서 행바꾸기를 진행합니다.</p>
+			</li>
+		</ul>
+		<script type="text/javascript" language="Javascript">footerView()</script>
+	
+</body>
+</html>

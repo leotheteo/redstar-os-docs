@@ -1,0 +1,110 @@
+<html dir='ltr'>
+	<head>
+		<META http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+		<title>POISSON</title>
+		<link rel='stylesheet' type='text/css' href='../css/main.css'/>
+		<script type='text/javascript' language='Javascript' src='../js/mexpcol.js'></script>
+		<script type='text/javascript' language='JavaScript' src='../js/glossary.js'></script>
+	</head>
+	<body>
+		<h1>&nbsp;<img align="absbottom" src="../image/external_images/crystal/svtools/res/new_doc.png"/>&nbsp;POISSON</h1>
+		<p id='ExpandAllLine' class='ExpFav'>
+			<a href='#' onClick='ExpandAll()' onKeyPress='ExpandAll()' class='DropDown'>
+				<img id='picHeader' border='0' src='../image/image/common/expandtri.gif' alt='모두 표시'>
+				<span id='ExpandAll'>모두 표시</span>
+			</a>
+		</p>
+		<p><b class="bterm">참고항목</b>&emsp;
+			<a href="5.9.10.1.htm">통계함수목록</a>
+		</p>
+		<p>뽜쏭분포를 구합니다.</p>
+		<p><b class="bterm">문법:&emsp;&emsp;		POISSON(수값,평균값,류형)</b></p>
+		<table>
+			<tr>
+				<th>인수명</th>
+				<th>설명</th>
+			</tr>
+			<tr>
+				<td>수값</td>
+				<td>뽜쏭분포를 계산할 값입니다.</td>
+			</tr>
+			<tr>
+				<td>평균값</td>
+				<td>평균값입니다. 뽜쏭분포의 평균값입니다.</td>
+			</tr>
+			<tr>
+				<td>류형</td>
+				<td>적분류형입니다. 구하는 확률분포의 <b class="bterm">류형</b>을 결정하는 론리값으로서 1이면 발생한 임의의 사건 수가 0부터 <b class="bterm">수값</b>사이에 있는 루적뽜쏭확률분포함수를 구하고 0이면 사건발생수가 정확히 <b class="bterm">수값</b>개인 뽜쏭확률 밀도함수를 구합니다.</td>
+			</tr>
+		</table>
+		<p><b class="bterm">주의</b></p>
+			<ul>
+				<li><b class="bterm">수값</b>이 옹근수가 아니면 옹근수로 변환됩니다.</li>
+				<li><b class="bterm">수값</b>이 0보다 작으면 <b class="bterm">오유:[오유번호]</b>를 표시합니다.</li>
+				<li><b class="bterm">평균값</b>이 0이하이면 <b class="bterm">오유:[오유번호]</b>를 표시합니다.</li>
+				<li><b class="bterm">POISSON</b>함수식은 다음과 같습니다. 다음식들에서 x는 <b class="bterm">수값</b>입니다.
+					<p><b class="bterm">류형</b>이 0이면</p>
+					<p><img border='0' src='../image/image/sgsd/formula-66.gif' alt='표시'></p>
+					<p><b class="bterm">류형</b>이 1이면</p>
+					<p><img border='0' src='../image/image/sgsd/formula-67.gif' alt='표시'></p>
+				</li>
+			</ul>
+		<p><b class="bterm">실례</b></p>
+			<p><a href="1.5.1.htm">실례의 리용방법</a>을 참고하십시오.</p>
+			<table>
+				<tr>
+					<td>
+						<table>
+							<tr>
+								<td class="noborder">&nbsp;
+								</td>
+							</tr>
+							<tr>
+								<th>1</th>
+							</tr>
+							<tr>
+								<th>2</th>
+							</tr>
+							<tr>
+								<th>3</th>
+							</tr>
+						</table>
+					</td>
+					<td>
+						<table>
+							<tr>
+								<th>A</th>
+								<th>B</th>
+							</tr>
+							<tr>
+								<th>자료</th>
+								<th>설명</th>
+							</tr>
+							<tr>
+								<td>2</td>
+								<td>사건개수입니다.</td>
+							</tr>
+							<tr>
+								<td>5</td>
+								<td>평균값입니다.</td>
+							</tr>
+							<tr>
+								<th>수식</th>
+								<th>설명(결과)</th>
+							</tr>
+							<tr>
+								<td>=POISSON(A2,A3,1)</td>
+								<td>우에 있는 조건에서의 루적뽜쏭확률입니다. (0.12)</td>
+							</tr>
+							<tr>
+								<td>=POISSON(A2,A3,0)</td>
+								<td>우에 있는 조건에서의 뽜쏭확률밀도함수값입니다. (0.08)</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+		<script type="text/javascript" language="Javascript">footerView()</script>
+	
+</body>
+</html>				

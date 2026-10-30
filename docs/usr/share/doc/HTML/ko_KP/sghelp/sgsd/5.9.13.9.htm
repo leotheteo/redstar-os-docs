@@ -1,0 +1,110 @@
+<html dir='ltr'>
+	<head>
+		<META http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+		<title>COMPLEX</title>
+		<link rel='stylesheet' type='text/css' href='../css/main.css'/>
+		<script type='text/javascript' language='Javascript' src='../js/mexpcol.js'></script>
+		<script type='text/javascript' language='JavaScript' src='../js/glossary.js'></script>
+	</head>
+	<body>
+		<h1>&nbsp;<img align="absbottom" src="../image/external_images/crystal/svtools/res/new_doc.png"/>&nbsp;COMPLEX</h1>
+		<p id='ExpandAllLine' class='ExpFav'>
+			<a href='#' onClick='ExpandAll()' onKeyPress='ExpandAll()' class='DropDown'>
+				<img id='picHeader' border='0' src='../image/image/common/expandtri.gif' alt='모두 표시'>
+				<span id='ExpandAll'>모두 표시</span>
+			</a>
+		</p>
+		<p><b class="bterm">참고항목</b>&emsp;
+			<a href="5.9.13.1.htm">추가함수목록</a>,
+			<a href="5.9.13.22.htm">IMABS</a>,
+			<a href="5.9.13.23.htm">IMAGINARY</a>,
+			<a href="5.9.13.34.htm">IMREAL</a>
+		</p>
+		<p>실수와 허수를 복소수로 변환합니다.</p>
+		<p><b class="bterm">문법:&emsp;&emsp;		COMPLEX(실수,허수,첨수)</b></p>
+		<table>
+			<tr>
+				<th>인수명</th>
+				<th>설명</th>
+			</tr>
+			<tr>
+				<td>실수</td>
+				<td>복소수의 실수입니다.</td>
+			</tr>
+			<tr>
+				<td>허수</td>
+				<td>복소수의 허수입니다.</td>
+			</tr>
+			<tr>
+				<td>첨수</td>
+				<td>복소수의 첨수입니다. 추가선택인수입니다. 생략하면 《i》가 사용됩니다.</td>
+			</tr>
+		</table>
+		<p><b class="bterm">참고:</b>   모든 복소수함수에서 첨수로 《i》 와 《j》를 사용할수 있지만 《I》 와 《J》는 사용할수 없습니다. 대문자를 사용하면 <b class="bterm">오유:[오유번호]</b>가 반환됩니다. 두개이상의 복소수를 사용하는 함수는 모두 동일한 복소수첨수를 사용해야 합니다.</p>
+		<p><b class="bterm">주의</b></p>
+			<ul>
+				<li><b class="bterm">실수</b>가 수자가 아니면 #<b class="bterm">NAME?</b>오유가 반환됩니다.</li>
+				<li><b class="bterm">허수</b>가 수자가 아니면 #<b class="bterm">NAME?</b>오유가 반환됩니다.</li>
+				<li><b class="bterm">첨수</b>가 《i》 또는 《j》가 아니면 <b class="bterm">오유:[오유번호]</b>가 반환됩니다.</li>
+			</ul>
+		<p><b class="bterm">실례</b></p>
+			<p><a href="1.5.1.htm">실례의 리용방법</a>을 참고하십시오.</p>
+			<table>
+				<tr>
+					<td>
+						<table>
+							<tr>
+								<td class="noborder">&nbsp;
+								</td>
+							</tr>
+							<tr>
+								<th>1</th>
+							</tr>
+							<tr>
+								<th>2</th>
+							</tr>
+							<tr>
+								<th>3</th>
+							</tr>
+							<tr>
+								<th>4</th>
+							</tr>
+							<tr>
+								<th>5</th>
+							</tr>
+						</table>
+					</td>
+					<td>
+						<table>
+							<tr>
+								<th>A</th>
+								<th>B</th>
+							</tr>
+							<tr>
+								<th>수식</th>
+								<th>설명(결과)</th>
+							</tr>
+							<tr>
+								<td>=COMPLEX(3,4)</td>
+								<td>실수와 허수를 3과 4로 가지는 복소수입니다. (3 + 4i)</td>
+							</tr>
+							<tr>
+								<td>=COMPLEX(3,4,"j")</td>
+								<td>실수와 허수를 3과 4로, 첨수가 j로 되는 복소수입니다. (3 + 4j)</td>
+							</tr>
+							<tr>
+								<td>=COMPLEX(0,1)</td>
+								<td>실수와 허수를 0과 1로 가지는 복소수입니다. (i)</td>
+							</tr>
+							<tr>
+								<td>=COMPLEX(1,0)</td>
+								<td>실수와 허수를 1과 0으로 가지는 복소수입니다. (1)</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+		<script type="text/javascript" language="Javascript">footerView()</script>
+	
+</body>
+</html>				

@@ -1,0 +1,137 @@
+﻿<html dir='ltr'>
+	<head>
+		<META http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+		<title>HYPGEOMDIST</title>
+		<link rel='stylesheet' type='text/css' href='../css/main.css'/>
+		<script type='text/javascript' language='Javascript' src='../js/mexpcol.js'></script>
+		<script type='text/javascript' language='JavaScript' src='../js/glossary.js'></script>
+	</head>
+	<body>
+		<h1>&nbsp;<img align="absbottom" src="../image/external_images/crystal/svtools/res/new_doc.png"/>&nbsp;HYPGEOMDIST</h1>
+		<p id='ExpandAllLine' class='ExpFav'>
+			<a href='#' onClick='ExpandAll()' onKeyPress='ExpandAll()' class='DropDown'>
+				<img id='picHeader' border='0' src='../image/image/common/expandtri.gif' alt='모두 표시'>
+				<span id='ExpandAll'>모두 표시</span>
+			</a>
+		</p>
+		<p><b class="bterm">참고항목</b>&emsp;
+			<a href="5.9.10.1.htm">통계함수목록</a>,
+			<a href="5.9.10.8.htm">BINOMDIST</a>,
+			<a href="5.9.8.13.htm">COMBIN</a>,
+			<a href="5.9.8.25.htm">FACT</a>,
+			<a href="5.9.10.44.htm">NEGBINOMDIST</a>,
+			<a href="5.9.10.52.htm">PERMUT</a>
+		</p>
+		<p>초기하분포값을 구합니다.</p>
+		<p><b class="bterm">문법:&emsp;&emsp;		HYPGEOMDIST(X,표본크기,성공회수,모집단크기)</b></p>
+		<table>
+			<tr>
+				<th>인수명</th>
+				<th>설명</th>
+			</tr>
+			<tr>
+				<td>X</td>
+				<td>표본집단에서의 성공회수입니다.</td>
+			</tr>
+			<tr>
+				<td>표본크기</td>
+				<td>표본집단의 크기입니다</td>
+			</tr>
+			<tr>
+				<td>성공회수</td>
+				<td>모집단에서의 성공회수입니다.</td>
+			</tr>
+			<tr>
+				<td>모집단크기</td>
+				<td>모집단의 크기입니다.</td>
+			</tr>
+		</table>
+		<p><b class="bterm">주의</b></p>
+			<ul>
+				<li>모든 인수는 소수점이하를 잘라서 옹근수로 변환합니다.</li>
+				<li>인수가 수자가 아니면 <b class="bterm">오유:[오유번호]</b>를 반환합니다.</li>
+				<li><b class="bterm">X</b>가 부수이거나 <b class="bterm">표본크기</b>와 <b class="bterm">성공회수</b>중 작은 값보다 크면 <b class="bterm">오유:[오유번호]</b>를 반환합니다.</li>
+				<li><b class="bterm">X</b>가 0과 (<b class="bterm">표본크기</b> - <b class="bterm">모집단크기</b> + <b class="bterm">성공회수</b>)중에서 큰 값보다 작으면 <b class="bterm">오유:[오유번호]</b>를 반환합니다.</li>
+				<li><b class="bterm">표본크기</b> < 0이거나 <b class="bterm">표본크기</b> > <b class="bterm">모집단크기</b>이면 <b class="bterm">오유:[오유번호]</b>를 반환합니다.</li>
+				<li><b class="bterm">성공회수</b> < 0이거나 <b class="bterm">성공회수</b> > <b class="bterm">모집단크기</b>이면 <b class="bterm">오유:[오유번호]</b>를 반환합니다.</li>
+				<li><b class="bterm">모집단크기</b> < 0이면 <b class="bterm">오유:[오유번호]</b>를 반환합니다.</li>
+				<li>초기하분포식은 다음과 같습니다.
+					<p><img border='0' src='../image/image/sgsd/formula-55.gif' alt='표시'></p>
+					<p>여기서</p>
+					<p><b class="bterm">x</b> = <b class="bterm">X</b></p>
+					<p><b class="bterm">n</b> = <b class="bterm">표본크기</b></p>
+					<p><b class="bterm">M</b> = <b class="bterm">성공회수</b></p>
+					<p><b class="bterm">N</b> = <b class="bterm">모집단크기</b></p>
+					<p><b class="bterm">HYPGEOMDIST</b>함수는 유한 모집단에서 표본이 비반복으로 추출될 때 사용됩니다.</p>
+				</li>
+			</ul>
+		<p><b class="bterm">실례</b></p>
+			<p><a href="1.5.1.htm">실례의 리용방법</a>을 참고하십시오.</p>
+			<p>사탕표본20종이 있습니다. 8종은 우유사탕이고 나머지12종은 쨤사탕입니다. 한 사람이 4종을 임의로 선택했을 때 다음함수는 정확히 한 종류가 우유사탕일수 있는 확률을 구합니다.</p>
+			<table>
+				<tr>
+					<td>
+						<table>
+							<tr>
+								<td class="noborder">&nbsp;
+								</td>
+							</tr>
+							<tr>
+								<th>1</th>
+							</tr>
+							<tr>
+								<th>2</th>
+							</tr>
+							<tr>
+								<th>3</th>
+							</tr>
+							<tr>
+								<th>4</th>
+							</tr>
+							<tr>
+								<th>5</th>
+							</tr>
+						</table>
+					</td>
+					<td>
+						<table>
+							<tr>
+								<th>A</th>
+								<th>B</th>
+							</tr>
+							<tr>
+								<th>자료</th>
+								<th>설명</th>
+							</tr>
+							<tr>
+								<td>1</td>
+								<td>표본의 성공회수입니다.</td>
+							</tr>
+							<tr>
+								<td>4</td>
+								<td>표본크기입니다.</td>
+							</tr>
+							<tr>
+								<td>8</td>
+								<td>모집단의 성공회수입니다.</td>
+							</tr>
+							<tr>
+								<td>20</td>
+								<td>모집단크기입니다.</td>
+							</tr>
+							<tr>
+								<th>수식</th>
+								<th>설명(결과)</th>
+							</tr>
+							<tr>
+								<td>=HYPGEOMDIST(A2,A3,A4,A5)</td>
+								<td>우에 있는 표본 및 모집단의 초기하분포입니다. (0.36)</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+		<script type="text/javascript" language="Javascript">footerView()</script>
+	
+</body>
+</html>				

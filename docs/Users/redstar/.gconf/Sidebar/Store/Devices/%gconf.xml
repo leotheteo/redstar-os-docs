@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<gconf>
+	<entry name="RemovedDevices" mtime="1793385077" type="list" ltype="string">
+	</entry>
+	<entry name="FixedDevices" mtime="1793385077" type="list" ltype="string">
+		<li type="string">
+			<stringvalue>media:/</stringvalue>
+		</li>
+		<li type="string">
+			<stringvalue>media:/sda1</stringvalue>
+		</li>
+	</entry>
+</gconf>

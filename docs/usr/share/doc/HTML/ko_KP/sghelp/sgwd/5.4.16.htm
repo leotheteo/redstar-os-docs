@@ -1,0 +1,48 @@
+<html dir='ltr'>
+	<head>
+		<META http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+		<title>항목기호 및 항목번호목록에서 발생하는 문제의 해결</title>
+		<link rel='stylesheet' type='text/css' href='../css/main.css'/>
+		<script type='text/javascript' language='Javascript' src='../js/mexpcol.js'></script>
+		<script type='text/javascript' language='JavaScript' src='../js/glossary.js'></script>
+	</head>
+	<body>
+		<h1>&nbsp;<img align="absbottom" src="../image/external_images/crystal/svtools/res/new_doc.png"/>&nbsp;항목기호 및 항목번호목록에서 발생하는 문제의 해결</h1>
+		<p id="ExpandAllLine" class="ExpFav">
+			<a href="#" onClick="ExpandAll()" onKeyPress="ExpandAll()" class="DropDown">
+				<img id="picHeader" border="0" src="../image/image/common/expandtri.gif" alt="모두 표시">
+				<span id="ExpandAll">모두 표시</span>
+			</a>
+		</p>
+		<p><b class="bterm">행마다 항목기호나 번호가 매겨져있는 경우</b></p>
+		<p>항목기호나 번호를 추가하지 않고 목록에서 항목기호나 번호항목의 아래에 본문을 추가하려면 유표를 목록항목끝에 놓고 <b class="bterm">[Shift+Enter]</b>건을 누릅니다.
+			새 행의 들여쓰기와 맞추기는 이전 행 본문의 서식을 따르게 됩니다.
+		</p>
+		<p><b class="bterm">목록에서 사용자정의서식의 변경내용이 사라지는 경우</b></p>
+		<p><b class="bterm">&lt;항목기호 및 항목번호&gt;</b>대화창의 <b class="bterm">&lt;항목기호&gt;</b> 및 <b class="bterm">&lt;항목번호&gt;</b>표쪽에 현시되는 목록서식은 
+			기본<b class="bterm">&lt;항목기호&gt;</b>와 <b class="bterm">&lt;항목번호&gt;</b><a href="#" class="glossary" onClick="AppendPopup(this,'IDG_STYLE')" onKeyPress="AppendPopup(this,'IDG_STYLE')">격식</a>을 기준으로 한것입니다.
+			이러한 기정격식으로 사용자정의격식을 만들면 문서간에 격식을 복사하거나 문서처리프로그람을 다시 시작할 때 사용자정의서식이 사라질수 있습니다.
+		</p>
+		<ul>
+			<li>
+				<b class="bterm">새 문서의 사용자정의 항목번호격식의 수정</b>   사용자정의 항목번호격식을 문서간에 복사하면 번호가 사라질수 있습니다.
+				새 문서에 목록번호가 추가되도록 사용자정의격식을 수정할수 있습니다.
+			</li>
+			<li>
+				<b class="bterm">기정목록격식을 사용하지 않고 사용자정의 항목기호나 항목번호격식을 만들기</b>   문서를 닫고 문서처리프로그람을 다시 시작하면 사용자정의 변경내용이 사라질수 있습니다.
+				서식변경내용을 유지하려면 <a href="#" class="glossary" onClick="AppendPopup(this,'IDG_DEFAULTSTYLE')" onKeyPress="AppendPopup(this,'IDG_DEFAULTSTYLE')">기정격식</a>을 사용하지 않은 새 격식을 만들어야 합니다.
+				<b class="bterm">&lt;격식 및 서식&gt;</b>작업창에서 마우스의 오른쪽단추를 찰칵하여 현시되는 상황차림표에서 <b class="bterm">&lt;새로&gt;</b>를 찰칵하고 이름본문칸에 이름을 입력합니다.
+			</li>
+			<li>
+				<b class="bterm">사용자정의 항목기호 및 항목번호 격식이 포함된 새 형판을 만들기</b>   사용자정의 항목기호목록이나 항목번호목록서식을 다시 사용하기 위해 보관하려는 경우 <b class="bterm">&lt;항목기호&gt;</b>나 <b class="bterm">&lt;항목번호&gt;</b>격식을 수정하여 요구하는 서식을 사용할수 있습니다.
+				문서를 만들 때 사용할 <a href="#" class="glossary" onClick="AppendPopup(this,'IDG_FORMATFILE')" onKeyPress="AppendPopup(this,'IDG_FORMATFILE')">형판</a>을 열고 새 형판에서 격식을 수정한 다음 형판을 보관합니다. 이 형판으로 새 문서를 만들면 갱신된 목록격식이 포함됩니다. 항목기호나 항목번호를 적용할 단락에 격식을 적용합니다.
+			</li>
+		</ul>
+		<p><b class="bterm">항목번호륜곽을 설정했지만 제목에 번호가 매겨지지 않는 경우</b></p>
+		<p>기정<a href="#" class="glossary" onClick="AppendPopup(this,'IDG_TITLESTYLE')" onKeyPress="AppendPopup(this,'IDG_TITLESTYLE')">제목격식</a>으로 제목의 서식을 설정했는지 확인하십시오.
+			문서의 제목서식이 사용자정의격식으로 설정된 경우에는 매개 사용자정의격식을 항목번호륜곽준위로 련결해야 합니다.
+		</p>
+		<script type="text/javascript" language="Javascript">footerView()</script>
+	
+</body>
+</html>

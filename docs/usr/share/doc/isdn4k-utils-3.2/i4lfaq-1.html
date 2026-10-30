@@ -1,0 +1,114 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <META NAME="GENERATOR" CONTENT="LinuxDoc-Tools 0.9.21">
+ <TITLE>FAQ for isdn4linux: general: General information about isdn4linux </TITLE>
+ <LINK HREF="i4lfaq-2.html" REL=next>
+
+ <LINK HREF="i4lfaq.html#toc1" REL=contents>
+</HEAD>
+<BODY>
+<A HREF="i4lfaq-2.html">Next</A>
+Previous
+<A HREF="i4lfaq.html#toc1">Contents</A>
+<HR>
+<H2><A NAME="general"></A> <A NAME="s1">1.</A> <A HREF="i4lfaq.html#toc1">general: General information about isdn4linux </A></H2>
+
+<H2><A NAME="general_i4l"></A> <A NAME="ss1.1">1.1</A> <A HREF="i4lfaq.html#toc1.1">general_i4l: What is isdn4linux? </A>
+</H2>
+
+<P>isdn4linux is a set of kernel modules which are part of the Linux
+kernel. It consists of the main module <CODE>isdn</CODE> and the
+actual hardware driver that control some specific card.
+In addition, the package <CODE>isdn4k-utils</CODE> contains utilities to
+make use of ISDN specific features.
+Please note that since kernel 2.6.0 isdn4linux is considered legacy.
+It has been superseded by the new mISDN drivers (see question
+<A HREF="#general_misdn">general_misdn</A>.</P>
+
+<H2><A NAME="general_misdn"></A> <A NAME="ss1.2">1.2</A> <A HREF="i4lfaq.html#toc1.2">general_misdn: What is mISDN? </A>
+</H2>
+
+<P>mISDN is the successor of isdn4linux, and also consists of kernel modules
+that are part of the Linux kernel. The mISDN modules have been rewritten
+from scratch since the old isdn4linux modules were difficult to maintain.</P>
+<P>The new mISDN modules are based on the CAPI interface (see question
+<A HREF="i4lfaq-3.html#feature_capi">feature_capi</A> for more details on the CAPI
+interface). Not all ISDN cards supported by isdn4linux have been/will be
+ported to mISDN. However, it is planned to create a compatibility layer to
+allow migration of the existing isdn4linux drivers. Also, ipppd would be
+replaced by the standard pppd once pppd works as well as ipppd currently does.
+For the moment, isdn4linux can still be used in parallel with mISDN, but this
+may change in the future.</P>
+<P>For more technical and configuration information about the mISDN driver
+see question 
+<A HREF="i4lfaq-6.html#config_misdn">config_misdn</A>.</P>
+
+<H2><A NAME="general_hardware"></A> <A NAME="ss1.3">1.3</A> <A HREF="i4lfaq.html#toc1.3">general_hardware: What hardware is supported by isdn4linux? </A>
+</H2>
+
+<P>Generally, isdn4linux can control ISDN cards that are connected to the PC's
+ISA or PCI bus. Also a few PCMCIA cards are supported. However, isdn4linux can
+<B>not</B> make use of any devices connected via a serial or parallel
+interface (which are called 'terminal adaptors'), with only a few exceptions:
+the Creatix/Teles S0 box for the parallel port, and the Gazel 128 USB.
+For more details on which cards are supported see section
+<A HREF="i4lfaq-5.html#hardware">hardware</A>.</P>
+
+<H2><A NAME="general_features"></A> <A NAME="ss1.4">1.4</A> <A HREF="i4lfaq.html#toc1.4">general_features: What features are supported by isdn4linux? </A>
+</H2>
+
+<P>Basically, isdn4linux can receive and transmit data via ISDN in several ways
+(X.75, HDLC, raw ip, synchronous ppp, asynchronous ppp, V.110). Some of its
+utilities offer additional features. Two examples are <CODE>isdnlog</CODE>, which
+allows logging of and reaction to ISDN events (including calculating any charges);
+and <CODE>vbox</CODE>, which provides voice answering machine capabilities. For more
+details see the section 
+<A HREF="i4lfaq-3.html#feature">feature</A>.</P>
+
+<H2><A NAME="general_countries"></A> <A NAME="ss1.5">1.5</A> <A HREF="i4lfaq.html#toc1.5">general_countries: Which countries are supported by isdn4linux? </A>
+</H2>
+
+<P>At least all countries which use Euro-ISDN are supported, however some
+pecularities apply. To find more about your country, check the section
+<A HREF="i4lfaq-25.html#countries">countries</A>.</P>
+
+<H2><A NAME="general_docu"></A> <A NAME="ss1.6">1.6</A> <A HREF="i4lfaq.html#toc1.6">general_docu: Where do I find more documentation, how-to's, helpful tips &amp; tricks? </A>
+</H2>
+
+<P>Besides this FAQ, take a look at the various man pages and Readme's that come
+with the isdn4linux package. Then there is the isdn4linux website:
+<A HREF="http://www.isdn4linux.de">http://www.isdn4linux.de</A>. There is also a mailing list on
+isdn4linux which will give you the most up to date information. To find out
+more about these great information sources, see section 
+<A HREF="i4lfaq-4.html#docu">docu</A>.
+And: check out all the great links listed in question
+<A HREF="i4lfaq-6.html#config_links">config_links</A>!
+You may find information in your language, or information specific to your
+linux distribution.</P>
+
+<H2><A NAME="general_getlatest"></A> <A NAME="ss1.7">1.7</A> <A HREF="i4lfaq.html#toc1.7">general_getlatest: Where do I get the latest version of isdn4linux? </A>
+</H2>
+
+<P>The latest version of the kernel drivers should be found in the Linux
+kernel. However, sometimes the Linux kernel does not have the latest version or
+does not yet support your ISDN card. Additionally, you may need to use the
+isdn4k-util package. In those cases you could try to get the very latest
+version that is currently in development. See the section
+<A HREF="i4lfaq-2.html#distrib">distrib</A>.</P>
+
+<H2><A NAME="general_contacts"></A> <A NAME="ss1.8">1.8</A> <A HREF="i4lfaq.html#toc1.8">general_contacts: How can I get in contact with the developers? </A>
+</H2>
+
+<P>You can contact the isdn4linux developers through the www.isdn4linux.de
+website. Have a look at 
+<A HREF="http://www.isdn4linux.de/contacts.shtml">http://www.isdn4linux.de/contacts.shtml</A>.</P>
+
+
+
+<HR>
+<A HREF="i4lfaq-2.html">Next</A>
+Previous
+<A HREF="i4lfaq.html#toc1">Contents</A>
+</BODY>
+</HTML>

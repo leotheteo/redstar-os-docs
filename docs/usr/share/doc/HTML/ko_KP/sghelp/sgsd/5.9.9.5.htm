@@ -1,0 +1,262 @@
+﻿<html dir='ltr'>
+	<head>
+		<META http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+		<title>LOGEST</title>
+		<link rel='stylesheet' type='text/css' href='../css/main.css'/>
+		<script type='text/javascript' language='Javascript' src='../js/mexpcol.js'></script>
+		<script type='text/javascript' language='JavaScript' src='../js/glossary.js'></script>
+	</head>
+	<body>
+		<h1>&nbsp;<img align="absbottom" src="../image/external_images/crystal/svtools/res/new_doc.png"/>&nbsp;LOGEST</h1>
+		<p id='ExpandAllLine' class='ExpFav'>
+			<a href='#' onClick='ExpandAll()' onKeyPress='ExpandAll()' class='DropDown'>
+				<img id='picHeader' border='0' src='../image/image/common/expandtri.gif' alt='모두 표시'>
+				<span id='ExpandAll'>모두 표시</span>
+			</a>
+		</p>
+		<p><b class="bterm">참고항목</b>&emsp;
+			<a href="5.9.9.1.htm">행렬함수목록</a>,
+			<a href="5.9.9.3.htm">GROWTH</a>,
+			<a href="5.9.9.4.htm">LINEST</a>,
+			<a href="5.9.9.15.htm">TREND</a>
+		</p>
+		<p>지수회귀곡선의 파라메터들을 행렬형태로 계산합니다.</p>
+		<p><b class="bterm">문법:&emsp;&emsp;		LOGEST(자료행렬_Y,자료행렬_X,함수류형,회귀통계량)</b></p>
+		<table>
+			<tr>
+				<th>인수명</th>
+				<th>설명</th>
+			</tr>
+			<tr>
+				<td>자료행렬_Y</td>
+				<td>y = b*m^x 관계에서 미리 알수 있는 y값의 집합입니다.
+					<p>
+				    	<ul>
+							<li><b class="bterm">자료행렬_Y</b>가 한개의 렬에 있으면 <b class="bterm">자료행렬_X</b>의 각 렬은 별도의 변수로 해석됩니다.</li>
+							<li><b class="bterm">자료행렬_Y</b>가 한개의 행에 있으면 <b class="bterm">자료행렬_X</b>의 각 행은 별도의 변수로 해석됩니다. </li>
+				    	</ul>
+					</p>
+				</td>
+			</tr>
+			<tr>
+				<td>자료행렬_X</td>
+				<td>y = b*m^x 관계에서 미리 알수 있는 x값의 선택적 집합입니다. 추가선택인수입니다.
+					<p>
+						<ul>
+							<li><b class="bterm">자료행렬_X</b>에는 하나이상의 변수집합이 포함될수 있습니다. 하나의 변수만 사용될 때 <b class="bterm">자료행렬_Y</b>와 <b class="bterm">자료행렬_X</b>가 차원이 서로 같으면 어떤 모정수의 범위도 가능합니다. 변수가 여러개 사용되면 <b class="bterm">자료행렬_Y</b>는 한 행 높이 또는 한 렬 너비로 된 범위(벡토르)여야 합니다.</li>
+							<li><b class="bterm">자료행렬_X</b>를 생략하면 <b class="bterm">자료행렬_Y</b>와 같은 크기의 행렬로 간주됩니다.</li>
+						</ul>
+					</p>
+				</td>
+			</tr>
+			<tr>
+				<td> 함수류형 </td>
+				<td>상수 b를 1로 하는가 하지 않는가를 지정하는 론리값입니다. 추가선택인수입니다.
+					<p>
+						<ul>
+							<li><b class="bterm">함수류형</b>이 1이거나 생략되면 b는 정상적으로 계산됩니다.</li>
+							<li><b class="bterm">함수류형</b>이 0이면 b는 1로 설정되고 m값은 y = m^x에 맞춰집니다.</li>
+						</ul>
+					</p>
+				</td>
+			</tr>
+			<tr>
+			<td>회귀통계량</td>
+				<td>회귀통계량을 추가로 반환하는가 하지 않는가를 지정하는 론리값입니다. 추가선택인수입니다.
+					<p>
+				    	<ul>
+							<li><b class="bterm">회귀통계량</b>이 1이면 LOGEST는 추가 회귀통계량을 반환하므로 표시되는 행렬은 {mn,mn-1,...,m1,b;sen,sen-1,...,se1,seb;r 2,sey;F,df;ssreg,ssresid}입니다.</li>
+							<li><b class="bterm">회귀통계량</b>이 0이거나 생략되면 LOGEST는 곁수 m과 상수 b만을 구합니다.</li>
+				   		</ul>
+					</p>
+				</td>
+			</tr>
+		</table>
+		<p>추가적인 회귀통계량에 대한 자세한 내용은 LINEST함수를 참고하십시오.</p>
+		<p><b class="bterm">주의</b></p>
+			<ul>
+				<li>자료를 그린 선이 지수곡선과 비슷할수록 계산된 선이 자료와 잘 맞게 됩니다. <b class="bterm">LINEST</b>와 마찬가지로 <b class="bterm">LOGEST</b>는 값사이의 관계를 설명하는 값의 행렬을 구하지만 <b class="bterm">LINEST</b>에서는 직선을 얻고 <b class="bterm">LOGEST</b>에서는 지수곡선을 얻습니다. 자세한 내용은 <b class="bterm">LINEST</b>함수를 참고하십시오.</li>
+				<li>독립변수 x가 하나일 때에는 다음의 수식을 사용하여 경사도(m)값과 Y축 사영(b)값을 직접 얻을수 있습니다.
+					<p><b class="bterm">경사도(m)</b>&nbsp;   INDEX(LOGEST(자료행렬_Y,자료행렬_X),1)</p>
+					<p><b class="bterm">Y축 사영(b)</b>&nbsp;   INDEX(LOGEST(자료행렬_Y,자료행렬_X),2)</p>
+					<p><b class="bterm">y</b> = b*m^x를 사용하여 y값을 예측할수 있습니다. 그러나 <b class="bterm">GROWTH</b>함수를 사용하여 y값을 예측할수도 있습니다. 자세한 내용은 <b class="bterm">GROWTH</b>함수를 참고하십시오.</p>
+				</li>
+				<li>행렬을 구하는 수식은 행렬수식으로 입력되여야 합니다.</li>
+				<li>회귀방정식으로 예측된 y값이 방정식에 사용된 y값의 범위밖에 있으면 유효하지 않습니다.</li>
+			</ul>
+		<p><b class="bterm">실례1:   m 곁수와 상수 b</b></p>
+			<p><a href="1.5.1.htm">실례의 리용방법</a>을 참고하십시오.</p>
+			<table>
+				<tr>
+					<td>
+						<table>
+							<tr>
+								<td class="noborder">&nbsp;
+								</td>
+							</tr>
+							<tr>
+								<th>1</th>
+							</tr>
+							<tr>
+								<th>2</th>
+							</tr>
+							<tr>
+								<th>3</th>
+							</tr>
+							<tr>
+								<th>4</th>
+							</tr>
+							<tr>
+								<th>5</th>
+							</tr>
+							<tr>
+								<th>6</th>
+							</tr>
+							<tr>
+								<th>7</th>
+							</tr>
+						</table>
+					</td>
+					<td>
+						<table>
+							<tr>
+								<th>A</th>
+								<th>B</th>
+							</tr>
+							<tr>
+								<th>월</th>
+								<th>단위</th>
+							</tr>
+							<tr>
+								<td>11</td>
+								<td>33 100</td>
+							</tr>
+							<tr>
+								<td>12</td>
+								<td>47 300</td>
+							</tr>
+							<tr>
+								<td>13</td>
+								<td>69 000</td>
+							</tr>
+							<tr>
+								<td>14</td>
+								<td>102 000</td>
+							</tr>
+							<tr>
+								<td>15</td>
+								<td>150 000</td>
+							</tr>
+							<tr>
+								<td>16</td>
+								<td>220 000</td>
+							</tr>
+							<tr>
+								<th>수식</th>
+								<th>수식</th>
+							</tr>
+							<tr>
+								<td>=LOGEST(B2:B7,A2:A7, 1,0)</td>
+								<td>&nbsp;</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+			<p><b class="bterm">참고:</b>   실례의 수식은 행렬수식으로 입력하여야 합니다. 실례를 빈 자료표에 복사한 후 수식세포로 시작되는 A9:B9 범위를 선택하고 <b class="bterm">[F2]</b>건을 누른 다음 <b class="bterm">[Ctrl+Shift+Enter]</b>건을 누릅니다. 수식을 행렬수식으로 입력하지 않으면 단일결과는 1.46이 됩니다.</p>
+			<p>행렬로 입력하면 m 곁수와 상수 b가 구해집니다.</p>
+			<p>y = b*m1^x1 또는 행렬에서 값을 사용하면 다음과 같습니다.</p>
+			<p>y = 495.3 * 1.4633x</p>
+			<p>이 방정식에서 x에 달수를 대입하여 앞으로의 월판매액을 예측할수 있으며 <b class="bterm">GROWTH</b>함수를 사용할수도 있습니다.</p>
+		<p><b class="bterm">실례2:   전체 통계량</b></p>
+			<p><a href="1.5.1.htm">실례의 리용방법</a>을 참고하십시오.</p>
+			<table>
+				<tr>
+					<td>
+						<table>
+							<tr>
+								<td class="noborder">&nbsp;
+								</td>
+							</tr>
+							<tr>
+								<th>1</th>
+							</tr>
+							<tr>
+								<th>2</th>
+							</tr>
+							<tr>
+								<th>3</th>
+							</tr>
+							<tr>
+								<th>4</th>
+							</tr>
+							<tr>
+								<th>5</th>
+							</tr>
+							<tr>
+								<th>6</th>
+							</tr>
+							<tr>
+								<th>7</th>
+							</tr>
+						</table>
+					</td>
+					<td>
+						<table>
+							<tr>
+								<th>A</th>
+								<th>B</th>
+							</tr>
+							<tr>
+								<th>월</th>
+								<th>단위</th>
+							</tr>
+							<tr>
+								<td>11</td>
+								<td>33 100</td>
+							</tr>
+							<tr>
+								<td>12</td>
+								<td>47 300</td>
+							</tr>
+							<tr>
+								<td>13</td>
+								<td>69 000</td>
+							</tr>
+							<tr>
+								<td>14</td>
+								<td>102 000</td>
+							</tr>
+							<tr>
+								<td>15</td>
+								<td>150 000</td>
+							</tr>
+							<tr>
+								<td>16</td>
+								<td>220 000</td>
+							</tr>
+							<tr>
+								<th>수식</th>
+								<td>&nbsp;</td>
+							</tr>
+							<tr>
+								<td>=LOGEST(B2:B7,A2:A7,1,1)</td>
+								<td>&nbsp;</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+			<p><b class="bterm">참고:</b>   실례의 수식은 행렬수식으로 입력하여야 합니다. 실례를 빈 자료표에 복사한 후 수식세포로 시작되는 A9:B13 범위를 선택하고 <b class="bterm">[F2]</b>건을 누른 다음 <b class="bterm">[Ctrl+Shift+Enter]</b>건을 누릅니다.</p>
+			<p>수식을 행렬수식으로 입력하지 않으면 단일결과는 1.46이 됩니다.</p>
+			<p>행렬수식으로 입력하면 다음 회귀통계량이 구해집니다. 이 건을 사용하여 원하는 통계를 나타냅니다.</p>
+			<p><img border="0" src="../image/image/sgsd/awflnst3.gif" alt="표시"></p>
+			<p>추가회귀통계값(우에 있는 출력행렬에서 A10:B13 세포)을 사용하여 미래값을 예측하는데 방정식이 얼마나 유용한지 알아볼수 있습니다.</p>
+			<p><b class="bterm">중요:  LOGEST</b>를 사용하여 방정식을 검사하는 방법은 <b class="bterm">LINEST</b>를 사용하는 방법과 류사합니다. </p>
+			<p>그러나 <b class="bterm">LOGEST</b>로 구해지는 추가통계값은 다음과 같은 선형모형을 기초로 합니다.</p>
+			<p>y = x1 ln m1 + ... + xn ln mn + ln b</p>
+			<p>추가통계값을 계산할 때 특히 sei와 seb 값은 mi와 b가 아니라 ln mi 와 ln b에 비교되여야 합니다.</p>
+		<script type="text/javascript" language="Javascript">footerView()</script>
+	
+</body>
+</html>		

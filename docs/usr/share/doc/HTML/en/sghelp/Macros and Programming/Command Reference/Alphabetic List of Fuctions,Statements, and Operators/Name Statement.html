@@ -1,0 +1,46 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+	<TITLE></TITLE>
+	<META NAME="GENERATOR" CONTENT="《Sogwang 3.0》  (Linux)">
+	<META NAME="CREATED" CONTENT="20091205;14081500">
+	<META NAME="CHANGED" CONTENT="20091205;14095600">
+	<STYLE TYPE="text/css">
+	<!--
+		P.code { margin-top: 0.04cm; margin-bottom: 0.04cm; font-family: "Bitstream Vera Sans Mono", "Cumberland", "Courier New", "Courier", "Lucida Sans Typewriter", "Lucida Typewriter", "Monaco", "Monospaced" }
+		H2 { margin-bottom: 0.18cm; font-family: "Bitstream Vera Sans", "Arial", "Helvetica", "Lucida", "Geneva", "Helmet", sans-serif, "Andale Sans UI", "Arial Unicode MS", "Lucida Sans Unicode", "Tahoma"; font-size: 14pt }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="ko-KP" DIR="LTR"><DIV style="margin-left: 25">
+<H1><A NAME="name"></A><A NAME="bm_id3143268"></A><FONT FACE="Thorndale, serif"><SPAN LANG="en-US">Name
+Statement [Runtime]</SPAN></FONT></H1>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Renames
+an existing file or directory.</SPAN></FONT></P>
+<H2><SPAN LANG="en-US">Syntax:</SPAN></H2>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Name OldName As String As NewName
+As String</SPAN></FONT></P>
+<H2><SPAN LANG="en-US">Parameters:</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>OldName,
+NewName:</B> Any string expression that specifies the file name,
+including the path. You can also use <A 
+HREF="../../General Information and User/Basic Glossary.html">URL
+notation</A>.</SPAN></FONT></P>
+<H2><SPAN LANG="en-US">Example:</SPAN></H2>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Sub ExampleReName</SPAN></FONT></P>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">On Error Goto Error</SPAN></FONT></P>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Filecopy &quot;c:\autoexec.bat&quot;,
+&quot;c:\temp\autoexec.sav&quot;</SPAN></FONT></P>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Name &quot;c:\temp\autoexec.sav&quot;
+as &quot;c:\temp\autoexec.bat&quot;</SPAN></FONT></P>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">end</SPAN></FONT></P>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Error:</SPAN></FONT></P>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">if err = 58 then</SPAN></FONT></P>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">msgbox &quot;File already exists&quot;</SPAN></FONT></P>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">end if</SPAN></FONT></P>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">end</SPAN></FONT></P>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">end sub</SPAN></FONT></P>
+
+</DIV></BODY>
+</HTML>

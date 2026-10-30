@@ -1,0 +1,202 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <META NAME="GENERATOR" CONTENT="LinuxDoc-Tools 0.9.21">
+ <TITLE>ISDN4Linux Tutorial: Problems with dynamic IP numbers</TITLE>
+ <LINK HREF="EN-i4l-7.html" REL=next>
+ <LINK HREF="EN-i4l-5.html" REL=previous>
+ <LINK HREF="EN-i4l.html#toc6" REL=contents>
+</HEAD>
+<BODY>
+<A HREF="EN-i4l-7.html">Next</A>
+<A HREF="EN-i4l-5.html">Previous</A>
+<A HREF="EN-i4l.html#toc6">Contents</A>
+<HR>
+<H2><A NAME="dynIP"></A> <A NAME="s6">6.</A> <A HREF="EN-i4l.html#toc6">Problems with dynamic IP numbers</A>    </H2>
+
+<P>What are dynamic IP numbers? </P>
+<P>IP numbers are scarce and therefore expensive. The providers
+therefore try to save IP numbers, by being able to be only
+assigning (at a minimum) as many IP numbers as can call in to them
+at the onetime. The number of potential computers that can call in
+is however higher, therefore a fixed IP number cannot be assigned
+to all of them.</P>
+<P>The trick is that instead of a fixed allocation of IP numbers to
+computers, with each connection the client is given an IP number
+from a free pool. This technique can only be used with PPP, not
+with rawip.</P>
+<P>This method is excellent if you only have a single workstation
+and work only session-to-session: open connection, surf, surf,
+surf, exchange mail, surf, and finally close the connection.</P>
+<P>If you want just a little bit more (transparent Internet access),
+however, it turns out that it doesn't work with dynamic IP
+numbers.</P>
+<P>The following points are desireablt for transparent Internet access:
+<OL>
+<LI> Dial-on-demand: it is not manually decided whether to
+open or close a connection (who should decide that in a large
+network?). The dial-up connection is made automatically as
+soon as there are packets that cannot be routed with the local
+network.
+</LI>
+<LI> Authomatic closing of connections, when there are no
+packets to go out for a certain period of time.
+</LI>
+<LI> Pauses don't add additional costs, if not data is being
+sent over the line; e.g. when reading a long web page, the
+connection doesn't need to be kept open
+</LI>
+<LI> Verhindern, daß vergessen wird aufzulegen. (Es blinkt und
+klackt ja nicht ...)</LI>
+</OL>
+</P>
+<P>Dieses läßt sich mit ISDN wunderbar lösen, vor allem deshalb, weil der
+Verbindungsaufbau im Gegensatz zu einem Modem sehr schnell geht (wenige
+Sekunden).</P>
+
+<P>Folgende Punkte sind bei dynamischen IP-Nummern nicht realisierbar:
+<OL>
+<LI> Server-Funktionalität: die IP-Nummer des Rechners ist
+für einen anderen Rechner im Internet nicht bestimmbar.
+Außderdem wird der Provider vermutlich nicht selbst eine
+Wählverbindung aufbauen wollen und können - zumindest nicht
+bei diesen kostengünstigen Verträgen.</LI>
+<LI> Mails können nicht direkt zum eigentlichen Mailserver
+durchgestellt werden (an welche IP-Nummer sollten sie denn ?), 
+sondern müssen bei einem Provider abgelegt werde, von dem
+sie vom IZG abgeholt werden.</LI>
+<LI> Das <B>Offene-Sockets-Problem</B>:
+Halten einer logischen Verbindung über die 
+Verbindungsunterbrechnung hinaus ist nicht möglich. 
+Bsp: man loggt sich per
+Telnet bei in seiner Arbeitsstelle ein, nach Inaktivität
+wird aufgelegt, drückt man nun eine Taste, wird die Verbindung
+automatisch wieder hergestellt, aber man bekommt eine 
+andere IP-Nummer zugewiesen. Die Socket-Verbindung zwischen
+eigenen Rechner und Arbeitgeber ist damit ungültig geworden, da 
+für einen Socket u.a. Quell- und Ziel-IP-Nummern wichtig sind.
+
+Die gleiche Problematik stellt sich bei WWW oder FTP-Verbindungen,
+die unterbrochen werden.</LI>
+</OL>
+
+Sehr wohl aber ist man genauso wie sonst auch nicht gegen Angriffe
+aus dem Internet geschützt. Ein Hacker kann nur nicht voraussagen,
+welchen Rechner er angreift, er sucht sich halt nur zufällig eine
+IP-Nummer aus (oder belauscht eine Verbindung) und kann den Rechner
+angreifen. Der Vorteil liegt allerdings darin, daß der Hacker weniger 
+Zeit hat, da die Verbindung abgebaut und mit einer neuen IP-Nummer
+aufgebaut wird, zwischen denen erstmal kein Zusammenhang zu erkennen
+ist. Als wirksamen Schutz reicht dies aber nicht aus.</P>
+<P>Die Probleme:
+Aus dem <B>Offene-Sockets-Problem</B> ergeben sich zwei 
+Punkte, die bei einem IZG mit dynamsichen IP-Nummer beachtet werden
+müssen:
+<OL>
+<LI> Anfragen laufen in's Leer: ein Web-Browser hat einen
+zum Web- oder Proxy-Server offen, nach dem Re-Connect ist dieser
+ungültig, aber der Browser hat keine Möglichkeit dies zu
+erkennen. Abhilfe schafft es hier, auch <CODE>Abbruch</CODE> und
+<CODE>Reload</CODE> zu drücken.</LI>
+<LI> Die Sockets bleiben offen (auch nach Beendigung 
+des Client-Programms), es werden immer wieder Pakete 
+darüber geschickt, bis ein Timeout (etwa 20 Minuten)
+abläuft. In dieser Zeit wird <B>ständig eine Verbindung
+aufgebaut</B> bzw. bleibt bestehen.</LI>
+</OL>
+</P>
+<P>Abhilfe schafft hier zum einen, daß man den Client nicht erlaubt direkt
+in das Internet eine Verbindung aufzubauen (über Masquerading), sondern
+nur über Proxies (siehe 
+<A HREF="EN-i4l-11.html#squid">Squid</A>. Aber auch diese
+Methode ist nicht zuverlässig.</P>
+
+<H2><A NAME="rstPatch"></A> <A NAME="ss6.1">6.1</A> <A HREF="EN-i4l.html#toc6.1">Der RST-provoking mode</A>
+            </H2>
+
+<P>Wirkliche Abhilfe schafft nur die Aktivierung des
+<B>RST-provoking mode</B>. Dabei wird bei dem Paket die Quell-IP-Nummer 
+ausgetauscht gegen die jetzt aktuelle dynamsiche IP-Nummer, was bewirkt,
+daß beide Seiten diesen Socket schließen.</P>
+<P>Diese Modus ist leider noch nicht in den offiziellen Kernel
+gekommen. Den Patch von <B>Erik Corry</B> findet man
+hier: 
+<A HREF="http://www.image.dk/~ehcorry/linux/">http://www.image.dk/~ehcorry/linux/</A>.</P>
+<P>Er ist für Kernel der Version bis 2.0.33 passend, ab Version
+2.0.34 wird er vermutlich im Standard-Kernel sein. Im Standrdkernel
+von S.u.S.E. Linux 5.2 (und im Quellpaket <CODE>lx_suse</CODE> ist dieser
+Pacth schon enthalten.
+(Offen: 2.1 ?)</P>
+<P>Zur Aktivierung gibt man das Kommando:
+<HR>
+<PRE>
+    echo 7 > /proc/sys/net/ipv4/ip_dynaddr
+        
+</PRE>
+<HR>
+
+(Oder nur <CODE>5</CODE>, für den quiet-Mode).
+Bei Erfolg sieht man in <CODE>/var/log/messages</CODE> Meldungen der
+folgenden Art:
+<HR>
+<PRE>
+    ip_rewrite_addrs(): shifting saddr from 1.1.1.1 to 149.228.142.50 (state 2)
+        
+</PRE>
+<HR>
+</P>
+<P>Aktivierung bei S.u.S.E.:</P>
+<P>Trage in <CODE>/sbin/init.d/i4l_hardware</CODE> vor dem Start des
+isdnlog folgende Zeilen ein:
+<HR>
+<PRE>
+    test -z "$I4L_DYNIP" ||
+        echo 7 > /proc/sys/net/ipv4/ip_dynaddr
+        
+</PRE>
+<HR>
+
+(das wird vermutlich bei S.u.S.E. Linux später als 5.2 der Fall sein)
+und trage in <CODE>/etc/rc.config</CODE> ein:
+<HR>
+<PRE>
+    I4L_DYNIP="yes"
+        
+</PRE>
+<HR>
+</P>
+
+<H2><A NAME="ipDynWelche"></A> <A NAME="ss6.2">6.2</A> <A HREF="EN-i4l.html#toc6.2">Welche IP-Nummer setze ich denn eigentlich?</A>
+            </H2>
+
+<P>Der Provider stellt nur dynamische IP-Nummern zur Verfügung,
+während der Konfiguration von i4l werde ich aber nach 
+IP-Nummer gefragt - welche IP-Nummer soll ich denn da angeben?</P>
+<P>i4l arbeitet mit einer transparenten Netzanbindung, d.h.
+logisch gesehen ist die Verbindung immer aktiv, auch
+wenn noch garnicht gewählt wurde und keine dynamischen
+IP-Nummern ermittelt werden konnten. Um dieses Pseudo-Netzwerk
+zu konfigurieren müssen aber zwangsläufig IP-Nummern
+angegeben werden.</P>
+<P>Es empfiehlt sich daher, eine Pseudo-IP-Nummer zu benutzen,
+z.B. dieselbe, die man auch für seine Ethernetanbindung 
+benutzt. Das ist möglich, da die PPP-Verbindung als
+<CODE>pointopoint</CODE>-Verbindung (beim <CODE>ifconfig</CODE>) konfiguriert
+wurde, dies ist ein spezieller Modus, durch den der
+Kernel weiß, daß hier nur eine Verbindung zwischen
+zwei Punkten stattfindet. Warum Point-To-Point (<B>PtP</B>)
+als <B>pointopoint</B> angegeben wird, weiß ich auch nicht ....</P>
+<P>Um keinen Konflikt mit offiziellen IP-Nummern zu provozieren,
+sollte man eine aus dem privaten Bereich wählen, z.B.
+<CODE>192.168.1.1</CODE>.</P>
+<P>Falls man bei T-Online angeschlossen ist oder dies plant:
+Bneutze nicht <CODE>192.168.0.*</CODE>, darüber werden z.T. 
+interne Dienste wie Cept abgehandelt.</P>
+
+
+<HR>
+<A HREF="EN-i4l-7.html">Next</A>
+<A HREF="EN-i4l-5.html">Previous</A>
+<A HREF="EN-i4l.html#toc6">Contents</A>
+</BODY>
+</HTML>

@@ -1,0 +1,63 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+	<TITLE></TITLE>
+	<META NAME="GENERATOR" CONTENT="《Sogwang 3.0》  (Linux)">
+	<META NAME="CREATED" CONTENT="20091205;11384400">
+	<META NAME="CHANGED" CONTENT="20091205;11543700">
+	<STYLE TYPE="text/css">
+	<!--
+		H2 { margin-bottom: 0.18cm; font-family: "Bitstream Vera Sans", "Arial", "Helvetica", "Lucida", "Geneva", "Helmet", sans-serif, "Andale Sans UI", "Arial Unicode MS", "Lucida Sans Unicode", "Tahoma"; font-size: 14pt }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="ko-KP" DIR="LTR"><DIV style="margin-left: 25">
+<H1><A NAME="choose"></A><A NAME="bm_id3143271"></A><FONT FACE="Thorndale, serif"><SPAN LANG="en-US">Choose
+Function [Runtime]</SPAN></FONT></H1>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Returns
+a selected value from a list of arguments.</SPAN></FONT></P>
+<H2><SPAN LANG="en-US">Syntax:</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Choose
+(Index, Selection1[, Selection2, ... [,Selection_n]])</SPAN></FONT></P>
+<H2><SPAN LANG="en-US">Parameters:</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Index:</B>
+A numeric expression that specifies the value to return.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Selection1:</B>
+Any expression that contains one of the possible choices.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">The
+<B>Choose</B> function returns a value from the list of expressions
+based on the index value. If Index = 1, the function returns the
+first expression in the list, if index i= 2, it returns the second
+expression, and so on.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">If the
+index value is less than 1 or greater than the number of expressions
+listed, the function returns a Null value.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">The
+following example uses the <B>Choose</B> function to select a string
+from several strings that form a menu:</SPAN></FONT></P>
+<H2><A NAME="errorcode"></A><SPAN LANG="en-US">Error Codes </SPAN>
+</H2>
+<P><A NAME="err5"></A><FONT FACE="청봉, serif"><SPAN LANG="en-US">5
+Invalid procedure call </SPAN></FONT>
+</P>
+<H2><SPAN LANG="en-US">Example:</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Sub
+ExampleChoose</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Dim
+sReturn As String</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">sReturn
+= ChooseMenu(2)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Print
+sReturn</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">end sub</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Function
+ChooseMenu(Index As Integer)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">ChooseMenu
+= Choose(Index, &quot;Quick Format&quot;, &quot;Save Format&quot;,
+&quot;System Format&quot;)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"> End
+Function</SPAN></A></SPAN></FONT></P>
+
+</DIV></BODY>
+</HTML>

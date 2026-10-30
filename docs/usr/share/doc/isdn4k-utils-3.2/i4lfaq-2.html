@@ -1,0 +1,123 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <META NAME="GENERATOR" CONTENT="LinuxDoc-Tools 0.9.21">
+ <TITLE>FAQ for isdn4linux: distrib: Distribution </TITLE>
+ <LINK HREF="i4lfaq-3.html" REL=next>
+ <LINK HREF="i4lfaq-1.html" REL=previous>
+ <LINK HREF="i4lfaq.html#toc2" REL=contents>
+</HEAD>
+<BODY>
+<A HREF="i4lfaq-3.html">Next</A>
+<A HREF="i4lfaq-1.html">Previous</A>
+<A HREF="i4lfaq.html#toc2">Contents</A>
+<HR>
+<H2><A NAME="distrib"></A> <A NAME="s2">2.</A> <A HREF="i4lfaq.html#toc2">distrib: Distribution </A> </H2>
+
+<H2><A NAME="distrib_getlatest"></A> <A NAME="ss2.1">2.1</A> <A HREF="i4lfaq.html#toc2.1">distrib_getlatest: How can I get the latest isdn4linux? </A>
+</H2>
+
+<P>There are different ways, depending on your kernel. Unless you are an
+experienced user of Linux, you should use a recent kernel (=first option).
+<UL>
+<LI>You have a recent kernel (at least 2.0.36/2.2.11/2.3.14):
+Great choice, you have already the current kernel ISDN stuff.
+Additionally, you just need to get the current isdn4k-utils package from
+<A HREF="ftp://ftp.isdn4linux.de/pub/isdn4linux/utils/">ftp://ftp.isdn4linux.de/pub/isdn4linux/utils/</A> - unless it's already
+included in your distribution.
+</LI>
+<LI>You have an older kernel (before 2.0.36/2.2.11/2.3.14):
+An upgrade to a recent kernel is HIGHLY recommended. And it is MUCH easier
+to do a kernel upgrade than to get ISDN to work with your older kernel.
+Ok, now if you still want to keep your old kernel, here is how to do it:
+First you have to identify the correct CVS extract for your kernel version
+(CVS is the version control system the ISDN developers use to develop
+ISDN4LINUX). Take a CVS snapshot that is dated with about the date when your
+kernel came out. You find the kernel patches and the old isdn4k-utils packages
+on 
+<A HREF="ftp://ftp.isdn4linux.de/pub/isdn4linux/">ftp://ftp.isdn4linux.de/pub/isdn4linux/</A>
+or on one of its mirrors
+(see 
+<A HREF="http://www.isdn4linux.de/download.shtml">http://www.isdn4linux.de/download.shtml</A> on how to find
+mirrors).
+</LI>
+<LI>As a developer:
+If you want to participate in the development of i4l, you can get the very
+latest stuff via CVS. For this, see the question about access to CVS:
+<A HREF="#distrib_cvs">distrib_cvs</A>.</LI>
+</UL>
+</P>
+
+<H2><A NAME="distrib_cvs"></A> <A NAME="ss2.2">2.2</A> <A HREF="i4lfaq.html#toc2.2">distrib_cvs: How can I access the source from the current development/what is the CVS tree all about? </A>
+</H2>
+
+<P>CVS - Concurrent Version System:</P>
+<P>This is a multiuser/server extension to RCS (Revision Control System).
+The I4L drivers are developed under CVS, and there is a server
+(cvs.isdn4linux.de) with a CVS tree to which all developers have
+access.  In addition, Fritz has configured anonymous read-only access
+to the CVS tree . If you must have the very latest versions, you can
+get them there, however they may contain more bugs than the released
+versions!!!</P>
+<P>Here is how to get the latest version:
+<OL>
+<LI>Create and go to the directory where you want to store i4l
+<HR>
+<PRE>
+mkdir ~/cvs; cd ~/cvs
+cvs -d :pserver:guest@cvs.isdn4linux.de:/i4ldev login
+</PRE>
+<HR>
+</LI>
+<LI>Log in (asks for a password, enter <EM>readonly</EM>)</LI>
+<LI>Get the isdn kernel driver stuff (same hierarchy as in the linux source)
+<HR>
+<PRE>
+cvs -d :pserver:guest@cvs.isdn4linux.de:/i4ldev checkout isdn
+</PRE>
+<HR>
+</LI>
+<LI>Get the utility package into the current directory
+<HR>
+<PRE>
+cvs -d :pserver:guest@cvs.isdn4linux.de:/i4ldev checkout isdn4k-utils
+</PRE>
+<HR>
+
+If you want to get the latest version for kernel 2.0.x rather than for the
+latest kernel, then you have to give the additional option `-r':
+<HR>
+<PRE>
+cvs -d :pserver:guest@cvs.isdn4linux.de:/i4ldev checkout -r isdn4kernel_2_0 isdn
+</PRE>
+<HR>
+</LI>
+<LI>After having checked out, further updates can be done by first
+changing into <CODE>isdn</CODE> or <CODE>isdn4k-utils</CODE> subdirectory and
+running
+<HR>
+<PRE>
+cvs update -P -d
+</PRE>
+<HR>
+
+Tip: since cvs stores the password on your first login, you don't need to login
+again when updating.</LI>
+</OL>
+</P>
+<P>WARNING!! THE NEWEST STUFF SOMETIMES IS VERY INSTABLE OR MAY NOT EVEN
+COMPILE WITHOUT PROGRAMMING KNOWLEDGE -
+No newbie questions on this PLEASE! Use the source, Luke!</P>
+<P>People who want to <EM>continuously</EM> help develop isdn4linux by writing
+new drivers etc. can get a real account for full access. In this case write
+an email to Fritz Elfert <CODE>
+<A HREF="mailto:fritz@isdn4linux.de">fritz@isdn4linux.de</A></CODE></P>
+
+
+
+<HR>
+<A HREF="i4lfaq-3.html">Next</A>
+<A HREF="i4lfaq-1.html">Previous</A>
+<A HREF="i4lfaq.html#toc2">Contents</A>
+</BODY>
+</HTML>

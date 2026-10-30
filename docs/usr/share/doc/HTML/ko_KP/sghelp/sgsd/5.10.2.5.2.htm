@@ -1,0 +1,235 @@
+﻿<html dir='ltr'>
+	<head>
+		<META http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+		<title>세포에 본문이 들어있는가를 확인</title>
+		<link rel='stylesheet' type='text/css' href='../css/main.css'/>
+		<script type='text/javascript' language='Javascript' src='../js/mexpcol.js'></script>
+		<script type='text/javascript' language='JavaScript' src='../js/glossary.js'></script>
+	</head>
+	<body>
+		<h1>&nbsp;<img align="absbottom" src="../image/external_images/crystal/svtools/res/new_doc.png"/>&nbsp;세포에 본문이 들어있는가를 확인</h1>
+		<p id='ExpandAllLine' class='ExpFav'>
+			<a href='#' onClick='ExpandAll()' onKeyPress='ExpandAll()' class='DropDown'>
+				<img id='picHeader' border='0' src='../image/image/common/expandtri.gif' alt='모두 표시'>
+				<span id='ExpandAll'>모두 표시</span>
+			</a>
+		</p>
+		<p>
+			<a href='#' class='DropDown' onClick='Outline2()' onKeyPress='Outline2()'>
+			<img border='0' src='../image/image/common/blueup.gif' alt='표시'>세포에 본문이 들어있는가를 확인</a>
+		</p>
+		<div id='ExpCol' class='collapsed' border='0'>
+			<p>이 작업을 수행하려면 <b class="bterm">ISTEXT</b>함수를 사용합니다.</p>
+			<p><b class="bterm">실례</b></p>
+			<p><a href='1.5.1.htm'>실례의 리용방법</a>을 참고하십시오.</p>
+			<table>
+				<tr>
+					<td>
+						<table>
+							<tr>
+								<td class="noborder">&nbsp;</td>
+							</tr>
+							<tr>
+								<th>1</th>
+							</tr>
+							<tr>
+								<th>2</th>
+							</tr>
+							<tr>
+								<th>3</th>
+							</tr>
+						</table>
+					</td>
+					<td>
+						<table>
+							<tr>
+								<th>A</th>
+							</tr>
+							<tr>
+								<th>자료</th>
+							</tr>
+							<tr>
+								<td>본문</td>
+							</tr>
+							<tr>
+								<td>123</td>
+							</tr>
+							<tr>
+								<th>수식</th>
+								<th>설명</th>
+							</tr>
+							<tr>
+								<td>=ISTEXT(A2)</td>
+								<td>A2세포에 본문이 있는가를 확인합니다. (참)</td>
+							</tr>
+							<tr>
+								<td>=ISTEXT(A3)</td>
+								<td>A3세포에 본문이 있는가를 확인합니다. (거짓)</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+			<p><b class="bterm">참조함수</b></p>
+			<p><a href='5.9.6.16.htm'>ISTEXT</a></p>
+		</div>
+		<p>
+			<a href='#' class='DropDown' onClick='Outline2()' onKeyPress='Outline2()'>
+			<img border='0' src='../image/image/common/blueup.gif' alt='표시'>세포내용이 특정본문과 일치하는가를 확인하여 값을 반환</a>
+		</p>
+		<div id='ExpCol' class='collapsed' border='0'>
+			<p>이 작업을 수행하려면 <b class="bterm">IF</b>함수를 사용합니다. <b class="bterm">IF</b>함수는 사용자가 지정하는 결과를 반환합니다.</p>
+			<p><b class="bterm">실례</b></p>
+			<p><a href='1.5.1.htm'>실례의 리용방법</a>을 참고하십시오.</p>
+			<table>
+				<tr>
+					<td>
+						<table>
+							<tr>
+								<td class="noborder">&nbsp;</td>
+							</tr>
+							<tr>
+								<th>1</th>
+							</tr>
+							<tr>
+								<th>2</th>
+							</tr>
+						</table>
+					</td>
+					<td>
+						<table>
+							<tr>
+								<th>A</th>
+							</tr>
+							<tr>
+								<th>자료</th>
+							</tr>
+							<tr>
+								<td>서광</td>
+							</tr>
+							<tr>
+								<th>수식</th>
+								<th>설명</th>
+							</tr>
+							<tr>
+								<td>=IF(A2="서광";"성공";"실패")</td>
+								<td>A2가 “서광”인가를 확인합니다. (성공)</td>
+							</tr>
+							<tr>
+								<td>=IF(A2="정보"; “참”; “거짓”)</td>
+								<td>A2가 “정보”인가를 확인합니다. (거짓)</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+			<p><b class="bterm">참조함수</b></p>
+			<p><a href='5.9.7.4.htm'>IF</a></p>
+		</div>
+		<p>
+			<a href='#' class='DropDown' onClick='Outline2()' onKeyPress='Outline2()'>
+			<img border='0' src='../image/image/common/blueup.gif' alt='표시'>특정한 본문이 들어있는 행에 대한 목록의 려과</a>
+		</p>
+		<div id='ExpCol' class='collapsed' border='0'>
+			<ol>
+				<li>목록에서 려과할 세포를 찰칵합니다.</li>
+				<li><b class="bterm">&lt;자료&gt;</b>차림표에서 <b class="bterm">&lt;려과기&gt;</b>를 찰칵하고 <b class="bterm">&lt;자동려과기&gt;</b>를 찰칵합니다.</li>
+				<li>수자가 포함된 렬에서 화살표<img border='0' src='../image/image/sgsd/fldarrow.gif' alt='표시'>를 찰칵하고 <b class="bterm">&lt;표준&gt;</b>을 찰칵합니다.</li>
+				<li><b class="bterm">&lt;조건&gt;</b>복합칸에서 = 또는 <>을 찰칵합니다.</li>
+				<li><b class="bterm">&lt;값&gt;</b>본문칸에 요구하는 본문을 입력합니다.</li>
+				<li><b class="bterm">&lt;확인&gt;</b>단추를 찰칵합니다.</li>
+			</ol>
+		</div>
+		<p>
+			<a href='#' class='DropDown' onClick='Outline2()' onKeyPress='Outline2()'>
+			<img border='0' src='../image/image/common/blueup.gif' alt='표시'>세포의 일부분이 특정본문과 일치하는가를 확인하여 값을 반환</a>
+		</p>
+		<div id='ExpCol' class='collapsed' border='0'>
+			<p>이 작업을 수행하려면 <b class="bterm">IF</b>, <b class="bterm">FIND</b>, <b class="bterm">SEARCH</b>, <b class="bterm">ISNUMBER</b> 등의 함수를 사용합니다.</p>
+			<p><b class="bterm">실례</b></p>
+			<p><a href='1.5.1.htm'>실례의 리용방법</a>을 참고하십시오.</p>
+			<table>
+				<tr>
+					<td>
+						<table>
+							<tr>
+								<td class="noborder">&nbsp;</td>
+							</tr>
+							<tr>
+								<th>1</th>
+							</tr>
+							<tr>
+								<th>2</th>
+							</tr>
+							<tr>
+								<th>3</th>
+							</tr>
+						</table>
+					</td>
+					<td>
+						<table>
+							<tr>
+								<th>A</th>
+							</tr>
+							<tr>
+								<th>자료</th>
+							</tr>
+							<tr>
+								<td>Sogwang</td>
+							</tr>
+							<tr>
+								<td>ABCD123</td>
+							</tr>
+							<tr>
+								<th>수식</th>
+								<th>설명(결과)</th>
+							</tr>
+							<tr>
+								<td>=IF(ISNUMBER(FIND("w";A2));"성공"; "실패")</td>
+								<td>A2에 문자w가 들어있는가를 확인합니다. (성공)</td>
+							</tr>
+							<tr>
+								<td>=ISNUMBER(FIND("BC";A3))</td>
+								<td>A3에 BC가 들어있는가를 확인합니다. (참)</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+			<p>우의 수식에서 사용하는 인수는 다음과 같습니다.</p>
+			<p><img border='0' src='../image/image/sgsd/conttext.gif' alt='표시'></p>
+			<p>본문확인을 위한 수식</p>
+			<p><img border='0' src='../image/image/common/callout1.gif' alt='표시'> <b class="bterm">검색문</b>: 찾으려는 대상입니다.</p>
+			<p><img border='0' src='../image/image/common/callout2.gif' alt='표시'> <b class="bterm">본문</b>: 확인하려는 본문이 들어있는 세포입니다.</p>
+			<p><b class="bterm">참고:&emsp;   FIND</b>함수는 대소문자를 구분합니다. 대소문자를 무시하려면 <b class="bterm">FIND</b>함수 대신 <b class="bterm">SEARCH</b>함수를 사용하십시오.</p>
+			<p><b class="bterm">참조함수</b></p>
+			<p><a href='5.9.7.4.htm'>IF</a></p>
+			<p><a href='5.9.6.13.htm'>ISNUMBER</a></p>
+			<p><a href='5.9.12.11.htm'>FIND</a></p>
+			<p><a href='5.9.12.23.htm'>SEARCH</a></p>
+		</div>
+		<p>
+			<a href='#' class='DropDown' onClick='Outline2()' onKeyPress='Outline2()'>
+			<img border='0' src='../image/image/common/blueup.gif' alt='표시'>본문이 들어있는 세포를 찾기</a>
+		</p>
+		<div id='ExpCol' class='collapsed' border='0'>
+			<ol>
+				<li>어떤 범위내에서만 찾으려면 그 세포<a href="#" class="glossary" onClick="AppendPopup(this,'IDG_SELECTRANGE')" onKeyPress="AppendPopup(this,'IDG_SELECTRANGE')">범위</a>를 선택합니다.</li>
+				<li><b class="bterm">&lt;편집&gt;</b>차림표에서 <b class="bterm">&lt;탐색 및 치환&gt;</b>을 찰칵합니다.</li>
+				<li>찾을 본문이나 수자를 <b class="bterm">&lt;탐색대상&gt;</b>복합칸에 입력하거나 복합칸에서 최근에 탐색한 내용을 선택합니다.</li>
+				<li>찾을 서식을 지정하려면 <b class="bterm">&lt;상세히&gt;</b>단추를 찰칵하고 <b class="bterm">&lt;격식 탐색&gt;</b>확인칸을 선택하고 <b class="bterm">&lt;탐색대상&gt;</b>복합칸에서 요구하는 격식을 선택합니다.</li>
+				<li><b class="bterm">&lt;탐색&gt;</b> 또는 <b class="bterm">&lt;모두 탐색&gt;</b>단추를 찰칵합니다.</li>
+					<p><b class="bterm">&lt;모두 탐색&gt;</b>은 탐색하는 항목이 나타나는 모든 경우를 표시하며 그중 특정한 경우를 선택하여 현재세포로 만들수 있습니다.</p>
+			</ol>
+		</div>
+		<p>
+			<a href='#' class='DropDown' onClick='Outline2()' onKeyPress='Outline2()'>
+			<img border='0' src='../image/image/common/blueup.gif' alt='표시'>즉시도움말</a>
+		</p>
+		<div id='ExpCol' class='collapsed' border='0'>
+			<p>목록에서 자료를 찾으려는 경우 려과기를 사용하여 요구하는 자료가 있는 행만 표시할수 있습니다. 례를 들어 학교자료가 들어있는 목록에서 한 학급만 표시할수 있습니다.</p>
+		</div>
+		<script type="text/javascript" language="Javascript">footerView()</script>
+	
+</body>
+</html>																

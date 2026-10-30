@@ -1,0 +1,46 @@
+﻿<html dir='ltr'>
+	<head>
+		<META http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+		<title>페지번호에서 발생하는 문제의 해결</title>
+		<link rel='stylesheet' type='text/css' href='../css/main.css'/>
+		<script type='text/javascript' language='Javascript' src='../js/mexpcol.js'></script>
+		<script type='text/javascript' language='JavaScript' src='../js/glossary.js'></script>
+	</head>
+	<body>
+		<h1>&nbsp;<img align="absbottom" src="../image/external_images/crystal/svtools/res/new_doc.png"/>&nbsp;페지번호에서 발생하는 문제의 해결</h1>
+		<p id="ExpandAllLine" class="ExpFav">
+			<a href="#" onClick="ExpandAll()" onKeyPress="ExpandAll()" class="DropDown">
+				<img id="picHeader" border="0" src="../image/image/common/expandtri.gif" alt="모두 표시">
+				<span id="ExpandAll">모두 표시</span>
+			</a>
+		</p>
+		<p><b class="bterm">화면에 페지번호가 현시되지 않는 경우</b></p>
+		<ul>
+			<li>
+				<a href="#" class="glossary" onClick="AppendPopup(this,'IDG_WEBVIEW')" onKeyPress="AppendPopup(this,'IDG_WEBVIEW')">웨브배치</a>에서는 페지번호가 현시되지 않습니다.
+				페지번호를 현시하려면 <a href="#" class="glossary" onClick="AppendPopup(this,'IDG_PRINTSTYLEVIEW')" onKeyPress="AppendPopup(this,'IDG_PRINTSTYLEVIEW')">인쇄배치</a>로 절환합니다.
+			</li>
+			<li>
+				인쇄배치에서는 페지번호가 흐리게 현시됩니다. 머리부 및 바닥부에 삽입한 페지번호는 인쇄배치에서 현시할수는 있지만 직접 편집할수는 없습니다.
+				페지번호를 편집하려면 페지번호가 있는 <a href="#" class="glossary" onClick="AppendPopup(this,'IDG_FOOTER')" onKeyPress="AppendPopup(this,'IDG_FOOTER')">머리부 및 바닥부</a>를 찰칵하여 편집상태로 들어가야 합니다.
+			</li>
+		</ul>
+		<p><b class="bterm">페지번호대신 《페지번호》라는 문자가 현시될 때</b></p>
+		<p>페지번호, 날자, 시간 등을 <a href="#" class="glossary" onClick="AppendPopup(this,'IDG_FOOTER')" onKeyPress="AppendPopup(this,'IDG_FOOTER')">머리부 및 바닥부</a>에 추가하면 그 항목에 대한 <a href="#" class="glossary" onClick="AppendPopup(this,'IDG_FIELD')" onKeyPress="AppendPopup(this,'IDG_FIELD')">마당</a>이 삽입됩니다.
+			마당을 사용하면 문서가 바뀔 때 자동적으로 페지번호가 갱신됩니다.
+			실제 페지번호대신 《페지번호》라는 마당이름이 현시되면 <b class="bterm">&lt;보기&gt;</b>차림표의 <b class="bterm">&lt;마당이름&gt;</b>을 찰칵합니다.
+		</p>
+		<p><b class="bterm">페지번호가 련번호로 현시되지 않고 홀수번호만 혹은 짝수번호만 현시될 때</b></p>
+		<p>페지배치가 한쪽으로만 되여있습니다. 페지번호가 련번호로 현시되게 하려면 다음과 같은 방법으로 진행합니다.</p>
+		<ol>
+			<li>
+				<b class="bterm">&lt;서식&gt;</b>차림표에서 <b class="bterm">&lt;페지&gt;</b>를 찰칵하여 <b class="bterm">&lt;페지격식&gt;</b>대화창을 현시합니다.
+			</li>
+			<li>
+				<b class="bterm">&lt;페지&gt;</b>표쪽을 찰칵하고 <b class="bterm">&lt;배치 설정&gt;</b>령역의 <b class="bterm">&lt;페지배치&gt;</b>목록칸에서 <b class="bterm">&lt;오른쪽과 왼쪽&gt;</b>을 선택합니다.
+			</li>
+		</ol>
+		<script type="text/javascript" language="Javascript">footerView()</script>
+	
+</body>
+</html>

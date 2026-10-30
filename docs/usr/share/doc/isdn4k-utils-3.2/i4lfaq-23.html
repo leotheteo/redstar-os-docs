@@ -1,0 +1,263 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <META NAME="GENERATOR" CONTENT="LinuxDoc-Tools 0.9.21">
+ <TITLE>FAQ for isdn4linux: isdnlog: Isdnlog </TITLE>
+ <LINK HREF="i4lfaq-24.html" REL=next>
+ <LINK HREF="i4lfaq-22.html" REL=previous>
+ <LINK HREF="i4lfaq.html#toc23" REL=contents>
+</HEAD>
+<BODY>
+<A HREF="i4lfaq-24.html">Next</A>
+<A HREF="i4lfaq-22.html">Previous</A>
+<A HREF="i4lfaq.html#toc23">Contents</A>
+<HR>
+<H2><A NAME="isdnlog"></A> <A NAME="s23">23.</A> <A HREF="i4lfaq.html#toc23">isdnlog: Isdnlog </A></H2>
+
+<H2><A NAME="isdnlog_rates"></A> <A NAME="ss23.1">23.1</A> <A HREF="i4lfaq.html#toc23.1">isdnlog_rates: Where do I get the latest rate information? </A>
+</H2>
+
+<P>This is the homepage of the rate data crew:
+<CODE>
+<A HREF="http://sourceforge.net/projects/rates4linux">http://sourceforge.net/projects/rates4linux</A></CODE>. There you
+can download the latest rate files (which change very frequently),
+or have a look at the latest rate news.</P>
+<P>There is also a mailing list available for this kind of stuff. Subscribe
+by sending an email with subject "subscribe" to:
+<CODE>
+<A HREF="mailto:rates4linux-users-request@lists.sourceforge.net">rates4linux-users-request@lists.sourceforge.net</A></CODE>
+(send "help" in your subject to get instructions).
+To write to the mailing list, send an email to:
+<CODE>
+<A HREF="mailto:rates4linux-users@lists.sourceforge.net">rates4linux-users@lists.sourceforge.net</A></CODE>.</P>
+
+<H2><A NAME="isdnlog_servicetype"></A> <A NAME="ss23.2">23.2</A> <A HREF="i4lfaq.html#toc23.2">isdnlog_servicetype: Can I see the service type from an incoming call in the output from isdnrep? </A>
+</H2>
+
+<P>Andreas Kool <CODE>
+<A HREF="mailto:akool@Kool.f.EUnet.de">akool@Kool.f.EUnet.de</A></CODE> wrote on 3 Dec 1996:</P>
+<P>Indirectly in isdnrep, yes -- as soon as you enter an alias for the
+decoded service types in your &quot;isdnlog.conf&quot; ...</P>
+
+<H2><A NAME="isdnlog_callerid1"></A> <A NAME="ss23.3">23.3</A> <A HREF="i4lfaq.html#toc23.3">isdnlog_callerid1: Why don't I always receive from the German Telekom the number of a caller (&quot;Caller ID&quot;)? </A>
+</H2>
+
+<P>For data privacy reasons, telephone numbers from the analog network
+are not transmitted unless the caller has explicitly allowed the Telekom
+to do so (costs nothing).</P>
+<P>Those with an ISDN connection, on the other hand, must explicitly
+deny permission for the Telekom to transmit the number, or apply to
+be able to do this on a call-by-call basis (CLIR). Call-by-call
+denial is free; call-by-call transmission costs extra. However, it
+seems to be <EM>very</EM> difficult for the Telekom to configure this
+correctly on the first try.  If you depend on the transmission of
+Caller ID, you should check closely that everything is configured
+correctly.</P>
+
+<H2><A NAME="isdnlog_callerid2"></A> <A NAME="ss23.4">23.4</A> <A HREF="i4lfaq.html#toc23.4">isdnlog_callerid2: Do I receive the Caller ID from foreign calls (German Telekom)? </A>
+</H2>
+
+<P>Yes, with calls from countries that don't view Caller ID quite as strictly
+as does Germany (e.g. USA, Canada).</P>
+
+<H2><A NAME="isdnlog_spoofcallerid"></A> <A NAME="ss23.5">23.5</A> <A HREF="i4lfaq.html#toc23.5">isdnlog_spoofcallerid: I've heard that actually two Caller IDs are transmitted? </A>
+</H2>
+
+<P>That's right, there's one that is &quot;User-Provided, not
+screened&quot;, and the other is &quot;Network-Provided&quot; (from the
+telephone company). As the name says, the first one is provided by the
+user, whereas the second one is transmitted by the network.
+Providing a caller ID is only possible for a PBX connected in
+Point-to-point configuration with the feature &quot;CLIP no
+screening&quot;.</P>
+
+<H2><A NAME="isdnlog_betterlogging"></A> <A NAME="ss23.6">23.6</A> <A HREF="i4lfaq.html#toc23.6">isdnlog_betterlogging: Why doesn't isdnlog record the number dialed by my other ISDN devices, since it records the charges? </A>
+</H2>
+
+<P>Because the ISDN card, like all ISDN device, has separate lines for
+sending and receiving (RX and TX lines). Isdnlog has to read data
+from the receiving line to learn the number dialed. This isn't possible,
+at least for the Teles cards, as Karsten Keil
+<CODE>
+<A HREF="mailto:keil@isdn4linux.de">keil@isdn4linux.de</A></CODE>
+wrote on 12 Feb 1997:
+<BLOCKQUOTE>
+This is the case for all cards with 1 Siemens ISAX; it has (and needs)
+only 1 sender and 1 receiver.
+Theoretically, it's possible to read the entire D channel with just one
+receiver (even with the ISAC); the D bits from the RX line are copied
+(somewhat delayed) to the TX line, over which the access control
+(collision recognition) of the SO bus takes place.
+Unfortunately with the ISAC it's not possible to read the echo bits
+in TA mode from a register.
+</BLOCKQUOTE>
+
+See the next questions for a possible solution.</P>
+
+<H2><A NAME="isdnlog_reversedcard"></A> <A NAME="ss23.7">23.7</A> <A HREF="i4lfaq.html#toc23.7">isdnlog_reversedcard: How can I get isdnlog to also show the telephone numbers for other ISDN devices? </A>
+</H2>
+
+<P>There are several possibilities.
+<UL>
+<LI> COLP: First, the German Telekom offers the service
+COLP (Connected Line Identification Presentation, ca. DM 10 per month per
+basic line) that returns all data sent. This can then be read by isdnlog
+(=2.52) from the TX line.</LI>
+<LI> Reversed card/dual mode: Alternatively, isdnlog offers the possibility to
+work with a second &quot;re-poled&quot; ISDN card. &quot;re-poled&quot;
+means that the RX line is connected to the TX connection of the card; the
+RX line of the card should not be connected to any line! (even if other
+documents might tell you something else).  Because of this setup, this ISDN
+card cannot be used for anything else. This is called a reversed card, or the
+dual mode. The whole thing looks something like this:
+<PRE>
+      3 -- RX+ 2a ---------------\
+ISDN  4 -- TX+ 1a -- open         ------------  ISDN
+bus   5 -- TX- 1b -- open         ------------  card
+      6 -- RX- 2b ---------------/
+</PRE>
+
+Please note that this only works when the second card is an ISAC based cards
+(e.g. old Teles cards, Fritz! classic), since it requires a special
+bug/feature of that chip. All other cards, like IPAC based cards (e.g. ELSA
+QS1000pro) will not work in the role of a re-poled card.
+Please note that this will only work on the standard BRI interface,
+since for the more expensive PRI interface no card is available which
+can be used (PRI is a point-to-point connection anyway).
+</LI>
+<LI> HFC cards: some HFC-PCI based cards allow a special feature where one
+of the B channels can be sacrificed in exchange for reading the complete
+D channel protocol - with just one single card. This is also supported
+by isdn4linux. Set the HFC card in the following way:
+<HR>
+<PRE>
+hisaxctrl &lt;driver_id&gt; 1 4
+hisaxctrl &lt;driver_id&gt; 10 1
+hisaxctrl &lt;driver_id&gt; 12 1
+</PRE>
+<HR>
+
+You have to give isdnlog the command line option '-1' so that it
+makes use of the HFC option.
+
+Please note that a plain HFC-S does not work for hardware reasons, it has
+to be a newer one. If your card works with Hisax type 35 or 37, then it
+should work.
+
+Please also note that there is no known card for logging on a PRI interface
+in this way (also, the PRI interface is point-to-point, therefore only
+one device can be connected).
+
+</LI>
+<LI> PBX: A third (theoretical) possibility exists for those who have
+their own PBX to which the other devices are connected. If the PBX can
+protocol all outgoing calls, this can be read (usually over a serial port).
+There is a reason why isdnlog has not support for this until now. To evaluate
+this data, isdnlog has to be able to access the date immediately after
+the RELEASE COMPLETE, before any new data is sent on the D channel. The
+PBXs tested up to now have all been too slow (in particular the widely
+used ISTEC). The only possibility is to combine the data afterwards. But
+then there are problems with synchronizing the different times. Whoever
+want to attempt to do this is very welcome.</LI>
+</UL>
+</P>
+
+<H2><A NAME="isdnlog_rategraphic"></A> <A NAME="ss23.8">23.8</A> <A HREF="i4lfaq.html#toc23.8">isdnlog_rategraphic: How can I display the data transfer rates graphically? </A>
+</H2>
+
+<P>You can use &quot;xisdnload&quot;. Clemens Perz
+<CODE>
+<A HREF="mailto:listperz@gwsnet.ttt.de">listperz@gwsnet.ttt.de</A></CODE> on 6 Feb 1997 knew of another
+possibility:</P>
+<P>On Sunsite I found a little tool for the console called netload, and
+apapted it for the ISDN interfaces. With it you can quite easily see
+the current traffic on the line. It can be found at:</P>
+<P><CODE>
+<A HREF="ftp://ftp.region.trier.de/pub/unix/linux/sources/network/isdn/netload-0.92.isdn.tar.gz">ftp://ftp.region.trier.de/pub/unix/linux/sources/network/isdn/netload-0.92.isdn.tar.gz</A></CODE></P>
+<P>Simply start with <CODE>netload isdnxx</CODE>.</P>
+
+<H2><A NAME="isdnlog_2callerid"></A> <A NAME="ss23.9">23.9</A> <A HREF="i4lfaq.html#toc23.9">isdnlog_2callerid: Isdnlog (=2.52) shows for a caller <EM>two</EM> telephone numbers! Which one is correct? </A>
+</H2>
+
+<P>The caller has most likely activated the (costly) feature CLIP
+(= Calling Line Identification Presentation, no screening), which means
+any telephone number can be transmitted. See the question &quot;I've heard
+that actually two Caller IDs are transmitted?&quot;.</P>
+<P>Andreas Kool <CODE>
+<A HREF="mailto:akool@Kool.f.EUnet.de">akool@Kool.f.EUnet.de</A></CODE> wrote on 26 Jan 1997:</P>
+<P>In any case, you can only fool software/PBXs that do not evaluate
+the screening indicator - isdnlog with version 2.52 shows both the
+correct *and* the faked telephone number. 'CLIP, no screening' was
+actually designed for transmitting internal company numbers in the
+public network.</P>
+
+<H2><A NAME="isdnlog_soundbusy"></A> <A NAME="ss23.10">23.10</A> <A HREF="i4lfaq.html#toc23.10">isdnlog_soundbusy: I've set up a script to play sound per cat on /dev/sound or some other device. When several events occur, then there is an error: <CODE>Can't open output file '/dev/sound': Device or resource busy</CODE> </A>
+</H2>
+
+<P>Only one process at a time can access the sound device. You need an upper
+instance that coordinates access to the sound device. NAS (network audio
+system), and rplay can be used for this.</P>
+
+<H2><A NAME="isdnlog_noshell"></A> <A NAME="ss23.11">23.11</A> <A HREF="i4lfaq.html#toc23.11">isdnlog_noshell: Isdnlog should call a program with redirected output (e.g. <CODE>play anruf.au 2/dev/null</CODE>). Why does ISDN tell me <CODE>Can't start '/usr/local/bin/play anruf.au 2/dev/null' with execvp()</CODE>? </A>
+</H2>
+
+<P>Because isdnlog is not a (Bourne) shell ;-) Isdnlog can only start
+<B>real</B> programs. Just write a little script for it and make it
+executable (chmod +x):
+<HR>
+<PRE>
+#!/bin/sh
+/usr/local/bin/play anruf.au 2/dev/null
+</PRE>
+<HR>
+</P>
+
+<H2><A NAME="isdnlog_blankscreen"></A> <A NAME="ss23.12">23.12</A> <A HREF="i4lfaq.html#toc23.12">isdnlog_blankscreen: When dialing out, the screen goes momentarily black? </A>
+</H2>
+
+<P>This may happen when you start isdnlog with the options <CODE>-t1</CODE>
+or <CODE>-t2</CODE>, then the time is synchronized with the digital
+switching station. The screen saver thinks that more than x minutes have
+passed, which causes a short blackout of the screen.</P>
+
+<H2><A NAME="isdnlog_nologging"></A> <A NAME="ss23.13">23.13</A> <A HREF="i4lfaq.html#toc23.13">isdnlog_nologging: Isdnlog does not log any incoming call for me? </A>
+</H2>
+
+<P>Please verify whether your setup complies with the restrictions given in the
+isdnlog man page:</P>
+<P>Isdnlog only works with the HiSax isdn driver. Other cards with their own
+driver are not supported. Additionally you need to enable d-channel logging
+(you can use "hisaxctrl &lt;DriverId&gt; 1 4" to do that, e.g.
+"hisaxctrl line0  1  4").  Isdnlog can only log outgoing calls that
+originate from your isdn card, and incoming calls. To get information
+about outgoing calls from other isdn devices (e.g. telephones), you need
+a second Teles isdn card, with crossed lines. Such a card is not usable
+for communicating, but can log outgoing calls from any device.</P>
+<P>See also question 
+<A HREF="#isdnlog_reversedcard">isdnlog_reversedcard</A>
+for using two ISDN cards for logging.</P>
+
+<H2><A NAME="isdnlog_enoughdata"></A> <A NAME="ss23.14">23.14</A> <A HREF="i4lfaq.html#toc23.14">isdnlog_enoughdata: How can I check whether isdnlog receives enough information from the kernel drivers? </A>
+</H2>
+
+<P>First stop isdnlog (e.g. "killall isdnlog"), then run "cat /dev/isdnctrl0".
+When you trigger some activity on the isdn line (e.g. by initiating an
+incoming call) you should see lines starting with "HEX:" or "D2:" in the
+output of the cat command. If these lines are missing then check your
+configuration of the kernel drivers.</P>
+
+<H2><A NAME="isdnlog_database"></A> <A NAME="ss23.15">23.15</A> <A HREF="i4lfaq.html#toc23.15">isdnlog_database: How can I set up isdnlog with database support? </A>
+</H2>
+
+<P>You have to rebuild isdnlog for this. You can find some instructions
+(in German) on:
+<A HREF="http://lists.suse.com/archive/suse-isdn/2005-May/0043.html">http://lists.suse.com/archive/suse-isdn/2005-May/0043.html</A>.</P>
+
+
+
+<HR>
+<A HREF="i4lfaq-24.html">Next</A>
+<A HREF="i4lfaq-22.html">Previous</A>
+<A HREF="i4lfaq.html#toc23">Contents</A>
+</BODY>
+</HTML>

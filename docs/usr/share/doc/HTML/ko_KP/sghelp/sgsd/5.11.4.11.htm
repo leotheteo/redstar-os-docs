@@ -1,0 +1,76 @@
+<html dir='ltr'>
+	<head>
+		<META http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+		<title>설명부</title>
+		<link rel='stylesheet' type='text/css' href='../css/main.css'/>
+		<script type='text/javascript' language='Javascript' src='../js/mexpcol.js'></script>
+		<script type='text/javascript' language='JavaScript' src='../js/glossary.js'></script>
+	</head>
+	<body>
+		<h1>&nbsp;<img align="absbottom" src="../image/external_images/crystal/svtools/res/new_doc.png"/>&nbsp;설명부</h1>
+		<p id='ExpandAllLine' class='ExpFav'>
+			<a href='#' onClick='ExpandAll()' onKeyPress='ExpandAll()' class='DropDown'>
+				<img id='picHeader' border='0' src='../image/image/common/expandtri.gif' alt='모두 표시'>
+				<span id='ExpandAll'>모두 표시</span>
+			</a>
+		</p>
+		<b class="bterm">지시선이 있는 설명부로 객체제목의 만들기</b>
+		<ol>
+			<li><b class="bterm">&lt;도형&gt;</b><a href="#" class="glossary" onClick="AppendPopup(this,'IDG_TOOLBAR')" onKeyPress="AppendPopup(this,'IDG_TOOLBAR')">도구띠</a>에서 <b class="bterm">&lt;가로방향 설명부&gt;</b><img border='0' src='../image/external_images/crystal/res/commandimagelist/sc_drawcaption.png' alt='표시'>나 <b class="bterm">&lt;세로방향 설명부&gt;</b><img border='0' src='../image/ooo_custom_images/industrial/res/commandimagelist/sc_verticalcaption.png' alt='표시'>를 찰칵합니다.</li>
+			<li>설명부를 삽입할 위치를 찰칵한 다음 입력을 시작합니다.</li>
+			<li><a href="#" class="glossary" onClick="AppendPopup(this,'IDG_SIZEHANDLE')" onKeyPress="AppendPopup(this,'IDG_SIZEHANDLE')">크기조종꼭지</a>중에서 하나를 끌어서 설명부의 크기를 조정한 다음 요구하는 위치로 끌어서 설명부의 위치를 지정합니다.</li>
+		</ol>
+		<b class="bterm">설명부의 변경</b>
+		<p>설명부의 <a href="#" class="glossary" onClick="AppendPopup(this,'IDG_POINTERLINE')" onKeyPress="AppendPopup(this,'IDG_POINTERLINE')">지시선</a>과 객체제목칸의 격식을 바꿀수 있습니다. 례를 들어 설명부에 그림자효과를 주거나 객체제목칸의 배경에 투명효과를 줄수도 있습니다.
+			또한 지시선끝의 격식을 화살표나 사각형으로 변경할수도 있습니다.
+		</p>
+		<p>다음의 방법들중에서 하나를 선택합니다.</p>
+		<p>
+			<a href='#' class='DropDown' onClick='Outline2()' onKeyPress='Outline2()'>
+			<img border='0' src='../image/image/common/blueup.gif' alt='표시'>설명부의 객체제목칸격식을 변경</a>
+		</p>
+		<div id='ExpCol' class='collapsed' border='0'>
+			<ol>
+				<li>변경하려는 설명부를 선택합니다.</li>
+				<li><b class="bterm">&lt;도형객체속성&gt;</b>도구띠에서 <b class="bterm">&lt;령역&gt;</b><img border='0' src='../image/external_images/crystal/res/commandimagelist/sc_fillstyle.png' alt='표시'>을 찰칵합니다. 
+					또는 마우스의 오른쪽단추를 찰칵하여 펼쳐지는 상황차림표에서 <b class="bterm">&lt;령역&gt;</b>을 찰칵합니다. <b class="bterm">&lt;령역&gt;</b>대화창이 펼쳐집니다.
+				</li>
+				<li>다음의 방법들중에서 하나를 선택합니다.
+					<ul>
+						<li>그림자를 추가하려면 <b class="bterm">&lt;그림자&gt;</b>표쪽을 찰칵하여 요구하는 추가선택을 진행합니다.</li>
+						<li>배경색을 변경하려면 <b class="bterm">&lt;색&gt;</b>표쪽을 찰칵하여 요구하는 색을 선택합니다.</li>
+						<li>배경에 문양을 주려면 <b class="bterm">&lt;문양&gt;</b>표쪽을 찰칵하여 요구하는 문양형식을 선택합니다.</li>
+						<li>배경을 평행선으로 바꾸려면 <b class="bterm">&lt;평행선&gt;</b>표쪽을 찰칵하여 요구하는 추가선택을 진행합니다.</li>
+						<li>배경에 투명효과를 주려면 <b class="bterm">&lt;투명도&gt;</b>표쪽을 찰칵하여 투명도값을 지정합니다.</li>
+						<li>배경에 계조효과를 주려면 <b class="bterm">&lt;계조&gt;</b>표쪽을 찰칵하여 요구하는 계조형태를 지정합니다.</li>
+					</ul>
+				</li>
+				<li><b class="bterm">&lt;확인&gt;</b>단추를 찰칵합니다.</li>
+					<p><b class="bterm">참고:&emsp;   &lt;색&gt;</b>, <b class="bterm">&lt;계조&gt;</b>, <b class="bterm">&lt;문양&gt;</b>, <b class="bterm">&lt;평행선&gt;</b>과 같은 설정들은 <b class="bterm">&lt;령역&gt;</b>대화창의 <b class="bterm">&lt;령역&gt;</b>표쪽에서 종합적으로 진행할수 있습니다.
+			례를 들어 색을 변경하려면 <b class="bterm">&lt;령역&gt;</b>표쪽을 찰칵하여 <b class="bterm">&lt;칠하기&gt;</b>복합칸에서 <b class="bterm">&lt;색&gt;</b>을 선택합니다. 그다음 색목록칸에서 요구하는 색을 선택합니다.
+					</p>
+			</ol>
+		</div>
+		<p>
+			<a href='#' class='DropDown' onClick='Outline2()' onKeyPress='Outline2()'>
+			<img border='0' src='../image/image/common/blueup.gif' alt='표시'>설명부의 지시선격식을 변경</a>
+		</p>
+		<div id='ExpCol' class='collapsed' border='0'>
+			<ol>
+				<li>변경하려는 설명부를 선택합니다.</li>
+				<li><b class="bterm">&lt;도형객체속성&gt;</b>도구띠에서 <b class="bterm">&lt;선&gt;</b><img border='0' src='../image/external_images/crystal/res/commandimagelist/sc_formatline.png' alt='표시'>을 찰칵합니다. 또는 마우스의 오른쪽단추를 찰칵하여 펼쳐지는 상황차림표에서 <b class="bterm">&lt;선&gt;</b>을 찰칵합니다.</li>
+				<li>다음의 방법들중에서 하나를 실행합니다.
+					<ul>
+						<li>선의 격식을 변경하려면 <b class="bterm">&lt;선&gt;</b>표쪽을 찰칵하여 <b class="bterm">&lt;선속성&gt;</b>부분에서 <b class="bterm">&lt;격식&gt;</b>복합칸을 찰칵하고 요구하는 격식을 선택합니다.</li>
+						<li>지시선끝격식을 변경하려면 <b class="bterm">&lt;선&gt;</b>표쪽을 찰칵하여 <b class="bterm">&lt;화살표격식&gt;</b>부분에서 <b class="bterm">&lt;시작격식&gt;</b>복합칸과 <b class="bterm">&lt;끝격식&gt;</b>복합칸을 찰칵하고 요구하는 화살표격식을 선택합니다.</li>
+					</ul>
+				</li>
+				<p><b class="bterm">참고:</b>   선격식이나 화살표격식을  요구하는 형식으로 편집하여 사용하기 위하여서는 <b class="bterm">&lt;선&gt;</b>대화창의 <b class="bterm">&lt;선격식&gt;</b>표쪽이나 <b class="bterm">&lt;화살표격식&gt;</b>표쪽을 찰칵하여 요구하는 선격식이나 화살표격식을 편집하여 추가합니다.
+					</p>
+				<li><b class="bterm">&lt;확인&gt;</b>단추를 찰칵합니다.</li>		
+	</ol>
+		</div>
+		<script type="text/javascript" language="Javascript">footerView()</script>
+	
+</body>
+</html>

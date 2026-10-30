@@ -1,0 +1,66 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+	<TITLE></TITLE>
+	<META NAME="GENERATOR" CONTENT="《Sogwang 3.0》  (Linux)">
+	<META NAME="CREATED" CONTENT="20091205;15361500">
+	<META NAME="CHANGED" CONTENT="20091205;15492700">
+	<STYLE TYPE="text/css">
+	<!--
+		H2 { margin-bottom: 0.18cm; font-family: "Bitstream Vera Sans", "Arial", "Helvetica", "Lucida", "Geneva", "Helmet", sans-serif, "Andale Sans UI", "Arial Unicode MS", "Lucida Sans Unicode", "Tahoma"; font-size: 14pt }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="ko-KP" DIR="LTR"><DIV style="margin-left: 25">
+<H1><A NAME="timer"></A><A NAME="bm_id3149346"></A><FONT FACE="Thorndale, serif"><SPAN LANG="en-US">Timer
+Function [Runtime]</SPAN></FONT></H1>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Returns
+a value that specifies the number of seconds that have elapsed since
+midnight.</SPAN></FONT></P>
+<TABLE WIDTH=891 BORDER=0 CELLPADDING=5 CELLSPACING=0>
+	<COL WIDTH=33>
+	<COL WIDTH=588>
+	<TR>
+		<TD WIDTH=33>
+			<P><IMG SRC="../../../Image/note.png" NAME="graphics1" ALT="Note Icon " ALIGN=BOTTOM WIDTH=33 HEIGHT=42 BORDER=0></P>
+		</TD>
+		<TD WIDTH=838>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">You
+			must first declare a variable to call the Timer function and
+			assign it the &quot;Long &quot; data type, otherwise a Date value
+			is returned.</SPAN></FONT></P>
+		</TD>
+	</TR>
+</TABLE>
+<P><BR><BR>
+</P>
+<H2><SPAN LANG="en-US">Syntax:</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Timer</SPAN></FONT></P>
+<H2><SPAN LANG="en-US">Return value:</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Date</SPAN></FONT></P>
+<H2><SPAN LANG="en-US">Example:</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Sub
+ExampleTimer</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Dim lSec
+as long,lMin as long,lHour as long</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">lSec =
+Timer</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">MsgBox
+lSec,0,&quot;Seconds since midnight&quot;</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">lMin =
+lSec / 60</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">lSec =
+lSec Mod 60</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">lHour =
+lMin / 60</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">lMin =
+lMin Mod 60</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">MsgBox
+Right(&quot;00&quot; &amp; lHour , 2) &amp; &quot;:&quot;&amp;
+Right(&quot;00&quot; &amp; lMin , 2) &amp; &quot;:&quot; &amp;
+Right(&quot;00&quot; &amp; lSec , 2) ,0,&quot;The time is&quot;</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">end sub</SPAN></FONT></P>
+
+</DIV></BODY>
+</HTML>

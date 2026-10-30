@@ -1,0 +1,104 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <META NAME="GENERATOR" CONTENT="LinuxDoc-Tools 0.9.21">
+ <TITLE>ISDN4LINUX - FAQ (deutsche Version): remote: Eigenheiten des remote ISDN Device </TITLE>
+ <LINK HREF="i4lfaq-de-21.html" REL=next>
+ <LINK HREF="i4lfaq-de-19.html" REL=previous>
+ <LINK HREF="i4lfaq-de.html#toc20" REL=contents>
+</HEAD>
+<BODY>
+<A HREF="i4lfaq-de-21.html">Next</A>
+<A HREF="i4lfaq-de-19.html">Previous</A>
+<A HREF="i4lfaq-de.html#toc20">Contents</A>
+<HR>
+<H2><A NAME="remote"></A> <A NAME="s20">20.</A> <A HREF="i4lfaq-de.html#toc20">remote: Eigenheiten des remote ISDN Device </A></H2>
+
+<H2><A NAME="remote_win95"></A> <A NAME="ss20.1">20.1</A> <A HREF="i4lfaq-de.html#toc20.1">remote_win95: Wie konfiguriere ich Windows95 zur erfolgreichen Einwahl zu meinem ISDN4LINUX Computer? </A>
+</H2>
+
+<P>Konfiguriere Dein Dialout Network wie folgt:
+<UL>
+<LI>Typ des Servers: PPP:Windows 95, Windows NT 3.5, Internet</LI>
+<LI>Erweiterte Optionen: deaktiviere alle Optionen</LI>
+<LI>Netzwerk Protokolle: nur TCP/IP</LI>
+<LI>Standard Gateway</LI>
+<LI>Schalte vorerst die IP Header Compression ab (mehr Details zur
+Kompression findest Du bei 
+<A HREF="i4lfaq-de-13.html#syncppp_compression">syncppp_compression</A>).</LI>
+<LI>Den Rest der Einstellungen f&uuml;r TCP/IP (IP-Addresse,
+Nameserver,...) stellst Du nach Deinen Gegebenheiten ein.</LI>
+</UL>
+</P>
+
+<H2><A NAME="remote_mac"></A> <A NAME="ss20.2">20.2</A> <A HREF="i4lfaq-de.html#toc20.2">remote_mac: Ich m&ouml;chte Daten mit einem Macintosh (Leonardo card) austauschen. Was muss ich oder der Mac User dabei beachten? </A>
+</H2>
+
+<P>Zur Zeit wird das Leonardo Protokoll nicht von I4L
+unterst&uuml;tzt. Wenn Du den Mac anrufst, sollte er das Protokoll auf
+X.75 oder HDLC setzen. Wenn er Dich anruft, muss er das Protokoll
+explizit in der gew&auml;hlten Nummer angeben (z.B.  durch
+Einf&uuml;gen eines 'X' f&uuml;r X.75).</P>
+
+<H2><A NAME="remote_macpap"></A> <A NAME="ss20.3">20.3</A> <A HREF="i4lfaq-de.html#toc20.3">remote_macpap: Ein Macintosh mit einer Leonardo Karte versucht sich einzuw&auml;hlen und will chap md5 benutzen. Wie kann ich das auf CHAP/PAP umwandeln? </A>
+</H2>
+
+<P>Du kannst es nicht. Der Mac User muss LeoPort (im Lieferumfang der
+Karte enthalten) benutzen und den CTB port auf die ISDN Karte
+einstellen. Dann kann er mittels FreePPP 2.5v2 <CODE>
+<A HREF="http://www.rockstar.com">http://www.rockstar.com</A></CODE> die Leo als Modem
+einrichten. FreePPP wird wie &uuml;blich eingestellt. Danach kann
+PAP/CHAP eingerichtet werden.</P>
+
+<H2><A NAME="remote_cisco"></A> <A NAME="ss20.4">20.4</A> <A HREF="i4lfaq-de.html#toc20.4">remote_cisco: Wie verh&auml;lt sich ISDN4LINUX mit einer Cisco (HDLC) als Gegenpart? </A>
+</H2>
+
+<P>Auf dem Cisco Router muss das Senden von 'keep alive' Paketen
+abgestellt werden. ISDN4LINUX muss f&uuml;r HDLC, transparent, mit
+Cisco encapsulation eingestellt werden:
+<HR>
+<PRE>
+isdnctrl l2_prot &lt;interface&gt; hdlc
+isdnctrl l3_prot &lt;interface&gt; trans
+isdnctrl encap &lt;interface&gt; cisco-h
+</PRE>
+<HR>
+</P>
+
+<H2><A NAME="remote_ispa"></A> <A NAME="ss20.5">20.5</A> <A HREF="i4lfaq-de.html#toc20.5">remote_ispa: Welche Einstellungen braucht ISPA usw. (DOS, Windows) um mit den Standardeinstellungen von ISDN4LINUX zurecht zu kommen? </A>
+</H2>
+
+<P>Die folgenden Einstellungen sind m&ouml;glich (diese gelten auch
+f&uuml;r die anderen Treiber von H. Hanewinkel (CINDI, CANDI,
+WISPA...), zu finden auf <CODE>
+<A HREF="http://www.informatik.uni-bremen.de/~henker/dank">http://www.informatik.uni-bremen.de/~henker/dank</A></CODE>):
+<PRE>
+i4l side                             ISPA side
+====================================================
+isdnctrl l2_prot isdn0 hdlc           \
+isdnctrl l3_prot isdn0 trans              -h0
+isdnctrl encap   isdn0 rawip          /
+----------------------------------------------------
+isdnctrl l2_prot isdn0 hdlc           \
+isdnctrl l3_prot isdn0 trans              -h1
+isdnctrl encap   isdn0 uihdlc         /
+----------------------------------------------------
+isdnctrl l2_prot isdn0 x75i           \
+isdnctrl l3_prot isdn0 trans              -l0
+isdnctrl encap   isdn0 rawip          /
+----------------------------------------------------
+isdnctrl l2_prot isdn0 x75i           \
+isdnctrl l3_prot isdn0 trans              -l1
+isdnctrl encap   isdn0 uihdlc         /
+---------------------------------------------------- 
+</PRE>
+
+Der Parameter mit den wenigsten Problemen ist -h0.</P>
+
+
+<HR>
+<A HREF="i4lfaq-de-21.html">Next</A>
+<A HREF="i4lfaq-de-19.html">Previous</A>
+<A HREF="i4lfaq-de.html#toc20">Contents</A>
+</BODY>
+</HTML>

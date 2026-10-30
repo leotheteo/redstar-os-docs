@@ -1,0 +1,136 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+	<TITLE></TITLE>
+	<META NAME="GENERATOR" CONTENT="《Sogwang 3.0》  (Linux)">
+	<META NAME="CREATED" CONTENT="20020101;8301100">
+	<META NAME="CHANGED" CONTENT="20020101;8303000">
+	<STYLE TYPE="text/css">
+	<!--
+		P.listitem { font-family: "Bitstream Vera Sans", "Arial", "Helvetica", "Lucida", "Geneva", "Helmet", sans-serif, "Andale Sans UI", "Arial Unicode MS", "Lucida Sans Unicode", "Tahoma" }
+		H2 { margin-bottom: 0.18cm; font-family: "Bitstream Vera Sans", "Arial", "Helvetica", "Lucida", "Geneva", "Helmet", sans-serif, "Andale Sans UI", "Arial Unicode MS", "Lucida Sans Unicode", "Tahoma"; font-size: 14pt }
+		P.related { margin-top: 0.71cm; margin-bottom: 0.05cm; border-top: 1px solid #000000; border-bottom: none; border-left: none; border-right: none; padding-top: 0.05cm; padding-bottom: 0cm; padding-left: 0cm; padding-right: 0cm; font-weight: bold }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="ko-KP" DIR="LTR"><DIV style="margin-left: 25">
+<H1><A NAME="bm_id3149377"></A><A NAME="line_draw"></A><FONT FACE="Thorndale, serif"><SPAN LANG="en-US">Drawing
+Curves </SPAN></FONT>
+</H1>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">The <B>Curve</B>
+icon 
+<IMG SRC="../../Image/sc_linetoolbox.png" NAME="graphics1" ALT="Icon" ALIGN=BOTTOM WIDTH=16 HEIGHT=16 BORDER=0>
+on the <B>Drawing</B> toolbar opens a toolbar to draw Bézier curves.
+Bézier curves are defined by a start point and an end point, which
+are called &quot;anchors&quot;. The curvature of the Bézier curve is
+defined by control points (&quot;handles&quot;). Moving a control
+point changes the shape of the Bézier curve.</SPAN></FONT></P>
+<TABLE WIDTH=942 BORDER=0 CELLPADDING=5 CELLSPACING=0>
+	<COL WIDTH=33>
+	<COL WIDTH=524>
+	<TR>
+		<TD WIDTH=47>
+			<P><IMG SRC="../../Image/note.png" NAME="graphics2" ALT="Note Icon " ALIGN=BOTTOM WIDTH=33 HEIGHT=42 BORDER=0></P>
+		</TD>
+		<TD WIDTH=875>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Control points
+			are only visible in &quot;Edit Points&quot; mode. Control points
+			are represented by circles, anchor points are represented by
+			squares. The start point is a little bit larger than the other
+			anchor points.</SPAN></FONT></P>
+		</TD>
+	</TR>
+</TABLE>
+<P><BR><BR>
+</P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Bézier curve
+segments and straight line segments can be joined to form more
+complex Bézier curves. Three different transitions can be applied to
+join adjacent segments:</SPAN></FONT></P>
+<UL>
+	<LI><P CLASS="listitem"><FONT FACE="청봉, serif"><SPAN LANG="en-US">A <B>symmetrical</B>
+	anchor point has the same line curvature on either side, and two
+	control lines that move together as a straight line.</SPAN></FONT></P>
+	<LI><P CLASS="listitem"><FONT FACE="청봉, serif"><SPAN LANG="en-US">A <B>smooth</B> anchor
+	point may have different line curvatures on either side.</SPAN></FONT></P>
+	<LI><P CLASS="listitem"><FONT FACE="청봉, serif"><SPAN LANG="en-US">A <B>corner</B> anchor
+	point has one or two independent control lines. Changing one side
+	has no effect on the other side.</SPAN></FONT></P>
+</UL>
+<H2><SPAN LANG="en-US">How to use the Curve tool</SPAN></H2>
+<OL>
+	<LI><P><FONT FACE="청봉, serif"><SPAN LANG="en-US">On the Drawing
+	toolbar, open the <B>Curves</B> toolbar 
+	<IMG SRC="../../Image/sc_linetoolbox.png" NAME="graphics3" ALT="Icon" ALIGN=BOTTOM WIDTH=16 HEIGHT=16 BORDER=0>
+	and select the <B>Curve</B> 
+	<IMG SRC="../../Image/sc_bezier_unfilled.png" NAME="graphics4" ALT="Icon" ALIGN=BOTTOM WIDTH=16 HEIGHT=16 BORDER=0>
+	tool.</SPAN></FONT></P>
+	<LI><P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Click where you
+	want the curve to start, and drag in the direction where you want
+	the curve to go. The control line will indicate the direction. </SPAN></FONT>
+	</P>
+	<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Hold down <B>Shift</B>
+	while you drag to restrict the direction to a 45 degree grid.</SPAN></FONT></P>
+	<LI><P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Release the
+	mouse where the first control point should be.</SPAN></FONT></P>
+	<LI><P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Move the
+	pointer to where you want the curve segment to end. The curve
+	follows the pointer. </SPAN></FONT>
+	</P>
+	<LI><P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Do one of the
+	following:</SPAN></FONT></P>
+</OL>
+<UL>
+	<LI><P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Double-click on
+	the position of the end point to finish drawing the line. </SPAN></FONT>
+	</P>
+	<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">To create a closed
+	shape, double-click the starting point of the line.</SPAN></FONT></P>
+	<LI><P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Click and
+	release the mouse button to add an anchor point. Move the mouse to
+	draw the next segment.</SPAN></FONT></P>
+	<LI><P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Click and drag
+	in any direction to add a smooth anchor point.</SPAN></FONT></P>
+</UL>
+<H2><SPAN LANG="en-US">How to use the Freeform Line tool</SPAN></H2>
+<OL>
+	<LI><P><FONT FACE="청봉, serif"><SPAN LANG="en-US">On the Drawing
+	toolbar, open the <B>Curves</B> toolbar 
+	<IMG SRC="../../Image/sc_linetoolbox.png" NAME="graphics5" ALT="Icon" ALIGN=BOTTOM WIDTH=16 HEIGHT=16 BORDER=0>
+	and select the <B>Freeform Line</B> 
+	<IMG SRC="../../Image/sc_freeline_unfilled.png" NAME="graphics6" ALT="Icon" ALIGN=BOTTOM WIDTH=16 HEIGHT=16 BORDER=0>
+	tool.</SPAN></FONT></P>
+	<LI><P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Click where you
+	want the curve to start, and keep holding the mouse button down.</SPAN></FONT></P>
+	<LI><P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Draw the
+	freeform line as you would do with a pencil.</SPAN></FONT></P>
+	<LI><P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Release the
+	mouse button to finish the line.</SPAN></FONT></P>
+</OL>
+<P CLASS="related"><A NAME="relatedtopics"></A><A NAME="related"></A><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Related
+Topics</B> </SPAN></FONT>
+</P>
+<P STYLE="margin-left: 0.13cm; margin-top: 0.05cm; margin-bottom: 0.05cm"><A NAME="line_edit"></A>
+<FONT FACE="청봉, serif"><SPAN LANG="en-US"><SPAN STYLE="font-weight: medium"><A 
+HREF="./Edit_Curve.html">Editing
+Curves</A> </SPAN></SPAN></FONT>
+</P>
+<P STYLE="margin-left: 0.13cm; margin-top: 0.05cm; margin-bottom: 0.05cm"><A NAME="vectorize"></A>
+<FONT FACE="청봉, serif"><SPAN LANG="en-US"><SPAN STYLE="font-weight: medium"><A 
+HREF="./Convert_Bitmap.html">Converting
+Bitmap Images into Vector Graphics</A> </SPAN></SPAN></FONT>
+</P>
+<P STYLE="margin-left: 0.13cm; margin-top: 0.05cm; margin-bottom: 0.05cm"><A NAME="3d_create"></A>
+<FONT FACE="청봉, serif"><SPAN LANG="en-US"><SPAN STYLE="font-weight: medium"><A 
+HREF="./Convert_2DObj.html">Converting
+2D Objects to Curves, Polygons, and 3D Objects</A> </SPAN></SPAN></FONT>
+</P>
+<P STYLE="margin-left: 0.13cm; margin-top: 0.05cm; margin-bottom: 0.05cm">
+<FONT FACE="청봉, serif"><SPAN LANG="en-US"><SPAN STYLE="font-weight: medium"><A 
+HREF="./Convert_TextCharac.html">Converting
+Text Characters into Drawing Objects</A> </SPAN></SPAN></FONT>
+</P>
+
+</DIV></BODY>
+</HTML>

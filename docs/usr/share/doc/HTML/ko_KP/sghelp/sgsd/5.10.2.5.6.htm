@@ -1,0 +1,74 @@
+<html dir='ltr'>
+	<head>
+		<META http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+		<title>본문을 날자 또는 시간과 결합</title>
+		<link rel='stylesheet' type='text/css' href='../css/main.css'/>
+		<script type='text/javascript' language='Javascript' src='../js/mexpcol.js'></script>
+		<script type='text/javascript' language='JavaScript' src='../js/glossary.js'></script>
+	</head>
+	<body>
+		<h1>&nbsp;<img align="absbottom" src="../image/external_images/crystal/svtools/res/new_doc.png"/>&nbsp;본문을 날자 또는 시간과 결합</h1>
+		<p id='ExpandAllLine' class='ExpFav'>
+			<a href='#' onClick='ExpandAll()' onKeyPress='ExpandAll()' class='DropDown'>
+				<img id='picHeader' border='0' src='../image/image/common/expandtri.gif' alt='모두 표시'>
+				<span id='ExpandAll'>모두 표시</span>
+			</a>
+		</p>
+			<p>이 작업을 수행하려면 <b class="bterm">TEXT</b>함수와 & 연산자를 사용합니다.</p>
+			<p><b class="bterm">실례</b></p>
+			<p><a href="1.5.1.htm">실례의 리용방법</a>을 참고하십시오.</p>
+			<table>
+			<tr>
+				<td>
+					<table>
+						<tr>
+							<td class="noborder">&nbsp;</td>
+						</tr>
+						<tr>
+							<th>1</th>
+						</tr>
+						<tr>
+							<th>2</th>
+						</tr>
+						<tr>
+							<th>3</th>
+						</tr>
+					</table>
+				</td>
+				<td>
+					<table>
+						<tr>
+							<th>A</th>
+						</tr>
+						<tr>
+							<th>자료</th>
+						</tr>
+						<tr>
+							<td>개학날자</td>
+						</tr>
+						<tr>
+							<td>09/4/1</td>
+						</tr>
+						<tr>
+							<th>수식</th>
+							<th>설명(결과)</th>
+						</tr>
+						<tr>
+							<td>="개학날자: "&TEXT(A3; "yyyy/m/d")</td>
+							<td>수식의 본문을 날자와 결합합니다. (개학날자: 2009/4/1)</td>
+						</tr>
+						<tr>
+							<td>=A2&" "&TEXT(A3; "yyyy/m/d")</td>
+							<td>여러 세포의 본문과 날자를 한세포로 결합합니다. (개학날자 2009/4/1)</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+		</table>
+		<p><b class="bterm">참고:</b>   세포에 사용된 수자서식코드를 수식으로 복사하려면 세포를 선택하고 <b class="bterm">&lt;서식&gt;</b>차림표에서 <b class="bterm">&lt;세포&gt;</b>를 찰칵합니다. <b class="bterm">&lt;수자&gt;</b>표쪽을 찰칵한 다음 <b class="bterm">&lt;서식코드&gt;</b>본문칸의 내용을 복사합니다.</p>
+			<p><b class="bterm">참조함수</b></p>
+			<p><a href='5.9.12.26.htm'>TEXT</a></p>
+		<script type="text/javascript" language="Javascript">footerView()</script>
+	
+</body>
+</html>

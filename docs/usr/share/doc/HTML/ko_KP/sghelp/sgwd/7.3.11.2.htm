@@ -1,0 +1,66 @@
+﻿<html dir='ltr'>
+	<head>
+		<META http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+		<title>본문 및 도형객체의 작업</title>
+		<link rel='stylesheet' type='text/css' href='../css/main.css'/>
+		<script type='text/javascript' language='Javascript' src='../js/mexpcol.js'></script>
+		<script type='text/javascript' language='JavaScript' src='../js/glossary.js'></script>
+	</head>
+	<body>
+		<h1>&nbsp;<img align="absbottom" src="../image/external_images/crystal/svtools/res/new_doc.png"/>&nbsp;본문 및 도형객체의 작업</h1>
+		<p id='ExpandAllLine' class='ExpFav'>
+			<a href='#' onClick='ExpandAll()' onKeyPress='ExpandAll()' class='DropDown'>
+				<img id='picHeader' border='0' src='../image/image/common/expandtri.gif' alt='모두 표시'>
+				<span id='ExpandAll'>모두 표시</span>
+			</a>
+		</p>
+		<p><b class="bterm">본문을 본문칸이나 도형객체안에 넣을수 없는 경우</b></p>
+		<p>본문이 너무 크면 본문칸이나 도형객체안에 넣을수 없습니다.</p>
+		<ul>
+			<li>
+				본문크기를 줄이려면 본문을 선택하고 <b class="bterm">&lt;서식 설정&gt;</b>도구띠의 <b class="bterm">&lt;서체크기&gt;</b>복합칸 <img border="0" src="../image/image/sgwd/fontsize.gif">에서 보다 작은 크기를 찰칵합니다.
+			</li>
+			<li>
+				객체를 크게 만들려면 객체를 찰칵하고 <a href="#" class="glossary" onClick="AppendPopup(this,'IDG_SIZEHANDLE')" onKeyPress="AppendPopup(this,'IDG_SIZEHANDLE')">크기조절꼭지</a>를 끕니다.
+			</li>
+		</ul>
+		<p><b class="bterm">본문칸이나 도형객체를 이동할수 없는 경우</b></p>
+		<p>테두리를 찰칵하여 객체를 선택한 다음 마우스를 끕니다. 마우스유표가 손모양으로 변경되여야 객체의 이동이 가능합니다.</p>
+		<p><b class="bterm">도형객체와 도형객체에 포함된 본문을 같은 페지에 유지할수 없는 경우</b></p>
+		<ul>
+			<li>
+				도형객체와 본문칸을 그룹화할수 있습니다. 본문칸은 도형객체의 일종입니다.
+			</li>
+			<li>
+				본문칸의 기준위치는 포함된 본문옆이여야 합니다.
+			</li>
+			<li>
+				삽화제목을 도형객체에 추가하는 경우에는 먼저 객체를 선택한 다음 <b class="bterm">&lt;삽입&gt;</b>차림표의 <b class="bterm">&lt;삽화제목&gt;</b>을 찰칵해야 합니다.
+				또한 삽화제목의 기준위치는 도형객체의 기준위치와 동일한 단락으로 련결되여야 합니다.
+			</li>
+		</ul>
+		<p><b class="bterm">본문이 도형객체주위를 둘러싸지 못할 때</b></p>
+		<ul>
+			<li>
+				본문으로 도형객체주위를 빽빽하게 완전히 둘러싸려면 옳바른 에워싸기형식을 선택해야 합니다.
+				에워싸기형식을 확인하려면 도형객체를 찰칵한 다음 <b class="bterm">&lt;서식&gt;</b>차림표에서 <b class="bterm">&lt;에워싸기&gt;</b>를 찰칵하여 <b class="bterm">&lt;에워싸지 않음&gt;</b>이 선택되였는지 확인합니다.
+			</li>
+			<li>
+				<b class="bterm">&lt;도형&gt;</b>도구띠에 있는 <b class="bterm">&lt;선&gt;</b>도구로 만든 도형은 간혹 거칠게 그려지므로 본문이 도형객체주위를 빽빽하게 둘러싸지 못할수 있습니다.
+				선을 보다 부드럽게 만들어 이 문제를 해결할수 있습니다.
+				선, 곡선 또는 선과 곡선이 모두 결합된 도형객체를 그리는 경우 다음과 같은 사항을 고려합니다.
+				도형객체가 펜으로 그린것처럼 보이게 하려면 <b class="bterm">&lt;자유곡선&gt;</b><img border="0" src="../image/external_images/crystal/res/commandimagelist/sc_freeline_unfilled.png">도구를 사용합니다.
+				<b class="bterm">&lt;자유곡선&gt;</b><img border="0" src="../image/external_images/crystal/res/commandimagelist/sc_freeline_unfilled.png">도구로 그린 도형객체는 화면에 그린 모양과 거의 일치합니다.
+				선이 거칠거나 방향이 크게 변하지 않는 보다 세밀한 도형객체를 그리려면 <b class="bterm">&lt;다각형&gt;</b><img border="0" src="../image/external_images/crystal/res/commandimagelist/sc_polygon_unfilled.png">도구를 사용합니다.
+				곡선을 더욱 정교하고 정확하게 그리려면 <b class="bterm">&lt;곡선&gt;</b><img border="0" src="../image/external_images/crystal/res/commandimagelist/sc_bezier_unfilled.png">도구를 사용합니다.
+			</li>
+			<li>
+				본문으로 다각형주위를 둘러싸는 경우 다각형의 모양을 조정하여 보다 부드럽게 만들수 있습니다.
+			</li>
+		</ul>
+		<p><b class="bterm">여러 도형객체를 선택할수 없는 경우</b></p>
+		<p>여러 도형객체를 선택하려면 <b class="bterm">[Shift]</b>건을 누른채 요구하는 도형객체를 련속하여 찰칵합니다.</p>
+		<script type="text/javascript" language="Javascript">footerView()</script>
+	
+</body>
+</html>

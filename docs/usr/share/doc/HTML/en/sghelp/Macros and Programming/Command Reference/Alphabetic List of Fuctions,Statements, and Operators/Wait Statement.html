@@ -1,0 +1,50 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+	<TITLE></TITLE>
+	<META NAME="GENERATOR" CONTENT="《Sogwang 3.0》  (Linux)">
+	<META NAME="CREATED" CONTENT="20091205;15361500">
+	<META NAME="CHANGED" CONTENT="20091205;16582500">
+	<STYLE TYPE="text/css">
+	<!--
+		H2 { margin-bottom: 0.18cm; font-family: "Bitstream Vera Sans", "Arial", "Helvetica", "Lucida", "Geneva", "Helmet", sans-serif, "Andale Sans UI", "Arial Unicode MS", "Lucida Sans Unicode", "Tahoma"; font-size: 14pt }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="ko-KP" DIR="LTR"><DIV style="margin-left: 25">
+<H1><A NAME="wait"></A><A NAME="bm_id3154136"></A><FONT FACE="Thorndale, serif"><SPAN LANG="en-US">Wait
+Statement [Runtime]</SPAN></FONT></H1>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Interrupts
+the program execution for the amount of time that you specify in
+milliseconds.</SPAN></FONT></P>
+<H2><SPAN LANG="en-US">Syntax:</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Wait
+millisec</SPAN></FONT></P>
+<H2><SPAN LANG="en-US">Parameters:</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>millisec:</B>
+Numeric expression that contains the amount of time (in milliseconds)
+to wait before the program is executed.</SPAN></FONT></P>
+<H2><A NAME="errorcode"></A><SPAN LANG="en-US">Error Codes </SPAN>
+</H2>
+<P><A NAME="err5"></A><FONT FACE="청봉, serif"><SPAN LANG="en-US">5
+Invalid procedure call </SPAN></FONT>
+</P>
+<H2><SPAN LANG="en-US">Example:</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Sub
+ExampleWait</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Dim
+lTick As Long</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">lTick =
+GetSystemTicks()</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">wait
+2000</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">lTick =
+(GetSystemTicks() - lTick)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">MsgBox
+&quot;&quot; &amp; lTick &amp; &quot; Ticks&quot; ,0,&quot;The pause
+lasted&quot;</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">End Sub</SPAN></FONT></P>
+
+</DIV></BODY>
+</HTML>

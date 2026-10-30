@@ -1,0 +1,94 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+	<TITLE></TITLE>
+	<META NAME="GENERATOR" CONTENT="《Sogwang 3.0》  (Linux)">
+	<META NAME="CREATED" CONTENT="20091205;15361500">
+	<META NAME="CHANGED" CONTENT="20091205;15391600">
+	<STYLE TYPE="text/css">
+	<!--
+		H2 { margin-bottom: 0.18cm; font-family: "Bitstream Vera Sans", "Arial", "Helvetica", "Lucida", "Geneva", "Helmet", sans-serif, "Andale Sans UI", "Arial Unicode MS", "Lucida Sans Unicode", "Tahoma"; font-size: 14pt }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="ko-KP" DIR="LTR"><DIV style="margin-left: 25">
+<H1><A NAME="rset"></A><A NAME="bm_id3153345"></A><FONT FACE="Thorndale, serif"><SPAN LANG="en-US">RSet
+Statement [Runtime]</SPAN></FONT></H1>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Right-aligns
+a string within a string variable, or copies a user-defined variable
+type into another.</SPAN></FONT></P>
+<H2><SPAN LANG="en-US">Syntax:</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">RSet
+Text As String = Text or RSet Variable1 = Variable2</SPAN></FONT></P>
+<H2><SPAN LANG="en-US">Parameters:</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Text:</B>
+Any string variable.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Text</B>:
+String that you want to right-align in the string variable.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Variable1:</B>
+User-defined variable that is the target for the copied variable.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Variable2:</B>
+User-defined variable that you want to copy to another variable.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">If the
+string is shorter than the string variable, <B>RSet</B> aligns the
+string to the right within the string variable. Any remaining
+characters in the string variable are replaced with spaces. If the
+string is longer than the string variable, characters exceeding the
+length of the variable are truncated, and only the remaining
+characters are right-aligned within the string variable.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">You can
+also use the <B>RSet statement</B> to assign variables of one
+user-defined type to another.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">The
+following example uses the <B>RSet</B> and <B>LSet</B> statements to
+modify the left and right alignment of a string.</SPAN></FONT></P>
+<H2><SPAN LANG="en-US">Example:</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Sub
+ExampleRLSet</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Dim sVar
+as string</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Dim
+sExpr as string</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">sVar =
+String(40,&quot;*&quot;)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">sExpr =
+&quot;SBX&quot;</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">REM
+Right-align &quot;SBX&quot; in a 40-character string</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">REM
+Replace asterisks with spaces</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">RSet
+sVar = sExpr</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Print
+&quot;&gt;&quot;; sVar; &quot;&lt;&quot;</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">sVar =
+String(5,&quot;*&quot;)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">sExpr =
+&quot;123457896&quot;</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">RSet
+sVar = sExpr</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Print
+&quot;&gt;&quot;; sVar; &quot;&lt;&quot;</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">sVar =
+String(40,&quot;*&quot;)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">sExpr =
+&quot;SBX&quot;</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">REM
+Left-align &quot;SBX&quot; in a 40-character string</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">LSet
+sVar = sExpr</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Print
+&quot;&gt;&quot;; sVar; &quot;&lt;&quot;</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">sVar =
+String(5,&quot;*&quot;)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">sExpr =
+&quot;123456789&quot;</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">LSet
+sVar = sExpr</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Print
+&quot;&gt;&quot;; sVar; &quot;&lt;&quot;</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">End Sub</SPAN></FONT></P>
+
+</DIV></BODY>
+</HTML>

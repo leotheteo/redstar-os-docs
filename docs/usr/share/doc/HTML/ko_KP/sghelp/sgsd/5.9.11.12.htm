@@ -1,0 +1,105 @@
+﻿<html dir='ltr'>
+	<head>
+		<META http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+		<title>INDIRECT</title>
+		<link rel='stylesheet' type='text/css' href='../css/main.css'/>
+		<script type='text/javascript' language='Javascript' src='../js/mexpcol.js'></script>
+		<script type='text/javascript' language='JavaScript' src='../js/glossary.js'></script>
+	</head>
+	<body>
+		<h1>&nbsp;<img align="absbottom" src="../image/external_images/crystal/svtools/res/new_doc.png"/>&nbsp;INDIRECT</h1>
+		<p id='ExpandAllLine' class='ExpFav'>
+			<a href='#' onClick='ExpandAll()' onKeyPress='ExpandAll()' class='DropDown'>
+				<img id='picHeader' border='0' src='../image/image/common/expandtri.gif' alt='모두 표시'>
+				<span id='ExpandAll'>모두 표시</span>
+			</a>
+		</p>
+		<p><b class="bterm">참고항목</b>&emsp;
+			<a href="5.9.11.1.htm">자료표함수목록</a>,
+			<a href="5.9.11.15.htm">OFFSET</a>
+		</p>
+		<p>본문형식으로 참조된 세포의 내용을 구합니다.</p>
+		<p><b class="bterm">문법:&emsp;&emsp;		INDIRECT(참조)</b></p>
+		<table>
+			<tr>
+				<th>인수명</th>
+				<th>설명</th>
+			</tr>
+			<tr>
+				<td>참조</td>
+				<td>계산할 내용이 있는 세포는 본문형식으로 참조됩니다. A1 격식참조, R1C1 격식참조, 참조로 정의된 이름이 들어있는 세포에 대한 참조이거나 세포에 대한 본문문자렬의 참조입니다. <b class="bterm">참조</b>가 유효한 세포참조가 아닌 경우에는 #<b class="bterm">REF!</b> 오유값이 반환됩니다.
+					<b class="bterm">참조</b>가 다른 자료표문서를 참조하는 경우(외부참조)에는 그 자료표문서가 반드시 열려있어야 합니다. 원본자료표문서가 열려있지 않으면 #<b class="bterm">REF!</b> 오유값이 반환됩니다.
+				</td>
+			</tr>
+		</table>
+		<p><b class="bterm">실례</b></p>
+			<p><a href="1.5.1.htm">실례의 리용방법</a>을 참고하십시오.</p>
+			<table>
+				<tr>
+					<td>
+						<table>
+							<tr>
+								<td class="noborder">&nbsp;
+								</td>
+							</tr>
+							<tr>
+								<th>1</th>
+							</tr>
+							<tr>
+								<th>2</th>
+							</tr>
+							<tr>
+								<th>3</th>
+							</tr>
+							<tr>
+								<th>4</th>
+							</tr>
+						</table>
+					</td>
+					<td>
+						<table>
+							<tr>
+								<th>A</th>
+								<th>B</th>
+							</tr>
+							<tr>
+								<th>자료</th>
+								<th>자료</th>
+							</tr>
+							<tr>
+								<td>B2</td>
+								<td>1.333</td>
+							</tr>
+							<tr>
+								<td>B3</td>
+								<td>45</td>
+							</tr>
+							<tr>
+								<td>5</td>
+								<td>62</td>
+							</tr>
+							<tr>
+								<th>수식</th>
+								<th>설명(결과)</th>
+							</tr>
+							<tr>
+								<td>=INDIRECT($A$2)</td>
+								<td>A2 세포에 있는 참조의 값입니다. (1.333)</td>
+							</tr>
+							<tr>
+								<td>=INDIRECT($A$3)</td>
+								<td>A3 세포에 있는 참조의 값입니다. (45)</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+			<p>세포를 참조하는 수식을 만들면 다음과 같은 경우에 그 세포에 대한 참조가 갱신됩니다. 
+			<p>(1) 세포를 삭제하기 위하여 <b class="bterm">&lt;자르기&gt;</b>지령을 사용하여 세포가 옮겨진 경우</p>
+			<p>(2) 행이나 렬이 삽입되거나 삭제되여 세포가 옮겨진 경우 </p>
+			세포우에 있는 행이 삭제되거나 해당 세포가 옮겨지는것에 관계없이 수식에서 항상 동일한 세포를 참조하게 하려면 <b class="bterm">INDIRECT</b>함수를 사용합니다. 례를 들어 항상 A10 세포를 참조하려면 다음과 같은 문법을 사용합니다.</p>
+			<p>=INDIRECT("A10")</p>
+		<script type="text/javascript" language="Javascript">footerView()</script>
+	
+</body>
+</html>				

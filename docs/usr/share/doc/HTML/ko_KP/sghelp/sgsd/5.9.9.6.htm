@@ -1,0 +1,130 @@
+﻿<html dir='ltr'>
+	<head>
+		<META http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+		<title>MDETERM</title>
+		<link rel='stylesheet' type='text/css' href='../css/main.css'/>
+		<script type='text/javascript' language='Javascript' src='../js/mexpcol.js'></script>
+		<script type='text/javascript' language='JavaScript' src='../js/glossary.js'></script>
+	</head>
+	<body>
+		<h1>&nbsp;<img align="absbottom" src="../image/external_images/crystal/svtools/res/new_doc.png"/>&nbsp;MDETERM</h1>
+		<p id='ExpandAllLine' class='ExpFav'>
+			<a href='#' onClick='ExpandAll()' onKeyPress='ExpandAll()' class='DropDown'>
+				<img id='picHeader' border='0' src='../image/image/common/expandtri.gif' alt='모두 표시'>
+				<span id='ExpandAll'>모두 표시</span>
+			</a>
+		</p>
+		<p><b class="bterm">참고항목</b>&emsp;
+			<a href="5.9.9.1.htm">행렬함수목록</a>,
+			<a href="5.9.9.7.htm">MINVERSE</a>,
+			<a href="5.9.9.8.htm">MMULT</a>,
+			<a href="5.9.9.14.htm">TRANSPOSE</a>
+		</p>
+		<p>행렬식값을 구합니다.</p>
+		<p><b class="bterm">문법:&emsp;&emsp;		MDETERM(행렬)</b></p>
+				<table>
+			<tr>
+				<th>인수명</th>
+				<th>설명</th>
+			</tr>
+			<tr>
+				<td>행렬</td>
+				<td>행렬식을 결정하는 행렬입니다.</td>
+			</tr>
+		</table>
+		<p><b class="bterm">주의</b></p>
+			<ul>
+				<li><b class="bterm">행렬</b>은 A1:C3와 같은 세포범위로 지정할수 있습니다.</li>
+				<li>비여있거나 본문이 들어있는 세포가 행렬에 있으면 <b class="bterm">오유:[오유번호]</b>가 반환됩니다.</li>
+				<li><b class="bterm">행렬</b>이 같은 수의 행과 렬로 이루어지지 않으면 <b class="bterm">오유:[오유번호]</b>가 반환됩니다.</li>
+				<li>행렬식은 행렬의 값에서 만들어지는 수입니다. 3행 3렬로 이루어진 행렬 A1:C3에 대해 행렬식은 다음과 같이 정의됩니다.
+					<p> MDETERM(A1:C3) = A1*(B2*C3-B3*C2) + A2*(B3*C1-B1*C3) + A3*(B1*C2-B2*C1)</p>
+				</li>
+				<li>행렬식은 일반적으로 몇개의 변수가 포함된 수학방정식을 푸는데 사용됩니다.</li>
+				<li><b class="bterm">MDETERM</b>함수는 대략 16자리의 정밀도로 계산되는데 완전히 계산되지 않으면 작은 수값오유가 생길수 있습니다.</li>
+			</ul>
+		<p><b class="bterm">실례</b></p>
+			<p><a href="1.5.1.htm">실례의 리용방법</a>을 참고하십시오.</p>
+			<table>
+				<tr>
+					<td>
+						<table>
+							<tr>
+								<td class="noborder">&nbsp;
+								</td>
+							</tr>
+							<tr>
+								<th>1</th>
+							</tr>
+							<tr>
+								<th>2</th>
+							</tr>
+							<tr>
+								<th>3</th>
+							</tr>
+							<tr>
+								<th>4</th>
+							</tr>
+							<tr>
+								<th>5</th>
+							</tr>
+						</table>
+					</td>
+					<td>
+						<table>
+							<tr>
+								<th>A</th>
+								<th>B</th>
+								<th>C</th>
+								<th>D</th>
+							</tr>
+							<tr>
+								<th>자료</th>
+								<th>자료</th>
+								<th>자료</th>
+								<th>자료</th>
+							</tr>
+							<tr>
+								<td>1</td>
+								<td>3</td>
+								<td>8</td>
+								<td>5</td>
+							</tr>
+							<tr>
+								<td>1</td>
+								<td>3</td>
+								<td>6</td>
+								<td>1</td>
+							</tr>
+							<tr>
+								<td>1</td>
+								<td>1</td>
+								<td>1</td>
+								<td>0</td>
+							</tr>
+							<tr>
+								<td>7</td>
+								<td>3</td>
+								<td>10</td>
+								<td>2</td>
+							</tr>
+							<tr>
+								<th>수식</th>
+								<th>설명(결과)</th>
+								<td>&nbsp;</td>
+								<td>&nbsp;</td>
+							</tr>
+							<tr>
+								<td>=MDETERM(A2:D5)</td>
+								<td>우에 있는 행렬의 행렬식입니다. (88)</td>
+								<td>&nbsp;</td>
+								<td>&nbsp;</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>		
+		<script type="text/javascript" language="Javascript">footerView()</script>
+	
+</body>
+</html>				

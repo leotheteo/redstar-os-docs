@@ -1,0 +1,51 @@
+﻿<html dir='ltr'>
+	<head>
+		<META http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+		<title>행렬수식의 만들기</title>
+		<link rel='stylesheet' type='text/css' href='../css/main.css'/>
+		<script type='text/javascript' language='Javascript' src='../js/mexpcol.js'></script>
+		<script type='text/javascript' language='JavaScript' src='../js/glossary.js'></script>
+	</head>
+	<body>
+		<h1>&nbsp;<img align="absbottom" src="../image/external_images/crystal/svtools/res/new_doc.png"/>&nbsp;행렬수식의 만들기</h1>
+		<p id='ExpandAllLine' class='ExpFav'>
+			<a href='#' onClick='ExpandAll()' onKeyPress='ExpandAll()' class='DropDown'>
+				<img id='picHeader' border='0' src='../image/image/common/expandtri.gif' alt='모두 표시'>
+				<span id='ExpandAll'>모두 표시</span>
+			</a>
+		</p>
+		<p>세포에 <a href="#" class="glossary" onClick="AppendPopup(this,'IDG_ARRAYFORMULA')" onKeyPress="AppendPopup(this,'IDG_ARRAYFORMULA')">행렬수식</a>을 입력하면 수식은 자동적으로 대괄호{ }안에 들어갑니다.</p>
+		<p><b class="bterm">단일결과값의 계산</b></p>
+			<p>행렬수식을 사용하여 단일결과값 생성을 위한 몇가지 계산을 수행할수 있습니다. 
+				이러한 행렬수식류형은 서로 다른 여러개의 수식을 하나의 행렬수식으로 바꿈으로써 표용지모양을 단순화할수 있습니다.
+			</p>
+			<ol>
+				<li>행렬수식을 입력할 세포를 찰칵합니다.</li>
+				<li>행렬수식을 입력합니다.
+					<p>례를 들어 다음의 그림은 1월과 2월의 전체 생산량을 계산합니다.</p>
+					<p><img border='0' src='../image/image/sgsd/arrayform.gif' alt='표시'></p>
+					<p>단일결과를 생성하는 행렬수식</p>
+					<p>수식 =SUM(D10:D11*E10:E11)을 행렬수식으로 입력하면 1월의 종류와 개수를 곱한 값과 2월의 종류와 개수를 곱한 값이 더해집니다.</p>
+				</li>
+				<li><b class="bterm">[Ctrl+Shift+Enter]</b>를 누릅니다.</li>
+			</ol>
+		<p><b class="bterm">여러개의 결과값 계산</b></p>
+			<p>일부 함수는 값의 배렬을 반환하거나 값의 배렬을 인수로 요구하기도 합니다. 
+				행렬수식으로 여러개의 결과를 계산하려면 각 세포의 행과 렬의 개수가 배렬인수와 동일한 범위에 배렬을 입력하여야 합니다.
+			</p>
+			<ol>
+				<li>행렬수식을 입력할 세포범위를 선택합니다.</li>
+				<li>행렬수식을 입력합니다.
+					<p>례를 들어 석달동안의 계렬(A렬)에 대해 세개의 생산지표의 계렬(B렬)이 주어지는 경우 <b class="bterm">TREND</b>함수로 생산지표의 직선값이 결정됩니다. 
+						수식의 결과를 모두 표시하기 위하여 C렬에서 세개의 세포(C1:C3)에 입력됩니다.
+					</p>
+					<p><img border='0' src='../image/image/sgsd/form2-2.gif' alt='표시'></p>
+					<p>여러개의 결과를 생성하는 행렬수식</p>
+					<p>수식 =TREND(B1:B3;A1:A3)을 행렬수식으로 입력하면 세개의 생산지표와 석달을 기준으로 세가지 결과가 각각(22196, 17079, 11962) 로 됩니다.</p>
+				</li>
+				<li><b class="bterm">[Ctrl+Shift+Enter]</b>건을 누릅니다.</li>
+			</ol>
+		<script type="text/javascript" language="Javascript">footerView()</script>
+	
+</body>
+</html>

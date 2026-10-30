@@ -1,0 +1,42 @@
+﻿<html dir='ltr'>
+	<head>
+		<META http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+		<title>행렬수식</title>
+		<link rel='stylesheet' type='text/css' href='../css/main.css'/>
+		<script type='text/javascript' language='Javascript' src='../js/mexpcol.js'></script>
+		<script type='text/javascript' language='JavaScript' src='../js/glossary.js'></script>
+	</head>
+	<body>
+		<h1>&nbsp;<img align="absbottom" src="../image/external_images/crystal/svtools/res/new_doc.png"/>&nbsp;행렬수식</h1>
+		<p id='ExpandAllLine' class='ExpFav'>
+			<a href='#' onClick='ExpandAll()' onKeyPress='ExpandAll()' class='DropDown'>
+				<img id='picHeader' border='0' src='../image/image/common/expandtri.gif' alt='모두 표시'>
+				<span id='ExpandAll'>모두 표시</span>
+			</a>
+		</p>
+		<p>행렬수식은 여러가지 계산을 수행하고 하나의 결과 또는 여러개의 결과를 구할수 있습니다. 행렬수식은 인수로 배렬인수(두개이상의 자료 집합)를 요구합니다. 
+			만일 행렬수식에 배렬인수를 사용하지 않고 일반 인수를 사용한 경우에는 행렬수식은 일반수식과 같은 결과를 만듭니다. 매 배렬인수들은 같은 개수의 행과 렬을 가져야 합니다. 
+			행렬수식을 만드는 방법은 수식의 입력을 완료할 때 <b class="bterm">[Ctrl+Shift+Enter]</b>건을 누르는것 외에는 보통수식을 만들 때와 같습니다.
+		</p>
+		<p>표처리프로그람에서 제공하는 함수들중에서 일부는 행렬수식이므로 정확한 결과를 구하기 위하여서는 적당한 인수를 사용해야 합니다.</p>
+		<h2>행렬수식의 사용</h2>
+			<p><b class="bterm">하나의 결과를 구하는 행렬수식</b></p>
+			<p>이러한 행렬수식은 서로 다른 여러개의 수식을 하나의 행렬수식으로 그룹함으로써 표용지를 간단하게 만들수 있습니다.</p>
+			<p>례를 들어 아래의 그림에서는 1월과 2월의 전체 생산량을 계산합니다.</p>
+			<p><img border='0' src='../image/image/sgsd/arrayform.gif' alt='표시'></p>
+			<p>단일결과를 생성하는 행렬수식</p>
+			<p>수식 =SUM(D10:D11*E10:E11)을 행렬수식으로 입력하면 매 월에 대해 종류와 개수가 곱해지고 그러한 계산결과가 모두 더해집니다.</p>
+			<p><b class="bterm">여러개의 결과를 계산</b></p>
+			<p>일부 표용지함수는 값의 배렬을 반환하거나 값의 배렬을 인수로 요구하기도 합니다. 
+				행렬수식으로 여러개의 결과를 계산하려면 각 세포의 행과 렬개수가 배렬인수와 동일한 범위에 배렬을 입력하여야 합니다.
+			</p>
+			<p>례를 들어 석달동안의 계렬(A렬)에 대해 세개의 생산지표의 계렬(B렬)이 주어지는 경우 <b class="bterm">TREND</b>함수로 생산지표의 직선값이 결정됩니다. 
+				수식의 결과를 모두 표시하기 위하여 C렬에서 세개의 세포(C1:C3)에 입력됩니다.
+			</p>
+			<p><img border='0' src='../image/image/sgsd/form2-2.gif' alt='표시'></p>
+			<p>여러개의 결과를 생성하는 행렬수식</p>
+			<p>수식 =TREND(B1:B3;A1:A3)을 행렬수식으로 입력하면 세개의 생산량수치와 석달을 기준으로 세가지 결과가 각각(22 196, 17 079, 11 962)로 됩니다.</p>
+		<script type="text/javascript" language="Javascript">footerView()</script>
+	
+</body>
+</html>

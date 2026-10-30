@@ -1,0 +1,276 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+	<TITLE></TITLE>
+	<META NAME="GENERATOR" CONTENT="《Sogwang 3.0》  (Linux)">
+	<META NAME="CREATED" CONTENT="20091209;10212100">
+	<META NAME="CHANGED" CONTENT="20091209;14303600">
+	<STYLE TYPE="text/css">
+	<!--
+		H2 { margin-bottom: 0.18cm; font-family: "Bitstream Vera Sans", "Arial", "Helvetica", "Lucida", "Geneva", "Helmet", sans-serif, "Andale Sans UI", "Arial Unicode MS", "Lucida Sans Unicode", "Tahoma"; font-size: 14pt }
+		H3 { margin-bottom: 0.18cm; font-family: "Bitstream Vera Sans", "Arial", "Helvetica", "Lucida", "Geneva", "Helmet", sans-serif, "Andale Sans UI", "Arial Unicode MS", "Lucida Sans Unicode", "Tahoma"; font-size: 12pt }
+		P.listitem { font-family: "Bitstream Vera Sans", "Arial", "Helvetica", "Lucida", "Geneva", "Helmet", sans-serif, "Andale Sans UI", "Arial Unicode MS", "Lucida Sans Unicode", "Tahoma" }
+		TD P.howtogetheader { background: #ffffff; border: 1px solid #999999; padding: 0.08cm; font-weight: bold }
+		TD P.tableheadintable { margin-bottom: 0.05cm; font-weight: bold }
+		TD P.tablecontentintable { font-family: "Bitstream Vera Sans", "Arial", "Helvetica", "Lucida", "Geneva", "Helmet", sans-serif, "Andale Sans UI", "Arial Unicode MS", "Lucida Sans Unicode", "Tahoma" }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="ko-KP" DIR="LTR"><DIV style="margin-left: 25">
+<H1><A NAME="berechnen"></A><A NAME="bm_id3149399"></A>
+<FONT FACE="Thorndale, serif"><SPAN LANG="en-US">Calculate</SPAN></FONT></H1>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Defines
+the calculation settings for spreadsheets. Defines the behavior of
+spreadsheets with iterative references, the date settings, the number
+of decimal places, and if capitalization or lower cases are to be
+considered when searching within sheets.</SPAN></FONT></P>
+<TABLE WIDTH=95% BORDER=1 CELLPADDING=3 CELLSPACING=0 BGCOLOR="#eeeeee">
+	<COL WIDTH=256*>
+	<TR>
+		<TD WIDTH=100%>
+			<P CLASS="howtogetheader"><FONT FACE="청봉, serif"><SPAN LANG="en-US">To
+			access this command... </SPAN></FONT>
+			</P>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><SPAN STYLE="background: #eeeeee">Open
+			a spreadsheet document, choose <B>Sogwang Office - Reference - SogwangCalc
+			- Calculate</B> </SPAN></SPAN></FONT></P>
+		</TD>
+	</TR>
+</TABLE>
+<P><BR><BR>
+</P>
+<H2><SPAN LANG="en-US">Iterative references</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">In this
+section you can delimit the number of approximation steps carried out
+during iterative calculations. In addition, you can specify the
+degree of precision of the answer.</SPAN></FONT></P>
+<H3><A NAME="bm_id3156153"></A><SPAN LANG="en-US">Iterations</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Specifies
+whether formulas with iterative references (formulas that are
+continuously repeated until the problem is solved) are calculated
+after a specific number of repetitions. If the <B>Iterations </B>box
+is not marked, an iterative reference in the table will cause an
+error message.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Example:</B>
+calculating the cost of an item without the value-added tax.</SPAN></FONT></P>
+<OL>
+	<LI><P CLASS="listitem"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Type the text 'Selling
+	price' in cell A5, the text 'Net' in cell A6, and the text
+	'Value-added tax' in cell A7.</SPAN></FONT></P>
+	<LI><P CLASS="listitem"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Now type a selling price
+	(for example, 100) in cell B5. The net price should be shown in cell
+	B6 and the value-added tax should be shown in cell B7. </SPAN></FONT></P>
+	<LI><P CLASS="listitem"><FONT FACE="청봉, serif">
+	<SPAN LANG="en-US">You know that the value-added tax is calculated
+	as 'net price times 15%' and that you arrive at the net price by
+	deducting the value-added tax from the selling price. Type the
+	formula =B5-B7
+	in B6 to calculate the net price, and type the formula =B6*0.15
+	in cell B7 to calculate the value-added tax.</SPAN></FONT></P>
+	<LI><P CLASS="listitem"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Switch on the iterations
+	to correctly calculate the formulas, otherwise a 'Circular
+	reference' error message appears in the <B>Status</B> Bar.</SPAN></FONT></P>
+</OL>
+<TABLE WIDTH=212 BORDER=1 CELLPADDING=2 CELLSPACING=0>
+	<COL WIDTH=8>
+	<COL WIDTH=75>
+	<COL WIDTH=57>
+	<TR VALIGN=TOP>
+		<TD WIDTH=9></TD>
+		<TD WIDTH=104>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">A</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=79>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">B</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=9>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">5</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=104>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Selling
+			Price</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=79>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">100</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=9>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">6</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=104>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Net</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=79>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">=B5-B7</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=9>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">7</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=104>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Tax</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=79>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">=B6*0,15</SPAN></FONT></P>
+		</TD>
+	</TR>
+</TABLE>
+<P><BR>
+  <BR>
+</P>
+<H3><SPAN LANG="en-US">Steps</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Sets the
+maximum number of iteration steps.</SPAN></FONT></P>
+<H3><A NAME="bm_id3145273"></A><SPAN LANG="en-US">Minimum Change</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Specifies
+the difference between two consecutive iteration step results. If the
+result of the iteration is lower than the minimum change value, then
+the iteration will stop.</SPAN></FONT></P>
+<H2><SPAN LANG="en-US">Date</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Select
+the start date for the internal conversion from days to numbers.</SPAN></FONT></P>
+<H3><A NAME="bm_id3153159"></A><SPAN LANG="en-US">12/30/1899
+(default)</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Sets
+12/30/1899 as day zero.</SPAN></FONT></P>
+<H3><A NAME="bm_id3150715"></A><SPAN LANG="en-US">01/01/1900
+(StarCalc 1.0)</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Sets
+1/1/1900 as day zero. Use this setting for StarCalc 1.0 spreadsheets
+containing date entries.</SPAN></FONT></P>
+<H3><A NAME="bm_id3147173"></A><SPAN LANG="en-US">01/01/1904</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Sets
+1/1/1904 as day zero. Use this setting for spreadsheets that are
+imported in a foreign format.</SPAN></FONT></P>
+<H2><A NAME="bm_id3151205"></A><SPAN LANG="en-US">Case sensitive</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Specifies
+whether to distinguish between upper and lower case in texts when
+comparing cell contents.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Example:</B>
+Type the text 'Test' in cell A1; and the text 'test' in B1. Then type
+the formula &quot;=A1=B1&quot; in cell C1. 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+If the <B>Case sensitive</B> box is marked, FALSE will appear in the cell; 
+otherwise, TRUE will appear in the cell.</SPAN></FONT></P>
+<TABLE WIDTH=909 BORDER=0 CELLPADDING=5 CELLSPACING=0>
+	<COL WIDTH=33>
+	<COL WIDTH=519>
+	<TR>
+		<TD WIDTH=33>
+			<P><IMG SRC="../../../Image/note.png" NAME="graphics1" ALT="Note Icon " ALIGN=BOTTOM WIDTH=33 HEIGHT=42 BORDER=0></P>
+		</TD>
+		<TD WIDTH=856>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">The
+			EXACT text function is always case-sensitive, independent of the
+			settings in this dialog.</SPAN></FONT></P>
+		</TD>
+	</TR>
+</TABLE>
+<P><BR>
+  <BR>
+</P>
+<H2><SPAN LANG="en-US">Decimal places</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Defines
+the number of decimals to be displayed for numbers with the <B>Standard</B>
+number format. The numbers are displayed as rounded numbers, but are
+not saved as rounded numbers.</SPAN></FONT></P>
+<H2><A NAME="bm_id3145766"></A><SPAN LANG="en-US">Precision as shown</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Specifies
+whether to make calculations using the rounded values displayed in
+the sheet. Charts will be shown with the displayed values. If the
+<B>Precision as shown</B> option is not marked, the displayed numbers
+are rounded, but they are calculated internally using the non-rounded
+number.</SPAN></FONT></P>
+<H2><A NAME="bm_id3150364"></A><SPAN LANG="en-US">Search criteria =
+and &lt;&gt; must apply to whole cells</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Specifies
+that the search criteria you set for the Calc database functions must
+match the whole cell exactly. When the <B>Search criteria = and &lt;&gt;
+must apply to whole cells</B> box is marked, </SPAN></FONT><FONT FACE="청봉, serif"><SPAN LANG="en-US">Sogwang Calc
+behaves exactly as MS Excel when searching cells in the database
+functions.</SPAN></FONT></P>
+<TABLE WIDTH=626 BORDER=1 CELLPADDING=2 CELLSPACING=0>
+	<COL WIDTH=147>
+	<COL WIDTH=271>
+	<TR VALIGN=TOP>
+		<TD WIDTH=228>
+			<P CLASS="tableheadintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">.*
+			in following position:</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=384>
+			<P CLASS="tableheadintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Search
+			result:</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=228>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">win</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=384>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Finds win, but
+			not win95, os2win, or upwind</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=228>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">win.*</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=384>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Finds win and
+			win95, but not os2win or upwind</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=228>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">.*win</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=384>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Finds win and
+			os2win, but not win95 or upwind</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=228>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">.*win.*</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=384>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Finds win,
+			win95, os2win, and upwind</SPAN></FONT></P>
+		</TD>
+	</TR>
+</TABLE>
+<P><BR><BR>
+</P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">If
+<B>Search criteria = and &lt;&gt; must apply to whole cells </B>is
+not enabled, the &quot;win&quot; search pattern acts like &quot;.*win.*&quot;.
+The search pattern can be at any position within the cell when
+searching with the Calc database functions.</SPAN></FONT></P>
+<H2><A NAME="bm_id3154419"></A><SPAN LANG="en-US">Enable regular
+expressions in formulas</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Specifies
+that regular expressions are enabled when searching and also for
+character string comparisons. This relates to the <A href="../../Functions Types and Operators/Database Functions.html">database
+functions</A>, and to VLOOKUP, HLOOKUP and SEARCH. </SPAN></FONT>
+</P>
+<H2><A NAME="bm_id3152901"></A><SPAN LANG="en-US">Automatically find
+column and row labels</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Specifies
+that you can use the text in any cell as a label for the column below
+the text or the row to the right of the text. The text must consist
+of at least one word and must not contain any operators.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Example</B>:
+Cell E5 contains the text &quot;Europe&quot;. Below, in cell E6, is
+the value 100 and in cell E7 the value 200. If the <B>Automatically
+find column and row labels</B>
+box is marked, you can write the following formula in cell A1:
+=SUM(Europe).</SPAN></FONT></P>
+
+</DIV></BODY>
+</HTML>
+

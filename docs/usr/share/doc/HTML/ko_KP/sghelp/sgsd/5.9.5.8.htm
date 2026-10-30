@@ -1,0 +1,115 @@
+﻿<html dir='ltr'>
+	<head>
+		<META http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+		<title>COUPDAYS</title>
+		<link rel='stylesheet' type='text/css' href='../css/main.css'/>
+		<script type='text/javascript' language='Javascript' src='../js/mexpcol.js'></script>
+		<script type='text/javascript' language='JavaScript' src='../js/glossary.js'></script>
+	</head>
+	<body>
+		<h1>&nbsp;<img align="absbottom" src="../image/external_images/crystal/svtools/res/new_doc.png"/>&nbsp;COUPDAYS</h1>
+		<p id='ExpandAllLine' class='ExpFav'>
+			<a href='#' onClick='ExpandAll()' onKeyPress='ExpandAll()' class='DropDown'>
+				<img id='picHeader' border='0' src='../image/image/common/expandtri.gif' alt='모두 표시'>
+				<span id='ExpandAll'>모두 표시</span>
+			</a>
+		</p>
+		<p><b class="bterm">참고항목</b>&emsp;    
+			<a href="5.9.5.1.htm">재정함수목록</a>,
+			<a href="5.9.5.7.htm">COUPDAYBS</a>,
+			<a href="5.9.5.9.htm">COUPDAYSNC</a>,
+			<a href="5.9.5.11.htm">COUPNUM</a>,
+			<a href="5.9.5.12.htm">COUPPCD</a>,
+			<a href="5.9.4.3.htm">DATE</a>
+		</p>
+		<p>결제날자를 포함하는 리자지불기간의 날자수를 구합니다.</p>
+		<p><b class="bterm">문법:&emsp;&emsp;		COUPDAYS(결제날자,만기날자,회수,기준)</b></p>
+		<p><b class="bterm">중요:</b>&emsp;   날자는 <b class="bterm">DATE</b>함수를 사용하거나 다른 수식 또는 함수의 결과로 입력하여야 합니다. 
+			례를 들어 2008년 5월 23일의 경우 DATE(2008,5,23)을 사용합니다.
+		</p>
+		<table>
+			<tr>
+				<th>인수명</th>
+				<th>설명</th>
+			</tr>
+			<tr>
+				<td>결제날자</td>
+				<td>유가증권의 결제날자입니다. 즉 증권이 구매자에게 판매된 날을 말합니다.</td>
+			</tr>
+			<tr>
+				<td>만기날자</td>
+				<td>유가증권의 만기날자입니다. 즉 유가증권이 만기가 되는 날을 말합니다.</td>
+			</tr>
+			<tr>
+				<td>회수</td>
+				<td>년간 리자지불회수입니다. 1년에 한번 지불하면 <b class="bterm">회수</b> = 1, 반년에 한번 지불하면 <b class="bterm">회수</b> = 2, 분기마다 지불하면 <b class="bterm">회수</b> = 4로 표시합니다.</td>
+			</tr>
+			<tr>
+				<td>기준</td>
+				<td>날자계산기준입니다. 추가선택인수입니다. 지정하지 않으면 0으로 됩니다.</td>
+			</tr>
+		</table>
+		<p><b class="bterm">주의</b></p>
+			<ul>
+				<li>결제날자는 증권(례: 채권)이 팔린 날자이며 만기날자는 증권이 만기되는 날입니다. 례를 들어 30년 만기채권이 2008년 1월 1일에 발행되고 6개월후에 팔렸을 때 발행날자는 2008년 1월 1일이며 결제날자는 2008년 7월 1일이고 만기날자는 발행날자로부터 30년후인 2038년 1월 1일입니다.</li>
+				<li>모든 인수는 소수점이하를 잘라서 옹근수로 변환됩니다.</li>
+				<li><b class="bterm">결제날자</b>나 <b class="bterm">만기날자</b>가 유효한 날자가 아니면 <b class="bterm">오유:[오유번호]</b>가 반환됩니다.</li>
+				<li><b class="bterm">회수</b>가 1, 2, 4 이외의 수자이면 <b class="bterm">오유:[오유번호]</b>가 반환됩니다.</li>
+				<li><b class="bterm">기준</b>이 0보다 작거나 4보다 크면 <b class="bterm">오유:[오유번호]</b>가 반환됩니다.</li>
+			</ul>
+		<p><b class="bterm">실례</b></p>
+			<p><a href='1.5.1.htm'>실례의 리용방법</a>을 참고하십시오.</p>
+			<table>
+				<tr>
+					<td>
+						<table>
+							<tr><td>&nbsp;</td></tr>
+							<tr><th>1</th></tr>
+							<tr><th>2</th></tr>
+							<tr><th>3</th></tr>
+							<tr><th>4</th></tr>
+							<tr><th>5</th></tr>
+						</table>
+					</td>
+					<td>
+						<table>
+							<tr>
+								<th>A</th>
+								<th>B</th>
+							</tr>
+							<tr>
+								<th>자료</th>
+								<th>설명</th>
+							</tr>
+							<tr>
+								<td>2007/1/25</td>
+								<td>결제날자입니다.</td>
+							</tr>
+							<tr>
+								<td>2008/11/15</td>
+								<td>만기날자입니다.</td>
+							</tr>
+							<tr>
+								<td>2</td>
+								<td>반년에 한번 지불하는 방식입니다. </td>
+							</tr>
+							<tr>
+								<td>1</td>
+								<td>정확한 그달의 날자수, 정확한 그해의 날자수. </td>
+							</tr>
+							<tr>
+								<th>수식</th>
+								<th>설명(결과)</th>
+							</tr>
+							<tr>
+								<td>=COUPDAYS(A2,A3,A4,A5)</td>
+								<td>우와 같은 조건에서 채권에 대해 결제날자가 들어있는 리자지불기간의 날자수입니다. (181)</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>	
+		<script type="text/javascript" language="Javascript">footerView()</script>
+	
+</body>
+</html>

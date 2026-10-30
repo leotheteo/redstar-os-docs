@@ -1,0 +1,65 @@
+﻿<html dir='ltr'>
+	<head>
+		<META http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+		<title>차림표 및 도구띠의 그룹편집</title>
+		<link rel='stylesheet' type='text/css' href='../css/main.css'/>
+		<script type='text/javascript' language='Javascript' src='../js/mexpcol.js'></script>
+		<script type='text/javascript' language='JavaScript' src='../js/glossary.js'></script>
+	</head>
+	<body>
+		<h1>&nbsp;<img align="absbottom" src="../image/external_images/crystal/svtools/res/new_doc.png"/>&nbsp;차림표 및 도구띠의 그룹편집</h1>
+		<p id='ExpandAllLine' class='ExpFav'>
+			<a href='#' onClick='ExpandAll()' onKeyPress='ExpandAll()' class='DropDown'>
+				<img id='picHeader' border='0' src='../image/image/common/expandtri.gif' alt='모두 표시'>
+				<span id='ExpandAll'>모두 표시</span>
+			</a>
+		</p>
+		<p>차림표나 도구띠에서 그룹의 첫번째 지령의 앞과 마지막지령의 뒤에 구분선을 추가하여 다른 단추 및 <a href="#" class="glossary" onClick="AppendPopup(this,'IDG_GENERALMENU')" onKeyPress="AppendPopup(this,'IDG_GENERALMENU')">차림표</a> 지령그룹을 구별할수 있습니다.</p>
+		<p>다음과 같은 방법으로 진행합니다.</p>
+		<ol>
+			<li><b class="bterm">&lt;도구&gt;</b>차림표에서 <b class="bterm">&lt;사용자전용화&gt;</b>를 찰칵합니다.</li>
+			<li><b class="bterm">&lt;사용자전용화&gt;</b>대화창이 화면에 현시됩니다. 여기서 차림표와 도구띠의 포함지령들을 묶을수 있습니다.</li>
+			<p>
+				<a href='#' class='DropDown' onClick='Outline2()' onKeyPress='Outline2()'>
+				<img border='0' src='../image/image/common/blueup.gif' alt='표시'>차림표그룹편집</a>
+			</p>
+			<div id='ExpCol' class='collapsed' border='0'>
+				<ol>
+					<li><b class="bterm">&lt;사용자전용화&gt;</b>대화창에서 <b class="bterm">&lt;차림표&gt;</b>표쪽을 찰칵합니다.</li>
+					<li><b class="bterm">&lt;차림표&gt;</b>목록칸에서 묶으려는 차림표지령이 포함되여있는 차림표를 선택합니다. <b class="bterm">&lt;차림표내용&gt;</b>부분의 <b class="bterm">&lt;지령&gt;</b>목록칸에 우에서 선택한 차림표에 포함되여있는 차림표지령들이 렬거됩니다.	</li>
+					<li><b class="bterm">&lt;지령&gt;</b>목록칸에서 묶으려는 지령의 시작위치를 선택합니다.</li>
+					<li><b class="bterm">&lt;수정&gt;</b>단추를 찰칵하면 튀여나오기차림표가 현시되며 여기서 <b class="bterm">&lt;그룹 편집&gt;</b>을 찰칵하면 선택된 지령의 아래에 그룹을 나타내는 점선이 추가됩니다.</li>
+					<li><b class="bterm">&lt;지령&gt;</b>목록칸에서 묶으려는 지령의 마지막위치를 선택합니다.</li>
+					<li><b class="bterm">&lt;수정&gt;</b>단추를 찰칵하고 <b class="bterm">&lt;그룹 편집&gt;</b>을 찰칵하여 그룹선을 추가합니다.</li>
+					<li>3~6단계를 반복실행하여 여러개의 그룹을 편집할수 있습니다.</li>
+					<li><b class="bterm">&lt;사용자전용화&gt;</b>대화창의 <b class="bterm">&lt;확인&gt;</b>단추를 찰칵합니다.</li>
+				</ol>
+			</div>
+			<p>
+				<a href='#' class='DropDown' onClick='Outline2()' onKeyPress='Outline2()'>
+				<img border='0' src='../image/image/common/blueup.gif' alt='표시'>도구띠그룹편집</a>
+			</p>
+			<div id='ExpCol' class='collapsed' border='0'>
+				<ol>
+					<li><b class="bterm">&lt;사용자전용화&gt;</b>대화창에서 <b class="bterm">&lt;도구띠&gt;</b>표쪽을 찰칵합니다.</li>
+					<li><b class="bterm">&lt;도구띠&gt;</b>목록칸에서 묶으려는 단추가 포함되여있는 도구띠를 선택합니다. <b class="bterm">&lt;도구띠내용&gt;</b>부분의 <b class="bterm">&lt;지령&gt;</b>목록칸에 우에서 선택한 도구띠에 포함되여있는 단추들이 렬거됩니다.</li>
+					<li><b class="bterm">&lt;지령&gt;</b>목록칸에서 묶으려는 지령의 시작위치를 선택합니다.</li>
+					<li><b class="bterm">&lt;수정&gt;</b>단추를 찰칵하면 튀여나오기차림표가 현시되며 여기서 <b class="bterm">&lt;그룹 편집&gt;</b>을 찰칵하면 선택된 지령의 아래에 그룹을 나타내는 점선이 추가됩니다.</li>
+					<li><b class="bterm">&lt;지령&gt;</b>목록칸에서 묶으려는 지령의 마지막위치를 선택합니다.</li>
+					<li><b class="bterm">&lt;수정&gt;</b>단추를 찰칵하고 <b class="bterm">&lt;그룹 편집&gt;</b>을 찰칵하여 그룹선을 추가합니다.</li>
+					<li>3~6단계를 반복실행하여 여러개의 그룹을 편집할수 있습니다.</li>
+					<li><b class="bterm">&lt;사용자전용화&gt;</b>대화창의 <b class="bterm">&lt;확인&gt;</b>단추를 찰칵합니다.</li>
+				</ol>
+			</div>
+		</ol>
+		<p>
+			<a href='#' class='DropDown' onClick='Outline2()' onKeyPress='Outline2()'>
+			<img border='0' src='../image/image/common/blueup.gif' alt='표시'>즉시도움말</a>
+		</p>
+		<div id='ExpCol' class='collapsed' border='0'>
+			<p>그룹선을 마우스로 끌어서 요구하는 위치로 이동할수 있습니다.</p>
+		</div>
+		<script type="text/javascript" language="Javascript">footerView()</script>
+	
+</body>
+</html>

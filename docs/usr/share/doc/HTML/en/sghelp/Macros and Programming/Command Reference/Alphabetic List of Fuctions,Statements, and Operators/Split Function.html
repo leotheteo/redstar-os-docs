@@ -1,0 +1,74 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+	<TITLE></TITLE>
+	<META NAME="GENERATOR" CONTENT="《Sogwang 3.0》  (Linux)">
+	<META NAME="CREATED" CONTENT="20091205;15361500">
+	<META NAME="CHANGED" CONTENT="20091205;15455200">
+	<STYLE TYPE="text/css">
+	<!--
+		P.code { margin-top: 0.04cm; margin-bottom: 0.04cm; font-family: "Bitstream Vera Sans Mono", "Cumberland", "Courier New", "Courier", "Lucida Sans Typewriter", "Lucida Typewriter", "Monaco", "Monospaced" }
+		H2 { margin-bottom: 0.18cm; font-family: "Bitstream Vera Sans", "Arial", "Helvetica", "Lucida", "Geneva", "Helmet", sans-serif, "Andale Sans UI", "Arial Unicode MS", "Lucida Sans Unicode", "Tahoma"; font-size: 14pt }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="ko-KP" DIR="LTR"><DIV style="margin-left: 25">
+<H1><A NAME="split"></A><A NAME="bm_id3156027"></A><FONT FACE="Thorndale, serif"><SPAN LANG="en-US">Split
+Function [Runtime]</SPAN></FONT></H1>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Returns
+an array of substrings from a string expression.</SPAN></FONT></P>
+<H2><SPAN LANG="en-US">Syntax:</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Split
+(Text As String, delimiter, number)</SPAN></FONT></P>
+<H2><SPAN LANG="en-US">Return value:</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">String</SPAN></FONT></P>
+<H2><SPAN LANG="en-US">Parameters:</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Text:</B>
+Any string expression.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>delimiter
+(optional):</B> A string of one or more characters length that is
+used to delimit the Text. The default is the space character.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>number
+(optional):</B> The number of substrings that you want to return.</SPAN></FONT></P>
+<H2><SPAN LANG="en-US">Example:</SPAN></H2>
+<P CLASS="code"><A NAME="splitjoinex"></A><SPAN LANG="en-US">Dim a(3)</SPAN></FONT></P>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Sub main()</SPAN></FONT></P>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">a(0) = &quot;ABCDE&quot;</SPAN></FONT></P>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">a(1) = 42</SPAN></FONT></P>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">a(2) = &quot;MN&quot;</SPAN></FONT></P>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">a(3) = &quot;X Y Z&quot;</SPAN></FONT></P>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">JStr = Join1()</SPAN></FONT></P>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Call Show(JStr, Split1(JStr))</SPAN></FONT></P>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">JStr = Join2()</SPAN></FONT></P>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Call Show(JStr, Split1(JStr))</SPAN></FONT></P>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">JStr = Join3()</SPAN></FONT></P>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Call Show(JStr, Split1(JStr))</SPAN></FONT></P>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">End Sub</SPAN></FONT></P>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Function Join1()</SPAN></FONT></P>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Join1 = Join(a(), &quot;abc&quot;)</SPAN></FONT></P>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">End Function</SPAN></FONT></P>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Function Join2()</SPAN></FONT></P>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Join2 = Join(a(), &quot;,&quot;)</SPAN></FONT></P>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">End Function</SPAN></FONT></P>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Function Join3()</SPAN></FONT></P>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Join3 = Join(a())</SPAN></FONT></P>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">End Function</SPAN></FONT></P>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Function Split1(aStr)</SPAN></FONT></P>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Split1 = Split(aStr, &quot;D&quot;)</SPAN></FONT></P>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">End Function</SPAN></FONT></P>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Sub Show(JoinStr, TheArray)</SPAN></FONT></P>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">l = LBound(TheArray)</SPAN></FONT></P>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">u = UBound(TheArray)</SPAN></FONT></P>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">total$ =
+&quot;=============================&quot; + Chr$(13) + JoinStr +
+Chr$(13) + Chr$(13)</SPAN></FONT></P>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">For i = l To u</SPAN></FONT></P>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">total$ = total$ + TheArray(i) +
+Str(Len(TheArray(i))) + Chr$(13)</SPAN></FONT></P>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Next i</SPAN></FONT></P>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">MsgBox total$</SPAN></FONT></P>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">End Sub</SPAN></FONT></P>
+
+</DIV></BODY>
+</HTML>

@@ -1,0 +1,321 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+	<TITLE></TITLE>
+	<META NAME="GENERATOR" CONTENT="《Sogwang 3.0》  (Linux)">
+	<META NAME="CREATED" CONTENT="20091205;10241300">
+	<META NAME="CHANGED" CONTENT="20091205;11060500">
+	<STYLE TYPE="text/css">
+	<!--
+		H3 { margin-bottom: 0.18cm; font-family: "Bitstream Vera Sans", "Arial", "Helvetica", "Lucida", "Geneva", "Helmet", sans-serif, "Andale Sans UI", "Arial Unicode MS", "Lucida Sans Unicode", "Tahoma"; font-size: 12pt }
+		H2 { margin-bottom: 0.18cm; font-family: "Bitstream Vera Sans", "Arial", "Helvetica", "Lucida", "Geneva", "Helmet", sans-serif, "Andale Sans UI", "Arial Unicode MS", "Lucida Sans Unicode", "Tahoma"; font-size: 14pt }
+		P.code { margin-top: 0.04cm; margin-bottom: 0.04cm; font-family: "Bitstream Vera Sans Mono", "Cumberland", "Courier New", "Courier", "Lucida Sans Typewriter", "Lucida Typewriter", "Monaco", "Monospaced" }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="ko-KP" DIR="LTR"><DIV style="margin-left: 25">
+<H1><A NAME="mq"></A><FONT FACE="Thorndale, serif"><SPAN LANG="en-US">Statistical
+Functions Part Four </SPAN></FONT>
+</H1>
+<H2><A NAME="max"></A><A NAME="bm_id3154511"></A><A NAME="bm_id3146972"></A>
+<SPAN LANG="en-US">MAX</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Returns
+the maximum value in a list of arguments.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Returns
+0 if no numeric value and no error was encountered in the cell
+range(s) passed as cell reference(s). Text cells are ignored by MIN()
+and MAX(). The functions MINA() and MAXA() return 0 if no value
+(numeric or text) and no error was encountered. Passing a literal
+string argument to MIN() or MAX(), e.g. MIN(&quot;string&quot;),
+still results in an error.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Syntax</SPAN></H3>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">MAX(Number1; Number2; ...Number30)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Number1;
+Number2;...Number30</B> are numerical values or ranges. </SPAN></FONT>
+</P>
+<H3><SPAN LANG="en-US">Example</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">=MAX(A1;A2;A3;50;100;200)
+returns the largest value from the list.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">=MAX(A1:B100)
+returns the largest value from the list.</SPAN></FONT></P>
+<H2><A NAME="maxa"></A><A NAME="bm_id3166426"></A><A NAME="bm_id3150304"></A>
+<SPAN LANG="en-US">MAXA</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Returns
+the maximum value in a list of arguments. In opposite to MAX, here
+you can enter text. The value of the text is 0.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">The
+functions MINA() and MAXA() return 0 if no value (numeric or text)
+and no error was encountered.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Syntax</SPAN></H3>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">MAXA(Value1; Value2; ... Value30)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Value1;
+Value2;...Value30</B> are values or ranges. Text has the value of 0.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Example</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">=MAXA(A1;A2;A3;50;100;200;&quot;Text&quot;)
+returns the largest value from the list.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">=MAXA(A1:B100)
+returns the largest value from the list.</SPAN></FONT></P>
+<H2><A NAME="median"></A><A NAME="bm_id3153820"></A><A NAME="bm_id3153069"></A>
+<SPAN LANG="en-US">MEDIAN</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Returns
+the median of a set of numbers. In a set containing an uneven number
+of values, the median will be the number in the middle of the set and
+in a set containing an even number of values, it will be the mean of
+the two values in the middle of the set.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Syntax</SPAN></H3>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">MEDIAN(Number1; Number2;
+...Number30)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Number1;
+Number2;...Number30</B> are values or ranges, which represent a
+sample. Each number can also be replaced by a reference.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Example</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">for an
+odd number: =MEDIAN(1;5;9;20;21) returns 9 as the median value.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">for an
+even number: =MEDIAN(1;5;9;20) returns the average of the two middle
+values 5 and 9, thus 7.</SPAN></FONT></P>
+<H2><A NAME="min"></A><A NAME="bm_id3154541"></A><A NAME="bm_id3159226"></A>
+<SPAN LANG="en-US">MIN</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Returns
+the minimum value in a list of arguments.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Returns
+0 if no numeric value and no error was encountered in the cell
+range(s) passed as cell reference(s). Text cells are ignored by MIN()
+and MAX(). The functions MINA() and MAXA() return 0 if no value
+(numeric or text) and no error was encountered. Passing a literal
+string argument to MIN() or MAX(), e.g. MIN(&quot;string&quot;),
+still results in an error.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Syntax</SPAN></H3>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">MIN(Number1; Number2; ...Number30)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Number1;
+Number2;...Number30</B> are numerical values or ranges.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Example</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">=MIN(A1:B100)
+returns the smallest value in the list.</SPAN></FONT></P>
+<H2><A NAME="mina"></A><A NAME="bm_id3147504"></A><A NAME="bm_id3155752"></A>
+<SPAN LANG="en-US">MINA</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Returns
+the minimum value in a list of arguments. Here you can also enter
+text. The value of the text is 0.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">The
+functions MINA() and MAXA() return 0 if no value (numeric or text)
+and no error was encountered.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Syntax</SPAN></H3>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">MINA(Value1; Value2; ... Value30)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Value1;
+Value2;...Value30</B> are values or ranges. Text has the value of 0.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Example</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">=MINA(1;&quot;Text&quot;;20)
+returns 0.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">=MINA(A1:B100)
+returns the smallest value in the list.</SPAN></FONT></P>
+<H2><A NAME="avedev"></A><A NAME="bm_id3166465"></A><A NAME="bm_id3156396"></A>
+<SPAN LANG="en-US">AVEDEV</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Returns
+the average of the absolute deviations of data points from their
+mean. Displays the diffusion in a data set.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Syntax</SPAN></H3>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">AVEDEV(Number1; Number2;
+...Number30)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Number1,
+Number2,...Number 0</B> are values or ranges that represent a sample.
+Each number can also be replaced by a reference.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Example</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">=AVEDEV(A1:A50)
+</SPAN></FONT>
+</P>
+<H2><A NAME="average"></A><A NAME="bm_id3145824"></A><A NAME="bm_id3146878"></A>
+<SPAN LANG="en-US">AVERAGE</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Returns
+the average of the arguments.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Syntax</SPAN></H3>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">AVERAGE(Number1; Number2;
+...Number30)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Number1;
+Number2;...Number 0</B> are numerical values or ranges.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Example</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">=AVERAGE(A1:A50)
+</SPAN></FONT>
+</P>
+<H2><A NAME="averagea"></A><A NAME="bm_id3148754"></A><A NAME="bm_id3149690"></A>
+<SPAN LANG="en-US">AVERAGEA</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Returns
+the average of the arguments. The value of a text is 0.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Syntax</SPAN></H3>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">AVERAGEA(Value1; Value2; ...
+Value30)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Value1;
+Value2;...Value30</B> are values or ranges. Text has the value of 0.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Example</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">=AVERAGEA(A1:A50)
+</SPAN></FONT>
+</P>
+<H2><A NAME="mode"></A><A NAME="bm_id3153933"></A><A NAME="bm_id3149253"></A>
+<SPAN LANG="en-US">MODE</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Returns
+the most common value in a data set. If there are several values with
+the same frequency, it returns the smallest value. An error occurs
+when a value doesn't appear twice.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Syntax</SPAN></H3>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">MODE(Number1; Number2;
+...Number30)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Number1;
+Number2;...Number30</B> are numerical values or ranges.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Example</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">=MODE(A1:A50)
+</SPAN></FONT>
+</P>
+<H2><A NAME="negbinomdist"></A><A NAME="bm_id3149879"></A><A NAME="bm_id3159135"></A>
+<SPAN LANG="en-US">NEGBINOMDIST</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Returns
+the negative binomial distribution.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Syntax</SPAN></H3>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">NEGBINOMDIST(X; R; SP)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>X</B>
+represents the value returned for unsuccessful tests.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>R</B>
+represents the value returned for successful tests.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>SP</B>
+is the probability of the success of an attempt.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Example</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">=NEGBINOMDIST(1;1;0.5)
+returns 0.25.</SPAN></FONT></P>
+<H2><A NAME="norminv"></A><A NAME="bm_id3155516"></A><A NAME="bm_id3149396"></A>
+<SPAN LANG="en-US">NORMINV</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Returns
+the inverse of the normal cumulative distribution.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Syntax</SPAN></H3>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">NORMINV(Number; Mean; StDev)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Number</B>
+represents the probability value used to determine the inverse normal
+distribution.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Mean</B>
+represents the mean value in the normal distribution.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>StDev</B>
+represents the standard deviation of the normal distribution.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Example</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">=NORMINV(0.9;63;5)
+returns 69.41. If the average egg weighs 63 grams with a standard
+deviation of 5, then there will be 90% probability that the egg will
+not be heavier than 69.41g grams.</SPAN></FONT></P>
+<H2><A NAME="normdist"></A><A NAME="bm_id3153722"></A><A NAME="bm_id3147484"></A>
+<SPAN LANG="en-US">NORMDIST</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Returns
+the density function or the normal cumulative distribution.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Syntax</SPAN></H3>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">NORMDIST(Number; Mean; StDev; C)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Number</B>
+is the value of the distribution based on which the normal
+distribution is to be calculated.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Mean</B>
+is the mean value of the distribution.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>StDev</B>
+is the standard deviation of the distribution.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>C</B>
+= 0 calculates the density function; <B>C</B> = 1 calculates the
+distribution.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Example</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">=NORMDIST(70;63;5;0)
+returns 0.03.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">=NORMDIST(70;63;5;1)
+returns 0.92.</SPAN></FONT></P>
+<H2><A NAME="pearson"></A><A NAME="bm_id3152934"></A><A NAME="bm_id3156103"></A>
+<SPAN LANG="en-US">PEARSON</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Returns
+the Pearson product moment correlation coefficient r.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Syntax</SPAN></H3>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">PEARSON(Data1; Data2)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Data1</B>
+represents the array of the first data set.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Data2</B>
+represents the array of the second data set.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Example</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">=PEARSON(A1:A30;B1:B30)
+returns the Pearson correlation coefficient of both data sets.</SPAN></FONT></P>
+<H2><A NAME="phi"></A><A NAME="bm_id3152806"></A><A NAME="bm_id3153757"></A>
+<SPAN LANG="en-US">PHI</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Returns
+the values of the distribution function for a standard normal
+distribution.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Syntax</SPAN></H3>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">PHI(Number)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Number</B>
+represents the value based on which the standard normal distribution
+is calculated.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Example</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">=PHI(2.25)
+= 0.03</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">=PHI(-2.25)
+= 0.03</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">=PHI(0)
+= 0.4</SPAN></FONT></P>
+<H2><A NAME="poisson"></A><A NAME="bm_id3153985"></A><A NAME="bm_id3156011"></A>
+<SPAN LANG="en-US">POISSON</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Returns
+the Poisson distribution.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Syntax</SPAN></H3>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">POISSON(Number; Mean; C)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Number</B>
+represents the value based on which the Poisson distribution is
+calculated.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Mean</B>
+represents the middle value of the Poisson distribution.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>C</B>
+= 0 calculates the density function; <B>C</B> = 1 calculates the
+distribution.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Example</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">=POISSON(60;50;1)
+returns 0.93.</SPAN></FONT></P>
+<H2><A NAME="percentile"></A><A NAME="bm_id3153100"></A><A NAME="bm_id3155394"></A>
+<SPAN LANG="en-US">PERCENTILE</SPAN></H2>
+<P STYLE="margin-top: 0.04cm; margin-bottom: 0.04cm"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Returns
+the alpha-percentile of data values in an array. A percentile returns
+the scale value for a data series which goes from the smallest
+(Alpha=0) to the largest value (alpha=1) of a data series. For Alpha
+= 25%, the percentile means the first quartile; Alpha
+= 50% is the MEDIAN.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Syntax</SPAN></H3>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">PERCENTILE(Data; Alpha)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Data</B>
+represents the array of data.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Alpha</B>
+represents the percentage of the scale between 0 and 1.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Example</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">=PERCENTILE(A1:A50;0.1)
+represents the value in the data set, which equals 10% of the total
+data scale in A1:A50.</SPAN></FONT></P>
+<H2><A NAME="percentrank"></A><A NAME="bm_id3148807"></A><A NAME="bm_id3154902"></A>
+<SPAN LANG="en-US">PERCENTRANK</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Returns
+the percentage rank of a value in a sample.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Syntax</SPAN></H3>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">PERCENTRANK(Data; Value)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Data</B>
+represents the array of data in the sample.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Value</B>
+represents the value whose percentile rank must be determined.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Example</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">=PERCENTRANK(A1:A50;50)
+returns the percentage rank of the value 50 from the total range of
+all values found in A1:A50. If 50 falls outside the total range, an
+error message will appear.</SPAN></FONT></P>
+<H2><A NAME="quartile"></A><A NAME="bm_id3166442"></A><A NAME="bm_id3150709"></A>
+<SPAN LANG="en-US">QUARTILE</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Returns
+the quartile of a data set.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Syntax</SPAN></H3>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">QUARTILE(Data; Type)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Data</B>
+represents the array of data in the sample.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Type</B>
+represents the type of quartile. (0 = MIN, 1 = 25%, 2 = 50% (MEDIAN),
+3 = 75% and 4 = MAX.)</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Example</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><SPAN STYLE="font-weight: medium">=QUARTILE(A1:A50;2)
+returns the value of which 50% of the scale corresponds to the lowest
+to highest values in the range A1:A50.</SPAN></SPAN></FONT></P>
+
+</DIV></BODY>
+</HTML>
+

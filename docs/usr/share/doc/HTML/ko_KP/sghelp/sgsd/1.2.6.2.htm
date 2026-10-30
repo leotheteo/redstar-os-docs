@@ -1,0 +1,83 @@
+﻿<html dir='ltr'>
+	<head>
+		<META http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+		<title>차림표의 추가, 삭제 및 수정</title>
+		<link rel='stylesheet' type='text/css' href='../css/main.css'/>
+		<script type='text/javascript' language='Javascript' src='../js/mexpcol.js'></script>
+		<script type='text/javascript' language='JavaScript' src='../js/glossary.js'></script>
+	</head>
+	<body>
+		<h1>&nbsp;<img align="absbottom" src="../image/external_images/crystal/svtools/res/new_doc.png"/>&nbsp;차림표의 추가, 삭제 및 수정</h1>
+		<p id='ExpandAllLine' class='ExpFav'>
+			<a href='#' onClick='ExpandAll()' onKeyPress='ExpandAll()' class='DropDown'>
+				<img id='picHeader' border='0' src='../image/image/common/expandtri.gif' alt='모두 표시'>
+				<span id='ExpandAll'>모두 표시</span>
+			</a>
+		</p>
+		<p>차림표를 새로 추가하거나 삭제할수 있으며 차림표지령들을 다시 정렬하고 수정할수 있습니다.</p>
+		<p>다음과 같은 방법으로 진행합니다.</p>
+		<ol>
+			<li><b class="bterm">&lt;도구&gt;</b>차림표에서 <b class="bterm">&lt;사용자전용화&gt;</b>를 찰칵합니다.</li>
+			<li><b class="bterm">&lt;사용자전용화&gt;</b>대화창이 화면에 현시됩니다.</li>
+			<li><b class="bterm">&lt;사용자전용화&gt;</b>대화창에서 <b class="bterm">&lt;차림표&gt;</b>표쪽을 찰칵합니다.</li>
+			<p>
+				<a href='#' class='DropDown' onClick='Outline2()' onKeyPress='Outline2()'>
+				<img border='0' src='../image/image/common/blueup.gif' alt='표시'>차림표의 추가</a>
+			</p>
+			<div id='ExpCol' class='collapsed' border='0'>
+				<ol>
+					<li>차림표를 사용자가 새롭게 정의하려면 <b class="bterm">&lt;새로 만들기&gt;</b>단추를 찰칵합니다.</li>
+					<li>차림표의 이름과 위치를 정의합니다.</li>
+					<li>차림표에 지령을 새로 추가하려는 경우에는 <b class="bterm">&lt;차림표내용&gt;</b>부분에서 <b class="bterm">&lt;추가&gt;</b>단추를 찰칵합니다.</li>
+					<li><b class="bterm">&lt;지령 추가&gt;</b>대화창이 현시되며 해당한 지령을 선택하고 <b class="bterm">&lt;추가&gt;</b>단추를 찰칵합니다.</li>
+				</ol>
+			</div>
+			<p>
+				<a href='#' class='DropDown' onClick='Outline2()' onKeyPress='Outline2()'>
+				<img border='0' src='../image/image/common/blueup.gif' alt='표시'>부분차림표의 추가</a>
+			</p>
+			<div id='ExpCol' class='collapsed' border='0'>
+				<ol>
+					<li><b class="bterm">&lt;차림표&gt;</b>목록칸에서 부분차림표를 추가하려는 차림표를 선택합니다.</li>
+					<li><b class="bterm">&lt;수정&gt;</b>단추의 튀여나오기차림표에서 <b class="bterm">&lt;부분차림표 추가&gt;</b>를 찰칵하여 <b class="bterm">&lt;부분차림표 추가&gt;</b>대화창을 엽니다.</li>
+					<li>대화창의 <b class="bterm">&lt;부분차림표이름&gt;</b>본문칸에 부분차림표의 이름을 입력하고 <b class="bterm">&lt;확인&gt;</b>단추를 찰칵합니다. <b class="bterm">&lt;사용자전용화&gt;</b>대화창의 <b class="bterm">&lt;지령&gt;</b>목록칸에 부분차림표가 추가됩니다.</li>
+				</ol>
+			</div>
+			<p>
+				<a href='#' class='DropDown' onClick='Outline2()' onKeyPress='Outline2()'>
+				<img border='0' src='../image/image/common/blueup.gif' alt='표시'>차림표의 수정 및 삭제</a>
+			</p>
+			<div id='ExpCol' class='collapsed' border='0'>
+				<ol>
+					<li><b class="bterm">&lt;차림표&gt;</b>목록칸에서 수정하려는 차림표를 선택합니다.</li>
+					<li><b class="bterm">&lt;차림표&gt;</b>단추를 찰칵하면 튀여나오기차림표가 현시됩니다.</li>
+						<ul>
+							<li><b class="bterm">&lt;이동&gt;</b>을 찰칵하여 차림표의 순서를 바꿀수 있습니다.	</li>
+							<li><b class="bterm">&lt;이름 바꾸기&gt;</b>를 찰칵하여 차림표의 이름을 바꿀수 있습니다.</li>
+							<li><b class="bterm">&lt;삭제&gt;</b>를 찰칵하여 차림표를 삭제할수 있습니다.</li>
+						</ul>
+				</ol>
+			</div>
+			<p>
+				<a href='#' class='DropDown' onClick='Outline2()' onKeyPress='Outline2()'>
+				<img border='0' src='../image/image/common/blueup.gif' alt='표시'>차림표지령의 수정</a>
+			</p>
+			<div id='ExpCol' class='collapsed' border='0'>
+				<ol>
+					<li><b class="bterm">&lt;차림표&gt;</b>목록칸에서 수정하려는 차림표지령을 포함하는 차림표를 선택합니다.</li>
+					<li><b class="bterm">&lt;차림표내용&gt;</b>의 <b class="bterm">&lt;지령&gt;</b>목록칸에서 필요한 차림표지령을 선택합니다.</li>
+					<li>현재 정의되여있는 차림표지령을 수정하려면 <b class="bterm">&lt;수정&gt;</b>단추를 찰칵하여 튀여나오기차림표를 현시합니다.	</li>
+						<ul>
+							<li><b class="bterm">&lt;부분차림표 추가&gt;</b>를 찰칵하여 부분차림표를 새로 추가할수 있습니다.</li>
+							<li><b class="bterm">&lt;그룹 편집&gt;</b>을 찰칵하여 그룹선을 추가할수 있습니다.</li>
+							<li><b class="bterm">&lt;이름 바꾸기&gt;</b>를 찰칵하여 차림표지령의 이름을 변경할수 있습니다.</li>
+							<li><b class="bterm">&lt;삭제&gt;</b>를 찰칵하여 이 차림표지령을 삭제할수 있습니다.</li>
+						</ul>
+				</ol>
+			</div>
+			<li><b class="bterm">&lt;사용자전용화&gt;</b>대화창에서 <b class="bterm">&lt;확인&gt;</b>단추를 찰칵합니다.</li>
+		</ol>
+		<script type="text/javascript" language="Javascript">footerView()</script>
+	
+</body>
+</html>

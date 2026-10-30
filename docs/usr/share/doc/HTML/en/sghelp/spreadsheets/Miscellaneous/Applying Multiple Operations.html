@@ -1,0 +1,134 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+	<TITLE></TITLE>
+	<META NAME="GENERATOR" CONTENT="《Sogwang 3.0》  (Linux)">
+	<META NAME="CREATED" CONTENT="20091205;11384400">
+	<META NAME="CHANGED" CONTENT="20091205;11394400">
+	<STYLE TYPE="text/css">
+	<!--
+		H2 { margin-bottom: 0.18cm; font-family: "Bitstream Vera Sans", "Arial", "Helvetica", "Lucida", "Geneva", "Helmet", sans-serif, "Andale Sans UI", "Arial Unicode MS", "Lucida Sans Unicode", "Tahoma"; font-size: 14pt }
+		P.listitem { font-family: "Bitstream Vera Sans", "Arial", "Helvetica", "Lucida", "Geneva", "Helmet", sans-serif, "Andale Sans UI", "Arial Unicode MS", "Lucida Sans Unicode", "Tahoma" }
+		P.related { margin-top: 0.71cm; margin-bottom: 0.05cm; border-top: 1px solid #000000; border-bottom: none; border-left: none; border-right: none; padding-top: 0.05cm; padding-bottom: 0cm; padding-left: 0cm; padding-right: 0cm; font-weight: bold }
+		H3 { margin-bottom: 0.18cm; font-family: "Bitstream Vera Sans", "Arial", "Helvetica", "Lucida", "Geneva", "Helmet", sans-serif, "Andale Sans UI", "Arial Unicode MS", "Lucida Sans Unicode", "Tahoma"; font-size: 12pt }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="ko-KP" DIR="LTR"><DIV style="margin-left: 25">
+<H1><A NAME="bm_id3147559"></A><A NAME="multioperation"></A><FONT FACE="Thorndale, serif"><SPAN LANG="en-US">Applying
+Multiple Operations </SPAN></FONT>
+</H1>
+<H2><SPAN LANG="en-US">Multiple Operations in Columns or Rows</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">The <B>Data
+- Multiple Operations</B> command provides a planning tool for &quot;what
+if&quot; questions.In your spreadsheet, you enter a formula to
+calculate a result from values that are stored in other cells. Then,
+you set up a cell range where you enter some fixed values, and the
+Multiple Operations command will calculate the results depending on
+the formula.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">In the
+<B>Formula</B> field, enter the cell reference to the formula that
+applies to the data range. In the <B>Column input cell/Row input cell</B>
+field, enter the cell reference to the corresponding cell that is
+part of the formula. This can be explained best by examples:</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Examples</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">You
+produce toys which you sell for $10 each. Each toy costs $2 to make,
+in addition to which you have fixed costs of $10,000 per year. How
+much profit will you make in a year if you sell a particular number
+of toys?</SPAN></FONT></P>
+
+<H3><SPAN LANG="en-US">Calculating With One Formula and One Variable</SPAN></H3>
+<OL>
+	<LI><P CLASS="listitem"><FONT FACE="청봉, serif"><SPAN LANG="en-US">To calculate the profit,
+	first enter any number as the quantity (items sold) - in this
+	example 2000. The profit is found from the formula Profit=Quantity *
+	(Selling price - Direct costs) - Fixed costs. Enter this formula in
+	B5.</SPAN></FONT></P>
+	<LI><P CLASS="listitem"><FONT FACE="청봉, serif"><SPAN LANG="en-US">In column D enter given
+	annual sales, one below the other; for example, 500 to 5000, in
+	steps of 500.</SPAN></FONT></P>
+	<LI><P CLASS="listitem"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Select the range D2:E11,
+	and thus the values in column D and the empty cells alongside in
+	column E.</SPAN></FONT></P>
+	<LI><P CLASS="listitem"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Choose <B>Data - Multiple
+	operations</B>.</SPAN></FONT></P>
+	<LI><P CLASS="listitem"><FONT FACE="청봉, serif"><SPAN LANG="en-US">With the cursor in the
+	<B>Formulas </B>field, click cell B5.</SPAN></FONT></P>
+	<LI><P CLASS="listitem"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Set the cursor in the
+	<B>Column input cell</B> field and click cell B4. This means that
+	B4, the quantity, is the variable in the formula, which is replaced
+	by the selected column values.</SPAN></FONT></P>
+	<LI><P CLASS="listitem"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Close the dialog with <B>OK</B>.
+	You see the profits for the different quantities in column E.</SPAN></FONT></P>
+</OL>
+<H3><SPAN LANG="en-US">Calculating with Several Formulas
+Simultaneously</SPAN></H3>
+<OL>
+	<LI><P CLASS="listitem"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Delete column E.</SPAN></FONT></P>
+	<LI><P CLASS="listitem"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Enter the following
+	formula in C5: = B5 / B4. You are now calculating the annual profit
+	per item sold.</SPAN></FONT></P>
+	<LI><P CLASS="listitem"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Select the range D2:F11,
+	thus three columns.</SPAN></FONT></P>
+	<LI><P CLASS="listitem"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Choose <B>Data - Multiple
+	Operations</B>.</SPAN></FONT></P>
+	<LI><P CLASS="listitem"><FONT FACE="청봉, serif"><SPAN LANG="en-US">With the cursor in the
+	<B>Formulas</B> field, select cells B5 thru C5.</SPAN></FONT></P>
+	<LI><P CLASS="listitem"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Set the cursor in the
+	<B>Column input cell</B> field and click cell B4.</SPAN></FONT></P>
+	<LI><P CLASS="listitem"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Close the dialog with <B>OK</B>.
+	You will now see the profits in column E and the annual profit per
+	item in column F.</SPAN></FONT></P>
+</OL>
+<H2><SPAN LANG="en-US">Multiple Operations Across Rows and Columns</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Sogwang allows
+you to carry out joint multiple operations for columns and rows in
+so-called cross-tables. The formula cell has to refer to both the
+data range arranged in rows and the one arranged in columns. Select
+the range defined by both data ranges and call the multiple operation
+dialog. Enter the reference to the formula in the <B>Formula</B>
+field. The <B>Row input cell</B> and the <B>Column input cell</B>
+fields are used to enter the reference to the corresponding cells of
+the formula.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Calculating with Two Variables</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Consider
+columns A and B of the sample table above. You now want to vary not
+just the quantity produced annually, but also the selling price, and
+you are interested in the profit in each case.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Expand
+the table shown above. D2 thru D11 contain the numbers 500, 1000 and
+so on, up to 5000. In E1 through H1 enter the numbers 8, 10, 15 and
+20.</SPAN></FONT></P>
+<OL>
+	<LI><P CLASS="listitem"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Select the range D1:H11.</SPAN></FONT></P>
+	<LI><P CLASS="listitem"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Choose <B>Data - Multiple
+	Operations</B>.</SPAN></FONT></P>
+	<LI><P CLASS="listitem"><FONT FACE="청봉, serif"><SPAN LANG="en-US">With the cursor in the
+	<B>Formulas </B>field, click cell B5.</SPAN></FONT></P>
+	<LI><P CLASS="listitem"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Set the cursor in the <B>Row
+	input cell</B> field and click cell B1. This means that B1, the
+	selling price, is the horizontally entered variable (with the values
+	8, 10, 15 and 20).</SPAN></FONT></P>
+	<LI><P CLASS="listitem"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Set the cursor in the
+	<B>Column input cell</B> field and click in B4. This means that B4,
+	the quantity, is the vertically entered variable.</SPAN></FONT></P>
+	<LI><P CLASS="listitem"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Close the dialog with OK.
+	You see the profits for the different selling prices in the range
+	E2:H11.</SPAN></FONT></P>
+</OL>
+<P CLASS="related"><A NAME="relatedtopics"></A><A NAME="related"></A><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Related
+Topics</B> </SPAN></FONT>
+</P>
+<P STYLE="margin-left: 0.13cm; margin-top: 0.05cm; margin-bottom: 0.05cm">
+<FONT FACE="청봉, serif"><SPAN LANG="en-US"><A href="../Command and Menu Reference/Menus/Data/Multiple Operations.html"><SPAN STYLE="font-weight: medium">Multiple
+operations</SPAN></A></SPAN></FONT></P>
+<P STYLE="margin-left: 0.13cm; margin-top: 0.05cm; margin-bottom: 0.05cm">
+<FONT FACE="청봉, serif"><SPAN LANG="en-US"><SPAN STYLE="font-weight: medium"><A href="../Scenarios/Using Scenarios.html">Using
+Scenarios</A></SPAN></SPAN></FONT>
+</P>
+
+</DIV></BODY>
+</HTML>
+

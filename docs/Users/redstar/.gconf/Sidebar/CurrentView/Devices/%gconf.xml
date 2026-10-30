@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<gconf>
+	<entry name="List" mtime="1793385077" type="list" ltype="string">
+		<li type="string">
+			<stringvalue>media:/ : none : system/computer : localhost&apos;s Computer</stringvalue>
+		</li>
+		<li type="string">
+			<stringvalue>media:/sda1 : / : media/hdd_mounted : RedStar</stringvalue>
+		</li>
+	</entry>
+</gconf>

@@ -1,0 +1,7 @@
+<?xml version='1.0'?>
+<!DOCTYPE l:i18n SYSTEM "l10n.dtd" [
+<!ENTITY ko_KP SYSTEM "ko_KP.xml">
+]>
+<l:i18n xmlns:l="http://docbook.sourceforge.net/xmlns/l10n/1.0">
+&ko_KP;
+</l:i18n>

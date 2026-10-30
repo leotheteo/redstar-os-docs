@@ -1,0 +1,150 @@
+﻿<html dir='ltr'>
+	<head>
+		<META http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+		<title>PRICE</title>
+		<link rel='stylesheet' type='text/css' href='../css/main.css'/>
+		<script type='text/javascript' language='Javascript' src='../js/mexpcol.js'></script>
+		<script type='text/javascript' language='JavaScript' src='../js/glossary.js'></script>
+	</head>
+	<body>
+		<h1>&nbsp;<img align="absbottom" src="../image/external_images/crystal/svtools/res/new_doc.png"/>&nbsp;PRICE</h1>
+		<p id='ExpandAllLine' class='ExpFav'>
+			<a href='#' onClick='ExpandAll()' onKeyPress='ExpandAll()' class='DropDown'>
+				<img id='picHeader' border='0' src='../image/image/common/expandtri.gif' alt='모두 표시'>
+				<span id='ExpandAll'>모두 표시</span>
+			</a>
+		</p>
+		<p><b class="bterm">참고항목</b>&emsp;
+			<a href="5.9.5.1.htm">재정함수목록</a>,
+			<a href="5.9.4.3.htm">DATE</a>, 
+			<a href="5.9.5.58.htm">YIELD</a> 
+		</p>
+		<p>정기리자를 납입하는 유가증권에 대한 액면가격을 100통화단위당 가격으로 구합니다.</p>
+		<p><b class="bterm">문법:&emsp;&emsp;		PRICE(결제날자,만기날자,리자률,수익률,상환액,회수,기준)</b></p>
+		<p>
+			<b class="bterm">중요:</b>&emsp;   날자는 
+			<b class="bterm">DATE</b>함수를 사용하거나 다른 수식 또는 함수의 결과로 입력하여야 합니다. 례를 들어 2008년 5월 23일의 경우 DATE(2008,5,23)을 사용합니다.
+		</p>
+		<table>
+			<tr>
+				<th>인수명</th>
+				<th>설명</th>
+			</tr>
+			<tr>
+				<td>결제날자</td>
+				<td>유가증권의 결제날자입니다. 즉 증권이 구매자에게 판매된 날을 말합니다.</td>
+			</tr>
+			<tr>
+				<td>만기날자</td>
+				<td>유가증권의 만기날자입니다. 즉 유가증권이 만기가 되는 날을 말합니다.</td>
+			</tr>
+			<tr>
+				<td>리자률</td>
+				<td>유가증권의 리자률입니다.</td>
+			</tr>
+			<tr>
+				<td>수익률</td>
+				<td>유가증권의 년간수익률입니다.</td>
+			</tr>
+			<tr>
+				<td>상환액</td>
+				<td>액면가격 100원당 유가증권의 상환액입니다.</td>
+			</tr>
+			<tr>
+				<td>회수</td>
+				<td>년간 리자지불회수입니다. 1년에 한번 지불하면 <b class="bterm">회수</b>= 1, 반년에 한번 지불하면 <b class="bterm">회수</b> = 2, 분기마다 지불하면 <b class="bterm">회수</b> = 4로 표시합니다.</td>
+			</tr>
+			<tr>
+				<td>기준</td>
+				<td>기준입니다. 추가선택인수입니다. 지정하지 않으면 0으로 됩니다.</td>
+			</tr>
+		</table>
+		<p><b class="bterm">주의</b></p>
+			<ul>
+				<li>결제날자는 증권(례: 채권)이 팔린 날자이며 만기날자는 증권이 만기되는 날입니다. 례를 들어 30년 만기채권이 2008년 1월 1일에 발행되고 6개월후에 팔렸을 때 발행날자는 2008년 1월 1일이며 결제날자는 2008년 7월 1일이고 만기날자는 발행날자로부터 30년후인 2038년 1월 1일입니다.</li>
+				<li><b class="bterm">결제날자</b>, <b class="bterm">만기날자</b>, <b class="bterm">회수</b>, <b class="bterm">기준</b>은 소수점이하를 잘라서 옹근수로 변환됩니다.</li>
+				<li><b class="bterm">결제날자</b>, <b class="bterm">만기날자</b>가 유효한 날자가 아니면 <b class="bterm">오유:[오유번호]</b>가 반환됩니다.</li>
+				<li><b class="bterm">수익률</b>과  <b class="bterm">리자률</b>이 부수이면 <b class="bterm">오유:[오유번호]</b>가 반환됩니다.</li>
+				<li><b class="bterm">상환액</b> ≦ 0이면  <b class="bterm">오유:[오유번호]</b>가 반환됩니다.</li>
+				<li><b class="bterm">기준</b>이 0보다 작거나 4보다 크면 <b class="bterm">오유:[오유번호]</b>가 반환됩니다.</li>
+				<li><b class="bterm">결제날자</b> ≧ <b class="bterm">만기날자</b>이면  <b class="bterm">오유:[오유번호]</b>가 반환됩니다.</li>
+				<li><b class="bterm">PRICE</b>함수를 계산하는 식은 다음과 같습니다.
+					<p><img border='0' src='../image/image/sgsd/formula-11.gif' alt='표시'></p>
+					<p>여기서</p>
+					<p><b class="bterm">DSC</b> = 결제날자로부터 다음 리자지불날자까지의 날수입니다.</p>
+					<p><b class="bterm">E</b>  = 결제날자가 포함된 리자청구기간의 날수입니다.</p>
+					<p><b class="bterm">N</b> = 결제날자과 상환날자사이의 리자지불회수입니다.</p>
+					<p><b class="bterm">A</b> = 리자청구기간의 시작날자로부터 결제날자까지의 날수입니다.</p>
+				</li>
+			</ul>
+		<p><b class="bterm">실례</b></p>
+			<p><a href="1.5.1.htm">실례의 리용방법</a>을 참고하십시오.</p>
+			<table>
+				<tr>
+					<td>
+						<table>
+							<tr><td>&nbsp;</td></tr>
+							<tr><th>1</th></tr>
+							<tr><th>2</th></tr>
+							<tr><th>3</th></tr>
+							<tr><th>4</th></tr>
+							<tr><th>5</th></tr>
+							<tr><th>6</th></tr>
+							<tr><th>7</th></tr>
+							<tr><th>8</th></tr>
+						</table>
+					</td>
+					<td>
+						<table>
+							<tr>
+								<th>A</th>
+								<th>B</th>
+							</tr>
+							<tr>
+								<th>자료</th>
+								<th>설명</th>
+							</tr>
+							<tr>
+								<td>2008/2/15</td>
+								<td>결제날자입니다.</td>
+							</tr>
+							<tr>
+								<td>2017/11/15</td>
+								<td>만기날자입니다.</td>
+							</tr>
+							<tr>
+								<td>5.75%</td>
+								<td>반년에 한번 지불하는 리자률입니다.</td>
+							</tr>
+							<tr>
+								<td>6.50%</td>
+								<td>수익률입니다.</td>
+							</tr>
+							<tr>
+								<td>100</td>
+								<td>상환액입니다.</td>
+							</tr>
+							<tr>
+								<td>2</td>
+								<td>반년에 한번 지불합니다.</td>
+							</tr>
+							<tr>
+								<td>0</td>
+								<td>US방식(NASD), 30일씩 12달  </td>
+							</tr>
+							<tr>
+								<th>수식</th>
+								<th>설명(결과)</th>
+							</tr>
+							<tr>
+								<td>=PRICE(A2,A3,A4,A5,A6,A7,A8)</td>
+								<td>우와 같은 조건에서 채권에 대한 가격입니다. (94.63)</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>	
+		<script type="text/javascript" language="Javascript">footerView()</script>
+	
+</body>
+</html>										

@@ -1,0 +1,104 @@
+﻿<html dir='ltr'>
+	<head>
+		<META http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+		<title>T</title>
+		<link rel='stylesheet' type='text/css' href='../css/main.css'/>
+		<script type='text/javascript' language='Javascript' src='../js/mexpcol.js'></script>
+		<script type='text/javascript' language='JavaScript' src='../js/glossary.js'></script>
+	</head>
+	<body>
+		<h1>&nbsp;<img align="absbottom" src="../image/external_images/crystal/svtools/res/new_doc.png"/>&nbsp;T</h1>
+		<p id='ExpandAllLine' class='ExpFav'>
+			<a href='#' onClick='ExpandAll()' onKeyPress='ExpandAll()' class='DropDown'>
+				<img id='picHeader' border='0' src='../image/image/common/expandtri.gif' alt='모두 표시'>
+				<span id='ExpandAll'>모두 표시</span>
+			</a>
+		</p>
+		<p><b class="bterm">참고항목</b>&emsp;
+			<a href="5.9.12.1.htm">본문함수목록</a>,
+			<a href="5.9.6.2.htm">CELL</a>,
+			<a href="5.9.6.17.htm">N</a>,
+			<a href="5.9.12.29.htm">VALUE</a>
+		</p>
+		<p>본문인 경우 값을 구하고 그렇지 않으면 빈 문자렬을 구합니다.</p>
+		<p><b class="bterm">문법:&emsp;&emsp;		T(값)</b></p>
+		<table>
+			<tr>
+				<th>인수명</th>
+				<th>설명</th>
+			</tr>
+			<tr>
+				<td>값</td>
+				<td>변환할 값입니다.</td>
+			</tr>
+		</table>
+		<p><b class="bterm">주의</b></p>
+			<ul>
+				<li><b class="bterm">값</b>이 본문이거나 본문을 참조하면 <b class="bterm">값</b>이 반환됩니다. <b class="bterm">값</b>이 본문을 참조하지 않으면 ""(빈 본문)이 반환됩니다.</li>
+				<li>표처리프로그람에서는 필요에 따라 값이 자동으로 변환되므로 수식에서 <b class="bterm">T</b>함수를 사용하지 않아도 됩니다. 이 함수는 다른 표계산프로그람과의 호환을 위하여 사용하는 함수입니다.</li>
+			</ul>
+		<p><b class="bterm">실례</b></p>
+			<p><a href="1.5.1.htm">실례의 리용방법</a>을 참고하십시오.</p>
+			<table>
+				<tr>
+					<td>
+						<table>
+							<tr>
+								<td class="noborder">&nbsp;
+								</td>
+							</tr>
+							<tr>
+								<th>1</th>
+							</tr>
+							<tr>
+								<th>2</th>
+							</tr>
+							<tr>
+								<th>3</th>
+							</tr>
+							<tr>
+								<th>4</th>
+							</tr>
+						</table>
+					</td>
+					<td>
+						<table>
+							<tr>
+								<th>A</th>
+							</tr>
+							<tr>
+								<th>자료</th>
+							</tr>
+							<tr>
+								<td>Rainfall</td>
+							</tr>
+							<tr>
+								<td>19</td>
+							</tr>
+							<tr>
+								<td>=TRUE()</td>
+							</tr>
+							<tr>
+								<th>수식</th>
+								<th>설명(결과)</th>
+							</tr>
+							<tr>
+								<td>=T(A2)</td>
+								<td>첫번째 값은 본문이므로 본문이 반환됩니다. (Rainfall)</td>
+							</tr>
+							<tr>
+								<td>=T(A3)</td>
+								<td>두번째 값은 수자이므로 빈 본문이 반환됩니다. ()</td>
+							</tr>
+							<tr>
+								<td>=T(A4)</td>
+								<td>세번째 값은 론리값이므로 빈 본문이 반환됩니다. ()</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+		<script type="text/javascript" language="Javascript">footerView()</script>
+	
+</body>
+</html>				

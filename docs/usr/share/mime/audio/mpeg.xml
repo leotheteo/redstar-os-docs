@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="audio/mpeg">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <alias type="audio/x-mp3"/>
+  <comment>MP3 audio</comment>
+</mime-type>

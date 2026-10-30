@@ -1,0 +1,153 @@
+﻿<html dir='ltr'>
+	<head>
+		<META http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+		<title>CHITEST</title>
+		<link rel='stylesheet' type='text/css' href='../css/main.css'/>
+		<script type='text/javascript' language='Javascript' src='../js/mexpcol.js'></script>
+		<script type='text/javascript' language='JavaScript' src='../js/glossary.js'></script>
+	</head>
+	<body>
+		<h1>&nbsp;<img align="absbottom" src="../image/external_images/crystal/svtools/res/new_doc.png"/>&nbsp;CHITEST</h1>
+		<p id='ExpandAllLine' class='ExpFav'>
+			<a href='#' onClick='ExpandAll()' onKeyPress='ExpandAll()' class='DropDown'>
+				<img id='picHeader' border='0' src='../image/image/common/expandtri.gif' alt='모두 표시'>
+				<span id='ExpandAll'>모두 표시</span>
+			</a>
+		</p>
+		<p><b class="bterm">참고항목</b>&emsp;
+			<a href="5.9.10.1.htm">통계함수목록</a>,
+			<a href="5.9.10.9.htm">CHIDIST</a>,
+			<a href="5.9.10.10.htm">CHIINV</a>
+		</p>
+		<p>χ² 독립성검정을 구합니다.</p>
+		<p><b class="bterm">문법:&emsp;&emsp;		CHITEST(관측자료,예상자료)</b></p>
+		<table>
+			<tr>
+				<th>인수명</th>
+				<th>설명</th>
+			</tr>
+			<tr>
+				<td>관측자료</td>
+				<td>관측된 자료행렬입니다.</td>
+			</tr>
+			<tr>
+				<td>예상자료</td>
+				<td>예상된 자료행렬입니다.</td>
+			</tr>
+		</table>
+		<p><b class="bterm">주의</b></p>
+			<ul>
+				<li><b class="bterm">관측자료</b>와 <b class="bterm">예상자료</b>의 자료수가 다르면 #<b class="bterm">N</b>/<b class="bterm">A</b> 오유가 나타납니다.</li>
+				<li>&chi;&sup2;검정은 먼저 다음수식을 사용하여  &chi;&sup2;통계량을 계산합니다.
+					<p><img border='0' src='../image/image/sgsd/formula-38.gif' alt='표시'></p>
+					<p>여기서</p>
+					<p><b class="bterm">Aij</b> = i번째 행, j번째 렬의 실제빈도</p>
+					<p><b class="bterm">Eij</b> = i번째 행, j번째 렬의 기대빈도</p>
+					<p><b class="bterm">r</b> = 행의 개수</p>
+					<p><b class="bterm">c</b> = 렬의 개수</p>
+				</li>
+				<li>낮은  &chi;&sup2;값은 독립성을 나타내는 표식입니다. 수식에서 알수 있듯이  &chi;&sup2;는 항상 정수 또는 0이며 모든 i와 j에 대해 Aij = Eij일 때에만 0입니다.</li>
+				<li>CHITEST 함수는 우의 수식으로 계산한 값이상의  &chi;&sup2;통계량값이 독립성가정하에 우연히 발생할수 있는 확률을 구합니다. 이 확률계산에서는 적절한 자유도 df를 가지는  &chi;&sup2;분포를 사용합니다. r > 1이고 c > 1이면 df = (r - 1)(c - 1)입니다. r = 1, c > 1이면 df = c - 1이고 r > 1, c = 1이면 df = r - 1입니다. r = c= 1은 허용되지 않으므로 #N/A 오유가 발생합니다.</li>
+				<li>CHITEST 함수는 Eij가 너무 작을 때 적합한 함수입니다. 각 Eij가 5보다 크거나 같아야 한다고 주장하는 통계학자도 있습니다.</li>
+			</ul>
+		<p><b class="bterm">실례</b></p>
+			<p><a href="1.5.1.htm">실례의 리용방법</a>을 참고하십시오.</p>
+			<table>
+				<tr>
+					<td>
+						<table>
+							<tr>
+								<td class="noborder">&nbsp;
+								</td>
+							</tr>
+							<tr>
+								<th>1</th>
+							</tr>
+							<tr>
+								<th>2</th>
+							</tr>
+							<tr>
+								<th>3</th>
+							</tr>
+							<tr>
+								<th>4</th>
+							</tr>
+							<tr>
+								<th>5</th>
+							</tr>
+							<tr>
+								<th>6</th>
+							</tr>
+							<tr>
+								<th>7</th>
+							</tr>
+							<tr>
+								<th>8</th>
+							</tr>
+						</table>
+					</td>
+					<td>
+						<table>
+							<tr>
+								<th>A</th>
+								<th>B</th>
+								<th>C</th>
+							</tr>
+							<tr>
+								<th>남자(관측자료)</th>
+								<th>녀자(관측자료)</th>
+								<th>설명</th>
+							</tr>
+							<tr>
+								<td>58</td>
+								<td>35</td>
+								<td>동의</td>
+							</tr>
+							<tr>
+								<td>11</td>
+								<td>25</td>
+								<td>연한 회색</td>
+							</tr>
+							<tr>
+								<td>10</td>
+								<td>23</td>
+								<td>동의 안함</td>
+							</tr>
+							<tr>
+								<th>남자(예상자료)</th>
+								<th>녀자(예상자료)</th>
+								<th>설명</th>
+							</tr>
+							<tr>
+								<td>45.35</td>
+								<td>47.65</td>
+								<td>동의</td>
+							</tr>
+							<tr>
+								<td>17.56</td>
+								<td>18.44</td>
+								<td>연한 회색</td>
+							</tr>
+							<tr>
+								<td>16.09</td>
+								<td>16.91</td>
+								<td>동의 안함</td>
+							</tr>
+							<tr>
+								<th>수식</th>
+								<th>설명(결과)</th>
+								<td>&nbsp;</td>
+							</tr>
+							<tr>
+								<td>=CHITEST(A2:B4,A6:B8)</td>
+								<td>우에 있는 자료에 대한  &chi;&sup2;통계는 16.16957이고 자유도는 2입니다(0).</td>
+								<td>&nbsp;</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+		<script type="text/javascript" language="Javascript">footerView()</script>
+	
+</body>
+</html>				

@@ -1,0 +1,43 @@
+<html><head><title>우편작성페지</title><link rel="stylesheet" href="task_plain.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.67.2"><meta name="keywords" content="전자우편, 의뢰기, POP3, IMAP"><link rel="start" href="index.html" title="우편프로그람 사용설명서"><link rel="up" href="configure.html" title="4장. 우편프로그람설정"><link rel="prev" href="configure-appearance.html" title="현시페지"><link rel="next" href="configure-misc.html" title="
+      기타페지
+    "><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta name="GENERATOR" content="KDE XSL Stylesheet V1.13 using libxslt"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">
+      우편작성페지</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="configure-appearance.html">이전</a> </td><th width="60%" align="center">4장. 우편프로그람설정</th><td width="20%" align="right"> <a accesskey="n" href="configure-misc.html">다음</a></td></tr></table><hr></div><div class="sect1" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="configure-composer"></a>
+      우편작성페지
+    </h2></div></div></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="configure-composer-general"></a>
+	일반
+      </h3></div></div></div><div class="variablelist"><dl><dt><a name="configure-composer-general-append-signature"></a><span class="term">
+	    <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">서명을 자동적으로 추가</span></span>
+	  </span></dt><dd><p>
+	      이 항목을 선택하면 <a href="configure-identity.html#configure-identity-signature" title="서명">개인정보페지</a>에서 설정된 서명은 자동적으로 모든 우편에 포함됩니다.
+	    </p></dd><dt><a name="configure-composer-general-autocompletion"></a><span class="term">
+	    <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">자동완성용으로 초기주소를 리용</span></span>
+	  </span></dt><dd><p>
+	      이 항목을 선택하면 리용되였던 우편주소들이 자동완성창에 나타나게 됩니다. 자동완성창문은 주소칸에 문자를 입력할 때 아래로 펴지는 목록창을 말합니다.
+	    </p></dd><dt><a name="configure-composer-general-word-wrap"></a><span class="term">
+	  </span></dt><dt><a name="configure-composer-general-external-editor"></a><span class="term">
+	    <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">외부편집기</span></span>
+	  </span></dt><dd><p>
+	      작성자페지를 리용하기 힘들다면 다른 편집기를 리용할수도 있습니다.
+	      주의할것은 작성자창문이 열려있을 때 우편본체에 한개 문자를 
+	      입력만 해도 외부편집기가 열리게 된다는것입니다.
+	      작성이 끝나면 본문을 보관하고 편집기를 닫으십시오.
+	    </p></dd></dl></div></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="configure-composer-phrases"></a>구문</h3></div></div></div><p><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">구문</span></span>태브에서는 회답 및 회송우편 혹은
+인용문의 앞에 삽입되는 문자들을 자동적으로 발생시킵니다.
+특별히 %가 앞에 붙은 문자들은 지정된 값으로 들어가는데 <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">구문</span></span>태브의 맨 우에 서술되여있습니다.
+<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">언어</span></span>항목에서 여러가지 언어들을 선택할수 있습니다.
+</p></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="configure-composer-subject"></a>제목</h3></div></div></div><p>이 부분은&nbsp; <span class="quote">회답</span>과&nbsp; <span class="quote">회송</span>을 위한 앞붙이들의 
+목록을 포함합니다. 표준우편의뢰기들로부터 여러가지 앞붙이를 사용하는
+우편을 수신한다면 그것들을 우편프로그람에 인식시키기 위해 리용할수 있을것입니다. 
+이 방법은 우편프로그람이 우편을 분류하거나 회답 혹은 회송우편들을 작성할 때&nbsp;
+<span class="quote">《Re:》</span>나&nbsp;<span class="quote">《Fwd:》</span>와 같은 앞붙이들을 리용할수 있습니다.</p></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="configure-composer-charset"></a>문자모임</h3></div></div></div><p>여기서는 리용자의 전자우편에 사용되는 표준문자모임을 관리할수 있습니다. 
+모든 전자우편들은 목록의 문자모임들중의 하나를 선택합니다. 
+그렇지 않으면 수동적으로 리용할 문자모임을 선택하는 대화창이 펼쳐집니다.
+</p><p><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">《회송 혹은 회답시에 본래 문자모임을 보존》</span></span>을 선택하면 본래 전자우편의 문자부호화를 보관합니다.</p></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="configure-composer-headers"></a>머리부</h3></div></div></div><p>만일 우편프로그람이 사용자뒤붙이로 Message-Id를 리용하려고 한다면 <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">《사용자 message-id뒤붙이를 리용》</span></span>을 선택합니다. <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">《사용자 message-id뒤붙이》</span></span>칸에 뒤붙이를 입력합니다.</p><p><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">《사용자MIME머리부마당을 정의》</span></span>목록은
+우편프로그람이 우편을 송신할 때 리용하는 머리부들을 설정합니다.</p></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="configure-composer-attachments"></a>첨부파일</h3></div></div></div><p>만일 Outlook나 Outlook Express의 사용자에게 영어가 아닌 
+문자들을 포함하는 파일이름을 가진 첨부파일을 보내야 한다면 
+<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">《Outlook호환의 첨부파일이름짓기》</span></span>항목을 
+선택하여야 합니다.
+</p><p>우편프로그람은 비표준통보문을 창조할수 있으며 여기서 보낸 우편이 
+표준우편의뢰기들에서 인식되지 않을수도 있습니다.</p><p>어떤 단어를 파일을 첨부한것으로 인식하려고 한다면 <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">《첨부파일검사》</span></span>를 선택하십시오.
+열쇠단어목록은 수정할수 있습니다.</p></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="configure-appearance.html">이전</a> </td><td width="20%" align="center"><a accesskey="u" href="configure.html">우로</a></td><td width="40%" align="right"> <a accesskey="n" href="configure-misc.html">다음</a></td></tr><tr><td width="40%" align="left" valign="top">현시페지 </td><td width="20%" align="center"><a accesskey="h" href="index.html">처음으로</a></td><td width="40%" align="right" valign="top">
+	기타페지</td></tr></table></div></body></html>

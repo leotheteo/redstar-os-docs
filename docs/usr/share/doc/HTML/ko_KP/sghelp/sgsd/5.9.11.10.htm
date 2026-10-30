@@ -1,0 +1,61 @@
+<html dir='ltr'>
+	<head>
+		<META http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+		<title>HYPERLINK</title>
+		<link rel='stylesheet' type='text/css' href='../css/main.css'/>
+		<script type='text/javascript' language='Javascript' src='../js/mexpcol.js'></script>
+		<script type='text/javascript' language='JavaScript' src='../js/glossary.js'></script>
+	</head>
+	<body>
+		<h1>&nbsp;<img align="absbottom" src="../image/external_images/crystal/svtools/res/new_doc.png"/>&nbsp;HYPERLINK</h1>
+		<p id='ExpandAllLine' class='ExpFav'>
+			<a href='#' onClick='ExpandAll()' onKeyPress='ExpandAll()' class='DropDown'>
+				<img id='picHeader' border='0' src='../image/image/common/expandtri.gif' alt='모두 표시'>
+				<span id='ExpandAll'>모두 표시</span>
+			</a>
+		</p>
+		<p><b class="bterm">참고항목</b>&emsp;
+			<a href="5.9.11.1.htm">자료표함수목록</a>
+		</p>
+		<p>하이퍼련결을 구합니다.</p>
+		<p><b class="bterm">문법:&emsp;&emsp;		HYPERLINK(URL,세포본문)</b></p>
+		<table>
+			<tr>
+				<th>인수명</th>
+				<th>설명</th>
+			</tr>
+			<tr>
+				<td>URL</td>
+				<td>본문으로 열 문서에 대한 경로와 파일이름입니다. URL은 자료표의 특정세포 또는 이름이 지정된 범위를 참조할수 있습니다. 경로로는 하드디스크구동기에 보관된 파일이나 인터네트나 인트라네트의 <a href="#" class="glossary" onClick="AppendPopup(this,'IDG_WWWURL')" onKeyPress="AppendPopup(this,'IDG_WWWURL')">URL</a>(Uniform Resource Locator) 경로를 지정할수 있습니다.
+					<p>
+						<ul>
+							<li>URL은 큰 옮김표로 묶인 본문문자렬이나 문자렬로 된 련결이 들어있는 세포입니다.</li>
+							<li>URL에 지정된 이동본문이 존재하지 않거나 제대로 동작하지 않으면 해당 세포를 찰칵했을 때 오유가 나타납니다.</li>
+						</ul>
+					</p>					
+				</td>
+			</tr>
+			<tr>
+				<td>세포본문</td>
+				<td>세포에 표시되는 이동본문이나 수자값입니다. 추가선택인수입니다. <b class="bterm">세포본문</b>을 생략하면 세포에 URL이 이동본문으로 표시됩니다.
+					<p>
+						<ul>
+							<li><b class="bterm">세포본문</b>은 수자, 본문문자렬, 이름, 이동본문이나 수자가 들어있는 세포 등이 될수 있습니다.</li>
+							<li><b class="bterm">세포본문</b>이 오유값(례: #<b class="bterm">VALUE!</b>)을 반환하면 세포에는 이동본문대신 오유값이 표시됩니다.</li>
+						</ul>
+					</p>
+				</td>
+			</tr>
+		</table>
+		<p><b class="bterm">실례</b></p>
+			<p>
+				<ul>
+					<li><b class="bterm">=HYPERLINK</b>("http://www.osd.inf.kp")는 《http://www.osd.inf.kp》본문을 세포에 표시하고 눌렀을 때 http://www.example.kp하이퍼련결을 실행합니다.</li>
+					<li><b class="bterm">=HYPERLINK</b>("http://www.osd.inf.kp", "붉은별")는 《붉은별》본문을 세포에 표시하고 눌렀을 때 http://www.osd.inf.kp하이퍼련결을 실행합니다.</li>
+					<li><b class="bterm">=HYPERLINK</b>($B4)에서 세포B4에는 《http://www.osd.inf.kp》가 포함되여있습니다. 이 함수는 《http://www.osd.inf.kp》를 하이퍼련결세포의 URL에 추가하고 수식결과로 사용되는것과 동일한 본문을 구합니다.</li>
+				</ul>
+			</p>
+		<script type="text/javascript" language="Javascript">footerView()</script>
+	
+</body>
+</html>				

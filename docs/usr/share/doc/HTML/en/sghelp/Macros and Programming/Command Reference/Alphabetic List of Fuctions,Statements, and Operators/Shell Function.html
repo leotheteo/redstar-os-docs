@@ -1,0 +1,131 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+	<TITLE></TITLE>
+	<META NAME="GENERATOR" CONTENT="《Sogwang 3.0》  (Linux)">
+	<META NAME="CREATED" CONTENT="20091205;15361500">
+	<META NAME="CHANGED" CONTENT="20091205;15451400">
+	<STYLE TYPE="text/css">
+	<!--
+		H2 { margin-bottom: 0.18cm; font-family: "Bitstream Vera Sans", "Arial", "Helvetica", "Lucida", "Geneva", "Helmet", sans-serif, "Andale Sans UI", "Arial Unicode MS", "Lucida Sans Unicode", "Tahoma"; font-size: 14pt }
+		H3 { margin-bottom: 0.18cm; font-family: "Bitstream Vera Sans", "Arial", "Helvetica", "Lucida", "Geneva", "Helmet", sans-serif, "Andale Sans UI", "Arial Unicode MS", "Lucida Sans Unicode", "Tahoma"; font-size: 12pt }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="ko-KP" DIR="LTR"><DIV style="margin-left: 25">
+<H1><A NAME="shell"></A><A NAME="bm_id3150040"></A><FONT FACE="Thorndale, serif"><SPAN LANG="en-US">Shell
+Function [Runtime]</SPAN></FONT></H1>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Starts
+another application and defines the respective window style, if
+necessary.</SPAN></FONT></P>
+<H2><SPAN LANG="en-US">Syntax</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Shell
+(Pathname As String[, Windowstyle As Integer][, Param As String][,
+bSync]) </SPAN></FONT>
+</P>
+<H2><SPAN LANG="en-US">Parameter</SPAN></H2>
+<H3><SPAN LANG="en-US">Pathname</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Complete
+path and program name of the program that you want to start.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Windowstyle</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Optional
+integer expression that specifies the style of the window that the
+program is executed in. The following values are possible:</SPAN></FONT></P>
+<TABLE WIDTH=561 BORDER=1 CELLPADDING=2 CELLSPACING=0>
+	<COL WIDTH=15>
+	<COL WIDTH=378>
+	<TR VALIGN=TOP>
+		<TD WIDTH=18>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">0</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=500>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">The
+			focus is on the hidden program window.</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=18>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">1</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=500>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">The
+			focus is on the program window in standard size.</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=18>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">2</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=500>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">The
+			focus is on the minimized program window.</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=18>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">3</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=500>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">focus
+			is on the maximized program window.</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=18>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">4</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=500>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Standard
+			size program window, without focus.</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=18>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">6</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=560>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Minimized
+			program window, focus remains on the active window.</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=18>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">10</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=500>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Full-screen
+			display.</SPAN></FONT></P>
+		</TD>
+	</TR>
+</TABLE>
+<P><BR><BR>
+</P>
+<H3><SPAN LANG="en-US">Param</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Any
+string expression that specifies the command line that want to pass.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">bSync</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">If this
+value is set to <B>true</B>, the <B>Shell</B> command and all
+</SPAN></FONT><FONT FACE="청봉, serif"><SPAN LANG="en-US">Sogwang tasks
+wait until the shell process completes. If the value is set to <B>false</B>,
+the shell returns directly. The default value is <B>false</B>.</SPAN></FONT></P>
+<H2><A NAME="errorcode"></A><SPAN LANG="en-US">Error Codes </SPAN>
+</H2>
+<P><A NAME="err5"></A><FONT FACE="청봉, serif"><SPAN LANG="en-US">5
+Invalid procedure call </SPAN></FONT>
+</P>
+<P><A NAME="err53"></A><FONT FACE="청봉, serif"><SPAN LANG="en-US">53
+File not found </SPAN></FONT>
+</P>
+<P><A NAME="err73"></A><FONT FACE="청봉, serif"><SPAN LANG="en-US">73
+Feature not implemented </SPAN></FONT>
+</P>
+<H2><SPAN LANG="en-US">Example</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Sub
+ExampleShellForWin</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Shell(&quot;c:\windows\calc.exe&quot;,2)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">end sub</SPAN></FONT></P>
+
+</DIV></BODY>
+</HTML>

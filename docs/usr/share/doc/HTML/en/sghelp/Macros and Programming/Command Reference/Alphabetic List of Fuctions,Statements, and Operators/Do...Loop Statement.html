@@ -1,0 +1,122 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+	<TITLE></TITLE>
+	<META NAME="GENERATOR" CONTENT="《Sogwang 3.0》  (Linux)">
+	<META NAME="CREATED" CONTENT="20091205;11384400">
+	<META NAME="CHANGED" CONTENT="20091205;12011000">
+	<STYLE TYPE="text/css">
+	<!--
+		H2 { margin-bottom: 0.18cm; font-family: "Bitstream Vera Sans", "Arial", "Helvetica", "Lucida", "Geneva", "Helmet", sans-serif, "Andale Sans UI", "Arial Unicode MS", "Lucida Sans Unicode", "Tahoma"; font-size: 14pt }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="ko-KP" DIR="LTR"><DIV style="margin-left: 25">
+<H1><A NAME="doloop"></A><A NAME="bm_id3156116"></A><FONT FACE="Thorndale, serif"><SPAN LANG="en-US">Do...Loop
+Statement [Runtime]</SPAN></FONT></H1>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Repeats
+the statements between the Do and the Loop statement while the
+condition is True or until the condition becomes True.</SPAN></FONT></P>
+<H2><SPAN LANG="en-US">Syntax</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Do
+[{While | Until} condition = True]</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">statement
+block</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">[Exit
+Do]</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">statement
+block</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Loop</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">or</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Do</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">statement
+block</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">[Exit
+Do]</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">statement
+block</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Loop
+[{While | Until} condition = True]</SPAN></FONT></P>
+<H2><SPAN LANG="en-US">Parameters/Elements</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Condition:</B>
+A comparison, numeric or string expression, that evaluates either
+True or False.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Statement
+block:</B> Statements that you want to repeat while or until the
+condition is True.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">The
+<B>Do...Loop</B> statement executes a loop as long as, or until, a
+certain condition is True. The condition for exiting the loop must be
+entered following either the <B>Do</B> or the <B>Loop</B> statement.
+The following examples are valid combinations:</SPAN></FONT></P>
+<H2><SPAN LANG="en-US">Syntax</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Do While
+condition = True</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">...statement
+block</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Loop</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">The
+statement block between the Do While and the Loop statements is
+repeated so long as the condition is true.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Do Until
+condition = True</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">...statement
+block</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Loop</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">The
+statement block between the Do Until and the Loop statements is
+repeated if the condition so long as the condition is false.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Do</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">...statement
+block</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Loop
+While condition = True</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">The
+statement block between the Do and the Loop statements repeats so
+long as the condition is true.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Do</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">...statement
+block</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Loop
+Until condition = True</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">The
+statement block between the Do and the Loop statements repeats until
+the condition is true.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Use the
+<B>Exit Do</B> statement to unconditionally end the loop. You can add
+this statement anywhere in a <B>Do</B>...<B>Loop</B> statement. You
+can also define an exit condition using the <B>If...Then</B>
+structure as follows:</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Do...</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">statements</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">If
+condition = True Then Exit Do</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">statements</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Loop...</SPAN></FONT></P>
+<H2><SPAN LANG="en-US">Example</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Sub
+ExampleDoLoop</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Dim
+sFile As String</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Dim
+sPath As String</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">sPath =
+&quot;c:\&quot;</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">sFile =
+Dir$( sPath ,22)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">If sFile
+&lt;&gt; &quot;&quot; Then</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Do</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">MsgBox
+sFile</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">sFile =
+Dir$</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Loop
+Until sFile = &quot;&quot;</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">End If</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><SPAN STYLE="font-weight: medium">End
+Sub</SPAN></SPAN></FONT></P>
+
+</DIV></BODY>
+</HTML>

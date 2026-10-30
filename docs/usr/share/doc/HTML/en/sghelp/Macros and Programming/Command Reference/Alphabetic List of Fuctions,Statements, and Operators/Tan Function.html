@@ -1,0 +1,73 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+	<TITLE></TITLE>
+	<META NAME="GENERATOR" CONTENT="《Sogwang 3.0》  (Linux)">
+	<META NAME="CREATED" CONTENT="20091205;15361500">
+	<META NAME="CHANGED" CONTENT="20091205;15473100">
+	<STYLE TYPE="text/css">
+	<!--
+		H2 { margin-bottom: 0.18cm; font-family: "Bitstream Vera Sans", "Arial", "Helvetica", "Lucida", "Geneva", "Helmet", sans-serif, "Andale Sans UI", "Arial Unicode MS", "Lucida Sans Unicode", "Tahoma"; font-size: 14pt }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="ko-KP" DIR="LTR"><DIV style="margin-left: 25">
+<H1><A NAME="tan"></A><A NAME="bm_id3148550"></A><FONT FACE="Thorndale, serif"><SPAN LANG="en-US">Tan
+Function [Runtime]</SPAN></FONT></H1>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Determines
+the tangent of an angle. The angle is specified in radians.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Using
+the angle Alpha, the Tan Function calculates the ratio of the length
+of the side opposite the angle to the length of the side adjacent to
+the angle in a right-angled triangle.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Tan(Alpha)
+= side opposite the angle/side adjacent to angle</SPAN></FONT></P>
+<H2><SPAN LANG="en-US">Syntax:</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Tan
+(Number)</SPAN></FONT></P>
+<H2><SPAN LANG="en-US">Return value:</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Double</SPAN></FONT></P>
+<H2><SPAN LANG="en-US">Parameters:</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Number:</B>
+Any numeric expression that you want to calculate the tangent for (in
+radians).</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">To
+convert degrees to radians, multiply by Pi/180. To convert radians to
+degrees, multiply by 180/Pi.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">degrees=(radiant*180)/Pi</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">radiant=(degrees*Pi)/180</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Pi is
+approximately 3.141593.</SPAN></FONT></P>
+<H2><A NAME="errorcode"></A><SPAN LANG="en-US">Error Codes </SPAN>
+</H2>
+<P><A NAME="err5"></A><FONT FACE="청봉, serif"><SPAN LANG="en-US">5
+Invalid procedure call </SPAN></FONT>
+</P>
+<H2><SPAN LANG="en-US">Example:</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">REM In
+this example, the following entry is possible for a right-angled
+triangle:</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">REM The
+side opposite the angle and the angle (in degrees) to calculate the
+length of the side adjacent to the angle:</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Sub
+ExampleTangens</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">REM Pi =
+3.1415926 is a pre-defined variable</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Dim d1
+as Double</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Dim
+dAlpha as Double</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">d1 =
+InputBox$ (&quot;Enter the length of the side opposite the angle:
+&quot;,&quot;opposite&quot;)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">dAlpha =
+InputBox$ (&quot;Enter the Alpha angle (in degrees): &quot;,&quot;Alpha&quot;)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Print
+&quot;the length of the side adjacent the angle is&quot;; (d1 / tan
+(dAlpha * Pi / 180))</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">End Sub</SPAN></FONT></P>
+
+</DIV></BODY>
+</HTML>

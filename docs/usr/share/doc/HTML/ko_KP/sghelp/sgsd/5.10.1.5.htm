@@ -1,0 +1,121 @@
+﻿<html dir='ltr'>
+	<head>
+		<META http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+		<title>수식의 만들기</title>
+		<link rel='stylesheet' type='text/css' href='../css/main.css'/>
+		<script type='text/javascript' language='Javascript' src='../js/mexpcol.js'></script>
+		<script type='text/javascript' language='JavaScript' src='../js/glossary.js'></script>
+	</head>
+	<body>
+		<h1>&nbsp;<img align="absbottom" src="../image/external_images/crystal/svtools/res/new_doc.png"/>&nbsp;수식의 만들기</h1>
+		<p id='ExpandAllLine' class='ExpFav'>
+			<a href='#' onClick='ExpandAll()' onKeyPress='ExpandAll()' class='DropDown'>
+				<img id='picHeader' border='0' src='../image/image/common/expandtri.gif' alt='모두 표시'>
+				<span id='ExpandAll'>모두 표시</span>
+			</a>
+		</p>
+		<p>수식은 표용지에서 값을 계산하는 식이며 같기부호(=)로 시작합니다. 례를 들어 아래에 서술한 식은 2와 3을 곱하고 그 결과에 5를 더하는 수식입니다.</p>
+		<p>=5+2*3</p>
+		<p><b class="bterm">간단한 수식의 만들기: =128+345</b></p>
+			<p>다음수식에는 <a href="#" class="glossary" onClick="AppendPopup(this,'IDG_OPERATOR')" onKeyPress="AppendPopup(this,'IDG_OPERATOR')">연산자</a>와 <a href="#" class="glossary" onClick="AppendPopup(this,'IDG_LITERAL')" onKeyPress="AppendPopup(this,'IDG_LITERAL')">상수</a>가 포함되여있습니다.</p>
+			<table>
+				<tr>
+					<th>실례수식</th>
+					<th>작업 내용</th>
+				</tr>
+				<tr>
+					<td>=128+345</td>
+					<td>128 더하기 345</td>
+				</tr>
+				<tr>
+					<td>=5^2</td>
+					<td>5의 2제곱</td>
+				</tr>
+			</table>
+			<ol>
+				<li>수식을 입력할 세포를 찰칵합니다.</li>
+				<li>같기부호(=)를 입력합니다.</li>
+				<li>수식을 입력합니다.</li>
+				<li><b class="bterm">[Enter]</b>건을 누릅니다.</li>
+			</ol>
+		<p><b class="bterm">참조 또는 이름이 포함된 수식의 만들기: =A1+23</b></p>
+			<p>다음의 실례수식에서는 다른 세포에 대한 <a href="#" class="glossary" onClick="AppendPopup(this,'IDG_RELATIVEREF')" onKeyPress="AppendPopup(this,'IDG_RELATIVEREF')">상대참조</a>와 <a href="#" class="glossary" onClick="AppendPopup(this,'IDG_NAME')" onKeyPress="AppendPopup(this,'IDG_NAME')">이름</a>을 리용하여 값을 계산합니다. 
+				세포에 참조를 사용한 수식이 들어있는 경우 그 세포를 참조하는 세포라고 하며 수식에서 참조한 세포는 참조되는 세포라고 합니다. 례를 들어 B2세포에 수식 =C2이 들어있으면 B2세포는 참조하는 세포입니다.
+			</p>
+			<table>
+				<tr>
+					<th>실례수식</th>
+					<th>작업 내용</th>
+				</tr>
+				<tr>
+					<td>=C2</td>
+					<td>C2 세포의 값을 사용합니다.</td>
+				</tr>
+				<tr>
+					<td>=표용지2.B2</td>
+					<td>표용지2에 있는 B2 세포의 값을 사용합니다.</td>
+				</tr>
+				<tr>
+					<td>=계획-실적</td>
+					<td>《계획》이라는 이름의 세포값에서 《실적》이라는 이름의 세포값을 덥니다.</td>
+				</tr>
+			</table>
+			<ol>
+				<li>수식을 입력할 세포를 찰칵합니다.</li>
+				<li>수식띠<img border='0' src='../image/image/sgsd/formbar.gif' alt='표시'>에 혹은 세포에 직접 =(같기부호)를 입력합니다.</li>
+				<li>다음의 방법들중에서 하나를 실행합니다.
+					<ul>
+						<li>참조를 만들려면 자료표문서내에서 필요한 세포나 세포범위 또는 다른 자료표문서의 세포나 세포범위를 선택합니다. 
+							세포선택범위의 테두리를 끌어서 선택범위를 이동하거나 테두리의 가장자리를 끌어서 선택범위를 확장합니다.
+							<p><img border='0' src='../image/image/sgsd/xaudit5p.gif' alt='표시'></p>
+						</li>
+						<li><b class="bterm">이름</b>이 정의된 범위에 대한 참조를 리용하려면 그 범위의 <b class="bterm">이름</b>을 입력합니다.</li>
+					</ul>
+				</li>
+				<li><b class="bterm">[Enter]</b>건을 누릅니다.</li>
+			</ol>
+		<p><b class="bterm">함수가 포함된 수식의 만들기: =AVERAGE(A1:B4)</b></p>
+			<p>아래의 실례수식에는 <a href="#" class="glossary" onClick="AppendPopup(this,'IDG_FUNCTION')" onKeyPress="AppendPopup(this,'IDG_FUNCTION')">함수</a>가 포함되여있습니다.</p>
+			<table>
+				<tr>
+					<th>실례수식</th>
+					<th>작업내용</th>
+				</tr>
+				<tr>
+					<td>=SUM(A1:B4)</td>
+					<td>범위내에 있는 모든 수를 더합니다.</td>
+				</tr>
+				<tr>
+					<td>=AVERAGE(A1:B4)</td>
+					<td>범위내에 있는 모든 수의 평균을 구합니다.</td>
+				</tr>
+			</table>
+			<ol>
+				<li>수식을 입력할 세포를 찰칵합니다.</li>
+				<li>수식의 첫번째 인수로 함수를 사용하려면 수식띠<img border='0' src='../image/image/sgsd/formbar.gif' alt='표시'>에서 <b class="bterm">&lt;함수자동안내처리&gt;</b>를 찰칵합니다.</li>
+				<li><b class="bterm">&lt;종류&gt;</b>복합칸에서 함수의 종류를 선택하고 <b class="bterm">&lt;함수&gt;</b>목록칸에서 사용할 함수를 선택합니다.</li>
+				<li><a href="#" class="glossary" onClick="AppendPopup(this,'IDG_PARAMETER')" onKeyPress="AppendPopup(this,'IDG_PARAMETER')">인수</a>들을 입력하기 위한 본문칸들에 필요한 값들을 입력합니다. 세포참조를 인수로 입력하려면 <b class="bterm">&lt;줄이기&gt;</b><img border='0' src='../image/image/sgsd/minmaxdb.gif' alt='표시'>를 찰칵하여 대화창을 림시로 숨깁니다. 
+					표용지에서 세포 또는 세포범위를 선택한 다음 <b class="bterm">&lt;늘이기&gt;</b><img border='0' src='../image/image/sgsd/expanddb.gif' alt='표시'>를 찰칵합니다.
+				</li>
+				<li>수식입력이 끝나면 <b class="bterm">[Enter]</b>건을 누릅니다.</li>
+			</ol>
+		<p><b class="bterm">중첩함수가 있는 수식의 만들기: =IF(AVERAGE(F2:F5)>50;SUM(G2:G5);0)</b></p>
+			<p>중첩함수는 인수로 다른 함수를 사용합니다. 다음의 수식에서는 세포범위(F2:F5)의 평균값이 50보다 큰 경우에만 세포범위(G2:G5)의 합을 구합니다. 
+				작은 경우에는 0을 반환합니다.
+			</p>
+			<p><img border='0' src='../image/image/sgsd/nested.gif' alt='표시'></p>
+			<ol>
+				<li>수식을 입력할 세포를 찰칵합니다.</li>
+				<li>수식의 첫번째 인수로 함수를 사용하려면 수식띠<img border='0' src='../image/image/sgsd/formbar.gif' alt='표시'>에서 <b class="bterm">&lt;함수자동안내처리&gt;</b>를 찰칵합니다.</li>
+				<li><b class="bterm">&lt;종류&gt;</b>복합칸에서 함수의 종류를 선택하고 <b class="bterm">&lt;함수&gt;</b>목록칸에서 사용할 함수를 선택합니다.</li>
+				<li><a href="#" class="glossary" onClick="AppendPopup(this,'IDG_PARAMETER')" onKeyPress="AppendPopup(this,'IDG_PARAMETER')">인수</a>들을 입력하기 위한 본문칸들에 필요한 값들을 입력합니다. 다음의 방법들중에서 하나를 실행합니다.
+					<ul>
+					<li>세포참조를 인수로 입력하려면 <b class="bterm">&lt;줄이기&gt;</b><img border='0' src='../image/image/sgsd/minmaxdb.gif' alt='표시'>를 찰칵하여 대화창을 림시로 숨깁니다. 표용지에서 세포 또는 세포범위를 선택한 다음 <b class="bterm">&lt;늘이기&gt;</b><img border='0' src='../image/image/sgsd/expanddb.gif' alt='표시'>를 찰칵합니다.</li>
+					<li>다른 함수를 인수로 입력하려면 <img border='0' src='../image/external_images/crystal/res/commandimagelist/sc_dbviewfunctions.png' alt='표시'>그림기호를 찰칵하여 요구하는 함수를 선택합니다.</li>
+					</ul>
+				</li>
+			</ol>
+		<script type="text/javascript" language="Javascript">footerView()</script>
+	
+</body>
+</html>

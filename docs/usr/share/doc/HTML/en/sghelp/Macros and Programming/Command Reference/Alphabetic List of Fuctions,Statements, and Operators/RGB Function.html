@@ -1,0 +1,57 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+	<TITLE></TITLE>
+	<META NAME="GENERATOR" CONTENT="《Sogwang 3.0》  (Linux)">
+	<META NAME="CREATED" CONTENT="20091205;15361500">
+	<META NAME="CHANGED" CONTENT="20091205;15390600">
+	<STYLE TYPE="text/css">
+	<!--
+		P.code { margin-top: 0.04cm; margin-bottom: 0.04cm; font-family: "Bitstream Vera Sans Mono", "Cumberland", "Courier New", "Courier", "Lucida Sans Typewriter", "Lucida Typewriter", "Monaco", "Monospaced" }
+		H2 { margin-bottom: 0.18cm; font-family: "Bitstream Vera Sans", "Arial", "Helvetica", "Lucida", "Geneva", "Helmet", sans-serif, "Andale Sans UI", "Arial Unicode MS", "Lucida Sans Unicode", "Tahoma"; font-size: 14pt }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="ko-KP" DIR="LTR"><DIV style="margin-left: 25">
+<H1><A NAME="rgb"></A><FONT FACE="Thorndale, serif"><SPAN LANG="en-US">RGB
+Function [Runtime]</SPAN></FONT></H1>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Returns
+a long
+integer color value</A> consisting of red, green, and blue
+components.</SPAN></FONT></P>
+<H2><SPAN LANG="en-US">Syntax:</SPAN></H2>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">RGB (Red, Green, Blue)</SPAN></FONT></P>
+<H2><SPAN LANG="en-US">Return value:</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Long</SPAN></FONT></P>
+<H2><SPAN LANG="en-US">Parameter:</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Red</B>:
+Any integer expression that represents the red component (0-255) of
+the composite color.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Green</B>:
+Any integer expression that represents the green component (0-255) of
+the composite color.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Blue</B>:
+Any integer expression that represents the blue component (0-255) of
+the composite color.</SPAN></FONT></P>
+<H2><A NAME="errorcode"></A><SPAN LANG="en-US">Error Codes </SPAN>
+</H2>
+<P><A NAME="err5"></A><FONT FACE="청봉, serif"><SPAN LANG="en-US">5
+Invalid procedure call </SPAN></FONT>
+</P>
+<H2><SPAN LANG="en-US">Example:</SPAN></H2>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Sub ExampleColor</SPAN></FONT></P>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Dim lVar As Long</SPAN></FONT></P>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">lVar = rgb(128,0,200)</SPAN></FONT></P>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">msgbox &quot;The color &quot; &amp;
+lVar &amp; &quot; consists of:&quot; &amp; Chr(13) &amp;_</SPAN></FONT></P>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">&quot;red= &quot; &amp; red(lVar)
+&amp; Chr(13)&amp;_</SPAN></FONT></P>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">&quot;green= &quot; &amp;
+green(lVar) &amp; Chr(13)&amp;_</SPAN></FONT></P>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">&quot;blue= &quot; &amp;
+blue(lVar) &amp; Chr(13) , 64,&quot;colors&quot;</SPAN></FONT></P>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">end sub</SPAN></FONT></P>
+
+</DIV></BODY>
+</HTML>

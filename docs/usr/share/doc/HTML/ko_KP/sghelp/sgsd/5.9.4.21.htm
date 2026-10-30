@@ -1,0 +1,76 @@
+﻿<html dir='ltr'>
+	<head>
+		<META http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+		<title>TIMEVALUE</title>
+		<link rel='stylesheet' type='text/css' href='../css/main.css'/>
+		<script type='text/javascript' language='Javascript' src='../js/mexpcol.js'></script>
+		<script type='text/javascript' language='JavaScript' src='../js/glossary.js'></script>
+	</head>
+	<body>
+		<p id='ExpandAllLine' class='ExpFav'>
+			<a href='#' onClick='ExpandAll()' onKeyPress='ExpandAll()' class='DropDown'>
+				<img id='picHeader' border='0' src='../image/image/common/expandtri.gif' alt='모두 표시'>
+				<span id='ExpandAll'>모두 표시</span>
+			</a>
+		</p>
+		<h1>&nbsp;<img align="absbottom" src="../image/external_images/crystal/svtools/res/new_doc.png"/>&nbsp;TIMEVALUE</h1>
+		<p><b class="bterm">참고항목</b>&emsp; 
+		   <a href='5.9.4.1.htm'>날자 및 시간함수목록</a>, 
+		   <a href='5.9.4.4.htm'>DATEVALUE</a>, 
+		   <a href='5.9.4.12.htm'>HOUR</a>, 
+		   <a href='5.9.4.14.htm'>MINUTE</a>, 
+		   <a href='5.9.4.18.htm'>NOW</a>, 
+		   <a href='5.9.4.19.htm'>SECOND</a>, 
+		   <a href='5.9.4.20.htm'>TIME</a>
+		</p>
+		<p>시간서식으로 표시된 본문의 순차적수값을 구합니다.</p>
+		<p><b class="bterm">문법:&emsp;&emsp;		TIMEVALUE(본문)</b></p>
+		<table>
+			<tr>
+				<th>인수명</th>
+				<th>설명</th>
+			</tr>
+			<tr>
+				<td>본문</td>
+				<td>《서광사무처리》 3.0프로그람의 시간서식으로 표시된 시간을 인용부호로 묶은 본문입니다. （례： "18:45"）</td>
+			</tr>
+		</table>
+		<p><b class="bterm">주의</b></p>
+			<ul>
+				<li><b class="bterm">본문</b>의 날자정보는 무시됩니다.</li>
+				<li>시간값은 날자값의 일부이며 실수로 표시됩니다. 례를 들어 오후12:00는 하루의 절반이므로 0.5로 표시됩니다.</li>
+			</ul>
+		<p><b class="bterm">실례</b></p>
+			<p><a href='1.5.1.htm'>실례의 리용방법</a>을 참고하십시오.</p>
+			<table>
+				<tr>
+					<td>
+						<table>
+							<tr><td>&nbsp;</td></tr>
+							<tr><th>1</th></tr>
+							<tr><th>2</th></tr>
+						</table>
+					</td>
+					<td>
+						<table>
+							<tr>
+								<th>A</th>
+								<th>B</th>
+							</tr>
+							<tr>
+								<th>수식</th>
+								<th>설명(결과)</th>
+							</tr>
+							<tr>
+								<td>=TIMEVALUE("2:24")</td>
+								<td>해당 시간의 하루24시간에 대한 소수부분입니다. (0.1)</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>	
+		<P><b class="bterm">참고:</b>   수자를 시간으로 표시하려면 세포를 선택하고 <b class="bterm">&lt;서식&gt;</b>차림표에서 <b class="bterm">&lt;세포&gt;</b>를 찰칵한 다음 <b class="bterm">&lt;수자&gt;</b>표쪽을 찰칵하고 <b class="bterm">&lt;종류&gt;</b>목록칸에서 <b class="bterm">&lt;시간&gt;</b>을 찰칵합니다.</P>
+		<script type="text/javascript" language="Javascript">footerView()</script>
+	
+</body>
+</html>

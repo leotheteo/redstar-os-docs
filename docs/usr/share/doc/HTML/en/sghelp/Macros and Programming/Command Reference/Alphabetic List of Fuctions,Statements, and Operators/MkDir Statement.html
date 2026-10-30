@@ -1,0 +1,108 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+	<TITLE></TITLE>
+	<META NAME="GENERATOR" CONTENT="《Sogwang 3.0》  (Linux)">
+	<META NAME="CREATED" CONTENT="20091205;12143400">
+	<META NAME="CHANGED" CONTENT="20091205;12195400">
+	<STYLE TYPE="text/css">
+	<!--
+		P.code { margin-top: 0.04cm; margin-bottom: 0.04cm; font-family: "Bitstream Vera Sans Mono", "Cumberland", "Courier New", "Courier", "Lucida Sans Typewriter", "Lucida Typewriter", "Monaco", "Monospaced" }
+		H2 { margin-bottom: 0.18cm; font-family: "Bitstream Vera Sans", "Arial", "Helvetica", "Lucida", "Geneva", "Helmet", sans-serif, "Andale Sans UI", "Arial Unicode MS", "Lucida Sans Unicode", "Tahoma"; font-size: 14pt }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="ko-KP" DIR="LTR"><DIV style="margin-left: 25">
+<H1><A NAME="mkdir"></A><A NAME="bm_id3156421"></A><FONT FACE="Thorndale, serif"><SPAN LANG="en-US">MkDir
+Statement [Runtime]</SPAN></FONT></H1>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Creates
+a new directory on a data medium.</SPAN></FONT></P>
+<H2><SPAN LANG="en-US">Syntax:</SPAN></H2>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">MkDir Text As String</SPAN></FONT></P>
+<H2><SPAN LANG="en-US">Parameters:</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Text:</B>
+Any string expression that specifies the name and path of the
+directory to be created. You can also use <A 
+HREF="../../General Information and User/Basic Glossary.html">URL
+notation</A>.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">If the
+path is not determined, the directory is created in the current
+directory.</SPAN></FONT></P>
+<H2><A NAME="errorcode"></A><SPAN LANG="en-US">Error Codes </SPAN>
+</H2>
+<P><A NAME="err5"></A><FONT FACE="청봉, serif"><SPAN LANG="en-US">5
+Invalid procedure call </SPAN></FONT>
+</P>
+<P><A NAME="err76"></A><FONT FACE="청봉, serif"><SPAN LANG="en-US">76
+Path not found </SPAN></FONT>
+</P>
+<H2><SPAN LANG="en-US">Example:</SPAN></H2>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Sub ExampleFileIO</SPAN></FONT></P>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">' Example for functions of the
+file organization</SPAN></FONT></P>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Const sFile1 as String =
+&quot;file://c|/autoexec.bat&quot;</SPAN></FONT></P>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Const sDir1 as String =
+&quot;file://c|/Temp&quot;</SPAN></FONT></P>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Const sSubDir1 as String =&quot;Test&quot;</SPAN></FONT></P>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Const sFile2 as String =
+&quot;Copied.tmp&quot;</SPAN></FONT></P>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Const sFile3 as String =
+&quot;Renamed.tmp&quot;</SPAN></FONT></P>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Dim sFile as String</SPAN></FONT></P>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">sFile = sDir1 + &quot;/&quot; +
+sSubDir1</SPAN></FONT></P>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">ChDir( sDir1 )</SPAN></FONT></P>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">If Dir(sSubDir1,16)=&quot;&quot;
+then ' Does the directory exist ?</SPAN></FONT></P>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">MkDir sSubDir1</SPAN></FONT></P>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">MsgBox sFile,0,&quot;Create
+directory&quot;</SPAN></FONT></P>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">End If</SPAN></FONT></P>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">sFile = sFile + &quot;/&quot; +
+sFile2</SPAN></FONT></P>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">FileCopy sFile1 , sFile</SPAN></FONT></P>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">MsgBox
+fSysURL(CurDir()),0,&quot;Current directory&quot;</SPAN></FONT></P>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">MsgBox sFile &amp; Chr(13) &amp;
+FileDateTime( sFile ),0,&quot;Creation time&quot;</SPAN></FONT></P>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">MsgBox sFile &amp; Chr(13)&amp;
+FileLen( sFile ),0,&quot;File length&quot;</SPAN></FONT></P>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">MsgBox sFile &amp; Chr(13)&amp;
+GetAttr( sFile ),0,&quot;File attributes&quot;</SPAN></FONT></P>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Name sFile as sDir1 + &quot;/&quot;
++ sSubDir1 + &quot;/&quot; + sFile3</SPAN></FONT></P>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">' Rename in the same directory</SPAN></FONT></P>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">sFile = sDir1 + &quot;/&quot; +
+sSubDir1 + &quot;/&quot; + sFile3</SPAN></FONT></P>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">SetAttr( sFile, 0 ) 'Delete all
+attributes</SPAN></FONT></P>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">MsgBox sFile &amp; Chr(13) &amp;
+GetAttr( sFile ),0,&quot;New file attributes&quot;</SPAN></FONT></P>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Kill sFile</SPAN></FONT></P>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">RmDir sDir1 + &quot;/&quot; +
+sSubDir1</SPAN></FONT></P>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">end sub</SPAN></FONT></P>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">' Converts a system path in URL</SPAN></FONT></P>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Function fSysURL( fSysFp as String
+) as String</SPAN></FONT></P>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Dim iPos As String</SPAN></FONT></P>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">iPos = 1</SPAN></FONT></P>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">iPos = Instr(iPos,fSysFp,
+getPathSeparator())</SPAN></FONT></P>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">do while iPos &gt; 0</SPAN></FONT></P>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">mid( fSysFp, iPos , 1,&quot;/&quot;)</SPAN></FONT></P>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">iPos = Instr(iPos+1,fSysFp,
+getPathSeparator())</SPAN></FONT></P>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">loop</SPAN></FONT></P>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">' the colon with DOS</SPAN></FONT></P>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">iPos = Instr(1,fSysFp,&quot;:&quot;)</SPAN></FONT></P>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">if iPos &gt; 0 then mid( fSysFp,
+iPos , 1,&quot;|&quot;)</SPAN></FONT></P>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">fSysURL = &quot;file://&quot; &amp;
+fSysFp</SPAN></FONT></P>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">End Function</SPAN></FONT></P>
+
+</DIV></BODY>
+</HTML>

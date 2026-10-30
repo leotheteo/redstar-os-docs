@@ -1,0 +1,109 @@
+﻿<html dir='ltr'>
+	<head>
+		<META http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+		<title>인쇄의 추가선택</title>
+		<link rel='stylesheet' type='text/css' href='../css/main.css'/>
+		<script type='text/javascript' language='Javascript' src='../js/mexpcol.js'></script>
+		<script type='text/javascript' language='JavaScript' src='../js/glossary.js'></script>
+	</head>
+	<body>
+		<h1>&nbsp;<img align="absbottom" src="../image/external_images/crystal/svtools/res/new_doc.png"/>&nbsp;인쇄의 추가선택</h1>
+		<p id="ExpandAllLine" class="ExpFav">
+			<a href="#" onClick="ExpandAll()" onKeyPress="ExpandAll()" class="DropDown">
+				<img id="picHeader" border="0" src="../image/image/common/expandtri.gif" alt="모두 표시">
+				<span id="ExpandAll">모두 표시</span>
+			</a>
+		</p>
+		<p>이 지령을 사용하려면 <b class="bterm">&lt;서광사무처리&gt;</b>차림표의 <b class="bterm">&lt;환경설정&gt;</b>을 찰칵합니다.</p>
+		<p><b class="bterm">&lt;환경설정&gt;</b>대화창에서 <b class="bterm">&lt;서광사무처리 연시프로그람&gt;</b>의 <b class="bterm">&lt;인쇄&gt;</b>를 선택합니다.</p>
+		<p>
+			<a href='#' class='DropDown' onClick='Outline2()' onKeyPress='Outline2()'>
+				<img border='0' src='../image/image/common/blueup.gif' alt='표시'>즉시도움말
+			</a>
+		</p>
+		<div id='ExpCol' class='collapsed' border='0'>
+			<p>이 령역에서 지정된 인쇄설정은 현재연시물뿐만이 아니라 뒤따르는 모든 문서에 적용됩니다. 현재연시물의 설정만 변경하려면 <b class="bterm">&lt;서광사무처리&gt;/&lt;환경설정&gt;/&lt;서광사무처리&gt;/&lt;일반&gt;</b>에서   <b class="bterm">&lt;인쇄대화창&gt;</b>령역에 있는 <b class="bterm">&lt;서광사무처리 대화창 사용&gt;</b>확인칸을 선택하고 인쇄를 진행합니다.
+			</p>
+		</div>
+		<h3>출력품질령역</h3>
+		<p>인쇄물의 출력품질을 지정하는 령역입니다.</p>
+		<table width="95%">
+			<tr>
+				<th width="15%">항목</th>
+				<th width="85%">설명</th>
+			</tr>
+			<tr>
+				<td><b class="bterm">기정</b></td>
+				<td>연시물의 화질을 기정으로 하여 인쇄하겠는가를 지정합니다.</td>
+			</tr>
+			<tr>
+				<td><b class="bterm">회색계조</b></td>
+				<td>연시물을 회색계조로 인쇄하겠는가를 지정합니다.</td>
+			</tr>
+			<tr>
+				<td><b class="bterm">흑백</b></td>
+				<td>연시물을 흑백으로 인쇄하겠는가를 지정합니다.</td>
+			</tr>
+		</table>
+		<h3>인쇄령역</h3>
+		<p>인쇄추가선택을 지정하는 령역입니다.</p>
+		<table width="95%">
+			<tr>
+				<th width="15%">항목</th>
+				<th width="85%">설명</th>
+			</tr>
+			<tr>
+				<td><b class="bterm">페지이름</b></td>
+				<td>연시물의 페지이름을 인쇄하겠는가를 지정합니다.</td>
+			</tr>
+			<tr>
+				<td><b class="bterm">날자</b></td>
+				<td>날자를 인쇄하겠는가를 지정합니다.</td>
+			</tr>
+			<tr>
+				<td><b class="bterm">시간</b></td>
+				<td>시간을 인쇄하겠는가를 지정합니다.</td>
+			</tr>
+			<tr>
+				<td><b class="bterm">숨겨진 페지</b></td>
+				<td>연시물에서 숨겨진 투영편을 인쇄하겠는가를 지정합니다.</td>
+			</tr>
+		</table>
+		<h3>페지 추가선택령역</h3>
+		<p>연시프로그람인쇄물의 페지속성을 지정하는 령역입니다.</p>
+		<table width="95%">
+			<tr>
+				<th width="15%">항목</th>
+				<th width="85%">설명</th>
+			</tr>
+			<tr>
+				<td><b class="bterm">기정</b></td>
+				<td>연시물을 기정으로 인쇄하겠는가를 지정합니다.</td>
+			</tr>
+			<tr>
+				<td><b class="bterm">페지에 맞추기</b></td>
+				<td>연시물을 페지크기에 맞추어 인쇄하겠는가를 지정합니다.</td>
+			</tr>
+			<tr>
+				<td><b class="bterm">페지의 타일식배렬</b></td>
+				<td>연시물을 페지에 타일식으로 배렬하여 인쇄하겠는가를 지정합니다.</td>
+			</tr>
+			<tr>
+				<td><b class="bterm">소책자</b></td>
+				<td>
+					<p>연시물을 소책자형식으로 인쇄하려면 <b class="bterm">&lt;소책자&gt;</b>추가선택을 진행합니다.</p>
+					<p>연시프로그람의 소책자형식은 다음과 같습니다.</p>
+					<p>가로페지에서 세로문서를 인쇄하면 소책자의 마주 보고있는 두면은 서로 나란히 인쇄됩니다.
+						량면인쇄기능이 있는 인쇄기가 있는 경우 이후에 페지를 한부씩 인쇄하지 않고 문서에서 전체 소책자를 만들수 있습니다. 
+						단면인쇄기능이 있는 인쇄기가 있는 경우 <b class="bterm">&lt;정면&gt;</b>확인칸을 선택하여 먼저 앞페지를 인쇄하고 전체 용지를 인쇄기에 다시 넣은 다음 <b class="bterm">&lt;뒤면&gt;</b>확인칸을 선택하여 뒤페지를 모두 인쇄하면 이 효과를 낼수 있습니다.</p>
+				</td>
+			</tr>
+			<tr>
+				<td><b class="bterm">인쇄기설정에 따르는 용지공급법</b></td>
+				<td>용지함이 여러개인 인쇄기의 경우 인쇄기체계설정에서 지정한 용지법을 사용하도록 지정합니다.</td>
+			</tr>
+		</table>
+		<script type="text/javascript" language="Javascript">footerView()</script>
+	
+</body>
+</html>

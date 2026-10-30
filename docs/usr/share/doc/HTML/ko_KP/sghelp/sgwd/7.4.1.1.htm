@@ -1,0 +1,165 @@
+﻿<html dir='ltr'>
+	<head>
+		<META http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+		<title>테두리의 추가</title>
+		<link rel='stylesheet' type='text/css' href='../css/main.css'/>
+		<script type='text/javascript' language='Javascript' src='../js/mexpcol.js'></script>
+		<script type='text/javascript' language='JavaScript' src='../js/glossary.js'></script>
+	</head>
+	<body>
+		<h1>&nbsp;<img align="absbottom" src="../image/external_images/crystal/svtools/res/new_doc.png"/>&nbsp;테두리의 추가</h1>
+		<p id='ExpandAllLine' class='ExpFav'>
+			<a href='#' onClick='ExpandAll()' onKeyPress='ExpandAll()' class='DropDown'>
+				<img id='picHeader' border='0' src='../image/image/common/expandtri.gif' alt='모두 표시'>
+				<span id='ExpandAll'>모두 표시</span>
+			</a>
+		</p>
+		<h2>페지에 테두리를 추가</h2>
+		<p>문서내에 있는 매개 페지의 모든 가장자리나 임의의 한 가장자리에 테두리를 추가하거나 한 <a href="#" class="glossary" onClick="AppendPopup(this,'IDG_AREA')" onKeyPress="AppendPopup(this,'IDG_AREA')">구역</a>안의 페지, 
+			첫째 페지에만 또는 첫째 페지를 제외한 모든 페지에 테두리를 추가할수 있습니다. 다양한 선격식과 색으로 된 페지테두리를 추가할수 있습니다.
+		</p>
+		<p><img border="0" src="../image/image/sgwd/bdrcon01.gif"></p>
+		<p><b class="bterm">참고:</b>	개별페지가 아닌 페지격식에 대한 테두리만 지정할수 있습니다.
+				테두리에 대한 모든 변경내용은 같은 페지격식을 사용하는 모든 페지에 적용됩니다.
+				페지격식변경은 실행 취소기능으로 실행을 취소할수 없습니다.
+			</p>
+		<p>
+			<a href='#' class='DropDown' onClick='Outline2()' onKeyPress='Outline2()'>
+				<img border='0' src='../image/image/common/blueup.gif' alt='표시'>미리정의된 테두리격식의 설정
+			</a>
+		</p>
+		<div id='ExpCol' class='collapsed' border='0'>
+			<ol>
+				<li>
+					<b class="bterm">&lt;서식&gt;</b>차림표의 <b class="bterm">&lt;페지&gt;</b>를 찰칵하여 <b class="bterm">&lt;페지격식&gt;</b>대화창을 현시합니다.
+				</li>
+				<li>
+					<b class="bterm">&lt;테두리&gt;</b>표쪽을 찰칵하고 <b class="bterm">&lt;기정&gt;</b>령역에서 테두리격식들중의 하나를 찰칵합니다.
+				</li>
+				<li>
+					선택한 테두리의 격식과 색을 <b class="bterm">&lt;선&gt;</b>령역에서 선택합니다.
+					이러한 설정은 선택한 테두리격식에 포함된 모든 테두리선에 적용됩니다.
+				</li>
+				<li>
+					테두리선과 페지내용사이의 거리를 <b class="bterm">&lt;본문과의 간격&gt;</b>령역에서 선택합니다.
+				</li>
+				<li>
+					<b class="bterm">&lt;확인&gt;</b>단추를 찰칵하여 변경사항을 적용합니다.
+				</li>
+			</ol>
+		</div>
+		<p>
+			<a href='#' class='DropDown' onClick='Outline2()' onKeyPress='Outline2()'>
+				<img border='0' src='../image/image/common/blueup.gif' alt='표시'>사용자정의 테두리격식의 설정
+			</a>
+		</p>
+		<div id='ExpCol' class='collapsed' border='0'>
+			<ol>
+				<li>
+					<b class="bterm">&lt;서식&gt;</b>차림표에서 <b class="bterm">&lt;페지&gt;</b>를 찰칵하거나 문서의 임의곳을 찰칵하여 펼쳐지는 상황차림표에서 <b class="bterm">&lt;페지&gt;</b>를 찰칵하여 <b class="bterm">&lt;페지격식&gt;</b>대화창을 현시합니다.
+				</li>
+				<li>
+					<b class="bterm">&lt;테두리&gt;</b>표쪽을 찰칵합니다.
+				</li>
+				<li>
+					<b class="bterm">&lt;선&gt;</b>령역의 <b class="bterm">&lt;격식&gt;</b>목록칸에서 테두리선격식을 선택합니다.
+				</li>
+				<li>
+					<b class="bterm">&lt;테두리선 배치&gt;</b>령역의 <b class="bterm">&lt;기정&gt;</b>에서 요구하는 테두리추가선택을 찰칵합니다.
+					페지의 특정한 부분(례: 웃쪽)에만 테두리를 추가하려면 <b class="bterm">&lt;테두리선 배치&gt;</b>의 <b class="bterm">&lt;사용자정의&gt;</b>령역에서 테두리를 그릴 부분을 찰칵합니다.
+				</li>
+				<li>
+					매개 테두리모서리에 대해 마지막의 두 단계를 반복합니다.
+				</li>
+				<li>
+					테두리선과 페지내용사이의 거리를 <b class="bterm">&lt;본문과의 간격&gt;</b>령역에서 선택합니다.
+				</li>
+				<li>
+					<b class="bterm">&lt;확인&gt;</b>단추를 찰칵하여 변경사항을 적용합니다.
+				</li>
+			</ol>
+			<p><b class="bterm">참고:</b>   <a href="#" class="glossary" onClick="AppendPopup(this,'IDG_PRINTSTYLEVIEW')" onKeyPress="AppendPopup(this,'IDG_PRINTSTYLEVIEW')">인쇄배치</a>에서 문서를 표시하면 페지테두리를 화면에서 볼수 있습니다.
+			</p>
+		</div>
+		<h2>객체에 테두리를 추가</h2>
+		<p>OLE 객체, 수학식/도표, 그림 및 틀주위에 테두리를 지정할수 있습니다.
+			선을 변경하거나 서식을 지정하는 방식으로 객체의 테두리를 변경하거나 서식을 지정할수 있습니다.
+			사용되는 차림표이름은 선택한 객체에 따라 달라집니다.
+		</p>
+		<p>
+			<a href='#' class='DropDown' onClick='Outline2()' onKeyPress='Outline2()'>
+				<img border='0' src='../image/image/common/blueup.gif' alt='표시'>그림에 테두리를 추가
+			</a>
+		</p>
+		<div id='ExpCol' class='collapsed' border='0'>
+			<ol>
+				<li>
+					테두리를 적용할 그림을 선택합니다.
+				</li>
+				<li>
+					<b class="bterm">&lt;서식&gt;</b>차림표에서 <b class="bterm">&lt;그림&gt;</b>을 찰칵하거나 마우스의 오른쪽단추를 찰칵하여 펼쳐지는 상황차림표에서 <b class="bterm">&lt;그림&gt;</b>을 찰칵하여 <b class="bterm">&lt;그림&gt;</b>대화창을 현시합니다.
+				</li>
+				<li>
+					<b class="bterm">&lt;테두리&gt;</b>표쪽을 찰칵합니다.
+				</li>
+				<li>
+					요구하는 추가선택을 진행합니다. 특정한 부분에만 테두리를 추가하려면 <b class="bterm">&lt;테두리선 배치&gt;</b>의 <b class="bterm">&lt;사용자정의&gt;</b>령역에서 테두리를 그릴 부분을 찰칵합니다.
+				</li>
+				<li>
+					<b class="bterm">&lt;확인&gt;</b>단추를 찰칵하여 대화창을 닫습니다.
+				</li>
+			</ol>
+		</div>
+		<p>
+			<a href='#' class='DropDown' onClick='Outline2()' onKeyPress='Outline2()'>
+				<img border='0' src='../image/image/common/blueup.gif' alt='표시'>표에 테두리를 추가
+			</a>
+		</p>
+		<div id='ExpCol' class='collapsed' border='0'>
+			<ol>
+				<li>
+					테두리를 적용할 표를 선택합니다.
+				</li>
+				<li>
+					<b class="bterm">&lt;표&gt;</b>차림표에서 <b class="bterm">&lt;표서식&gt;</b>을 찰칵하거나 마우스의 오른쪽단추를 찰칵하여 펼쳐지는 상황차림표에서 <b class="bterm">&lt;표서식&gt;</b>을 찰칵하여 <b class="bterm">&lt;표서식&gt;</b>대화창을 현시합니다.
+				</li>
+				<li>
+					<b class="bterm">&lt;테두리&gt;</b>표쪽을 찰칵합니다.
+				</li>
+				<li>
+					요구하는 추가선택을 진행합니다. 특정부분에만 테두리를 추가하려면 <b class="bterm">&lt;테두리선 배치&gt;</b>의 <b class="bterm">&lt;사용자정의&gt;</b>령역에서 테두리를 그릴 부분을 찰칵합니다.
+				</li>
+				<li>
+					<b class="bterm">&lt;확인&gt;</b>단추를 찰칵하여 대화창을 닫습니다.
+				</li>
+			</ol>
+		<p><b class="bterm">참고:</b>	복잡한 표의 여러 부분에 테두리를 추가하려면 <b class="bterm">&lt;표&gt;</b><a href="#" class="glossary" onClick="AppendPopup(this,'IDG_TOOLBAR')" onKeyPress="AppendPopup(this,'IDG_TOOLBAR')">도구띠</a>를 사용합니다.</p>
+		</div>
+		<p>
+			<a href='#' class='DropDown' onClick='Outline2()' onKeyPress='Outline2()'>
+				<img border='0' src='../image/image/common/blueup.gif' alt='표시'>본문에 테두리를 추가
+			</a>
+		</p>
+		<div id='ExpCol' class='collapsed' border='0'>
+			<ol>
+				<li>
+					테두리를 적용할 본문를 선택합니다.
+				</li>
+				<li>
+					<b class="bterm">&lt;서식&gt;</b>차림표에서 <b class="bterm">&lt;단락&gt;</b>을 찰칵하거나 마우스의 오른쪽단추를 찰칵하여 펼쳐지는 상황차림표에서 <b class="bterm">&lt;단락&gt;</b>을 찰칵하여 <b class="bterm">&lt;단락&gt;</b>대화창을 현시합니다.
+				</li>
+				<li>
+					<b class="bterm">&lt;테두리&gt;</b>표쪽을 찰칵합니다.
+				</li>
+				<li>
+					요구하는 추가선택을 진행합니다. 특정한 부분에만 테두리를 추가하려면 <b class="bterm">&lt;테두리선 배치&gt;</b>의 <b class="bterm">&lt;사용자정의&gt;</b>령역에서 테두리를 그릴 부분을 찰칵합니다.
+				</li>
+				<li>
+					<b class="bterm">&lt;확인&gt;</b>단추를 찰칵하여 대화창을 닫습니다.
+				</li>
+			</ol>
+		</div>
+		<script type="text/javascript" language="Javascript">footerView()</script>
+	
+</body>
+</html>

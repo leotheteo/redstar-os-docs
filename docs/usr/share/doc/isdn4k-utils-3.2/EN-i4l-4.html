@@ -1,0 +1,262 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <META NAME="GENERATOR" CONTENT="LinuxDoc-Tools 0.9.21">
+ <TITLE>ISDN4Linux Tutorial: Grundlagen ISDN, Parameter zur Verbindungskontrolle</TITLE>
+ <LINK HREF="EN-i4l-5.html" REL=next>
+ <LINK HREF="EN-i4l-3.html" REL=previous>
+ <LINK HREF="EN-i4l.html#toc4" REL=contents>
+</HEAD>
+<BODY>
+<A HREF="EN-i4l-5.html">Next</A>
+<A HREF="EN-i4l-3.html">Previous</A>
+<A HREF="EN-i4l.html#toc4">Contents</A>
+<HR>
+<H2><A NAME="isdnctrl"></A> <A NAME="s4">4.</A> <A HREF="EN-i4l.html#toc4">Grundlagen ISDN, Parameter zur Verbindungskontrolle</A>    </H2>
+
+<P>Ein Rundumschlag über die wichtigsten Begriffe und Konzepte,
+die man wissen muß, um ISDN unter Linux richtig zu nutzen.</P>
+
+<H2><A NAME="isdn"></A> <A NAME="ss4.1">4.1</A> <A HREF="EN-i4l.html#toc4.1">ISDN</A>
+            </H2>
+
+<P><CODE>ISDN</CODE> steht für <B>Integrated Services Digital Network</B>.</P>
+<P>Fangen wir von hinten an: Es handelt sich um ein 
+<B>Netzwerk</B>. Über die beiden Kupferdrähte wird also
+z.B. nicht nur eine Point-To-Point Verbindung aufgebaut, sondern
+es können mehrere Verbindungen gleichzeitig bestehen,</P>
+<P>Die Daten werden alle <B>digital</B> ausgetauscht.
+Analogdienste wie z.B: Fax sind hierüber daher potentiell
+schwieriger zu handeln. Normalerweise werden Analogdienste
+über Spezialgeräte wie a/b-Wandler oder TK-Anlagen
+gefahren.</P>
+<P><B>Integrated Services</B> deutet an, daß verschiedene Dienste
+über dieses Netzwerk behandelt werden können.
+Typische Services sind <B>Analog-Sprache</B> (SI=0) oder
+<B>ISDN-Daten</B> (SI=7) was uns hier interessiert.</P>
+<P>Der Endpunkt der Telekom-Leitung ist der <B>NTBA</B>
+(kurz auch <B>NT</B>), der <B>Network Terminator Basis-Anschluß</B>.
+Das ist der kleine graue Kasten, an dem für die Telekom
+das Netzwerk aufhört.</P>
+<P>An einem NTBA können (normalerweise) 2 Kabel herausgeführt
+werden, diese bilden gemeinsam ein Bus-System, den
+sogenannten <B>S0-Bus</B> </P>
+<P>An den S0-Bus können 8 <B>Endgeräte</B> angeschlossen
+werden. Typische Endgeräte sind ISDN-Telefone, TK-Anlagen
+G4-Fax-Geräte, ISDN-Terminaladapter und ISDN-Karten.</P>
+<P>Der S0-Bus bietet 3 Kanäle: ein Steuerkanal, genannt
+<B>D-Kanal</B> (warum der <I>D-Kanal</I> genannt wird, ist mir
+unbekannt, die Eselsbrücke D=Daten klappt zumindest nicht).
+Weiterhin stehen zwei Datenkanäle, genannt <B>Nutzkanal</B>
+oder <B>B-Kanal</B> (<I>da können wir unsere Bytes rüberschicken</I>)
+mit jeweils 64 kbit/s zur Verfügung, die jeweils zu
+unterschiedliche Partner und mit unterschiedlichen 
+Diensten genutzt werden können.</P>
+<P>Auf dem D-Kanal können verschiedene Protokolle gefahren
+werden. Üblich sind <B>1TR6</B> (altes nationales ISDN),
+<B>DSS1</B> (<B>Euro-ISDN</B>, der Quasi-Standard in 24 Ländern)
+und <B>N1</B> in den USA.
+Das D-Kanal dient  u.a. zur Übermittlung des Wunsches eines
+Verbindungsauf- und abbaus, der Übermittlung der Telefonnummern
+und der Gebühren. Bei einem falsch eingestellten 
+Protokoll klappt also sehr wenig...</P>
+<P>Die Art und Weise, wie die Telefonnummer gemeldet und
+genannt wird, hängt vom D-Kanal-Protokoll ab:</P>
+<P>
+<UL>
+<LI>1TR1: <B>EAZ</B> (Endgeräte-Auswahl-Ziffer). Es handelt sich
+also nur um eine Ziffer, die Rufnummer des Basisanschlusses
+wird nicht betrachtet.</LI>
+<LI>DSS1: <B>MSN</B> (Multiple-Subscribe-Number). Hier ist eine
+komplette Rufnummer gemeint, also alles hinter der Vorwahl.</LI>
+</UL>
+        </P>
+<P>Die Bezeichnungen EAZ und MSN sind bei I4L ansonsten 
+synonym zu benutzen (wenn das richtige Protokoll angegben
+wurde).
+Bei einem einkommenden Call wird (hoffentlich) die
+Zielrufnummer übertragen, genannt <B>CPN</B> (called party
+number). Ist sie nicht bekannt, setzt sie I4L auf <CODE>0</CODE>.</P>
+<P>Bekanntlich können für einen Anschluss mehrere Telefonnummern
+vergeben werden. Diese signalisiert die Vermitllungsstelle
+(kurz <B>VSt</B>) auf dem D-Kanal (CPN) zusammen mit dem 
+<B>Service-Indikator</B> (<B>SI</B>). Mehr passiert bei einem
+ankommenden Call erst mal nicht! Es ist danach Aufgabe der
+Endgeräte sich entsprechend zu verhalten: ignorieren,
+abweisen, oder den Call annehmen.</P>
+<P>Da der SI zusammen mit der Nummer auf dem D-Kanal übermittelt 
+wird, kann 
+dieselbe Telefonnummer mehrfach genutzt werden. 
+Beispiel: das Telefon
+reagiert nur auf SI=0, der PC reagiert nur auf 
+SI=7. </P>
+<P>Bei einem ausgehenden Call muß das Endgeräte die MSN
+angeben; diese wird dann auch dem Partner übermittelt.
+Wird keine MSN gesetzt (was I4L nicht zuläßt), setzt
+die VSt die Nummer ein, wird eine falsche MSN gesetzt,
+bekommt man keine Verbindung (Erfahrungswerte).</P>
+<P>Mehr zu ISDN-Grundlagen findet sich auf
+<A HREF="http://www.dtag.de/angebot/isdn/lexikon/right.htm">http://www.dtag.de/angebot/isdn/lexikon/right.htm</A></P>
+<P>    </P>
+
+<H2><A NAME="GrundlagenTK"></A> <A NAME="ss4.2">4.2</A> <A HREF="EN-i4l.html#toc4.2">TK-Anlagen</A>
+            </H2>
+
+<P><B>Worum geht es:</B>
+Wer die Wahl hat zwischen einem direkten Anschluß am NTBA
+und einem internen S0-Bus an einer TK-Anlage, sollte sich
+für den direkten Anschluß entscheiden!
+Der Betrieb über TK-Anlagen birgt immer gewisse 
+Überraschungen.</P>
+<P><B>Worum geht es nicht:</B>
+Wenn man eine TK-Anlage am selben NTBA (S0 Bus) wie die
+ISDN-Karte angeschlossen hat, gibt es keine Probleme.
+Die TK-Anlage ist hier nur ein normales ISDN-Endgerät,
+was dieses <I>hinten</I> macht (Anschluß von Analog-Geräten)
+spielt hier keine Rolle.</P>
+<P>Das Verhalten der TK-Anlage hängt unter anderem vom Typ,
+von der installierten Software und vor allem von deren
+Konfiguration (und damit vom entsprechenden Service-Techniker)
+ab.</P>
+<P>Bei älteren Anlagen wird oft entgegen allen Aussagen
+1TR6 anstatt DSS1 gefahren. Die Verbindungstypen können
+abhängig vom Service-Indikator konfiguriert werden, wobei
+oft nur Voice-Calls konfiguriert sind. Weiterhin besteht die
+Schwierigkeit herauszufinden, welche MSN/EAZ man zu benutzen hat.</P>
+<P>Bevor man sich auf andere verläßt, sollte man den 
+Praxistest <I>Selbstanruf</I> machen, 
+siehe: 
+<A HREF="EN-i4l-3.html#hwTesten">Hardware testen</A></P>
+<P>Ein wesentlicher Unterschied ist der, daß man nicht mit
+allen anderen lokalen Teilnehmern an einem Bus angeschlossen
+ist, sondern die TK-Anlage für jeden einzelnen Anschluß einen
+eigenen S0-Bus nach außen führt, an den meist nur ein Endgerät
+angeschlossen wird. Dieser Anschluß bekommt eine eigene
+Durchwahl zugewiesen, oft 2-stellig.</P>
+<P>Die beste Veranschaulichung ist die, daß man sich seine
+TK-Anlage als eine eigene Vst vorstellt.</P>
+<P>Beispiel: In Ortsnetz 321 ist eine TK-Anlage mit der Rufnummer
+654 an einem Primärmultipley-Anlagenanschluß installiert
+(es gibt also mehr als 2 Amtsleitungen, alternativ könnte dies
+auch ein Bündelanschluß sein - spielt aus dieser Sicht keine 
+Rolle). Es sind 20 interne Leitungen vorhanden, wobei die
+ersten 10 für Telefone und die zweiten 10 für ISDN-Karten
+vorgesehen sind. Die Durchwahlnummern seien 10-19 für die
+Telefon und 20-29 für die ISDN-Karten. Die S0-Busse für die
+ISDN-Karten seien auf DSS1 konfiguriert.</P>
+<P>Dann ist als MSN jeweils 20 bis 29 zu benutzen, denn das sind
+die MSN's im Ortsnetz <I>Firma</I> (=321654).
+Weiterhin ist zu beachten, daß man zusätzlich eine
+<CODE>0</CODE> wählen muß, um aus dem Ortsnetz <I>Firma</I> erstmal
+herauszukommen. Um z.B. die Nummer 987 im Ortsnetz
+654 anzurufen, muß man <CODE>0987</CODE> waehlen, wobei der
+Gegenstelle als Rufnummer <CODE>65420</CODE> angezeigt wird.
+Will man in Berlin anrufen, wählt man selbst die
+<CODE>0030....</CODE> an und dort wird <CODE>32165420</CODE> übermittelt.</P>
+<P>Will man selber User-Authentication beim Dial-In über die 
+Telefonnummer machen, gibt es nur eine sinnvolle 
+herangehensweise: anrufen lassen. Die in <CODE>/var/log/messages</CODE>
+angezeigte Nummer dann mittels Cut&amp;Paste in die 
+entsprechende Konfigurationsdatei übernehmen.</P>
+
+<H2><A NAME="msnWelche"></A> <A NAME="ss4.3">4.3</A> <A HREF="EN-i4l.html#toc4.3">Was ist meine MSN?</A>
+            </H2>
+
+<P>Wie oben erwähnt, muß man bei I4L immer die MSN setzen, um wählen
+zu können, die Angabe der MSN ist wichtig, da ansonsten 
+meist nichts funktioniert.</P>
+<P>Die erste Frage ist dabei immer, ob man direkt am NTBA
+oder an einer TK-Anlage angeschlossen ist.</P>
+<P>
+<UL>
+<LI> Anschluß an NTBA:
+<P>Man kann sich eine der 3 oder mehr zugewiesenen MSN's aussuchen.
+Diese MSN wird der Gegenstelle übermittelt. Wird die
+MSN zur überprüfung des Partners benutzt (z.B. bei rawip),
+muß man sich mit der Gegenstelle natürlich fest auf eine 
+einigen. Ansonsten hat man die freie Wahl, man kann durchaus
+seine normale Voice-Nummer benutzen.</P>
+
+</LI>
+<LI> Anschluß an TK-Anlage:
+<P>Man ist auf die Konfiguration der TK-Anlage angewiesen.
+Die einfachste Methode ist der Selbsttest, siehe 
+<A HREF="EN-i4l-3.html#hwTesten">Hardware testen</A></P>
+
+</LI>
+</UL>
+</P>
+
+<H2><A NAME="cause"></A> <A NAME="ss4.4">4.4</A> <A HREF="EN-i4l.html#toc4.4">Probleme beim Verbindungsaufbau, die Cause Meldungen</A>
+            </H2>
+
+<P>Das Protokoll auf dem D-Kanal erlaubt es Meldungen zu
+verschicken, die über den Grund bei einem Verbindungsabbruch
+und nicht erfolgreichem Verbindungsaufbau informieren.</P>
+<P>Die Meldungen werden in <CODE>/var/log/messages</CODE> vom 
+i4l-Subsystem wls sogenannte <CODE>cause</CODE>-Meldungen weitergegeben.</P>
+<P>Die Art der Meldung hängt vom verwendeten Protokoll
+ab (1TR6 oder DSS1), bei DSS1 wird ein <CODE>E</CODE> (für Euro-ISDN)
+vorangestellt, dahinter folgen vier (Hex-)Ziffern.
+Die ersten beiden geben Auskunft darüber, wo diese
+Meldung generiert wurde (bei welcher VSt); die letzten
+beiden Ziffern geben den eigentlichen Grund an.</P>
+<P>Der isdnlog übersetzt uns freundlicherweise die Meldungen
+in Klartext; wenn der nicht läuft (z.B. bei aktiven ISDN-Karten),
+kann man die Meldungen mittels <CODE>man isdn_cause</CODE> auflösen.</P>
+<P>Nicht alle Meldungen müssen <I>dramatisch</I> sein und müssen auf
+einen Fehler hinweisen.</P>
+<P>Beispiele: 
+<HR>
+<PRE>
+kernel: isdn: hisax1,ch0 cause: E0010
+kernel: ippp0: remote hangup
+        
+</PRE>
+<HR>
+
+Ursache: der Gegner hat <I>normal</I> aufgelegt, vermutlich wegen Timeout.</P>
+<P>
+<HR>
+<PRE>
+kernel: isdn: hisax1,ch0 cause: E0511
+isdnlog: Mar 19 20:00:32 tei 70 calling Leibnitz with 
+    Kfr User busy (Private network serving remote user) 
+        
+</PRE>
+<HR>
+
+Ursache: die VSt beim Gegner teilt uns mit, daß dort der
+Anschluss besetzt ist.</P>
+<P>
+<HR>
+<PRE>
+kernel: isdn: hisax1,ch0 cause: E0022
+isdnlog: Mar 19 21:37:16 tei 70 calling Klein with +49 911/
+    333, N|rnberg  No circuit/channel available (User) 
+        
+</PRE>
+<HR>
+
+Ursache: alle Kanäle sind belegt.</P>
+<P>
+<HR>
+<PRE>
+kernel: isdn0: dialing 1 1111111111...
+isdnlog: Apr 13 15:05:18 * tei 84 calling +49 911/111111111, 
+    N|rnberg with Kfr  RING (Data) 
+kernel: isdn: hisax1,ch0 cause: E0201
+isdnlog: Apr 13 15:05:19 * tei 127 calling ? with ?  Unallocated 
+    (unassigned) number (Public network serving local user) 
+        
+</PRE>
+<HR>
+
+Ursache: die Zielrufnummer ist nicht zugewiesen.</P>
+
+<HR>
+<A HREF="EN-i4l-5.html">Next</A>
+<A HREF="EN-i4l-3.html">Previous</A>
+<A HREF="EN-i4l.html#toc4">Contents</A>
+</BODY>
+</HTML>

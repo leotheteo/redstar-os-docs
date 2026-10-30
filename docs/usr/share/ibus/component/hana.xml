@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- filename: hana.xml -->
+<component>
+	<name>org.freedesktop.IBus.Hana</name>
+	<description>Hana Component</description>
+	<exec>/usr/libexec/ibus-engine-hana --ibus</exec>
+	<version>1.3.0.20130302</version>
+	<author>Peng Huang &lt;shawn.p.huang@gmail.com&gt;</author>
+	<license>GPL</license>
+	<homepage>http://code.google.com/p/ibus</homepage>
+	<textdomain>ibus-nnr</textdomain>
+
+	<engines>
+		<engine>
+			<name>hana</name>
+			<language>ko_KP</language>
+			<license>GPL</license>
+			<author>Peng Huang &lt;shawn.p.huang@gmail.com&gt;</author>
+			<icon>/usr/share/ibus-hana/icons/ibus-hana.png</icon>
+			<layout>us</layout>
+			<longname>Hana</longname>
+			<description>Hana Input Method</description>
+			<rank>99</rank>
+		</engine>
+	</engines>
+
+</component>

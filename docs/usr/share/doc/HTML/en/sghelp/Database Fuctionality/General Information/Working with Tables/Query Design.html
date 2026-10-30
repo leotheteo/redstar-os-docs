@@ -1,0 +1,1219 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+	<TITLE></TITLE>
+	<META NAME="GENERATOR" CONTENT="《Sogwang 3.0》  (Linux)">
+	<META NAME="CREATED" CONTENT="20091208;17475200">
+	<META NAME="CHANGED" CONTENT="20091208;17484500">
+	<STYLE TYPE="text/css">
+	<!--
+		TD P.howtogetheader { background: #ffffff; border: 1px solid #999999; padding: 0.08cm; font-weight: bold }
+		H2 { margin-bottom: 0.18cm; font-family: "Bitstream Vera Sans", "Arial", "Helvetica", "Lucida", "Geneva", "Helmet", sans-serif, "Andale Sans UI", "Arial Unicode MS", "Lucida Sans Unicode", "Tahoma"; font-size: 14pt }
+		H3 { margin-bottom: 0.18cm; font-family: "Bitstream Vera Sans", "Arial", "Helvetica", "Lucida", "Geneva", "Helmet", sans-serif, "Andale Sans UI", "Arial Unicode MS", "Lucida Sans Unicode", "Tahoma"; font-size: 12pt }
+		TD P.tableheadintable { margin-bottom: 0.05cm; font-weight: bold }
+		TD P.tablecontentintable { font-family: "Bitstream Vera Sans", "Arial", "Helvetica", "Lucida", "Geneva", "Helmet", sans-serif, "Andale Sans UI", "Arial Unicode MS", "Lucida Sans Unicode", "Tahoma" }
+		H4 { margin-bottom: 0.18cm; font-family: "Bitstream Vera Sans", "Arial", "Helvetica", "Lucida", "Geneva", "Helmet", sans-serif, "Andale Sans UI", "Arial Unicode MS", "Lucida Sans Unicode", "Tahoma"; font-size: 10pt }
+		P.listitem { font-family: "Bitstream Vera Sans", "Arial", "Helvetica", "Lucida", "Geneva", "Helmet", sans-serif, "Andale Sans UI", "Arial Unicode MS", "Lucida Sans Unicode", "Tahoma" }
+body {
+	margin-left: 0px;
+	margin-right: 0px;
+}
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="ko-KP" DIR="LTR"><DIV style="margin-left: 25">
+<H1><A NAME="bm_id3153323"></A><FONT FACE="Thorndale, serif"><SPAN LANG="en-US">Query
+Design</SPAN></FONT></H1>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">The
+<B>Query Design View </B>allows you to create and edit a database
+query.</SPAN></FONT></P>
+<TABLE WIDTH=95% BORDER=1 CELLPADDING=3 CELLSPACING=0 BGCOLOR="#eeeeee">
+	<COL WIDTH=256*>
+	<TR>
+		<TD WIDTH=100%>
+			<P CLASS="howtogetheader"><FONT FACE="청봉, serif"><SPAN LANG="en-US">To
+			access this command... </SPAN></FONT>
+			</P>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><SPAN STYLE="background: #eeeeee">In
+			a database file window, click the <B>Queries</B> icon, then choose
+			<B>Edit - Edit</B> </SPAN></SPAN></FONT>
+			</P>
+		</TD>
+	</TR>
+</TABLE>
+<P STYLE="margin-top: 0.05cm; margin-bottom: 0cm"><BR>
+</P>
+<TABLE WIDTH=951 BORDER=0 CELLPADDING=5 CELLSPACING=0>
+	<COL WIDTH=33>
+	<COL WIDTH=560>
+	<TR>
+		<TD WIDTH=45>
+			<P><IMG SRC="../../../Image/note.png" NAME="graphics1" ALT="Note Icon " ALIGN=BOTTOM WIDTH=33 HEIGHT=42 BORDER=0></P>
+		</TD>
+		<TD WIDTH=886>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Most
+			databases use queries to filter or to sort database tables to
+			display records on your computer. Views offer the same
+			functionality as queries, but on the server side. If your database
+			is on a server that supports views, you can use views to filter
+			the records on the server to speed up the display time.</SPAN></FONT></P>
+		</TD>
+	</TR>
+</TABLE>
+<P STYLE="margin-top: 0.05cm; margin-bottom: 0cm"><BR>
+</P>
+<TABLE WIDTH=968 BORDER=0 CELLPADDING=5 CELLSPACING=0>
+	<COL WIDTH=33>
+	<COL WIDTH=560>
+	<TR>
+		<TD WIDTH=46>
+			<P><IMG SRC="../../../Image/note.png" NAME="graphics2" ALT="Note Icon " ALIGN=BOTTOM WIDTH=33 HEIGHT=42 BORDER=0></P>
+		</TD>
+		<TD WIDTH=941>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Selecting
+			the <B>Create View</B> command from the <B>Tables</B> tab page of
+			a database document, you see the <B>View Design</B> window that
+			resembles the <B>Query Design</B> window described here.</SPAN></FONT></P>
+		</TD>
+	</TR>
+</TABLE>
+<P><BR><BR>
+</P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">The
+Query Design window layout is stored with a created query, but cannot
+be stored with a created view.</SPAN></FONT></P>
+<H2><SPAN LANG="en-US">The Design View</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">To
+create a query, click the <B>Queries</B> icon in a database document,
+then click <B>Create Query in Design View</B>.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">The
+lower pane of the Design View is where you define the query. To
+define a query, specify the database field names to include and the
+criteria for displaying the fields. To rearrange the columns in the
+lower pane of the Design View, drag a column header to a new
+location, or select the column and press Command+arrow key.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">In the
+top of the query Design View window, the icons</A>
+of the <B>Query Design</B> Bar and the <B>Design</B> bar are
+displayed.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">If you
+want to test a query, double-click the query name in the database
+document. The query result is displayed in a table similar to the
+Data Source View. Note: the table displayed is only temporary.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Keys in Query Design View</SPAN></H3>
+<TABLE WIDTH=218 BORDER=1 CELLPADDING=2 CELLSPACING=0>
+	<COL WIDTH=24>
+	<COL WIDTH=116>
+	<TR VALIGN=TOP>
+		<TD WIDTH=33>
+			<P CLASS="tableheadintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Key</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=171>
+			<P CLASS="tableheadintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Function</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=33>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">F4</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=171>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Preview</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=33>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">F5</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=171>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Run Query</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=33>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">F7</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=171>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Add Table or
+			Query</SPAN></FONT></P>
+		</TD>
+	</TR>
+</TABLE>
+<P><BR><BR>
+</P>
+<H2><SPAN LANG="en-US">Browse</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">When you
+open the query design for the first time, in order to create a new
+query, you can click <A href="../../../spreadsheets/Command and Menu Reference/Toolbars/Query Design Bar/Add Tables.html"><B>Add
+Tables</B></A>. You then see a dialog in which you must first select
+the table that will be the basis for the query.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Double-click
+fields to add them to the query. Drag-and-drop to define relations.</SPAN></FONT></P>
+<TABLE WIDTH=914 BORDER=0 CELLPADDING=5 CELLSPACING=0>
+	<COL WIDTH=33>
+	<COL WIDTH=372>
+	<TR>
+		<TD WIDTH=47>
+			<P><IMG SRC="../../../Image/note.png" NAME="graphics3" ALT="Note Icon " ALIGN=BOTTOM WIDTH=33 HEIGHT=42 BORDER=0></P>
+		</TD>
+		<TD WIDTH=847>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">While
+			designing a query, you cannot modify the selected tables.</SPAN></FONT></P>
+		</TD>
+	</TR>
+</TABLE>
+<P><BR><BR>
+</P>
+<H3><SPAN LANG="en-US">Remove tables</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">To
+remove the table from Design View, click the upper border of the
+table window and display the context menu. You can use the <B>Delete</B>
+command to remove the table from the Design View. Another option is
+to press the Delete key.</SPAN></FONT></P>
+<H3><A NAME="darstellungaendern"></A><SPAN LANG="en-US">Move table
+and modify table size</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">You can
+resize and arrange the tables according to your preferences. To move
+tables, drag the upper border to the desired position. Enlarge or
+reduce the size in which the table is displayed by positioning the
+mouse cursor on a border or on a corner and dragging the table until
+it is the desired size.</SPAN></FONT></P>
+<H2><SPAN LANG="en-US">Table Relations</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">If there
+are data relations between a field name in one table and a field name
+in another table, you can use these relations for your query.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">If, for
+example, you have a spreadsheet for articles identified by an article
+number, and a spreadsheet for customers in which you record all
+articles that a customer orders using the corresponding article
+numbers, then there is a relationship between the two &quot;article
+number&quot; data fields. If you now want to create a query that
+returns all articles that a customer has ordered, you must retrieve
+data from two spreadsheets. To do this, you must tell </SPAN></FONT><FONT FACE="청봉, serif"><SPAN LANG="en-US">Sogwang what the
+relationship exists between the data in the two spreadsheets.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">To do
+this, click a field name in a table (for example, the field name
+&quot;Item-Number&quot; from the Customer table), hold down the mouse
+button and then drag the field name to the field name of the other
+table (&quot;Item-Number&quot; from the Item table). When you release
+the mouse button, a line connecting the two fields in the two windows
+appears. The corresponding condition that the content of the two
+field names must be identical is entered in the resulting SQL query.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">The
+creation of a query that is based on several related sheets is only
+possible if you use </SPAN></FONT><FONT FACE="청봉, serif"><SPAN LANG="en-US">Sogwang as the
+interface for a relational database.</SPAN></FONT></P>
+<TABLE WIDTH=972 BORDER=0 CELLPADDING=5 CELLSPACING=0>
+	<COL WIDTH=33>
+	<COL WIDTH=560>
+	<TR>
+		<TD WIDTH=47>
+			<P><IMG SRC="../../../Image/note.png" NAME="graphics4" ALT="Note Icon " ALIGN=BOTTOM WIDTH=33 HEIGHT=42 BORDER=0></P>
+		</TD>
+		<TD WIDTH=942>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">You
+			cannot access tables from different databases in a query. Queries
+			involving multiple tables can only be created within one database.</SPAN></FONT></P>
+		</TD>
+	</TR>
+</TABLE>
+<P><BR><BR>
+</P>
+<H3><SPAN LANG="en-US">Specifying link type</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">If you
+double-click the line connecting two linked fields or call the menu
+command <B>Insert - New Relation</B>, you can specify the type of
+link in the <A href="../Database Overview/Relations.html"><B>Relations</B></A>
+dialog.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Alternatively,
+press Tab until the line is selected, then press Shift+F10 to display
+the context menu and there choose the command <B>Edit</B>. Some
+databases support only a subset of the possible join types.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Deleting relations</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">To
+delete a relation between two tables, click the connection line and
+then press the Delete key.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Alternatively,
+delete the respective entries in <B>Fields involved </B>in the
+<B>Relations</B> dialog. Or press Tab until the connecting vector is
+displayed highlighted, then press Shift+F10 to open the context menu
+and select <B>Delete </B>command.</SPAN></FONT></P>
+<H2><A NAME="bm_id3152972"></A><SPAN LANG="en-US">Define query</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Select
+conditions to define the query. Each column of the design table
+accepts a data field for the query. The conditions in one row are
+linked with a Boolean AND.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Specify field name</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">First,
+select all field names from the tables that you want to add to the
+query. You can do this either with drag-and-drop or by
+double-clicking a field name in the table window. With the
+drag-and-drop method, use the mouse to drag a field name from the
+table window into the lower area of the query design. As you do this,
+you can decide which column you want to add the field to. Select a
+field name by double-clicking. It will then be added to the next free
+column.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Deleting field names</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">To
+remove a field name from the query, click the column header of the
+field and choose the <B>Delete</B> command on the context menu for
+the column.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Save query</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Use the
+<B>Save</B> icon on the Standard Bar to save the query. You see a
+dialog that asks you to enter a name for the query. 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+If the database
+supports schemas, you can also enter a schema.</SPAN></FONT></P>
+<H4><A NAME="bm_id3156378"></A><SPAN LANG="en-US">Schema</SPAN></H4>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Enter
+the name of the schema that is assigned to the query or table view.</SPAN></FONT></P>
+<H4><A NAME="bm_id3147340"></A><SPAN LANG="en-US">Query name or table
+view name</SPAN></H4>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Enter
+the name of the query or table view.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Filtering data</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">To
+filter data for the query, set the desired preferences in the lower
+area of the Design View. The following lines are available:</SPAN></FONT></P>
+<H4><A NAME="bm_id3148536"></A><SPAN LANG="en-US">Field</SPAN></H4>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Enter
+the name of the data field that you referred to in the Query. All
+settings made in the lower rows refer to this field. 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+If you activate
+a cell with a mouse click you'll see an arrow button, which enables
+you to select a field. The &quot;Table name.*&quot; option selects
+all data fields and the criteria is valid for all table fields.</SPAN></FONT></P>
+<H4><A NAME="bm_id3154702"></A><SPAN LANG="en-US">Alias</SPAN></H4>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Specifies
+an alias. This alias will be listed in a query instead of the field
+name. This makes it possible to use user-defined column labels. For
+example, if the data field has the name PtNo and, instead of that
+name, you would like to have PartNum appear in the query, enter
+PartNum as alias.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">In an
+SQL statement, aliases are defined as following:</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">SELECT
+column AS alias FROM table.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">For
+example:</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">SELECT
+&quot;PtNo&quot; AS &quot;PartNum&quot; FROM &quot;Parts&quot;</SPAN></FONT></P>
+<H4><A NAME="bm_id3154665"></A><SPAN LANG="en-US">Table</SPAN></H4>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">The
+corresponding database table of the selected data field is listed
+here. If you activate the a cell with a mouse click, an arrow will
+appear which enables you to select another table of the current
+query.</SPAN></FONT></P>
+<H4><A NAME="bm_id3154202"></A><SPAN LANG="en-US">Sort</SPAN></H4>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">If you
+click the cell, you can select among the sorting options: ascending,
+descending and not sorted. Text fields will be sorted alphabetically
+and numerical fields numerically. For most databases, administrators
+can set the sorting options.</SPAN></FONT></P>
+<H4><A NAME="bm_id3149334"></A><SPAN LANG="en-US">Visible</SPAN></H4>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">If you
+mark the <B>Visible</B> property for a data field, that field will be
+visible in the query. If you only use a data field to formulate a
+condition, you do not necessarily need to show it.</SPAN></FONT></P>
+<H4><A NAME="bm_id3147130"></A><SPAN LANG="en-US">Criteria</SPAN></H4>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Specifies
+the criteria by which the content of the data field should be
+filtered.</SPAN></FONT></P>
+<H4><SPAN LANG="en-US">or</SPAN></H4>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Here you
+can enter one additional criterion for filtering in each line.
+Multiple criteria in one column will be connected by an OR link.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">You can
+also use the context menu of the line headers in the lower area of
+the query design to insert another line for functions:</SPAN></FONT></P>
+<H3><A NAME="bm_id3153275"></A><SPAN LANG="en-US">Functions</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">The
+functions you can run here depend on the database. </SPAN></FONT>
+</P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">If you
+are working with the Adabas database, the list box in the <B>Function</B>
+row offers you the following options:</SPAN></FONT></P>
+<TABLE WIDTH=613 BORDER=1 CELLPADDING=2 CELLSPACING=0>
+	<COL WIDTH=61>
+	<COL WIDTH=56>
+	<COL WIDTH=482>
+	<TR VALIGN=TOP>
+		<TD WIDTH=61>
+			<P CLASS="tableheadintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Option</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=56>
+			<P CLASS="tableheadintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">SQL</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=482>
+			<P CLASS="tableheadintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Effect</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=61>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">No function</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=56></TD>
+		<TD WIDTH=482>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">No function will
+			be executed.</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=61>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Average</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=56>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">AVG</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=482>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Calculates the
+			arithmetic mean of a field.</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=61>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Count</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=56>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">COUNT</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=482>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Determines the
+			number of records in the table. Empty fields can either be counted
+			(a) or not (b).</SPAN></FONT></P>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">a) COUNT(*):
+			Passing an asterisk as the argument counts all records in the
+			table.</SPAN></FONT></P>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">b)
+			COUNT(column): Passing a field name as an argument counts only
+			fields in which the field name in question contains a value. Null
+			values (empty fields) will not be counted.</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=61>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Maximum</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=56>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">MAX</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=482>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Determines the
+			highest value of a field.</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=61>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Minimum</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=56>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">MIN</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=482>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Determines the
+			lowest value of a field.</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=61>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Sum</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=56>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">SUM</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=482>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Calculates the
+			sum of values of associated fields.</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=61>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Group</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=56>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">GROUP BY</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=482>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Groups query
+			data according to the field name selected. Functions are executed
+			according to the specified groups. In SQL, this option corresponds
+			to the GROUP BY clause. If a criterion is added, this entry
+			appears in the SQL HAVING.</SPAN></FONT></P>
+		</TD>
+	</TR>
+</TABLE>
+<P><BR><BR>
+</P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">You can
+also enter function calls directly into the SQL statement. The syntax
+is:</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">SELECT
+FUNCTION(column) FROM table.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">For
+example, the function call in SQL for calculating a sum is:</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">SELECT
+SUM(&quot;Price&quot;) FROM &quot;Article&quot;.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Except
+for the <B>Group</B> function, the above functions are so-called
+Aggregate functions. These are functions that calculate data to
+create summaries from the results. Additional functions that are not
+listed in the list box are also possible. These depend on the
+specific database system in use. To get information about driver
+specific functions refer to the documentation of your database
+system.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">To use
+other functions not listed in the list box, you must enter them under
+<B>Field</B>. They will then appear automatically in the <B>Function</B>
+line.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">You can
+also assign aliases to function calls. If the query is not to be
+displayed in the column header, enter the desired name under <B>Alias</B>.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">The
+corresponding function in an SQL statement is:</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">SELECT
+FUNCTION() AS alias FROM table</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Example:</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">SELECT
+COUNT(*) AS count FROM &quot;Item&quot;</SPAN></FONT></P>
+<TABLE WIDTH=960 BORDER=0 CELLPADDING=5 CELLSPACING=0>
+	<COL WIDTH=33>
+	<COL WIDTH=560>
+	<TR>
+		<TD WIDTH=46>
+			<P><IMG SRC="../../../Image/note.png" NAME="graphics5" ALT="Note Icon " ALIGN=BOTTOM WIDTH=33 HEIGHT=42 BORDER=0></P>
+		</TD>
+		<TD WIDTH=905>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">If
+			you run this function, you cannot insert any additional columns
+			for the query other than receiving these columns as a &quot;Group&quot;
+			function.</SPAN></FONT></P>
+		</TD>
+	</TR>
+</TABLE>
+<P><BR><BR>
+</P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Examples</B>
+</SPAN></FONT>
+</P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">In the
+following example, a query is run through two tables: an &quot;Item&quot;
+table with the &quot;Item_No&quot; field and a &quot;Suppliers&quot;
+table with the &quot;Supplier_Name&quot; field. In addition, both
+tables have a common field name &quot;Supplier_No.&quot;</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">The
+following steps are required to create a query containing all
+suppliers who deliver more than three items.</SPAN></FONT></P>
+<OL>
+	<LI><P CLASS="listitem"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Insert the &quot;Item&quot;
+	and &quot;Suppliers&quot; tables into the query design.</SPAN></FONT></P>
+	<LI><P CLASS="listitem"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Link the &quot;Supplier_No&quot;
+	fields of the two tables if there is not already a relation of this
+	type.</SPAN></FONT></P>
+	<LI><P CLASS="listitem"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Double-click the
+	&quot;Item_No&quot; field from the &quot;Item&quot; table. Display
+	the <B>Function</B> line using the context menu and select the Count
+	function.</SPAN></FONT></P>
+	<LI><P CLASS="listitem"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Enter &gt;3 as a
+	criterion and disable the Visible field.</SPAN></FONT></P>
+	<LI><P CLASS="listitem"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Double-click the
+	&quot;Supplier_Name&quot; field in the &quot;Suppliers&quot; table
+	and choose the Group function.</SPAN></FONT></P>
+	<LI><P CLASS="listitem"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Run the query.</SPAN></FONT></P>
+</OL>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">If the
+&quot;price&quot; (for the individual price of an article) and
+&quot;Supplier_No&quot; (for the supplier of the article) fields
+exist in the &quot;Item&quot; table, you can obtain the average price
+of the item that a supplier provides with the following query:</SPAN></FONT></P>
+<OL>
+	<LI><P CLASS="listitem"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Insert the &quot;Item&quot;
+	table into the query design.</SPAN></FONT></P>
+	<LI><P CLASS="listitem"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Double-click the &quot;Price&quot;
+	and &quot;Supplier_No&quot; fields.</SPAN></FONT></P>
+	<LI><P CLASS="listitem"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Enable the <B>Function</B>
+	line and select the Average function from the &quot;Price&quot;
+	field.</SPAN></FONT></P>
+	<LI><P CLASS="listitem"><FONT FACE="청봉, serif"><SPAN LANG="en-US">You can also enter
+	&quot;Average&quot; in the line for the alias name (without
+	quotation marks).</SPAN></FONT></P>
+	<LI><P CLASS="listitem"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Choose Group for the
+	&quot;Supplier_No&quot; field.</SPAN></FONT></P>
+	<LI><P CLASS="listitem"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Run the query.</SPAN></FONT></P>
+</OL>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">The
+following context menu commands and symbols are available:</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Functions</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Shows or
+hides a row for selection of functions.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Table Name</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Shows or
+hides the row for the table name.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Alias Name</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Shows or
+hides the row for the alias name.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Distinct Values</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Applies
+only distinct values to the query. This applies to records containing
+data that appears several times in the selected fields. If the
+<B>Distinct Values</B> command is active, you will see only one
+record in the query (DISTINCT). Otherwise, you will see all records
+corresponding to the query criteria (ALL).</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">For
+example, if the name &quot;Smith&quot; occurs several times in your
+address database, you can choose the <B>Distinct Values</B> command
+to specify in the query that the name &quot;Smith&quot; will occur
+only once.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">For a
+query involving several fields, the combination of values from all
+fields must be unique so that the result can be formed from a
+specific record. For example, you have &quot;Smith in Chicago&quot;
+once in your address book and &quot;Smith in London&quot; twice. With
+the <B>Distinct Values</B> command, the query will use the two fields
+&quot;last name&quot; and &quot;city&quot; and return the query
+result &quot;Smith in Chicago&quot; once and &quot;Smith in London&quot;
+once.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">In SQL,
+this command corresponds to the DISTINCT predicate.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Formulating filter conditions</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">When
+formulating filter conditions, various operators and commands are
+available to you. Apart from the relational operators, there are
+SQL-specific commands that query the content of database fields. If
+you use these commands in the </SPAN></FONT><FONT FACE="청봉, serif"><SPAN LANG="en-US">Sogwang syntax,
+</SPAN></FONT><FONT FACE="청봉, serif"><SPAN LANG="en-US">Sogwang automatically
+converts these into the corresponding SQL syntax. You can also enter
+the SQL command directly. The following tables give an overview of
+the operators and commands:</SPAN></FONT></P>
+<TABLE WIDTH=613 BORDER=1 CELLPADDING=2 CELLSPACING=0>
+	<COL WIDTH=55>
+	<COL WIDTH=96>
+	<COL WIDTH=448>
+	<TR VALIGN=TOP>
+		<TD WIDTH=55>
+			<P CLASS="tableheadintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Operator</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=96>
+			<P CLASS="tableheadintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Meaning</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=448>
+			<P CLASS="tableheadintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Condition
+			is satisfied if...</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=55>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">=</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=96>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">equal to</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=448>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">... the content
+			of the field is identical to the indicated expression.</SPAN></FONT></P>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">The operator =
+			will not be displayed in the query fields. If you enter a value
+			without any operator, the operator = will be automatically
+			adopted.</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=55>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">&lt;&gt;</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=96>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">not equal to</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=448>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">... the content
+			of the field does not correspond to the specified expression.</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=55>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">&gt;</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=96>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">greater than</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=448>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">... the content
+			of the field is greater than the specified expression.</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=55>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">&lt;</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=96>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">less than</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=448>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">... the content
+			of the field is less than the specified expression.</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=55>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">&gt;=</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=96>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">greater than or
+			equal to</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=448>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">... the content
+			of the field is greater than or equal to the specified expression.</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=55>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">&lt;=</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=96>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">less than or
+			equal to</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=448>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">... the content
+			of the field is less than or equal to the specified expression.</SPAN></FONT></P>
+		</TD>
+	</TR>
+</TABLE>
+<P STYLE="margin-top: 0.05cm; margin-bottom: 0cm"><BR>
+</P>
+<TABLE WIDTH=613 BORDER=1 CELLPADDING=2 CELLSPACING=0>
+	<COL WIDTH=159>
+	<COL WIDTH=85>
+	<COL WIDTH=68>
+	<COL WIDTH=283>
+	<TR VALIGN=TOP>
+		<TD WIDTH=159>
+			<P CLASS="tableheadintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Sogwang command</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=85>
+			<P CLASS="tableheadintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">SQL
+			command</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=68>
+			<P CLASS="tableheadintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Meaning</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=283>
+			<P CLASS="tableheadintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Condition
+			is satisfied if...</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=159>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">IS EMPTY</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=85>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">IS NULL</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=68>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">is null</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=283>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">... The field
+			name is empty. For Yes/No fields with three states, this command
+			automatically queries the undetermined state (neither Yes nor No).</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=159>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">IS NOT EMPTY</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=85>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">IS NOT NULL</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=68>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">is not empty</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=283>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">... the field
+			name is not empty.</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=159>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">LIKE</SPAN></FONT></P>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">(placeholder *
+			for any number of characters</SPAN></FONT></P>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">placeholder ?
+			for exactly one character)</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=85>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">LIKE</SPAN></FONT></P>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">(%
+			placeholder for any number of characters</SPAN></FONT></P>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Placeholder _
+			for exactly one character)</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=68>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">is an element of</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=283>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">... the data
+			field contains the indicated expression. The (*) placeholder
+			indicates whether the expression x occurs at the beginning of
+			(x*), at the end of (*x) or inside the field content (*x*). You
+			can enter as a placeholder in SQL queries either the SQL %
+			character or the familiar (*) file system placeholder in the
+			</SPAN>Sogwang <SPAN LANG="en-US">interface.</SPAN></FONT></P>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">The * or %
+			placeholder stands for any number of characters. The question mark
+			(?) in the </SPAN>Sogwang
+			<SPAN LANG="en-US">interface or the underscore (_) in SQL queries
+			is used to represent exactly one character.</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=159>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">NOT LIKE</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=85>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">NOT LIKE</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=68>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Is not an
+			element of</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=283>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">... the field
+			name does not contain the specified expression.</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=159>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">BETWEEN x AND y</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=85>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">BETWEEN x AND y</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=68>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">falls within the
+			interval [x,y]</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=283>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">... the field
+			name contains a value that lies between the two values x and y.</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=159>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">NOT BETWEEN x
+			AND y</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=85>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">NOT BETWEEN x
+			AND y</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=68>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Does not fall
+			within the interval [x,y]</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=283>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">... the field
+			name contains a value that does not lie between the two values x
+			and y.</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=159>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">IN (a; b; c...)</SPAN></FONT></P>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Note that the
+			semicolons are used as separators in all value lists!</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=85>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">IN (a, b, c...)</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=68>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">contains a, b,
+			c...</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=283>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">... the field
+			name contains one of the specified expressions a, b, c,... Any
+			number of expressions can be specified, and the result of the
+			query is determined by an Or link. The expressions a, b, c... can
+			be either numbers or characters</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=159>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">NOT IN (a; b;
+			c...)</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=85>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">NOT IN (a, b,
+			c...)</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=68>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">does not contain
+			a, b, c...</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=283>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">... the field
+			name does not contain one of the specified expressions a, b, c,...</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=159>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">= TRUE</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=85>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">= TRUE</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=68>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">has the value
+			True</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=283>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">... the field
+			name has the value True.</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=159>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">= FALSE</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=85>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">= FALSE</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=68>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">has the value
+			false</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=283>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">... the field
+			name has the value false.</SPAN></FONT></P>
+		</TD>
+	</TR>
+</TABLE>
+<P><BR><BR>
+</P>
+<H3><SPAN LANG="en-US">Examples</SPAN></H3>
+<TABLE WIDTH=613 BORDER=1 CELLPADDING=2 CELLSPACING=0>
+	<COL WIDTH=98>
+	<COL WIDTH=505>
+	<TR VALIGN=TOP>
+		<TD WIDTH=98>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">='Ms.'</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=505>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">returns
+			field names with the field content &quot;Ms.&quot;</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=98>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">LIKE
+			'g?ve'</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=505>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">returns
+			field names with field content such as &quot;give&quot; and
+			&quot;gave&quot;.</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=98>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">LIKE
+			'S*'</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=505>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">returns
+			data fields with field contents such as &quot;Sun&quot;.</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=98>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">BETWEEN
+			10 AND 20</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=505>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">returns
+			field names with field content between the values 10 and 20. (The
+			fields can be either text fields or number fields).</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=98>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">IN
+			(1; 3; 5; 7)</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=505>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">returns
+			field names with the values 1, 3, 5, 7. If the field name contains
+			an item number, for example, you can create a query that returns
+			the item having the specified number.</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=98>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">NOT
+			IN ('Smith')</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=505>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">returns
+			field names that do not contain &quot;Smith&quot;.</SPAN></FONT></P>
+		</TD>
+	</TR>
+</TABLE>
+<P><BR><BR>
+</P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Date
+fields</B> are represented as #Date# to clearly identify them as
+dates. The date condition will be reproduced in the resulting SQL
+statement in the following ODBC - compliant way:</SPAN></FONT></P>
+<TABLE WIDTH=245 BORDER=1 CELLPADDING=2 CELLSPACING=0>
+	<COL WIDTH=57>
+	<COL WIDTH=178>
+	<TR VALIGN=TOP>
+		<TD WIDTH=57>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Date</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=178>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">{D'YYYY-MM-DD'}</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=57>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Date
+			time</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=178>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">{D'YYYY-MM-DD
+			HH:MM:SS'}</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=57>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Time</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=178>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">{D'HH:MM:SS'}</SPAN></FONT></P>
+		</TD>
+	</TR>
+</TABLE>
+<P><BR><BR>
+</P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Sogwang also
+supports the following <B>Escape sequences</B> known from ODBC and
+JDBC:</SPAN></FONT></P>
+<TABLE WIDTH=347 BORDER=1 CELLPADDING=2 CELLSPACING=0>
+	<COL WIDTH=57>
+	<COL WIDTH=280>
+	<TR VALIGN=TOP>
+		<TD WIDTH=57>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Date</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=280>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">{d
+			'YYYY-MM-DD'}</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=57>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Time</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=280>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">{t
+			'HH:MI:SS[.SS]'} - [ ] optional</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=57>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">DateTime</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=280>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">{ts
+			'YYYY-MM-DD HH:MI:SS[.SS]'} - [ ] optional</SPAN></FONT></P>
+		</TD>
+	</TR>
+</TABLE>
+<P><BR><BR>
+</P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Example:
+select {d '1999-12-31'} from world.years</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Like
+</B>Escape Sequence: {escape 'escape-character'}</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Example:
+select * from Item where ItemName like 'The *%' {escape '*'}</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">The
+example will give you all of the entries where the item name begins
+with 'The *'. This means that you can also search for characters that
+would otherwise be interpreted as placeholders, such as *, ?, _, % or
+the period.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Outer
+Join</B> Escape Sequence: {oj outer-join}</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Example:
+select Article.* from {oj item LEFT OUTER JOIN orders ON
+item.no=orders.ANR}</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Querying text fields</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">To query
+the content of a text field, you must put the expression between
+single quotes. The distinction between uppercase and lowercase
+letters depends on the database in use. LIKE, by definition, is
+case-sensitive (though some databases don't see it that strict).</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Querying date fields</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Even if
+you want to filter by a date, you must place the expression between
+single quotation marks. The following formats are valid: YYYY-MM-DD
+HH:MM:SS and YYYY/MM/DD HH:MM:SS as well as YYYY.MM.DD HH:MM:SS</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Querying Yes/No fields</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">To query
+Yes/No fields, use the following syntax for dBASE tables:</SPAN></FONT></P>
+<TABLE WIDTH=613 BORDER=1 CELLPADDING=2 CELLSPACING=0>
+	<COL WIDTH=40>
+	<COL WIDTH=179>
+	<COL WIDTH=380>
+	<TR VALIGN=TOP>
+		<TD WIDTH=40>
+			<P CLASS="tableheadintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Status</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=179>
+			<P CLASS="tableheadintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Query
+			criterion</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=380>
+			<P CLASS="tableheadintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Example</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=40>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Yes</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=179>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">for dBASE
+			tables: not equal to any given value</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=380>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">=1 returns all
+			records where the Yes/No field has the status &quot;Yes&quot; or
+			&quot;On&quot; (selected in black),</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=40>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">No</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=179>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">.</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=380>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">=0 returns all
+			records for which the Yes/No field has the status &quot;No&quot;
+			or &quot;Off&quot; (no selection).</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=40>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Null</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=179>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">IS NULL</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=380>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">IS NULL returns
+			all records for which the Yes/No field has neither of the states
+			Yes or No (selected in gray).</SPAN></FONT></P>
+		</TD>
+	</TR>
+</TABLE>
+<P STYLE="margin-top: 0.05cm; margin-bottom: 0cm"><BR>
+</P>
+<TABLE WIDTH=978 BORDER=0 CELLPADDING=5 CELLSPACING=0>
+	<COL WIDTH=33>
+	<COL WIDTH=560>
+	<TR>
+		<TD WIDTH=46>
+			<P><IMG SRC="../../../Image/note.png" NAME="graphics6" ALT="Note Icon " ALIGN=BOTTOM WIDTH=33 HEIGHT=42 BORDER=0></P>
+		</TD>
+		<TD WIDTH=941>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">The
+			syntax depends on the database system used. You should also note
+			that Yes/No fields can be defined differently (only 2 states
+			instead of 3).</SPAN></FONT></P>
+		</TD>
+	</TR>
+</TABLE>
+<P><BR><BR>
+</P>
+<H3><SPAN LANG="en-US">Parameter queries</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">You must
+place the variable between square brackets (=[x]) to create a query
+with variable parameters. Alternatively, you can use an equal sign
+followed by a colon (=:x). When the query is executed, the program
+will display a dialog asking you for the expression to which the
+variable x should be assigned.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">If you
+query several parameters at the same time, you will see a list field
+in the dialog containing all of the parameters and an input line
+alongside each one. Enter the values, preferably from top to bottom,
+and press the Enter key after each line.</SPAN></FONT></P>
+<TABLE WIDTH=946 BORDER=0 CELLPADDING=5 CELLSPACING=0>
+	<COL WIDTH=33>
+	<COL WIDTH=560>
+	<TR>
+		<TD WIDTH=47>
+			<P><IMG SRC="../../../Image/note.png" NAME="graphics7" ALT="Note Icon " ALIGN=BOTTOM WIDTH=33 HEIGHT=42 BORDER=0></P>
+		</TD>
+		<TD WIDTH=879>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Parameter
+			queries with placeholders (*, _) or special characters (for
+			example, ?) are not possible.</SPAN></FONT></P>
+		</TD>
+	</TR>
+</TABLE>
+<P><BR><BR>
+</P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">If you
+formulate a parameter query and you save it with the variables, you
+can later create a query in which only the variables have to be
+replaced by the expressions that you want. </SPAN></FONT><FONT FACE="청봉, serif"><SPAN LANG="en-US">Sogwang asks for
+these variables in a dialog as soon as you open the query.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Parameter Input</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">The
+<B>Parameter Input</B> dialog asks you which variables you defined in
+the query. Enter a value for each query variable and confirm by
+clicking <B>OK</B>.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Parameter
+queries are also used for subforms</A>,
+since they work exclusively with queries for which the values to be
+invoked are read internally from a variable.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">A
+parameter query can have the following form in an SQL statement:</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">select *
+from 'addresses' where 'name' = :placeholder</SPAN></FONT></P>
+<H2><SPAN LANG="en-US">SQL Mode</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">SQL
+stands for &quot;Structured Query Language&quot; and describes
+instructions for updating and administering relational databases.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">In
+</SPAN></FONT><FONT FACE="청봉, serif"><SPAN LANG="en-US">Sogwang you
+do not need any knowledge of SQL for most queries, since you do not
+have to enter the SQL code. If you create a query in the query
+design, </SPAN></FONT><FONT FACE="청봉, serif"><SPAN LANG="en-US">Sogwang automatically
+converts your instructions into the corresponding SQL syntax. 
+&nbsp;&nbsp;&nbsp;&nbsp;
+If,with the help of the <B>Switch Design View On/Off </B>button, you
+change to the SQL view, you can see the SQL commands for a query that
+has been created previously.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">You can
+formulate your query directly in the SQL code. Note, however, that
+the special syntax is dependent upon the database system that you
+use.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">If you
+enter the SQL code manually, you can create SQL-specific queries that
+are not supported by the graphical interface in <B>Query design</B>.
+These queries must be executed in native SQL mode.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">By
+clicking the <A href="../../../spreadsheets/Command and Menu Reference/Toolbars/Query Design Bar/Run SQL command directly.html"><B>Run
+SQL command directly</B></A> icon in the SQL view, you can formulate
+a query that is not processed by Sogwang.</SPAN></FONT></P>
+
+</DIV></BODY>
+</HTML>
+

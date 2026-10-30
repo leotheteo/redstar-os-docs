@@ -1,0 +1,69 @@
+﻿<html dir='ltr'>
+	<head>
+		<META http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+		<title>수식의 이동/복사</title>
+		<link rel='stylesheet' type='text/css' href='../css/main.css'/>
+		<script type='text/javascript' language='Javascript' src='../js/mexpcol.js'></script>
+		<script type='text/javascript' language='JavaScript' src='../js/glossary.js'></script>
+	</head>
+	<body>
+		<h1>&nbsp;<img align="absbottom" src="../image/external_images/crystal/svtools/res/new_doc.png"/>&nbsp;수식의 이동/복사</h1>
+		<p id='ExpandAllLine' class='ExpFav'>
+			<a href='#' onClick='ExpandAll()' onKeyPress='ExpandAll()' class='DropDown'>
+				<img id='picHeader' border='0' src='../image/image/common/expandtri.gif' alt='모두 표시'>
+				<span id='ExpandAll'>모두 표시</span>
+			</a>
+		</p>
+		<p>수식을 이동/복사하는 경우 수식안의 세포참조가 절대참조이면 세포참조는 변하지 않습니다. 수식안의 세포참조가 상대참조인 경우에는 세포참조가 변합니다.</p>
+		<ol>
+			<li>수식이 들어있는 세포를 선택합니다.</li>
+			<li>수식을 이동/복사하는 경우 수식안의 세포참조가 변하지 않게 하려면 <a href="#" class="glossary" onClick="AppendPopup(this,'IDG_ABSREFERENCE')" onKeyPress="AppendPopup(this,'IDG_ABSREFERENCE')">절대참조</a>를 사용합니다.</li>
+				<p><b class="bterm">방법</b></p>
+					<ol>
+						<li>수식띠<img border='0' src='../image/image/sgsd/formbar.gif' alt='표시'>에서 변경할 참조를 선택합니다.</li>
+						<li>아래의 그림과 표는 A1세포의 내용이 C3세포로 복사/이동하는 경우 참조가 변하는 형식을 설명합니다.
+							<p><img border='0' src='../image/image/sgsd/copyform.gif' alt='표시'></p>
+							<table>
+								<tr>
+									<th>참조(설명)</th>
+									<th>변경후 참조</th>
+								</tr>
+								<tr>
+									<td>$A$1(절대렬과 절대행)</td>
+									<td>$A$1</td>
+								</tr>
+								<tr>
+									<td>A$1(상대렬과 절대행)</td>
+									<td>C$1</td>
+								</tr>
+								<tr>
+									<td>$A1(절대렬과 상대행)</td>
+									<td>$A3</td>
+								</tr>
+								<tr>
+									<td>A1(상대렬과 상대행)</td>
+									<td>C3</td>
+								</tr>
+							</table>
+						</li>
+					</ol>
+			</li>
+			<li><b class="bterm">&lt;편집&gt;</b>차림표에서 <b class="bterm">&lt;복사&gt;</b>를 찰칵합니다.</li>
+			<li>붙이기할 세포를 선택합니다.</li>
+			<li>수식과 모든 서식을 복사하려면 <b class="bterm">&lt;편집&gt;</b>차림표에서 <b class="bterm">&lt;붙이기&gt;</b>를 찰칵합니다.</li>
+			<li>수식만 복사하려면 <b class="bterm">&lt;편집&gt;</b>차림표에서 <b class="bterm">&lt;형식을 선택하여 붙이기&gt;</b>를 찰칵하고 <b class="bterm">&lt;수식&gt;</b>확인칸을 선택한 다음 <b class="bterm">&lt;확인&gt;</b>단추를 찰칵합니다.</li>
+		</ol>
+		<p>
+			<a href='#' class='DropDown' onClick='Outline2()' onKeyPress='Outline2()'>
+			<img border='0' src='../image/image/common/blueup.gif' alt='표시'>즉시도움말</a>
+		</p>
+		<div id='ExpCol' class='collapsed' border='0'>
+			<ul>
+				<li><a href="#" class="glossary" onClick="AppendPopup(this,'IDG_FILLHANDLE')" onKeyPress="AppendPopup(this,'IDG_FILLHANDLE')">채우기손잡이</a><img border='0' src='../image/image/sgsd/fillhand.gif' alt='표시'>를 사용하여 수식을 린접한 세포로 복사할수도 있습니다. 수식이 들어있는 세포를 선택하고 복사하려는 범위로 채우기손잡이를 끕니다.</li>
+				<li>선택한 세포나 세포범위를 붙이기하려는 령역으로 끌어서 수식을 이동할수도 있습니다.</li>
+			</ul>
+		</div>
+		<script type="text/javascript" language="Javascript">footerView()</script>
+	
+</body>
+</html>

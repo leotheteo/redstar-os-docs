@@ -1,0 +1,137 @@
+﻿<html dir='ltr'>
+	<head>
+		<META http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+		<title>LOOKUP</title>
+		<link rel='stylesheet' type='text/css' href='../css/main.css'/>
+		<script type='text/javascript' language='Javascript' src='../js/mexpcol.js'></script>
+		<script type='text/javascript' language='JavaScript' src='../js/glossary.js'></script>
+	</head>
+	<body>
+		<h1>&nbsp;<img align="absbottom" src="../image/external_images/crystal/svtools/res/new_doc.png"/>&nbsp;LOOKUP</h1>
+		<p id='ExpandAllLine' class='ExpFav'>
+			<a href='#' onClick='ExpandAll()' onKeyPress='ExpandAll()' class='DropDown'>
+				<img id='picHeader' border='0' src='../image/image/common/expandtri.gif' alt='모두 표시'>
+				<span id='ExpandAll'>모두 표시</span>
+			</a>
+		</p>
+		<p><b class="bterm">참고항목</b>&emsp;
+			<a href="5.9.11.1.htm">자료표함수목록</a>,
+			<a href="5.9.11.11.htm">INDEX</a>,
+			<a href="5.9.11.14.htm">MATCH</a>,
+			<a href="5.9.11.21.htm">VLOOKUP</a>
+		</p>
+		<p>다른 벡토르값과 비교하여 특정한 벡토르값을 결정합니다.</p>
+		<p><b class="bterm">문법:&emsp;&emsp;		LOOKUP(탐색기준,탐색벡토르,결과벡토르)</b></p>
+		<table>
+			<tr>
+				<th>인수명</th>
+				<th>설명</th>
+			</tr>
+			<tr>
+				<td>탐색기준</td>
+				<td>비교에 사용되는 값입니다. <b class="bterm">탐색기준</b>은 하나의 값을 참조하는 참조이름, 론리값, 본문 또는 수자일수 있습니다.</td>
+			</tr>
+			<tr>
+				<td>탐색벡토르</td>
+				<td>하나의 행 또는 렬만 포함하는 범위입니다. <b class="bterm">탐색벡토르</b>의 값은 본문, 수자 또는 론리값입니다.
+					<b class="bterm">탐색벡토르</b>의 값은 반드시 올리순서(...;-2; -1; 0; 1; 2; ...; A-Z; 거짓; 참)으로 정렬해야 하며 그렇지 않으면 정확한 값을 얻을수 없습니다. 대소문자는 구분하지 않습니다.
+				</td>
+			</tr>
+			<tr>
+				<td>결과벡토르</td>
+				<td>하나의 행 또는 렬만 포함하는 범위입니다. 추가선택인수입니다. <b class="bterm">탐색벡토르</b>와 같은 크기여야 합니다.</td>
+			</tr>
+		</table>
+		<p><b class="bterm">주의</b></p>
+			<ul>
+				<li><b class="bterm">LOOKUP</b>함수가 <b class="bterm">탐색기준</b>을 찾지 못하면 <b class="bterm">탐색벡토르</b>에서 <b class="bterm">탐색기준</b>보다 작거나 같은값중에서 최대값을 표시합니다.</li>
+				<li><b class="bterm">탐색기준</b>이 <b class="bterm">탐색벡토르</b>의 최소값보다 작으면 #<b class="bterm">N/A</b> 오유값을 표시합니다.</li>
+			</ul>
+		<p><b class="bterm">실례</b></p>
+			<p><a href="1.5.1.htm">실례의 리용방법</a>을 참고하십시오.</p>
+			<table>
+				<tr>
+					<td>
+						<table>
+							<tr>
+								<td class="noborder">&nbsp;
+								</td>
+							</tr>
+							<tr>
+								<th>1</th>
+							</tr>
+							<tr>
+								<th>2</th>
+							</tr>
+							<tr>
+								<th>3</th>
+							</tr>
+							<tr>
+								<th>4</th>
+							</tr>
+							<tr>
+								<th>5</th>
+							</tr>
+							<tr>
+								<th>6</th>
+							</tr>
+						</table>
+					</td>
+					<td>
+						<table>
+							<tr>
+								<th>A</th>
+								<th>B</th>
+							</tr>
+							<tr>
+								<th>빈도</th>
+								<th>색상</th>
+							</tr>
+							<tr>
+								<td>4.14</td>
+								<td>붉은색</td>
+							</tr>
+							<tr>
+								<td>4.19</td>
+								<td>분홍색</td>
+							</tr>
+							<tr>
+								<td>5.17</td>
+								<td>황색</td>
+							</tr>
+							<tr>
+								<td>5.77</td>
+								<td>록색</td>
+							</tr>
+							<tr>
+								<td>6.39</td>
+								<td>청색</td>
+							</tr>
+							<tr>
+								<th>수식</th>
+								<th>설명(결과)</th>
+							</tr>
+							<tr>
+								<td>=LOOKUP(4.19,A2:A6,B2:B6)</td>
+								<td>렬A에서 4.19를 조사하여 같은 행에 있는 렬B에서 값을 구합니다. (분홍색)</td>
+							</tr>
+							<tr>
+								<td>=LOOKUP(5.00,A2:A6,B2:B6)</td>
+								<td>렬A에서 5.00을 조사하여 같은 행에 있는 렬B에서 값을 구합니다. (분홍색)</td>
+							</tr>
+							<tr>
+								<td>=LOOKUP(7.66,A2:A6,B2:B6)</td>
+								<td>렬A에서 7.66을 조사하고 다음으로 작은 값(6.39)과 일치시키고 같은 행에 있는 렬B에서 값을 구합니다. (청색)</td>
+							</tr>
+							<tr>
+								<td>=LOOKUP(0,A2:A6,B2:B6)</td>
+								<td>렬A에서 0을 조사하고 0이 <b class="bterm">탐색벡토르</b> A2:A6에 있는 가장 작은 값보다 작기때문에 오유를 반환합니다. (#<b class="bterm">N</b>/<b class="bterm">A</b>)</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+		<script type="text/javascript" language="Javascript">footerView()</script>
+	
+</body>
+</html>				

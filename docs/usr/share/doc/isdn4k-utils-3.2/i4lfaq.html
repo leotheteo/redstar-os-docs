@@ -1,0 +1,515 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <META NAME="GENERATOR" CONTENT="LinuxDoc-Tools 0.9.21">
+ <TITLE>FAQ for isdn4linux</TITLE>
+ <LINK HREF="i4lfaq-1.html" REL=next>
+
+
+</HEAD>
+<BODY>
+<A HREF="i4lfaq-1.html">Next</A>
+Previous
+Contents
+<HR>
+<H1>FAQ for isdn4linux</H1>
+
+<H2>Matthias Hessler (<CODE>
+<A HREF="mailto:hessler@isdn4linux.de">hessler@isdn4linux.de</A></CODE>)</H2>v2.0.103, 15 January 2006
+<HR>
+<EM>If you are reading this FAQ online, you may consider downloading the whole
+thing, and reading it offline (much cheaper). To download the latest
+version of this FAQ in TXT/HTML/SGML format, go to the homepage of this FAQ:
+<A HREF="http://www.mhessler.de/i4lfaq/">http://www.mhessler.de/i4lfaq/</A>.
+A German translation of the FAQ is available at:
+<A HREF="http://www.wolf-b.de">http://www.wolf-b.de</A>.
+This FAQ answers questions that were frequently asked in the newsgroup
+de.alt.comm.isdn4linux. It contains questions any user should
+know about ISDN under Linux using isdn4linux, as well as hints on how
+to best make use of all the features isdn4linux provides.
+Version 2 of the FAQ is derived from an earlier version which had become
+outdated at the time of this writing. To obtain information on old versions
+of isdn4linux (1997 and earlier) please have a look at the FAQ version 1.3.4.
+About the format of this FAQ:
+The main basis of this FAQ is the i4l mailing list (see question
+<A HREF="i4lfaq-4.html#docu_mailinglist">docu_mailinglist</A>). I've treated the
+knowledge gained from reading as public domain, without quoting the author of
+the original mail. The FAQ is now written in SGML, as this format is flexible
+to convert into any other form of documentation (though some restrictions
+apply). The FAQ is now maintained in English since German-speaking people can
+easily follow the mailing list/newsgroup (or search in the archives). Whoever
+wants to translate back to German is welcome to do so!
+The countless links in this documents are not always complete and I'm sure many
+are no longer correct. I do not have the time to check them all. If you
+discover a bad link, please let me know (I'll try to install some automatic
+checking when I have the time).
+Additions, improvements and other suggestions are always welcome (also
+correction of typographical errors!), preferably send "diffs" from the SGML
+version. Thank you very much in advance!
+Send feedback about this FAQ to:
+<CODE>
+<A HREF="mailto:i4lfaq@isdn4linux.de">i4lfaq@isdn4linux.de</A></CODE>
+or:
+<CODE>
+<A HREF="mailto:hessler@isdn4linux.de">hessler@isdn4linux.de</A></CODE>.
+The newest version of this FAQ can be found at:
+<CODE>
+<A HREF="http://www.mhessler.de/i4lfaq/">http://www.mhessler.de/i4lfaq/</A></CODE>
+or:
+<CODE>
+<A HREF="http://www.isdn4linux.de/faq/">http://www.isdn4linux.de/faq/</A></CODE>.
+This FAQ is protected by the GNU General Public License (GPL) Version 2;
+(C) 1999-2002 Matthias Hessler (for version 2.0)
+Distribution under the terms of the GPL is welcome. However,
+we offer NO GUARANTEES for the information herein. Please read the GNU
+General Public License for further details. A printed version is available
+from Free Software Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+An electronic version is available from the author.</EM>
+<HR>
+<P>
+<H2><A NAME="toc1">1.</A> <A HREF="i4lfaq-1.html">general: General information about isdn4linux </A></H2>
+
+<UL>
+<LI><A NAME="toc1.1">1.1</A> <A HREF="i4lfaq-1.html#ss1.1">general_i4l: What is isdn4linux? </A>
+<LI><A NAME="toc1.2">1.2</A> <A HREF="i4lfaq-1.html#ss1.2">general_misdn: What is mISDN? </A>
+<LI><A NAME="toc1.3">1.3</A> <A HREF="i4lfaq-1.html#ss1.3">general_hardware: What hardware is supported by isdn4linux? </A>
+<LI><A NAME="toc1.4">1.4</A> <A HREF="i4lfaq-1.html#ss1.4">general_features: What features are supported by isdn4linux? </A>
+<LI><A NAME="toc1.5">1.5</A> <A HREF="i4lfaq-1.html#ss1.5">general_countries: Which countries are supported by isdn4linux? </A>
+<LI><A NAME="toc1.6">1.6</A> <A HREF="i4lfaq-1.html#ss1.6">general_docu: Where do I find more documentation, how-to's, helpful tips &amp; tricks? </A>
+<LI><A NAME="toc1.7">1.7</A> <A HREF="i4lfaq-1.html#ss1.7">general_getlatest: Where do I get the latest version of isdn4linux? </A>
+<LI><A NAME="toc1.8">1.8</A> <A HREF="i4lfaq-1.html#ss1.8">general_contacts: How can I get in contact with the developers? </A>
+</UL>
+<P>
+<H2><A NAME="toc2">2.</A> <A HREF="i4lfaq-2.html">distrib: Distribution </A></H2>
+
+<UL>
+<LI><A NAME="toc2.1">2.1</A> <A HREF="i4lfaq-2.html#ss2.1">distrib_getlatest: How can I get the latest isdn4linux? </A>
+<LI><A NAME="toc2.2">2.2</A> <A HREF="i4lfaq-2.html#ss2.2">distrib_cvs: How can I access the source from the current development/what is the CVS tree all about? </A>
+</UL>
+<P>
+<H2><A NAME="toc3">3.</A> <A HREF="i4lfaq-3.html">Features</A></H2>
+
+<UL>
+<LI><A NAME="toc3.1">3.1</A> <A HREF="i4lfaq-3.html#ss3.1">feature_not: Which ISDN features cannot be offered by isdn4linux? </A>
+<LI><A NAME="toc3.2">3.2</A> <A HREF="i4lfaq-3.html#ss3.2">feature_data: Which ISDN data transmission modes are supported? </A>
+<LI><A NAME="toc3.3">3.3</A> <A HREF="i4lfaq-3.html#ss3.3">feature_voice: Has isdn4linux voice support (e.g. answering machine, voice-over-ip gateway for H.323 clients)? </A>
+<LI><A NAME="toc3.4">3.4</A> <A HREF="i4lfaq-3.html#ss3.4">feature_fax: Can I fax with isdn4linux? </A>
+<LI><A NAME="toc3.5">3.5</A> <A HREF="i4lfaq-3.html#ss3.5">feature_modem: Can isdn4linux connect to/be called by an analog modem? </A>
+<LI><A NAME="toc3.6">3.6</A> <A HREF="i4lfaq-3.html#ss3.6">feature_divert: Is it possible to initiate call forwarding with i4l? </A>
+<LI><A NAME="toc3.7">3.7</A> <A HREF="i4lfaq-3.html#ss3.7">feature_ipx: Can I route ipx/spx over ISDN with Linux? </A>
+<LI><A NAME="toc3.8">3.8</A> <A HREF="i4lfaq-3.html#ss3.8">feature_2channel: Does isdn4linux support channel bundling? </A>
+<LI><A NAME="toc3.9">3.9</A> <A HREF="i4lfaq-3.html#ss3.9">feature_diald: Can I combine isdn4linux with diald? </A>
+<LI><A NAME="toc3.10">3.10</A> <A HREF="i4lfaq-3.html#ss3.10">feature_dod: Does the driver support &quot;dial on demand&quot;? </A>
+<LI><A NAME="toc3.11">3.11</A> <A HREF="i4lfaq-3.html#ss3.11">feature_sms: Can I send SMS (short messages) to my mobile phone via ISDN? </A>
+<LI><A NAME="toc3.12">3.12</A> <A HREF="i4lfaq-3.html#ss3.12">feature_btx: Is the German videotex/Btx/Datex-J possible with isdn4linux? </A>
+<LI><A NAME="toc3.13">3.13</A> <A HREF="i4lfaq-3.html#ss3.13">feature_clock: Can I set the clock of my computer with ISDN? </A>
+<LI><A NAME="toc3.14">3.14</A> <A HREF="i4lfaq-3.html#ss3.14">feature_dosemu: Can I use isdn4linux under dosemu? </A>
+<LI><A NAME="toc3.15">3.15</A> <A HREF="i4lfaq-3.html#ss3.15">feature_capi: Is there a CAPI interface available? </A>
+<LI><A NAME="toc3.16">3.16</A> <A HREF="i4lfaq-3.html#ss3.16">feature_uus: Is UUS (user to user signaling) supported? </A>
+<LI><A NAME="toc3.17">3.17</A> <A HREF="i4lfaq-3.html#ss3.17">feature_subaddressing: Is subaddressing supported? </A>
+<LI><A NAME="toc3.18">3.18</A> <A HREF="i4lfaq-3.html#ss3.18">feature_gsmv110: Can I connect from my PDA via GMS cellular phone to isdn4linux? </A>
+<LI><A NAME="toc3.19">3.19</A> <A HREF="i4lfaq-3.html#ss3.19">feature_reversedcard: Can isdn4linux log ALL actions happening on the ISDN bus (dual mode/reversed card/COLP/...)? </A>
+<LI><A NAME="toc3.20">3.20</A> <A HREF="i4lfaq-3.html#ss3.20">feature_chargeint: Can isdn4linux hang up just before the ISDN provider would charge me for another unit? </A>
+<LI><A NAME="toc3.21">3.21</A> <A HREF="i4lfaq-3.html#ss3.21">feature_eurofile: Can isdn4linux download or offer files via EFT (Eurofile transfer)? </A>
+<LI><A NAME="toc3.22">3.22</A> <A HREF="i4lfaq-3.html#ss3.22">feature_leased: Can isdn4linux handle leased lines (e.g. D64S)? </A>
+<LI><A NAME="toc3.23">3.23</A> <A HREF="i4lfaq-3.html#ss3.23">feature_pointtopoint: Can isdn4linux work in point-to-point mode as well as in multi-device mode? </A>
+<LI><A NAME="toc3.24">3.24</A> <A HREF="i4lfaq-3.html#ss3.24">feature_ntmode: Does isdn4linux support running a card in NT mode? </A>
+<LI><A NAME="toc3.25">3.25</A> <A HREF="i4lfaq-3.html#ss3.25">feature_crossedcable: Can isdn4linux directly connect two ISDN user devices (two ISDN cards) via a crossed cable? </A>
+<LI><A NAME="toc3.26">3.26</A> <A HREF="i4lfaq-3.html#ss3.26">feature_lcr: Can isdn4linux do least cost routing (LCR)? </A>
+<LI><A NAME="toc3.27">3.27</A> <A HREF="i4lfaq-3.html#ss3.27">feature_internetdialin: Can isdn4linux be setup such that it dials into the Internet, whenever I call it via telephone? </A>
+<LI><A NAME="toc3.28">3.28</A> <A HREF="i4lfaq-3.html#ss3.28">feature_future: Which features are planned for the future? </A>
+</UL>
+<P>
+<H2><A NAME="toc4">4.</A> <A HREF="i4lfaq-4.html">docu: Documentation, Howto's, Tips &amp; Tricks, Mailing List/Newsgroup </A></H2>
+
+<UL>
+<LI><A NAME="toc4.1">4.1</A> <A HREF="i4lfaq-4.html#ss4.1">docu_first: What documents should I read first? </A>
+<LI><A NAME="toc4.2">4.2</A> <A HREF="i4lfaq-4.html#ss4.2">docu_website: Where is the official website for isdn4linux? </A>
+<LI><A NAME="toc4.3">4.3</A> <A HREF="i4lfaq-4.html#ss4.3">docu_abc: Where do I find documentation on the abc extensions? </A>
+<LI><A NAME="toc4.4">4.4</A> <A HREF="i4lfaq-4.html#ss4.4">docu_newsgroup: Where is the newsgroup for isdn4linux? </A>
+<LI><A NAME="toc4.5">4.5</A> <A HREF="i4lfaq-4.html#ss4.5">docu_mailinglist: Where is the mailing list for isdn4linux? </A>
+<LI><A NAME="toc4.6">4.6</A> <A HREF="i4lfaq-4.html#ss4.6">docu_maillistdigest: How can I get a digest of the mailing list for isdn4linux (only one message per day)? </A>
+<LI><A NAME="toc4.7">4.7</A> <A HREF="i4lfaq-4.html#ss4.7">docu_mailarchive: Is there an archive of the isdn4linux mailing list? </A>
+<LI><A NAME="toc4.8">4.8</A> <A HREF="i4lfaq-4.html#ss4.8">docu_bugtracker: Is there a bug tracker available for isdn4linux? </A>
+</UL>
+<P>
+<H2><A NAME="toc5">5.</A> <A HREF="i4lfaq-5.html">hardware: Supported hardware, its specialities, and hardware-related problems </A></H2>
+
+<UL>
+<LI><A NAME="toc5.1">5.1</A> <A HREF="i4lfaq-5.html#ss5.1">hardware_support: Which hardware is supported? </A>
+<LI><A NAME="toc5.2">5.2</A> <A HREF="i4lfaq-5.html#ss5.2">hardware_activepassive: What is the difference between an active and a passive ISDN card? </A>
+<LI><A NAME="toc5.3">5.3</A> <A HREF="i4lfaq-5.html#ss5.3">hardware_recommend: Which card is recommended by the developers? </A>
+<LI><A NAME="toc5.4">5.4</A> <A HREF="i4lfaq-5.html#ss5.4">hardware_external: Does isdn4linux support external terminal adapters? </A>
+<LI><A NAME="toc5.5">5.5</A> <A HREF="i4lfaq-5.html#ss5.5">hardware_cabeling: How should I wire my ISDN cables? </A>
+<LI><A NAME="toc5.6">5.6</A> <A HREF="i4lfaq-5.html#ss5.6">hardware_irq: Why should I avoid IRQ 12 and 15 for my ISDN card? </A>
+<LI><A NAME="toc5.7">5.7</A> <A HREF="i4lfaq-5.html#ss5.7">hardware_irqsharing: Can the isdn4linux driver work with shared interrupts? </A>
+<LI><A NAME="toc5.8">5.8</A> <A HREF="i4lfaq-5.html#ss5.8">hardware_s2m: Which S2M cards are supported? </A>
+<LI><A NAME="toc5.9">5.9</A> <A HREF="i4lfaq-5.html#ss5.9">hardware_pcmcia: Which PCMCIA cards are supported? </A>
+<LI><A NAME="toc5.10">5.10</A> <A HREF="i4lfaq-5.html#ss5.10">hardware_smp: Can I run isdn4linux on my multi-CPU board? </A>
+<LI><A NAME="toc5.11">5.11</A> <A HREF="i4lfaq-5.html#ss5.11">hardware_64bit: Can I run isdn4linux on 64bit hardware with Linux? </A>
+<LI><A NAME="toc5.12">5.12</A> <A HREF="i4lfaq-5.html#ss5.12">hardware_alpha: Can I run isdn4linux on a DEC Alpha with Linux? </A>
+<LI><A NAME="toc5.13">5.13</A> <A HREF="i4lfaq-5.html#ss5.13">hardware_sun: Can I run isdn4linux on a Sun workstation? </A>
+<LI><A NAME="toc5.14">5.14</A> <A HREF="i4lfaq-5.html#ss5.14">hardware_ppc: Can I run isdn4linux on a PowerPC with Linux? </A>
+<LI><A NAME="toc5.15">5.15</A> <A HREF="i4lfaq-5.html#ss5.15">hardware_maxcards: How many ISDN cards can I put into my computer? </A>
+<LI><A NAME="toc5.16">5.16</A> <A HREF="i4lfaq-5.html#ss5.16">hardware_hfc: What is special about card with an HFC chip? </A>
+<LI><A NAME="toc5.17">5.17</A> <A HREF="i4lfaq-5.html#ss5.17">hardware_elsa: What should I know about ISDN cards from ELSA? </A>
+<LI><A NAME="toc5.18">5.18</A> <A HREF="i4lfaq-5.html#ss5.18">hardware_sedlbauer: What is special about the Sedlbauer card? </A>
+<LI><A NAME="toc5.19">5.19</A> <A HREF="i4lfaq-5.html#ss5.19">hardware_teles: What should I know about before buying an ISDN card from Teles? </A>
+<LI><A NAME="toc5.20">5.20</A> <A HREF="i4lfaq-5.html#ss5.20">hardware_fritz: What should I know when configuring a Fritz! card (also known as: AVM A1, Teledat 150, BT Speedway)? </A>
+<LI><A NAME="toc5.21">5.21</A> <A HREF="i4lfaq-5.html#ss5.21">hardware_avmb1: What is special about the AVM B1 card? </A>
+<LI><A NAME="toc5.22">5.22</A> <A HREF="i4lfaq-5.html#ss5.22">hardware_hypercope: What is special about the Hypercope cards? </A>
+<LI><A NAME="toc5.23">5.23</A> <A HREF="i4lfaq-5.html#ss5.23">hardware_icn: What is special about the ICN card? </A>
+<LI><A NAME="toc5.24">5.24</A> <A HREF="i4lfaq-5.html#ss5.24">hardware_isurf: What should I know about the Siemens I-Surf cards? </A>
+<LI><A NAME="toc5.25">5.25</A> <A HREF="i4lfaq-5.html#ss5.25">hardware_diva: What should I know about the Eicon Diva cards? </A>
+<LI><A NAME="toc5.26">5.26</A> <A HREF="i4lfaq-5.html#ss5.26">hardware_crossedcable1: If i4l uses one B-channel then the other one will be blocked (incoming as well as outgoing)... </A>
+<LI><A NAME="toc5.27">5.27</A> <A HREF="i4lfaq-5.html#ss5.27">hardware_crossedcable2: How can I test whether a a/b cable pair has been crossed? </A>
+<LI><A NAME="toc5.28">5.28</A> <A HREF="i4lfaq-5.html#ss5.28">hardware_pbx: i4l is connected to the internal bus of a PBX. Any problem? </A>
+<LI><A NAME="toc5.29">5.29</A> <A HREF="i4lfaq-5.html#ss5.29">hardware_telestrouble: The PNP tools done work with my Teles 16.3 PNP card! </A>
+<LI><A NAME="toc5.30">5.30</A> <A HREF="i4lfaq-5.html#ss5.30">hardware_elsacabletrouble: On my ELSA card, the LED for the loss of the TEI often blinks. My connections are also often disrupted... </A>
+<LI><A NAME="toc5.31">5.31</A> <A HREF="i4lfaq-5.html#ss5.31">hardware_elsairq: My ELSA Quickstep 1000 ISA card produces very many interrupts with the HiSax driver. Is this normal or a problem with the HiSax driver? </A>
+</UL>
+<P>
+<H2><A NAME="toc6">6.</A> <A HREF="i4lfaq-6.html">config: General information about Configuration </A></H2>
+
+<UL>
+<LI><A NAME="toc6.1">6.1</A> <A HREF="i4lfaq-6.html#ss6.1">config_msn: How should I set up isdn4linux with my MSNs? </A>
+<LI><A NAME="toc6.2">6.2</A> <A HREF="i4lfaq-6.html#ss6.2">config_hardware: How should I configure my hardware? Is there something special I should know about my ISDN card? </A>
+<LI><A NAME="toc6.3">6.3</A> <A HREF="i4lfaq-6.html#ss6.3">config_dialout: How should I configure dialout? </A>
+<LI><A NAME="toc6.4">6.4</A> <A HREF="i4lfaq-6.html#ss6.4">config_dialin: How should I configure dialin? </A>
+<LI><A NAME="toc6.5">6.5</A> <A HREF="i4lfaq-6.html#ss6.5">config_suse: I can not select my card in yast? </A>
+<LI><A NAME="toc6.6">6.6</A> <A HREF="i4lfaq-6.html#ss6.6">config_pnp: How do I configure a PNP (Plug and Play) card? </A>
+<LI><A NAME="toc6.7">6.7</A> <A HREF="i4lfaq-6.html#ss6.7">config_startstop: How can I start and stop the ISDN configuration? </A>
+<LI><A NAME="toc6.8">6.8</A> <A HREF="i4lfaq-6.html#ss6.8">config_kerneld: Why shouldn't I use <EM>kerneld</EM> to load the ISDN modules in the kernel as needed? </A>
+<LI><A NAME="toc6.9">6.9</A> <A HREF="i4lfaq-6.html#ss6.9">config_runlevel: How can I boot Linux sometimes with ISDN, and sometimes without? </A>
+<LI><A NAME="toc6.10">6.10</A> <A HREF="i4lfaq-6.html#ss6.10">config_manycards: How do I configure more than 1 ISDN card? </A>
+<LI><A NAME="toc6.11">6.11</A> <A HREF="i4lfaq-6.html#ss6.11">config_manychannels: How can I increase i4l's maximum number of channels? </A>
+<LI><A NAME="toc6.12">6.12</A> <A HREF="i4lfaq-6.html#ss6.12">config_gsmv110: How do I connect my PalmPilot via GSM over V.110 to my computer? </A>
+<LI><A NAME="toc6.13">6.13</A> <A HREF="i4lfaq-6.html#ss6.13">config_h323: How do I configure isdn4linux to act as a voice-over-ip gateway for H.323 clients? </A>
+<LI><A NAME="toc6.14">6.14</A> <A HREF="i4lfaq-6.html#ss6.14">config_point2point: How do I configure a point-to-point connection? </A>
+<LI><A NAME="toc6.15">6.15</A> <A HREF="i4lfaq-6.html#ss6.15">config_links: What helpful links are there about and around isdn4linux? </A>
+<LI><A NAME="toc6.16">6.16</A> <A HREF="i4lfaq-6.html#ss6.16">config_misdn: How should I configure the new mISDN driver, and what is so special about it? </A>
+<LI><A NAME="toc6.17">6.17</A> <A HREF="i4lfaq-6.html#ss6.17">config_kernel26: What has changed with the kernels 2.6.x? </A>
+<LI><A NAME="toc6.18">6.18</A> <A HREF="i4lfaq-6.html#ss6.18">config_asterisk: How can I install asterisk with mISDN? </A>
+</UL>
+<P>
+<H2><A NAME="toc7">7.</A> <A HREF="i4lfaq-7.html">trouble: Troubleshooting </A></H2>
+
+<UL>
+<LI><A NAME="toc7.1">7.1</A> <A HREF="i4lfaq-7.html#ss7.1">trouble_22memory: I can't start ISDN on my machine with kernel 2.2.x. I get the error messages "init_module: Device or resource busy" and "isdn: Could not allocate device-struct.". </A>
+<LI><A NAME="toc7.2">7.2</A> <A HREF="i4lfaq-7.html#ss7.2">trouble_littlememory: How can I reduce isdn4linux's memory requirements? </A>
+<LI><A NAME="toc7.3">7.3</A> <A HREF="i4lfaq-7.html#ss7.3">trouble_debug: How do I get maximum debug output? </A>
+<LI><A NAME="toc7.4">7.4</A> <A HREF="i4lfaq-7.html#ss7.4">trouble_strategy: My isdn4linux doesn't work! How do I best go about finding the problem? </A>
+<LI><A NAME="toc7.5">7.5</A> <A HREF="i4lfaq-7.html#ss7.5">trouble_boot: How can I tell whether my ISDN card has been correctly recognized? </A>
+<LI><A NAME="toc7.6">7.6</A> <A HREF="i4lfaq-7.html#ss7.6">trouble_isdncause: I get an error message like "cause: E1234" (or similar)? </A>
+<LI><A NAME="toc7.7">7.7</A> <A HREF="i4lfaq-7.html#ss7.7">trouble_e001b: I get an error message with "cause: E001B"? </A>
+<LI><A NAME="toc7.8">7.8</A> <A HREF="i4lfaq-7.html#ss7.8">trouble_noprotocol: upon startup of HiSax I get the message &quot;Warning - no protocol specified&quot;? </A>
+<LI><A NAME="toc7.9">7.9</A> <A HREF="i4lfaq-7.html#ss7.9">trouble_euronotsupported: upon startup of HiSax I get the error "kernel hisax: protocol euro not supported"? </A>
+<LI><A NAME="toc7.10">7.10</A> <A HREF="i4lfaq-7.html#ss7.10">trouble_unknownprimitive: upon connection attempt I get the error "lldata_handler unknown primitive"? </A>
+<LI><A NAME="toc7.11">7.11</A> <A HREF="i4lfaq-7.html#ss7.11">trouble_notelrings: Neither my telephone nor my fax machine ring when I call them with isdn4linux? </A>
+<LI><A NAME="toc7.12">7.12</A> <A HREF="i4lfaq-7.html#ss7.12">trouble_guestaccess: Are there sites that offer guest access where I can test my isdn4linux setup? </A>
+<LI><A NAME="toc7.13">7.13</A> <A HREF="i4lfaq-7.html#ss7.13">trouble_unload: I can't unload my ISDN modules (&quot;isdn: Device or resource busy&quot;), even so I closed all ISDN applications? </A>
+<LI><A NAME="toc7.14">7.14</A> <A HREF="i4lfaq-7.html#ss7.14">trouble_tcpdump: Why does my tcpdump not work for ip packets going over ISDN (&quot;truncated ip&quot; or so)? How can I get a tcpdump patched for ISDN? </A>
+<LI><A NAME="toc7.15">7.15</A> <A HREF="i4lfaq-7.html#ss7.15">trouble_locatecrash: My isdn driver crashes my machine! Since I've configured it as a module, the addresses change each time it's loaded. How can I find out where the driver is crashing? </A>
+<LI><A NAME="toc7.16">7.16</A> <A HREF="i4lfaq-7.html#ss7.16">trouble_lotsdebug: My hard disk becomes very active when isdn4linux run. How can I turn this off? </A>
+<LI><A NAME="toc7.17">7.17</A> <A HREF="i4lfaq-7.html#ss7.17">trouble_oldhardware: Maybe my hardware is too slow? </A>
+<LI><A NAME="toc7.18">7.18</A> <A HREF="i4lfaq-7.html#ss7.18">trouble_outofbuffers: I get messages like &quot;HSCX RME out of buffers&quot;, &quot;HSCX RFP out of buffers&quot;, &quot;HSCX B EXIR 10&quot; in the syslog? </A>
+<LI><A NAME="toc7.19">7.19</A> <A HREF="i4lfaq-7.html#ss7.19">trouble_noresetinit: After a soft reset, my card does not initialize correctly. </A>
+<LI><A NAME="toc7.20">7.20</A> <A HREF="i4lfaq-7.html#ss7.20">trouble_noisdnctrl: When attempting to use isdnctrl, I get the error &quot;/dev/isdnctrl: No such file or directory&quot;? </A>
+<LI><A NAME="toc7.21">7.21</A> <A HREF="i4lfaq-7.html#ss7.21">trouble_noisdnctrl2: When attempting to use isdnctrl, I get the error &quot;/dev/isdnctrl: No such device&quot;? </A>
+<LI><A NAME="toc7.22">7.22</A> <A HREF="i4lfaq-7.html#ss7.22">trouble_xosview: xosview doesn't show any network activity since installing i4l. </A>
+<LI><A NAME="toc7.23">7.23</A> <A HREF="i4lfaq-7.html#ss7.23">trouble_unknownhost: When I for example from a W95 box call up a page with Netscape, I only get the answer &quot;unknown host&quot;. </A>
+<LI><A NAME="toc7.24">7.24</A> <A HREF="i4lfaq-7.html#ss7.24">trouble_noroute: Addresses are now found, but now I get &quot;no route to host&quot;. </A>
+<LI><A NAME="toc7.25">7.25</A> <A HREF="i4lfaq-7.html#ss7.25">trouble_nolocalnet: After booting, my local network can no longer be reached. I use the network interface ippp0 with ifconfig 0.0.0.0; the default route points to ippp0. </A>
+<LI><A NAME="toc7.26">7.26</A> <A HREF="i4lfaq-7.html#ss7.26">trouble_unauthorizedcodechange: When HiSax starts, I get the error messages 'Approval certification failed, unauthorized source code changes'? </A>
+<LI><A NAME="toc7.27">7.27</A> <A HREF="i4lfaq-7.html#ss7.27">trouble_crcerror: How can I see the number of packets for HiSax with invalid CRC? </A>
+<LI><A NAME="toc7.28">7.28</A> <A HREF="i4lfaq-7.html#ss7.28">trouble_amproglibtool: When compiling isdn4k-utils I get the error 'AM_PROG_LIBTOOL not found'? </A>
+<LI><A NAME="toc7.29">7.29</A> <A HREF="i4lfaq-7.html#ss7.29">trouble_hisaxparams: HiSax does not work - how can I set the HiSax parameters for newer Linux kernels? </A>
+</UL>
+<P>
+<H2><A NAME="toc8">8.</A> <A HREF="i4lfaq-8.html">msn: Configuration/MSNs </A></H2>
+
+<UL>
+<LI><A NAME="toc8.1">8.1</A> <A HREF="i4lfaq-8.html#ss8.1">msn_my1: What is my MSN? What if I don't have any? </A>
+<LI><A NAME="toc8.2">8.2</A> <A HREF="i4lfaq-8.html#ss8.2">msn_my2: How can I find out how my telephone number is transmitted to the calling party? </A>
+<LI><A NAME="toc8.3">8.3</A> <A HREF="i4lfaq-8.html#ss8.3">msn_config: How do I configure my MSN? </A>
+<LI><A NAME="toc8.4">8.4</A> <A HREF="i4lfaq-8.html#ss8.4">msn_max: How many MSNs as a maximum can I use for an isdn card? </A>
+<LI><A NAME="toc8.5">8.5</A> <A HREF="i4lfaq-8.html#ss8.5">msn_mindialin: How can I minimize usage of MSNs for digital data dialin? </A>
+<LI><A NAME="toc8.6">8.6</A> <A HREF="i4lfaq-8.html#ss8.6">msn_onlyone: How can I use one MSN for everything? </A>
+<LI><A NAME="toc8.7">8.7</A> <A HREF="i4lfaq-8.html#ss8.7">msn_buendel: Can I have several NTBAs, all with the same MSN? </A>
+</UL>
+<P>
+<H2><A NAME="toc9">9.</A> <A HREF="i4lfaq-9.html">lan: ISDN4LINUX in a LAN </A></H2>
+
+<UL>
+<LI><A NAME="toc9.1">9.1</A> <A HREF="i4lfaq-9.html#ss9.1">lan_config: How can I set up Linux so that other computers in my LAN can access the internet via my Linux computer? </A>
+<LI><A NAME="toc9.2">9.2</A> <A HREF="i4lfaq-9.html#ss9.2">lan_modemserver: How can forward ISDN data from a local computer in my LAN to the ISDN card(s) in my Linux PC (like a modem server)? </A>
+<LI><A NAME="toc9.3">9.3</A> <A HREF="i4lfaq-9.html#ss9.3">lan_remotedialing: How can I allow the users in my LAN to trigger a dial out via   the ISDN card(s) in my Linux PC? </A>
+</UL>
+<P>
+<H2><A NAME="toc10">10.</A> <A HREF="i4lfaq-10.html">dialout: Configuration of Dial-Out </A></H2>
+
+<UL>
+<LI><A NAME="toc10.1">10.1</A> <A HREF="i4lfaq-10.html#ss10.1">dialout_config: How do I configure dialout properly? </A>
+<LI><A NAME="toc10.2">10.2</A> <A HREF="i4lfaq-10.html#ss10.2">dialout_dialmode: When an IP packet should go over the link (which usually triggers a dialout), all I see in the log is: &quot;dial rejected: interface not in dialmode <CODE>auto</CODE>&quot;? </A>
+<LI><A NAME="toc10.3">10.3</A> <A HREF="i4lfaq-10.html#ss10.3">dialout_advanced: What special dialout features are available? </A>
+<LI><A NAME="toc10.4">10.4</A> <A HREF="i4lfaq-10.html#ss10.4">dialout_permission: How can I allow a normal user to initiate dialouts? </A>
+<LI><A NAME="toc10.5">10.5</A> <A HREF="i4lfaq-10.html#ss10.5">dialout_manycards: How do I configure dialout with more than 1 ISDN card? </A>
+<LI><A NAME="toc10.6">10.6</A> <A HREF="i4lfaq-10.html#ss10.6">dialout_fixedchannel: How can I force HiSax to always dial out on a specific B channel? </A>
+<LI><A NAME="toc10.7">10.7</A> <A HREF="i4lfaq-10.html#ss10.7">dialout_dynip: On dynamic ip assignment, how do I find out which ip address is being used for dialout? </A>
+<LI><A NAME="toc10.8">10.8</A> <A HREF="i4lfaq-10.html#ss10.8">dialout_bind: A dns query causes bind to dial out. Why does it take about a minute before it is answered? How do I work around it? </A>
+</UL>
+<P>
+<H2><A NAME="toc11">11.</A> <A HREF="i4lfaq-11.html">pap: Authenticate properly (especially with PAP) </A></H2>
+
+<UL>
+<LI><A NAME="toc11.1">11.1</A> <A HREF="i4lfaq-11.html#ss11.1">pap_optionauth: When dialing out, I get the message &quot;pppd: peer authentication required but no authentication files accessible.&quot; What does this mean? </A>
+<LI><A NAME="toc11.2">11.2</A> <A HREF="i4lfaq-11.html#ss11.2">pap_requestauth: I cannot establish a connection -  it's rejected by the other side. In the log file I find a message that's something like: &quot;sent (0) (LCP ConfReq id=0x1 mru 1500 auth pap magic 0xcd12e9c4&quot; </A>
+<LI><A NAME="toc11.3">11.3</A> <A HREF="i4lfaq-11.html#ss11.3">pap_rejectauth: I cannot establish a connection -  it's rejected by the other side. In the log file I find a message that's something like: &quot;sent (0) (LCP ConfRej id=0x1 auth pap&quot; </A>
+<LI><A NAME="toc11.4">11.4</A> <A HREF="i4lfaq-11.html#ss11.4">pap_checkpwd: How can I check which password is actually sent to the remote side? </A>
+<LI><A NAME="toc11.5">11.5</A> <A HREF="i4lfaq-11.html#ss11.5">pap_passwd: I have problems with PAP or CHAP authentication. It does not work although I'm sure I entered passwords etc. correctly. </A>
+</UL>
+<P>
+<H2><A NAME="toc12">12.</A> <A HREF="i4lfaq-12.html">syncppp: Sync PPP </A></H2>
+
+<UL>
+<LI><A NAME="toc12.1">12.1</A> <A HREF="i4lfaq-12.html#ss12.1">syncppp_whichppp: pppd, ipppd, syncPPP, asyncPPP .. what is they? Which should I use? </A>
+<LI><A NAME="toc12.2">12.2</A> <A HREF="i4lfaq-12.html#ss12.2">syncppp_compile: How do I compile isdn4linux with syncPPP? </A>
+<LI><A NAME="toc12.3">12.3</A> <A HREF="i4lfaq-12.html#ss12.3">syncppp_netinterface: How should I name my network interface? </A>
+<LI><A NAME="toc12.4">12.4</A> <A HREF="i4lfaq-12.html#ss12.4">syncppp_config: How do I configure isdn4linux with syncPPP? </A>
+<LI><A NAME="toc12.5">12.5</A> <A HREF="i4lfaq-12.html#ss12.5">syncppp_busy: How can I tell if a connection is unsuccessful (busy)? </A>
+<LI><A NAME="toc12.6">12.6</A> <A HREF="i4lfaq-12.html#ss12.6">syncppp_logindelay: How can I reduce login delay? </A>
+<LI><A NAME="toc12.7">12.7</A> <A HREF="i4lfaq-12.html#ss12.7">syncppp_2configs: I want to talk to remote machines which needs different configurations. The only way I found to do this is to kill the ipppd and start a new one with another config to connect to the second machine. </A>
+<LI><A NAME="toc12.8">12.8</A> <A HREF="i4lfaq-12.html#ss12.8">syncppp_pppbind: How does the (little-documented) &quot;pppbind&quot; command in isdnctrl work? </A>
+<LI><A NAME="toc12.9">12.9</A> <A HREF="i4lfaq-12.html#ss12.9">syncppp_dynip: I want to use dynamic IP address assignment. How must I configure the network device? </A>
+<LI><A NAME="toc12.10">12.10</A> <A HREF="i4lfaq-12.html#ss12.10">syncppp_msgetdns: How do I configure ipppd to obtain or provide the nameserver address at dial in? </A>
+<LI><A NAME="toc12.11">12.11</A> <A HREF="i4lfaq-12.html#ss12.11">syncppp_ipx: How can I do IPX over ipppd? </A>
+<LI><A NAME="toc12.12">12.12</A> <A HREF="i4lfaq-12.html#ss12.12">syncppp_faster: How can I increase my PPP data transfer rates? </A>
+<LI><A NAME="toc12.13">12.13</A> <A HREF="i4lfaq-12.html#ss12.13">syncppp_compression: Which compressions can I use with ipppd? </A>
+<LI><A NAME="toc12.14">12.14</A> <A HREF="i4lfaq-12.html#ss12.14">syncppp_strategy: I can't get a connect. How can I find out where the problem is? </A>
+<LI><A NAME="toc12.15">12.15</A> <A HREF="i4lfaq-12.html#ss12.15">syncppp_log: How can I get a log for ipppd? </A>
+<LI><A NAME="toc12.16">12.16</A> <A HREF="i4lfaq-12.html#ss12.16">syncppp_nopppsupport: Starting ipppd I get the error message &quot;this systems lacks ppp support&quot; or &quot;isdn driver is out of date. maybe ippp0 has no syncppp0 encapsulation&quot;. </A>
+<LI><A NAME="toc12.17">12.17</A> <A HREF="i4lfaq-12.html#ss12.17">syncppp_nousabledevice: When I try to start ipppd it says &quot;Can't find usable ippp device&quot; </A>
+<LI><A NAME="toc12.18">12.18</A> <A HREF="i4lfaq-12.html#ss12.18">syncppp_starterror: When I start ipppd, I only get error messages from the i4l driver. </A>
+<LI><A NAME="toc12.19">12.19</A> <A HREF="i4lfaq-12.html#ss12.19">syncppp_framesdelayed: I get the message <CODE>IP frames delayed</CODE> - but no connection. </A>
+<LI><A NAME="toc12.20">12.20</A> <A HREF="i4lfaq-12.html#ss12.20">syncppp_noroute: I cannot dial out with <CODE>isdnctrl dial ippp0</CODE>. It seems as if the route to ipppd is missing although I <B>did</B> set it (<CODE>network unreachable</CODE>). With my old kernel 2.0 everything works fine! </A>
+<LI><A NAME="toc12.21">12.21</A> <A HREF="i4lfaq-12.html#ss12.21">syncppp_nodefaultroute: After ipppd dials out my default route is gone. </A>
+<LI><A NAME="toc12.22">12.22</A> <A HREF="i4lfaq-12.html#ss12.22">syncppp_packettoolarge: I often get the error message <CODE>hscx_empty_fifo: incoming packet too large</CODE> </A>
+<LI><A NAME="toc12.23">12.23</A> <A HREF="i4lfaq-12.html#ss12.23">syncppp_slow: The connection with ipppd seems to work, but eventually it crashes or is very slow. </A>
+<LI><A NAME="toc12.24">12.24</A> <A HREF="i4lfaq-12.html#ss12.24">syncppp_loadproblem: I only have problems with ipppd when the connection is being heavily burdened. Then everything stops. What could be causing this? </A>
+<LI><A NAME="toc12.25">12.25</A> <A HREF="i4lfaq-12.html#ss12.25">syncppp_mtu: My ipppd works, but I keep getting the message pppd(104): ioctl(SIOCSIFMTU): Invalid argument&quot;? </A>
+<LI><A NAME="toc12.26">12.26</A> <A HREF="i4lfaq-12.html#ss12.26">syncppp_1stpacket: The first IP packet gets lost on automatic dialout with dynamic IP address allocation. </A>
+<LI><A NAME="toc12.27">12.27</A> <A HREF="i4lfaq-12.html#ss12.27">syncppp_droppacket: What does the message &quot;No phone number, packet dropped&quot; mean? </A>
+<LI><A NAME="toc12.28">12.28</A> <A HREF="i4lfaq-12.html#ss12.28">syncppp_leadingzero: Why does my ipppd dial one too many zeros (<CODE>&quot;ippp0: dialing 0 089XXXXXX...&quot;</CODE>)? I don't have any extensions! </A>
+<LI><A NAME="toc12.29">12.29</A> <A HREF="i4lfaq-12.html#ss12.29">syncppp_ethfake: My ISDN device is shown with HWaddr and IRQ=0 and base address = 0 when I list it with ifconfig </A>
+<LI><A NAME="toc12.30">12.30</A> <A HREF="i4lfaq-12.html#ss12.30">syncppp_lzsproblem: I get an error message like <CODE>kernel check for lzs failed</CODE>? </A>
+</UL>
+<P>
+<H2><A NAME="toc13">13.</A> <A HREF="i4lfaq-13.html">asyncppp: Configuration Async PPP </A></H2>
+
+<UL>
+<LI><A NAME="toc13.1">13.1</A> <A HREF="i4lfaq-13.html#ss13.1">asyncppp_whichppp: pppd, ipppd, async PPP, sync PPP - what are they? Which should I use? </A>
+<LI><A NAME="toc13.2">13.2</A> <A HREF="i4lfaq-13.html#ss13.2">asyncppp_config: How do I configure async PPP? </A>
+<LI><A NAME="toc13.3">13.3</A> <A HREF="i4lfaq-13.html#ss13.3">asyncppp_logindelay: How can I reduce login delay? </A>
+<LI><A NAME="toc13.4">13.4</A> <A HREF="i4lfaq-13.html#ss13.4">asyncppp_fast: How can I increase my transfer rates with PPP? </A>
+<LI><A NAME="toc13.5">13.5</A> <A HREF="i4lfaq-13.html#ss13.5">asyncppp_log: How can I get a log for pppd? </A>
+<LI><A NAME="toc13.6">13.6</A> <A HREF="i4lfaq-13.html#ss13.6">asyncppp_suddendeath: Establishing the connection works fine, but pppd crashes just after that (i.e. the first bytes gets through, but then everything stops) </A>
+</UL>
+<P>
+<H2><A NAME="toc14">14.</A> <A HREF="i4lfaq-14.html">rawip: Raw IP </A></H2>
+
+<UL>
+<LI><A NAME="toc14.1">14.1</A> <A HREF="i4lfaq-14.html#ss14.1">rawip_whatis: What is Raw IP, when should I use it? </A>
+<LI><A NAME="toc14.2">14.2</A> <A HREF="i4lfaq-14.html#ss14.2">rawip_capi: How can I use Raw IP with the new CAPI 2.0 interface (mISDN)? </A>
+</UL>
+<P>
+<H2><A NAME="toc15">15.</A> <A HREF="i4lfaq-15.html">ttyI: Configuration of the ttyI* devices (`Modem emulation') </A></H2>
+
+<UL>
+<LI><A NAME="toc15.1">15.1</A> <A HREF="i4lfaq-15.html#ss15.1">ttyI_nomodem: Don't the ttyI* devices emulate an analog modem? </A>
+<LI><A NAME="toc15.2">15.2</A> <A HREF="i4lfaq-15.html#ss15.2">ttyI_dev: Which devices should I use for calls out or calls in? </A>
+<LI><A NAME="toc15.3">15.3</A> <A HREF="i4lfaq-15.html#ss15.3">ttyI_hdlc: How to I switch the modem emulation from X.75 to HDLC? </A>
+<LI><A NAME="toc15.4">15.4</A> <A HREF="i4lfaq-15.html#ss15.4">ttyI_uucp: How can I poll with Taylor-UUCP using isdn4linux? </A>
+<LI><A NAME="toc15.5">15.5</A> <A HREF="i4lfaq-15.html#ss15.5">ttyI_speed: What speed should I set for the ttyI* devices? </A>
+<LI><A NAME="toc15.6">15.6</A> <A HREF="i4lfaq-15.html#ss15.6">ttyI_max: How many devices are the maximum supported number? </A>
+<LI><A NAME="toc15.7">15.7</A> <A HREF="i4lfaq-15.html#ss15.7">ttyI_nocarrier: When I dial with &quot;ATD.....&quot; I always get a &quot;NO CARRIER&quot;. </A>
+<LI><A NAME="toc15.8">15.8</A> <A HREF="i4lfaq-15.html#ss15.8">ttyI_noincall: My ttyI* device/pppd does not recognize an incoming call. </A>
+<LI><A NAME="toc15.9">15.9</A> <A HREF="i4lfaq-15.html#ss15.9">ttyI_callphone: Why can't I dial my telephone or fax from the ttyI* devices? </A>
+<LI><A NAME="toc15.10">15.10</A> <A HREF="i4lfaq-15.html#ss15.10">ttyI_noconnect: I can't get a connection to my ISDN mailbox/BBS. </A>
+<LI><A NAME="toc15.11">15.11</A> <A HREF="i4lfaq-15.html#ss15.11">ttyI_forcehangup: My modem emulation hangs. How can I force my card to hang up? </A>
+<LI><A NAME="toc15.12">15.12</A> <A HREF="i4lfaq-15.html#ss15.12">ttyI_channelclosed: During a tty connection, I get a message from the kernel: &quot;teles_writebuf: channel not open&quot;. Then no more input is accepted for this connection. </A>
+<LI><A NAME="toc15.13">15.13</A> <A HREF="i4lfaq-15.html#ss15.13">ttyI_x75uucp: When I use UUCP with X.75, I always get transfer errors! </A>
+</UL>
+<P>
+<H2><A NAME="toc16">16.</A> <A HREF="i4lfaq-16.html">dod: Unwanted dialout on demand </A></H2>
+
+<UL>
+<LI><A NAME="toc16.1">16.1</A> <A HREF="i4lfaq-16.html#ss16.1">dod_how: How does dialout on demand work? </A>
+<LI><A NAME="toc16.2">16.2</A> <A HREF="i4lfaq-16.html#ss16.2">dod_disaster: What is a charge unit disaster? </A>
+<LI><A NAME="toc16.3">16.3</A> <A HREF="i4lfaq-16.html#ss16.3">dod_causes: What can cause a charge unit disaster? </A>
+<LI><A NAME="toc16.4">16.4</A> <A HREF="i4lfaq-16.html#ss16.4">dod_off: How can I safely turn off dialout on demand? </A>
+<LI><A NAME="toc16.5">16.5</A> <A HREF="i4lfaq-16.html#ss16.5">dod_strategy: How can I track down unexplainable dialouts? </A>
+<LI><A NAME="toc16.6">16.6</A> <A HREF="i4lfaq-16.html#ss16.6">dod_winclient: Can it be that the Win95 machine on my LAN is causing automatic dialouts? </A>
+<LI><A NAME="toc16.7">16.7</A> <A HREF="i4lfaq-16.html#ss16.7">dod_localdns: I have set up a local DNS name server. Why does it cause unwanted dialouts? How can I find the cause? </A>
+<LI><A NAME="toc16.8">16.8</A> <A HREF="i4lfaq-16.html#ss16.8">dod_forwarddns: I have set up my name server in 'forward' mode, with one forward address. Now it dials out about every minute? </A>
+<LI><A NAME="toc16.9">16.9</A> <A HREF="i4lfaq-16.html#ss16.9">dod_sendmail: How can I get sendmail to not initiate any connections without local mail being left undelivered? </A>
+<LI><A NAME="toc16.10">16.10</A> <A HREF="i4lfaq-16.html#ss16.10">dod_samba: The samba package always triggers dialouts for me. How can I prevent this? </A>
+<LI><A NAME="toc16.11">16.11</A> <A HREF="i4lfaq-16.html#ss16.11">dod_netscape: How can I get Netscape to quit initiating dialouts when starting? </A>
+<LI><A NAME="toc16.12">16.12</A> <A HREF="i4lfaq-16.html#ss16.12">dod_rstprovoking: Why should I use the RST-provoking mode/patch? </A>
+<LI><A NAME="toc16.13">16.13</A> <A HREF="i4lfaq-16.html#ss16.13">dod_closeipconnect: After closing the line, I discover with <CODE>netstat -nt</CODE> that IP connections are still open. How can I close these manually? </A>
+<LI><A NAME="toc16.14">16.14</A> <A HREF="i4lfaq-16.html#ss16.14">dod_onlineoncrash: Is it possible that even with a crashed computer a ISDN connection remains open (and the charge units accumulate)? </A>
+</UL>
+<P>
+<H2><A NAME="toc17">17.</A> <A HREF="i4lfaq-17.html">chargeint: Chargeint </A></H2>
+
+<UL>
+<LI><A NAME="toc17.1">17.1</A> <A HREF="i4lfaq-17.html#ss17.1">chargeint_whatis: What does Chargeint? </A>
+<LI><A NAME="toc17.2">17.2</A> <A HREF="i4lfaq-17.html#ss17.2">chargeint_config: How should I configure Chargeint? </A>
+<LI><A NAME="toc17.3">17.3</A> <A HREF="i4lfaq-17.html#ss17.3">chargeint_whennot: When does it <B>not</B> make sense to use the chargeint? </A>
+<LI><A NAME="toc17.4">17.4</A> <A HREF="i4lfaq-17.html#ss17.4">chargeint_correcttime: How can I be sure that the chargeint patch is using the correct time? </A>
+<LI><A NAME="toc17.5">17.5</A> <A HREF="i4lfaq-17.html#ss17.5">chargeint_nohangup: The connection doesn't end with timeout. </A>
+</UL>
+<P>
+<H2><A NAME="toc18">18.</A> <A HREF="i4lfaq-18.html">2channel: Channel bundling (MPPP, raw bundling) </A></H2>
+
+<UL>
+<LI><A NAME="toc18.1">18.1</A> <A HREF="i4lfaq-18.html#ss18.1">2channel_whatis: What is channel bundling and how can I use it? </A>
+<LI><A NAME="toc18.2">18.2</A> <A HREF="i4lfaq-18.html#ss18.2">2channel_raw: What is raw bundling? </A>
+<LI><A NAME="toc18.3">18.3</A> <A HREF="i4lfaq-18.html#ss18.3">2channel_rawconfig: How do I configure raw bundling? </A>
+<LI><A NAME="toc18.4">18.4</A> <A HREF="i4lfaq-18.html#ss18.4">2channel_rawgoodbad: What are the advantages and disadvantages of raw bundling? </A>
+<LI><A NAME="toc18.5">18.5</A> <A HREF="i4lfaq-18.html#ss18.5">2channel_mppp: What is MPPP? </A>
+<LI><A NAME="toc18.6">18.6</A> <A HREF="i4lfaq-18.html#ss18.6">2channel_mpppgoodbad: What are the advantages and disadvantages of MPPP? </A>
+<LI><A NAME="toc18.7">18.7</A> <A HREF="i4lfaq-18.html#ss18.7">2channel_mpppconfig: How do I configure MPPP? </A>
+<LI><A NAME="toc18.8">18.8</A> <A HREF="i4lfaq-18.html#ss18.8">2channel_mpppcompile: I tried MPPP but it doesn't work. The ipppd writes in the debug log something like: &quot; ...  rcvd (0)(proto=0x3d) c0 00 00 00 80 fd 01 01 00 0a ... sent (0)(LCP ProtRej id=0x2 00 3d c0 00 00 00 80 fd 01 ...&quot; </A>
+<LI><A NAME="toc18.9">18.9</A> <A HREF="i4lfaq-18.html#ss18.9">2channel_cantlocateippp1: When trying to use MPPP I get the error message &quot;modprobe: Can't locate module ippp1&quot; and &quot;ipppd: ioctl(SIOCSIFMTU): No such device...&quot;? </A>
+<LI><A NAME="toc18.10">18.10</A> <A HREF="i4lfaq-18.html#ss18.10">2channel_multiplenumbers: How can I set up multiple number when using MPPP? </A>
+<LI><A NAME="toc18.11">18.11</A> <A HREF="i4lfaq-18.html#ss18.11">2channel_freebchannel: How could I set up isdn4linux to free the second B-channel if a phone call comes in? </A>
+</UL>
+<P>
+<H2><A NAME="toc19">19.</A> <A HREF="i4lfaq-19.html">remote: Pecularities of the remote ISDN device </A></H2>
+
+<UL>
+<LI><A NAME="toc19.1">19.1</A> <A HREF="i4lfaq-19.html#ss19.1">remote_win95: How do I configure Windows95 to dial successfully into my isdn4linux computer? </A>
+<LI><A NAME="toc19.2">19.2</A> <A HREF="i4lfaq-19.html#ss19.2">remote_mac: I'd like to exchange data with a Macintosh (Leonardo card), what do I or the Mac user have to watch out for? </A>
+<LI><A NAME="toc19.3">19.3</A> <A HREF="i4lfaq-19.html#ss19.3">remote_macpap: A Macintosh with a Leonardo card tries to call in, and wants to negotiate chap md5. How can I switch it to CHAP/PAP? </A>
+<LI><A NAME="toc19.4">19.4</A> <A HREF="i4lfaq-19.html#ss19.4">remote_cisco: How does isdn4linux work with a Cisco (HDLC) on the other side? </A>
+<LI><A NAME="toc19.5">19.5</A> <A HREF="i4lfaq-19.html#ss19.5">remote_ispa: What settings does ISPA etc. (DOS, Windows) need to work with the standard settings of isdn4linux? </A>
+</UL>
+<P>
+<H2><A NAME="toc20">20.</A> <A HREF="i4lfaq-20.html">leased: Leased lines </A></H2>
+
+<UL>
+<LI><A NAME="toc20.1">20.1</A> <A HREF="i4lfaq-20.html#ss20.1">leased_flatrate: What's the difference between a leased line and a flat rate? </A>
+<LI><A NAME="toc20.2">20.2</A> <A HREF="i4lfaq-20.html#ss20.2">leased_nosignal: How does establishing and ending a connection work with D64S without signaling? </A>
+<LI><A NAME="toc20.3">20.3</A> <A HREF="i4lfaq-20.html#ss20.3">leased_hisaxconfig: With i4l, how do I configure my card on a D64 leased line? </A>
+<LI><A NAME="toc20.4">20.4</A> <A HREF="i4lfaq-20.html#ss20.4">leased_x75: How do I configure X.75 on a D64 leased line? </A>
+<LI><A NAME="toc20.5">20.5</A> <A HREF="i4lfaq-20.html#ss20.5">leased_splitline: With i4l, can I use one channel as a leased line and the other as a dialup line? </A>
+</UL>
+<P>
+<H2><A NAME="toc21">21.</A> <A HREF="i4lfaq-21.html">dialin: Configuration of a Dial-In Server </A></H2>
+
+<UL>
+<LI><A NAME="toc21.1">21.1</A> <A HREF="i4lfaq-21.html#ss21.1">dialin_config: How can I enable others to login via ISDN? </A>
+<LI><A NAME="toc21.2">21.2</A> <A HREF="i4lfaq-21.html#ss21.2">dialin_manyparallel: How can I allow several people to call in to me at the same time? </A>
+<LI><A NAME="toc21.3">21.3</A> <A HREF="i4lfaq-21.html#ss21.3">dialin_manycards: When using several ISDN cards, how can I react upon on a call received via a specific ISDN card? </A>
+<LI><A NAME="toc21.4">21.4</A> <A HREF="i4lfaq-21.html#ss21.4">dialin_analogditalsamettyi: Can I configure a ttyI* device to accept both digital and analog modem dialins? </A>
+<LI><A NAME="toc21.5">21.5</A> <A HREF="i4lfaq-21.html#ss21.5">dialin_fixedip: How can I assign fixed ip addresses per user who dials in via ipppd? </A>
+<LI><A NAME="toc21.6">21.6</A> <A HREF="i4lfaq-21.html#ss21.6">dialin_hdlc: Someone would like to dial in to my mgetty with HDLC. Is ttyI1 correct, or do I have to start with ttyI0? </A>
+<LI><A NAME="toc21.7">21.7</A> <A HREF="i4lfaq-21.html#ss21.7">dialin_autoppp: Is it possible with mgetty to automatically start pppd when LCP frames are received? </A>
+<LI><A NAME="toc21.8">21.8</A> <A HREF="i4lfaq-21.html#ss21.8">dialin_passwd: How can I have (i)pppd check passwords from /etc/passwd instead of /etc/ppp/pap-secrets when someone dials in? </A>
+<LI><A NAME="toc21.9">21.9</A> <A HREF="i4lfaq-21.html#ss21.9">dialin_ignored: I keep getting the message &quot;isdn_tty: call from XXX - YYY ignored&quot;. Why does isdn4linux (syncPPP) ignore this dialin attempt? </A>
+<LI><A NAME="toc21.10">21.10</A> <A HREF="i4lfaq-21.html#ss21.10">dialin_async: A SunISDN tries to dial into my i4l system. </A>
+</UL>
+<P>
+<H2><A NAME="toc22">22.</A> <A HREF="i4lfaq-22.html">callback: Callback </A></H2>
+
+<UL>
+<LI><A NAME="toc22.1">22.1</A> <A HREF="i4lfaq-22.html#ss22.1">callback_delay: An incoming call is rejected by i4l. i4l then calls back. The reject is not recognized by the other side which keeps on dialing to i4l. </A>
+<LI><A NAME="toc22.2">22.2</A> <A HREF="i4lfaq-22.html#ss22.2">callback_cisco: Somehow i4l can not callback a Cisco? </A>
+<LI><A NAME="toc22.3">22.3</A> <A HREF="i4lfaq-22.html#ss22.3">callback_ascend: Callback from an Ascend works only when I set &quot;Active=Yes&quot; in the Ascend menu; but then the Ascend keeps calling me, even when my machine is off. </A>
+<LI><A NAME="toc22.4">22.4</A> <A HREF="i4lfaq-22.html#ss22.4">callback_banzai: How can I callback a Banzai!? </A>
+<LI><A NAME="toc22.5">22.5</A> <A HREF="i4lfaq-22.html#ss22.5">callback_microsoft: Does isdn4linux support Microsoft Callback (CBCP)? </A>
+</UL>
+<P>
+<H2><A NAME="toc23">23.</A> <A HREF="i4lfaq-23.html">isdnlog: Isdnlog </A></H2>
+
+<UL>
+<LI><A NAME="toc23.1">23.1</A> <A HREF="i4lfaq-23.html#ss23.1">isdnlog_rates: Where do I get the latest rate information? </A>
+<LI><A NAME="toc23.2">23.2</A> <A HREF="i4lfaq-23.html#ss23.2">isdnlog_servicetype: Can I see the service type from an incoming call in the output from isdnrep? </A>
+<LI><A NAME="toc23.3">23.3</A> <A HREF="i4lfaq-23.html#ss23.3">isdnlog_callerid1: Why don't I always receive from the German Telekom the number of a caller (&quot;Caller ID&quot;)? </A>
+<LI><A NAME="toc23.4">23.4</A> <A HREF="i4lfaq-23.html#ss23.4">isdnlog_callerid2: Do I receive the Caller ID from foreign calls (German Telekom)? </A>
+<LI><A NAME="toc23.5">23.5</A> <A HREF="i4lfaq-23.html#ss23.5">isdnlog_spoofcallerid: I've heard that actually two Caller IDs are transmitted? </A>
+<LI><A NAME="toc23.6">23.6</A> <A HREF="i4lfaq-23.html#ss23.6">isdnlog_betterlogging: Why doesn't isdnlog record the number dialed by my other ISDN devices, since it records the charges? </A>
+<LI><A NAME="toc23.7">23.7</A> <A HREF="i4lfaq-23.html#ss23.7">isdnlog_reversedcard: How can I get isdnlog to also show the telephone numbers for other ISDN devices? </A>
+<LI><A NAME="toc23.8">23.8</A> <A HREF="i4lfaq-23.html#ss23.8">isdnlog_rategraphic: How can I display the data transfer rates graphically? </A>
+<LI><A NAME="toc23.9">23.9</A> <A HREF="i4lfaq-23.html#ss23.9">isdnlog_2callerid: Isdnlog (=2.52) shows for a caller <EM>two</EM> telephone numbers! Which one is correct? </A>
+<LI><A NAME="toc23.10">23.10</A> <A HREF="i4lfaq-23.html#ss23.10">isdnlog_soundbusy: I've set up a script to play sound per cat on /dev/sound or some other device. When several events occur, then there is an error: <CODE>Can't open output file '/dev/sound': Device or resource busy</CODE> </A>
+<LI><A NAME="toc23.11">23.11</A> <A HREF="i4lfaq-23.html#ss23.11">isdnlog_noshell: Isdnlog should call a program with redirected output (e.g. <CODE>play anruf.au 2/dev/null</CODE>). Why does ISDN tell me <CODE>Can't start '/usr/local/bin/play anruf.au 2/dev/null' with execvp()</CODE>? </A>
+<LI><A NAME="toc23.12">23.12</A> <A HREF="i4lfaq-23.html#ss23.12">isdnlog_blankscreen: When dialing out, the screen goes momentarily black? </A>
+<LI><A NAME="toc23.13">23.13</A> <A HREF="i4lfaq-23.html#ss23.13">isdnlog_nologging: Isdnlog does not log any incoming call for me? </A>
+<LI><A NAME="toc23.14">23.14</A> <A HREF="i4lfaq-23.html#ss23.14">isdnlog_enoughdata: How can I check whether isdnlog receives enough information from the kernel drivers? </A>
+<LI><A NAME="toc23.15">23.15</A> <A HREF="i4lfaq-23.html#ss23.15">isdnlog_database: How can I set up isdnlog with database support? </A>
+</UL>
+<P>
+<H2><A NAME="toc24">24.</A> <A HREF="i4lfaq-24.html">audio: Handling Voice with ISDN </A></H2>
+
+<UL>
+<LI><A NAME="toc24.1">24.1</A> <A HREF="i4lfaq-24.html#ss24.1">audio_links: Where can I find helpful links regarding vbox? </A>
+<LI><A NAME="toc24.2">24.2</A> <A HREF="i4lfaq-24.html#ss24.2">audio_format: What is the format of the audio messages (.msg) vbox plays when it answers a call? </A>
+<LI><A NAME="toc24.3">24.3</A> <A HREF="i4lfaq-24.html#ss24.3">audio_recordmsg: How can I record my own messages for vboxgetty? </A>
+<LI><A NAME="toc24.4">24.4</A> <A HREF="i4lfaq-24.html#ss24.4">audio_play: How can I play audio messages locally using /dev/audio? </A>
+<LI><A NAME="toc24.5">24.5</A> <A HREF="i4lfaq-24.html#ss24.5">audio_convertto: How can I convert audio messages which where recorded by vbox to other formats (i.e. from uLaw to WAV)? </A>
+<LI><A NAME="toc24.6">24.6</A> <A HREF="i4lfaq-24.html#ss24.6">audio_convertfrom: How can I format WAV for uLaw (for my vbox announcement message)? </A>
+<LI><A NAME="toc24.7">24.7</A> <A HREF="i4lfaq-24.html#ss24.7">audio_dtmf: How can I improve the recognition of (DTMF) dial tones? </A>
+<LI><A NAME="toc24.8">24.8</A> <A HREF="i4lfaq-24.html#ss24.8">audio_e0265: My vboxgetty gets a modem timeout, and reports error E0265. </A>
+<LI><A NAME="toc24.9">24.9</A> <A HREF="i4lfaq-24.html#ss24.9">audio_noanswer: My vboxgetty does not answer any incoming calls. </A>
+<LI><A NAME="toc24.10">24.10</A> <A HREF="i4lfaq-24.html#ss24.10">audio_nocat: If vboxgetty has recorded a message in a format which can not be played using &quot;cat xxx/dev/audio&quot; how can I still hear the message? </A>
+<LI><A NAME="toc24.11">24.11</A> <A HREF="i4lfaq-24.html#ss24.11">audio_earlyrecording: At the beginning of a message recorded by vboxgetty, there's often a part of my own announcement? </A>
+</UL>
+<P>
+<H2><A NAME="toc25">25.</A> <A HREF="i4lfaq-25.html">Supported Countries</A></H2>
+
+<UL>
+<LI><A NAME="toc25.1">25.1</A> <A HREF="i4lfaq-25.html#ss25.1">country_which: In which countries does isdn4linux work? </A>
+<LI><A NAME="toc25.2">25.2</A> <A HREF="i4lfaq-25.html#ss25.2">country_certified: Is isdn4linux approved for use by the telecommunications authorities? </A>
+</UL>
+<P>
+<H2><A NAME="toc26">26.</A> <A HREF="i4lfaq-26.html">1tr6: German Pecularities for 1TR6 </A></H2>
+
+<UL>
+<LI><A NAME="toc26.1">26.1</A> <A HREF="i4lfaq-26.html#ss26.1">1tr6_eaz: Which EAZ should I use for i4l? </A>
+<LI><A NAME="toc26.2">26.2</A> <A HREF="i4lfaq-26.html#ss26.2">1tr6_extension: I use 1TR6 on an extension - the extension number has more than one digit (e.g. 206). What is my EAZ? </A>
+<LI><A NAME="toc26.3">26.3</A> <A HREF="i4lfaq-26.html#ss26.3">1tr6_spv: What is a SPV? </A>
+<LI><A NAME="toc26.4">26.4</A> <A HREF="i4lfaq-26.html#ss26.4">1tr6_spvdial: Does isdn4linux support SPVs? How? </A>
+</UL>
+<P>
+<H2><A NAME="toc27">27.</A> <A HREF="i4lfaq-27.html">Other countries</A></H2>
+
+<UL>
+<LI><A NAME="toc27.1">27.1</A> <A HREF="i4lfaq-27.html#ss27.1">country_austria: Austria: We have neither an MSN nor an EAZ, only a normal plain telephone number. What do we have to use for i4l? </A>
+<LI><A NAME="toc27.2">27.2</A> <A HREF="i4lfaq-27.html#ss27.2">country_brazil: Brazil: How does our MSN look like? </A>
+<LI><A NAME="toc27.3">27.3</A> <A HREF="i4lfaq-27.html#ss27.3">country_france: France: How does our MSN look like? </A>
+<LI><A NAME="toc27.4">27.4</A> <A HREF="i4lfaq-27.html#ss27.4">country_italy: Italy: What does our MSN look like? </A>
+<LI><A NAME="toc27.5">27.5</A> <A HREF="i4lfaq-27.html#ss27.5">country_netherlands: Netherlands: What does our MSN look like? </A>
+<LI><A NAME="toc27.6">27.6</A> <A HREF="i4lfaq-27.html#ss27.6">country_northamerica: North America: Can we use isdn4linux in North America? </A>
+<LI><A NAME="toc27.7">27.7</A> <A HREF="i4lfaq-27.html#ss27.7">country_pakistan: Pakistan: What should we use as MSN? </A>
+<LI><A NAME="toc27.8">27.8</A> <A HREF="i4lfaq-27.html#ss27.8">country_portugal: Portugal: What should we use as MSN? </A>
+<LI><A NAME="toc27.9">27.9</A> <A HREF="i4lfaq-27.html#ss27.9">country_switzerland: Switzerland: We have neither an MSN nor an EAZ, just a plain telephone number. What do we have to use for i4l? </A>
+<LI><A NAME="toc27.10">27.10</A> <A HREF="i4lfaq-27.html#ss27.10">country_uk: UK: What should we use as MSN? </A>
+</UL>
+<P>
+<H2><A NAME="toc28">28.</A> <A HREF="i4lfaq-28.html">misc: Miscellaneous </A></H2>
+
+<UL>
+<LI><A NAME="toc28.1">28.1</A> <A HREF="i4lfaq-28.html#ss28.1">misc_standards: Which standards apply to the ISDN protocol layers? </A>
+<LI><A NAME="toc28.2">28.2</A> <A HREF="i4lfaq-28.html#ss28.2">misc_nonullcable: Can I connect two ISDN devices directly with a kind of &quot;null modem cable&quot;? </A>
+<LI><A NAME="toc28.3">28.3</A> <A HREF="i4lfaq-28.html#ss28.3">misc_uisdn: Can isdn4linux run in parallel to UISDN? </A>
+</UL>
+<P>
+<H2><A NAME="toc29">29.</A> <A HREF="i4lfaq-29.html">glossary: ISDN specific words which are used in this FAQ </A></H2>
+
+<HR>
+<A HREF="i4lfaq-1.html">Next</A>
+Previous
+Contents
+</BODY>
+</HTML>

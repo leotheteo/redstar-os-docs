@@ -1,0 +1,108 @@
+﻿<html dir='ltr'>
+	<head>
+		<META http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+		<title>SINH</title>
+		<link rel='stylesheet' type='text/css' href='../css/main.css'/>
+		<script type='text/javascript' language='Javascript' src='../js/mexpcol.js'></script>
+		<script type='text/javascript' language='JavaScript' src='../js/glossary.js'></script>
+	</head>
+	<body>
+		<h1>&nbsp;<img align="absbottom" src="../image/external_images/crystal/svtools/res/new_doc.png"/>&nbsp;SINH</h1>
+		<p id='ExpandAllLine' class='ExpFav'>
+			<a href='#' onClick='ExpandAll()' onKeyPress='ExpandAll()' class='DropDown'>
+				<img id='picHeader' border='0' src='../image/image/common/expandtri.gif' alt='모두 표시'>
+				<span id='ExpandAll'>모두 표시</span>
+			</a>
+		</p>
+		<p><b class="bterm">참고항목</b>&emsp;
+			<a href="5.9.8.1.htm">수학함수목록</a>,
+			<a href="5.9.8.8.htm">ASINH</a>,
+			<a href="5.9.8.17.htm">COSH</a>,
+			<a href="5.9.8.62.htm">TANH</a>
+		</p>
+		<p>수값의 쌍곡시누스값을 구합니다.</p>
+		<p><b class="bterm">문법:&emsp;&emsp;		SINH(수값)</b></p>
+		<table>
+			<tr>
+				<th>인수명</th>
+				<th>설명</th>
+			</tr>
+			<tr>
+				<td>수값</td>
+				<td>쌍곡시누스값을 구할 라디안단위의 각도입니다.</td>
+			</tr>
+		</table>
+		<p><b class="bterm">주의</b></p>
+			<p>쌍곡시누스값을 구하는 식은 다음과 같습니다.</p>
+			<p><img border='0' src='../image/image/sgsd/formula-29.gif' alt='표시'></p>
+		<p><b class="bterm">실례1</b></p>
+			<p><a href="1.5.1.htm">실례의 리용방법</a>을 참고하십시오.</p>
+			<table>
+				<tr>
+					<td>
+						<table>
+							<tr><td>&nbsp;</td></tr>
+							<tr><th>1</th></tr>
+							<tr><th>2</th></tr>
+							<tr><th>3</th></tr>
+						</table>
+					</td>
+					<td>
+						<table>
+							<tr>
+								<th>A</th>
+								<th>B</th>
+							</tr>
+							<tr>
+								<th>수식</th>
+								<th>설명(결과)</th>
+							</tr>
+							<tr>
+								<td>=SINH(1)</td>
+								<td>1에 대한 쌍곡시누스값입니다. (1.18)</td>
+							</tr>
+							<tr>
+								<td>=SINH(-1)</td>
+								<td>-1에 대한 쌍곡시누스값입니다. (-1.18)</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>		
+		<p><b class="bterm">실례2</b></p>
+			<p><a href="1.5.1.htm">실례의 리용방법</a>을 참고하십시오.</p>
+			<p>쌍곡시누스함수를 사용하여 루적확률분포의 근사값을 구할수 있습니다. 실험실검사값이 0초부터 10초사이에서 달라지는 경우 수집된 실험기록에 대한 분석에서 t초미만의 결과값 x가 얻어질수 있는 확률에 대한 근사값을 다음수식으로 구할수 있습니다.</p>
+			<p>P(x&lt;t) = 2.868 * SINH(0.0342 * t) 여기서 0&lt;t&lt;10입니다.</p>
+			<p>1.03초미만의 결과가 얻어질수 있는 확률을 계산하려면 t에 1.03을 대입합니다. </p>
+			<table>
+				<tr>
+					<td>
+						<table>
+							<tr><td>&nbsp;</td></tr>
+							<tr><th>1</th></tr>
+							<tr><th>2</th></tr>
+						</table>
+					</td>
+					<td>
+						<table>
+							<tr>
+								<th>A</th>
+								<th>B</th>
+							</tr>
+							<tr>
+								<th>수식</th>
+								<th>설명(결과)</th>
+							</tr>
+							<tr>
+								<td>=2.868*SINH(0.0342*1.03)</td>
+								<td>1.03초미만의 결과값이 얻어질수 있는 확률입니다. (0.1)</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>		
+			<p>결과값에서 1000번실험에서 100회정도 발생한다고 예측할수 있습니다.</p>
+		<script type="text/javascript" language="Javascript">footerView()</script>
+	
+</body>
+</html>																

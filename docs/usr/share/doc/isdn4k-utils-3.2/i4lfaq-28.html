@@ -1,0 +1,59 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <META NAME="GENERATOR" CONTENT="LinuxDoc-Tools 0.9.21">
+ <TITLE>FAQ for isdn4linux: misc: Miscellaneous </TITLE>
+ <LINK HREF="i4lfaq-29.html" REL=next>
+ <LINK HREF="i4lfaq-27.html" REL=previous>
+ <LINK HREF="i4lfaq.html#toc28" REL=contents>
+</HEAD>
+<BODY>
+<A HREF="i4lfaq-29.html">Next</A>
+<A HREF="i4lfaq-27.html">Previous</A>
+<A HREF="i4lfaq.html#toc28">Contents</A>
+<HR>
+<H2><A NAME="misc"></A> <A NAME="s28">28.</A> <A HREF="i4lfaq.html#toc28">misc: Miscellaneous </A></H2>
+
+<H2><A NAME="misc_standards"></A> <A NAME="ss28.1">28.1</A> <A HREF="i4lfaq.html#toc28.1">misc_standards: Which standards apply to the ISDN protocol layers? </A>
+</H2>
+
+<P>These are the main standards:
+<UL>
+<LI> Layer 1: ITU I.430 and ETSI 300 012-1</LI>
+<LI> Layer 2: ITU Q.921 and ETSI 300 125-1</LI>
+<LI> Layer 3: ITU Q.931 and ETSI 300 102-1 (plus some changes and
+clarifications in ETSI 300 403)</LI>
+</UL>
+
+All layers are also described in TBR3. For study, the standards are freely
+available from 
+<A HREF="http://www.etsi.org">http://www.etsi.org</A>.</P>
+
+<H2><A NAME="misc_nonullcable"></A> <A NAME="ss28.2">28.2</A> <A HREF="i4lfaq.html#toc28.2">misc_nonullcable: Can I connect two ISDN devices directly with a kind of &quot;null modem cable&quot;? </A>
+</H2>
+
+<P>This is only possible if one of the cable can run in NT mode (see glossary
+on what this is: 
+<A HREF="i4lfaq-29.html#glossary_ntmode">glossary_ntmode</A>). Only a few cards allow it,
+all others need an NTBA or PBX with an internal bus to communicate with
+each other. See question 
+<A HREF="i4lfaq-3.html#feature_crossedcable">feature_crossedcable</A>.</P>
+
+<H2><A NAME="misc_uisdn"></A> <A NAME="ss28.3">28.3</A> <A HREF="i4lfaq.html#toc28.3">misc_uisdn: Can isdn4linux run in parallel to UISDN? </A>
+</H2>
+
+<P>Yes. Both ISDN packages load the module isdn.o, otherwise the naming conventions
+are different. Tip: rename Urlichs isdn.o to uisdn.o, and change
+lib/modules/modules.isdn (or whatever the file is called that lists the modules
+and is read by the script) accordingly. Happily the default names of the ISDN
+devices are also different.</P>
+
+
+
+
+<HR>
+<A HREF="i4lfaq-29.html">Next</A>
+<A HREF="i4lfaq-27.html">Previous</A>
+<A HREF="i4lfaq.html#toc28">Contents</A>
+</BODY>
+</HTML>

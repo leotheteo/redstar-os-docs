@@ -1,0 +1,109 @@
+<html dir='ltr'>
+	<head>
+		<META http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+		<title>WORKDAY</title>
+		<link rel='stylesheet' type='text/css' href='../css/main.css'/>
+		<script type='text/javascript' language='Javascript' src='../js/mexpcol.js'></script>
+		<script type='text/javascript' language='JavaScript' src='../js/glossary.js'></script>
+	</head>
+	<body>
+		<h1>&nbsp;<img align="absbottom" src="../image/external_images/crystal/svtools/res/new_doc.png"/>&nbsp;WORKDAY</h1>
+		<p id='ExpandAllLine' class='ExpFav'>
+			<a href='#' onClick='ExpandAll()' onKeyPress='ExpandAll()' class='DropDown'>
+				<img id='picHeader' border='0' src='../image/image/common/expandtri.gif' alt='모두 표시'>
+				<span id='ExpandAll'>모두 표시</span>
+			</a>
+		</p>
+		<p><b class="bterm">참고항목</b>&emsp; 
+		   <a href='5.9.4.1.htm'>날자 및 시간함수목록</a>,
+		   <a href='5.9.4.10.htm'>EDATE</a>, 
+		   <a href='5.9.4.11.htm'>EOMONTH</a>, 
+		   <a href='5.9.4.17.htm'>NETWORKDAYS</a>, 
+		   <a href='5.9.4.18.htm'>NOW</a>
+		</p>
+		<p>지정한 로동일수의 이전 또는 이후의 날자에 대한 계렬번호를 구합니다.</p>
+		<p><b class="bterm">문법:&emsp;&emsp;	WORKDAY(시작날자,로동일,휴식일)</b></p>
+		<table>
+			<tr>
+				<th>인수명</th>
+				<th>설명</th>
+			</tr>
+			<tr>
+				<td>시작날자</td>
+				<td>시작날자입니다.</td>
+			</tr>
+			<tr>
+				<td>로동일</td>
+				<td>시작날자의 이전 또는 이후의 로동일입니다. <b class="bterm">로동일</b>값이 정수이면 앞으로의 날자이고 부수이면 지나간 날자입니다.</td>
+			</tr>
+			<tr>
+				<td>휴식일</td>
+				<td>휴식일(휴가, 휴식일 등)의 날자값목록을 나타냅니다. 추가선택인수입니다. </td>
+			</tr>
+		</table>
+		<p><b class="bterm">실례</b></p>
+			<p><a href='1.5.1.htm'>실례의 리용방법</a>을 참고하십시오.</p>
+			<table>
+				<tr>
+					<td>
+						<table>
+							<tr><td>&nbsp;</td></tr>
+							<tr><th>1</th></tr>
+							<tr><th>2</th></tr>
+							<tr><th>3</th></tr>
+							<tr><th>4</th></tr>
+							<tr><th>5</th></tr>
+							<tr><th>6</th></tr>
+						</table>
+					</td>
+					<td>
+						<table>
+							<tr>
+								<th>A</th>
+								<th>B</th>
+							</tr>
+							<tr>
+								<th>날자</th>
+								<th>설명</th>
+							</tr>
+							<tr>
+								<td>2008/10/01</td>
+								<td>시작날자입니다.</td>
+							</tr>
+							<tr>
+								<td>151</td>
+								<td>로동일수입니다.</td>
+							</tr>
+							<tr>
+								<td>2008/10/10</td>
+								<td>당창건기념일입니다.</td>
+							</tr>
+							<tr>
+								<td>2008/12/27</td>
+								<td>헌법절입니다.</td>
+							</tr>
+							<tr>
+								<td>2009/1/1</td>
+								<td>양력설입니다.</td>
+							</tr>
+							<tr>
+								<th>수식</th>
+								<th>설명(결과)</th>
+							</tr>
+							<tr>
+								<td>=WORKDAY(A2,A3)</td>
+								<td>시작날자로부터 151일째 날자에 해당하는 내부수자입니다. (39898)</td>
+							</tr>
+							<tr>
+								<td>=WORKDAY(A2,A3,A4:A6)</td>
+								<td>시작날자로부터 151일째 날자(휴식일은 제외)에 해당하는 내부수자입니다. (39900)</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>	
+		<p><b class="bterm">참고:</b>   수자를 날자로 표시하려면 세포를 선택하고 <b class="bterm">&lt;서식&gt;</b>차림표에서 <b class="bterm">&lt;세포&gt;</b>를 찰칵한 다음 <b class="bterm">&lt;수자&gt;</b>표쪽을 찰칵하고 <b class="bterm">&lt;종류&gt;</b>목록칸에서 <b class="bterm">&lt;날자&gt;</b>를 찰칵합니다.</p>
+		<script type="text/javascript" language="Javascript">footerView()</script>
+	
+</body>
+</html>

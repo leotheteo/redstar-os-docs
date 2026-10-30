@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="image/x-psd">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>PSD image</comment>
+  <acronym>PSD</acronym>
+  <expanded-acronym>PhotoShop Document</expanded-acronym>
+</mime-type>

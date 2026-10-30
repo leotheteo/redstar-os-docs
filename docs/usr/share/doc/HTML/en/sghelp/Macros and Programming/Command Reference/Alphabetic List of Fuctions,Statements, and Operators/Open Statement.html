@@ -1,0 +1,96 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+	<TITLE></TITLE>
+	<META NAME="GENERATOR" CONTENT="《Sogwang 3.0》  (Linux)">
+	<META NAME="CREATED" CONTENT="20091205;14081500">
+	<META NAME="CHANGED" CONTENT="20091205;14122200">
+	<STYLE TYPE="text/css">
+	<!--
+		P.code { margin-top: 0.04cm; margin-bottom: 0.04cm; font-family: "Bitstream Vera Sans Mono", "Cumberland", "Courier New", "Courier", "Lucida Sans Typewriter", "Lucida Typewriter", "Monaco", "Monospaced" }
+		H2 { margin-bottom: 0.18cm; font-family: "Bitstream Vera Sans", "Arial", "Helvetica", "Lucida", "Geneva", "Helmet", sans-serif, "Andale Sans UI", "Arial Unicode MS", "Lucida Sans Unicode", "Tahoma"; font-size: 14pt }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="ko-KP" DIR="LTR"><DIV style="margin-left: 25">
+<H1><A NAME="open"></A><A NAME="bm_id3150791"></A><FONT FACE="Thorndale, serif"><SPAN LANG="en-US">Open
+Statement[Runtime]</SPAN></FONT></H1>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Opens a
+data channel.</SPAN></FONT></P>
+<H2><SPAN LANG="en-US">Syntax:</SPAN></H2>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Open FileName As String [For Mode]
+[Access IOMode] [Protected] As [#]FileNumber As Integer [Len =
+DatasetLength]</SPAN></FONT></P>
+<H2><SPAN LANG="en-US">Parameters:</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>FileName:
+</B>Name and path of the file that you wan to open. If you try to
+read a file that does not exist (Access = Read), an error message
+appears. If you try to write to a file that does not exist (Access =
+Write), a new file is created.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Mode:</B>
+Keyword that specifies the file mode. Valid values: Append (append to
+sequential file), Binary (data can be accessed by bytes using Get and
+Put), Input (opens data channel for reading), Output (opens data
+channel for writing), and Random (edits relative files).</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>IOMode:</B>
+Keyword that defines the access type. Valid values: Read (read-only),
+Write (write-only), Read Write (both).</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Protected:</B>
+Keyword that defines the security status of a file after opening.
+Valid values: Shared (file may be opened by other applications), Lock
+Read (file is protected against reading), Lock Write (file is
+protected against writing), Lock Read Write (denies file access).</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>FileNumber:</B>
+Any integer expression from 0 to 511 to indicate the number of a free
+data channel. You can then pass commands through the data channel to
+access the file. The file number must be determined by the FreeFile
+function immediately before the Open statement.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>DatasetLength:</B>
+For random access files, set the length of the records.</SPAN></FONT></P>
+<TABLE WIDTH=922 BORDER=0 CELLPADDING=5 CELLSPACING=0>
+	<COL WIDTH=33>
+	<COL WIDTH=588>
+	<TR>
+		<TD WIDTH=33>
+			<P><IMG SRC="../../../Image/note.png" NAME="graphics1" ALT="Note Icon " ALIGN=BOTTOM WIDTH=33 HEIGHT=42 BORDER=0></P>
+		</TD>
+		<TD WIDTH=869>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">You
+			can only modify the contents of a file that was opened with the
+			Open statement. If you try to open a file that is already open, an
+			error message appears.</SPAN></FONT></P>
+		</TD>
+	</TR>
+</TABLE>
+<P><BR><BR>
+</P>
+<H2><SPAN LANG="en-US">Example:</SPAN></H2>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Sub ExampleWorkWithAFile</SPAN></FONT></P>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Dim iNumber As Integer</SPAN></FONT></P>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Dim sLine As String</SPAN></FONT></P>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Dim aFile As String</SPAN></FONT></P>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Dim sMsg as String</SPAN></FONT></P>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">aFile = &quot;c:\data.txt&quot;</SPAN></FONT></P>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">iNumber = Freefile</SPAN></FONT></P>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Open aFile For Output As #iNumber</SPAN></FONT></P>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Print #iNumber, &quot;This is a
+line of text&quot;</SPAN></FONT></P>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Print #iNumber, &quot;This is
+another line of text&quot;</SPAN></FONT></P>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Close #iNumber</SPAN></FONT></P>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">iNumber = Freefile</SPAN></FONT></P>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Open aFile For Input As iNumber</SPAN></FONT></P>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">While not eof(iNumber)</SPAN></FONT></P>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Line Input #iNumber, sLine</SPAN></FONT></P>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">If sLine &lt;&gt;&quot;&quot; then</SPAN></FONT></P>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">sMsg = sMsg &amp; sLine &amp;
+chr(13)</SPAN></FONT></P>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">end if</SPAN></FONT></P>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">wend</SPAN></FONT></P>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Close #iNumber</SPAN></FONT></P>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Msgbox sMsg</SPAN></FONT></P>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">End Sub</SPAN></FONT></P>
+
+</DIV></BODY>
+</HTML>

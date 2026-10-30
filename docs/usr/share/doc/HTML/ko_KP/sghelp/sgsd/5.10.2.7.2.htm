@@ -1,0 +1,78 @@
+﻿<html dir='ltr'>
+	<head>
+		<META http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+		<title>값을 예측하는 방법</title>
+		<link rel='stylesheet' type='text/css' href='../css/main.css'/>
+		<script type='text/javascript' language='Javascript' src='../js/mexpcol.js'></script>
+		<script type='text/javascript' language='JavaScript' src='../js/glossary.js'></script>
+	</head>
+	<body>
+		<h1>&nbsp;<img align="absbottom" src="../image/external_images/crystal/svtools/res/new_doc.png"/>&nbsp;값을 예측하는 방법</h1>
+		<p id='ExpandAllLine' class='ExpFav'>
+			<a href='#' onClick='ExpandAll()' onKeyPress='ExpandAll()' class='DropDown'>
+				<img id='picHeader' border='0' src='../image/image/common/expandtri.gif' alt='모두 표시'>
+				<span id='ExpandAll'>모두 표시</span>
+			</a>
+		</p>
+		<p>복잡한 비선형자료를 확장하기 위하여서는 함수를 사용할수 있습니다.</p>
+		<p><b class="bterm">련속자료 채우기지령으로 선형 및 지수추세의 만들기</b></p>
+		<ol>
+			<li>련속자료 채우기를 시작할 세포범위를 선택합니다.</li>
+				<p><b class="bterm">&lt;련속자료 채우기&gt;</b>지령을 사용하면 원래 선택한 값이 련속자료로 바뀝니다. 원래값을 보관하려면 다른 행이나 렬로 복사하고 복사된 값을 선택하여 련속자료를 만듭니다.</p>
+			<li><b class="bterm">&lt;편집&gt;</b>차림표에서 <b class="bterm">&lt;련속자료 채우기&gt;</b>를 찰칵하고 <b class="bterm">&lt;련속자료 채우기&gt;</b>를 찰칵합니다.</li>
+			<li>다음의 방법들중에서 하나를 실행합니다.
+				<ul>
+					<li>페지에 련속자료 채우기를 아래로 채우려면 <b class="bterm">&lt;아래쪽&gt;</b>, 우로 채우려면 <b class="bterm">&lt;웃쪽&gt;</b>단일선택단추를 찰칵합니다.</li>
+					<li>페지에 련속자료 채우기를 오른쪽으로 채우려면 <b class="bterm">&lt;오른쪽&gt;</b>, 왼쪽으로 채우려면 <b class="bterm">&lt;왼쪽&gt;</b>단일선택단추를 찰칵합니다.</li>
+				</ul>
+			</li>
+			<li><b class="bterm">&lt;련속자료류형&gt;</b>부분에서 <b class="bterm">&lt;산수&gt;</b> 또는 <b class="bterm">&lt;기하급수&gt;</b>단일선택단추를 찰칵합니다.</li>
+				<table>
+					<tr>
+						<th>련속자료류형</th>
+						<th>증분 값 결과</th>
+					</tr>
+					<tr>
+						<td>산수</td>
+						<td>증분값이 처음 시작값에 더해진 다음 계속되는 값에도 각각 더해집니다.</td>
+					</tr>
+					<tr>
+						<td>기하급수</td>
+						<td>처음 시작값에 증분값이 곱해집니다. 계속되는 각각의 적이 증분값과 곱해집니다.</td>
+					</tr>
+				</table>
+			<li><b class="bterm">&lt;증분&gt;</b>본문칸에 련속자료 채우기의 증분값을 입력합니다.</li>
+			<li><b class="bterm">&lt;마감값&gt;</b>본문칸에 련속자료 채우기가 끝나는 값을 입력합니다.</li>
+		</ol>
+				<p><b class="bterm">함수로 값예측</b></p>
+				<p>값을 예측할 때 사용할수 있는 함수는 다음과 같습니다.</p>
+				<table>
+					<tr>
+						<th>함수</th>
+						<th>설명</th>
+					</tr>
+					<tr>
+						<td><a href="5.9.10.24.htm">FORECAST</a></td>
+						<td>값을 예측하는 방법</td>
+					</tr>
+					<tr>
+						<td><a href="5.9.9.15.htm">TREND</a></td>
+						<td>회귀선을 따라 위치한 점을 계산합니다.</td>
+					</tr>
+					<tr>
+						<td><a href="5.9.9.3.htm">GROWTH</a></td>
+						<td>지수회귀함수의 점을 계산합니다.</td>
+					</tr>
+					<tr>
+						<td><a href="5.9.9.4.htm">LINEST</a></td>
+						<td>선형회귀의 파라메터를 배렬형태로 계산합니다.</td>
+					</tr>
+					<tr>
+						<td><a href="5.9.9.5.htm">LOGEST</a></td>
+						<td>지수회귀곡선의 파라메터를 배렬형태로 계산합니다.</td>
+					</tr>
+				</table>
+		<script type="text/javascript" language="Javascript">footerView()</script>
+	
+</body>
+</html>

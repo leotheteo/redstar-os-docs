@@ -1,0 +1,161 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <META NAME="GENERATOR" CONTENT="LinuxDoc-Tools 0.9.21">
+ <TITLE>FAQ for isdn4linux: ttyI: Configuration of the ttyI* devices (`Modem emulation') </TITLE>
+ <LINK HREF="i4lfaq-16.html" REL=next>
+ <LINK HREF="i4lfaq-14.html" REL=previous>
+ <LINK HREF="i4lfaq.html#toc15" REL=contents>
+</HEAD>
+<BODY>
+<A HREF="i4lfaq-16.html">Next</A>
+<A HREF="i4lfaq-14.html">Previous</A>
+<A HREF="i4lfaq.html#toc15">Contents</A>
+<HR>
+<H2><A NAME="ttyI"></A> <A NAME="s15">15.</A> <A HREF="i4lfaq.html#toc15">ttyI: Configuration of the ttyI* devices (`Modem emulation') </A></H2>
+
+<H2><A NAME="ttyI_nomodem"></A> <A NAME="ss15.1">15.1</A> <A HREF="i4lfaq.html#toc15.1">ttyI_nomodem: Don't the ttyI* devices emulate an analog modem? </A>
+</H2>
+
+<P>No! The ttyI* devices just offer a similar communication interface, where
+all commands are started with <EM>AT</EM>. This makes it easy to reuse software
+that was written to communicate with a modem. <B>Communication with a remote
+analog modem is not possible via the ttyI* devices!</B> The real communication
+happens in digital, not analog form.</P>
+
+<H2><A NAME="ttyI_dev"></A> <A NAME="ss15.2">15.2</A> <A HREF="i4lfaq.html#toc15.2">ttyI_dev: Which devices should I use for calls out or calls in? </A>
+</H2>
+
+<P>Only the ttyI* devices should be used. The cui* devices are created
+only for reasons of compatibility. Now that there is mgetty, there is not
+reason to use the cui* devices any longer. If they are used, locking will
+not work correctly (several programs could simultaneously attempt to use
+the same device).</P>
+
+<H2><A NAME="ttyI_hdlc"></A> <A NAME="ss15.3">15.3</A> <A HREF="i4lfaq.html#toc15.3">ttyI_hdlc: How to I switch the modem emulation from X.75 to HDLC? </A>
+</H2>
+
+<P>With the option S14=3; for example &quot;ATS14=3&quot;.</P>
+
+<H2><A NAME="ttyI_uucp"></A> <A NAME="ss15.4">15.4</A> <A HREF="i4lfaq.html#toc15.4">ttyI_uucp: How can I poll with Taylor-UUCP using isdn4linux? </A>
+</H2>
+
+<P>As usual, the same as with serial interfaces. Simply use /dev/ttyI* as the
+device, as the init string for the modem emulation you have to set the
+correct MSN or EAZ with &quot;AT&amp;Emsn/eaz&quot;.</P>
+
+<H2><A NAME="ttyI_speed"></A> <A NAME="ss15.5">15.5</A> <A HREF="i4lfaq.html#toc15.5">ttyI_speed: What speed should I set for the ttyI* devices? </A>
+</H2>
+
+<P>It doesn't matter. The driver internally always uses the full speed that
+ISDN offers. This is also given in the connect string.</P>
+
+<H2><A NAME="ttyI_max"></A> <A NAME="ss15.6">15.6</A> <A HREF="i4lfaq.html#toc15.6">ttyI_max: How many devices are the maximum supported number? </A>
+</H2>
+
+<P>The maximum can be set by configuring ISDN_MAX at compile time.
+Currently, it is set to 64 by default, which means that up to 64
+ttyI devices are supported.</P>
+
+
+<H2><A NAME="ttyI_nocarrier"></A> <A NAME="ss15.7">15.7</A> <A HREF="i4lfaq.html#toc15.7">ttyI_nocarrier: When I dial with &quot;ATD.....&quot; I always get a &quot;NO CARRIER&quot;. </A>
+</H2>
+
+<P>Before dialing, you have to enter &quot;AT&amp;E123456&quot; (if 123456 is your
+own MSN; with 1TR6 give the one-digit EAZ).</P>
+
+
+<H2><A NAME="ttyI_noincall"></A> <A NAME="ss15.8">15.8</A> <A HREF="i4lfaq.html#toc15.8">ttyI_noincall: My ttyI* device/pppd does not recognize an incoming call. </A>
+</H2>
+
+<P>Probably you did not tell the modem emulation with <CODE>AT&amp;E</CODE> which
+MSN to use. For example, use <CODE>AT&amp;E123456</CODE>; if your MSN is 123456.</P>
+<P>Please also note that only one application using the ttyI* devices will
+receive a ring for a particular MSN. Which will ring is selected by a loop
+over all ttyI* devices. A device is selected based on whether its
+parameters match (protocol, MSN) and whether it is currently not involved
+with another call. Therefore it does not make sense for multiple applications
+to register for the same MSN via the ttyI* devices, unless you want to
+have load sharing between the applications.</P>
+
+<H2><A NAME="ttyI_callphone"></A> <A NAME="ss15.9">15.9</A> <A HREF="i4lfaq.html#toc15.9">ttyI_callphone: Why can't I dial my telephone or fax from the ttyI* devices? </A>
+</H2>
+
+<P>You can. However, ISDN differentiates different services. All outgoing calls
+with the ttyI* devices use the service &quot;Digital Data&quot;, which is
+incompatible with telephone or fax, so the call never gets through.
+Change the service recognition with the <CODE>ATS18=1</CODE> command to audio, then
+you can dial your telephone or fax.</P>
+
+<H2><A NAME="ttyI_noconnect"></A> <A NAME="ss15.10">15.10</A> <A HREF="i4lfaq.html#toc15.10">ttyI_noconnect: I can't get a connection to my ISDN mailbox/BBS. </A>
+</H2>
+
+<P>There are several possible protocol parameters. There is HDLC, there is
+X.75 and there are several possible block sizes with X.75. You can tell
+the modem emulation about the block size with <CODE>AT&amp;</CODE>. Mostly
+used is a block size of 2048 byte: <CODE>AT&amp;B2048</CODE>.</P>
+
+<H2><A NAME="ttyI_forcehangup"></A> <A NAME="ss15.11">15.11</A> <A HREF="i4lfaq.html#toc15.11">ttyI_forcehangup: My modem emulation hangs. How can I force my card to hang up? </A>
+</H2>
+
+<P>If there is really no process using your modem emulation any more, try:
+<HR>
+<PRE>
+cu -l /dev/ttyI0 dir
++++
+ath0
+~.
+</PRE>
+<HR>
+
+Before and after &quot;+++&quot; you have to wait for a second, otherwise the
+modem emulation won't recognize it as the escape sequence (like a normal modem).
+Watch out for processes that (with &quot;ps -ax&quot;) have something like
+&quot;I0&quot; or &quot;I1&quot; in the second column, they have an ISDN
+terminal as their controlling terminal. You may have to kill them with kill.</P>
+
+<H2><A NAME="ttyI_channelclosed"></A> <A NAME="ss15.12">15.12</A> <A HREF="i4lfaq.html#toc15.12">ttyI_channelclosed: During a tty connection, I get a message from the kernel: &quot;teles_writebuf: channel not open&quot;. Then no more input is accepted for this connection. </A>
+</H2>
+
+<P>Can happen when the partner cannot handle the large frames from i4l and simply
+closes the B channel during the transfer. Try making the frames smaller with
+AT&amp;B512.</P>
+
+<H2><A NAME="ttyI_x75uucp"></A> <A NAME="ss15.13">15.13</A> <A HREF="i4lfaq.html#toc15.13">ttyI_x75uucp: When I use UUCP with X.75, I always get transfer errors! </A>
+</H2>
+
+<P>Andreas Gutzwiller <CODE>
+<A HREF="mailto:andy@hippo.proxyon.imp.com">andy@hippo.proxyon.imp.com</A></CODE> wrote on 5 Dec 1996:
+<BLOCKQUOTE>
+I had to use the following settings, otherwise I only had errors.
+# Prot
+protocol-parameter g packet-size 512
+protocol-parameter g short-packets y
+protocol-parameter g window 7
+protocol-parameter g remote-window 7
+protocol-parameter v packet-size 512
+Now with large packets I can get ca 7300 cps.
+</BLOCKQUOTE>
+
+Holger Burbach <CODE>
+<A HREF="mailto:holly@cthulhu.pfalz.de">holly@cthulhu.pfalz.de</A></CODE> on 5 Feb 1997 had another
+solution:
+<BLOCKQUOTE>
+I have several XP users who poll without any problems. I did
+the following: First I set the send packet size for ttyI?
+to 1024 (&quot;AT&amp;B1024&quot;) and then set the packet size for the
+g protocol in UUCP:
+protocol-parameter g packet-size 2048
+protocol-parameter g remote-packet-size 0
+As I said, it works fine..
+</BLOCKQUOTE>
+</P>
+
+
+
+<HR>
+<A HREF="i4lfaq-16.html">Next</A>
+<A HREF="i4lfaq-14.html">Previous</A>
+<A HREF="i4lfaq.html#toc15">Contents</A>
+</BODY>
+</HTML>

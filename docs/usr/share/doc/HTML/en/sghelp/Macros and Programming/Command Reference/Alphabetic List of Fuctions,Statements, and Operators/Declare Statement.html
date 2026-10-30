@@ -1,0 +1,79 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+	<TITLE></TITLE>
+	<META NAME="GENERATOR" CONTENT="《Sogwang 3.0》  (Linux)">
+	<META NAME="CREATED" CONTENT="20091205;11384400">
+	<META NAME="CHANGED" CONTENT="20091205;11592300">
+	<STYLE TYPE="text/css">
+	<!--
+		H2 { margin-bottom: 0.18cm; font-family: "Bitstream Vera Sans", "Arial", "Helvetica", "Lucida", "Geneva", "Helmet", sans-serif, "Andale Sans UI", "Arial Unicode MS", "Lucida Sans Unicode", "Tahoma"; font-size: 14pt }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="ko-KP" DIR="LTR"><DIV style="margin-left: 25">
+<H1><A NAME="declare"></A><A NAME="bm_id3148473"></A><FONT FACE="Thorndale, serif"><SPAN LANG="en-US">Declare
+Statement [Runtime]</SPAN></FONT></H1>
+<P><A NAME="bm_id3145316"></A><FONT FACE="청봉, serif"><SPAN LANG="en-US">Declares
+and defines a subroutine in a DLL file that you want to execute from
+</SPAN></FONT><FONT FACE="청봉, serif"><SPAN LANG="en-US">Sogwang Basic.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">See
+also: <A 
+ href="FreeLibrary Function.html">FreeLibrary</A></SPAN></FONT></P>
+<H2><SPAN LANG="en-US">Syntax:</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Declare
+{Sub | Function} Name Lib &quot;Libname&quot; [Alias &quot;Aliasname&quot;]
+[Parameter] [As Type]</SPAN></FONT></P>
+<H2><SPAN LANG="en-US">Parameters:</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Name:</B>
+A different name than defined in the DLL, to call the subroutine from
+</SPAN></FONT><FONT FACE="청봉, serif"><SPAN LANG="en-US">Sogwang Basic.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Aliasname</B>:
+Name of the subroutine as defined in the DLL.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Libname:</B>
+File or system name of the DLL. This library is automatically loaded
+the first time the function is used.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Argumentlist:</B>
+List of parameters representing arguments that are passed to the
+procedure when it is called. The type and number of parameters is
+dependent on the executed procedure.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Type:</B>
+Defines the data type of the value that is returned by a function
+procedure. You can exclude this parameter if a type-declaration
+character is entered after the name.</SPAN></FONT></P>
+<TABLE WIDTH=916 BORDER=0 CELLPADDING=5 CELLSPACING=0>
+	<COL WIDTH=25>
+	<COL WIDTH=596>
+	<TR>
+		<TD WIDTH=25>
+			<P><IMG SRC="../../../Image/warning.png" NAME="graphics1" ALT="Warning Icon " ALIGN=BOTTOM WIDTH=25 HEIGHT=42 BORDER=0></P>
+		</TD>
+		<TD WIDTH=871>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">To
+			pass a parameter to a subroutine as a value instead of as a
+			reference, the parameter must be indicated by the keyword <B>ByVal</B>.</SPAN></FONT></P>
+		</TD>
+	</TR>
+</TABLE>
+<P><BR><BR>
+</P>
+<H2><SPAN LANG="en-US">Example:</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Declare
+Sub MyMessageBeep Lib &quot;user32.dll&quot; Alias &quot;MessageBeep&quot;
+( long )</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Sub
+ExampleDeclare</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Dim
+lValue As Long</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">lValue =
+5000</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">MyMessageBeep(
+lValue )</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">FreeLibrary(&quot;user32.dll&quot;
+)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><SPAN STYLE="font-weight: medium">End
+Sub</SPAN></SPAN></FONT></P>
+
+</DIV></BODY>
+</HTML>

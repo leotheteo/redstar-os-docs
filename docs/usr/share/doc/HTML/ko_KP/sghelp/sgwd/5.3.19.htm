@@ -1,0 +1,111 @@
+﻿<html dir='ltr'>
+	<head>
+		<META http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+		<title>표에서 계산수행</title>
+		<link rel='stylesheet' type='text/css' href='../css/main.css'/>
+		<script type='text/javascript' language='Javascript' src='../js/mexpcol.js'></script>
+		<script type='text/javascript' language='JavaScript' src='../js/glossary.js'></script>
+	</head>
+	<body>
+		<h1>&nbsp;<img align="absbottom" src="../image/external_images/crystal/svtools/res/new_doc.png"/>&nbsp;표에서 계산수행</h1>
+		<p id="ExpandAllLine" class="ExpFav">
+			<a href="#" onClick="ExpandAll()" onKeyPress="ExpandAll()" class="DropDown">
+				<img id="picHeader" border="0" src="../image/image/common/expandtri.gif" alt="모두 표시">
+				<span id="ExpandAll">모두 표시</span>
+			</a>
+		</p>
+		<p>다음의 방법들중에서 하나를 실행합니다.</p>
+		<p><b class="bterm">행이나 렬의 합계</b></p>
+		<ol>
+			<li>
+				표를 하나 삽입하고 렬의 매 세포에 수자를 입력하되 마지막세포는 비워둡니다.
+			</li>
+			<li>
+				표의 마지막세포를 찰칵하고 <b class="bterm">&lt;표&gt;</b>도구띠에서 <b class="bterm">&lt;합계&gt;</b>그림기호<img border="0" src="../image/ooo_custom_images/industrial/res/commandimagelist/sc_autosum.png">를 찰칵하여 <b class="bterm">&lt;수식&gt;</b>도구띠를 현시합니다.
+			</li>
+			<li>
+				<p>첫번째 세포를 찰칵하고 마지막세포까지 끌어줍니다.</p>
+				<p>표세포의 내용을 참조하려면 세포참조를 괄호로 묶어 수식본문칸에 입력합니다. 례를 들어 <b class="bterm">=SUM&lt;A1:A4&gt;</b>를 입력합니다.</p>
+				<p>표세포를 직접 입력하여 참조할 때 같기기호(=)와 영문자의 생략표기를 써야 합니다.
+					만일 같기기호가 없거나 영문의 생략표기가 틀리면 <b class="bterm">《**잘못된 식**》</b>이라는 본문이 세포에 현시됩니다.</p>
+			</li>
+			<li>
+				수식이 맞으면 <b class="bterm">[Enter]</b>건을 누르거나 <b class="bterm">&lt;수식&gt;</b>도구띠에서 <b class="bterm">&lt;적용&gt;</b>그림기호<img border="0" src="../image/external_images/crystal/sc/res/imglst/apptbx/sc26051.png">를 찰칵합니다.
+			</li>
+		</ol>
+		<p><b class="bterm">참고:</b></p>
+		<div class="ind">
+			<ul>
+				<li>
+					행이나 렬에 빈 세포가 있으면 0(령)으로 인식합니다.
+				</li>
+				<li>
+					임의의 세포에 다른 값을 입력하면 그 세포를 참조하고있는 합이 자동적으로 계산됩니다.
+				</li>
+				<li>
+					마찬가지로 수자행의 합도 빨리 계산할수 있습니다.
+				</li>
+			</ul>
+		</div>
+		<p><b class="bterm">여러 표에서 합계계산</b></p>
+		<p>본문문서에서 2개이상의 표에 걸쳐 계산을 수행할수 있습니다.</p>
+		<ol>
+			<li>
+				표를 두개 삽입하고 몇개의 세포에 수자를 입력합니다.
+			</li>
+			<li>
+				표의 마지막세포를 찰칵하고 <b class="bterm">&lt;표&gt;</b>도구띠에서 <b class="bterm">&lt;합계&gt;</b>그림기호를 찰칵하여 <b class="bterm">&lt;수식&gt;</b>도구띠를 현시합니다.
+			</li>
+			<li>
+				수식띠에서 수행할 기능(례: 《=sum》)을 입력합니다.
+			</li>
+			<li>
+				<p>수자가 있는 세포를 찰칵하고 더하기기호(+)를 입력한 다음수자가 있는 세포를 찰칵합니다.</p>
+				<p>표세포를 참조할 때 자기 표의 세포일 때에는 <b class="bterm">&lt;A1&gt;</b>, 다른 표의 세포일 때에는 <b class="bterm">&lt;표2.B2&gt;</b>과 같이 입력하고 더하기기호(+)로 련결합니다.
+					례를 들어 <b class="bterm">=sum&lt;A1&gt;+&lt;표2.B2&gt;</b>과 같이 입력합니다.</p>
+				<p>표세포를 직접 입력하여 참조할 때 같기기호(=)와 영문자의 생략표기를 써야 합니다.
+					만일 같기기호가 없거나 영문의 생략표기가 틀리면 <b class="bterm">《**잘못된 식**》</b>이라는 본문이 세포에 입력되게 됩니다.</p>
+			</li>
+			<li>
+				수식이 맞으면 <b class="bterm">[Enter]</b>건을 누르거나 <b class="bterm">&lt;수식&gt;</b>띠에서 <b class="bterm">&lt;적용&gt;</b>그림기호<img border="0" src="../image/external_images/crystal/sc/res/imglst/apptbx/sc26051.png"> 를 찰칵합니다.
+			</li>
+		</ol>
+		<p><b class="bterm">표에서 다른 수식계산</b></p>
+		<ol>
+			<li>
+				<b class="bterm">&lt;삽입&gt;</b>차림표의 <b class="bterm">&lt;표&gt;</b>를 선택하고 표를 본문문서에 삽입합니다.
+			</li>
+			<li>
+				몇개의 세포에 수를 입력합니다.
+			</li>
+			<li>
+				빈 세포를 찰칵합니다.
+			</li>
+			<li>
+				<b class="bterm">&lt;표&gt;</b>차림표의 <b class="bterm">&lt;수식&gt;</b>을 찰칵하거나 또는 <b class="bterm">[F2]</b>건을 누릅니다.
+				또는 <b class="bterm">&lt;표&gt;</b>도구띠의 <b class="bterm">&lt;합계&gt;</b>그림기호<img border="0" src="../image/ooo_custom_images/industrial/res/commandimagelist/sc_autosum.png"> 를 찰칵합니다.
+				이때 사용하지 않을 수식이 수식본문칸에 현시되면 삭제하되 같기기호는 삭제하지 마십시오.
+				같기기호를 삭제했으면 다시 입력합니다.
+			</li>
+			<li>
+				<b class="bterm">&lt;수식&gt;</b>그림기호<img border="0" src="../image/external_images/crystal/res/commandimagelist/sc_insertformula.png">를 찰칵하면 문서처리프로그람이 제공하는 수식이 현시됩니다.
+				요구하는 수식항목에서 마우스를 놓으면 수식본문칸에 그 수식이 입력됩니다.
+			</li>
+			<li>
+				요구하는 세포들을 선택합니다.
+			</li>
+			<li>
+				표세포를 직접 입력하여 참조할 때 같기기호(=)와 영문자의 생략표기를 써야 합니다.
+				만일 같기기호가 없거나 영문의 생략표기가 틀리면 <b class="bterm">《**잘못된 식**》</b>이라는 본문이 세포에 입력되게 됩니다.
+			</li>
+			<li>
+				<b class="bterm">&lt;수식&gt;</b>띠에서 <b class="bterm">&lt;적용&gt;</b>그림기호<img border="0" src="../image/external_images/crystal/sc/res/imglst/apptbx/sc26051.png">를 찰칵합니다.
+			</li>
+		</ol>
+		<p><b class="bterm">참고:</b>   문서처리프로그람의 표에서 재계산을 하려면 <a href="#" class="glossary" onClick="AppendPopup(this,'IDG_TABLE')" onKeyPress="AppendPopup(this,'IDG_TABLE')">표</a>계산을 수동으로 다시 해야 합니다.
+			복잡한 계산을 수행하려고 하는 경우에는 표처리프로그람을 사용하십시오.
+		</p>
+		<script type="text/javascript" language="Javascript">footerView()</script>
+	
+</body>
+</html>

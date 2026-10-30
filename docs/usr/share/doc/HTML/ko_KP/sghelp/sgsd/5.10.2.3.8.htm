@@ -1,0 +1,84 @@
+﻿<html dir='ltr'>
+	<head>
+		<META http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+		<title>날자를 요일로 표시</title>
+		<link rel='stylesheet' type='text/css' href='../css/main.css'/>
+		<script type='text/javascript' language='Javascript' src='../js/mexpcol.js'></script>
+		<script type='text/javascript' language='JavaScript' src='../js/glossary.js'></script>
+	</head>
+	<body>
+		<h1>&nbsp;<img align="absbottom" src="../image/external_images/crystal/svtools/res/new_doc.png"/>&nbsp;날자를 요일로 표시</h1>
+		<p id='ExpandAllLine' class='ExpFav'>
+			<a href='#' onClick='ExpandAll()' onKeyPress='ExpandAll()' class='DropDown'>
+				<img id='picHeader' border='0' src='../image/image/common/expandtri.gif' alt='모두 표시'>
+				<span id='ExpandAll'>모두 표시</span>
+			</a>
+		</p>
+		<p>세포를 날자별로 정렬하려면 요일이 표시되도록 세포의 서식을 지정합니다. 날자에 관계없이 요일을 기준으로 정렬하거나 려과하려면 요일을 나타내는 본문으로 변환합니다.</p>
+		<h2>날자가 요일로 표시되도록 세포서식의 지정</h2>
+			<p>
+				<ol>
+					<li>요일로 표시할 날자가 들어있는 세포를 선택합니다.</li>
+					<li><b class="bterm">&lt;서식&gt;</b>차림표에서 <b class="bterm">&lt;세포&gt;</b>를 찰칵하고 <b class="bterm">&lt;수자&gt;</b>표쪽을 찰칵합니다.</li>
+					<li><b class="bterm">&lt;종류&gt;</b>목록칸에서 <b class="bterm">&lt;사용자정의&gt;</b>를 찰칵하고 <b class="bterm">&lt;서식코드&gt;</b>본문칸에 aaaa(월요일, 화요일, ...) 또는 aaa(월, 화, 수, ...)를 입력하고 <b class="bterm">&lt;추가&gt;</b><img border='0' src='../image/default_images/svx/res/apply.png' alt='표시'>를 찰칵한 다음 <b class="bterm">&lt;확인&gt;</b>단추를 찰칵합니다.</li>			
+				</ol>
+			</p>
+		<h2>요일을 나타내는 본문으로 날자를 변환</h2>
+			<p>이 작업을 수행하려면 <b class="bterm">TEXT</b>와 <b class="bterm">WEEKDAY</b>함수를 사용합니다.</p>
+			<p><b class="bterm">실례</b></p>
+			<p><a href="1.5.1.htm">실례의 리용방법</a>을 참고하십시오.</p>
+			<table>
+				<tr>
+					<td>
+						<table>
+							<tr>
+								<td class="noborder">&nbsp;</td>
+							</tr>
+							<tr>
+								<th>1</th>
+							</tr>
+							<tr>
+								<th>2</th>
+							</tr>
+							<tr>
+								<th>3</th>
+							</tr>
+						</table>
+					</td>
+					<td>
+						<table>
+							<tr>
+								<th>A</th>
+							</tr>
+							<tr>
+								<th>날자</th>
+							</tr>
+							<tr>
+								<td>2007년 2월 19일</td>
+							</tr>
+							<tr>
+								<td>2008년 1월 3일</td>
+							</tr>
+							<tr>
+								<th>수식</th>
+								<th>설명(결과)</th>
+							</tr>
+							<tr>
+								<td>=TEXT(WEEKDAY(A2); "aaaa")</td>
+								<td>주어진 날자의 요일을 계산하고 요일이름 전체를 반환합니다. (월요일)</td>
+							</tr>
+							<tr>
+								<td>=TEXT(WEEKDAY(A3); "aaa")</td>
+								<td>주어진 날자의 요일을 계산하고 요일이름을 략어로 반환합니다. (목)</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+			<p><b class="bterm">참조함수</b></p>
+			<p><a href='5.9.4.23.htm'>WEEKDAY</a></p>
+			<p><a href='5.9.12.26.htm'>TEXT</a></p>
+		<script type="text/javascript" language="Javascript">footerView()</script>
+	
+</body>
+</html>

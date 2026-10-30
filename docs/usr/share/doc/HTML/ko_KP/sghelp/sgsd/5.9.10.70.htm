@@ -1,0 +1,102 @@
+<html dir='ltr'>
+	<head>
+		<META http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+		<title>TINV</title>
+		<link rel='stylesheet' type='text/css' href='../css/main.css'/>
+		<script type='text/javascript' language='Javascript' src='../js/mexpcol.js'></script>
+		<script type='text/javascript' language='JavaScript' src='../js/glossary.js'></script>
+	</head>
+	<body>
+		<h1>&nbsp;<img align="absbottom" src="../image/external_images/crystal/svtools/res/new_doc.png"/>&nbsp;TINV</h1>
+		<p id='ExpandAllLine' class='ExpFav'>
+			<a href='#' onClick='ExpandAll()' onKeyPress='ExpandAll()' class='DropDown'>
+				<img id='picHeader' border='0' src='../image/image/common/expandtri.gif' alt='모두 표시'>
+				<span id='ExpandAll'>모두 표시</span>
+			</a>
+		</p>
+		<p><b class="bterm">참고항목</b>&emsp;
+			<a href="5.9.10.1.htm">통계함수목록</a>,
+			<a href="5.9.10.69.htm">TDIST</a>,
+			<a href="5.9.10.72.htm">TTEST</a>
+		</p>
+		<p>역t-분포값을 구합니다.</p>
+		<p><b class="bterm">문법:&emsp;&emsp;		TINV(확률값,자유도)</b></p>
+		<table>
+			<tr>
+				<th>인수명</th>
+				<th>설명</th>
+			</tr>
+			<tr>
+				<td>확률값</td>
+				<td>역t-분포를 계산할 확률값입니다.</td>
+			</tr>
+			<tr>
+				<td>자유도</td>
+				<td>t-분포의 자유도입니다.</td>
+			</tr>
+		</table>
+		<p><b class="bterm">주의</b></p>
+			<ul>
+				<li><b class="bterm">확률값</b> < 0거나 <b class="bterm">확률값</b> > 1이면 <b class="bterm">오유:[오유번호]</b>가 반환됩니다.</li>
+				<li><b class="bterm">자유도</b>가 옹근수가 아니면 소수점이하를 잘라서 옹근수로 변환됩니다.</li>
+				<li><b class="bterm">자유도</b> < 1이면 <b class="bterm">오유:[오유번호]</b>가 반환됩니다.</li>
+				<li>P(|X| > t) = <b class="bterm">확률값</b>에 해당하는 값 t를 구합니다. 여기서 X는 t-분포에 따른 우연변량이고 P(|X| > t) = P(X < -t or X > t)입니다.</li>
+				<li>단측 t-값은 <b class="bterm">확률값</b>을 2*<b class="bterm">확률값</b>으로 바꾸어 구할수 있습니다. 0.05의 <b class="bterm">확률값</b>과 <b class="bterm">자유도</b>가 10인 경우 량측값은 TINV(0.05,10)로 계산할수 있으며 2.28139를 구합니다. 같은 확률값과 <b class="bterm">자유도</b>에 대해 단측값은 TINV(2*0.05,10)로 계산할수 있으며 1.812462를 구합니다.</li>
+			</ul>
+			<p><b class="bterm">참고:</b>   일부 표에서는 <b class="bterm">확률값</b>이 (1-p)로 서술됩니다.</p>
+			<p>확률값이 주어지면 <b class="bterm">TINV</b>함수는 TDIST(수값, 자유도, 2) = <b class="bterm">확률값</b>에 해당하는 <b class="bterm">수값</b>을 구합니다. 따라서 <b class="bterm">TINV</b>의 정밀도는 <b class="bterm">TDIST</b> 정밀도에 따라 달라집니다. <b class="bterm">TINV</b> 함수는 반복탐색기법을 사용하며 100번 반복한 후에도 탐색한 값이 수렴되지 않으면 #<b class="bterm">N</b>/<b class="bterm">A</b> 오유값을 표시합니다.</p>
+		<p><b class="bterm">실례</b></p>
+			<p><a href="1.5.1.htm">실례의 리용방법</a>을 참고하십시오.</p>
+			<table>
+				<tr>
+					<td>
+						<table>
+							<tr>
+								<td class="noborder">&nbsp;
+								</td>
+							</tr>
+							<tr>
+								<th>1</th>
+							</tr>
+							<tr>
+								<th>2</th>
+							</tr>
+							<tr>
+								<th>3</th>
+							</tr>
+						</table>
+					</td>
+					<td>
+						<table>
+							<tr>
+								<th>A</th>
+								<th>B</th>
+							</tr>
+							<tr>
+								<th>자료</th>
+								<th>설명</th>
+							</tr>
+							<tr>
+								<td>0.054645</td>
+								<td>량측 스튜턴트 t-분포에 관련된 확률값입니다.</td>
+							</tr>
+							<tr>
+								<td>60</td>
+								<td>자유도입니다.</td>
+							</tr>
+							<tr>
+								<th>수식</th>
+								<th>설명(결과)</th>
+							</tr>
+							<tr>
+								<td>=TINV(A2,A3)</td>
+								<td>우와 같은 조건의 스튜던트 t-분포의 t-값입니다. (1.96)</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+		<script type="text/javascript" language="Javascript">footerView()</script>
+	
+</body>
+</html>				

@@ -1,0 +1,185 @@
+﻿<html dir='ltr'>
+	<head>
+		<META http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+		<title>INDEX</title>
+		<link rel='stylesheet' type='text/css' href='../css/main.css'/>
+		<script type='text/javascript' language='Javascript' src='../js/mexpcol.js'></script>
+		<script type='text/javascript' language='JavaScript' src='../js/glossary.js'></script>
+	</head>
+	<body>
+		<p id='ExpandAllLine' class='ExpFav'>
+			<a href='#' onClick='ExpandAll()' onKeyPress='ExpandAll()' class='DropDown'>
+				<img id='picHeader' border='0' src='../image/image/common/expandtri.gif' alt='모두 표시'>
+				<span id='ExpandAll'>모두 표시</span>
+			</a>
+		</p>
+		<h1>&nbsp;<img align="absbottom" src="../image/external_images/crystal/svtools/res/new_doc.png"/>&nbsp;INDEX</h1>
+		<p><b class="bterm">참고항목</b>&emsp;
+			<a href="5.9.11.1.htm">자료표함수목록</a>
+		</p>
+		<p>정의된 범위에서 세포참조를 구합니다.</p>
+		<p><b class="bterm">문법:&emsp;&emsp;		INDEX(참조,행번호,렬번호,범위)</b></p>
+		<table>
+			<tr>
+				<th>인수명</th>
+				<th>설명</th>
+			</tr>
+			<tr>
+				<td>참조</td>
+				<td>한개이상의 세포범위에 대한 참조입니다.
+					<p>
+						<ul>
+							<li>린접하지 않은 범위를 참조로 입력하려면 참조를 괄호로 묶어야 합니다.</li>
+							<li>참조의 각 범위마다 행이나 렬이 한개만 들어있는 경우에는 <b class="bterm">행번호</b> 또는 <b class="bterm">렬번호</b> 인수가 각각 선택사항이 됩니다. 례를 들어 한개의 행참조에 대해서는 INDEX(참조,렬번호)를 사용합니다.</li>
+						</ul>
+					</p>
+				</td>
+			</tr>
+			<tr>
+				<td>행번호</td>
+				<td>해당 범위내에서의 행번호입니다. 추가선택인수입니다.</td>
+			</tr>
+			<tr>
+				<td>렬번호</td>
+				<td>해당 범위내에서의 렬번호입니다. 추가선택인수입니다.</td>
+			</tr>
+			<tr>
+				<td>범위</td>
+				<td>다중범위를 참조하는 경우 보조범위의 색인입니다. <b class="bterm">행번호</b>와 <b class="bterm">렬번호</b>가 교차되는 세포를 반환할 참조의 범위를 선택합니다. 추가선택인수입니다. 첫번째로 선택되거나 입력된 범위는 1, 두번째는 2로 련속적인 번호가 매겨집니다. <b class="bterm">범위</b>를 생략하면 범위1이 사용됩니다.
+					<p>례를 들어 <b class="bterm">참조</b>가 (A1:B4,D1:E4,G1:H4)세포를 나타내면 <b class="bterm">범위</b>1은 A1:B4 범위를, <b class="bterm">범위</b>2는 D1:E4 범위를, <b class="bterm">범위</b>3은 G1:H4 범위가 됩니다.</p>
+				</td>
+			</tr>
+		</table>
+		<p><b class="bterm">주의</b></p>
+			<ul>
+				<li><b class="bterm">참조</b>와 <b class="bterm">범위</b>로 특정범위가 선택된 후에는 <b class="bterm">행번호</b>와 <b class="bterm">렬번호</b>로 특정세포를 선택합니다. 즉 <b class="bterm">행번호</b>1은 범위의 첫번째 행이고 <b class="bterm">렬번호</b>1은 첫번째 렬의 방식으로 선택됩니다. INDEX함수로 반환되는 참조는 <b class="bterm">행번호</b>와 <b class="bterm">렬번호</b>가 교차되는 위치입니다.</li>
+				<li><b class="bterm">행번호</b>나 <b class="bterm">렬번호</b>를 0(령)으로 설정하면 전체 행이나 렬에 대한 참조가 각각 반환됩니다.</li>
+				<li><b class="bterm">행번호</b>, <b class="bterm">렬번호</b>, <b class="bterm">범위</b>는 반드시 <b class="bterm">참조</b>안의 세포여야 합니다. 그렇지 않으면 <b class="bterm">오유:[오유번호]</b>가 반환됩니다. <b class="bterm">행번호</b>와 <b class="bterm">렬번호</b>가 생략되면 <b class="bterm">범위</b>로 지정된 참조의 범위가 반환됩니다.</li>
+				<li><b class="bterm">INDEX</b>함수의 결과는 참조이며 다른 수식에서 그렇게 해석됩니다. <b class="bterm">INDEX</b>함수의 반환값은 수식에 따라 참조로 사용될수도 있고 값으로 사용될수도 있습니다. 례를 들어 수식 CELL("width",INDEX(A1:B2,1,2))은 CELL("width",B1)과 동일합니다. <b class="bterm">CELL</b>함수는 <b class="bterm">INDEX</b>의 반환값을 세포참조로 사용합니다. 반면에 2*INDEX(A1:B2,1,2)와 같은 수식은 <b class="bterm">INDEX</b>함수의 반환값을 B1세포의 수자로 인식합니다.</li>
+			</ul>
+		<p><b class="bterm">실례</b></p>
+			<p><a href="1.5.1.htm">실례의 리용방법</a>을 참고하십시오.</p>
+			<table>
+				<tr>
+					<td>
+						<table>
+							<tr>
+								<td class="noborder">&nbsp;</td>
+							</tr>
+							<tr>
+								<th height="18">1</th>
+							</tr>
+							<tr height="18">
+								<th>2</th>
+							</tr>
+							<tr height="18">
+								<th>3</th>
+							</tr>
+							<tr height="18">
+								<th>4</th>
+							</tr>
+							<tr height="18">
+								<th>5</th>
+							</tr>
+							<tr height="18">
+								<th>6</th>
+							</tr>
+							<tr height="18">
+								<th>7</th>
+							</tr>
+							<tr height="18">
+								<th>8</th>
+							</tr>
+							<tr height="18">
+								<th>9</th>
+							</tr>
+							<tr height="18">
+								<th>10</th>
+							</tr>
+						</table>
+					</td>
+					<td>
+						<table>
+							<tr>
+								<th>A</th>
+								<th>B</th>
+								<th>C</th>
+							</tr>
+							<tr>
+								<th>과일</th>
+								<th>가격</th>
+								<th>개수</th>
+							</tr>
+							<tr>
+								<td>사과</td>
+								<td>0.69</td>
+								<td>40</td>
+							</tr>
+							<tr>
+								<td>바나나</td>
+								<td>0.34</td>
+								<td>38</td>
+							</tr>
+							<tr>
+								<td>배</td>
+								<td>0.55</td>
+								<td>15</td>
+							</tr>
+							<tr>
+								<td>귤</td>
+								<td>0.25</td>
+								<td>25</td>
+							</tr>
+							<tr>
+								<td>배</td>
+								<td>0.59</td>
+								<td>40</td>
+							</tr>
+							<tr>
+								<td>추리</td>
+								<td>2.80</td>
+								<td>10</td>
+							</tr>
+							<tr>
+								<td>도마도</td>
+								<td>3.55</td>
+								<td>16</td>
+							</tr>
+							<tr>
+								<td>락화생</td>
+								<td>1.25</td>
+								<td>20</td>
+							</tr>
+							<tr>
+								<td>호두</td>
+								<td>1.75</td>
+								<td>12</td>
+							</tr>
+							<tr>
+								<th>수식</th>
+								<th>설명(결과)</th>
+								<th>&nbsp;</th>
+							</tr>
+							<tr>
+								<td>=INDEX(A2:C6,2,3)</td>
+								<td>A2:C6 범위에서 두번째 행과 세번째 렬이 교차되는 위치 즉 C3세포의 내용입니다. (38)</td>
+								<td>&nbsp;</td>
+							</tr>
+							<tr>
+								<td>=INDEX((A1:C6,A8:C10),2,2,2)</td>
+								<td>A8:C10의 두번째 범위에서 두번째 행과 두번째 령이 교차되는 위치 즉 B9세포의 내용입니다. (3.55)</td>
+								<td>&nbsp;</td>
+							</tr>
+							<tr>
+								<td>=SUM(INDEX(A1:C10,0,3,1))</td>
+								<td>A1:C10 범위에서 첫번째 범위의 세번째 렬의 합 즉 C1:C10의 합입니다. (216)</td>
+								<td>&nbsp;</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+		<script type="text/javascript" language="Javascript">footerView()</script>
+	
+</body>
+</html>				

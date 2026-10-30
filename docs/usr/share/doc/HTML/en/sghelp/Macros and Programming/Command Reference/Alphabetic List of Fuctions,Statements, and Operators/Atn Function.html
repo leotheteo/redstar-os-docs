@@ -1,0 +1,77 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+	<TITLE></TITLE>
+	<META NAME="GENERATOR" CONTENT="《Sogwang 3.0》  (Linux)">
+	<META NAME="CREATED" CONTENT="20091205;11384400">
+	<META NAME="CHANGED" CONTENT="20091205;11505700">
+	<STYLE TYPE="text/css">
+	<!--
+		H2 { margin-bottom: 0.18cm; font-family: "Bitstream Vera Sans", "Arial", "Helvetica", "Lucida", "Geneva", "Helmet", sans-serif, "Andale Sans UI", "Arial Unicode MS", "Lucida Sans Unicode", "Tahoma"; font-size: 14pt }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="ko-KP" DIR="LTR"><DIV style="margin-left: 25">
+<H1><A NAME="atn"></A><A NAME="bm_id3150616"></A><FONT FACE="Thorndale, serif"><SPAN LANG="en-US">Atn
+Function [Runtime]</SPAN></FONT></H1>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Trigonometric
+function that returns the arctangent of a numeric expression. The
+return value is in the range -Pi/2 to +Pi/2.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">The
+arctangent is the inverse of the tangent function. The Atn Function
+returns the angle &quot;Alpha&quot;, expressed in radians, using the
+tangent of this angle. The function can also return the angle &quot;Alpha&quot;
+by comparing the ratio of the length of the side that is opposite of
+the angle to the length of the side that is adjacent to the angle in
+a right-angled triangle.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Atn(side
+opposite the angle/side adjacent to angle)= Alpha</SPAN></FONT></P>
+<H2><SPAN LANG="en-US">Syntax:</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Atn
+(Number)</SPAN></FONT></P>
+<H2><SPAN LANG="en-US">Return value:</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Double</SPAN></FONT></P>
+<H2><SPAN LANG="en-US">Parameters:</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Number:</B>
+Any numerical expression that represents the ratio of two sides of a
+right triangle. The Atn function returns the corresponding angle in
+radians (arctangent).</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">To
+convert radians to degrees, multiply radians by 180/pi.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">degree=(radian*180)/pi</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">radian=(degree*pi)/180</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Pi is
+here the fixed circle constant with the rounded value 3.14159.</SPAN></FONT></P>
+<H2><A NAME="errorcode"></A><SPAN LANG="en-US">Error Codes </SPAN>
+</H2>
+<P><A NAME="err5"></A><FONT FACE="청봉, serif"><SPAN LANG="en-US">5
+Invalid procedure call </SPAN></FONT>
+</P>
+<H2><SPAN LANG="en-US">Example:</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">REM The
+following example calculates for a right-angled triangle</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">REM the
+angle Alpha from the tangent of the angle Alpha:</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Sub
+ExampleATN</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">REM
+rounded Pi = 3.14159 is a predefined constant</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Dim d1
+As Double</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Dim d2
+As Double</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">d1 =
+InputBox$ (&quot;Enter the length of the side adjacent to the angle:
+&quot;,&quot;Adjacent&quot;)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">d2 =
+InputBox$ (&quot;Enter the length of the side opposite the angle:
+&quot;,&quot;Opposite&quot;)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Print
+&quot;The Alpha angle is&quot;; (atn (d2/d1) * 180 / Pi); &quot;
+degrees&quot;</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">End
+Sub</SPAN></A></SPAN></FONT></P>
+
+</DIV></BODY>
+</HTML>

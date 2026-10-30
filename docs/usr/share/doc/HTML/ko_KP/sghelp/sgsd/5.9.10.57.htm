@@ -1,0 +1,162 @@
+<html dir='ltr'>
+	<head>
+		<META http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+		<title>QUARTILE</title>
+		<link rel='stylesheet' type='text/css' href='../css/main.css'/>
+		<script type='text/javascript' language='Javascript' src='../js/mexpcol.js'></script>
+		<script type='text/javascript' language='JavaScript' src='../js/glossary.js'></script>
+	</head>
+	<body>
+		<h1>&nbsp;<img align="absbottom" src="../image/external_images/crystal/svtools/res/new_doc.png"/>&nbsp;QUARTILE</h1>
+		<p id='ExpandAllLine' class='ExpFav'>
+			<a href='#' onClick='ExpandAll()' onKeyPress='ExpandAll()' class='DropDown'>
+				<img id='picHeader' border='0' src='../image/image/common/expandtri.gif' alt='모두 표시'>
+				<span id='ExpandAll'>모두 표시</span>
+			</a>
+		</p>
+		<p><b class="bterm">참고항목</b>&emsp;
+			<a href="5.9.10.1.htm">통계함수목록</a>,
+			<a href="5.9.10.35.htm">LARGE</a>,
+			<a href="5.9.10.38.htm">MAX</a>,
+			<a href="5.9.10.40.htm">MEDIAN</a>,
+			<a href="5.9.10.41.htm">MIN</a>,
+			<a href="5.9.10.50.htm">PERCENTILE</a>,
+			<a href="5.9.10.51.htm">PERCENTRANK</a>,
+			<a href="5.9.10.62.htm">SMALL</a>
+		</p>
+		<p>표본집단의 4분위수를 구합니다.</p>
+		<p><b class="bterm">문법:&emsp;&emsp;		QUARTILE(자료,류형)</b></p>
+		<table>
+			<tr>
+				<th>인수명</th>
+				<th>설명</th>
+			</tr>
+			<tr>
+				<td>자료</td>
+				<td>표본집단의 자료배렬입니다.</td>
+			</tr>
+			<tr>
+				<td>류형</td>
+				<td>분위수의 류형(0 = MIN, 1 = 25%, 2 = 50%, 3 = 75%, 4 = MAX)입니다.</td>
+			</tr>
+		</table>
+		<table>
+			<tr>
+				<th>류형</th>
+				<th>QUARTILE 함수값</th>
+			</tr>
+			<tr>
+				<td>0</td>
+				<td>최소값</td>
+			</tr>
+			<tr>
+				<td>1</td>
+				<td>제1사분위수 (25번째 백분위수)</td>
+			</tr>
+			<tr>
+				<td>2</td>
+				<td>제2사분위수 (50번째 백분위수)</td>
+			</tr>
+			<tr>
+				<td>3</td>
+				<td>제3사분위수 (75번째 백분위수)</td>
+			</tr>
+			<tr>
+				<td>4</td>
+				<td>최대값</td>
+			</tr>
+		</table>
+		<p><b class="bterm">주의</b></p>
+			<ul>
+				<li><b class="bterm">자료</b>가 비여있으면 <b class="bterm">QUARTILE</b>함수는 <b class="bterm">오유:[오유번호]</b>를 표시합니다.</li>
+				<li><b class="bterm">류형</b>이 옹근수가 아니면 옹근수로 변환됩니다.</li>
+				<li><b class="bterm">류형</b> < 0거나 <b class="bterm">류형</b> > 4이면 <b class="bterm">오유:[오유번호]</b>를 표시합니다.</li>
+				<li><b class="bterm">류형</b>이 0, 2, 4일 때의 <b class="bterm">QUARTILE</b>함수값은 <b class="bterm">MIN</b>, <b class="bterm">MEDIAN</b>, <b class="bterm">MAX</b> 값과 각각 같습니다.</li>
+			</ul>
+		<p><b class="bterm">실례</b></p>
+			<p><a href="1.5.1.htm">실례의 리용방법</a>을 참고하십시오.</p>
+			<table>
+				<tr>
+					<td>
+						<table>
+							<tr>
+								<td class="noborder">&nbsp;
+								</td>
+							</tr>
+							<tr>
+								<th>1</th>
+							</tr>
+							<tr>
+								<th>2</th>
+							</tr>
+							<tr>
+								<th>3</th>
+							</tr>
+							<tr>
+								<th>4</th>
+							</tr>
+							<tr>
+								<th>5</th>
+							</tr>
+							<tr>
+								<th>6</th>
+							</tr>
+							<tr>
+								<th>7</th>
+							</tr>
+							<tr>
+								<th>8</th>
+							</tr>
+							<tr>
+								<th>9</th>
+							</tr>
+						</table>
+					</td>
+					<td>
+						<table>
+							<tr>
+								<th>A</th>
+							</tr>
+							<tr>
+								<th>자료</th>
+							</tr>
+							<tr>
+								<td>1</td>
+							</tr>
+							<tr>
+								<td>2</td>
+							</tr>
+							<tr>
+								<td>4</td>
+							</tr>
+							<tr>
+								<td>7</td>
+							</tr>
+							<tr>
+								<td>8</td>
+							</tr>
+							<tr>
+								<td>9</td>
+							</tr>
+							<tr>
+								<td>10</td>
+							</tr>
+							<tr>
+								<td>12</td>
+							</tr>
+							<tr>
+								<th>수식</th>
+								<th>설명(결과)</th>
+							</tr>
+							<tr>
+								<td>=QUARTILE(A2:A9,1)</td>
+								<td>우에 있는 자료의 제1사분위수(25번째 백분위수)입니다. (3.5)</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+		<script type="text/javascript" language="Javascript">footerView()</script>
+	
+</body>
+</html>				

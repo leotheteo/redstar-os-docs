@@ -1,0 +1,136 @@
+﻿<html dir='ltr'>
+	<head>
+		<META http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+		<title>MIRR</title>
+		<link rel='stylesheet' type='text/css' href='../css/main.css'/>
+		<script type='text/javascript' language='Javascript' src='../js/mexpcol.js'></script>
+		<script type='text/javascript' language='JavaScript' src='../js/glossary.js'></script>
+	</head>
+	<body>
+		<h1>&nbsp;<img align="absbottom" src="../image/external_images/crystal/svtools/res/new_doc.png"/>&nbsp;MIRR</h1>
+		<p id='ExpandAllLine' class='ExpFav'>
+			<a href='#' onClick='ExpandAll()' onKeyPress='ExpandAll()' class='DropDown'>
+				<img id='picHeader' border='0' src='../image/image/common/expandtri.gif' alt='모두 표시'>
+				<span id='ExpandAll'>모두 표시</span>
+			</a>
+		</p>
+		<p><b class="bterm">참고항목</b>&emsp; 
+			<a href="5.9.5.1.htm">재정함수목록</a>,
+			<a href="5.9.5.48.htm">RATE</a>,
+			<a href="5.9.5.56.htm">XIRR</a>,
+			<a href="5.9.5.57.htm">XNPV</a>
+		</p>
+		<p>투자계렬에 대한 수정된 내부수익률을 구합니다.</p>
+		<p><b class="bterm">문법:&emsp;&emsp;		MIRR(범위,투자,재투자리윤률)</b></p>
+		<table>
+			<tr>
+				<th>인수명</th>
+				<th>설명</th>
+			</tr>
+			<tr>
+				<td>범위</td>
+				<td>세포의 내용이 지불에 해당하는 세포의 배렬 또는 참조입니다. 이 수값들은 련속되는 지불(부수)과 정기적인 기간에 일어나는 수입(정수)을 표현합니다.
+					이 배렬은 수정된 반환률을 계산하기 위하여 적어도 한개의 정수값과 한개의 부수값을 포함하여야 합니다.
+					만일 배렬이나 세포인수가 문자, 론리값, 빈세포를 포함하고있다면 이 범위들을 무시합니다. 그러나 범위가 령인 세포들은 포함됩니다.
+				</td>
+			</tr>
+		<tr>
+			<td>투자</td>
+			<td>투자에 대한 리자률(배렬내부의 부수값)입니다.</td>
+		</tr>
+		<tr>
+			<td>재투자리윤률</td>
+			<td>재투자에 대한 리자률(배렬내부의 정수값)입니다.</td>
+		</tr>
+		</table>
+		<p><b class="bterm">주의</b></p>
+			<ul>
+				<li><b class="bterm">투자</b>는 값의 순서를 현금지출의 순서로 해석합니다. 수입과 지출을 원하는 순서대로(받은 현금은 정수이며 지불한 현금은 부수) 입력하여야 합니다.</li>
+				<li><b class="bterm">n</b>은 <b class="bterm">범위</b>에서 현금지출의 회수라고  할 때 <b class="bterm">MIRR</b> 식은 다음과 같습니다.
+					<p><img border="0" src="../image/image/sgsd/formula-5.gif" alt="표시"></p>
+				</li>
+			</ul>
+		<p><b class="bterm">실례</b></p>
+			<p><a href="1.5.1.htm">실례의 리용방법</a>을 참고하십시오.</p>
+			<table>
+				<tr>
+					<td>
+						<table>
+							<tr><td>&nbsp;</td></tr>
+							<tr><th>1</th></tr>
+							<tr><th>2</th></tr>
+							<tr><th>3</th></tr>
+							<tr><th>4</th></tr>
+							<tr><th>5</th></tr>
+							<tr><th>6</th></tr>
+							<tr><th>7</th></tr>
+							<tr><th>8</th></tr>
+							<tr><th>9</th></tr>
+						</table>
+					</td>
+					<td>
+						<table>
+							<tr>
+								<th>A</th>
+								<th>B</th>
+							</tr>
+							<tr>
+								<th>자료</th>
+								<th>설명</th>
+							</tr>
+							<tr>
+								<td>-120 000</td>
+								<td>구입비용입니다.</td>
+							</tr>
+							<tr>
+								<td>39 000</td>
+								<td>첫번째 년도를 구합니다.</td>
+							</tr>
+							<tr>
+								<td>30 000</td>
+								<td>두번째 년도를 구합니다.</td>
+							</tr>
+							<tr>
+								<td>21 000</td>
+								<td>세번째 년도를 구합니다.</td>
+							</tr>
+							<tr>
+								<td>37 000</td>
+								<td>네번째 년도를 구합니다.</td>
+							</tr>
+							<tr>
+								<td>46 000</td>
+								<td>다섯번째 년도를 구합니다.</td>
+							</tr>
+							<tr>
+								<td>10.00%</td>
+								<td>대부금(120 000)의 년리자률입니다. (%)</td>
+							</tr>
+							<tr>
+								<td>12.00%</td>
+								<td>재투자수익의 년리자률입니다. (%)</td>
+							</tr>
+							<tr>
+								<th>수식</th>
+								<th>설명(결과)</th>
+							</tr>
+							<tr>
+								<td>=MIRR(A2:A7,A8,A9)</td>
+								<td>첫번째 년도이후 투자의 수정된 내부수익률입니다. (13%)</td>
+							</tr>
+							<tr>
+								<td>=MIRR(A2:A5,A8,A9)</td>
+								<td>3년후의 수정된 내부수익률입니다. (-5%)</td>
+							</tr>
+							<tr>
+								<td>=MIRR(A2:A7,A8,14%)</td>
+								<td>14%의 <b class="bterm">재투자리윤률</b>을 기반으로 수정된 5년후 내부수익률입니다. (13%)</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>	
+		<script type="text/javascript" language="Javascript">footerView()</script>
+	
+</body>
+</html>						

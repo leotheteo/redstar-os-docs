@@ -1,0 +1,166 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <META NAME="GENERATOR" CONTENT="LinuxDoc-Tools 0.9.21">
+ <TITLE>ISDN4LINUX - FAQ (deutsche Version): dialin: Konfiguration eines Einwahl(Dial-In)-Servers </TITLE>
+ <LINK HREF="i4lfaq-de-23.html" REL=next>
+ <LINK HREF="i4lfaq-de-21.html" REL=previous>
+ <LINK HREF="i4lfaq-de.html#toc22" REL=contents>
+</HEAD>
+<BODY>
+<A HREF="i4lfaq-de-23.html">Next</A>
+<A HREF="i4lfaq-de-21.html">Previous</A>
+<A HREF="i4lfaq-de.html#toc22">Contents</A>
+<HR>
+<H2><A NAME="dialin"></A> <A NAME="s22">22.</A> <A HREF="i4lfaq-de.html#toc22">dialin: Konfiguration eines Einwahl(Dial-In)-Servers </A></H2>
+
+<H2><A NAME="dialin_config"></A> <A NAME="ss22.1">22.1</A> <A HREF="i4lfaq-de.html#toc22.1">dialin_config: Wie kann ich anderen den Zugang &uuml;ber ISDN erm&ouml;glichen?</A>
+</H2>
+
+<P>Einige Konfigurationsbeispiele findest Du auf 
+<A HREF="http://www.rosat.mpe-garching.mpg.de/~web/ISDN.html">http://www.rosat.mpe-garching.mpg.de/~web/ISDN.html</A>.  Wenn Du
+mit der Einrichtung Probleme hast, versuche das neueste Paket von
+ISDN4LINUX zu bekommen (siehe Frage 
+<A HREF="i4lfaq-de-3.html#distrib_getlatest">distrib_getlatest</A>).
+Wie gewohnt kannst Du auch in der Mailingliste nachfragen.  Im
+Allgemeinen gibt es mehrere M&ouml;glichkeiten, Dial-In
+einzurichten. Es kommt darauf an, wie Du m&ouml;chtest, da&szlig; sich
+andere bei Dir einw&auml;hlen.
+<UL>
+<LI>Richte Netzwerk-Devices zur Einwahl &uuml;ber syncppp oder rawip
+ein. Setze die Option <CODE>secure off</CODE> um jedem die Einwahl zu
+erm&ouml;glichen oder <CODE>secure on</CODE> um die Einwahl nur &uuml;ber
+ISDN-Nummern zu erm&ouml;glichen, die Du mit <CODE>isdnctrl addphone
+&lt;device&gt; in &lt;Telefonnummer&gt;</CODE> eintr&auml;gst.  Es wurde
+berichtet, da&szlig; Du die Option <CODE>ms-dns</CODE> f&uuml;r ipppd setzen
+musst damit die IPCP-Verhandlung funktioniert.
+</LI>
+<LI>Benutze die ttyI* Devices f&uuml;r asyncppp oder X.75.</LI>
+</UL>
+
+Es folgen weitere Details zur Einstellung der ttyI* Devices. Die
+Konfiguration ist wie bei einem seriellen Port. Starte ein getty (mgetty
+von Gert Doering ist sehr empfehlenswert) auf einem der ISDN Devices
+(/dev/ttyI*). Der Eintrag in /etc/inittab sollte etwa so aussehen:
+<HR>
+<PRE>
+I0:56:respawn:/usr/local/sbin/mgetty ttyI0
+I1:56:respawn:/usr/local/sbin/mgetty ttyI1
+</PRE>
+<HR>
+
+Der folgende Init-String muss in die <CODE>mgetty.config</CODE> eingetragen
+werden, damit mgetty weiss, auf welche MSN oder EAZ es lauschen
+muss. Wenn Deine MSN z.B. 123456 lautet:
+<HR>
+<PRE>
+port ttyI0
+modem-type data
+speed 38400
+init-chat '' ATZ OK AT&amp;E123456 OK AT&amp;B512 OK
+</PRE>
+<HR>
+
+Die Blockgr&ouml;&szlig;e wurde f&uuml;r X.75 auf 512 Bytes gesetzt.
+Alternativ kannst Du auch die gesamte Einstellung in
+<CODE>/etc/inittab</CODE> in einer Zeile schreiben (hier wegen der
+Randeinstellungen in 2 Zeilen gedruckt!):
+<HR>
+<PRE>
+i0:45:respawn:/sbin/mgetty -D -m '"" ATZ OK AT&amp;E123456 OK
+AT&amp;B512 OK' -s 38400 ttyI0
+</PRE>
+<HR>
+
+Der eleganteste Weg ist der Gebrauch von iprofd. Die Benutzung dieses
+Systemdienstes wird m&ouml;glich durch den Befehl <CODE>AT&amp;W0</CODE>
+in der I4L Modememulation. Du startest iprofd mit einem Pfad als
+Parameter, z.B. <CODE>'iprofd /etc/i4lprofile'</CODE>. Dann &ouml;ffnest
+Du mit minicom oder einem anderen Terminalprogramm ein ISDN tty Device
+und gibst den n&ouml;tigen AT-Befehl manuell ein.
+Danach gibst Du den Befehl <CODE>AT&amp;W0</CODE> ein. Der Kernel
+veranlasst daraufhin iprofd dazu, die aktuelle Konfiguration in die
+Datei zu schreiben. Von nun an reicht es aus, iprofd in Deinem ISDN
+Initscript zu starten und die entsprechenden ISDN tty Devices mit
+<CODE>ATZ</CODE> zu initialisieren.</P>
+
+<H2><A NAME="dialin_manyparallel"></A> <A NAME="ss22.2">22.2</A> <A HREF="i4lfaq-de.html#toc22.2">dialin_manyparallel: Wie kann ich mehreren Leuten gleichzeitig die Einwahl erm&ouml;glichen? </A>
+</H2>
+
+<P>Du musst exakt so viele gettys oder Netzwerk Interfaces einrichten,
+wie sich Leute gleichzeitig einw&auml;hlen d&uuml;rfen. Diese gettys
+oder Netzwerk Interfaces k&ouml;nnen die gleiche MSN benutzen, da
+mehrere Leute gleichzeitig mit der gleichen MSN verbunden sein
+k&ouml;nnen (solange freie B-Kan&auml;le vorhanden sind). Es kann
+jedoch nur ein getty jeweils einem einzelnen ttyI* Device zugeordnet
+sein.</P>
+
+<H2><A NAME="dialin_analogditalsamettyi"></A> <A NAME="ss22.3">22.3</A> <A HREF="i4lfaq-de.html#toc22.3">dialin_analogditalsamettyi: Kann ich ein ttyI*-Device so einrichten, da&szlig; es sowohl digitale als auch analoge Einwahlversuche annimmt? </A>
+</H2>
+
+<P>Dies ist nicht m&ouml;glich, da der Digitalmodus andere Registereinstellungen erfordert als der analoge Modus. Daher musst Du f&uuml;r diesen Zweck zwei dazu bestimmte Devices einrichten. Beachte dabei, da&szlig; Einwahlversuche von analogen Modems nur bei den wenigen Karten m&ouml;glich sind, bei denen sowohl die Karte als auch der isdn4linux-Treiber das unterst&uuml;tzen.</P>
+
+<H2><A NAME="dialin_fixedip"></A> <A NAME="ss22.4">22.4</A> <A HREF="i4lfaq-de.html#toc22.4">dialin_fixedip: Wie kann ich bei Einwahlen via ipppd jedem User eine feste IP zuordnen? </A>
+</H2>
+
+<P>Spezifiziere die feste IP-Adresse in der Datei pap/chap-secrets zusammen mit dem Usernamen und Passwort (siehe man ipppd).</P>
+
+<H2><A NAME="dialin_hdlc"></A> <A NAME="ss22.5">22.5</A> <A HREF="i4lfaq-de.html#toc22.5">dialin_hdlc: Jemand m&ouml;chte sich mit HDLC durch mein mgetty einw&auml;hlen. Ist ttyI1 korrekt oder muss ich mit ttyI0 beginnen? </A>
+</H2>
+
+<P>Das spielt keine Rolle. Es hat auch nichts mit der Nummer des B-Kanals
+(0 oder 1) zu tun. Du musst nur HDLC im Init-String aktivieren
+(ATS14=3).</P>
+
+<H2><A NAME="dialin_autoppp"></A> <A NAME="ss22.6">22.6</A> <A HREF="i4lfaq-de.html#toc22.6">dialin_autoppp: Ist es mit mgetty m&ouml;glich, beim Empfang von LCP-Frames den pppd automatisch zu starten? </A>
+</H2>
+
+<P>Ja, ist es. Dieses Feature nennt sich 'AutoPPP'. Siehe Konfiguration
+von mgetty.</P>
+
+<H2><A NAME="dialin_passwd"></A> <A NAME="ss22.7">22.7</A> <A HREF="i4lfaq-de.html#toc22.7">dialin_passwd: Wie bringe ich (i)pppd dazu, bei einer Einwahl die Passw&ouml;rter mit /etc/passwd statt mit /etc/ppp/pap-secrets zu vergleichen? </A>
+</H2>
+
+<P>ipppd muss mit den Optionen 'login' und 'auth' gestartet werden. In
+/etc/ppp/pap-secrets muss bei einer Beschr&auml;nkung auf bestimmte
+User f&uuml;r jeden dieser User die folgende Zeile existieren:
+<HR>
+<PRE>
+login-name * '' *
+</PRE>
+<HR>
+
+Um allen Usern die Einwahl zu erlauben gen&uuml;gt:
+<HR>
+<PRE>
+* * '' *
+</PRE>
+<HR>
+
+Die letztere Wirkung tritt auch ein, wenn keine Datei pap-secrets
+existiert.</P>
+
+<H2><A NAME="dialin_ignored"></A> <A NAME="ss22.8">22.8</A> <A HREF="i4lfaq-de.html#toc22.8">dialin_ignored: Ich bekomme dauernd die Meldung 'isdn_tty: call from XXX - YYY ignored'. Wieso ignoriert ISDN4LINUX (syncPPP) diesen Einwahlversuch? </A>
+</H2>
+
+<P>Da gibt es zwei m&ouml;gliche Erkl&auml;rungen.  Entweder ist Deine
+eigene MSN (hier: YYY) nicht korrekt mit 'isdnctrl eaz interface YYY'
+eingetragen. Oder es wurde die Option 'isdnctrl secure interface on'
+gesetzt, ohne die Anrufe von dieser Nummer (hier: XXX) mit 'isdnctrl
+addphone interface in XXX' zu erlauben.</P>
+
+<H2><A NAME="dialin_async"></A> <A NAME="ss22.9">22.9</A> <A HREF="i4lfaq-de.html#toc22.9">dialin_async: Eine SunISDN versucht sich in mein I4L-System einzuw&auml;hlen. </A>
+</H2>
+
+<P>Die Sun versucht mit asyncPPP zu kommunizieren. ipppd kann damit nicht
+umgehen, Du musst die ttyI* Devices und den normalen pppd benutzen.</P>
+
+
+
+
+<HR>
+<A HREF="i4lfaq-de-23.html">Next</A>
+<A HREF="i4lfaq-de-21.html">Previous</A>
+<A HREF="i4lfaq-de.html#toc22">Contents</A>
+</BODY>
+</HTML>

@@ -1,0 +1,149 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+	<TITLE></TITLE>
+	<META NAME="GENERATOR" CONTENT="《Sogwang 3.0》  (Linux)">
+	<META NAME="CREATED" CONTENT="20091210;14130400">
+	<META NAME="CHANGED" CONTENT="20091210;14164400">
+	<STYLE TYPE="text/css">
+	<!--
+		TD P.howtogetheader { background: #ffffff; border: 1px solid #999999; padding: 0.08cm; font-weight: bold }
+		H2 { margin-bottom: 0.18cm; font-family: "Bitstream Vera Sans", "Arial", "Helvetica", "Lucida", "Geneva", "Helmet", sans-serif, "Andale Sans UI", "Arial Unicode MS", "Lucida Sans Unicode", "Tahoma"; font-size: 14pt }
+		P.related { margin-top: 0.71cm; margin-bottom: 0.05cm; border-top: 1px solid #000000; border-bottom: none; border-left: none; border-right: none; padding-top: 0.05cm; padding-bottom: 0cm; padding-left: 0cm; padding-right: 0cm; font-weight: bold }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="ko-KP" DIR="LTR"><DIV style="margin-left: 25">
+<H1><A NAME="bm_id5008046"></A><A NAME="bm_id3147428"></A><FONT FACE="Thorndale, serif"><SPAN LANG="en-US">Conditional
+Formatting</SPAN></FONT></H1>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Choose
+<B>Conditional Formatting</B> to define format styles depending on
+certain conditions. If a style was already assigned to a cell, it
+remains unchanged. The style entered here is then evaluated. You can
+enter three conditions that query the contents of cell values or
+formulas. The conditions are evaluated from 1 to 3. If the condition
+1 matches the condition, the defined style will be used. Otherwise,
+condition 2 is evaluated, and its defined style used. If this style
+does not match, condition 3 is evaluated.</SPAN></FONT></P>
+
+<TABLE WIDTH=95% BORDER=1 CELLPADDING=3 CELLSPACING=0 BGCOLOR="#eeeeee">
+	<COL WIDTH=256*>
+	<TR>
+		<TD WIDTH=100%>
+			<P CLASS="howtogetheader"><FONT FACE="청봉, serif"><SPAN LANG="en-US">To
+			access this command... </SPAN></FONT>
+			</P>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><SPAN STYLE="background: #eeeeee">Choose
+			<B>Format - Conditional Formatting</B> </SPAN></SPAN></FONT>
+			</P>
+		</TD>
+	</TR>
+</TABLE>
+<P STYLE="margin-top: 0.05cm; margin-bottom: 0cm"><BR>
+</P>
+<TABLE WIDTH=940 BORDER=0 CELLPADDING=5 CELLSPACING=0>
+	<COL WIDTH=25>
+	<COL WIDTH=568>
+	<TR>
+		<TD WIDTH=35>
+			<P><IMG SRC="../../../../Image/warning.png" NAME="graphics1" ALT="Warning Icon " ALIGN=BOTTOM WIDTH=25 HEIGHT=42 BORDER=0></P>
+		</TD>
+		<TD WIDTH=872>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">To
+			apply conditional formatting, AutoCalculate must be enabled.
+			Choose Tools - Cell Contents - AutoCalculate (you see a check mark
+			next to the command when AutoCalculate is enabled).</SPAN></FONT></P>
+		</TD>
+	</TR>
+</TABLE>
+<P>
+<BR>
+<BR>
+</P>
+<H2><SPAN LANG="en-US">Condition 1/2/3</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Mark the
+boxes corresponding to each condition and enter the corresponding
+condition. To close the dialog, click <B>OK</B>.</SPAN></FONT></P>
+<H2><A NAME="bm_id3149581"></A><A NAME="bm_id3153158"></A>
+<SPAN LANG="en-US">Cell Value / Formula</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Specifies
+if conditional formatting is dependent on a cell value or a formula.
+If you select a formula as a reference, the <B>Cell Value Condition</B>
+box is displayed to the right of the <B>Cell value/Formula</B> field.
+If the condition is &quot;Formula is&quot;, enter a cell reference.
+If the cell reference is a value other than zero, the condition
+matches.</SPAN></FONT></P>
+<H2><A NAME="bm_id3153712"></A><A NAME="bm_id3145641"></A>
+<SPAN LANG="en-US">Cell Value Condition</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Choose a
+condition for the format to be applied to the selected cells.</SPAN></FONT></P>
+<H2><A NAME="bm_id3147345"></A><A NAME="bm_id3146918"></A>
+<SPAN LANG="en-US">Cell Style</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Choose
+the style to be applied if the specified condition matches.</SPAN></FONT></P>
+<H2><A NAME="bm_id3150298"></A><A NAME="bm_id3147001"></A>
+<SPAN LANG="en-US">Parameter field</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Enter a
+reference, value or formula in the parameter field, or in both
+parameter fields if you have selected a condition that requires two
+parameters. You can also enter formulas containing relative
+references.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Once the
+parameters have been defined, the condition is complete. It may
+appear as:</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Cell
+value is equal 0: Cell style Null value (You must have already
+defined a cell style with this name before assigning it to a
+condition).</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Cell
+value is between $B$20 and $B$21: Cell style Result (The
+corresponding value limits must already exist in cells B20 and B21)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Formula
+is SUM($A$1:$A$5)=10: Cell style Result (The selected cells are
+formatted with the Result style if the sum of the contents in cells
+A1 to A5 is equal to 10.</SPAN></FONT></P>
+<H2><A NAME="bm_id3155380"></A><A NAME="bm_id3150202"></A>
+<SPAN LANG="en-US">Shrink / Maximize</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Click
+the <B>Shrink </B>icon to reduce the dialog to the size of the input
+field. It is then easier to mark the required reference in the sheet.
+The icons then automatically convert to the <B>Maximize</B> icon.
+Click it to restore the dialog to its original size.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">The
+dialog is automatically minimized when you click into a sheet with
+the mouse. As soon as you release the mouse button, the dialog is
+restored and the reference range defined with the mouse is
+highlighted in the document by a blue frame.</SPAN></FONT></P>
+<TABLE WIDTH=93 BORDER=0 CELLPADDING=5 CELLSPACING=0>
+	<COL WIDTH=16>
+	<COL WIDTH=57>
+	<TR VALIGN=TOP>
+		<TD WIDTH=16>
+			<P><IMG SRC="../../../../Image/refinp1.png" NAME="graphics2" ALT="Icon" ALIGN=BOTTOM WIDTH=16 HEIGHT=16 BORDER=0></P>
+		</TD>
+		<TD WIDTH=57>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Shrink</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=16>
+			<P><IMG SRC="../../../../Image/refinp2.png" NAME="graphics3" ALT="Icon" ALIGN=BOTTOM WIDTH=16 HEIGHT=16 BORDER=0></P>
+		</TD>
+		<TD WIDTH=57>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Maximize</SPAN></FONT></P>
+		</TD>
+	</TR>
+</TABLE>
+<P><BR><BR>
+</P>
+<P CLASS="related"><A NAME="relatedtopics"></A><A NAME="related"></A><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Related
+Topics</B> </SPAN></FONT>
+</P>
+<P STYLE="margin-left: 0.13cm; margin-top: 0.05cm; margin-bottom: 0.05cm">
+<FONT FACE="청봉, serif"><SPAN LANG="en-US"><SPAN STYLE="font-weight: medium"><A href="../../../Formatting/Applying Conditional Formatting.html">Applying
+Conditional Formatting</A> </SPAN></SPAN></FONT>
+</P>
+
+</DIV></BODY>
+</HTML>

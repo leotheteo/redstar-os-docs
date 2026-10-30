@@ -1,0 +1,526 @@
+<?xml version="1.0"?>
+<gconf>
+	<dir name="schemas">
+		<dir name="apps">
+			<dir name="gnome-keyring">
+				<dir name="daemon-components">
+					<entry name="pkcs11">
+						<local_schema short_desc="是否启用 gnome-keyring PKCS#11 组件">
+							<longdesc>此选项启用 gnome-keyring 守护进程的 PKCS#11 组件。它仅在 gnome-keyring-daemon 启动时生效(即用户登入时)。当一些特定的命令行参数传给守护进程时，此设定可以被覆盖。</longdesc>
+						</local_schema>
+					</entry>
+					<entry name="ssh">
+						<local_schema short_desc="是否启用 gnome-keyring SSH 代理">
+							<longdesc>此选项启用 gnome-keyring 守护进程的 SSH 代理。它仅在 gnome-keyring-daemon 启动时生效(即用户登入时)。当一些特定的命令行参数传给守护进程时，此设定可以被覆盖。</longdesc>
+						</local_schema>
+					</entry>
+				</dir>
+			</dir>
+		</dir>
+		<dir name="desktop">
+			<dir name="ibus">
+				<dir name="engine">
+					<dir name="Chewing">
+						<entry name="spaceAsSelection">
+							<local_schema short_desc="Space to select">
+								<longdesc>
+                    Press Space to select the candidate.
+                </longdesc>
+							</local_schema>
+						</entry>
+						<entry name="phraseChoiceRearward">
+							<local_schema short_desc="Choose phrases from backward">
+								<longdesc>
+                    Choose phrases from the back, without moving cursor.
+                </longdesc>
+							</local_schema>
+						</entry>
+						<entry name="candPerPage">
+							<local_schema short_desc="Candidate per page">
+								<longdesc>
+                    Number of candidate per page.
+                </longdesc>
+							</local_schema>
+						</entry>
+						<entry name="plainZhuyin">
+							<local_schema short_desc="Plain Zhuyin mode">
+								<longdesc>
+                    In plain Zhuyin mode, automatic candidate selection and related options are disabled or ignored.
+                </longdesc>
+							</local_schema>
+						</entry>
+						<entry name="numpadAlwaysNumber">
+							<local_schema short_desc="Number pad always input number">
+								<longdesc>
+                    Always input numbers when number keys from key pad is inputted.
+                </longdesc>
+							</local_schema>
+						</entry>
+						<entry name="syncCapsLockLocal">
+							<local_schema short_desc="Sync between CapsLock and IM">
+								<longdesc>
+                    Occasionally, the CapsLock status does not match the IM, this option determines how these status be synchronized. Valid values:
+                    &quot;disable&quot;: Do nothing.
+                    &quot;keyboard&quot;: IM status follows keyboard status.
+                    &quot;IM&quot;: Keyboard status follows IM status.
+                </longdesc>
+							</local_schema>
+						</entry>
+						<entry name="forceLowercaseEnglish">
+							<local_schema short_desc="Force lowercase in En mode">
+								<longdesc>
+                    Ignore CapsLock status and input lowercase by default.
+                    It is handy if you wish to enter lowercase by default. Uppercase can still be inputted with Shift.
+                </longdesc>
+							</local_schema>
+						</entry>
+						<entry name="maxChiSymbolLen">
+							<local_schema short_desc="Maximum Chinese characters">
+								<longdesc>
+                    Maximum Chinese characters in pre-edit buffer, including inputing Zhuyin symbols
+                </longdesc>
+							</local_schema>
+						</entry>
+						<entry name="escCleanAllBuf">
+							<local_schema short_desc="Esc clean all buffer">
+								<longdesc>
+                    Escape key cleans the text in pre-edit-buffer.
+                </longdesc>
+							</local_schema>
+						</entry>
+						<entry name="easySymbolInput">
+							<local_schema short_desc="Easy symbol input">
+								<longdesc>
+                    Easy symbol input.
+                </longdesc>
+							</local_schema>
+						</entry>
+						<entry name="addPhraseDirection">
+							<local_schema short_desc="????">
+								<longdesc>
+                    Add phrases in the front.
+                </longdesc>
+							</local_schema>
+						</entry>
+						<entry name="autoShiftCur">
+							<local_schema short_desc="?????????">
+								<longdesc>
+                    Automatically move cursor to next character.
+                </longdesc>
+							</local_schema>
+						</entry>
+						<entry name="hsuSelKeyType">
+							<local_schema short_desc="Hsu&apos;s selection key">
+								<longdesc>
+                    Hsu&apos;s keyboard selection keys, 1 for asdfjkl789, 2 for asdfzxcv89 .
+                </longdesc>
+							</local_schema>
+						</entry>
+						<entry name="selKeys">
+							<local_schema short_desc="Selection keys">
+								<longdesc>
+                    Keys used to select candidate. For example &quot;asdfghjkl;&quot;, press &apos;a&apos; to select the 1st candidate, &apos;s&apos; for 2nd, and so on.
+                </longdesc>
+							</local_schema>
+						</entry>
+						<entry name="KBType">
+							<local_schema short_desc="Keyboard Type">
+								<longdesc>
+                    Select Zhuyin keyboard layout.
+                </longdesc>
+							</local_schema>
+						</entry>
+					</dir>
+				</dir>
+				<dir name="panel">
+					<entry name="custom_font">
+						<local_schema short_desc="自定义字体">
+							<longdesc>自定义语言栏字体</longdesc>
+						</local_schema>
+					</entry>
+					<entry name="use_custom_font">
+						<local_schema short_desc="使用自定义字体">
+							<longdesc>语言栏是否使用自定义字体</longdesc>
+						</local_schema>
+					</entry>
+					<entry name="show_im_name">
+						<local_schema short_desc="在语言栏上显示输入法名字">
+							<longdesc>在语言栏上显示输入法名字</longdesc>
+						</local_schema>
+					</entry>
+					<entry name="show_icon_on_systray">
+						<local_schema short_desc="在系统托盘上显示图标">
+							<longdesc>在系统托盘上显示图标</longdesc>
+						</local_schema>
+					</entry>
+					<entry name="lookup_table_orientation">
+						<local_schema short_desc="候选词表方向">
+							<longdesc>候选词表方向。0 = 水平，1 = 竖直。</longdesc>
+						</local_schema>
+					</entry>
+					<entry name="y">
+						<local_schema short_desc="语言栏位置">
+						</local_schema>
+					</entry>
+					<entry name="x">
+						<local_schema short_desc="语言栏位置">
+						</local_schema>
+					</entry>
+					<entry name="show">
+						<local_schema short_desc="自动隐藏">
+							<longdesc>语言栏行为。0 = 嵌入菜单，1 = 自动隐藏，2 = 总是显示。</longdesc>
+						</local_schema>
+					</entry>
+				</dir>
+				<dir name="general">
+					<entry name="enable_by_default">
+						<local_schema short_desc="默认启动输入法">
+						</local_schema>
+					</entry>
+					<entry name="use_global_engine">
+						<local_schema short_desc="使用全局输入法">
+							<longdesc>在所有应用程序中共享同一个输入法</longdesc>
+						</local_schema>
+					</entry>
+					<entry name="embed_preedit_text">
+						<local_schema short_desc="内嵌编辑模式">
+							<longdesc>在应用程序窗口中启用内嵌编辑模式</longdesc>
+						</local_schema>
+					</entry>
+					<entry name="use_system_keyboard_layout">
+						<local_schema short_desc="使用系统键盘布局">
+							<longdesc>使用系统键盘（XKB）布局</longdesc>
+						</local_schema>
+					</entry>
+					<entry name="preload_engines">
+						<local_schema short_desc="预加载引擎">
+							<longdesc>ibus启动时预加载的引擎</longdesc>
+						</local_schema>
+					</entry>
+					<dir name="hotkey">
+						<entry name="previous_engine">
+							<local_schema short_desc="上一个引擎快捷键">
+								<longdesc>切换上一个输入法快捷键</longdesc>
+							</local_schema>
+						</entry>
+						<entry name="prev_engine">
+							<local_schema short_desc="上一个引擎快捷键">
+								<longdesc>切换上一个输入法快捷键</longdesc>
+							</local_schema>
+						</entry>
+						<entry name="next_engine_in_menu">
+							<local_schema short_desc="下一个引擎快捷键">
+								<longdesc>切换下一个输入法快捷键</longdesc>
+							</local_schema>
+						</entry>
+						<entry name="next_engine">
+							<local_schema short_desc="下一个引擎快捷键">
+								<longdesc>切换下一个输入法快捷键</longdesc>
+							</local_schema>
+						</entry>
+						<entry name="trigger">
+							<local_schema short_desc="触发快捷键">
+								<longdesc>打开关闭输入法的快捷键</longdesc>
+							</local_schema>
+						</entry>
+					</dir>
+				</dir>
+			</dir>
+			<dir name="gnome">
+				<dir name="applications">
+					<dir name="component_viewer">
+						<entry name="exec">
+							<local_schema short_desc="默认组件查看器应用程序">
+								<longdesc>该应用程序用于查看需要组件才能查看的文件。参数 %s 将被替换为文件的 URI，参数 %c 将被替换为组件 IID。</longdesc>
+							</local_schema>
+						</entry>
+					</dir>
+					<dir name="terminal">
+						<entry name="exec_arg">
+							<local_schema short_desc="默认终端的执行参数">
+								<longdesc>为默认终端应用程序所使用的执行参数。</longdesc>
+							</local_schema>
+						</entry>
+						<entry name="exec">
+							<local_schema short_desc="默认终端应用程序">
+								<longdesc>为需要终端的应用程序所使用的默认终端应用程序。</longdesc>
+							</local_schema>
+						</entry>
+					</dir>
+				</dir>
+				<dir name="url-handlers">
+					<dir name="h323">
+						<entry name="needs_terminal">
+							<local_schema short_desc="在终端运行命令">
+								<longdesc>True 代表要处理此 URL 的程序应该在终端中运行。</longdesc>
+							</local_schema>
+						</entry>
+						<entry name="command">
+							<local_schema short_desc="处理“H323”URLs 的程序">
+								<longdesc>若启用的话，用于处理“H323”URLs 的命令。</longdesc>
+							</local_schema>
+						</entry>
+						<entry name="enabled">
+							<local_schema short_desc="指定的命令是否应处理“h323”URLs">
+								<longdesc>设为 true 可在“command”键中指定一个程序来处理“h323”URLs。</longdesc>
+							</local_schema>
+						</entry>
+					</dir>
+					<dir name="callto">
+						<entry name="needs_terminal">
+							<local_schema short_desc="在终端运行命令">
+								<longdesc>True 代表要处理此 URL 的程序应该在终端中运行。</longdesc>
+							</local_schema>
+						</entry>
+						<entry name="command">
+							<local_schema short_desc="处理“callto”URLs 的程序">
+								<longdesc>若启用的话，用于处理“callto”URLs 的命令。</longdesc>
+							</local_schema>
+						</entry>
+						<entry name="enabled">
+							<local_schema short_desc="指定的命令是否应处理“callto”URLs">
+								<longdesc>设为 true 可在“command”键中指定一个程序来处理“callto”URLs。</longdesc>
+							</local_schema>
+						</entry>
+					</dir>
+					<dir name="aim">
+						<entry name="needs_terminal">
+							<local_schema short_desc="在终端运行命令">
+								<longdesc>True 代表要处理此 URL 的程序应该在终端中运行。</longdesc>
+							</local_schema>
+						</entry>
+						<entry name="command">
+							<local_schema short_desc="处理“aim”URLs 的程序">
+								<longdesc>若启用的话，用于处理“aim”URLs 的命令。</longdesc>
+							</local_schema>
+						</entry>
+						<entry name="enabled">
+							<local_schema short_desc="指定的命令是否应处理“aim”URLs">
+								<longdesc>设为 true 可在“command”键中指定一个程序来处理“aim”URLs。</longdesc>
+							</local_schema>
+						</entry>
+					</dir>
+					<dir name="mailto">
+						<entry name="needs_terminal">
+							<local_schema short_desc="在终端运行命令">
+								<longdesc>True 代表要处理此 URL 的程序应该在终端中运行。</longdesc>
+							</local_schema>
+						</entry>
+						<entry name="command">
+							<local_schema short_desc="处理“mailto”URLs 的程序">
+								<longdesc>若启用的话，用于处理“mailto”URLs 的命令。</longdesc>
+							</local_schema>
+						</entry>
+						<entry name="enabled">
+							<local_schema short_desc="指定的命令是否应处理“mailto”URLs">
+								<longdesc>设为 true 可在“command”键中指定一个程序来处理“mailto”URLs。</longdesc>
+							</local_schema>
+						</entry>
+					</dir>
+					<dir name="https">
+						<entry name="needs_terminal">
+							<local_schema short_desc="在终端运行命令">
+								<longdesc>True 代表要处理此 URL 的程序应该在终端中运行。</longdesc>
+							</local_schema>
+						</entry>
+						<entry name="command">
+							<local_schema short_desc="处理“https”URLs 的程序">
+								<longdesc>若启用的话，用于处理“https”URLs 的命令。</longdesc>
+							</local_schema>
+						</entry>
+						<entry name="enabled">
+							<local_schema short_desc="指定的命令是否应处理“https”URLs">
+								<longdesc>设为 true 可在“command”键中指定一个程序来处理“https”URLs。</longdesc>
+							</local_schema>
+						</entry>
+					</dir>
+					<dir name="http">
+						<entry name="needs_terminal">
+							<local_schema short_desc="在终端运行命令">
+								<longdesc>True 代表要处理此 URL 的程序应该在终端中运行。</longdesc>
+							</local_schema>
+						</entry>
+						<entry name="command">
+							<local_schema short_desc="处理“http”URLs 的程序">
+								<longdesc>若启用的话，用于处理“http”URLs 的命令。</longdesc>
+							</local_schema>
+						</entry>
+						<entry name="enabled">
+							<local_schema short_desc="指定的命令是否应处理“http”URLs">
+								<longdesc>设为 true 可在“command”键中指定一个程序来处理“http”URLs。</longdesc>
+							</local_schema>
+						</entry>
+					</dir>
+					<dir name="man">
+						<entry name="needs_terminal">
+							<local_schema short_desc="在终端运行命令">
+								<longdesc>True 代表要处理此 URL 的程序应该在终端中运行。</longdesc>
+							</local_schema>
+						</entry>
+						<entry name="command">
+							<local_schema short_desc="处理“man”URLs 的程序">
+								<longdesc>若启用的话，用于处理“man”URLs 的命令。</longdesc>
+							</local_schema>
+						</entry>
+						<entry name="enabled">
+							<local_schema short_desc="指定的命令是否应处理“man”URLs">
+								<longdesc>设为 true 可在“command”键中指定一个程序来处理“man”URLs。</longdesc>
+							</local_schema>
+						</entry>
+					</dir>
+					<dir name="info">
+						<entry name="needs_terminal">
+							<local_schema short_desc="在终端运行命令">
+								<longdesc>True 代表要处理此 URL 的程序应该在终端中运行。</longdesc>
+							</local_schema>
+						</entry>
+						<entry name="command">
+							<local_schema short_desc="处理“info”URLs 的程序">
+								<longdesc>若启用的话，用于处理“info”URLs 的命令。</longdesc>
+							</local_schema>
+						</entry>
+						<entry name="enabled">
+							<local_schema short_desc="指定的命令是否应处理“info”URLs">
+								<longdesc>设为 true 可在“command”键中指定一个程序来处理“info”URLs。</longdesc>
+							</local_schema>
+						</entry>
+					</dir>
+					<dir name="ghelp">
+						<entry name="needs_terminal">
+							<local_schema short_desc="在终端运行命令">
+								<longdesc>True 代表要处理此 URL 的程序应该在终端中运行。</longdesc>
+							</local_schema>
+						</entry>
+						<entry name="command">
+							<local_schema short_desc="处理“ghelp”URLs 的程序">
+								<longdesc>若启用的话，用于处理“ghelp”URLs 的命令。</longdesc>
+							</local_schema>
+						</entry>
+						<entry name="enabled">
+							<local_schema short_desc="指定的命令是否应处理“ghelp”URLs">
+								<longdesc>设为 true 可在“command”键中指定一个程序来处理“ghelp”URLs。</longdesc>
+							</local_schema>
+						</entry>
+					</dir>
+					<dir name="trash">
+						<entry name="needs_terminal">
+							<local_schema short_desc="在终端运行命令">
+								<longdesc>True 代表要处理此 URL 的程序应该在终端中运行。</longdesc>
+							</local_schema>
+						</entry>
+						<entry name="command">
+							<local_schema short_desc="处理“trash”URLs 的程序">
+								<longdesc>若启用的话，用于处理“trash”URLs 的命令。</longdesc>
+							</local_schema>
+						</entry>
+						<entry name="enabled">
+							<local_schema short_desc="指定的命令是否应处理“trash”URLs">
+								<longdesc>设为 true 可在“command”键中指定一个程序来处理“trash”URLs。</longdesc>
+							</local_schema>
+						</entry>
+					</dir>
+				</dir>
+			</dir>
+		</dir>
+		<dir name="system">
+			<dir name="smb">
+				<entry name="workgroup">
+					<local_schema short_desc="SMB 工作组">
+						<longdesc>用户所属的 Windows 网络工作组或域。为了让新工作组完全生效，用户可能需要注销并再次登录。</longdesc>
+					</local_schema>
+				</entry>
+			</dir>
+			<dir name="dns_sd">
+				<entry name="extra_domains">
+					<local_schema short_desc="DNS-SD 服务应查阅的额外域">
+						<longdesc>以逗号分隔的 DNS-SD 域列表，这些域将出现在“network:///”位置中。</longdesc>
+					</local_schema>
+				</entry>
+				<entry name="display_local">
+					<local_schema short_desc="如何显示本地 DNS-SD 服务">
+						<longdesc>可供选择的值有“merged”、“separate”和“disabled”。</longdesc>
+					</local_schema>
+				</entry>
+			</dir>
+			<dir name="proxy">
+				<entry name="autoconfig_url">
+					<local_schema short_desc="自动代理配置 URL">
+						<longdesc>提供代理配置值的 URL。</longdesc>
+					</local_schema>
+				</entry>
+				<entry name="socks_port">
+					<local_schema short_desc="SOCKS 代理端口">
+						<longdesc>您使用的代理服务器的端口号定义在“/system/proxy/socks_host”中。</longdesc>
+					</local_schema>
+				</entry>
+				<entry name="socks_host">
+					<local_schema short_desc="SOCKS 代理主机名">
+						<longdesc>代理套接字的机器名。</longdesc>
+					</local_schema>
+				</entry>
+				<entry name="ftp_port">
+					<local_schema short_desc="FTP 代理端口">
+						<longdesc>您使用的代理服务器的端口号定义在“/system/proxy/ftp_host”中。</longdesc>
+					</local_schema>
+				</entry>
+				<entry name="ftp_host">
+					<local_schema short_desc="FTP 代理主机名">
+						<longdesc>代理 FTP 的机器名。</longdesc>
+					</local_schema>
+				</entry>
+				<entry name="secure_port">
+					<local_schema short_desc="安全 HTTP 代理端口">
+						<longdesc>您使用的代理服务器的端口号定义在“/system/proxy/secure_host”中。</longdesc>
+					</local_schema>
+				</entry>
+				<entry name="secure_host">
+					<local_schema short_desc="安全 HTTP 代理主机名">
+						<longdesc>代理安全 HTTP 的机器名。</longdesc>
+					</local_schema>
+				</entry>
+				<entry name="mode">
+					<local_schema short_desc="代理配置模式">
+						<longdesc>选择代理配置模式。支持的值为“无”、“手动”、“自动”。</longdesc>
+					</local_schema>
+				</entry>
+			</dir>
+			<dir name="http_proxy">
+				<entry name="ignore_hosts">
+					<local_schema short_desc="非代理服务器">
+						<longdesc>此键中定义的主机列表将不通过代理(如果有设定)而直接联接。其值可以是主机名、域名(支持通配符开头的形式如 *.foo.com)、IP 主机地址(既可 IPv4 亦可 IPv6)以及跟随网络掩码的网络地址(例如 192.168.0.0/24)。</longdesc>
+					</local_schema>
+				</entry>
+				<entry name="authentication_password">
+					<local_schema short_desc="HTTP 代理密码">
+						<longdesc>用于 HTTP 代理认证的密码。</longdesc>
+					</local_schema>
+				</entry>
+				<entry name="authentication_user">
+					<local_schema short_desc="HTTP 代理用户名">
+						<longdesc>用于 HTTP 代理认证的用户名。</longdesc>
+					</local_schema>
+				</entry>
+				<entry name="use_authentication">
+					<local_schema short_desc="认证代理服务器连接">
+						<longdesc>若为真，则对代理服务器的连接需要身份验证。用户名/密码组合由“/system/http_proxy/authentication_user”和“/system/http_proxy/authentication_password”定义。</longdesc>
+					</local_schema>
+				</entry>
+				<entry name="port">
+					<local_schema short_desc="HTTP 代理端口">
+						<longdesc>您使用的代理服务器的端口号定义在“/system/http_proxy/host”中。</longdesc>
+					</local_schema>
+				</entry>
+				<entry name="host">
+					<local_schema short_desc="HTTP 代理主机名">
+						<longdesc>代理 HTTP 的机器名。</longdesc>
+					</local_schema>
+				</entry>
+				<entry name="use_http_proxy">
+					<local_schema short_desc="使用 HTTP 代理">
+						<longdesc>访问 Internet 上的 HTTP 时启用代理服务器设置。</longdesc>
+					</local_schema>
+				</entry>
+			</dir>
+		</dir>
+	</dir>
+</gconf>

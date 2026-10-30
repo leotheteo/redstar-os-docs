@@ -1,0 +1,177 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <META NAME="GENERATOR" CONTENT="LinuxDoc-Tools 0.9.21">
+ <TITLE>ISDN4LINUX - FAQ (deutsche Version): Andere L&auml;nder</TITLE>
+ <LINK HREF="i4lfaq-de-29.html" REL=next>
+ <LINK HREF="i4lfaq-de-27.html" REL=previous>
+ <LINK HREF="i4lfaq-de.html#toc28" REL=contents>
+</HEAD>
+<BODY>
+<A HREF="i4lfaq-de-29.html">Next</A>
+<A HREF="i4lfaq-de-27.html">Previous</A>
+<A HREF="i4lfaq-de.html#toc28">Contents</A>
+<HR>
+<H2><A NAME="s28">28.</A> <A HREF="i4lfaq-de.html#toc28">Andere L&auml;nder</A></H2>
+
+<H2><A NAME="country_austria"></A> <A NAME="ss28.1">28.1</A> <A HREF="i4lfaq-de.html#toc28.1">country_austria: &Ouml;sterreich: Wir haben weder eine MSN noch eine EAZ, nur eine normale Telefonnummer. Was m&uuml;ssen wir f&uuml;r I4L angeben? </A>
+</H2>
+
+<P>In &Ouml;sterreich werden ISDN-Leitungen standardm&auml;&szlig;ig
+<EM>ohne</EM> MSN installiert (im Unterschied zu Deutschland). Das
+bedeutet, da&szlig; bei einem Anruf f&uuml;r die installierte
+ISDN-Nummer beim Empf&auml;nger ein 'Gruppenruf' angezeigt wird. I4L
+meldet dann 'incoming call without CPN' ('CPN' = called party number
+(Nummer des angew&auml;hlten Empf&auml;ngers)). L&ouml;sung: Setze die
+empfangende 'MSN' (in Wirklichkeit: keine) auf '0', dann antwortet I4L
+auf den Gruppenruf. Anderenfalls wartet es auf die Anzeige der Nummer,
+die I4L mitgeteilt wurde, und das wird nicht passieren (nur bei
+*zus&auml;tzlicher* MSN). Das gleiche gilt f&uuml;r die Einstellungen
+f&uuml;r Dein getty.</P>
+<P>Andererseits solltest Du die hinausw&auml;hlende MSN korrekt eintragen
+(ohne Ortsvorwahl) -- obwohl eine falsche MSN von Deinem
+Telefondienste-Anbieter durch die richtige MSN ersetzt wird.</P>
+
+<H2><A NAME="country_brazil"></A> <A NAME="ss28.2">28.2</A> <A HREF="i4lfaq-de.html#toc28.2">country_brazil: Brasilien: Wie sieht unsere MSN aus?</A>
+</H2>
+
+<P>Bei Telemar ist die MSN Deine Telefonnummer ohne Ortsvorwahl.</P>
+<P>Brasilien nutzt EuroISDN. Der ISDN-Dienst DVI (von Telemar) basiert
+auf einer Hardware-L&ouml;sung von Teles (BRI PCI-Karte), die als
+NETjet-Karte konfiguriert werden muss. Da jedoch diese Karte nicht zu
+den in Brasilien gehandelten Motherboards kompatibel ist, bietet
+Telemar auch eine Teles 16.3c ISA an. Daf&uuml;r findest Du eine Hilfe
+zur Konfiguration auf:
+<A HREF="http://www.olinux.com.br">http://www.olinux.com.br</A>.</P>
+
+<H2><A NAME="country_france"></A> <A NAME="ss28.3">28.3</A> <A HREF="i4lfaq-de.html#toc28.3">country_france: Frankreich: Wie sieht unsere MSN aus? </A>
+</H2>
+
+<P>Wenn Du keine MSN hast, musst Du nur die letzten 4 Ziffern Deiner
+Telefonnummer als lokale Nummer angeben. Du hast da den Vorteil,
+da&szlig; Du auch Sub-Addressing nutzen kannst. Wenn Deine
+Telefonnummer 01 41 33 67 87 lautet und Du die Subaddresse 02 nutzen
+willst, tr&auml;gst Du als lokale Nummer des HiSax-Treibers die
+6787.02 ein.</P>
+
+<H2><A NAME="country_italy"></A> <A NAME="ss28.4">28.4</A> <A HREF="i4lfaq-de.html#toc28.4">country_italy: Italien: Wie sieht unsere MSN aus?</A>
+</H2>
+
+<P>ISDN4LINUX funktioniert auch in Italien (ICN Karte). Die MSN ist die
+Telefonnummer mit der italienischen Ortsvorwahl und seit Mitte 2001
+inklusive der vorangestellten 0. Wenn z.B. meine Telefonnummer 72004681
+und meine Ortsvorwahl 045 lauten, so ist meine MSN 04572004681. Nun wird
+ISDN4LINUX mit der Einstellung <CODE>AT&amp;E04572004681</CODE> gut
+funktionieren.</P>
+
+<H2><A NAME="country_netherlands"></A> <A NAME="ss28.5">28.5</A> <A HREF="i4lfaq-de.html#toc28.5">country_netherlands: Niederlande: Wie sieht unsere MSN aus? </A>
+</H2>
+
+<P>In den Niederlanden enth&auml;lt die MSN (anders als in Deutschland)
+<EM>auch die Ortsvorwahl</EM> - allerdings ohne die vorangestellte 0.</P>
+
+<H2><A NAME="country_northamerica"></A> <A NAME="ss28.6">28.6</A> <A HREF="i4lfaq-de.html#toc28.6">country_northamerica: Nordamerika: K&ouml;nnen wir ISDN4LINUX bei uns nutzen? </A>
+</H2>
+
+<P>Ja. Es gilt jedoch, einige Eigenheiten zu beachten.</P>
+<P>In Nordamerika liefern die Telefongesellschaften nur einen U- anstelle
+eines S-Anschlusses. Das bedeutet, da&szlig; sich der Kunde den
+Netzwerk-Abschluss (NT-1) selbst besorgen muss. Die einfachste
+L&ouml;sung besteht darin, eine Karte mit einem integrierten NT-1 zu
+kaufen, die zu dem U-Interface passt. Als Alternative kannst Du auch
+einen externen NT erwerben, der zwischen U- und S-Interface sitzt, und
+Deine ISDN-Karte mit dem S-Interface (ohne NT-1) daran
+anschlie&szlig;en.</P>
+<P>In Nordamerika wird das Kanal-Protokoll NI-1 benutzt. NI-1 ist zwar
+mit DSS1 verwandt (beide sind Q.931-Protokolle), besitzt jedoch ganz
+verschiedene Funktionsgruppen. Mit Hilfe von Traverse Technologies
+(<CODE>
+<A HREF="http://www.ttcomms.com">http://www.ttcomms.com</A></CODE>) wurde die
+Unterst&uuml;tzung von NI-1 vor kurzem in HiSax, den Treiber f&uuml;r
+passive Karten implementiert.
+Da Traverse Technologies bei der Implementierung und Erprobung half,
+empfehlen wir den Kauf ihrer NETspider-U-Karte (mit integriertem NT-1)
+als Dank f&uuml;r ihre Mitwirkung bei der Open Source Entwicklung von
+ISDN4LINUX.
+Details zur Konfiguration Deines Systems mit HiSax findest Du in
+/usr/src/linux/Documentation/isdn/README.HiSax (Protokolltyp 4, SPID
+muss mit Deiner eigenen Nummer angegeben werden).</P>
+<P>Vor geraumer Zeit hat die Firma 'Spellcaster' einen eigenen ISDN4LINUX-Treiber f&uuml;r ihre (aktiven) Karten geschrieben. Es gibt sowohl BRI- als auch PRI-Karten. Weitere Informationen gibt es unter:
+<CODE>
+<A HREF="http://www.spellcast.com">http://www.spellcast.com</A></CODE></P>
+<P>Die aktiven Eicon DIVA Karten funktionieren ebenfalls gut in USA. Es
+gibt 5ESS und NI Treiber, die z.Zt. auf UltraSparc portiert werden.</P>
+
+<H2><A NAME="country_pakistan"></A> <A NAME="ss28.7">28.7</A> <A HREF="i4lfaq-de.html#toc28.7">country_pakistan: Pakistan: Was sollten wir als MSN eingeben? </A>
+</H2>
+
+<P>Anscheinend gibt es dort keine MSN-Funktion. Daher sollte als MSN die
+"0" benutzt werden.</P>
+
+<H2><A NAME="country_portugal"></A> <A NAME="ss28.8">28.8</A> <A HREF="i4lfaq-de.html#toc28.8">country_portugal: Portugal: Was sollten wir als MSN benutzen?</A>
+</H2>
+
+<P>Solange nur eine Telefonnummer oder MSN beantragt wird, sendet die
+Telefongesellschaft keine Caller ID. Also sollte die MSN auf '0' gesetzt
+werden. Wenn mehr als eine MSN beantragt wurde, sollten diese wie
+&uuml;blich eingetragen werden.</P>
+
+<H2><A NAME="country_switzerland"></A> <A NAME="ss28.9">28.9</A> <A HREF="i4lfaq-de.html#toc28.9">country_switzerland: Schweiz: Wir haben weder eine MSN noch eine EAZ, nur eine normale Telefonnummer. Was m&uuml;ssen wir mit I4L benutzen? </A>
+</H2>
+
+<P>In der Schweiz musst Du die <EM>letzte Ziffer</EM> Deiner
+Telefonnummer als MSN/EAZ nehmen ("6" wenn Deine Telefonnummer
+"123456" lautet).</P>
+
+<H2><A NAME="country_uk"></A> <A NAME="ss28.10">28.10</A> <A HREF="i4lfaq-de.html#toc28.10">country_uk: Gro&szlig;britannien: Was sollen wir als MSN benutzen? </A>
+</H2>
+
+<P>Das h&auml;ngt von Deiner Art von ISDN ab.
+<UL>
+<LI> ISDN: Erlaubt keine normalen MSNs in Gro&szlig;britannien. Jede
+einzelne MSN ist eine einzelne Ziffer (0 - 9), entsprechend der
+letzten Ziffer Deiner Telefonnummer. Entweder hast Du <EM>keine</EM>
+MSNs (dann stellst Du in ISDN4LINUX die '0' als MSN ein, i.a. mit
+<CODE>AT&amp;E0</CODE>) oder 10 MSNs. In dem Fall bekommst Du einen Block
+mit 10 fortlaufenden Telefonnummern (xxx0-xxx9), von denen jeweils die
+letzte Ziffer (0-9) Deine MSN ist (0 wird benutzt, wenn Du eine
+ung&uuml;ltige Nummer einstellst).  </LI>
+<LI> ISDN2e: Scheint normales EuroISDN zu sein. Du bekommst MSNs,
+die Du benutzen und in ISDN4LINUX einstellen kannst. Die MSN besteht
+angeblich aus den letzten 6 Ziffern Deiner Telefonnummer (falls die
+Nummer k&uuml;rzer als 6 Ziffern ist kannst Du versuchen, Ziffern der
+Ortsvorwahl dazu zu nehmen).</LI>
+<LI> BTHH (BT HomeHighway): zus&auml;tzlich zu 2
+ISDN-Anschl&uuml;ssen bekommst Du noch 2 analoge Leitungen mit
+separaten Telefonnummern. Anrufe von und zu diesen analogen Ports
+werden allerdings nicht auf der ISDN-Leitung angezeigt, obwohl sie
+einen B-Kanal belegen. Zus&auml;tzliche MSNs sind <EM>nicht</EM>
+verf&uuml;gbar (benutze darum '0' als MSN f&uuml;r
+ISDN4LINUX). Geb&uuml;hrenanzeige ist gegen extra Bezahlung
+erh&auml;ltlich. Stelle in ISDN4LINUX nur Deine 'digitale'
+Telefonnummer als MSN ein.</LI>
+<LI> BTBH (BT BusinessHighway): Der zus&auml;tzliche 'Papierkrieg'
+inklusive einer Bonit&auml;tspr&uuml;fung verschafft Dir MSNs und
+andere Extras gegen gesonderte Bezahlung. Dar&uuml;ber hinaus ist es
+ziemlich so wie bei BTHH. Trage in ISDN4LINUX Deine 'digitale' Nummer
+und/oder Deine MSNs ein.</LI>
+</UL>
+
+Beachte bitte, da&szlig; BT ein unerwartetes 'Feature' bei
+internationalen Anrufen bietet. Bei internationalen Datenverbindungen
+musst Du 000&lt;Landescode&gt; (drei Nullen) w&auml;hlen anstatt dem
+&uuml;blichen 00&lt;Landescode&gt; (zwei Nullen) f&uuml;r
+internationale Sprechverbindungen.</P>
+<P>&Uuml;brigens: bei der Einstellung einer BT Speedway Karte kannst Du
+die AVM Fritz Karte ausw&auml;hlen (entweder ISA oder PCI - je
+nachdem, welche Du hast; siehe Frage 
+<A HREF="i4lfaq-de-6.html#hardware_fritz">hardware_fritz</A>).</P>
+<P>Du solltest Dir auch einmal die Seite 
+<A HREF="http://www.wurtel.demon.nl/i4l-howto-uk.html">http://www.wurtel.demon.nl/i4l-howto-uk.html</A> ansehen.</P>
+
+<HR>
+<A HREF="i4lfaq-de-29.html">Next</A>
+<A HREF="i4lfaq-de-27.html">Previous</A>
+<A HREF="i4lfaq-de.html#toc28">Contents</A>
+</BODY>
+</HTML>

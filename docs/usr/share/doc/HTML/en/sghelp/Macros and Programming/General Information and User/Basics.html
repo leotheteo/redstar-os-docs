@@ -1,0 +1,66 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+	<TITLE></TITLE>
+	<META NAME="GENERATOR" CONTENT="《Sogwang 3.0》  (Linux)">
+	<META NAME="CREATED" CONTENT="20091205;11384400">
+	<META NAME="CHANGED" CONTENT="20091205;11435600">
+	<STYLE TYPE="text/css">
+	<!--
+		H2 { margin-bottom: 0.18cm; font-family: "Bitstream Vera Sans", "Arial", "Helvetica", "Lucida", "Geneva", "Helmet", sans-serif, "Andale Sans UI", "Arial Unicode MS", "Lucida Sans Unicode", "Tahoma"; font-size: 14pt }
+		P.code { margin-top: 0.04cm; margin-bottom: 0.04cm; font-family: "Bitstream Vera Sans Mono", "Cumberland", "Courier New", "Courier", "Lucida Sans Typewriter", "Lucida Typewriter", "Monaco", "Monospaced" }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="ko-KP" DIR="LTR"><DIV style="margin-left: 25">
+<H1><A NAME="modular"></A><A NAME="bm_id4488967"></A><FONT FACE="Thorndale, serif"><SPAN LANG="en-US">Basics</SPAN></FONT></H1>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">This
+section provides the fundamentals for working with </SPAN></FONT><FONT FACE="청봉, serif"><SPAN LANG="en-US">Sogwang Basic.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Sogwang Basic
+code is based on subroutines and functions that are specified between
+<B>sub...end&nbsp;sub</B> and <B>function...end&nbsp;function</B>
+sections. Each Sub or Function can call other Subs and Functions. If
+you take care to write generic code for a Sub or Function, you can
+probably re-use it in other programs. See also <A 
+HREF="../../Macros and Programming/Command Reference/Using Procedures and Functions.html">Procedures
+and Functions</A>.</SPAN></FONT></P>
+<H2><SPAN LANG="en-US">What is a Sub?</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Sub</B>
+is the short form of <B>subroutine</B>, that is used to handle a
+certain task within a program. Subs are used to split a task into
+individual procedures. Splitting a program into procedures and
+sub-procedures enhances readability and reduces the error-proneness.
+A sub possibly takes some arguments as parameters but does not return
+any values back to the calling sub or function, for example:</SPAN></FONT></P>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">DoSomethingWithTheValues(MyFirstValue,MySecondValue)</SPAN></FONT></P>
+<H2><SPAN LANG="en-US">What is a Function?</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">A
+<B>function</B> is essentially a sub, which returns a value. You may
+use a function at the right side of a variable declaration, or at
+other places where you normally use values, for example:</SPAN></FONT></P>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">MySecondValue =
+myFunction(MyFirstValue)</SPAN></FONT></P>
+<H2><SPAN LANG="en-US">Global and local variables</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Global
+variables are valid for all subs and functions inside a module. They
+are declared at the beginning of a module before the first sub or
+function starts.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Variables
+that you declare within a sub or function are valid only inside this
+sub or function. These variables override global variables with the
+same name and local variables with the same name coming from
+superordinate subs or functions.</SPAN></FONT></P>
+<H2><SPAN LANG="en-US">Structuring</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">After
+separating your program into procedures and functions (Subs and
+Functions), you can save these procedures and functions as files for
+reuse in other projects. </SPAN></FONT><FONT FACE="청봉, serif"><SPAN LANG="en-US">Sogwang Basic
+supports <A HREF="../../Macros and Programming/Command Reference/Libraries, Modules and Dialogs.html">Modules
+and Libraries</A>. Subs and functions are always contained in
+modules. You can define modules to be global or part of a document.
+Multiple modules can be combined to a library.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><SPAN STYLE="font-weight: medium">
+You can copy or move subs, functions, modules and libraries from one file to another by using the Macro dialog.</SPAN></SPAN></FONT></P>
+</DIV></BODY>
+</HTML>

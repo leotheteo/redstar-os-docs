@@ -1,0 +1,58 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <META NAME="GENERATOR" CONTENT="LinuxDoc-Tools 0.9.21">
+ <TITLE>ISDN4LINUX - FAQ (deutsche Version): misc: Verschiedenes</TITLE>
+ <LINK HREF="i4lfaq-de-30.html" REL=next>
+ <LINK HREF="i4lfaq-de-28.html" REL=previous>
+ <LINK HREF="i4lfaq-de.html#toc29" REL=contents>
+</HEAD>
+<BODY>
+<A HREF="i4lfaq-de-30.html">Next</A>
+<A HREF="i4lfaq-de-28.html">Previous</A>
+<A HREF="i4lfaq-de.html#toc29">Contents</A>
+<HR>
+<H2><A NAME="misc"></A> <A NAME="s29">29.</A> <A HREF="i4lfaq-de.html#toc29">misc: Verschiedenes</A></H2>
+
+<H2><A NAME="misc_standards"></A> <A NAME="ss29.1">29.1</A> <A HREF="i4lfaq-de.html#toc29.1">misc_standards: Welche Standards gelten f&uuml;r die ISDN Protocol Layers? </A>
+</H2>
+
+<P>Dies sind die haupts&auml;chlichen Standards:
+<UL>
+<LI> Layer 1: ITU I.430 und ETSI 300 012-1</LI>
+<LI> Layer 2: ITU Q.921 und ETSI 300 125-1</LI>
+<LI> Layer 3: ITU Q.931 und ETSI 300 102-1 (plus einige
+&Auml;nderungen und Erl&auml;uterungen in ETSI 300 403)</LI>
+</UL>
+
+Alle Layers werden auch in TBR3 beschrieben. Die Standards sind
+f&uuml;r Studienzwecke frei erh&auml;ltlich bei 
+<A HREF="http://www.etsi.org">http://www.etsi.org</A>.</P>
+
+<H2><A NAME="misc_nonullcable"></A> <A NAME="ss29.2">29.2</A> <A HREF="i4lfaq-de.html#toc29.2">misc_nonullcable: Kann ich zwei ISDN-Ger&auml;te direkt mit einer Art 'Nullmodem-Kabel' verbinden? </A>
+</H2>
+
+<P>Das ist nur m&ouml;glich, wenn eine der Karten im NT-Modus l&auml;uft
+(im Glossar steht, was das ist: 
+<A HREF="i4lfaq-de-30.html#glossary_ntmode">glossary_ntmode</A>). Davon gibt es nur wenige.
+Alle anderen Karten ben&ouml;tigen einen NTBA oder eine TK-Anlage mit
+internem Bus um sich "zu unterhalten". Mehr dazu bei 
+<A HREF="i4lfaq-de-4.html#feature_crossedcable">feature_crossedcable</A>.</P>
+
+<H2><A NAME="misc_uisdn"></A> <A NAME="ss29.3">29.3</A> <A HREF="i4lfaq-de.html#toc29.3">misc_uisdn: Kann ISDN4LINUX parallel zu UISDN laufen?</A>
+</H2>
+
+<P>Ja. Beide ISDN-Pakete laden das Modul isdn.o. Allerdings sind die
+Benennungsregeln unterschiedlich. Tip: Benenne Urlichs isdn.o um in
+uisdn.o und &auml;ndere lib/modules/modules.isdn (oder wie auch immer
+die Datei heisst, die die Module auflistet und vom Script gelesen
+wird) entsprechend.  Gl&uuml;cklicherweise sind die Standardnamen der
+ISDN-Devices auch verschieden.</P>
+
+
+<HR>
+<A HREF="i4lfaq-de-30.html">Next</A>
+<A HREF="i4lfaq-de-28.html">Previous</A>
+<A HREF="i4lfaq-de.html#toc29">Contents</A>
+</BODY>
+</HTML>

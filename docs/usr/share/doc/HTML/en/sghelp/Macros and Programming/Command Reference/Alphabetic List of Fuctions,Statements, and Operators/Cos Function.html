@@ -1,0 +1,85 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+	<TITLE></TITLE>
+	<META NAME="GENERATOR" CONTENT="《Sogwang 3.0》  (Linux)">
+	<META NAME="CREATED" CONTENT="20091205;11384400">
+	<META NAME="CHANGED" CONTENT="20091205;11561600">
+	<STYLE TYPE="text/css">
+	<!--
+		H2 { margin-bottom: 0.18cm; font-family: "Bitstream Vera Sans", "Arial", "Helvetica", "Lucida", "Geneva", "Helmet", sans-serif, "Andale Sans UI", "Arial Unicode MS", "Lucida Sans Unicode", "Tahoma"; font-size: 14pt }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="ko-KP" DIR="LTR"><DIV style="margin-left: 25">
+<H1><A NAME="cos"></A><A NAME="bm_id3154923"></A><FONT FACE="Thorndale, serif"><SPAN LANG="en-US">Cos
+Function [Runtime]</SPAN></FONT></H1>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Calculates
+the cosine of an angle. The angle is specified in radians. The result
+lies between -1 and 1.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Using
+the angle Alpha, the Cos-Function calculates the ratio of the length
+of the side that is adjacent to the angle, divided by the length of
+the hypotenuse in a right-angled triangle.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Cos(Alpha)
+= Adjacent/Hypotenuse</SPAN></FONT></P>
+<H2><SPAN LANG="en-US">Syntax:</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Cos
+(Number)</SPAN></FONT></P>
+<H2><SPAN LANG="en-US">Return value:</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Double</SPAN></FONT></P>
+<H2><SPAN LANG="en-US">Parameters:</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Number:</B>
+Numeric expression that specifies an angle in radians that you want
+to calculate the cosine for.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">To
+convert degrees to radians, multiply degrees by pi/180. To convert
+radians to degrees, multiply radians by 180/pi.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">degree=(radian*180)/pi</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">radian=(degree*pi)/180</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Pi is
+here the fixed circle constant with the rounded value 3.14159...</SPAN></FONT></P>
+<H2><A NAME="errorcode"></A><SPAN LANG="en-US">Error Codes </SPAN>
+</H2>
+<P><A NAME="err5"></A><FONT FACE="청봉, serif"><SPAN LANG="en-US">5
+Invalid procedure call </SPAN></FONT>
+</P>
+<H2><SPAN LANG="en-US">Example:</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">REM The
+following example allows for a right-angled triangle the input of</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">REM
+secant and angle (in degrees) and calculates the length of the
+hypotenuse:</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Sub
+ExampleCosinus</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">REM
+rounded Pi = 3.14159</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Dim d1
+as Double, dAngle as Double</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">d1 =
+InputBox$ (&quot;&quot;Enter the length of the adjacent side:
+&quot;,&quot;Adjacent&quot;)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">dAngle =
+InputBox$ (&quot;Enter the angle Alpha (in degrees): &quot;,&quot;Alpha&quot;)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Print
+&quot;The length of the hypothenuse is&quot;; (d1 / cos (dAngle * Pi
+/ 180))</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><SPAN STYLE="font-weight: medium">End
+Sub</SPAN></A></SPAN></FONT></P>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</DIV></BODY>
+</HTML>

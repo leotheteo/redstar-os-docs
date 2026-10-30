@@ -1,0 +1,124 @@
+﻿<html dir='ltr'>
+	<head>
+		<META http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+		<title>IPMT</title>
+		<link rel='stylesheet' type='text/css' href='../css/main.css'/>
+		<script type='text/javascript' language='Javascript' src='../js/mexpcol.js'></script>
+		<script type='text/javascript' language='JavaScript' src='../js/glossary.js'></script>
+	</head>
+	<body>
+		<h1>&nbsp;<img align="absbottom" src="../image/external_images/crystal/svtools/res/new_doc.png"/>&nbsp;IPMT</h1>
+		<p id='ExpandAllLine' class='ExpFav'>
+			<a href='#' onClick='ExpandAll()' onKeyPress='ExpandAll()' class='DropDown'>
+				<img id='picHeader' border='0' src='../image/image/common/expandtri.gif' alt='모두 표시'>
+				<span id='ExpandAll'>모두 표시</span>
+			</a>
+		</p>
+		<p><b class="bterm">참고항목</b>&emsp; 
+			<a href="5.9.5.1.htm">재정함수목록</a>,
+			<a href="5.9.5.3.htm">ACCRINT</a>,
+			<a href="5.9.5.4.htm">ACCRINTM</a>,
+			<a href="5.9.5.14.htm">CUMIPMT_ADD</a>,
+			<a href="5.9.5.28.htm">INTRATE</a>,
+			<a href="5.9.5.42.htm">PMT</a>,
+			<a href="5.9.5.47.htm">PV</a>,
+			<a href="5.9.5.48.htm">RATE</a>
+		</p>
+		<p>복합리자률입니다. 지정된 기간에 정해진 납입액과 일정한 리자률을 적용하는 투자에 대한 원금의 리자상환액을 계산합니다.</p>
+		<p><b class="bterm">문법:&emsp;&emsp;		IPMT(리자률,기간,납입기간,현재가치,미래가치,류형)</b></p>
+		<table>
+			<tr>
+				<th>인수명</th>
+				<th>설명</th>
+			</tr>
+			<tr>
+				<td>리자률</td>
+				<td>일정한 기간의 리자률입니다.</td>
+			</tr>
+			<tr>
+				<td>기간</td>
+				<td>기간수입니다. 복합리자를 계산할 기간수입니다. 기간 = 1은 첫 기간, 기간 = NPER은 마감기간을 의미합니다.</td>
+			</tr>
+			<tr>
+				<td>납입기간</td>
+				<td>총 지불회수입니다.</td>
+			</tr>
+			<tr>
+				<td>현재가치</td>
+				<td>현재의 가치 혹은 계속되는 앞으로의 자본의 가치총액입니다.</td>
+			</tr>
+			<tr>
+				<td>미래가치</td>
+				<td>미래의 가치 혹은 최종지불이 이루어진후 얻으려는 금액입니다. 추가선택인수입니다. 생략하면 0으로 됩니다.</td>
+			</tr>
+			<tr>
+				<td>류형</td>
+				<td>지불시점에 대한 형식입니다. 추가선택인수입니다. 지불을 매 기간의 마감날자에 하면 0, 매 기간의 시작날자에 하면 1로 합니다.</td>
+			</tr>
+		</table>
+		<p><b class="bterm">주의</b></p>
+			<ul>
+				<li><b class="bterm">리자률</b>과 <b class="bterm">납입기간</b>을 지정할 때 같은 단위를 사용해야 합니다. 12% 년간리자률의 4년만기대부금에 대한 월상환액을 계산하려면 <b class="bterm">리자률</b>로 12%/12, <b class="bterm">납입기간</b>으로 4*12를 리용합니다. 같은 대부금을 매해 상환한다면 <b class="bterm">리자률</b>로 12%, <b class="bterm">납입기간</b>으로 4를 리용합니다.</li>
+				<li>모든 인수에 대해 저금을 예금하는것과 같이 지불하는 금액은 부수로 표시합니다. 배당금과 같이 받을 금액은 정수로 표시합니다.</li>
+			</ul>
+		<p><b class="bterm">실례</b></p>
+			<p><a href='1.5.1.htm'>실례의 리용방법</a>을 참고하십시오.</p>
+			<table>
+				<tr>
+					<td>
+						<table>
+							<tr><td>&nbsp;</td></tr>
+							<tr><th>1</th></tr>
+							<tr><th>2</th></tr>
+							<tr><th>3</th></tr>
+							<tr><th>4</th></tr>
+							<tr><th>5</th></tr>
+						</table>
+					</td>
+					<td>
+						<table>
+							<tr>
+								<th>A</th>
+								<th>B</th>
+							</tr>
+							<tr>
+								<th>자료</th>
+								<th>설명</th>
+							</tr>
+							<tr>
+								<td>10%</td>
+								<td>년간 리자률입니다.</td>
+							</tr>
+							<tr>
+								<td>1</td>
+								<td>리자를 찾으려는 기간입니다.</td>
+							</tr>
+							<tr>
+								<td>3</td>
+								<td>총 지불회수입니다.</td>
+							</tr>
+							<tr>
+								<td>8 000</td>
+								<td>대부금의 현재가치입니다.</td>
+							</tr>
+							<tr>
+								<th>수식</th>
+								<th>설명(결과)</th>
+							</tr>
+							<tr>
+								<td>=IPMT(A2/12, A3*3, A4, A5)</td>
+								<td>조건이 우와 같은 대부금의 첫달 만기리자률입니다. (-22.41￦)</td>
+							</tr>
+							<tr>
+								<td>=IPMT(A2, 3, A4, A5)</td>
+								<td>우와 같은 조건에서 매해 상환하는 대부금의 마지막해 만기리자률입니다. (-292.45￦)</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>	
+		<p><b class="bterm">참고:</b>   리자률을 12로 나누어 매달 리자률을 계산합니다. 상환이 끝나는 년수에 12로 곱하여 납입기간을 계산합니다.</p>
+		<script type="text/javascript" language="Javascript">footerView()</script>
+	
+</body>
+</html>		

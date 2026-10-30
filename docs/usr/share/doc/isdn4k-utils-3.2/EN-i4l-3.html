@@ -1,0 +1,551 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <META NAME="GENERATOR" CONTENT="LinuxDoc-Tools 0.9.21">
+ <TITLE>ISDN4Linux Tutorial: Loading hardware modules</TITLE>
+ <LINK HREF="EN-i4l-4.html" REL=next>
+ <LINK HREF="EN-i4l-2.html" REL=previous>
+ <LINK HREF="EN-i4l.html#toc3" REL=contents>
+</HEAD>
+<BODY>
+<A HREF="EN-i4l-4.html">Next</A>
+<A HREF="EN-i4l-2.html">Previous</A>
+<A HREF="EN-i4l.html#toc3">Contents</A>
+<HR>
+<H2><A NAME="Hardware"></A> <A NAME="s3">3.</A> <A HREF="EN-i4l.html#toc3">Loading hardware modules</A>    </H2>
+
+<P>The hardware drivers are supplied as modules. You could compile
+the drivers directly into the kernel, but this is not recommended.</P>
+<P>The module <CODE>isdn</CODE> is resonsible for the I4L subsystem.
+It also requires (depending on your kernel compilation) <CODE>slhc</CODE>.</P>
+<P>These modules are required for the actual hardware drives and 
+must be loaded beforehand. If the modules are loaded with 
+<CODE>modprobe</CODE>, then you don't have to worry about this, since the
+dependencies are automatically checked.</P>
+<P>Note: use only <B><CODE>modprobe</CODE></B> to load the modules.</P>
+<P>Depending on your hardware, different modules are needed. The
+<CODE>HiSax</CODE> module is necessary for passive ISDN cards. Specific
+modules according to manufacturer are need for active cards.</P>
+
+<H2><A NAME="isdnlogConf"></A> <A NAME="ss3.1">3.1</A> <A HREF="EN-i4l.html#toc3.1">Configuring isdnlog</A>
+            </H2>
+
+<P>isdnlog listens continuously to the D channel and collects important
+data for problem diagnosis as well for later analysis. isdnlog is started
+just after the HiSax driver is started (see below for active cards).</P>
+<P>We'll explain more about the functions and starting isdnlog later;
+here are just the most important points for configuration:
+<UL>
+<LI> <CODE>/etc/isdn/isdn.conf</CODE>
+<P>Here are some important parameters (such as the area code) that
+i4l cannot establish automatically.</P>
+<P>You'll need to set at least the country code and the area code yourself.
+<HR>
+<PRE>
+# exapmle of /etc/isdn/isdn.conf
+# copy this file to /etc/isdn/isdn.conf and edit
+#
+# More information: /usr/doc/packages/i4l/isdnlog/README
+
+
+[GLOBAL]
+COUNTRYPREFIX   = +
+COUNTRYCODE     = 49
+AREAPREFIX      = 0
+
+# EDIT THIS LINE:
+AREACODE        = 911
+
+# Example:
+#AREACODE        = 911 # Nuernberg
+
+[VARIABLES]
+
+[ISDNLOG]
+LOGFILE = /var/log/isdn.log
+ILABEL  = %b %e %T %ICall to tei %t from %N2 on %n2
+OLABEL  = %b %e %T %Itei %t calling %N2 with %n2
+REPFMTWWW       = "%X %D %17.17H %T %-17.17F %-20.20l SI: %S %9u %U %I %O"
+REPFMTSHORT     = "%X%D %8.8H %T %-14.14F%U%I %O"
+REPFMT  = "  %X %D %15.15H %T %-15.15F %7u %U %I %O"
+            
+</PRE>
+<HR>
+</P>
+
+</LI>
+<LI> Options for isdnlog.
+<P>isdnlog takes a number of options that can be given either as 
+command line parameters or in a config file.</P>
+<P>S.u.S.E. uses the the file
+<CODE>/etc/isdn/isdnlog.isdnctrl0.options</CODE>
+(0: 1st card, 2: 2nd card, 4: 3rd card), 
+and isdnlog is started with the parameter
+<CODE>-f</CODE>. This file is commented and contains the most important
+parameters.</P>
+<P>There is more information in the isdnlog README file, which is in the
+source package, and under S.u.S.E is also at
+<CODE>/usr/doc/packages/i4l/isdnlog/README</CODE>.</P>
+<P>When started by hand, isdnlog should be given at least these options:
+<CODE>isdnlog -D -l1015 -x4087 -M -n -W80 /dev/isdnctrl0 &amp;</CODE></P>
+
+</LI>
+<LI> Telephone book (optional)
+<P>isdnlog can automatically assign aliases to incoming and outgoing
+numbers. These are then shown instead of the telephone numbers themselves.
+The aliases are in:
+<CODE>/etc/isdn/callerid.conf</CODE>. For example:
+<HR>
+<PRE>
+[MSN]
+NUMBER = +4991152145922
+ALIAS  = Eunet-N
+ZONE   = 1
+            
+</PRE>
+<HR>
+
+In addition, you can define further actions, such as starting 
+a certain program when incoming calls are detected. </P>
+
+</LI>
+</UL>
+</P>
+
+
+<H2><A NAME="pnp"></A> <A NAME="ss3.2">3.2</A> <A HREF="EN-i4l.html#toc3.2">Plug&amp;Play Cards</A>
+            </H2>
+
+<P>PnP cards still have to be manually configured in 2.0 kernels. It's a
+bit of work, but luckily needs only to be done once.</P>
+<P>The configuration is done with the package <CODE>isapnp</CODE>. It includes
+the two programs:</P>
+<P>
+<OL>
+<LI> pnpdump: scans the ISA bus for cards and creates a template for the
+configuration file
+</LI>
+<LI> isapnp: initializes the PnP cards according to the configuration file</LI>
+</OL>
+</P>
+<P>The drivers can address the hardware only after the cards have been so
+configured. Therefore, PnP cards can only be used with modules, not
+with drivers compiled in the kernel.</P>
+<P>First we'll scan for PnP cards, but be careful: <B><CODE>pnpdump</CODE> can
+bring the computer to a halt</B>. Do not start the program under X, and if
+possible in single user mode.</P>
+<P>We'll pipe the output from <CODE>pnpdump</CODE> straight into the configuration file:</P>
+<P>
+<HR>
+<PRE>
+pnpdump > /etc/isapnp.conf
+        
+</PRE>
+<HR>
+</P>
+<P>Here's and example for the QS3000:
+<HR>
+<PRE>
+# This is free software, see the sources for details.
+# This software has NO WARRANTY, use at your OWN RISK
+#
+# For details of this file format, see isapnp.conf(5)
+#
+# For latest information on isapnp and pnpdump see:
+# http://www.roestock.demon.co.uk/isapnptools/
+#
+# Compiler flags: -DREALTIME -DNEEDSETSCHEDULER
+#
+# Trying port address 0203
+# Board 1 has serial identifier e5 00 00 00 00 34 01 93 15
+
+# (DEBUG)
+(READPORT 0x0203)
+(ISOLATE)
+(IDENTIFY *)
+
+# Card 1: (serial identifier e5 00 00 00 00 34 01 93 15)
+# ELS0134 Serial No 0 [checksum e5]
+# Version 1.0, Vendor version 0.0
+# ANSI string -->ELSA QuickStep 3000&lt;--
+#
+# Logical device id ELS0134
+#
+# Edit the entries below to uncomment out the configuration required.
+# Note that only the first value of any range is given, this may be changed if r
+equired
+# Don't forget to uncomment the activate (ACT Y) when happy
+
+(CONFIGURE ELS0134/0 (LD 0
+
+# Multiple choice time, choose one only !
+
+#     Start dependent functions: priority acceptable
+#       Logical device decodes 16 bit IO address lines
+#             Minimum IO base address 0x0160
+#             Maximum IO base address 0x0360
+#             IO base alignment 16 bytes
+#             Number of IO addresses required: 16
+#(IO 0 (BASE 0x0160))
+#       IRQ 3, 4, 5, 7, 10, 11, 12 or 15.
+#             High true, edge sensitive interrupt (by default)
+#(INT 0 (IRQ 3 (MODE +E)))
+
+#     End dependent functions
+#(ACT Y)
+))
+# End tag... Checksum 0x00 (OK)
+
+# Returns all cards to the "Wait for Key" state
+(WAITFORKEY)
+        
+</PRE>
+<HR>
+</P>
+<P>With the output identifier, we can tell which cards were recognized
+(and if there are any PnP cards at all).</P>
+<P>This file will be edited; the comment characters have to be deleted
+and where necessary the proper values entered. Possible values are
+given in the comments.</P>
+<P>
+<HR>
+<PRE>
+(IO 0 (BASE 0x0160))
+(INT 0 (IRQ 3 (MODE +E)))
+(ACT Y)
+        
+</PRE>
+<HR>
+</P>
+<P>Note: <B><CODE>(ACT Y)</CODE> must also be given</B>. Otherwise nothing will happen.</P>
+<P>This configuration can now be sent to the PnP cards:</P>
+
+<P>
+<HR>
+<PRE>
+isapnp /etc/isapnp.conf
+Board 1 has Identity e5 00 00 00 00 34 01 93 15:  ELS0134 Serial No 0 [checksum e5]
+        
+</PRE>
+<HR>
+</P>
+<P>The output is unfortunately not very clear, but you should be bble to at least
+recognize the identifier of the card.</P>
+<P>Under S.u.S.E, the <CODE>isapnp</CODE> command is run automatically in the
+init script. Otherwise, you'll have to make sure yourself that it
+has been run.</P>
+
+<H2><A NAME="HiSax"></A> <A NAME="ss3.3">3.3</A> <A HREF="EN-i4l.html#toc3.3">Loading the HiSax driver</A>
+            </H2>
+
+<P>The HiSax driver reads its parameters when loading to tell which card
+(or cards) at which address should be searched for.</P>
+
+<H3>Loading with YaST            </H3>
+
+<P>(smhFixMe: what does YaST look like in English?)</P>
+<P>With S.u.S.E, configuration of the ISDN hardware is done with the
+<CODE>Administration des Systems/
+Hardware in System integrieren/
+ISDN-Hardware konfigurieren</CODE>
+screen. Along with the choice of card type and parameters, the modules can
+be loaded with <CODE>Starten</CODE>.  If there are problems, you can try other parameters right away. If successful, with <CODE>Speichern</CODE> the parameters can be saved in <CODE>rc.config</CODE> so that the modules will be loaded again at the next time the
+system is started.</P>
+<P>The systax is described at 
+<A HREF="/usr/src/linux/Documentation/isdn/README.HiSax">/usr/src/linux/Documentation/isdn/README.HiSax</A>.</P>
+
+<H3>Loading with <CODE>/etc/rc.config</CODE>            </H3>
+
+<P>The ISDN hardware can also be given and/or controlled directly in <CODE>/etc/rc.config</CODE>. Here is an example for the Elsa QS-3000:</P>
+<P>
+<HR>
+<PRE>
+#
+# start i4l? ("yes" or "no")
+#   see: /usr/doc/packages/i4l/README.SuSE
+#
+I4L_START="yes"
+
+#
+# driver-id for HiSax-driver
+#   set to "HiSax"
+#   or whatever you defined when loading driver within kernel
+#   set to "" if you don't have a hisax-card
+#
+I4L_TELES_ID="hisax1"
+
+#
+# D-channel protocol 1=1TR6, 2=EDSS1(Euro-ISDN) for HiSax
+#
+I4L_PROTOCOL="2"
+
+# Type   ISDN-card                Required parameters
+# ----   ---------------------    -------------------------------------------
+#    1   Teles 16.0               irq, mem, io
+#    2   Teles  8.0               irq, mem
+#    3   Teles 16.3 (non PnP)     irq, io
+#    4   Creatix/Teles PnP        irq, io0 (ISAC), io1 (HSCX)
+#    5   AVM A1 (Fritz)           irq, io
+#    6   ELSA PCC/PCF cards       io or nothing for autodetect (the iobase is
+#                                 only required, if you have more than one ELSA
+#                                 card in your PC)
+#    7   ELSA Quickstep 1000      irq, io  (from isapnp setup)
+#    8   Teles 16.3 PCMCIA        irq, io
+#    9   ITK ix1-micro Rev.2      irq, io
+# since: HiSax 2.5:
+#   10   ELSA PCMCIA              irq, io  (set with card manager)
+#   11   Eicon.Diehl Diva ISA PnP irq, io
+#   11   Eicon.Diehl Diva PCI     no parameter
+#   12   ASUS COM ISDNLink        irq, io  (from isapnp setup)
+#   13   HFC-2BS0 based cards     irq, io
+#   15   Sedlbauer Speed Card     irq, io
+#        (= Teledat 100)
+#   16   USR Sportster internal   irq, io
+#   17   MIC card                 irq, io
+#   18   ELSA Quickstep 1000PCI   no parameter
+#
+I4L_TELES_TYPE="7"
+
+#
+# IRQ of Teles Card
+#   eg. 12 or 15 when loading as module
+#   set to "" when driver is loaded within kernel
+#
+I4L_TELES_IRQ="3"
+
+#
+# Portaddress of Teles card (e.g. 0xd80, "0" for S0/8)
+#
+I4L_TELES_PORT="0x0160"
+            
+</PRE>
+<HR>
+</P>
+<P>The string  <CODE>TELES</CODE> here has only a historical meaning.</P>
+<P>These entries automatically generate the parameter line for the HiSax
+driver. In addition, you can also give the parameters yourself, which
+is necessary for newer cards or when you have several cards (see
+below).</P>
+<P>Example for a AVM Fritz and a ELSA PCF card:</P>
+<P>
+<HR>
+<PRE>
+I4L_TELES_MODUL_OPTIONS="type=5,6 protocol=2,2 io=0x340 irq=10 id=Fritz%Elsa"
+            
+</PRE>
+<HR>
+</P>
+<P>To load the modules use the init script:
+<HR>
+<PRE>
+glen:/root # /sbin/init.d/i4l_hardware start
+Loading ISDN drivers ...
+Loading HiSax driver ...
+/sbin/insmod /lib/modules/2.0.33/misc/hisax.o id=hisax1 type=7 protocol=2 irq=3 io=0x0160
+Verbose-level set to 3.
+Starting isdnlog with /etc/isdn/isdnlog.isdnctrl0.options for isdnctrl0...
+            
+</PRE>
+<HR>
+</P>
+<P>Note that this automatically starts  <CODE>isdnlog</CODE>.</P>
+<P>To unload the modules use the same script:
+<HR>
+<PRE>
+glen:/root # /sbin/init.d/i4l_hardware stop 
+Unloading ISDN drivers ...
+            
+</PRE>
+<HR>
+</P>
+
+
+<H3>Loading by hand.            </H3>
+
+<P>The syntax is described in 
+<A HREF="/usr/src/linux/Documentation/isdn/README.HiSax">/usr/src/linux/Documentation/isdn/README.HiSax</A>.</P>
+<P>For example, for a ELSA QS3000;
+<HR>
+<PRE>
+modprobe -v hisax id=hisax1 type=7 protocol=2 irq=3 io=0x0160
+            
+</PRE>
+<HR>
+
+In addition, after loading successfully the following commands should also
+be run:</P>
+<P>
+<HR>
+<PRE>
+/sbin/hisaxctrl hisax1 1 4
+/sbin/isdnctrl verbose 3
+/sbin/isdnlog /dev/isdnctrl0
+            
+</PRE>
+<HR>
+
+These commands are explained in the appropriate man pages and documentation. The S.u.S.E. scripts just makes things simpler ;-)</P>
+
+<H3><A NAME="HiSaxTrouble"></A> Troubleshooting                     </H3>
+
+<P>In case of an error while loading the HiSax module, there are no useful messages on the screen, but usually just  <CODE>Device or resource busy</CODE>. The real error messages are saved syslog (usually) in 
+<A HREF="file:/var/log/messages">file:/var/log/messages</A>.</P>
+<P>Example of unsuccessfully loading an AVM Fritz:
+<HR>
+<PRE>
+Feb  6 22:45:05 glen kernel: HiSax: Driver for Siemens chip set ISDN cards
+Feb  6 22:45:05 glen kernel: HiSax: Version 2.1
+Feb  6 22:45:05 glen kernel: HiSax: Revisions 1.15/1.10/1.10/1.30/1.8
+Feb  6 22:45:05 glen kernel: HiSax: Total 1 card defined
+Feb  6 22:45:05 glen kernel: HiSax: Card 1 Protocol EDSS1 Id=HiSax (0)
+Feb  6 22:45:05 glen kernel: HiSax: AVM driver Rev. 1.6
+Feb  6 22:45:05 glen kernel: AVM A1: Byte at 1b00 is ff
+Feb  6 22:45:05 glen kernel: AVM A1: Byte at 1b03 is ff
+Feb  6 22:45:05 glen kernel: AVM A1: Byte at 1b02 is ff
+Feb  6 22:45:05 glen kernel: AVM A1: Byte at 1b00 is ff
+Feb  6 22:45:05 glen kernel: HiSax: AVM A1 config irq:12 cfg:1b00
+Feb  6 22:45:05 glen kernel: HiSax: isac:1700/1300
+Feb  6 22:45:05 glen kernel: HiSax: hscx A:700/300  hscx B:f00/b00
+Feb  6 22:45:05 glen kernel: AVM A1: HSCX version A: ???  B: ???
+Feb  6 22:45:05 glen kernel: AVM A1: ISAC 2085 V2.3
+Feb  6 22:45:05 glen kernel: AVM A1: wrong HSCX versions check IO address
+Feb  6 22:45:05 glen kernel: HiSax: Card AVM A1 not installed !
+            
+</PRE>
+<HR>
+</P>
+<P>In this case, no Fritz card was found ad the given port address. (In fact, there was no Fritz card installed  ;-). With this message, it should be easy to see the exact cause. Other common errors are:
+<OL>
+<LI> <CODE>could not get interrupt</CODE>: 
+The driver cannot work with the given IRQ. Try another. Unused IRQs can be found by reading <CODE>cat /proc/interrupts</CODE>.
+</LI>
+<LI> Port address is not recognized, although everything
+seems to be correct. Perhaps it is a PnP card, and you forgot isapnp. See
+<A HREF="#pnp">Plug&amp;Play cards</A>.
+</LI>
+<LI> Port address is not recognized, although everything
+seems to be correct. Perhaps it is a Teles card, therefore you
+can't tell which type it really is. Try getting the very latest HiSax
+and try out all options. See 
+<A HREF="EN-i4l-13.html#installation">Installation</A>.</LI>
+</OL>
+</P>
+<P>If absolutely nothing seems to work, try asking on the mailing list.
+Be sure to include the output from <CODE>/var/log/messages</CODE>.</P>
+
+<H2><A NAME="ss3.4">3.4</A> <A HREF="EN-i4l.html#toc3.4">Loading the ICN driver</A>
+        </H2>
+
+<P>FixMe</P>
+
+<H2><A NAME="ss3.5">3.5</A> <A HREF="EN-i4l.html#toc3.5">Loading the AVM B1 driver</A>
+        </H2>
+
+<P>FixMe</P>
+
+<H2><A NAME="hwTesten"></A> <A NAME="ss3.6">3.6</A> <A HREF="EN-i4l.html#toc3.6">Testing the hardware</A>
+            </H2>
+
+<P>The best and easiest test is to try calling yourself.</P>
+<P>For this test, it makes not difference whether it is an ISDN or a
+voice call, whether from an internal or external ISDN or analog
+telephone. No connection will be make. It is only important that a
+message about the call appears in 
+<A HREF="file:/var/log/messages">file:/var/log/messages</A>. </P>
+<P>Example for an analog call on the MSN 123459: </P>
+<P>
+<HR>
+<PRE>
+Apr  6 22:15:20 glen kernel: isdn_net: call from 911123458,1,0 -> 123459
+Apr  6 22:15:20 glen kernel: isdn_net: Service-Indicator not 7, ignored
+        
+</PRE>
+<HR>
+
+Here, this is a voice call (Service-Indicator: 0) from a device with
+(smhFixME: Rufnummerübermittlung) from the MSN 123458 from the area
+code 0911 to your own MSN 123459 (no, that's not my real number ;-)</P>
+<P>The important thing here is the entry of the called number after the arror, here the 123459. Here you should try all of your own numbers. Just as it is shown here is how you will later enter your own MSN.</P>
+
+<H2><A NAME="uebungHW"></A> <A NAME="ss3.7">3.7</A> <A HREF="EN-i4l.html#toc3.7">Übung: Hardware ansprechen.</A>
+            </H2>
+
+<P>Ziel: Die ISDN-Karte soll angesprochen und geprüft werden.</P>
+<P>
+<OL>
+<LI>Welche Hardware / Umgebung hab ich?
+<P>Notiere Dir:
+<OL>
+<LI> Welche Karte hab ich (Hersteller, Typ, etc.) ?</LI>
+<LI> Wie ist die Karte gejumpert (Port) ?</LI>
+<LI> Mit welchen Werten kann die Karte unter
+anderen System angesprochen werden?</LI>
+<LI> Welches Protokoll wird auf dem S0-Bus benutzt
+(1TR6, DSS1) ?</LI>
+<LI> <B>Wo</B> ist die ISDN-Karte angeschlossen (NTBA, TK-Anlage)?</LI>
+<LI> Welche MSN's kann ich auf diesem S0-Bus benutzen?</LI>
+</OL>
+    
+Schlimmstenfalls mußt Du Deinen Rechner aufschrauben,
+das falsche Betriebssystem booten und/oder den
+Administrator nerven.</P>
+
+</LI>
+<LI>Betrachte messages
+<A NAME="lessVLM"></A> 
+<P>Nur in <CODE>/var/log/messages</CODE> steht die Wahrheit, 
+sie ist für die
+gesamte Konfigurationsarbeit (und später) zu verfolgen.</P>
+<P>Öffne (mindestens) zwei Konsolen (virtuelle Linux-Konsole
+oder unter X zwei <CODE>xterm</CODE>).</P>
+<P>Auf einer Konsole starte entweder:
+<UL>
+<LI> <CODE>tail -f /var/log/messages</CODE></LI>
+<LI> <CODE>less /var/log/messages</CODE>, im Programm
+dann <CODE>F</CODE> (follow) drücken, um immer die
+neuesten Zeilen zu bekommen. (Diesen Modus
+beendet man durch <CODE>Ctrl-C</CODE>, beenden
+von less mit <CODE>q</CODE>.</LI>
+</UL>
+        </P>
+
+</LI>
+<LI>PnP Karte?
+<P>Falls es eine Plug&amp;Pray-Karte ist, konfiguriere
+sie, wenn Du es nicht weißt, starte <CODE>pnpdump</CODE>.
+Siehe 
+<A HREF="#pnp">Plug&amp;Play-Karten</A>.</P>
+
+</LI>
+<LI>Modul laden
+<P>Lade das entsprechende Modul nach Deiner bevorzugten
+Methode (also YaST ;-).</P>
+<P>Stelle sicher, daß die Einstellungen notiert sind und
+beim Systemstart automatisch das Modul wieder geladen
+wird.</P>
+<P>Prüfe, ob das Modul geladen ist mit <CODE>lsmod</CODE>.</P>
+<P>Prüfe, ob der <CODE>isdnlog</CODE> läuft mit 
+<CODE>/ps ax|grep isdnlog</CODE></P>
+<P>Prüfe, ob <CODE>/var/log/messages</CODE> <I>normal</I>
+aussieht.</P>
+<P>Siehe 
+<A HREF="#HiSax">HiSax-Treiber laden</A></P>
+
+</LI>
+<LI>ISDN testen
+<P>Rufe Dich selbst an und notiere alle MSN unter
+denen Du angerufen werden kannst.</P>
+<P>Siehe 
+<A HREF="#hwTesten">Hardware testen</A></P>
+
+</LI>
+</OL>
+</P>
+
+
+<HR>
+<A HREF="EN-i4l-4.html">Next</A>
+<A HREF="EN-i4l-2.html">Previous</A>
+<A HREF="EN-i4l.html#toc3">Contents</A>
+</BODY>
+</HTML>

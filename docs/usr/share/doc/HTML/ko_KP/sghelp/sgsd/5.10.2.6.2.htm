@@ -1,0 +1,318 @@
+﻿<html dir='ltr'>
+	<head>
+		<META http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+		<title>범위에서 값의 찾기</title>
+		<link rel='stylesheet' type='text/css' href='../css/main.css'/>
+		<script type='text/javascript' language='Javascript' src='../js/mexpcol.js'></script>
+		<script type='text/javascript' language='JavaScript' src='../js/glossary.js'></script>
+	</head>
+	<body>
+		<h1>&nbsp;<img align="absbottom" src="../image/external_images/crystal/svtools/res/new_doc.png"/>&nbsp;범위에서 값의 찾기</h1>
+		<p id='ExpandAllLine' class='ExpFav'>
+			<a href='#' onClick='ExpandAll()' onKeyPress='ExpandAll()' class='DropDown'>
+				<img id='picHeader' border='0' src='../image/image/common/expandtri.gif' alt='모두 표시'>
+				<span id='ExpandAll'>모두 표시</span>
+			</a>
+		</p>
+		<h2>첫번째 렬의 값과 비교하여 값찾기</h2>
+			<p>이 작업을 수행하려면 <b class="bterm">VLOOKUP</b>함수를 사용합니다.</p>
+			<p><b class="bterm">중요:</b>   이 방법은 첫번째 행이나 렬이 올리순서로 정렬되여있는 경우에만 유효합니다.</p>
+			<p><b class="bterm">실례</b></p>
+			<p><a href="1.5.1.htm">실례의 리용방법</a>을 참고하십시오.</p>
+			<table>
+				<tr>
+					<td>
+						<table>
+							<tr>
+								<td class="noborder">&nbsp;</td>
+							</tr>
+							<tr>
+								<th>1</th>
+							</tr>
+							<tr>
+								<th>2</th>
+							</tr>
+							<tr>
+								<th>3</th>
+							</tr>
+							<tr>
+								<th>4</th>
+							</tr>
+							<tr>
+								<th>5</th>
+							</tr>
+							<tr>
+								<th>6</th>
+							</tr>
+						</table>
+					</td>
+					<td>
+						<table>
+							<tr>
+								<th>A</th>
+								<th>B</th>
+							</tr>
+							<tr>
+								<th>빈도</th>
+								<th>색</th>
+							</tr>
+							<tr>
+								<td>4.14</td>
+								<td>붉은색</td>
+							</tr>
+							<tr>
+								<td>4.19</td>
+								<td>검은색</td>
+							</tr>
+							<tr>
+								<td>5.17</td>
+								<td>노란색</td>
+							</tr>
+							<tr>
+								<td>5.77</td>
+								<td>록색</td>
+							</tr>
+							<tr>
+								<td>6.39</td>
+								<td>푸른색</td>
+							</tr>
+							<tr>
+								<th>수식</th>
+								<th>설명(결과)</th>
+							</tr>
+							<tr>
+								<td>=VLOOKUP(5.77;A1:B6;2)</td>
+								<td>A렬에서 5.77을 찾고 같은 행에 있는 B렬의 값을 구합니다. (록색)</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+			<p><b class="bterm">참조함수</b></p>
+			<p><a href='5.9.11.21.htm'>VLOOKUP</a></p>
+		<h2>첫번째 행의 값과 비교하여 값찾기</h2>
+			<p>이 작업을 수행하려면 <b class="bterm">HLOOKUP</b>함수를 사용합니다.</p>
+			<p><b class="bterm">중요:</b>   이 방법은 첫번째 행이나 렬이 올리순서로 정렬되여있는 경우에만 유효합니다.</p>
+			<p><b class="bterm">실례</b></p>
+			<p><a href="1.5.1.htm">실례의 리용방법</a>을 참고하십시오.</p>
+			<table>
+				<tr>
+					<td>
+						<table>
+							<tr>
+								<td class="noborder">&nbsp;</td>
+							</tr>
+							<tr>
+								<th>1</th>
+							</tr>
+							<tr>
+								<th>2</th>
+							</tr>
+							<tr>
+								<th>3</th>
+							</tr>
+							<tr>
+								<th>4</th>
+							</tr>
+						</table>
+					</td>
+					<td>
+						<table>
+							<tr>
+								<th>A</th>
+								<th>B</th>
+								<th>C</th>
+							</tr>
+							<tr>
+								<th>이름</th>
+								<th>과목</th>
+								<th>점수</th>
+							</tr>
+							<tr>
+								<td>강영철</td>
+								<td>수학</td>
+								<td>4</td>
+							</tr>
+							<tr>
+								<td>김순희</td>
+								<td>물리</td>
+								<td>4.5</td>
+							</tr>
+							<tr>
+								<td>박진혁</td>
+								<td>영어</td>
+								<td>5</td>
+							</tr>
+							<tr>
+								<th>수식</th>
+								<th>설명(결과)</th>
+								<td>&nbsp;</td>
+							</tr>
+							<tr>
+								<td>=HLOOKUP("점수";A1:C4;3)</td>
+								<td>1행에서 점수를 찾고 같은 렬에 있는 3행의 값을 구합니다. (4.5)</td>
+								<td>&nbsp;</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+			<p><b class="bterm">참조함수</b></p>
+			<p><a href='5.9.11.9.htm'>HLOOKUP</a></p>
+		<h2>정렬되지 않은 범위에서 값찾기</h2>
+			<p>이 작업을 수행하려면 <b class="bterm">INDEX</b>와 <b class="bterm">MATCH</b>함수를 사용합니다.</p>
+			<p><b class="bterm">실례</b></p>
+			<p><a href="1.5.1.htm">실례의 리용방법</a>을 참고하십시오.</p>
+			<table>
+				<tr>
+					<td>
+						<table>
+							<tr>
+								<td class="noborder">&nbsp;</td>
+							</tr>
+							<tr>
+								<th>1</th>
+							</tr>
+							<tr>
+								<th>2</th>
+							</tr>
+							<tr>
+								<th>3</th>
+							</tr>
+							<tr>
+								<th>4</th>
+							</tr>
+							<tr>
+								<th>5</th>
+							</tr>
+						</table>
+					</td>
+					<td>
+						<table>
+							<tr>
+								<th>A</th>
+								<th>B</th>
+							</tr>
+							<tr>
+								<th>제품</th>
+								<th>개수</th>
+							</tr>
+							<tr>
+								<td>복숭아</td>
+								<td>38</td>
+							</tr>
+							<tr>
+								<td>귤</td>
+								<td>25</td>
+							</tr>
+							<tr>
+								<td>사과</td>
+								<td>41</td>
+							</tr>
+							<tr>
+								<td>배</td>
+								<td>40</td>
+							</tr>
+							<tr>
+								<th>수식</th>
+								<th>설명(결과)</th>
+							</tr>
+							<tr>
+								<td>=INDEX(A2:B5;MATCH("배";A2:A5;0);2)</td>
+								<td>A렬에서 배를 찾고 B렬의 배에 대한 값을 구합니다. (40)</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+			<p>수식에서 사용하는 인수는 다음과 같습니다.</p>
+			<p><img border='0' src='../image/image/sgsd/lookupINDEX.gif' alt='표시'></p>
+			<p>정렬되지 않은 범위에서 값을 찾는 수식(<b class="bterm">INDEX</b>함수)</p>
+			<p><img border='0' src='../image/image/common/callout1.gif' alt='표시'> A2:B5: 값을 찾을 전체 범위입니다.</p>
+			<p><img border='0' src='../image/image/common/callout2.gif' alt='표시'> MATCH("배";A2:A5;0): <b class="bterm">MATCH</b>함수가 행번호를 결정합니다.</p>
+			<p><img border='0' src='../image/image/common/callout3.gif' alt='표시'> "배": 조회렬에서 찾을 값입니다.</p>
+			<p><img border='0' src='../image/image/common/callout4.gif' alt='표시'> A2:A5: <b class="bterm">MATCH</b>함수가 탐색할 렬입니다.</p>
+			<p><img border='0' src='../image/image/common/callout5.gif' alt='표시'> 2: 값을 반환할 렬입니다. 가장 왼쪽에 있는 렬이 1입니다.</p>
+			<p><b class="bterm">참조함수</b></p>
+			<p><a href='5.9.11.11.htm'>INDEX</a></p>
+			<p><a href='5.9.11.14.htm'>MATCH</a></p>
+		<h2>정렬되지 않고 확실하지 않는 범위에서 값찾기</h2>
+			<p>이 작업을 수행하려면 <b class="bterm">OFFSET</b>와 <b class="bterm">MATCH</b>함수를 사용합니다.</p>
+			<p><b class="bterm">실례</b></p>
+			<p><a href="1.5.1.htm">실례의 리용방법</a>을 참고하십시오.</p>
+			<table>
+				<tr>
+					<td>
+						<table>
+							<tr>
+								<td class="noborder">&nbsp;</td>
+							</tr>
+							<tr>
+								<th>1</th>
+							</tr>
+							<tr>
+								<th>2</th>
+							</tr>
+							<tr>
+								<th>3</th>
+							</tr>
+							<tr>
+								<th>4</th>
+							</tr>
+							<tr>
+								<th>5</th>
+							</tr>
+						</table>
+					</td>
+					<td>
+						<table>
+							<tr>
+								<th>A</th>
+								<th>B</th>
+							</tr>
+							<tr>
+								<th>제품</th>
+								<th>개수</th>
+							</tr>
+							<tr>
+								<td>복숭아</td>
+								<td>38</td>
+							</tr>
+							<tr>
+								<td>귤</td>
+								<td>25</td>
+							</tr>
+							<tr>
+								<td>사과</td>
+								<td>41</td>
+							</tr>
+							<tr>
+								<td>배</td>
+								<td>40</td>
+							</tr>
+							<tr>
+								<th>수식</th>
+								<th>설명(결과)</th>
+							</tr>
+							<tr>
+								<td>=OFFSET(A1;MATCH("배";A2:A5; 0);1)</td>
+								<td>A렬에서 배를 찾고 B렬의 배에 대한 값을 구합니다. (40)</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+			<p>수식에서 사용하는 인수는 다음과 같습니다.</p>
+			<p><img border='0' src='../image/image/sgsd/lookupOFFSET.gif' alt='표시'></p>
+			<p><img border='0' src='../image/image/common/callout1.gif' alt='표시'> A1: 범위의 왼쪽우에 있는 세포, 시작세포라고도 합니다.</p>
+			<p><img border='0' src='../image/image/common/callout2.gif' alt='표시'> MATCH("배";A2:A5;0): <b class="bterm">MATCH</b>함수는 조회값을 찾기 위한 시작세포 아래의 행번호를 결정합니다.</p>
+			<p><img border='0' src='../image/image/common/callout3.gif' alt='표시'> "배": 조회렬에서 찾을 값입니다.</p>
+			<p><img border='0' src='../image/image/common/callout4.gif' alt='표시'> A2:A5: <b class="bterm">MATCH</b>함수가 탐색할 렬입니다. 이 범위에 시작세포는 포함시키지 않습니다.</p>
+			<p><img border='0' src='../image/image/common/callout5.gif' alt='표시'> 1: 조회값을 찾기 위한 시작세포의 오른쪽에 있는 렬의 수입니다.</p>
+			<p><b class="bterm">참조함수</b></p>
+			<p><a href='5.9.11.14.htm'>MATCH</a></p>
+			<p><a href='5.9.11.15.htm'>OFFSET</a></p>			
+		<script type="text/javascript" language="Javascript">footerView()</script>
+	
+</body>
+</html>

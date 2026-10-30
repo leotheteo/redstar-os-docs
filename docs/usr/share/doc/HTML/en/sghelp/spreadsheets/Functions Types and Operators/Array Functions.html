@@ -1,0 +1,1494 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+	<TITLE></TITLE>
+	<META NAME="GENERATOR" CONTENT="《Sogwang 3.0》  (Linux)">
+	<META NAME="CREATED" CONTENT="20091205;10241300">
+	<META NAME="CHANGED" CONTENT="20091205;11044100">
+	<STYLE TYPE="text/css">
+	<!--
+		H3 { margin-bottom: 0.18cm; font-family: "Bitstream Vera Sans", "Arial", "Helvetica", "Lucida", "Geneva", "Helmet", sans-serif, "Andale Sans UI", "Arial Unicode MS", "Lucida Sans Unicode", "Tahoma"; font-size: 12pt }
+		H2 { margin-bottom: 0.18cm; font-family: "Bitstream Vera Sans", "Arial", "Helvetica", "Lucida", "Geneva", "Helmet", sans-serif, "Andale Sans UI", "Arial Unicode MS", "Lucida Sans Unicode", "Tahoma"; font-size: 14pt }
+		P.listitem { font-family: "Bitstream Vera Sans", "Arial", "Helvetica", "Lucida", "Geneva", "Helmet", sans-serif, "Andale Sans UI", "Arial Unicode MS", "Lucida Sans Unicode", "Tahoma" }
+		TD P.tableheadintable { margin-bottom: 0.05cm; font-weight: bold }
+		TD P.tablecontentintable { font-family: "Bitstream Vera Sans", "Arial", "Helvetica", "Lucida", "Geneva", "Helmet", sans-serif, "Andale Sans UI", "Arial Unicode MS", "Lucida Sans Unicode", "Tahoma" }
+		P.code { margin-top: 0.04cm; margin-bottom: 0.04cm; font-family: "Bitstream Vera Sans Mono", "Cumberland", "Courier New", "Courier", "Lucida Sans Typewriter", "Lucida Typewriter", "Monaco", "Monospaced" }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="ko-KP" DIR="LTR"><DIV style="margin-left: 25">
+<H1><A NAME="bm_id3147273"></A><FONT FACE="Thorndale, serif"><SPAN LANG="en-US">Array
+Functions</SPAN></FONT></H1>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">This
+category contains the array functions. </SPAN></FONT>
+</P>
+<H2><SPAN LANG="en-US">What is an Array?</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">An
+array is a linked range of cells on a spreadsheet containing values.
+A square range of 3 rows and 3 columns is a 3 x 3 array:</SPAN></FONT></P>
+<TABLE WIDTH=88 BORDER=1 CELLPADDING=2 CELLSPACING=0>
+	<COL WIDTH=8>
+	<COL WIDTH=20>
+	<COL WIDTH=20>
+	<COL WIDTH=21>
+	<TR VALIGN=TOP>
+		<TD WIDTH=8></TD>
+		<TD WIDTH=20>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">A</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=20>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">B</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=21>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">C</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=8>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">1</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=20>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">7 </SPAN></FONT>
+			</P>
+		</TD>
+		<TD WIDTH=20>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">31 </SPAN></FONT>
+			</P>
+		</TD>
+		<TD WIDTH=21>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">33 </SPAN></FONT>
+			</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=8>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">2</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=20>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">95 </SPAN></FONT>
+			</P>
+		</TD>
+		<TD WIDTH=20>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">17 </SPAN></FONT>
+			</P>
+		</TD>
+		<TD WIDTH=21>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">2 </SPAN></FONT>
+			</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=8>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">3</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=20>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">5 </SPAN></FONT>
+			</P>
+		</TD>
+		<TD WIDTH=20>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">10 </SPAN></FONT>
+			</P>
+		</TD>
+		<TD WIDTH=21>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">50 </SPAN></FONT>
+			</P>
+		</TD>
+	</TR>
+</TABLE>
+<P><BR><BR>
+</P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">The
+smallest possible array is a 1 x 2 or 2 x 1 array with two adjacent
+cells.</SPAN></FONT></P>
+<H2><SPAN LANG="en-US">What is an array formula?</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">A
+formula in which the individual values in a cell range are evaluated
+is referred to as an array formula. The difference between an array
+formula and other formulas is that the array formula deals with
+several values simultaneously instead of just one.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Not only
+can an array formula process several values, but it can also return
+several values. The results of an array formula is also an array.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">To
+multiply the values in the individual cells by 10 in the above array,
+you do not need to apply a formula to each individual cell or value.
+Instead you just need to use a single array formula. Select a range
+of 3 x 3 cells on another part of the spreadsheet, enter the formula
+=10*A1:C3 and confirm this entry using the key combination
+Command+Shift+Enter. The result is a 3 x 3 array in which the individual
+values in the cell range (A1:C3) are multiplied by a factor of 10.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">In
+addition to multiplication, you can also use other operators on the
+reference range (an array). With </SPAN></FONT><FONT FACE="청봉, serif"><SPAN LANG="en-US">Sogwang Calc, you
+can add (+), subtract (-), multiply (*), divide (/), use exponents
+(^), concatenation (&amp;) and comparisons (=, &lt;&gt;, &lt;, &gt;,
+&lt;=, &gt;=). The operators can be used on each individual value in
+the cell range and return the result as an array if the array formula
+was entered.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Comparison
+operators in an array formula treat empty cells in the same way as in
+a normal formula, that is, either as zero or as an empty string. For
+example, if cells A1 and A2 are empty the array formulas {=A1:A2=&quot;&quot;}
+and {=A1:A2=0} will both return a 1 column 2 row array of cells
+containing TRUE.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">When do you use array formulas?</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Use
+array formulas if you have to repeat calculations using different
+values. If you decide to change the calculation method later, you
+only have to update the array formula. To add an array formula,
+select the entire array range and then make the required change to
+the array formula.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Array
+formulas are also a space saving option when several values must be
+calculated, since they are not very memory-intensive. In addition,
+arrays are an essential tool for carrying out complex calculations,
+because you can have several cell ranges included in your
+calculations. </SPAN></FONT><FONT FACE="청봉, serif"><SPAN LANG="en-US">Sogwang has
+different math functions for arrays, such as the MMULT function for
+multiplying two arrays or the SUMPRODUCT function for calculating the
+scalar products of two arrays.</SPAN></FONT></P>
+<H2><SPAN LANG="en-US">Using Array Formulas in </SPAN>Sogwang
+<SPAN LANG="en-US">Calc</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">You can
+also create a &quot;normal&quot; formula in which the reference
+range, such as parameters, indicate an array formula. 
+&nbsp;&nbsp;&nbsp;&nbsp;
+The result is
+obtained from the intersection of the reference range and the rows or
+columns in which the formula is found. If there is no intersection or
+if the range at the intersection covers several rows or columns, a
+#VALUE! error message appears. The following example illustrates this
+concept:</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Creating Array Formulas</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">If
+you create an array formula using the <B>Function Wizard</B>, you
+must mark the <B>Array</B> check box each time so that the results
+are returned in an array. Otherwise, only the value in the upper-left
+cell of the array being calculated is returned.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">If you
+enter the array formula directly into the cell, you must use the key
+combination Shift+Command+Enter instead of the Enter key. Only then does
+the formula become an array formula.</SPAN></FONT></P>
+<TABLE WIDTH=941 BORDER=0 CELLPADDING=5 CELLSPACING=0>
+	<COL WIDTH=33>
+	<COL WIDTH=584>
+	<TR>
+		<TD WIDTH=48>
+			<P><IMG SRC="../../Image/note.png" NAME="graphics1" ALT="Note Icon " ALIGN=BOTTOM WIDTH=33 HEIGHT=42 BORDER=0></P>
+		</TD>
+		<TD WIDTH=873>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Array
+			formulas appear in braces in </SPAN></FONT><FONT FACE="청봉, serif"><SPAN LANG="en-US">Sogwang Calc.
+			You cannot create array formulas by manually entering the braces.</SPAN></FONT></P>
+		</TD>
+	</TR>
+</TABLE>
+<P><BR><BR>
+</P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">The
+cells in a results array are automatically protected against changes.
+However, you can edit or copy the array formula by selecting the
+entire array cell range.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Using Inline Array Constants in Formulas</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Calc
+supports inline matrix/array constants in formulas. An inline array
+is surrounded by curly braces '{' and '}'. Elements can be each a
+number (including negatives), a logical constant (TRUE, FALSE), or a
+literal string. Non-constant expressions are not allowed. Arrays can
+be entered with one or more rows, and one or more columns. All rows
+must consist of the same number of elements, all columns must consist
+of the same number of elements. </SPAN></FONT>
+</P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">The
+column separator (separating elements in one row) is the ';'
+semicolon. The row separator is a '|' pipe symbol. 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+The separators are not language and locale dependent. </SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Arrays
+can not be nested.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Examples:</B>
+</SPAN></FONT>
+</P>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">={1;2;3}</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">An array
+with one row consisting of the three numbers 1, 2, and 3.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">To enter
+this array constant, you select three cells in a row, then you type
+the formula ={1;2;3} using the curly braces and the semicolons, then
+press Command+Shift+Enter.</SPAN></FONT></P>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">={1;2;3|4;5;6}</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">An array
+with two rows and three values in each row.</SPAN></FONT></P>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">={0;1;2|FALSE;TRUE;&quot;two&quot;}</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">A mixed
+data array.</SPAN></FONT></P>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">=SIN({1;2;3})</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Entered
+as a matrix formula, delivers the result of three SIN calculations
+with the arguments 1, 2, and 3.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Editing Array Formulas</SPAN></H3>
+<OL>
+	<LI><P CLASS="listitem"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Select the cell range or
+	array containing the array formula. To select the whole array,
+	position the cell cursor inside the array range, then press Command+/,
+	where / is the Division key on the numeric keypad.</SPAN></FONT></P>
+	<LI><P CLASS="listitem"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Either press F2 or
+	position the cursor in the input line. Both of these actions let you
+	edit the formula.</SPAN></FONT></P>
+	<LI><P CLASS="listitem"><FONT FACE="청봉, serif"><SPAN LANG="en-US">After you have made
+	changes, press Command+Shift+Enter.</SPAN></FONT></P>
+</OL>
+<TABLE WIDTH=941 BORDER=0 CELLPADDING=5 CELLSPACING=0>
+	<COL WIDTH=40>
+	<COL WIDTH=577>
+	<TR>
+		<TD WIDTH=43>
+			<P><IMG SRC="../../Image/tip.png" NAME="graphics2" ALT="Tip Icon " ALIGN=BOTTOM WIDTH=40 HEIGHT=43 BORDER=0></P>
+		</TD>
+		<TD WIDTH=878>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">You
+			can format the separate parts of an array. For example, you can
+			change the font color. Select a cell range and then change the
+			attribute you want.</SPAN></FONT></P>
+		</TD>
+	</TR>
+</TABLE>
+<P><BR><BR>
+</P>
+<H3><SPAN LANG="en-US">Copying Array Formulas</SPAN></H3>
+<OL>
+	<LI><P CLASS="listitem"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Select the cell range or
+	array containing the array formula.</SPAN></FONT></P>
+	<LI><P CLASS="listitem"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Either press F2 or
+	position the cursor in the input line.</SPAN></FONT></P>
+	<LI><P CLASS="listitem"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Copy the formula into the
+	input line by pressing Command+C.</SPAN></FONT></P>
+	<LI><P CLASS="listitem"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Select a range of cells
+	where you want to insert the array formula and either press F2 or
+	position the cursor in the input line.</SPAN></FONT></P>
+	<LI><P CLASS="listitem"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Paste the formula by
+	pressing Command+V in the selected space and confirm it by pressing
+	Command+Shift+Enter. The selected range now contains the array formula.</SPAN></FONT></P>
+</OL>
+<H3><SPAN LANG="en-US">Adjusting an Array Range</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">If you
+want to edit the output array, do the following:</SPAN></FONT></P>
+<OL>
+	<LI><P CLASS="listitem"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Select the cell range or
+	array containing the array formula.</SPAN></FONT></P>
+	<LI><P CLASS="listitem"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Below the selection, to
+	the right, you will see a small icon with which you can zoom in or
+	out on the range using your mouse.</SPAN></FONT></P>
+</OL>
+<TABLE WIDTH=941 BORDER=0 CELLPADDING=5 CELLSPACING=0>
+	<COL WIDTH=33>
+	<COL WIDTH=584>
+	<TR>
+		<TD WIDTH=47>
+			<P><IMG SRC="../../Image/note.png" NAME="graphics3" ALT="Note Icon " ALIGN=BOTTOM WIDTH=33 HEIGHT=42 BORDER=0></P>
+		</TD>
+		<TD WIDTH=874>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">When
+			you adjust the array range, the array formula will not
+			automatically be adjusted. You are only changing the range in
+			which the result will appear.</SPAN></FONT></P>
+		</TD>
+	</TR>
+</TABLE>
+<P><BR><BR>
+</P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">By
+holding down the Command key, you can create a copy of the array formula
+in the given range.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Conditional Array Calculations</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">A
+conditional array calculation is an array or matrix formula that
+includes an IF() or CHOOSE() function. The condition argument in the
+formula is an area reference or a matrix result.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">In the
+following example, the &gt;0 test of the {=IF(A1:A3&gt;0;&quot;yes&quot;;&quot;no&quot;)}
+formula is applied to each cell in the range A1:A3 and the result is
+copied to the corresponding cell.</SPAN></FONT></P>
+<TABLE WIDTH=249 BORDER=1 CELLPADDING=2 CELLSPACING=0>
+	<COL WIDTH=8>
+	<COL WIDTH=11>
+	<COL WIDTH=152>
+	<COL WIDTH=59>
+	<TR VALIGN=TOP>
+		<TD WIDTH=8></TD>
+		<TD WIDTH=11>
+			<P CLASS="tableheadintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">A</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=152>
+			<P CLASS="tableheadintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">B
+			(formula)</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=59>
+			<P CLASS="tableheadintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">B
+			(result)</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=8>
+			<P CLASS="tableheadintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">1</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=11>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">1</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=152>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">{=IF(A1:A3&gt;0;&quot;yes&quot;;&quot;no&quot;)}</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=59>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">yes</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=8>
+			<P CLASS="tableheadintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">2</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=11>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">0</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=152>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">{=IF(A1:A3&gt;0;&quot;yes&quot;;&quot;no&quot;)}</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=59>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">no</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=8>
+			<P CLASS="tableheadintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">3</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=11>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">1</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=152>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">{=IF(A1:A3&gt;0;&quot;yes&quot;;&quot;no&quot;)}</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=59>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">yes</SPAN></FONT></P>
+		</TD>
+	</TR>
+</TABLE>
+<P><BR><BR>
+</P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">The
+following functions provide forced array handling: CORREL, COVAR,
+FORECAST, FTEST, INTERCEPT, MDETERM, MINVERSE, MMULT, MODE, PEARSON,
+PROB, RSQ, SLOPE, STEYX, SUMPRODUCT, SUMX2MY2, SUMX2PY2, SUMXMY2,
+TTEST. If you use area references as arguments when you call one of
+these functions, the functions behave as array functions. The
+following table provides an example of forced array handling:</SPAN></FONT></P>
+<TABLE WIDTH=396 BORDER=1 CELLPADDING=2 CELLSPACING=0>
+	<COL WIDTH=8>
+	<COL WIDTH=11>
+	<COL WIDTH=71>
+	<COL WIDTH=58>
+	<COL WIDTH=161>
+	<COL WIDTH=59>
+	<TR VALIGN=TOP>
+		<TD WIDTH=8></TD>
+		<TD WIDTH=11>
+			<P CLASS="tableheadintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">A</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=71>
+			<P CLASS="tableheadintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">B
+			(formula)</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=58>
+			<P CLASS="tableheadintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">B
+			(result)</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=161>
+			<P CLASS="tableheadintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">C
+			(forced array formula)</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=59>
+			<P CLASS="tableheadintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">C
+			(result)</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=8>
+			<P CLASS="tableheadintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">1</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=11>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">1</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=71>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">=A1:A2+1</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=58>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">2</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=161>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">=SUMPRODUCT(A1:A2+1)</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=59>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">5</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=8>
+			<P CLASS="tableheadintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">2</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=11>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">2</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=71>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">=A1:A2+1</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=58>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">3</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=161>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">=SUMPRODUCT(A1:A2+1)</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=59>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">5</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=8>
+			<P CLASS="tableheadintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">3</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=11></TD>
+		<TD WIDTH=71>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">=A1:A2+1</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=58>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">#VALUE!</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=161>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">=SUMPRODUCT(A1:A2+1)</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=59>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">5</SPAN></FONT></P>
+		</TD>
+	</TR>
+</TABLE>
+<P><A NAME="Section14"></A><A NAME="bm_id3158446"></A><A NAME="bm_id3151317"></A>
+<BR><BR>
+</P>
+<H2><SPAN LANG="en-US">MUNIT</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Returns
+the unitary square array of a certain size. The unitary array is a
+square array where the main diagonal elements equal 1 and all other
+array elements are equal to 0.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Syntax</SPAN></H3>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">MUNIT(Dimensions)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Dimensions</B>
+refers to the size of the array unit.</SPAN></FONT></P>
+<TABLE WIDTH=742 BORDER=0 CELLPADDING=5 CELLSPACING=0>
+	<COL WIDTH=33>
+	<COL WIDTH=444>
+	<TR>
+		<TD WIDTH=48>
+			<P><IMG SRC="../../Image/note.png" NAME="graphics4" ALT="Note Icon " ALIGN=BOTTOM WIDTH=33 HEIGHT=42 BORDER=0></P>
+		</TD>
+		<TD WIDTH=674>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">You
+			can find a general introduction to Array functions at the top of
+			this page.</SPAN></FONT></P>
+		</TD>
+	</TR>
+</TABLE>
+<P><BR><BR>
+</P>
+<H3><SPAN LANG="en-US">Example</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Select a
+square range within the spreadsheet, for example, from A1 to E5.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Without
+deselecting the range, select the MUNIT function. Mark the <B>Array</B>
+check box. Enter the desired dimensions for the array unit, in this
+case 5, and click <B>OK</B>.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">You can
+also enter the =Munit(5) formula in the last cell of the selected
+range (E5), and press Shift+Command+Enter.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">You now
+see a unit array with a range of A1:E5.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">More
+explanations on top of this page. </SPAN></FONT>
+</P>
+<H2><A NAME="Section13"></A><A NAME="bm_id3159084"></A><A NAME="bm_id3153883"></A>
+<SPAN LANG="en-US">FREQUENCY</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Indicates
+the frequency distribution in a one-column-array. The function counts
+the number of values in the Data array that are within the values
+given by the Classes array.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Syntax</SPAN></H3>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">FREQUENCY(Data; Classes)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Data</B>
+represents the reference to the values to be counted.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Classes</B>
+represents the array of the limit values.</SPAN></FONT></P>
+<TABLE WIDTH=801 BORDER=0 CELLPADDING=5 CELLSPACING=0>
+	<COL WIDTH=33>
+	<COL WIDTH=444>
+	<TR>
+		<TD WIDTH=48>
+			<P><IMG SRC="../../Image/note.png" NAME="graphics5" ALT="Note Icon " ALIGN=BOTTOM WIDTH=33 HEIGHT=42 BORDER=0></P>
+		</TD>
+		<TD WIDTH=733>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">You
+			can find a general introduction to Array functions at the top of
+			this page.</SPAN></FONT></P>
+		</TD>
+	</TR>
+</TABLE>
+<P><BR><BR>
+</P>
+<H3><SPAN LANG="en-US">Example</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">In the
+following table, column A lists unsorted measurement values. Column B
+contains the upper limit you entered for the classes into which you
+want to divide the data in column A. According to the limit entered
+in B1, the FREQUENCY function returns the number of measured values
+less than or equal to 5. As the limit in B2 is 10, the FREQUENCY
+function returns the second result as the number of measured values
+that are greater than 5 and less than or equal to 10. 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+The text you entered in B6, &quot;&gt;25&quot;, is only for reference purposes.</SPAN></FONT></P>
+<TABLE WIDTH=94 BORDER=1 CELLPADDING=2 CELLSPACING=0>
+	<COL WIDTH=19>
+	<COL WIDTH=16>
+	<COL WIDTH=24>
+	<COL WIDTH=16>
+	<TR VALIGN=TOP>
+		<TD WIDTH=19></TD>
+		<TD WIDTH=16>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>A</B>
+			</SPAN></FONT>
+			</P>
+		</TD>
+		<TD WIDTH=24>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>B</B>
+			</SPAN></FONT>
+			</P>
+		</TD>
+		<TD WIDTH=16>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>C</B>
+			</SPAN></FONT>
+			</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=19>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>1</B>
+			</SPAN></FONT>
+			</P>
+		</TD>
+		<TD WIDTH=16>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">12</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=24>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">5</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=16>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">1</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=19>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>2</B>
+			</SPAN></FONT>
+			</P>
+		</TD>
+		<TD WIDTH=16>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">8</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=24>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">10</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=16>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">3</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=19>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>3</B>
+			</SPAN></FONT>
+			</P>
+		</TD>
+		<TD WIDTH=16>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">24</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=24>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">15</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=16>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">2</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=19>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>4</B>
+			</SPAN></FONT>
+			</P>
+		</TD>
+		<TD WIDTH=16>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">11</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=24>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">20</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=16>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">3</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=19>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>5</B>
+			</SPAN></FONT>
+			</P>
+		</TD>
+		<TD WIDTH=16>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">5</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=24>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">25</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=16>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">1</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=19>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>6</B>
+			</SPAN></FONT>
+			</P>
+		</TD>
+		<TD WIDTH=16>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">20</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=24>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">&gt;25</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=16>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">1</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=19>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>7</B>
+			</SPAN></FONT>
+			</P>
+		</TD>
+		<TD WIDTH=16>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">16</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=24></TD>
+		<TD WIDTH=16></TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=19>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>8</B>
+			</SPAN></FONT>
+			</P>
+		</TD>
+		<TD WIDTH=16>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">9</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=24></TD>
+		<TD WIDTH=16></TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=19>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>9</B>
+			</SPAN></FONT>
+			</P>
+		</TD>
+		<TD WIDTH=16>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">7</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=24></TD>
+		<TD WIDTH=16></TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=19>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>10</B>
+			</SPAN></FONT>
+			</P>
+		</TD>
+		<TD WIDTH=16>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">16</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=24></TD>
+		<TD WIDTH=16></TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=19>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>11</B>
+			</SPAN></FONT>
+			</P>
+		</TD>
+		<TD WIDTH=16>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">33</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=24></TD>
+		<TD WIDTH=16></TD>
+	</TR>
+</TABLE>
+<P><BR><BR>
+</P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Select a
+single column range in which to enter the frequency according to the
+class limits. You must select one field more than the class ceiling.
+In this example, select the range C1:C6. Call up the FREQUENCY
+function in the <B>Function Wizard</B>. Select the <B>Data</B> range
+in (A1:A11), and then the <B>Classes</B> range in which you entered
+the class limits (B1:B6). Select the <B>Array</B> check box and click
+<B>OK</B>. You will see the frequency count in the range C1:C6.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">More
+explanations on top of this page. </SPAN></FONT>
+</P>
+<H2><A NAME="Section12"></A><A NAME="bm_id3151030"></A><A NAME="bm_id3154057"></A>
+<SPAN LANG="en-US">MDETERM</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Returns
+the array determinant of an array. This function returns a value in
+the current cell; it is not necessary to define a range for the
+results.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Syntax</SPAN></H3>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">MDETERM(Array)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Array</B>
+represents a square array in which the determinants are defined.</SPAN></FONT></P>
+<TABLE WIDTH=743 BORDER=0 CELLPADDING=5 CELLSPACING=0>
+	<COL WIDTH=33>
+	<COL WIDTH=460>
+	<TR>
+		<TD WIDTH=48>
+			<P><IMG SRC="../../Image/note.png" NAME="graphics6" ALT="Note Icon " ALIGN=BOTTOM WIDTH=33 HEIGHT=42 BORDER=0></P>
+		</TD>
+		<TD WIDTH=675>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">You
+			can find a general introduction to using Array functions on top of
+			this page.</SPAN></FONT></P>
+		</TD>
+	</TR>
+</TABLE>
+<P><BR><BR>
+</P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">More
+explanations on top of this page. </SPAN></FONT>
+</P>
+<H2><A NAME="Section11"></A><A NAME="bm_id3151348"></A><A NAME="bm_id3151360"></A>
+<SPAN LANG="en-US">MINVERSE</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Returns
+the inverse array.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Syntax</SPAN></H3>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">MINVERSE(Array)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Array</B>
+represents a square array that is to be inverted.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">More
+explanations on top of this page. </SPAN></FONT>
+</P>
+<H3><SPAN LANG="en-US">Example</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Select a
+square range and select MINVERSE. Select the output array, select the
+<B>Array</B> field and click <B>OK</B>.</SPAN></FONT></P>
+<H2><A NAME="Section10"></A><A NAME="bm_id3148546"></A><A NAME="bm_id3148501"></A>
+<SPAN LANG="en-US">MMULT</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Calculates
+the array product of two arrays. The number of columns for array 1
+must match the number of rows for array 2. The square array has an
+equal number of rows and columns.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Syntax</SPAN></H3>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">MMULT(Array; Array)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Array</B>
+at first place represents the first array used in the array product.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Array</B>
+at second place represents the second array with the same number of
+rows.</SPAN></FONT></P>
+<TABLE WIDTH=493 BORDER=0 CELLPADDING=5 CELLSPACING=0>
+	<COL WIDTH=33>
+	<COL WIDTH=227>
+	<TR>
+		<TD WIDTH=48>
+			<P><IMG SRC="../../Image/note.png" NAME="graphics7" ALT="Note Icon " ALIGN=BOTTOM WIDTH=33 HEIGHT=42 BORDER=0></P>
+		</TD>
+		<TD WIDTH=425>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">More
+			explanations on top of this page. </SPAN></FONT>
+			</P>
+		</TD>
+	</TR>
+</TABLE>
+<P><BR><BR>
+</P>
+<H3><SPAN LANG="en-US">Example</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Select a
+square range. Choose the MMULT function. Select the first <B>Array</B>,
+then select the second <B>Array</B>.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+Using <B>Function Wizard</B>,
+mark the <B>Array</B> check box. Click <B>OK</B>. The output array
+will appear in the first selected range.</SPAN></FONT></P>
+<H2><A NAME="Section9"></A><A NAME="bm_id3154970"></A><A NAME="bm_id3154982"></A>
+<SPAN LANG="en-US">TRANSPOSE</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Transposes
+the rows and columns of an array.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Syntax</SPAN></H3>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">TRANSPOSE(Array)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Array</B>
+represents the array in the spreadsheet that is to be transposed.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">More
+explanations on top of this page. </SPAN></FONT>
+</P>
+<H3><SPAN LANG="en-US">Example</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">In the
+spreadsheet, select the range in which the transposed array can
+appear. If the original array has n rows and m columns, your selected
+range must have at least m rows and n columns. Then enter the formula
+directly, select the original array and press Shift+Command+Enter. Or,
+if you are using the <B>Function Wizard</B>, mark the <B>Array</B>
+check box. 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+The transposed array appears in the selected target range
+and is protected automatically against changes.</SPAN></FONT></P>
+<H2><A NAME="Section8"></A><A NAME="bm_id3109846"></A><A NAME="bm_id3144716"></A>
+<SPAN LANG="en-US">LINEST</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Returns
+the parameters of a linear trend.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Syntax</SPAN></H3>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">LINEST(DataY; DataX; LinearType;
+Stats)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>DataY</B>
+represents the Y Data array.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>DataX</B>
+(optional) represents the X Data array.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>LinearType</B>
+(optional). If the line goes through the zero point, then set
+LinearType = 0.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Stats</B>
+(optional). If Stats=0, only the regression coefficient is to be
+calculated. Otherwise, you will see other stats.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">In
+the </SPAN></FONT><FONT FACE="청봉, serif"><SPAN LANG="en-US">Sogwang Calc
+functions, parameters marked as &quot;optional&quot; can be left out
+only when no parameter follows. 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+For example, in a function with four
+parameters, where the last two parameters are marked as &quot;optional&quot;,
+you can leave out parameter 4 or parameters 3 and 4, but you cannot
+leave out parameter 3 alone. </SPAN></FONT>
+</P>
+<P><A NAME="moreontop6"></A><FONT FACE="청봉, serif"><SPAN LANG="en-US">More
+explanations on top of this page. </SPAN></FONT>
+</P>
+<H3><SPAN LANG="en-US">Example</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">This
+function returns an array and is handled in the same way as the other
+array functions. Select a range for the answers and then the
+function. Select DataY. If you want, you can enter other parameters.
+Select <B>Array</B> and click <B>OK</B>.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">The
+results returned by the system (if Stats = 0), will at least show the
+slope of the regression line and its intersection with the Y axis. If
+Stats does not equal 0, other results are to be displayed.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Other LINEST Results:</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Examine
+the following examples:</SPAN></FONT></P>
+<TABLE WIDTH=298 BORDER=1 CELLPADDING=2 CELLSPACING=0>
+	<COL WIDTH=12>
+	<COL WIDTH=20>
+	<COL WIDTH=20>
+	<COL WIDTH=27>
+	<COL WIDTH=11>
+	<COL WIDTH=87>
+	<COL WIDTH=45>
+	<COL WIDTH=39>
+	<TR VALIGN=TOP>
+		<TD WIDTH=12></TD>
+		<TD WIDTH=20>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">A</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=20>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">B</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=27>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">C</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=11>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">D</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=87>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">E</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=45>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">F</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=39>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">G</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=12>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>1</B>
+			</SPAN></FONT>
+			</P>
+		</TD>
+		<TD WIDTH=20>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">x1 </SPAN></FONT>
+			</P>
+		</TD>
+		<TD WIDTH=20>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">x2 </SPAN></FONT>
+			</P>
+		</TD>
+		<TD WIDTH=27>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">y </SPAN></FONT>
+			</P>
+		</TD>
+		<TD WIDTH=11></TD>
+		<TD WIDTH=87>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">LINEST
+			value </SPAN></FONT>
+			</P>
+		</TD>
+		<TD WIDTH=45></TD>
+		<TD WIDTH=39></TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=12>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>2</B>
+			</SPAN></FONT>
+			</P>
+		</TD>
+		<TD WIDTH=20>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">4 </SPAN></FONT>
+			</P>
+		</TD>
+		<TD WIDTH=20>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">7 </SPAN></FONT>
+			</P>
+		</TD>
+		<TD WIDTH=27>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">100 </SPAN></FONT>
+			</P>
+		</TD>
+		<TD WIDTH=11></TD>
+		<TD WIDTH=87>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">4,17 </SPAN></FONT>
+			</P>
+		</TD>
+		<TD WIDTH=45>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">-3,48
+			</SPAN></FONT>
+			</P>
+		</TD>
+		<TD WIDTH=39>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">82,33
+			</SPAN></FONT>
+			</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=12>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>3</B>
+			</SPAN></FONT>
+			</P>
+		</TD>
+		<TD WIDTH=20>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">5 </SPAN></FONT>
+			</P>
+		</TD>
+		<TD WIDTH=20>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">9 </SPAN></FONT>
+			</P>
+		</TD>
+		<TD WIDTH=27>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">105 </SPAN></FONT>
+			</P>
+		</TD>
+		<TD WIDTH=11></TD>
+		<TD WIDTH=87>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">5,46 </SPAN></FONT>
+			</P>
+		</TD>
+		<TD WIDTH=45>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">10,96
+			</SPAN></FONT>
+			</P>
+		</TD>
+		<TD WIDTH=39>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">9,35 </SPAN></FONT>
+			</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=12>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>4</B>
+			</SPAN></FONT>
+			</P>
+		</TD>
+		<TD WIDTH=20>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">6 </SPAN></FONT>
+			</P>
+		</TD>
+		<TD WIDTH=20>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">11 </SPAN></FONT>
+			</P>
+		</TD>
+		<TD WIDTH=27>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">104 </SPAN></FONT>
+			</P>
+		</TD>
+		<TD WIDTH=11></TD>
+		<TD WIDTH=87>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">0,87 </SPAN></FONT>
+			</P>
+		</TD>
+		<TD WIDTH=45>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">5,06 </SPAN></FONT>
+			</P>
+		</TD>
+		<TD WIDTH=39>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">#NA </SPAN></FONT>
+			</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=12>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>5</B>
+			</SPAN></FONT>
+			</P>
+		</TD>
+		<TD WIDTH=20>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">7 </SPAN></FONT>
+			</P>
+		</TD>
+		<TD WIDTH=20>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">12 </SPAN></FONT>
+			</P>
+		</TD>
+		<TD WIDTH=27>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">108 </SPAN></FONT>
+			</P>
+		</TD>
+		<TD WIDTH=11></TD>
+		<TD WIDTH=87>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">13,21
+			</SPAN></FONT>
+			</P>
+		</TD>
+		<TD WIDTH=45>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">4 </SPAN></FONT>
+			</P>
+		</TD>
+		<TD WIDTH=39>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">#NA </SPAN></FONT>
+			</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=12>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>6</B>
+			</SPAN></FONT>
+			</P>
+		</TD>
+		<TD WIDTH=20>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">8 </SPAN></FONT>
+			</P>
+		</TD>
+		<TD WIDTH=20>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">15 </SPAN></FONT>
+			</P>
+		</TD>
+		<TD WIDTH=27>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">111 </SPAN></FONT>
+			</P>
+		</TD>
+		<TD WIDTH=11></TD>
+		<TD WIDTH=87>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">675,45
+			</SPAN></FONT>
+			</P>
+		</TD>
+		<TD WIDTH=45>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">102,26
+			</SPAN></FONT>
+			</P>
+		</TD>
+		<TD WIDTH=39>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">#NA </SPAN></FONT>
+			</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=12>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>7</B>
+			</SPAN></FONT>
+			</P>
+		</TD>
+		<TD WIDTH=20>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">9 </SPAN></FONT>
+			</P>
+		</TD>
+		<TD WIDTH=20>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">17 </SPAN></FONT>
+			</P>
+		</TD>
+		<TD WIDTH=27>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">120 </SPAN></FONT>
+			</P>
+		</TD>
+		<TD WIDTH=11></TD>
+		<TD WIDTH=87></TD>
+		<TD WIDTH=45></TD>
+		<TD WIDTH=39></TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=12>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>8</B>
+			</SPAN></FONT>
+			</P>
+		</TD>
+		<TD WIDTH=20>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">10 </SPAN></FONT>
+			</P>
+		</TD>
+		<TD WIDTH=20>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">19 </SPAN></FONT>
+			</P>
+		</TD>
+		<TD WIDTH=27>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">133 </SPAN></FONT>
+			</P>
+		</TD>
+		<TD WIDTH=11></TD>
+		<TD WIDTH=87></TD>
+		<TD WIDTH=45></TD>
+		<TD WIDTH=39></TD>
+	</TR>
+</TABLE>
+<P><BR><BR>
+</P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Column A
+contains several X1 values, column B several X2 values and column C
+the Y values. You have already entered these values in your
+spreadsheet. You have now set up E2:G6 in the spreadsheet and
+activated the <B>Function Wizard</B>. 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+For the LINEST function to
+work, you must have marked the <B>Array</B> check box in the <B>Function
+Wizard</B>. Next, select the following values in the spreadsheet (or
+enter them using the keyboard):</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>DataY</B>
+is C2:C8</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>DataX</B>
+is A2:B8</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>LinearType</B>
+and <B>Stats</B> are both set to 1.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">As soon
+as you click <B>OK</B>, </SPAN></FONT><FONT FACE="청봉, serif"><SPAN LANG="en-US">Sogwang Calc will
+fill the above example with the LINEST values as shown in the
+example.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">The
+formula in the <B>Formula</B> Bar corresponds to each cell of the
+LINEST array {=LINEST(C2:C8;A2:B8;1;1)} </SPAN></FONT>
+</P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>This
+represents the calculated LINEST values:</B> </SPAN></FONT>
+</P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">E2
+and F2: Slope m of the regression line y=b+m*x for the x1 and x2
+values. The values are given in reverse order; that is, the slope for
+x2 in E2 and the slope for x1 in F2.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">G2:
+Intersection b with the y axis.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">E3
+and F3: The standard error of the slope value.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">G3: The
+standard error of the intercept</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">E4:
+RSQ</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">F4: The
+standard error of the regression calculated for the Y value.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">E5: The
+F value from the variance analysis.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">F5: The
+degrees of freedom from the variance analysis.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">E6: The
+sum of the squared deviation of the estimated Y values from their
+linear mean.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">F6: The
+sum of the squared deviation of the estimated Y value from the given
+Y values.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">More
+explanations on top of this page. </SPAN></FONT>
+</P>
+<H2><A NAME="Section7"></A><A NAME="bm_id1596728"></A><A NAME="bm_id3146020"></A>
+<SPAN LANG="en-US">LOGEST</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">This
+function calculates the adjustment of the entered data as an
+exponential regression curve (y=b*m^x).</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Syntax</SPAN></H3>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">LOGEST(DataY; DataX; FunctionType;
+Stats)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>DataY</B>
+represents the Y Data array.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>DataX</B>
+(optional) represents the X Data array.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>FunctionType</B>
+(optional). If Function_Type = 0, functions in the form y = m^x will
+be calculated. Otherwise, y = b*m^x functions will be calculated.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Stats</B>
+(optional). If Stats=0, only the regression coefficient is
+calculated.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">In
+the </SPAN></FONT><FONT FACE="청봉, serif"><SPAN LANG="en-US">Sogwang Calc
+functions, parameters marked as &quot;optional&quot; can be left out
+only when no parameter follows. 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+For example, in a function with four
+parameters, where the last two parameters are marked as &quot;optional&quot;,
+you can leave out parameter 4 or parameters 3 and 4, but you cannot
+leave out parameter 3 alone. </SPAN></FONT>
+</P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">More
+explanations on top of this page. </SPAN></FONT>
+</P>
+<H3><SPAN LANG="en-US">Example</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">See
+LINEST. However, no square sum will be returned.</SPAN></FONT></P>
+<H2><A NAME="Section6"></A><A NAME="bm_id3163286"></A><A NAME="bm_id3163297"></A>
+<SPAN LANG="en-US">SUMPRODUCT</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Multiplies
+corresponding elements in the given arrays, and returns the sum of
+those products.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Syntax</SPAN></H3>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">SUMPRODUCT(Array1;
+Array2...Array30)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Array1,
+Array2...Array30</B> represent arrays whose corresponding elements
+are to be multiplied.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">At least
+one array must be part of the argument list. If only one array is
+given, all array elements are summed.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Example</SPAN></H3>
+<TABLE WIDTH=112 BORDER=1 CELLPADDING=2 CELLSPACING=0>
+	<COL WIDTH=8>
+	<COL WIDTH=20>
+	<COL WIDTH=20>
+	<COL WIDTH=20>
+	<COL WIDTH=21>
+	<TR VALIGN=TOP>
+		<TD WIDTH=8></TD>
+		<TD WIDTH=20>
+			<P CLASS="tableheadintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">A</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=20>
+			<P CLASS="tableheadintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">B</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=20>
+			<P CLASS="tableheadintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">C</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=21>
+			<P CLASS="tableheadintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">D</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=8>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">1</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=20>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">2 </SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=20>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">3 </SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=20>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">4 </SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=21>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">5 </SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=8>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">2</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=20>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">6 </SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=20>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">7 </SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=20>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">8 </SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=21>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">9 </SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=8>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">3</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=20>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">10 </SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=20>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">11 </SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=20>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">12 </SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=21>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">13 </SPAN></FONT></P>
+		</TD>
+	</TR>
+</TABLE>
+<P><BR><BR>
+</P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">=SUMPRODUCT(A1:B3;C1:D3)
+returns 397.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Calculation:
+A1*C1 + B1*D1 + A2*C2 + B2*D2 + A3*C3 + B3*D3</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">You can
+use SUMPRODUCT to calculate the scalar product of two vectors.</SPAN></FONT></P>
+<TABLE WIDTH=900 BORDER=0 CELLPADDING=5 CELLSPACING=0>
+	<COL WIDTH=33>
+	<COL WIDTH=584>
+	<TR>
+		<TD WIDTH=47>
+			<P><IMG SRC="../../Image/note.png" NAME="graphics8" ALT="Note Icon " ALIGN=BOTTOM WIDTH=33 HEIGHT=42 BORDER=0></P>
+		</TD>
+		<TD WIDTH=833>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">SUMPRODUCT
+			returns a single number, it is not necessary to enter the function
+			as an array function.</SPAN></FONT></P>
+		</TD>
+	</TR>
+</TABLE>
+<P><BR><BR>
+</P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">More
+explanations on top of this page. </SPAN></FONT>
+</P>
+<H2><A NAME="Section5"></A><A NAME="bm_id3144842"></A><A NAME="bm_id3144854"></A>
+<SPAN LANG="en-US">SUMX2MY2</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Returns
+the sum of the difference of squares of corresponding values in two
+arrays.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Syntax</SPAN></H3>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">SUMX2MY2(ArrayX; ArrayY)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>ArrayX</B>
+represents the first array whose elements are to be squared and
+added.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>ArrayY</B>
+represents the second array whose elements are to be squared and
+subtracted.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">More
+explanations on top of this page. </SPAN></FONT>
+</P>
+<H2><A NAME="Section4"></A><A NAME="bm_id3145026"></A><A NAME="bm_id3145038"></A>
+<SPAN LANG="en-US">SUMX2PY2</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Returns
+the sum of the sum of squares of corresponding values in two arrays.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Syntax</SPAN></H3>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">SUMX2PY2(ArrayX; ArrayY)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>ArrayX</B>
+represents the first array whose arguments are to be squared and
+added.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>ArrayY</B>
+represents the second array, whose elements are to be added and
+squared.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">More
+explanations on top of this page. </SPAN></FONT>
+</P>
+<H2><A NAME="Section3"></A><A NAME="bm_id3163527"></A><A NAME="bm_id3163539"></A>
+<SPAN LANG="en-US">SUMXMY2</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Adds the
+squares of the variance between corresponding values in two arrays.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Syntax</SPAN></H3>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">SUMXMY2(ArrayX; ArrayY)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>ArrayX</B>
+represents the first array whose elements are to be subtracted and
+squared.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>ArrayY</B>
+represents the second array, whose elements are to be subtracted and
+squared.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">More
+explanations on top of this page. </SPAN></FONT>
+</P>
+<H2><A NAME="Section2"></A><A NAME="bm_id3166062"></A><A NAME="bm_id3166074"></A>
+<SPAN LANG="en-US">TREND</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Returns
+values along a linear trend.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Syntax</SPAN></H3>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">TREND(DataY; DataX; NewDataX;
+LinearType)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>DataY</B>
+represents the Y Data array.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>DataX</B>
+(optional) represents the X Data array.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>NewDataX</B>
+(optional) represents the array of the X data, which are used for
+recalculating values.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>LinearType</B>(Optional).
+If LinearType = 0, then lines will be calculated through the zero
+point. Otherwise, offset lines will also be calculated. The default
+is LinearType &lt;&gt; 0.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">In
+the </SPAN></FONT><FONT FACE="청봉, serif"><SPAN LANG="en-US">Sogwang Calc
+functions, parameters marked as &quot;optional&quot; can be left out
+only when no parameter follows. 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+For example, in a function with four
+parameters, where the last two parameters are marked as &quot;optional&quot;,
+you can leave out parameter 4 or parameters 3 and 4, but you cannot
+leave out parameter 3 alone. </SPAN></FONT>
+</P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">More
+explanations on top of this page. </SPAN></FONT>
+</P>
+<H3><SPAN LANG="en-US">Example</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Select a
+spreadsheet range in which the trend data will appear. Select the
+function. Enter the output data or select it with the mouse. Mark the
+<B>Array</B> field. click <B>OK</B>. The trend data calculated from
+the output data is displayed.</SPAN></FONT></P>
+<H2><A NAME="Section1"></A><A NAME="bm_id3166317"></A><A NAME="bm_id3166329"></A>
+<SPAN LANG="en-US">GROWTH</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Calculates
+the points of an exponential trend in an array.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Syntax</SPAN></H3>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">GROWTH(DataY; DataX; NewDataX;
+FunctionType)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>DataY</B>
+represents the Y Data array.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>DataX</B>
+(optional) represents the X Data array.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>NewDataX</B>
+(optional) represents the X data array, in which the values are
+recalculated.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>FunctionType</B>(optional).
+If FunctionType = 0, functions in the form y = m^x will be
+calculated. Otherwise, y = b*m^x functions will be calculated.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">In
+the </SPAN></FONT><FONT FACE="청봉, serif"><SPAN LANG="en-US">Sogwang Calc
+functions, parameters marked as &quot;optional&quot; can be left out
+only when no parameter follows. 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+For example, in a function with four
+parameters, where the last two parameters are marked as &quot;optional&quot;,
+you can leave out parameter 4 or parameters 3 and 4, but you cannot
+leave out parameter 3 alone. </SPAN></FONT>
+</P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">More
+explanations on top of this page. </SPAN></FONT>
+</P>
+<H3><SPAN LANG="en-US">Example</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><SPAN STYLE="font-weight: medium">This
+function returns an array and is handled in the same way as the other
+array functions. Select a range where you want the answers to appear
+and select the function. Select DataY. Enter any other parameters,
+mark </SPAN><B>Array</B><SPAN STYLE="font-weight: medium"> and click
+</SPAN><B>OK</B><SPAN STYLE="font-weight: medium">.</SPAN></A></SPAN></FONT></P>
+
+</DIV></BODY>
+</HTML>
+

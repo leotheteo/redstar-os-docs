@@ -1,0 +1,1350 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+	<TITLE></TITLE>
+	<META NAME="GENERATOR" CONTENT="《Sogwang 3.0》  (Linux)">
+	<META NAME="CREATED" CONTENT="20091205;10241300">
+	<META NAME="CHANGED" CONTENT="20091205;10570500">
+	<STYLE TYPE="text/css">
+	<!--
+		H3 { margin-bottom: 0.18cm; font-family: "Bitstream Vera Sans", "Arial", "Helvetica", "Lucida", "Geneva", "Helmet", sans-serif, "Andale Sans UI", "Arial Unicode MS", "Lucida Sans Unicode", "Tahoma"; font-size: 12pt }
+		H2 { margin-bottom: 0.18cm; font-family: "Bitstream Vera Sans", "Arial", "Helvetica", "Lucida", "Geneva", "Helmet", sans-serif, "Andale Sans UI", "Arial Unicode MS", "Lucida Sans Unicode", "Tahoma"; font-size: 14pt }
+		TD P.tableheadintable { margin-bottom: 0.05cm; font-weight: bold }
+		TD P.tablecontentintable { font-family: "Bitstream Vera Sans", "Arial", "Helvetica", "Lucida", "Geneva", "Helmet", sans-serif, "Andale Sans UI", "Arial Unicode MS", "Lucida Sans Unicode", "Tahoma" }
+		P.code { margin-top: 0.04cm; margin-bottom: 0.04cm; font-family: "Bitstream Vera Sans Mono", "Cumberland", "Courier New", "Courier", "Lucida Sans Typewriter", "Lucida Typewriter", "Monaco", "Monospaced" }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="ko-KP" DIR="LTR"><DIV style="margin-left: 25">
+<H1><FONT FACE="Thorndale, serif"><SPAN LANG="en-US">Financial
+Functions Part Three</SPAN></FONT></H1>
+<H2><A NAME="oddfprice"></A><A NAME="bm_id3145112"></A><A NAME="bm_id3146107"></A>
+<SPAN LANG="en-US">ODDFPRICE</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Calculates
+the price per 100 currency units par value of a security, if the
+first interest date falls irregularly.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Syntax</SPAN></H3>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">ODDFPRICE(Settlement; Maturity;
+Issue; FirstCoupon; Rate; Yield; Redemption; Frequency; Basis)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Settlement</B>
+is the date of purchase of the security.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Maturity</B>
+is the date on which the security matures (expires).</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Issue</B>
+is the date of issue of the security.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>FirstCoupon</B>
+is the first interest date of the security.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Rate</B>
+is the annual rate of interest.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Yield</B>
+is the annual yield of the security.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Redemption</B>
+is the redemption value per 100 currency units of par value.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Frequency</B>
+is number of interest payments per year (1, 2 or 4).</SPAN></FONT></P>
+<P><A NAME="basis"></A><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Basis</B>
+is chosen from a list of options and indicates how the year is to be
+calculated.</SPAN></FONT></P>
+<TABLE WIDTH=633 BORDER=1 CELLPADDING=2 CELLSPACING=0>
+	<COL WIDTH=72>
+	<COL WIDTH=369>
+	<TR VALIGN=TOP>
+		<TD WIDTH=110>
+			<P CLASS="tableheadintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Basis</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=509>
+			<P CLASS="tableheadintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Calculation</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=110>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">0 or missing</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=509>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">US method
+			(NASD), 12 months of 30 days each</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=110>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">1</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=509>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Exact number of
+			days in months, exact number of days in year</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=110>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">2</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=509>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Exact number of
+			days in month, year has 360 days</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=110>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">3</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=509>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Exact number of
+			days in month, year has 365 days</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=110>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">4</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=509>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">European method,
+			12 months of 30 days each</SPAN></FONT></P>
+		</TD>
+	</TR>
+</TABLE>
+<P><BR><BR>
+</P>
+<H2><A NAME="oddfyield"></A><A NAME="bm_id3157871"></A><A NAME="bm_id3149723"></A>
+<SPAN LANG="en-US">ODDFYIELD</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Calculates
+the yield of a security if the first interest date falls irregularly.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Syntax</SPAN></H3>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">ODDFYIELD(Settlement; Maturity;
+Issue; FirstCoupon; Rate; Price; Redemption; Frequency; Basis)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Settlement</B>
+is the date of purchase of the security.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Maturity</B>
+is the date on which the security matures (expires).</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Issue</B>
+is the date of issue of the security.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>FirstCoupon</B>
+is the first interest period of the security.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Rate</B>
+is the annual rate of interest.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Price</B>
+is the price of the security.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Redemption</B>
+is the redemption value per 100 currency units of par value.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Frequency</B>
+is number of interest payments per year (1, 2 or 4).</SPAN></FONT></P>
+<P><A NAME="basis1"></A><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Basis</B>
+is chosen from a list of options and indicates how the year is to be
+calculated.</SPAN></FONT></P>
+<TABLE WIDTH=639 BORDER=1 CELLPADDING=2 CELLSPACING=0>
+	<COL WIDTH=72>
+	<COL WIDTH=369>
+	<TR VALIGN=TOP>
+		<TD WIDTH=105>
+			<P CLASS="tableheadintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Basis</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=520>
+			<P CLASS="tableheadintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Calculation</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=105>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">0 or missing</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=520>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">US method
+			(NASD), 12 months of 30 days each</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=105>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">1</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=520>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Exact number of
+			days in months, exact number of days in year</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=105>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">2</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=520>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Exact number of
+			days in month, year has 360 days</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=105>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">3</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=520>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Exact number of
+			days in month, year has 365 days</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=105>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">4</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=520>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">European method,
+			12 months of 30 days each</SPAN></FONT></P>
+		</TD>
+	</TR>
+</TABLE>
+<P><BR><BR>
+</P>
+<H2><A NAME="oddlprice"></A><A NAME="bm_id3153933"></A><A NAME="bm_id3145596"></A>
+<SPAN LANG="en-US">ODDLPRICE</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Calculates
+the price per 100 currency units par value of a security, if the last
+interest date falls irregularly.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Syntax</SPAN></H3>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">ODDLPRICE(Settlement; Maturity;
+LastInterest; Rate; Yield; Redemption; Frequency; Basis)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Settlement</B>
+is the date of purchase of the security.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Maturity</B>
+is the date on which the security matures (expires).</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>LastInterest</B>
+is the last interest date of the security.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Rate</B>
+is the annual rate of interest.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Yield</B>
+is the annual yield of the security.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Redemption</B>
+is the redemption value per 100 currency units of par value.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Frequency</B>
+is number of interest payments per year (1, 2 or 4).</SPAN></FONT></P>
+<P><A NAME="basis2"></A><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Basis</B>
+is chosen from a list of options and indicates how the year is to be
+calculated.</SPAN></FONT></P>
+<TABLE WIDTH=634 BORDER=1 CELLPADDING=2 CELLSPACING=0>
+	<COL WIDTH=72>
+	<COL WIDTH=369>
+	<TR VALIGN=TOP>
+		<TD WIDTH=111>
+			<P CLASS="tableheadintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Basis</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=509>
+			<P CLASS="tableheadintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Calculation</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=111>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">0 or missing</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=509>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">US method
+			(NASD), 12 months of 30 days each</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=111>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">1</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=509>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Exact number of
+			days in months, exact number of days in year</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=111>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">2</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=509>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Exact number of
+			days in month, year has 360 days</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=111>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">3</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=509>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Exact number of
+			days in month, year has 365 days</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=111>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">4</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=509>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">European method,
+			12 months of 30 days each</SPAN></FONT></P>
+		</TD>
+	</TR>
+</TABLE>
+<P><BR><BR>
+</P>
+<H3><SPAN LANG="en-US">Example</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Settlement
+date: February 7 1999, maturity date: June 15 1999, last interest:
+October 15 1998. Interest rate: 3.75 per cent, yield: 4.05 per cent,
+redemption value: 100 currency units, frequency of payments:
+half-yearly = 2, basis: = 0</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">The
+price per 100 currency units per value of a security, which has an
+irregular last interest date, is calculated as follows:</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">=ODDLPRICE(&quot;1999-02-07&quot;;&quot;1999-06-15&quot;;&quot;1998-10-15&quot;;
+0.0375; 0.0405;100;2;0) returns 99.87829.</SPAN></FONT></P>
+<H2><A NAME="oddlyield"></A><A NAME="bm_id3153564"></A><A NAME="bm_id3153732"></A>
+<SPAN LANG="en-US">ODDLYIELD</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Calculates
+the yield of a security if the last interest date falls irregularly.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Syntax</SPAN></H3>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">ODDLYIELD(Settlement; Maturity;
+LastInterest; Rate; Price; Redemption; Frequency; Basis)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Settlement</B>
+is the date of purchase of the security.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Maturity</B>
+is the date on which the security matures (expires).</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>LastInterest</B>
+is the last interest date of the security.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Rate</B>
+is the annual rate of interest.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Price</B>
+is the price of the security.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Redemption</B>
+is the redemption value per 100 currency units of par value.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Frequency</B>
+is number of interest payments per year (1, 2 or 4).</SPAN></FONT></P>
+<P><A NAME="basis3"></A><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Basis</B>
+is chosen from a list of options and indicates how the year is to be
+calculated.</SPAN></FONT></P>
+<TABLE WIDTH=637 BORDER=1 CELLPADDING=2 CELLSPACING=0>
+	<COL WIDTH=72>
+	<COL WIDTH=369>
+	<TR VALIGN=TOP>
+		<TD WIDTH=110>
+			<P CLASS="tableheadintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Basis</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=513>
+			<P CLASS="tableheadintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Calculation</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=110>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">0 or missing</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=513>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">US method
+			(NASD), 12 months of 30 days each</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=110>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">1</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=513>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Exact number of
+			days in months, exact number of days in year</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=110>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">2</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=513>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Exact number of
+			days in month, year has 360 days</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=110>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">3</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=513>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Exact number of
+			days in month, year has 365 days</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=110>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">4</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=513>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">European method,
+			12 months of 30 days each</SPAN></FONT></P>
+		</TD>
+	</TR>
+</TABLE>
+<P><BR><BR>
+</P>
+<H3><SPAN LANG="en-US">Example</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Settlement
+date: April 20 1999, maturity date: June 15 1999, last interest:
+October 15 1998. Interest rate: 3.75 per cent, price: 99.875 currency
+units, redemption value: 100 currency units, frequency of payments:
+half-yearly = 2, basis: = 0</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">The
+yield of the security, that has an irregular last interest date, is
+calculated as follows:</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">=ODDLYIELD(&quot;1999-04-20&quot;;&quot;1999-06-15&quot;;
+&quot;1998-10-15&quot;; 0.0375; 99.875; 100;2;0) returns 0.044873 or
+4.4873%.</SPAN></FONT></P>
+<H2><A NAME="vdb"></A><A NAME="bm_id3148768"></A><A NAME="bm_id3145624"></A>
+<SPAN LANG="en-US">VDB</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Returns
+the depreciation of an asset for a specified or partial period using
+a variable declining balance method.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Syntax</SPAN></H3>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">VDB(Cost; Salvage; Life; S; End;
+Factor; Type)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Cost</B>
+is the initial value of an asset.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Salvage</B>
+is the value of an asset at the end of the depreciation.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Life</B>
+is the depreciation duration of the asset.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>S</B>
+is the start of the depreciation. A must be entered in the same date
+unit as the duration.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>End</B>
+is the end of the depreciation.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Factor</B>
+(optional) is the depreciation factor. Factor = 2 is double rate
+depreciation.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Type
+</B>is an optional parameter. Type = 1 means a switch to linear
+depreciation. In Type = 0 no switch is made.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">In
+the </SPAN></FONT><FONT FACE="청봉, serif"><SPAN LANG="en-US">Sogwang Calc
+functions, parameters marked as &quot;optional&quot; can be left out
+only when no parameter follows. 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+For example, in a function with four
+parameters, where the last two parameters are marked as &quot;optional&quot;,
+you can leave out parameter 4 or parameters 3 and 4, but you cannot
+leave out parameter 3 alone. </SPAN></FONT>
+</P>
+<H3><SPAN LANG="en-US">Example</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">What is
+the declining-balance double-rate depreciation for a period if the
+initial cost is 35,000 currency units and the value at the end of the
+depreciation is 7,500 currency units. The depreciation period is 3
+years. The depreciation from the 10th to the 20th period is
+calculated.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">=VDB(35000;7500;36;10;20;2)
+= 8603.80 currency units. The depreciation during the period between
+the 10th and the 20th period is 8,603.80 currency units.</SPAN></FONT></P>
+<H2><A NAME="xirr"></A><A NAME="bm_id3147485"></A><A NAME="bm_id3083443"></A>
+<SPAN LANG="en-US">XIRR</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Calculates
+the internal rate of return for a list of payments which take place
+on different dates. The calculation is based on a 365 days per year
+basis, ignoring leap years.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">If the
+payments take place at regular intervals, use the IRR function.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Syntax</SPAN></H3>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">XIRR(Values; Dates; Guess)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Values</B>
+and <B>Dates</B> refer to a series of payments and the series of
+associated date values. The first pair of dates defines the start of
+the payment plan. All other date values must be later, but need not
+be in any order. The series of values must contain at least one
+negative and one positive value (receipts and deposits).</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Guess</B>
+(optional) is a guess that can be input for the internal rate of
+return. The default is 10%.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Example</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Calculation
+of the internal rate of return for the following five payments:</SPAN></FONT></P>
+<TABLE WIDTH=203 BORDER=1 CELLPADDING=2 CELLSPACING=0>
+	<COL WIDTH=8>
+	<COL WIDTH=66>
+	<COL WIDTH=45>
+	<COL WIDTH=65>
+	<TR VALIGN=TOP>
+		<TD WIDTH=8></TD>
+		<TD WIDTH=66>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">A</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=45>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">B</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=65>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">C</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=8>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">1</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=66>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">2001-01-01</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=45>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">-10000
+			</SPAN></FONT>
+			</P>
+		</TD>
+		<TD WIDTH=65>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Received
+			</SPAN></FONT>
+			</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=8>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">2</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=66>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">2001-01-02</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=45>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">2000 </SPAN></FONT>
+			</P>
+		</TD>
+		<TD WIDTH=65>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Deposited
+			</SPAN></FONT>
+			</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=8>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">3</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=66>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">2001-03-15</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=45>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">2500</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=65></TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=8>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">4</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=66>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">2001-05-12</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=45>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">5000</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=65></TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=8>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">5</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=66>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">2001-08-10</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=45>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">1000</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=65></TD>
+	</TR>
+</TABLE>
+<P><BR><BR>
+</P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">=XIRR(B1:B5;
+A1:A5; 0.1) returns 0.1828.</SPAN></FONT></P>
+<H2><A NAME="xnpv"></A><A NAME="bm_id3149198"></A><A NAME="bm_id3151172"></A>
+<SPAN LANG="en-US">XNPV</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Calculates
+the capital value (net present value)for a list of payments which
+take place on different dates. The calculation is based on a 365 days
+per year basis, ignoring leap years.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">If the
+payments take place at regular intervals, use the NPV function.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Syntax</SPAN></H3>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">XNPV(Rate; Values; Dates)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Rate</B>
+is the internal rate of return for the payments.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Values</B>
+and <B>Dates</B> refer to a series of payments and the series of
+associated date values. The first pair of dates defines the start of
+the payment plan. All other date values must be later, but need not
+be in any order. The series of values must contain at least one
+negative and one positive value (receipts and deposits)</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Example</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Calculation
+of the net present value for the above-mentioned five payments for a
+notional internal rate of return of 6%.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">=XNPV(0.06;B1:B5;A1:A5)
+returns 323.02.</SPAN></FONT></P>
+<H2><A NAME="rri"></A><A NAME="bm_id3148822"></A><A NAME="bm_id3146996"></A>
+<SPAN LANG="en-US">RRI</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Calculates
+the interest rate resulting from the profit (return) of an
+investment.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Syntax</SPAN></H3>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">RRI(P; PV; FV)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>P</B>
+is the number of periods needed for calculating the interest rate.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>PV</B>
+is the present (current) value. The cash value is the deposit of cash
+or the current cash value of an allowance in kind. As a deposit value
+a positive value must be entered; the deposit must not be 0 or &lt;0.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>FV</B>
+determines what is desired as the cash value of the deposit.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Example</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">For four
+periods (years) and a cash value of 7,500 currency units, the
+interest rate of the return is to be calculated if the future value
+is 10,000 currency units.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">=RRI(4;7500;10000)
+= 7.46 %</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">The
+interest rate must be 7.46 % so that 7,500 currency units will become
+10,000 currency units.</SPAN></FONT></P>
+<H2><A NAME="rate"></A><A NAME="bm_id3154267"></A><A NAME="bm_id3153581"></A>
+<SPAN LANG="en-US">RATE</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Returns
+the constant interest rate per period of an annuity.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Syntax</SPAN></H3>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">RATE(NPer; Pmt; PV; FV; Type;
+Guess)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>NPer</B>
+is the total number of periods, during which payments are made
+(payment period).</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Pmt</B>
+is the constant payment (annuity) paid during each period.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>PV</B>
+is the cash value in the sequence of payments.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>FV</B>
+(optional) is the future value, which is reached at the end of the
+periodic payments.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Type</B>
+(optional) is the due date of the periodic payment, either at the
+beginning or at the end of a period.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Guess</B>
+(optional) determines the estimated value of the interest with
+iterative calculation.</SPAN></FONT></P>
+<P><A NAME="optional1"></A><FONT FACE="청봉, serif"><SPAN LANG="en-US">In
+the </SPAN></FONT><FONT FACE="청봉, serif"><SPAN LANG="en-US">Sogwang Calc
+functions, parameters marked as &quot;optional&quot; can be left out
+only when no parameter follows. 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+For example, in a function with four
+parameters, where the last two parameters are marked as &quot;optional&quot;,
+you can leave out parameter 4 or parameters 3 and 4, but you cannot
+leave out parameter 3 alone. </SPAN></FONT>
+</P>
+<H3><SPAN LANG="en-US">Example</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">What is
+the constant interest rate for a payment period of 3 periods if 10
+currency units are paid regularly and the present cash value is 900
+currency units.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">=RATE(3;10;900)
+= -121% The interest rate is therefore 121%.</SPAN></FONT></P>
+<H2><A NAME="intrate"></A><A NAME="bm_id3149106"></A><A NAME="bm_id3152944"></A>
+<SPAN LANG="en-US">INTRATE</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Calculates
+the annual interest rate that results when a security (or other item)
+is purchased at an investment value and sold at a redemption value.
+No interest is paid.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Syntax</SPAN></H3>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">INTRATE(Settlement; Maturity;
+Investment; Redemption; Basis)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Settlement</B>
+is the date of purchase of the security.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Maturity</B>
+is the date on which the security is sold.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Investment</B>
+is the purchase price.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Redemption</B>
+is the selling price.</SPAN></FONT></P>
+<P><A NAME="basis4"></A><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Basis</B>
+is chosen from a list of options and indicates how the year is to be
+calculated.</SPAN></FONT></P>
+<TABLE WIDTH=636 BORDER=1 CELLPADDING=2 CELLSPACING=0>
+	<COL WIDTH=72>
+	<COL WIDTH=369>
+	<TR VALIGN=TOP>
+		<TD WIDTH=109>
+			<P CLASS="tableheadintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Basis</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=513>
+			<P CLASS="tableheadintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Calculation</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=109>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">0 or missing</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=513>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">US method
+			(NASD), 12 months of 30 days each</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=109>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">1</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=513>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Exact number of
+			days in months, exact number of days in year</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=109>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">2</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=513>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Exact number of
+			days in month, year has 360 days</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=109>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">3</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=513>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Exact number of
+			days in month, year has 365 days</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=109>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">4</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=513>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">European method,
+			12 months of 30 days each</SPAN></FONT></P>
+		</TD>
+	</TR>
+</TABLE>
+<P><BR><BR>
+</P>
+<H3><SPAN LANG="en-US">Example</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">A
+painting is bought on 1990-01-15 for 1 million and sold on 2002-05-05
+for 2 million. The basis is daily balance calculation (basis = 3).
+What is the average annual level of interest?</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">=INTRATE(&quot;1990-01-15&quot;;
+&quot;2002-05-05&quot;; 1000000; 2000000; 3) returns 8.12%.</SPAN></FONT></P>
+<H2><A NAME="coupncd"></A><A NAME="bm_id3148654"></A><A NAME="bm_id3148413"></A>
+<SPAN LANG="en-US">COUPNCD</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Returns
+the date of the first interest date after the settlement date. Format
+the result as a date.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Syntax</SPAN></H3>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">COUPNCD(Settlement; Maturity;
+Frequency; Basis)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Settlement</B>
+is the date of purchase of the security.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Maturity</B>
+is the date on which the security matures (expires).</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Frequency</B>
+is number of interest payments per year (1, 2 or 4).</SPAN></FONT></P>
+<P><A NAME="basis5"></A><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Basis</B>
+is chosen from a list of options and indicates how the year is to be
+calculated.</SPAN></FONT></P>
+<TABLE WIDTH=628 BORDER=1 CELLPADDING=2 CELLSPACING=0>
+	<COL WIDTH=72>
+	<COL WIDTH=369>
+	<TR VALIGN=TOP>
+		<TD WIDTH=108>
+			<P CLASS="tableheadintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Basis</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=506>
+			<P CLASS="tableheadintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Calculation</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=108>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">0 or missing</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=506>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">US method
+			(NASD), 12 months of 30 days each</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=108>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">1</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=506>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Exact number of
+			days in months, exact number of days in year</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=108>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">2</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=506>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Exact number of
+			days in month, year has 360 days</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=108>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">3</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=506>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Exact number of
+			days in month, year has 365 days</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=108>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">4</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=506>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">European method,
+			12 months of 30 days each</SPAN></FONT></P>
+		</TD>
+	</TR>
+</TABLE>
+<P><BR><BR>
+</P>
+<H3><SPAN LANG="en-US">Example</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">A
+security is purchased on 2001-01-25; the date of maturity is
+2001-11-15. Interest is paid half-yearly (frequency is 2). Using
+daily balance interest calculation (basis 3) when is the next
+interest date?</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">=COUPNCD(&quot;2001-01-25&quot;;
+&quot;2001-11-15&quot;; 2; 3) returns 2001-05-15.</SPAN></FONT></P>
+<H2><A NAME="coupdays"></A><A NAME="bm_id3143281"></A><A NAME="bm_id3144759"></A>
+<SPAN LANG="en-US">COUPDAYS</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Returns
+the number of days in the current interest period in which the
+settlement date falls.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Syntax</SPAN></H3>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">COUPDAYS(Settlement; Maturity;
+Frequency; Basis)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Settlement</B>
+is the date of purchase of the security.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Maturity</B>
+is the date on which the security matures (expires).</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Frequency</B>
+is number of interest payments per year (1, 2 or 4).</SPAN></FONT></P>
+<P><A NAME="basis6"></A><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Basis</B>
+is chosen from a list of options and indicates how the year is to be
+calculated.</SPAN></FONT></P>
+<TABLE WIDTH=628 BORDER=1 CELLPADDING=2 CELLSPACING=0>
+	<COL WIDTH=72>
+	<COL WIDTH=369>
+	<TR VALIGN=TOP>
+		<TD WIDTH=103>
+			<P CLASS="tableheadintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Basis</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=511>
+			<P CLASS="tableheadintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Calculation</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=103>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">0 or missing</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=511>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">US method
+			(NASD), 12 months of 30 days each</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=103>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">1</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=511>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Exact number of
+			days in months, exact number of days in year</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=103>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">2</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=511>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Exact number of
+			days in month, year has 360 days</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=103>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">3</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=511>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Exact number of
+			days in month, year has 365 days</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=103>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">4</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=511>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">European method,
+			12 months of 30 days each</SPAN></FONT></P>
+		</TD>
+	</TR>
+</TABLE>
+<P><BR><BR>
+</P>
+<H3><SPAN LANG="en-US">Example</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">A
+security is purchased on 2001-01-25; the date of maturity is
+2001-11-15. Interest is paid half-yearly (frequency is 2). Using
+daily balance interest calculation (basis 3) how many days are there
+in the interest period in which the settlement date falls?</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">=COUPDAYS(&quot;2001-01-25&quot;;
+&quot;2001-11-15&quot;; 2; 3) returns 181.</SPAN></FONT></P>
+<H2><A NAME="coupdaysnc"></A><A NAME="bm_id3154832"></A><A NAME="bm_id3150941"></A>
+<SPAN LANG="en-US">COUPDAYSNC</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Returns
+the number of days from the settlement date until the next interest
+date.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Syntax</SPAN></H3>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">COUPDAYSNC(Settlement; Maturity;
+Frequency; Basis)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Settlement</B>
+is the date of purchase of the security.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Maturity</B>
+is the date on which the security matures (expires).</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Frequency
+</B>is number of interest payments per year (1, 2 or 4).</SPAN></FONT></P>
+<P><A NAME="basis7"></A><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Basis</B>
+is chosen from a list of options and indicates how the year is to be
+calculated.</SPAN></FONT></P>
+<TABLE WIDTH=637 BORDER=1 CELLPADDING=2 CELLSPACING=0>
+	<COL WIDTH=72>
+	<COL WIDTH=369>
+	<TR VALIGN=TOP>
+		<TD WIDTH=110>
+			<P CLASS="tableheadintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Basis</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=513>
+			<P CLASS="tableheadintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Calculation</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=110>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">0 or missing</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=513>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">US method
+			(NASD), 12 months of 30 days each</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=110>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">1</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=513>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Exact number of
+			days in months, exact number of days in year</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=110>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">2</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=513>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Exact number of
+			days in month, year has 360 days</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=110>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">3</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=513>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Exact number of
+			days in month, year has 365 days</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=110>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">4</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=513>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">European method,
+			12 months of 30 days each</SPAN></FONT></P>
+		</TD>
+	</TR>
+</TABLE>
+<P><BR><BR>
+</P>
+<H3><SPAN LANG="en-US">Example</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">A
+security is purchased on 2001-01-25; the date of maturity is
+2001-11-15. Interest is paid half-yearly (frequency is 2). Using
+daily balance interest calculation (basis 3) how many days are there
+until the next interest payment?</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">=COUPDAYSNC(&quot;2001-01-25&quot;;
+&quot;2001-11-15&quot;; 2; 3) returns 110.</SPAN></FONT></P>
+<H2><A NAME="coupdaybs"></A><A NAME="bm_id3150408"></A><A NAME="bm_id3153775"></A>
+<SPAN LANG="en-US">COUPDAYBS</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Returns
+the number of days from the first day of interest payment on a
+security until the settlement date.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Syntax</SPAN></H3>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">COUPDAYBS(Settlement; Maturity;
+Frequency; Basis)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Settlement</B>
+is the date of purchase of the security.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Maturity</B>
+is the date on which the security matures (expires).</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Frequency</B>
+is the number of interest payments per year (1, 2 or 4).</SPAN></FONT></P>
+<P><A NAME="basis8"></A><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Basis</B>
+is chosen from a list of options and indicates how the year is to be
+calculated.</SPAN></FONT></P>
+<TABLE WIDTH=630 BORDER=1 CELLPADDING=2 CELLSPACING=0>
+	<COL WIDTH=72>
+	<COL WIDTH=369>
+	<TR VALIGN=TOP>
+		<TD WIDTH=104>
+			<P CLASS="tableheadintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Basis</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=512>
+			<P CLASS="tableheadintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Calculation</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=104>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">0 or missing</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=512>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">US method
+			(NASD), 12 months of 30 days each</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=104>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">1</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=512>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Exact number of
+			days in months, exact number of days in year</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=104>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">2</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=512>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Exact number of
+			days in month, year has 360 days</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=104>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">3</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=512>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Exact number of
+			days in month, year has 365 days</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=104>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">4</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=512>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">European method,
+			12 months of 30 days each</SPAN></FONT></P>
+		</TD>
+	</TR>
+</TABLE>
+<P><BR><BR>
+</P>
+<H3><SPAN LANG="en-US">Example</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">A
+security is purchased on 2001-01-25; the date of maturity is
+2001-11-15. Interest is paid half-yearly (frequency is 2). Using
+daily balance interest calculation (basis 3) how many days is this?</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">=COUPDAYBS(&quot;2001-01-25&quot;;
+&quot;2001-11-15&quot;; 2; 3) returns 71.</SPAN></FONT></P>
+<H2><A NAME="couppcd"></A><A NAME="bm_id3152957"></A><A NAME="bm_id3149553"></A>
+<SPAN LANG="en-US">COUPPCD</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Returns
+the date of the interest date prior to the settlement date. Format
+the result as a date.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Syntax</SPAN></H3>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">COUPPCD(Settlement; Maturity;
+Frequency; Basis)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Settlement</B>
+is the date of purchase of the security.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Maturity</B>
+is the date on which the security matures (expires).</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Frequency</B>
+is the number of interest payments per year (1, 2 or 4).</SPAN></FONT></P>
+<P><A NAME="basis9"></A><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Basis</B>
+is chosen from a list of options and indicates how the year is to be
+calculated.</SPAN></FONT></P>
+<TABLE WIDTH=630 BORDER=1 CELLPADDING=2 CELLSPACING=0>
+	<COL WIDTH=72>
+	<COL WIDTH=369>
+	<TR VALIGN=TOP>
+		<TD WIDTH=105>
+			<P CLASS="tableheadintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Basis</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=511>
+			<P CLASS="tableheadintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Calculation</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=105>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">0 or missing</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=511>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">US method
+			(NASD), 12 months of 30 days each</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=105>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">1</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=511>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Exact number of
+			days in months, exact number of days in year</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=105>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">2</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=511>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Exact number of
+			days in month, year has 360 days</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=105>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">3</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=511>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Exact number of
+			days in month, year has 365 days</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=105>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">4</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=511>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">European method,
+			12 months of 30 days each</SPAN></FONT></P>
+		</TD>
+	</TR>
+</TABLE>
+<P><BR><BR>
+</P>
+<H3><SPAN LANG="en-US">Example</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">A
+security is purchased on 2001-01-25; the date of maturity is
+2001-11-15. Interest is paid half-yearly (frequency is 2). Using
+daily balance interest calculation (basis 3) what was the interest
+date prior to purchase?</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">=COUPPCD(&quot;2001-01-25&quot;;
+&quot;2001-11-15&quot;; 2; 3) returns 2000-15-11.</SPAN></FONT></P>
+<H2><A NAME="coupnum"></A><A NAME="bm_id3150673"></A><A NAME="bm_id3153348"></A>
+<SPAN LANG="en-US">COUPNUM</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Returns
+the number of coupons (interest payments) between the settlement date
+and the maturity date.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Syntax</SPAN></H3>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">COUPNUM(Settlement; Maturity;
+Frequency; Basis)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Settlement</B>
+is the date of purchase of the security.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Maturity</B>
+is the date on which the security matures (expires).</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Frequency</B>
+is the number of interest payments per year (1, 2 or 4).</SPAN></FONT></P>
+<P><A NAME="basis10"></A><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Basis</B>
+is chosen from a list of options and indicates how the year is to be
+calculated.</SPAN></FONT></P>
+<TABLE WIDTH=632 BORDER=1 CELLPADDING=2 CELLSPACING=0>
+	<COL WIDTH=72>
+	<COL WIDTH=369>
+	<TR VALIGN=TOP>
+		<TD WIDTH=108>
+			<P CLASS="tableheadintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Basis</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=639>
+			<P CLASS="tableheadintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Calculation</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=108>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">0 or missing</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=639>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">US method
+			(NASD), 12 months of 30 days each</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=108>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">1</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=639>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Exact number of
+			days in months, exact number of days in year</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=108>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">2</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=639>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Exact number of
+			days in month, year has 360 days</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=108>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">3</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=639>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Exact number of
+			days in month, year has 365 days</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=108>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">4</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=639>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">European method,
+			12 months of 30 days each</SPAN></FONT></P>
+		</TD>
+	</TR>
+</TABLE>
+<P><BR><BR>
+</P>
+<H3><SPAN LANG="en-US">Example</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">A
+security is purchased on 2001-01-25; the date of maturity is
+2001-11-15. Interest is paid half-yearly (frequency is 2). Using
+daily balance interest calculation (basis 3) how many interest dates
+are there?</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">=COUPNUM(&quot;2001-01-25&quot;;
+&quot;2001-11-15&quot;; 2; 3) returns 2.</SPAN></FONT></P>
+<H2><A NAME="ipmt"></A><A NAME="bm_id3149339"></A><A NAME="bm_id3149737"></A>
+<SPAN LANG="en-US">IPMT</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Calculates
+the periodic amortizement for an investment with regular payments and
+a constant interest rate.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Syntax</SPAN></H3>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">IPMT(Rate; Period; NPer; PV; FV;
+Type)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Rate</B>
+is the periodic interest rate.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Period</B>
+is the period, for which the compound interest is calculated.
+Period=NPER if compound interest for the last period is calculated.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>NPer</B>
+is the total number of periods, during which annuity is paid.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>PV</B>
+is the present cash value in sequence of payments.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>FV</B>
+(optional) is the desired value (future value) at the end of the
+periods.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Type</B>
+is the due date for the periodic payments.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Example</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">What is
+the interest rate during the fifth period (year) if the constant
+interest rate is 5% and the cash value is 15,000 currency units? The
+periodic payment is seven years.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">=IPMT(5%;5;7;15000)
+= -352.97 currency units. The compound interest during the fifth
+period (year) is 352.97 currency units.</SPAN></FONT></P>
+<H2><A NAME="fv"></A><A NAME="bm_id3151205"></A><A NAME="bm_id3156049"></A>
+<SPAN LANG="en-US">FV</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Returns
+the future value of an investment based on periodic, constant
+payments and a constant interest rate (Future Value).</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Syntax</SPAN></H3>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">FV(Rate; NPer; Pmt; PV; Type)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Rate</B>
+is the periodic interest rate.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>NPer</B>
+is the total number of periods (payment period).</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Pmt</B>
+is the annuity paid regularly per period.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>PV</B>
+(optional) is the (present) cash value of an investment.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Type</B>
+(optional) defines whether the payment is due at the beginning or the
+end of a period.</SPAN></FONT></P>
+<P><A NAME="optional2"></A><FONT FACE="청봉, serif"><SPAN LANG="en-US">In
+the </SPAN></FONT><FONT FACE="청봉, serif"><SPAN LANG="en-US">Sogwang Calc
+functions, parameters marked as &quot;optional&quot; can be left out
+only when no parameter follows. 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+For example, in a function with four
+parameters, where the last two parameters are marked as &quot;optional&quot;,
+you can leave out parameter 4 or parameters 3 and 4, but you cannot
+leave out parameter 3 alone. </SPAN></FONT>
+</P>
+<H3><SPAN LANG="en-US">Example</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">What is
+the value at the end of an investment if the interest rate is 4% and
+the payment period is two years, with a periodic payment of 750
+currency units. The investment has a present value of 2,500 currency
+units.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">=FV(4%;2;750;2500)
+= -4234.00 currency units. The value at the end of the investment is
+4234.00 currency units.</SPAN></FONT></P>
+<H2><A NAME="fvschedule"></A><A NAME="bm_id3155912"></A><A NAME="bm_id3155341"></A>
+<SPAN LANG="en-US">FVSCHEDULE</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Calculates
+the accumulated value of the starting capital for a series of
+periodically varying interest rates.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Syntax</SPAN></H3>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">FVSCHEDULE(Principal; Schedule)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Principal</B>
+is the starting capital.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Schedule</B>
+is a series of interest rates, for example, as a range H3:H5 or as a
+(List) (see example).</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Example</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">1000
+currency units have been invested in for three years. The interest
+rates were 3%, 4% and 5% per annum. What is the value after three
+years?</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">=FVSCHEDULE(1000;{0.03;0.04;0.05})
+returns 1124.76.</SPAN></FONT></P>
+<H2><A NAME="nper"></A><A NAME="bm_id3156435"></A><A NAME="bm_id3154917"></A>
+<SPAN LANG="en-US">NPER</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Returns
+the number of periods for an investment based on periodic, constant
+payments and a constant interest rate.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Syntax</SPAN></H3>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">NPER(Rate; Pmt; PV; FV; Type)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Rate</B>
+is the periodic interest rate.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Pmt</B>
+is the constant annuity paid in each period.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>PV</B>
+is the present value (cash value) in a sequence of payments.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>FV</B>
+(optional) is the future value, which is reached at the end of the
+last period.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Type</B>
+(optional) is the due date of the payment at the beginning or at the
+end of the period.</SPAN></FONT></P>
+<P><A NAME="optional3"></A><FONT FACE="청봉, serif"><SPAN LANG="en-US">In
+the </SPAN></FONT><FONT FACE="청봉, serif"><SPAN LANG="en-US">Sogwang Calc
+functions, parameters marked as &quot;optional&quot; can be left out
+only when no parameter follows. 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+For example, in a function with four
+parameters, where the last two parameters are marked as &quot;optional&quot;,
+you can leave out parameter 4 or parameters 3 and 4, but you cannot
+leave out parameter 3 alone. </SPAN></FONT>
+</P>
+<H3><SPAN LANG="en-US">Example</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">How many
+payment periods does a payment period cover with a periodic interest
+rate of 6%, a periodic payment of 153.75 currency units and a present
+cash value of 2.600 currency units.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">=NPER(6%;153.75;2600)
+= -12,02. The payment period covers 12.02 periods.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><A HREF="Financial Functions Part One.html">Back
+to Financial Functions Part One</A></SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><A HREF="Financial Functions Part Two.html"><SPAN STYLE="font-weight: medium">Back
+to Financial Functions Part Two</SPAN></A></SPAN></FONT></P>
+
+</DIV></BODY>
+</HTML>
+

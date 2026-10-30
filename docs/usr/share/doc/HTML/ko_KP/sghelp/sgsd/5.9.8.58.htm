@@ -1,0 +1,108 @@
+﻿<html dir='ltr'>
+	<head>
+		<META http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+		<title>SUM</title>
+		<link rel='stylesheet' type='text/css' href='../css/main.css'/>
+		<script type='text/javascript' language='Javascript' src='../js/mexpcol.js'></script>
+		<script type='text/javascript' language='JavaScript' src='../js/glossary.js'></script>
+	</head>
+	<body>
+		<h1>&nbsp;<img align="absbottom" src="../image/external_images/crystal/svtools/res/new_doc.png"/>&nbsp;SUM</h1>
+		<p id='ExpandAllLine' class='ExpFav'>
+			<a href='#' onClick='ExpandAll()' onKeyPress='ExpandAll()' class='DropDown'>
+				<img id='picHeader' border='0' src='../image/image/common/expandtri.gif' alt='모두 표시'>
+				<span id='ExpandAll'>모두 표시</span>
+			</a>
+		</p>
+		<p><b class="bterm">참고항목</b>&emsp;
+			<a href="5.9.8.1.htm">수학함수목록</a>,
+			<a href="5.9.10.3.htm">AVERAGE</a>,
+			<a href="5.9.10.14.htm">COUNT</a>,
+			<a href="5.9.10.15.htm">COUNTA</a>,
+			<a href="5.9.8.43.htm">PRODUCT</a>,
+			<a href="5.9.9.10.htm">SUMPRODUCT</a>
+		</p>
+		<p>모든 인수의 합을 구합니다.</p>
+		<p><b class="bterm">문법:&emsp;&emsp;		SUM(수값1,수값2, ...)</b></p>
+		<table>
+			<tr>
+				<th>인수명</th>
+				<th>설명</th>
+			</tr>
+			<tr>
+				<td>수값1,수값2,…</td>
+				<td>합을 구할 1부터 30까지의 인수입니다.</td>
+			</tr>
+		</table>		
+		<p><b class="bterm">주의</b></p>
+			<ul>
+				<li>인수목록으로 직접 입력한 수값, 론리값, 수값의 본문표시는 계산됩니다. 아래에 나오는 실례에서 처음 두 실례를 참고하십시오.</li>
+				<li>인수가 배렬이나 참조이면 그 배렬이나 참조의 값만 사용됩니다. 배렬이나 참조의 빈 세포와 본문값은 무시됩니다. 아래의 실례에서 세번째 실례를 참고하십시오.</li>
+				<li>수값으로 변환될수 없는 본문이나 오유값을 인수로 사용하면 오유가 발생합니다.</li>
+			</ul>
+		<p><b class="bterm">실례</b></p>			
+<p><a href="1.5.1.htm">실례의 리용방법</a>을 참고하십시오.</p>
+			<table>
+				<tr>
+					<td>
+						<table>
+							<tr><td>&nbsp;</td></tr>
+							<tr><th>1</th></tr>
+							<tr><th>2</th></tr>
+							<tr><th>3</th></tr>
+							<tr><th>4</th></tr>
+							<tr><th>5</th></tr>
+							<tr><th>6</th></tr>
+						</table>
+					</td>
+					<td>
+						<table>
+							<tr>
+								<th>A</th>
+							</tr>
+							<tr>
+								<th>자료</th>
+							</tr>
+							<tr>
+								<td>-5</td>
+							</tr>
+							<tr>
+								<td>15</td>
+							</tr>
+							<tr>
+								<td>30</td>
+							</tr>
+							<tr>
+								<td>'5</td>
+							</tr>
+							<tr>
+								<td>TRUE</td>
+							</tr>
+							<tr>
+								<th>수식</th>
+								<th>설명(결과)</th>
+							</tr>
+							<tr>
+								<td>=SUM(3, 2)</td>
+								<td>3과 2를 더합니다. (5)</td>
+							</tr>
+							<tr>
+								<td>=SUM(A2:A4)</td>
+								<td>우에 있는 렬에서 처음 세개의 수값을 더합니다. (40)</td>
+							</tr>
+							<tr>
+								<td>=SUM(A2:A4,15)</td>
+								<td>우에 있는 렬에서 처음 세개의 수값과 15를 더합니다. (55)</td>
+							</tr>
+							<tr>
+								<td>=SUM(A5,A6, 2)</td>
+								<td>우의 마지막두개의 행에 있는 값을 더합니다. 참조범위의 수자가 아닌 값은 변환되지 않으므로 우에 있는 렬의 값들은 무시됩니다. (2)</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>		
+		<script type="text/javascript" language="Javascript">footerView()</script>
+	
+</body>
+</html>																

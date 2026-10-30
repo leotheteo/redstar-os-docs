@@ -1,0 +1,337 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+	<TITLE></TITLE>
+	<META NAME="GENERATOR" CONTENT="《Sogwang 3.0》  (Linux)">
+	<META NAME="CREATED" CONTENT="20091211;14360000">
+	<META NAME="CHANGED" CONTENT="20091211;15002300">
+	<STYLE TYPE="text/css">
+	<!--
+		H2 { margin-bottom: 0.18cm; font-family: "Bitstream Vera Sans", "Arial", "Helvetica", "Lucida", "Geneva", "Helmet", sans-serif, "Andale Sans UI", "Arial Unicode MS", "Lucida Sans Unicode", "Tahoma"; font-size: 14pt }
+		TD P.howtogetheader { background: #ffffff; border: 1px solid #999999; padding: 0.08cm; font-weight: bold }
+		TD P.tableheadintable { margin-bottom: 0.05cm; font-weight: bold }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="ko-KP" DIR="LTR"><DIV style="margin-left: 25">
+<H1><A NAME="daten"></A><A NAME="bm_id3150040"></A><FONT FACE="Thorndale, serif"><SPAN LANG="en-US">Data</SPAN></FONT></H1>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">The <B>Data
+</B>tab page defines the form properties that refer to the database
+that is linked to the form.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Defines
+the data source on which the form is based, or specifies whether the
+data can be edited by the user. 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Apart from the sort and filter
+functions, you will also find all the necessary properties to create
+a subform.</SPAN></FONT></P>
+<TABLE WIDTH=95% BORDER=1 CELLPADDING=3 CELLSPACING=0 BGCOLOR="#eeeeee">
+	<COL WIDTH=256*>
+	<TR>
+		<TD WIDTH=100%>
+			<P CLASS="howtogetheader"><FONT FACE="청봉, serif"><SPAN LANG="en-US">To
+			access this command... </SPAN></FONT>
+			</P>
+			<P STYLE="margin-bottom: 0cm">
+			<FONT FACE="청봉, serif"><SPAN LANG="en-US"><SPAN STYLE="background: #eeeeee">Open
+			context menu of a selected form element - choose <B>Form - Data</B>
+			tab</SPAN></SPAN></FONT></P>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><SPAN STYLE="background: #eeeeee">Open
+			Form Controls toolbar or Form Design toolbar, click <B>Form </B>icon
+			- <B>Data</B> tab</SPAN></SPAN></FONT></P>
+		</TD>
+	</TR>
+</TABLE>
+<P><BR>
+  <BR>
+</P>
+<H2><SPAN LANG="en-US">Data source</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Defines
+the data source to which the form should refer. If you click the <B>...</B>
+button, you call the <A href="../../Menus/File/Open.html"><B>Open</B></A>
+dialog, where you can choose a data source.</SPAN></FONT></P>
+<H2><A NAME="Section2"></A><A NAME="bm_id3150275"></A><SPAN LANG="en-US">Content</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Determines
+the content to be used for the form. The content can be an existing
+table or a query (previously created in the database), or it can be
+defined by an SQL-statement. Before you enter a content you have to
+define the exact type in <B>Content type</B>.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">If you
+have selected either &quot;Table&quot; or &quot;Query&quot; in
+<B>Content type</B>, the box lists all the tables and queries set up
+in the selected database.</SPAN></FONT></P>
+<H2><A NAME="Section3"></A><A NAME="bm_id3153381"></A><SPAN LANG="en-US">Content
+type</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Defines
+whether the data source is to be an existing database table or query,
+or if the form is to be generated based on an SQL statement.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">If you
+choose &quot;Table&quot; or &quot;Query&quot;, the form will refer to
+the table or query that you specify under <B>Content</B>. If you want
+to create a new query or a subform, then you have to choose the &quot;SQL&quot;
+option. You can then enter the statement for the SQL query or the
+subform directly in the <B>List content</B> box on the Control
+properties Data tab page.</SPAN></FONT></P>
+<H2><A NAME="Section4"></A><A NAME="bm_id3144433"></A><SPAN LANG="en-US">Analyze
+SQL command</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Specifies
+whether the SQL statement is to be analyzed by </SPAN></FONT><FONT FACE="청봉, serif"><SPAN LANG="en-US">Sogwang .
+If set to Yes, you can click the <B>...</B> button next to the
+<B>Content</B> list box. This will open a window where you can
+graphically create a database query. When you close that window, the
+SQL statement for the created query will be inserted in the <B>Content</B>
+list box.</SPAN></FONT></P>
+<H2><A NAME="Section5"></A><A NAME="bm_id3149810"></A><SPAN LANG="en-US">Filter</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Enter
+the required conditions for filtering the data in the form. The
+filter specifications follow SQL rules without using the WHERE
+clause. For example, if you want to display all records with the
+&quot;Mike&quot; forename, type into the data field: Forename =
+'Mike'. You can also combine conditions: Forename = 'Mike' OR
+Forename = 'Peter'. All records matching either of these two
+conditions will be displayed.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">The
+filter function is available in user mode through the <A href="../Table Data Bar/AutoFilter.html"><B>AutoFilter</B></A>
+and <B>Default
+Filter</B></A> icons on the <A href="../Form NavigationBar.html"><B>Form
+Navigation</B> Bar</A>.</SPAN></FONT></P>
+<H2><A NAME="Section6"></A><A NAME="bm_id3151353"></A><SPAN LANG="en-US">Sort</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Specifies
+the conditions to sort the data in the form. The specification of the
+sorting conditions follows SQL rules without the use of the ORDER BY
+clause. For example, if you want all records of a database to be
+sorted in one field in an ascending order and in another field in a
+descending order, enter Forename ASC, Name DESC (presuming Forename
+and Name are the names of the data fields).</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">The
+appropriate icons on the <A href="../Form NavigationBar.html"><B>Form
+Navigation</B> Bar</A> can be used in User mode to sort: <A href="../Table Data Bar/Sort Ascending.html"><B>Sort
+Ascending</B></A>, <A href="../Table Data Bar/Sort Descending.html"><B>Sort
+Descending</B></A>, <A href="../../Menus/Data/Sort.html"><B>Sort</B></A>.</SPAN></FONT></P>
+<H2><A NAME="Section7"></A><A NAME="bm_id3154129"></A><SPAN LANG="en-US">Add
+data only</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Determines
+if the form only allows the addition of new data (Yes) or if it
+allows other properties as well (No).</SPAN></FONT></P>
+<TABLE WIDTH=852 BORDER=0 CELLPADDING=5 CELLSPACING=0>
+	<COL WIDTH=33>
+	<COL WIDTH=432>
+	<TR>
+		<TD WIDTH=33>
+			<P><IMG SRC="../../../../Image/note.png" NAME="graphics1" ALT="Note Icon " ALIGN=BOTTOM WIDTH=33 HEIGHT=42 BORDER=0></P>
+		</TD>
+		<TD WIDTH=799>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">If
+			<B>Add data only</B> is set to &quot;Yes&quot;, changing or
+			deleting data is not possible.</SPAN></FONT></P>
+		</TD>
+	</TR>
+</TABLE>
+<P><BR>
+  <BR>
+</P>
+<H2><SPAN LANG="en-US">Navigation bar</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Specifies
+whether the navigation functions in the lower form bar can be used.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">The
+&quot;Parent Form&quot; option is used for subforms. If you choose
+this option for a subform, you can navigate using the records of the
+main form if the cursor is placed in the subform. A subform is linked
+to the parent form by a 1:1 relationship, so navigation is always
+performed in the parent form.</SPAN></FONT></P>
+<H2><A NAME="Section9"></A><A NAME="bm_id3151282"></A><SPAN LANG="en-US">Cycle</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Determines
+how the navigation should be done using the tab key. Using the tab
+key, you can move forward in the form. 
+&nbsp;&nbsp;&nbsp;
+If you simultaneously press
+the Shift key, the navigation will follow the opposite direction. If
+you reach the last (or the first) field and press the tab key again,
+it can have various effects. Define the key control with the
+following options:</SPAN></FONT></P>
+<TABLE WIDTH=935 BORDER=1 CELLPADDING=2 CELLSPACING=0>
+	<COL WIDTH=55>
+	<COL WIDTH=612>
+	<TR VALIGN=TOP>
+		<TD WIDTH=125>
+			<P CLASS="tableheadintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Option</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=796>
+			<P CLASS="tableheadintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Meaning</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=125>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Default</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=796>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">This
+			setting automatically defines a cycle which follows an existing
+			database link: If the form contains a database link, the Tab key
+			will, by default, initiate a change to the next or previous record
+			on exit from the last field (see All Records). If there is no
+			database link the next/previous form is shown (see Current Page).</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=125>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">All
+			records</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=796>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">This
+			option applies to database forms only and is used to navigate
+			through all records. If you use the Tab key to exit from the last
+			field of a form, the current record is changed.</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=125>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Active
+			record</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=796>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">This
+			option applies to database forms only, and is used to navigate
+			within the current record. If you use the Tab key to exit from the
+			last field of a form, the current record is changed.</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=125>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Current
+			page</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=796>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">On
+			exit from the last field of a form, the cursor skips to the first
+			field in the next form. This is standard for HTML forms;
+			therefore, this option is especially relevant for HTML forms.</SPAN></FONT></P>
+		</TD>
+	</TR>
+</TABLE>
+<P><BR>
+  <BR>
+</P>
+<H2><SPAN LANG="en-US">Allow additions</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Determines
+if data can be added.</SPAN></FONT></P>
+<H2><A NAME="Section11"></A><A NAME="bm_id3083286"></A><SPAN LANG="en-US">Allow
+modifications</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Determines
+if the data can be modified.</SPAN></FONT></P>
+<H2><A NAME="Section12"></A><A NAME="bm_id3153924"></A><SPAN LANG="en-US">Allow
+deletions</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Determines
+if the data can be deleted.</SPAN></FONT></P>
+<H2><A NAME="Section13"></A><A NAME="bm_id3147097"></A><SPAN LANG="en-US">Link
+master fields</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">If you
+create a subform, enter the data field of the parent form responsible
+for the synchronization between parent and subform. To enter multiple
+values, press Shift + Enter after each input line.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">The
+subform is based on an <A HREF="../../../../Common Help Topics/General_Information/General_Glossary.html#sql">SQL</A>
+query; more specifically, on a Parameter
+Query</A>. If a field name is entered in the <B>Link master fields</B>
+box, the data contained in that field in the main form is read to a
+variable that you must enter in <B>Link slave fields</B>. In an
+appropriate SQL statement, this variable is compared to the table
+data that the subform refers to. Alternatively, you can enter the
+column name in the <B>Link master fields</B> box.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Consider
+the following example:</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">The
+database table on which the form is based is, for example, a customer
+database (&quot;Customer&quot;), where every customer has been given
+a unique number in a data field named &quot;Cust_ID&quot;. A
+customer's orders are maintained in another database table. You now
+want to see each customer's orders after entering them into the form.
+In order to do this you should create a subform. Under <B>Link master
+fields</B> enter the data field from the customer database which
+clearly identifies the customer, that is, Cust_ID. Under <B>Link
+slave fields</B> enter the name of a variable which is to accept the
+data of the field Cust_ID, for example, x.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">The
+subform should show the appropriate data from the orders table
+(&quot;Orders&quot;) for each customer ID (Customer_ID -&gt; x). This
+is only possible if each order is uniquely assigned to one customer
+in the orders table. Alternatively, you can use another field called
+Customer_ID; however, to make sure that this field is not confused
+with the same field from the main form, the field is called
+Customer_Number.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Now
+compare the Customer_Number in the &quot;Orders&quot; table with the
+Customer_ID from the &quot;Customers&quot; table, which can be done,
+for example, using the x variable with the following SQL statement:</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">SELECT *
+FROM Orders WHERE Customer_Number =: x (if you want the subform to
+show all data from the orders table)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">or:</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">SELECT
+Item FROM Orders WHERE Customer_Number =: x (if you want the subform
+from the orders table to show only the data contained in the &quot;Item&quot;
+field)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">The SQL
+statement can either be entered in the <B>Data source</B> field, or
+you can create an appropriate parameter query, which can be used to
+create the subform.</SPAN></FONT></P>
+<H2><A NAME="Section14"></A><A NAME="bm_id3145789"></A><SPAN LANG="en-US">Link
+slave fields</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">If you
+create a subform, enter the variable where possible values from the
+parent form field can be stored. If a subform is based on a query,
+enter the variable that you defined in the query. If you create a
+form using an SQL statement entered in the <B>Data source</B> field,
+enter the variable you used in the statement. You can choose any
+variable name. If you want to enter multiple values, press Shift +
+Enter.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">If, for
+example, you specified the Customer_ID database field as a parent
+field under <B>Link master fields</B>, then you can define under <B>Link
+slave fields</B> the name of the variable in which the values of the
+Customer_ID database field are to be stored. If you now specify an
+SQL statement in the <B>Data source</B> box using this variable, the
+relevant values are displayed in the subform.</SPAN></FONT></P>
+<H2><SPAN LANG="en-US">What is a subform?</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Forms
+are created based on a database table or database query. They display
+the data in a visually pleasant fashion and can be used to enter data
+or edit data.</SPAN></FONT></P>
+<P><A NAME="wozu"></A><FONT FACE="청봉, serif"><SPAN LANG="en-US">If
+you require a form that can refer to the data in a table or query and
+can additionally display data from another table, you should create a
+subform. For example, this subform can be a text box that displays
+the data of another database table.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">A
+subform is an additional component of the main form. The main form
+can be called the &quot;parent form&quot; or &quot;master&quot;.
+Subforms are needed as soon as you want to access more than one table
+from a form. Each additional table requires its own subform.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">After
+creating a form, it can be changed into a subform. To do this, enter
+Design Mode, and open the Form Navigator. 
+&nbsp;&nbsp;&nbsp;&nbsp;
+In the Form Navigator, drag
+a form (that will become a subform) onto any other form (that will
+become a master).</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">The user
+of your document will not see that a form has subforms. The user only
+sees a document in which data is entered or where existing data is
+displayed.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Specify
+the Link master field from the data fields in the master form. In the
+subform, the Link slave field can be set as a field which will be
+matched to the contents of the Link master field.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">When the
+user navigates through the data, the form always displays the current
+data record. If there are subforms defined, the contents of the
+subforms will be displayed after a short delay of approximate 200 ms.
+This delay enables you to quickly browse through the data records of
+the master form. If you navigate to the next master data record
+within the delay limit, the subform data need not be retrieved and
+displayed.</SPAN></FONT></P>
+
+</DIV></BODY>
+</HTML>

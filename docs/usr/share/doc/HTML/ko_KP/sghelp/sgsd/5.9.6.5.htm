@@ -1,0 +1,118 @@
+<html dir='ltr'>
+	<head>
+		<META http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+		<title>ISBLANK</title>
+		<link rel='stylesheet' type='text/css' href='../css/main.css'/>
+		<script type='text/javascript' language='Javascript' src='../js/mexpcol.js'></script>
+		<script type='text/javascript' language='JavaScript' src='../js/glossary.js'></script>
+	</head>
+	<body>
+		<h1>&nbsp;<img align="absbottom" src="../image/external_images/crystal/svtools/res/new_doc.png"/>&nbsp;ISBLANK</h1>
+		<p id='ExpandAllLine' class='ExpFav'>
+			<a href='#' onClick='ExpandAll()' onKeyPress='ExpandAll()' class='DropDown'>
+				<img id='picHeader' border='0' src='../image/image/common/expandtri.gif' alt='모두 표시'>
+				<span id='ExpandAll'>모두 표시</span>
+			</a>
+		</p>
+		<p><b class="bterm">참고항목</b>&emsp;
+			<a href="5.9.6.1.htm">정보함수목록</a>,
+			<a href="5.9.11.8.htm">ERRORTYPE</a>,
+			<a href="5.9.6.8.htm">ISEVEN_ADD</a>,
+			<a href="5.9.6.14.htm">ISODD_ADD</a>,
+			<a href="5.9.6.19.htm">TYPE</a>
+		</p>
+		<p>값이 빈 세포를 참조하면 참입니다.</p>
+		<p><b class="bterm">문법:&emsp;&emsp;		ISBLANK(값)</b></p>
+		<table>
+			<tr>
+				<th>인수명</th>
+				<th>설명</th>
+			</tr>
+			<tr>
+				<td> 값</td>
+				<td>시험할 값입니다. 값으로는 공백(빈 세포), 오유값, 론리값, 본문, 수자, 참조값 또는 이러한 항목을 참조하는 이름을 사용할수 있습니다.</td>
+			</tr>
+		</table>
+		<p><b class="bterm">실례</b></p>			
+<p><a href="1.5.1.htm">실례의 리용방법</a>을 참고하십시오.</p>
+			<table>
+				<tr>
+					<td>
+						<table>
+							<tr><td>&nbsp;</td></tr>
+							<tr><th>1</th></tr>
+							<tr><th>2</th></tr>
+							<tr><th>3</th></tr>
+							<tr><th>4</th></tr>
+							<tr><th>5</th></tr>
+							<tr><th>6</th></tr>
+						</table>
+					</td>
+					<td>
+						<table>
+							<tr>
+								<th>A</th>
+							</tr>
+							<tr>
+								<th>자료</th>
+							</tr>
+							<tr>
+								<td>금</td>
+							</tr>
+							<tr>
+								<td>지역1</td>
+							</tr>
+							<tr>
+								<td>#<b class="bterm">NAME?</b></td>
+							</tr>
+							<tr>
+								<td>330.92</td>
+							</tr>
+							<tr>
+								<td>#<b class="bterm">N</b>/<b class="bterm">A</b></td>
+							</tr>
+							<tr>
+								<th>수식</th>
+								<th>설명(결과)</th>
+							</tr>
+							<tr>
+								<td>=ISBLANK(A2)</td>
+								<td>A2세포가 빈 세포인가 아닌가를 확인합니다. (거짓)</td>
+							</tr>
+							<tr>
+								<td>=ISERROR(A4)</td>
+								<td>A4세포의 값(#<b class="bterm">NAME?</b>)이 오유인가 아닌가를 확인합니다. (참)</td>
+							</tr>
+							<tr>
+								<td>=ISNA(A4)</td>
+								<td>A4세포의 값(#<b class="bterm">NAME?</b>)이 #<b class="bterm">N</b>/<b class="bterm">A</b>오유인가 아닌가를 확인합니다. (거짓)</td>
+							</tr>
+							<tr>
+								<td>=ISNA(A6)</td>
+								<td>A6세포의 값(#<b class="bterm">N</b>/<b class="bterm">A</b>)이 #<b class="bterm">N</b>/<b class="bterm">A</b> 오유인가 아닌가를 확인합니다. (참)</td>
+							</tr>
+							<tr>
+								<td>=ISERR(A6)</td>
+								<td>A6세포의 값(#<b class="bterm">N</b>/<b class="bterm">A</b>)이 오유인가 아닌가를 확인합니다. (거짓)</td>
+							</tr>
+							<tr>
+								<td>=ISNUMBER(A5)</td>
+								<td>A5세포의 값(330.92)이 수자인가 아닌가를 확인합니다. (참)</td>
+							</tr>
+							<tr>
+								<td>=ISTEXT(A3)</td>
+								<td>A3세포의 값(지역1)이 본문인가 아닌가를 확인합니다. (참)</td>
+							</tr>
+							<tr>
+								<td>=ISNONTEXT(A3)</td>
+								<td>A3세포의 값(지역1)이 본문인가 아닌가를 확인합니다. (거짓)</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>		
+		</div>	
+		<script type="text/javascript" language="Javascript">footerView()</script>
+	
+</body>
+</html>														

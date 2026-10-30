@@ -1,0 +1,99 @@
+﻿<html dir='ltr'>
+	<head>
+		<META http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+		<title>인쇄준비</title>
+		<link rel='stylesheet' type='text/css' href='../css/main.css'/>
+		<script type='text/javascript' language='Javascript' src='../js/mexpcol.js'></script>
+		<script type='text/javascript' language='JavaScript' src='../js/glossary.js'></script>
+	</head>
+	<body>
+		<h1>&nbsp;<img align="absbottom" src="../image/external_images/crystal/svtools/res/new_doc.png"/>&nbsp;인쇄준비</h1>
+		<p id='ExpandAllLine' class='ExpFav'>
+			<a href='#' onClick='ExpandAll()' onKeyPress='ExpandAll()' class='DropDown'>
+				<img id='picHeader' border='0' src='../image/image/common/expandtri.gif' alt='모두 표시'>
+				<span id='ExpandAll'>모두 표시</span>
+			</a>
+		</p>
+		<p><b class="bterm">인쇄하려는 표용지의 보기</b></p>
+			<p>표처리프로그람에서는 <a href="#" class="glossary" onClick="AppendPopup(this,'IDG_WORKSHEET')" onKeyPress="AppendPopup(this,'IDG_WORKSHEET')">표용지</a>를 보고 인쇄되는 모양을 조절하는 방법이 다음과 같이 제공됩니다.</p>
+			<ul>
+				<li><b class="bterm">표준:</b>   화면을 보면서 작업하기에 가장 적합한 보기입니다.</li>
+				<li><b class="bterm">인쇄 미리보기:</b>	   페지여백을 조절할수 있도록 인쇄되는 모양의 페지가 표시됩니다.</li>
+				<li><b class="bterm">페지 가르기 미리보기:</b>   <a href="#" class="glossary" onClick="AppendPopup(this,'IDG_PRINTAREA')" onKeyPress="AppendPopup(this,'IDG_PRINTAREA')">인쇄범위</a>와 <a href="#" class="glossary" onClick="AppendPopup(this,'IDG_PAGEBREAK')" onKeyPress="AppendPopup(this,'IDG_PAGEBREAK')">페지가르기</a>를 조절할수 있도록 각 페지가 구분되여 표시됩니다.
+					<p>인쇄하기 전에 표용지의 인쇄방법을 설정하고 여러가지 보기로 전환하면서 인쇄되는 모양을 볼수 있습니다.</p>
+				</li>
+			</ul>
+		<p><b class="bterm">인쇄준비</b></p>
+			<p>표용지에서는 인쇄되는 페지모양을 조절할수 있는 여러가지 설정들을 할수 있습니다. 인쇄에 영향을 주는 모든 사항을 정확히 확인하려면 다음의 방법들을 실행합니다.</p>
+			<ol>
+				<p>
+					<a href='#' class='DropDown' onClick='Outline2()' onKeyPress='Outline2()'>
+					<img border='0' src='../image/image/common/blueup.gif' alt='표시'>표용지의 화면서식과 지면배치의 변경</a>
+				</p>
+				<div id='ExpCol' class='collapsed' border='0'>
+					<p>인쇄되는 표용지의 용지방향을 가로방향이나 세로방향으로 설정할수 있습니다.</p>
+					<p><b class="bterm">가로방향 사용:</b>   세로방향으로 인쇄하는것보다 더 많은 자료렬을 인쇄하여야 하는 경우에는 가로방향을 사용합니다. 가로방향을 사용하지 않으려는 경우에는 사용할수 있는 공간에 자료가 들어가도록 인쇄되는 표용지의 지면배치를 변경하거나 여백을 조절할수 있습니다.</p>
+					<p><b class="bterm">자료를 페지에 맞추기:</b>   영상을 축소하거나 확대하여 인쇄되는 영상을 페지나 용지크기에 맞출수 있습니다. 인쇄되는 표용지의 지면배치에서 변경할수 있는 그밖의 내용으로는 용지형식설정, 페지번호설정 등이 있습니다. 이러한 변경은 표용지의 인쇄된 모양에만 관계되며 화면에 표시되는 모양에는 적용되지 않습니다.</p>
+					<p><b class="bterm">일부자료 인쇄:</b>   표용지에서 선택한 일부자료만 인쇄하려면 인쇄범위를 설정합니다.</p>
+				</div>
+				<p>
+					<a href='#' class='DropDown' onClick='Outline2()' onKeyPress='Outline2()'>
+					<img border='0' src='../image/image/common/blueup.gif' alt='표시'>머리부 및 바닥부추가</a>
+				</p>
+				<div id='ExpCol' class='collapsed' border='0'>
+					<p>인쇄되는 매 페지의 웃쪽 또는 아래쪽에 페지번호나 그밖의 본문을 넣으려면 <a href="#" class="glossary" onClick="AppendPopup(this,'IDG_FOOTER')" onKeyPress="AppendPopup(this,'IDG_FOOTER')">머리부 및 바닥부</a>를 인쇄하려는 표용지에 추가합니다. 머리부는 모든 페지의 제일 웃쪽에 인쇄되고 바닥부는 모든 페지의 제일 아래쪽에 인쇄됩니다. 기본적으로 제공하는 머리부나 바닥부를 사용할수도 있고 직접 만들수도 있습니다.</p>
+					<p>머리부 및 바닥부는 표용지자료와는 별도로 미리보기나 인쇄를 하는 경우에만 표시됩니다.</p>
+				</div>
+				<p>
+					<a href='#' class='DropDown' onClick='Outline2()' onKeyPress='Outline2()'>
+					<img border='0' src='../image/image/common/blueup.gif' alt='표시'>미리보기와 여백조절</a>
+				</p>
+				<div id='ExpCol' class='collapsed' border='0'>
+					<p><b class="bterm">인쇄 미리보기:</b> 페지가 인쇄되는 모양을 보려면 <b class="bterm">&lt;표준&gt;</b>도구띠에서 <b class="bterm">&lt;인쇄 미리보기&gt;</b><img border='0' src='../image/external_images/crystal/res/commandimagelist/sc_printpreview.png' alt='표시'>를 찰칵합니다. <b class="bterm">인쇄 미리보기</b>에서는 머리부, 바닥부를 볼수 있습니다.</p>
+					<p><b class="bterm">여백조절:</b>   자료가 너무 많아 페지에 모두 들어가지 않는 경우 자료를 줄이고 싶지 않으면 페지여백을 조절합니다.</p>
+					<p><b class="bterm">개별적인 렬과 행의 크기변경:</b>   행번호와 렬이름령역의 눈금선을 이동합니다.</p>
+					<p><img border='0' src='../image/image/sgsd/xprin6p.gif' alt='표시'></p>
+					<p><img border='0' src='../image/image/common/callout1.gif' alt='표시'>  렬크기조절</p>
+					<p><img border='0' src='../image/image/common/callout2.gif' alt='표시'>  행크기조절</p>
+					<p><b class="bterm">눈금선, 페지순서 및 그밖의 설정:</b>   <b class="bterm">인쇄 미리보기</b>에서 표용지의 인쇄방법을 변경할수 있습니다. <b class="bterm">&lt;페지&gt;</b>지령으로 눈금선을 표시하거나 해제하며 페지가 인쇄되는 순서를 변경할수 있습니다.</p>
+				</div>
+				<p>
+					<a href='#' class='DropDown' onClick='Outline2()' onKeyPress='Outline2()'>
+					<img border='0' src='../image/image/common/blueup.gif' alt='표시'>페지 가르기의 확인</a>
+				</p>
+				<div id='ExpCol' class='collapsed' border='0'>
+					<p><b class="bterm">페지 가르기 미리보기</b>에는 표용지에서 <a href="#" class="glossary" onClick="AppendPopup(this,'IDG_PAGEBREAK')" onKeyPress="AppendPopup(this,'IDG_PAGEBREAK')">페지가르기</a>가 나타나는 위치와 인쇄될 표용지의 령역이 표시됩니다. 사용자가 설정한 페지가르기는 청색실선이고 자동으로 만들어진 페지가르기는 회색실선입니다.</p>
+					<p>이 색들을 변경하려면 다음과 같은 조작을 하십시오.</p>
+					<ol>
+						<li><b class="bterm">&lt;서광사무처리&gt;</b>차림표에서 <b class="bterm">&lt;환경설정&gt;</b>을 찰칵합니다.</li>
+						<li><b class="bterm">&lt;환경설정&gt;</b>대화창에서 <b class="bterm">&lt;서광사무처리&gt;</b>의 <b class="bterm">&lt;겉모양&gt;</b>을 찰칵합니다.</li>
+						<li><b class="bterm">&lt;사용자전용색&gt;</b>부분에서 변경할수 있습니다.</li>
+						<p><img border='0' src='../image/image/sgsd/xprin4p.gif' alt='표시'></p>
+						<p><img border='0' src='../image/image/common/callout1.gif' alt='표시'>  사용자가 설정한 페지가르기</p>
+						<p><img border='0' src='../image/image/common/callout2.gif' alt='표시'>  자동으로 만들어진 페지가르기</p>
+					</ol>
+				</div>
+				<p>
+					<a href='#' class='DropDown' onClick='Outline2()' onKeyPress='Outline2()'>
+					<img border='0' src='../image/image/common/blueup.gif' alt='표시'>행머리부와 렬머리부의 인쇄</a>
+				</p>
+				<div id='ExpCol' class='collapsed' border='0'>
+					<p>표용지의 행머리부와 렬머리부도 인쇄할수 있습니다. 이러한 머리부와 렬표식자나 행표식자는 서로 다른것이니 혼돈하지 마십시오.</p>
+					<p><img border='0' src='../image/image/sgsd/xprin9p.gif' alt='표시'></p>
+					<p><img border='0' src='../image/image/common/callout1.gif' alt='표시'>  행머리부</p>
+					<p><img border='0' src='../image/image/common/callout2.gif' alt='표시'>  렬머리부</p>
+					<p>머리부 및 바닥부, 렬과 행머리부를 함께 사용할수 있습니다.</p>
+				</div>
+			</ol>
+		<p><b class="bterm">인쇄 미리보기</b></p>
+			<p><b class="bterm">페지범위:</b>   특정한 페지범위를 미리 볼수 있습니다.</p>
+			<p><b class="bterm">포함된 도표:</b>   표용지에 포함된 도표가 있으면 <b class="bterm">인쇄 미리보기</b>에 표용지와 도표가 모두 표시됩니다. 도표를 <b class="bterm">표준</b>보기나 <b class="bterm">페지 가르기 미리보기</b>에서 이동하거나 크기를 조절할수 있습니다.</p>
+			<p><b class="bterm">페지번호:</b>   화면아래의 상태띠에는 현재페지번호가 표시됩니다.</p>
+		<p><b class="bterm">흑백인쇄</b></p>
+			<p>표처리프로그람에서 흑백 인쇄기로 인쇄를 하면 회색계조로 나타납니다. 흑백으로 인쇄하면 여러 색이 들어있는 표용지를 인쇄할 때 걸리는 시간을 줄일수 있습니다. 흑백만 사용하여 표용지를 인쇄하면 색서식이 지정된 서체와 테두리가 회색계조가 아닌 검은색으로 인쇄됩니다. 세포와 도형객체의 배경은 흰색으로 인쇄되고 그림과 도표는 회색계조로 인쇄됩니다.</p>
+		<p><b class="bterm">종이너비 또는 요구하는 페지수에 맞게 인쇄</b></p>
+			<p>인쇄하려는 내용이 요구하는 인쇄페지수보다 많거나 적을 때가 있습니다. 이때에는 요구하는 인쇄페지수에 맞게 인쇄내용의 크기를 조절하거나 요구하는 페지수를 지정하여 인쇄할수 있습니다.</p>
+		<script type="text/javascript" language="Javascript">footerView()</script>
+ 
+</body>
+</html>

@@ -1,0 +1,126 @@
+﻿<html dir='ltr'>
+	<head>
+		<META http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+		<title>복잡한 려과조건의 실례</title>
+		<link rel='stylesheet' type='text/css' href='../css/main.css'/>
+		<script type='text/javascript' language='Javascript' src='../js/mexpcol.js'></script>
+		<script type='text/javascript' language='JavaScript' src='../js/glossary.js'></script>
+	</head>
+	<body>
+		<h1>&nbsp;<img align="absbottom" src="../image/external_images/crystal/svtools/res/new_doc.png"/>&nbsp;복잡한 려과조건의 실례</h1>
+		<p id='ExpandAllLine' class='ExpFav'>
+			<a href='#' onClick='ExpandAll()' onKeyPress='ExpandAll()' class='DropDown'>
+				<img id='picHeader' border='0' src='../image/image/common/expandtri.gif' alt='모두 표시'>
+				<span id='ExpandAll'>모두 표시</span>
+			</a>
+		</p>
+		<p><b class="bterm">한개의 렬에 여러 조건을 사용</b></p>
+			<p>한개의 렬에 두개이상의 조건을 사용하려면 각 행을 구분하여 조건을 직접 입력합니다. 
+				례를 들어 다음과 같은 조건범위는 판매원렬에 《김순희》, 《안정철》, 《김철진》중 하나가 들어있는 행이 표시됩니다.
+			</p>
+			<ol>
+				<table>
+					<tr>
+						<th>판매원</th>
+					</tr>
+					<tr>
+						<td>김순희</td>
+					</tr>
+					<tr>
+						<td>안정철</td>
+					</tr>
+					<tr>
+						<td>김철진</td>
+					</tr>
+				</table>
+			</ol>
+		<p><b class="bterm">둘이상의 렬에 한 조건을 사용</b></p>
+			<p>두개이상의 렬에서 한개의 조건에 맞는 자료를 찾으려면 모든 조건을 조건범위의 같은 행에 입력합니다. 
+				례를 들어 다음과 같은 조건범위는 종류가 《콤퓨터》이고 판매원은 《김순희》이며 판매액이 1 000원을 넘는 행을 모두 표시합니다.
+			</p>
+			<ol>
+				<table>
+					<tr>
+						<th>종류</th>
+						<th>판매원</th>
+						<th>판매액</th>
+					</tr>
+					<tr>
+						<td>콤퓨터</td>
+						<td>김순희</td>
+						<td>>1 000</td>
+					</tr>
+				</table>
+			</ol>
+		<p><b class="bterm">한개의 렬에 한가지 조건을 사용</b>	</p>
+			<p>각 렬의 조건중에서 하나를 만족하는 자료를 찾으려면 조건범위의 각 행에 조건을 입력합니다.
+				례를 들어 다음과 같은 조건범위는 종류가 《콤퓨터》이거나 판매원이 《김순희》이거나 판매액이 1 000원을 넘는 행을 모두 표시합니다.
+			</p>
+			<ol>
+				<table>
+					<tr>
+						<th>종류</th>
+						<th>판매원</th>
+						<th>판매액</th>
+						</tr>
+					<tr>
+						<td>콤퓨터</td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td>김순희</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+						<td>>1 000</td>
+					</tr>
+				</table>
+			</ol>
+		<p><b class="bterm">두렬에 두개 조의 조건중 하나를 사용</b></p>
+			<p>각 조에 두개 렬이상의 조건이 포함되여있는 두개 조의 조건중 하나에 맞는 행을 찾으려면 조건을 각 행에 별도로 입력합니다. 
+				례를 들어 다음과 같은 조건범위는 판매원이 《김순희》이고 판매액이 3 000원이 넘는 행을 표시하며 판매원이 《안정철》이며 판매액이 1 500원이 넘는 행도 표시합니다.
+			</p>
+			<ol>
+				<table>
+					<tr>
+						<th>판매원</th>
+						<th>판매액</th>
+					</tr>
+					<tr>
+						<td>김순희</td>
+						<td>>3 000</td>
+					</tr>
+					<tr>
+						<td>안정철</td>
+						<td>>1 500</td>
+					</tr>
+				</table>
+			</ol>
+		<p><b class="bterm">한개의 렬에 세개 조이상의 조건을 사용</b></p>
+			<p>세개 조이상의 조건에 맞는 행을 찾으려면 동일한 렬머리부를 가진 렬을 여러개 포함시킵니다. 
+				례를 들어 다음과 같은 조건범위는 500이하인 판매액과 함께 5 000 ~ 8 000사이의 판매액도 표시합니다.
+			</p>
+			<ol>
+				<table>
+					<tr>
+						<th>판매액</th>
+						<th>판매액</th>
+					</tr>
+					<tr>
+						<td>>5 000</td>
+						<td><8 000</td>
+					</tr>
+					<tr>
+						<td><500</td>
+						<td></td>
+					</tr>
+				</table>
+			</ol>
+		<script type="text/javascript" language="Javascript">footerView()</script>
+	
+</body>
+</html>

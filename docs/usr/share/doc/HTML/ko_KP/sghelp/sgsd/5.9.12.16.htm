@@ -1,0 +1,104 @@
+﻿<html dir='ltr'>
+	<head>
+		<META http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+		<title>MID</title>
+		<link rel='stylesheet' type='text/css' href='../css/main.css'/>
+		<script type='text/javascript' language='Javascript' src='../js/mexpcol.js'></script>
+		<script type='text/javascript' language='JavaScript' src='../js/glossary.js'></script>
+	</head>
+	<body>
+		<h1>&nbsp;<img align="absbottom" src="../image/external_images/crystal/svtools/res/new_doc.png"/>&nbsp;MID</h1>
+		<p id='ExpandAllLine' class='ExpFav'>
+			<a href='#' onClick='ExpandAll()' onKeyPress='ExpandAll()' class='DropDown'>
+				<img id='picHeader' border='0' src='../image/image/common/expandtri.gif' alt='모두 표시'>
+				<span id='ExpandAll'>모두 표시</span>
+			</a>
+		</p>
+		<p><b class="bterm">참고항목</b>&emsp;
+			<a href="5.9.12.1.htm">본문함수목록</a>,
+			<a href="5.9.12.6.htm">CODE</a>,
+			<a href="5.9.12.11.htm">FIND</a>,
+			<a href="5.9.12.23.htm">SEARCH</a>,
+			<a href="5.9.12.13.htm">LEFT</a>,
+			<a href="5.9.12.20.htm">RIGHT</a>
+		</p>
+		<p>본문의 부분문자렬을 구합니다.</p>
+		<p><b class="bterm">문법:&emsp;&emsp;		MID(본문,시작위치,문자수)</b></p>
+		<table>
+			<tr>
+				<th>인수명</th>
+				<th>설명</th>
+			</tr>
+			<tr>
+				<td>본문</td>
+				<td>부분문자렬을 지정하는 본문입니다.</td>
+			</tr>
+			<tr>
+				<td>시작위치</td>
+				<td>부분문자렬을 지정하는 위치입니다. 본문에서 첫 문자는 <b class="bterm">시작위치</b>가 1입니다.</td>
+			</tr>
+			<tr>
+				<td>문자수</td>
+				<td>본문의 문자수입니다. <b class="bterm">MID</b>함수가 본문에서 반환할 문자의 개수를 지정합니다.</td>
+			</tr>
+		</table>
+		<p><b class="bterm">주의</b></p>
+			<ul>
+				<li><b class="bterm">시작위치</b>가 본문의 길이보다 길면 <b class="bterm">MID</b>는 ""(빈 문자렬)을 표시합니다.</li>
+				<li><b class="bterm">시작위치</b>가 본문의 길이보다 작고 <b class="bterm">시작위치</b>와 <b class="bterm">문자수</b>의 합이 문자렬의 길이를 초과하면 <b class="bterm">MID</b>는 마지막문자까지 표시합니다.</li>
+				<li><b class="bterm">시작위치</b>가 1보다 작으면 <b class="bterm">오유:[오유번호]</b>를 반환합니다.</li>
+				<li><b class="bterm">문자수</b>가 부수이면 <b class="bterm">오유:[오유번호]</b>를 반환합니다.</li>
+			</ul>
+		<p><b class="bterm">실례</b></p>
+			<p><a href="1.5.1.htm">실례의 리용방법</a>을 참고하십시오.</p>
+			<table>
+				<tr>
+					<td>
+						<table>
+							<tr>
+								<td class="noborder">&nbsp;
+								</td>
+							</tr>
+							<tr>
+								<th>1</th>
+							</tr>
+							<tr>
+								<th>2</th>
+							</tr>
+						</table>
+					</td>
+					<td>
+						<table>
+							<tr>
+								<th>A</th>
+							</tr>
+							<tr>
+								<th>자료</th>
+							</tr>
+							<tr>
+								<td>아름다운 동산</td>
+							</tr>
+							<tr>
+								<th>수식</th>
+								<th>설명(결과)</th>
+							</tr>
+							<tr>
+								<td>=MID(A2,1,4)</td>
+								<td>우에 있는 문자렬중 첫 글자에서 시작하여 네글자를 표시합니다. (아름다운)</td>
+							</tr>
+							<tr>
+								<td>=MID(A2,6,2)</td>
+								<td>우에 있는 문자렬중 여섯번째에서 시작하여 두글자를 표시합니다. (동산)</td>
+							</tr>
+							<tr>
+								<td>=MID(A2,20,5)</td>
+								<td>시작위치가 문자렬의 길이보다 더 크기때문에 빈 본문이 표시됩니다. ()</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+		<script type="text/javascript" language="Javascript">footerView()</script>
+	
+</body>
+</html>				

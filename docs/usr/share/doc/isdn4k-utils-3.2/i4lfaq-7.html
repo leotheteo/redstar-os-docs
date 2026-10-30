@@ -1,0 +1,624 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <META NAME="GENERATOR" CONTENT="LinuxDoc-Tools 0.9.21">
+ <TITLE>FAQ for isdn4linux: trouble: Troubleshooting </TITLE>
+ <LINK HREF="i4lfaq-8.html" REL=next>
+ <LINK HREF="i4lfaq-6.html" REL=previous>
+ <LINK HREF="i4lfaq.html#toc7" REL=contents>
+</HEAD>
+<BODY>
+<A HREF="i4lfaq-8.html">Next</A>
+<A HREF="i4lfaq-6.html">Previous</A>
+<A HREF="i4lfaq.html#toc7">Contents</A>
+<HR>
+<H2><A NAME="trouble"></A> <A NAME="s7">7.</A> <A HREF="i4lfaq.html#toc7">trouble: Troubleshooting </A></H2>
+
+<H2><A NAME="trouble_22memory"></A> <A NAME="ss7.1">7.1</A> <A HREF="i4lfaq.html#toc7.1">trouble_22memory: I can't start ISDN on my machine with kernel 2.2.x. I get the error messages "init_module: Device or resource busy" and "isdn: Could not allocate device-struct.". </A>
+</H2>
+
+<P>This is a memory problem and means you don't have enough <B>unfragmented</B>
+memory. While 2.0.x kernels may work on low memory/slow hardware (the author's
+answering machine is a 386 and used to run with 4MB of RAM), you can run into
+the memory fragmentation problem even if you have as much as 32MB of RAM when
+running 2.2.x kernels. The problem has been eased since 2.2.14, when
+ISDN4LINUX's memory allocation has been changed to use vmalloc.</P>
+<P>You can try to reduce the memory requirements (see question
+<A HREF="#trouble_littlememory">trouble_littlememory</A>), compile
+ISDN4LINUX into the kernel, or start and then exit a large program to ease
+the memory fragmentation problems.</P>
+
+<H2><A NAME="trouble_littlememory"></A> <A NAME="ss7.2">7.2</A> <A HREF="i4lfaq.html#toc7.2">trouble_littlememory: How can I reduce isdn4linux's memory requirements? </A>
+</H2>
+
+<P>Try to do the following things:
+<UL>
+<LI> Stick with kernel 2.0.x if you have a 486 or lower.</LI>
+<LI> In <CODE>/usr/src/linux/include/linux/isdn.h</CODE>, change the line
+<HR>
+<PRE>
+#ifdef CONFIG_COBALT_MICRO_SERVER
+</PRE>
+<HR>
+
+into:
+<HR>
+<PRE>
+#if 1
+</PRE>
+<HR>
+
+and recompile kernel.</LI>
+<LI> Reduce ISDN_MAX_DRIVERS, ISDN_MAX_CHANNELS in
+<CODE>include/linux/isdn.h</CODE>, then recompile kernel.</LI>
+</UL>
+</P>
+
+<H2><A NAME="trouble_debug"></A> <A NAME="ss7.3">7.3</A> <A HREF="i4lfaq.html#toc7.3">trouble_debug: How do I get maximum debug output? </A>
+</H2>
+
+<P>Execute the following commands to get maximum debug output:
+<HR>
+<PRE>
+hisaxctrl &lt;id&gt; 1 0x33ff
+hisaxctrl &lt;id&gt; 11 0xf4f
+killall isdnlog
+cat /dev/isdnctrl > /tmp/ilog
+</PRE>
+<HR>
+
+Be careful: this will generate a lot of output!</P>
+
+<H2><A NAME="trouble_strategy"></A> <A NAME="ss7.4">7.4</A> <A HREF="i4lfaq.html#toc7.4">trouble_strategy: My isdn4linux doesn't work! How do I best go about finding the problem? </A>
+</H2>
+
+<P>The following steps are recommended:
+<OL>
+<LI>Check everything is working when booting.
+Are there unusual error messages in /var/log/messages?
+Are all programs active that should be started at boot (check with
+ps, or fuser /dev/xxx)? HiSax won't start if something isn't right.
+Check question 
+<A HREF="#trouble_boot">trouble_boot</A> for what you can check.
+The old Teles driver, on the other hand, will appear to start even if
+it is not working. See the questions under Troubleshooting Teles.</LI>
+<LI>Make sure you configured the ISDN driver either as modules, or you
+compiled them into the kernel - never both.</LI>
+<LI>Try calling your dialin number with a telephone. The number should be
+shown in <CODE>/var/log/messages</CODE>. Check for a line like this:
+<HR>
+<PRE>
+Call from 0,1,2345 -> 6789
+</PRE>
+<HR>
+
+This means that on channel 0 a call from 2345 with service indicator (SI) 1
+(1 = voice; data would be 7) to MSN 6789 was received. Now at least you know
+that you have to configure your MSN to 6789 (or whatever other number you
+find there), and that your isdn4linux kernel driver understand ISDN
+commands coming from your ISDN card properly. If instead of the number 2345
+you find a 0, then your ISDN provider does not pass you the caller id.
+If you don't find such a line: perhaps the driver was incorrectly started?!</LI>
+<LI>As a next step we'll try to get the telephone or fax to ring by dialing
+ourself using a ttyI device with minicom. First we have to change the service
+recognition with the <CODE>ATS18=1</CODE> command to audio. Now you can get the
+telephone to ring by dialing <CODE>ATDxxxxxx</CODE>, where xxxxxx is your own MSN.</LI>
+<LI>Next we try to transmit data via ISDN. Open 2 different consoles as root,
+and on each run &quot;minicom -s&quot;... in the first set &quot;Serial Port
+Setup Serial Device&quot; to <CODE>/dev/ttyI0</CODE>, and the other to
+<CODE>/dev/ttyI1</CODE>. Then choose &quot;Exit&quot; and start the modem
+emulation with &quot;ATZ&quot; and &quot;AT&amp;Exxxxxx&quot; (where xxxxxx
+is your own MSN without the area code). Then you can start. On the first
+console you can dial your own number with ATDxxxxxx. On the second console you
+should now see &quot;CALLER NUMBER: xxxxxxx&quot; and
+&quot;RING&quot;. Accept the call on the second console with
+&quot;ATA&quot;, and you should then see the message &quot;CONNECT
+64000/X.75&quot; on both consoles. You can then send characters to the other
+console by typing (to see the characters on your own console, turn on local echo).</LI>
+<LI>Next, try calling a known ISDN BBS. If you don't know of any, try
+Gernot (see &quot;Are there sites that offer guest access where I can test my
+isdn4linux setup?&quot;). If you have problems with the modem emulation, see
+&quot;Troubleshooting Modem Emulation&quot;</LI>
+<LI>Fifth, try configuring the network interface or ipppd. Experience shows
+that they cause beginners (and not only beginners!) the most problems.
+To make things easier and you're happy with asyncPPP (to see what
+asyncPPP means, see the question &quot;pppd, ipppd, syncPPP, asyncPPP -
+what is that? What should I use?&quot;), you can use the normal pppd with
+modem emulation (i.e. /dev/ttyI*).</LI>
+<LI>Ensure that you set up your authentication configuration properly (see
+questions in section 
+<A HREF="i4lfaq-11.html#pap">pap</A>.</LI>
+</OL>
+
+Otherwise, it is highly recommended that use an example script form
+the HowTo (see the question &quot;Where can I find scripts and other
+information on configuring i4l?&quot;). For testing you can try your own
+provider or of the guest accounts (see &quot;Are there sites that offer
+guest access where I can test my isdn4linux setup?&quot;).  The latter
+have the advantage of being able to see the log files as well as a
+stable, working configuration. For example, if accessing via ipppd
+doesn't work, you can log in via modem or modem emulation to find
+out what happened on the other side. Not all providers are so
+cooperative.... :-)</P>
+
+<H2><A NAME="trouble_boot"></A> <A NAME="ss7.5">7.5</A> <A HREF="i4lfaq.html#toc7.5">trouble_boot: How can I tell whether my ISDN card has been correctly recognized? </A>
+</H2>
+
+<P>
+<OL>
+<LI>Check for error messages in the boot messages (you can review them at any
+time with the command <CODE>dmesg</CODE>.
+</LI>
+<LI>For the HiSax driver: During booting a message <CODE>kernel: HSCX version
+A:5 B:5</CODE> and <CODE>kernel: channels 2</CODE> should appear. <CODE>A:4 B:4</CODE> is
+also okay. Other values (in particular <CODE>A:??? B:???</CODE>) mean the
+card is not recognized correctly.
+HiSax is only loaded if the hardware can be found and the appropriate
+interrupts can be generated. This means the card is installed correctly in the
+computer, and there are no hardware conflicts. It does not mean that everything
+will work (e.g. twisted cables, broken cables, terminators).
+</LI>
+<LI> Check that your card got an interrupt assigned, e.g. with
+<HR>
+<PRE>
+lspci -v
+</PRE>
+<HR>
+
+A common problem is that your BIOS did not assign an interrupt to your
+card. HiSax will then complain with "No IRQ for PCI card found".
+To fix, set the BIOS option "PnP OS" to NO.
+</LI>
+<LI>Check that the interrupts are registered correctly. Check with
+<HR>
+<PRE>
+cat /proc/interrupts
+</PRE>
+<HR>
+
+The following entry indicates that the card is configured on interrupt 11, and
+so far has received 3 interrupts:
+<PRE>
+11:        3 + hisax
+</PRE>
+
+When you call yourself, the number of received interrupts should increase.
+</LI>
+<LI>Check the io ports with
+<HR>
+<PRE>
+cat /proc/ioports
+</PRE>
+<HR>
+</LI>
+</OL>
+</P>
+
+<H2><A NAME="trouble_isdncause"></A> <A NAME="ss7.6">7.6</A> <A HREF="i4lfaq.html#toc7.6">trouble_isdncause: I get an error message like "cause: E1234" (or similar)? </A>
+</H2>
+
+<P>Just have a look at <CODE>man isdn_cause</CODE> to find out what the problem is.
+For the very popular cause "E001B" see question
+<A HREF="#trouble_e001b">trouble_e001b</A>.</P>
+
+<H2><A NAME="trouble_e001b"></A> <A NAME="ss7.7">7.7</A> <A HREF="i4lfaq.html#toc7.7">trouble_e001b: I get an error message with "cause: E001B"? </A>
+</H2>
+
+<P>This is a very popular error and means (see <CODE>man isdn_cause</CODE>):
+euro ISDN (E), location user (00), and out of order (1b).
+Taken together means that the driver either can't get a layer 1 connect
+(cable problem, hardware error, hidden hardware conflict - see section
+<A HREF="i4lfaq-5.html#hardware">hardware</A>), or it can't get a layer 2 connect (wrong
+configuration: no Euro ISDN, no automatic TEI supported, point-to-point
+BRI instead of multi-device - see section 
+<A HREF="i4lfaq-6.html#config">config</A>).</P>
+
+<H2><A NAME="trouble_noprotocol"></A> <A NAME="ss7.8">7.8</A> <A HREF="i4lfaq.html#toc7.8">trouble_noprotocol: upon startup of HiSax I get the message &quot;Warning - no protocol specified&quot;? </A>
+</H2>
+
+<P>This means that you did not specify which D-channel protocol you want to
+use with HiSax. In most cases this is wrong, and you have to specify that
+you want to use the Euro Protocol ISDN DSS1. Only if you have a leased
+line you don't need to specify any D-channel protocol.</P>
+
+<H2><A NAME="trouble_euronotsupported"></A> <A NAME="ss7.9">7.9</A> <A HREF="i4lfaq.html#toc7.9">trouble_euronotsupported: upon startup of HiSax I get the error "kernel hisax: protocol euro not supported"? </A>
+</H2>
+
+<P>This means that you did not select the Euro Protocol ISDN DSS1 option when
+compiling your kernel. You have to switch this on and recompile your
+kernel to be able to use it.</P>
+
+<H2><A NAME="trouble_unknownprimitive"></A> <A NAME="ss7.10">7.10</A> <A HREF="i4lfaq.html#toc7.10">trouble_unknownprimitive: upon connection attempt I get the error "lldata_handler unknown primitive"? </A>
+</H2>
+
+<P>This means that the link level protocols do not match (e.g. you tried to
+connect with X.75, whereas your provider answers with HDLC). Check and
+fix your connection parameters with:
+<HR>
+<PRE>
+isdnctrl l2_prot &lt;interface&gt; &lt;protocol&gt;
+</PRE>
+<HR>
+</P>
+
+<H2><A NAME="trouble_notelrings"></A> <A NAME="ss7.11">7.11</A> <A HREF="i4lfaq.html#toc7.11">trouble_notelrings: Neither my telephone nor my fax machine ring when I call them with isdn4linux? </A>
+</H2>
+
+<P>Isdn4linux sets &quot;digital data&quot; as it's own service when it
+calls out. The switching station does in fact route such calls to analog
+devices like a telephone or a fax machine. However, since the machine is
+analog, it will only answer analog call, and ignore the digital data call.</P>
+
+<H2><A NAME="trouble_guestaccess"></A> <A NAME="ss7.12">7.12</A> <A HREF="i4lfaq.html#toc7.12">trouble_guestaccess: Are there sites that offer guest access where I can test my isdn4linux setup? </A>
+</H2>
+
+<P>The following information is quite old. Please tell me if you find out that the
+guest sites are not available any more:</P>
+<P>The following sites offer guest access for modem emulation or IP:
+<UL>
+<LI>Eberhard Moenkeberg <CODE>
+<A HREF="mailto:emoenke@gwdg.de">emoenke@gwdg.de</A></CODE>:
+<UL>
+<LI>Welcome to Linux at eberhard.moenkeberg.de (LAN, 192.168.99.1).
+Under ++49-551-7704103, ISDN NetCalls (HDLC-trans-rawip)
+for 192.168.99.1 get accepted. You should come as 192.168.*.*
+because sometimes my &quot;default&quot; route is not your way.
+/ftp is exported for NFS; try &quot;showmount -e&quot;.
+You can login as &quot;guest&quot; without password.
+FTP as &quot;gast&quot; with password &quot;gast&quot; avoids the
+restricted shell.</LI>
+<LI>Under ++49-551-7704102, a 28800 bps modem and a Creatix ISDN
+card (HDLC only, not X.75) are listening for logins.</LI>
+<LI>With the net setup from
+<CODE>
+<A HREF="ftp://ftp.gwdg.de/pub/linux/isdn/isdn4linux-gwdg/rc.isdn-Beispiel">ftp://ftp.gwdg.de/pub/linux/isdn/isdn4linux-gwdg/rc.isdn-Beispiel</A></CODE>
+you can test NetCall at 551-7704103 (works as is within Germany,
+from outside Germany you just have to change the number).</LI>
+</UL>
+
+</LI>
+<LI>Gernot Zander <CODE>
+<A HREF="mailto:hifi@scorpio.in-berlin.de">hifi@scorpio.in-berlin.de</A></CODE>:
+<BLOCKQUOTE>
+There's a &quot;gast&quot; at +49 30 67 19 81 01 (X.75, mgetty). There's the
+stones-html-page with pics in postscript to test downloading. Whoever
+needs a target to call can use it. At ...81 03 there's a getty with
+HDLC. As guest you enter a kind of BBS and can read some news.
+</BLOCKQUOTE>
+</LI>
+</UL>
+</P>
+
+<H2><A NAME="trouble_unload"></A> <A NAME="ss7.13">7.13</A> <A HREF="i4lfaq.html#toc7.13">trouble_unload: I can't unload my ISDN modules (&quot;isdn: Device or resource busy&quot;), even so I closed all ISDN applications? </A>
+</H2>
+
+<P>In this case &quot;fuser -v /dev/isdn* /dev/ippp* /dev/cui* /dev/ttyI*&quot;
+is very helpful. This helpful program shows, which processes are using those
+devices.
+<UL>
+<LI>Is some program still using an ISDN device?</LI>
+<LI>Did you remove all getty's? (They may have restarted automatically)</LI>
+<LI>Are isdnlog, imon, iprofd, etc., still running?</LI>
+<LI>Maybe there is still a route on your net interface and it's not yet
+deleted with &quot;route del xxx&quot;?</LI>
+<LI>Maybe the net interface wasn't put down. This can easily happen when
+killing ipppd. It does not react to signal 15 and has to be killed with
+&quot;kill -9 ipppd pid&quot;. Then the net interface is left
+&quot;up&quot;.</LI>
+</UL>
+
+Sporadic errors of this type can be fixed by inserting sleep commands
+between the unloading commands.
+As a very, very last resort, there are two secret telesctrl commands to adjust
+the module counter:
+<HR>
+<PRE>
+telesctrl id 3 1  --- dec module_count
+telesctrl id 4 1  --- inc module_count
+</PRE>
+<HR>
+
+Please use with appropriate caution and on your own risk!</P>
+
+
+<H2><A NAME="trouble_tcpdump"></A> <A NAME="ss7.14">7.14</A> <A HREF="i4lfaq.html#toc7.14">trouble_tcpdump: Why does my tcpdump not work for ip packets going over ISDN (&quot;truncated ip&quot; or so)? How can I get a tcpdump patched for ISDN? </A>
+</H2>
+
+<P>The reason is that tcpdump does not always understand the special
+encapsulations that are possible with isdn4linux, especially syncppp. To change
+this, you need to patch tcpdump.</P>
+<P>Michael Stiller <CODE>
+<A HREF="mailto:michael@toyland.ping.de">michael@toyland.ping.de</A></CODE> wrote on 23 Oct 1996:</P>
+<P>Tip for ftp:</P>
+<P><CODE>
+<A HREF="ftp://ftp.gwdg.de/pub/misc/isdn/linux/isdn4linux-gwdg">ftp://ftp.gwdg.de/pub/misc/isdn/linux/isdn4linux-gwdg</A></CODE></P>
+<P>There is the patch: &quot;tcpdump-3.0.4-1-isdn.dif.gz&quot;</P>
+<P>and the rest is at:</P>
+<P>/pub/linux/mirrors/funet/PEOPLE/Linus/net-source/tools/tcpdump-3.0.4-1.tar.gz</P>
+<P>You might need to hack some, depending on the name of your ISDN interface
+(mine is bri0). By default, it recognizes only isdn* and isdnY* as
+interface names.</P>
+<P>Henning Schmiedehausen <CODE>
+<A HREF="mailto:henning@pong.iconsult.com">henning@pong.iconsult.com</A></CODE> further wrote on
+30 Oct 1996:
+<BLOCKQUOTE>
+After finding the patch from Eberhard Moenkeberg at ftp.gwdg.de cannot
+dump cisco HDLC, I made my own patch for tcpdump-3.0.4 that asks the
+interface which encapsulation it used and sets itself accordingly. The
+patch is against a tcpdump-3.0.4-1.tar.gz distribution, for example at
+</BLOCKQUOTE>
+
+<CODE>
+<A HREF="ftp://ftp.funet.fi/pub/Linux/PEOPLE/Linus/tools">ftp://ftp.funet.fi/pub/Linux/PEOPLE/Linus/tools</A></CODE>
+<BLOCKQUOTE>
+This patch recognizes rawIP, ISDN-IP and CISCO-HDLC and can
+dump these packets.
+</BLOCKQUOTE>
+
+(The patch was attached to the message  - it should be easy to find in the
+mailing list archive - Ed.)</P>
+<P>Sascha Ottolski <CODE>
+<A HREF="mailto:sascha@alzhimer.isdn.cs.tu-berlin.de">sascha@alzhimer.isdn.cs.tu-berlin.de</A></CODE> gave the following
+tip on 5 Nov 1996:
+<BLOCKQUOTE>
+This is a isdn4k-utils-2.0/tcpdump-3.0.3-isdn.diff ! It work,
+if one makes some changes:
+In the file tcpdump-3.0.3-isdn/libpcap-0.0/pcap-linux.c after patching
+you find the following:
+else if (strncmp(&quot;ppp&quot;, device, 3) == 0)
+Either you name your ppp devices pppX instead of ipppX, or
+change this line, e.g.
+else if (strncmp(&quot;ippp&quot;, device, 4) == 0)
+^^^^          ^^
+Then tcpdump will also recognize syncPPP. At least it does for me.
+</BLOCKQUOTE>
+</P>
+
+<H2><A NAME="trouble_locatecrash"></A> <A NAME="ss7.15">7.15</A> <A HREF="i4lfaq.html#toc7.15">trouble_locatecrash: My isdn driver crashes my machine! Since I've configured it as a module, the addresses change each time it's loaded. How can I find out where the driver is crashing? </A>
+</H2>
+
+<P>The driver should be loaded with the command &quot;insmod -m&quot;. The output
+has to be transformed somewhat to be a form similar to System.map. You can do
+it like this:
+<HR>
+<PRE>
+insmod -m isdn.o | sort | sed -e 's/   / T /g' |
+                   egrep '.* T (a-z,A-Z,_)+'  /etc/isdn/isdn.map
+cat /System.map /etc/isdn/isdn.map  /iSystem.map
+</PRE>
+<HR>
+
+(The line ending with &quot;|&quot; has to have the following text on
+the same line!) iSystem.map should then be used instead of System.map for
+finding the error.</P>
+
+<H2><A NAME="trouble_lotsdebug"></A> <A NAME="ss7.16">7.16</A> <A HREF="i4lfaq.html#toc7.16">trouble_lotsdebug: My hard disk becomes very active when isdn4linux run. How can I turn this off? </A>
+</H2>
+
+<P>Check whether the reason for the hard disk activity is caused by the amount of
+messages written into the logfile. If this is the case, you can reduce the
+output by:
+<HR>
+<PRE>
+isdnctrl verbose 0
+</PRE>
+<HR>
+
+and/or by removing the &quot;debug&quot; option for ipppd.</P>
+
+<H2><A NAME="trouble_oldhardware"></A> <A NAME="ss7.17">7.17</A> <A HREF="i4lfaq.html#toc7.17">trouble_oldhardware: Maybe my hardware is too slow? </A>
+</H2>
+
+<P>Actually, properly configured, isdn4linux will on much smaller machines, than
+you might expect (still running an elder version on my 386-25, which used to
+have only 4MB RAM). However, newer isdn4linux/kernel versions need more
+memory, and may require some tweaking before they run on very old hardware.
+Have a look at question 
+<A HREF="#trouble_outofbuffers">trouble_outofbuffers</A>
+when running out of buffers.
+See question 
+<A HREF="#trouble_littlememory">trouble_littlememory</A> on how to reduce the amount of
+memory needed.</P>
+
+<H2><A NAME="trouble_outofbuffers"></A> <A NAME="ss7.18">7.18</A> <A HREF="i4lfaq.html#toc7.18">trouble_outofbuffers: I get messages like &quot;HSCX RME out of buffers&quot;, &quot;HSCX RFP out of buffers&quot;, &quot;HSCX B EXIR 10&quot; in the syslog? </A>
+</H2>
+
+<P>These errors happen when i4l is not able to process its buffers fast
+enough. They are often caused by bad sound cards or their drivers when
+they disable the interrupts too long! It may also happen on old hardware
+(happened to the author of this FAQ when using <CODE>vbox</CODE> on an old 386-25 with
+only 4MB RAM). You may be able to work around it by increasing the number and
+size of the buffers. Check the source code header files for definitions like:
+<HR>
+<PRE>
+#define HSCX_RBUF_ORDER 1
+#define HSCX_RBUF_BPPS 2
+#define HSCX_RBUF_MAXPAGES 3
+</PRE>
+<HR>
+
+The first two influence the size, the last one the maximum number of buffers.</P>
+
+<H2><A NAME="trouble_noresetinit"></A> <A NAME="ss7.19">7.19</A> <A HREF="i4lfaq.html#toc7.19">trouble_noresetinit: After a soft reset, my card does not initialize correctly. </A>
+</H2>
+
+<P>After you stopped your system with the <CODE>reboot</CODE> command or with
+<CODE>Ctrl-Alt-Del</CODE>, press the reset button (=hard reset). Sometimes the card
+needs to receive a hardware signal to reinitialize properly.</P>
+
+
+<H2><A NAME="trouble_noisdnctrl"></A> <A NAME="ss7.20">7.20</A> <A HREF="i4lfaq.html#toc7.20">trouble_noisdnctrl: When attempting to use isdnctrl, I get the error &quot;/dev/isdnctrl: No such file or directory&quot;? </A>
+</H2>
+
+<P>First check whether there is a device /dev/isdnctrl0. If there is, just
+create a symbolic link by executing
+<HR>
+<PRE>
+ln -s /dev/isdnctrl0 /dev/isdnctrl
+</PRE>
+<HR>
+
+If the device is not there, run the script <CODE>scripts/makedev.sh</CODE>,
+which is part of the isdn4k-utils.</P>
+
+
+<H2><A NAME="trouble_noisdnctrl2"></A> <A NAME="ss7.21">7.21</A> <A HREF="i4lfaq.html#toc7.21">trouble_noisdnctrl2: When attempting to use isdnctrl, I get the error &quot;/dev/isdnctrl: No such device&quot;? </A>
+</H2>
+
+<P>In contrast to &quot;/dev/isdnctrl: No such file or directory&quot; the
+message &quot;/dev/isdnctrl: No such device&quot; indicates that the
+device /dev/isdnctrl exists, but no ISDN device driver is available.
+To fix, load the ISDN modules (verify with &quot;cat /proc/modules&quot;
+that they are loaded) or compile the ISDN drivers into the kernel.</P>
+
+
+<H2><A NAME="trouble_xosview"></A> <A NAME="ss7.22">7.22</A> <A HREF="i4lfaq.html#toc7.22">trouble_xosview: xosview doesn't show any network activity since installing i4l. </A>
+</H2>
+
+<P>Peter Hettkamp <CODE>
+<A HREF="mailto:Peter.Hettkamp@kassel.netsurf.de">Peter.Hettkamp@kassel.netsurf.de</A></CODE> wrote:
+<BLOCKQUOTE>
+xosview reacts, at least for me with version 1.4, to the IP accounting
+in the kernel. So, configure, if necessary build a new kernel, then
+couple with:
+ipfwadm -A -a -S your-ip-address-here -D 0.0.0.0/0
+ipfwadm -A -a -D your-ip-address-here -S 0.0.0.0/0
+(I don't know who it works with variable IP addresses. I have a fixed
+address.)
+</BLOCKQUOTE>
+</P>
+
+<H2><A NAME="trouble_unknownhost"></A> <A NAME="ss7.23">7.23</A> <A HREF="i4lfaq.html#toc7.23">trouble_unknownhost: When I for example from a W95 box call up a page with Netscape, I only get the answer &quot;unknown host&quot;. </A>
+</H2>
+
+<P>What is entered on the &quot;Win95 box&quot; for the name server? As long as the
+router has no name server of its own, then the provider's name server
+of course has to be entered on all computers on the LAN.</P>
+
+<H2><A NAME="trouble_noroute"></A> <A NAME="ss7.24">7.24</A> <A HREF="i4lfaq.html#toc7.24">trouble_noroute: Addresses are now found, but now I get &quot;no route to host&quot;. </A>
+</H2>
+
+<P>Please check:
+<UL>
+<LI>Is the Linux computer entered as the gateway? (Some 'operating systems'
+have to be restarted before changes to the networking take effect)?</LI>
+<LI>Does the router have a default route to the prepared interface to the
+provide (e.g. ippp0 with syncPPP or sl0 for diald (even when the real
+connection is over ppp0, diald uses a slip interface as a &quot;doorknob&quot;)</LI>
+<LI>Does the provider require the use of proxies? Then the addresses
+of the proxies have to the entered in the appropriate clients on the LAN
+computers</LI>
+<LI>Maybe your route was removed when using syncppp? Check the questions
+<A HREF="i4lfaq-12.html#syncppp_noroute">syncppp_noroute</A> and
+<A HREF="i4lfaq-12.html#syncppp_nodefaultroute">syncppp_nodefaultroute</A>.</LI>
+</UL>
+</P>
+
+<H2><A NAME="trouble_nolocalnet"></A> <A NAME="ss7.25">7.25</A> <A HREF="i4lfaq.html#toc7.25">trouble_nolocalnet: After booting, my local network can no longer be reached. I use the network interface ippp0 with ifconfig 0.0.0.0; the default route points to ippp0. </A>
+</H2>
+
+<P>Wolfgang Barth wrote on 5 Jan 1997:
+<BLOCKQUOTE>
+I've noticed that after the first connection via ippp0 that the local
+network can again be reached. Then the address 0.0.0.0 is no longer
+listed in ifconfig for ippp0, but instead the address assigned from
+the pool by the PPP partner.
+This was already discussed in de.comp.os.linux.networking, along
+this possible solution:
+Simply set ippp0 to a dummy IP number from the pool. Then the
+local network will have problems after booting, even with the
+default route, and the IP number in ifconfig will be overwritten
+anyway.
+</BLOCKQUOTE>
+</P>
+
+<H2><A NAME="trouble_unauthorizedcodechange"></A> <A NAME="ss7.26">7.26</A> <A HREF="i4lfaq.html#toc7.26">trouble_unauthorizedcodechange: When HiSax starts, I get the error messages 'Approval certification failed, unauthorized source code changes'? </A>
+</H2>
+
+<P>Since the certification of the HiSax driver is only valid for unchanged
+source code, the source code is protected by a checksum. When you get this
+message, then either you have changed the source code yourself, or the
+author did not update the checksum when changing the source code (reason
+could be that the complete certification tests have not yet been run on
+the changed code).</P>
+
+<H2><A NAME="trouble_crcerror"></A> <A NAME="ss7.27">7.27</A> <A HREF="i4lfaq.html#toc7.27">trouble_crcerror: How can I see the number of packets for HiSax with invalid CRC? </A>
+</H2>
+
+<P>With HiSax you can view the accumulated number of hardware CRC errors with:
+<HR>
+<PRE>
+hisaxctrl &lt;id&gt; 0 0
+</PRE>
+<HR>
+
+and reset them with:
+<HR>
+<PRE>
+hisaxctrl &lt;id&gt; 0 99
+</PRE>
+<HR>
+
+It is ok if you have the occasional CRC error, but if you see a lot of
+errors then check your cable termination &amp; connectivity.</P>
+
+
+<H2><A NAME="trouble_amproglibtool"></A> <A NAME="ss7.28">7.28</A> <A HREF="i4lfaq.html#toc7.28">trouble_amproglibtool: When compiling isdn4k-utils I get the error 'AM_PROG_LIBTOOL not found'? </A>
+</H2>
+
+<P>You have to regenerate the files from automake/autoconf with your version of
+automake/autoconf.
+You can do it with the following shell script (assuming you
+stored the source code for the isdn4k-utils under &nbsp;/isdn/isdn4k-util):
+<HR>
+<PRE>
+cd ~/isdn/isdn4k-utils
+for i in capi20 capiinfo capifax capiinit rcapid ; do
+ cd $i
+ rm -f lt*
+ aclocal
+ libtoolize --force --automake --copy
+ automake --add-missing --copy
+ autoconf
+ cd ..
+done
+for i in eicon isdnlog ipppd ; do
+ cd $i
+ autoconf
+ cd ..
+done
+</PRE>
+<HR>
+</P>
+
+<H2><A NAME="trouble_hisaxparams"></A> <A NAME="ss7.29">7.29</A> <A HREF="i4lfaq.html#toc7.29">trouble_hisaxparams: HiSax does not work - how can I set the HiSax parameters for newer Linux kernels? </A>
+</H2>
+
+<P>Unfortunately the udev/hotplug mechanism of current kernels (written in
+November 2005) loads hisax without the needed parameters. To check whether
+this is the issue of missing parameters unload the hisax module with rmmod:
+<HR>
+<PRE>
+rmmod hisax
+</PRE>
+<HR>
+
+then insert the kernel module with the correct parameters again, e.g.:
+<HR>
+<PRE>
+modprobe -v hisax type=35 protocol=2
+</PRE>
+<HR>
+
+In case this solves the issue, you can permanently fix it by providing the
+needed parameters to the module loader, e.g. in /etc/modprobe.d/hisax on
+a Suse distribution.</P>
+
+
+
+<HR>
+<A HREF="i4lfaq-8.html">Next</A>
+<A HREF="i4lfaq-6.html">Previous</A>
+<A HREF="i4lfaq.html#toc7">Contents</A>
+</BODY>
+</HTML>

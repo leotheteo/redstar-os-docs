@@ -1,0 +1,147 @@
+﻿<html dir='ltr'>
+	<head>
+		<META http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+		<title>세포내용의 비교</title>
+		<link rel='stylesheet' type='text/css' href='../css/main.css'/>
+		<script type='text/javascript' language='Javascript' src='../js/mexpcol.js'></script>
+		<script type='text/javascript' language='JavaScript' src='../js/glossary.js'></script>
+	</head>
+	<body>
+		<h1>&nbsp;<img align="absbottom" src="../image/external_images/crystal/svtools/res/new_doc.png"/>&nbsp;세포내용의 비교</h1>
+		<p id='ExpandAllLine' class='ExpFav'>
+			<a href='#' onClick='ExpandAll()' onKeyPress='ExpandAll()' class='DropDown'>
+				<img id='picHeader' border='0' src='../image/image/common/expandtri.gif' alt='모두 표시'>
+				<span id='ExpandAll'>모두 표시</span>
+			</a>
+		</p>
+		<h2>한 세포를 다른 세포와 비교</h2>
+			<p>이 작업을 수행하려면 <b class="bterm">EXACT</b>함수를 사용합니다.</p>
+			<p><b class="bterm">실례</b></p>
+			<p><a href="1.5.1.htm">실례의 리용방법</a>을 참고하십시오.</p>
+			<table>
+				<tr>
+					<td>
+						<table>
+							<tr>
+								<td class="noborder">&nbsp;</td>
+							</tr>
+							<tr>
+								<th>1</th>
+							</tr>
+							<tr>
+								<th>2</th>
+							</tr>
+							<tr>
+								<th>3</th>
+							</tr>
+							<tr>
+								<th>4</th>
+							</tr>
+						</table>
+					</td>
+					<td>
+						<table>
+							<tr>
+								<th>A</th>
+							</tr>
+							<tr>
+								<th>자료</th>
+							</tr>
+							<tr>
+								<td>ABCD122</td>
+							</tr>
+							<tr>
+								<td>ABCD123</td>
+							</tr>
+							<tr>
+								<td>ABCD123</td>
+							</tr>
+							<tr>
+								<th>수식</th>
+								<th>설명(결과)</th>
+							</tr>
+							<tr>
+								<td>=EXACT(A2;A3)</td>
+								<td>A2와 A3의 내용을 비교합니다. (거짓)</td>
+							</tr>
+							<tr>
+								<td>=EXACT(A3;A4)</td>
+								<td>A3와 A4의 내용을 비교합니다. (참)</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+			<p><b class="bterm">참고:&emsp;   EXACT</b>함수는 대소문자를 구분합니다.</p>
+			<p><b class="bterm">참조함수</b></p>
+			<p><a href='5.9.12.10.htm'>EXACT</a></p>
+		<h2>한개의 값을 값목록과 비교</h2>
+			<p>이 작업을 수행하려면 <b class="bterm">EXACT</b>와 <b class="bterm">OR</b>함수를 사용합니다.</p>
+			<p><b class="bterm">실례</b></p>
+			<p><a href="1.5.1.htm">실례의 리용방법</a>을 참고하십시오.</p>
+			<table>
+				<tr>
+					<td>
+						<table>
+							<tr>
+								<td class="noborder">&nbsp;</td>
+							</tr>
+							<tr>
+								<th>1</th>
+							</tr>
+							<tr>
+								<th>2</th>
+							</tr>
+							<tr>
+								<th>3</th>
+							</tr>
+							<tr>
+								<th>4</th>
+							</tr>
+						</table>
+					</td>
+					<td>
+						<table>
+							<tr>
+								<th>A</th>
+								<th>B</th>
+							</tr>
+							<tr>
+								<th>목록</th>
+								<th>세포</th>
+							</tr>
+							<tr>
+								<td>사과</td>
+								<td>포도</td>
+							</tr>
+							<tr>
+								<td>귤</td>
+								<td>&nbsp;</td>
+							</tr>
+							<tr>
+								<td>복숭아</td>
+								<td>&nbsp;</td>
+							</tr>
+							<tr>
+								<th>수식</th>
+								<th>설명(결과)</th>
+							</tr>
+							<tr>
+								<td>=OR(EXACT(B2; A2:A4))</td>
+								<td>"포도"를 목록의 각 값과 비교합니다. (거짓)</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+			<p><b class="bterm">참고:</b>   실례의 수식은 <a href="#" class="glossary" onClick="AppendPopup(this,'IDG_ARRAYFORMULA')" onKeyPress="AppendPopup(this,'IDG_ARRAYFORMULA')">행렬수식</a>으로 입력하여야 합니다. 실례를 빈 표용지에 복사하고 각 수식 세포를 개별적으로 선택한 다음 <b class="bterm">[F2]</b>건을 누르고 <b class="bterm">[Ctrl+Shift+Enter]</b>건을 누릅니다. 수식을 행렬수식으로 입력하지 않으면 <b class="bterm">#VALUE!</b> 오유가 반환됩니다.</p>
+			<p>우의 수식에서 사용하는 구문은 다음과 같습니다.</p>
+			<p>=OR(EXACT(<b class="bterm">본문1;본문2</b>))</p>
+			<p><b class="bterm">본문1</b>은 사용자가 입력한 값을 나타내며, <b class="bterm">본문2</b>는 비교할 대상의 본문값목록을 나타냅니다.</p>
+			<p><b class="bterm">참조함수</b></p>
+			<p><a href='5.9.7.6.htm'>OR</a></p>
+			<p><a href='5.9.12.10.htm'>EXACT</a></p>
+		<script type="text/javascript" language="Javascript">footerView()</script>
+	
+</body>
+</html>

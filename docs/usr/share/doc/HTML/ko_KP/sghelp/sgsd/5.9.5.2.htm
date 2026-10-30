@@ -1,0 +1,54 @@
+<html dir='ltr'>
+	<head>
+		<META http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+		<title>공통적인 주의사항</title>
+		<link rel='stylesheet' type='text/css' href='../css/main.css'/>
+		<script type='text/javascript' language='Javascript' src='../js/mexpcol.js'></script>
+		<script type='text/javascript' language='JavaScript' src='../js/glossary.js'></script>
+	</head>
+	<body>
+		<h1>&nbsp;<img align="absbottom" src="../image/external_images/crystal/svtools/res/new_doc.png"/>&nbsp;공통적인 주의사항</h1>
+		<p id='ExpandAllLine' class='ExpFav'>
+			<a href='#' onClick='ExpandAll()' onKeyPress='ExpandAll()' class='DropDown'>
+				<img id='picHeader' border='0' src='../image/image/common/expandtri.gif' alt='모두 표시'>
+				<span id='ExpandAll'>모두 표시</span>
+			</a>
+		</p>
+		<ul>
+			<li>표처리프로그람에서는 날자를 계산에 사용할수 있도록 순차적인 내부수자로 보관합니다.  
+				1900년 1월 1일이 내부수자 1이고 2000년 1월 1일은 1900년 1월 1일에서 39 448일이 지난 날자이므로 내부수자 39448이 됩니다.
+			</li>
+			<li>대부분의 함수에서 날자값은 내부수자로 자동변환됩니다.</li>
+			<li>재정함수들에서 인수 <b class="bterm">기준</b>은 날자계산기준으로서 다음과 같은 의미를 가집니다.
+				<table>
+					<tr>
+						<th>기준</th>
+						<th> 계산</th>
+					</tr>
+					<tr>
+						<td>0 또는 생략</td>
+						<td><b class="bterm">US방식</b>(NASD), 30일씩 12달</td>
+					</tr>
+					<tr>
+						<td>1</td>
+						<td>정확한 그달의 날자수, 정확한 그해의 날자수</td>
+					</tr>
+					<tr>
+						<td>2</td>
+						<td>정확한 그달의 날자수, 그해 360일</td>
+					</tr>
+					<tr>
+						<td>3</td>
+						<td>정확한 그달의 날자수, 그해 365일</td>
+					</tr>
+					<tr>
+						<td>4</td>
+						<td><b class="bterm">유럽방식</b>, 30일씩 12달</td>
+					</tr>
+				</table>
+			</li>
+		</ul>
+		<script type="text/javascript" language="Javascript">footerView()</script>
+	
+</body>
+</html>

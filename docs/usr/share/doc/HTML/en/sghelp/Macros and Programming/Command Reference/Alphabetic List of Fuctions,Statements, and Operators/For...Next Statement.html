@@ -1,0 +1,161 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+	<TITLE></TITLE>
+	<META NAME="GENERATOR" CONTENT="《Sogwang 3.0》  (Linux)">
+	<META NAME="CREATED" CONTENT="20091205;11384400">
+	<META NAME="CHANGED" CONTENT="20091205;12062800">
+	<STYLE TYPE="text/css">
+	<!--
+		H2 { margin-bottom: 0.18cm; font-family: "Bitstream Vera Sans", "Arial", "Helvetica", "Lucida", "Geneva", "Helmet", sans-serif, "Andale Sans UI", "Arial Unicode MS", "Lucida Sans Unicode", "Tahoma"; font-size: 14pt }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="ko-KP" DIR="LTR"><DIV style="margin-left: 25">
+<H1><A NAME="fornext"></A><A NAME="bm_id3149205"></A><FONT FACE="Thorndale, serif"><SPAN LANG="en-US">For...Next
+Statement [Runtime]</SPAN></FONT></H1>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Repeats
+the statements between the For...Next block a specified number of
+times.</SPAN></FONT></P>
+<H2><SPAN LANG="en-US">Syntax:</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">For
+counter=start To end [Step step]</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">statement
+block</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">[Exit
+For]</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">statement
+block</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Next
+[counter]</SPAN></FONT></P>
+<H2><SPAN LANG="en-US">Variables:</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Counter:</B>
+Loop counter initially assigned the value to the right of the equal
+sign (start). Only numeric variables are valid. The loop counter
+increases or decreases according to the variable Step until End is
+passed.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Start:</B>
+Numeric variable that defines the initial value at the beginning of
+the loop.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>End:</B>
+Numeric variable that defines the final value at the end of the loop.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Step:</B>
+Sets the value by which to increase or decrease the loop counter. If
+Step is not specified, the loop counter is incremented by 1. In this
+case, End must be greater than Start. If you want to decrease
+Counter, End must be less than Start, and Step must be assigned a
+negative value.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">The
+<B>For...Next</B> loop repeats all of the statements in the loop for
+the number of times that is specified by the parameters.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">As the
+counter variable is decreased, </SPAN></FONT><FONT FACE="청봉, serif"><SPAN LANG="en-US">Sogwang Basic
+checks if the end value has been reached. As soon as the counter
+passes the end value, the loop automatically ends.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">It is
+possible to nest <B>For...Next</B> statements. If you do not specify
+a variable following the <B>Next</B> statement, <B>Next</B>
+automatically refers to the most recent <B>For</B> statement.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">If you
+specify an increment of 0, the statements between <B>For</B> and <B>Next</B>
+are repeated continuously.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">When
+counting down the counter variable, </SPAN></FONT><FONT FACE="청봉, serif"><SPAN LANG="en-US">Sogwang Basic
+checks for overflow or underflow. The loop ends when Counter exceeds
+End (positive Step value) or is less than End (negative Step value).</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Use the
+<B>Exit For</B> statement to exit the loop unconditionally. This
+statement must be within a <B>For...Next</B> loop. Use the <B>If...Then</B>
+statement to test the exit condition as follows:</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">For...</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">statements</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">If
+condition = True Then Exit For</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">statements</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Next</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Note: In
+nested <B>For...Next</B> loops, if you exit a loop unconditionally
+with <B>Exit For</B>, only one loop is exited.</SPAN></FONT></P>
+<H2><SPAN LANG="en-US">Example</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">The
+following example uses two nested loops to sort a string array with
+10 elements ( sEntry() ), that are first filled with various
+contents:</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Sub
+ExampleSort</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Dim
+sEntry(9) As String</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Dim
+iCount As Integer</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Dim
+iCount2 As Integer</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Dim
+sTemp As String</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">sEntry(0)
+= &quot;Jerry&quot;</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">sEntry(1)
+= &quot;Patty&quot;</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">sEntry(2)
+= &quot;Kurt&quot;</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">sEntry(3)
+= &quot;Thomas&quot;</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">sEntry(4)
+= &quot;Michael&quot;</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">sEntry(5)
+= &quot;David&quot;</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">sEntry(6)
+= &quot;Cathy&quot;</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">sEntry(7)
+= &quot;Susie&quot;</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">sEntry(8)
+= &quot;Edward&quot;</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">sEntry(9)
+= &quot;Christine&quot;</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">For
+iCount = 0 To 9</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">For
+iCount2 = iCount + 1 To 9</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">If
+sEntry(iCount) &gt; sEntry(iCount2) Then</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">sTemp =
+sEntry(iCount)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">sEntry(iCount)
+= sEntry(iCount2)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">sEntry(iCount2)
+= sTemp</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">End If</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Next
+iCount2</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Next
+iCount</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">For
+iCount = 0 To 9</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Print
+sEntry(iCount)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Next
+iCount</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><SPAN STYLE="font-weight: medium">End
+Sub</SPAN></SPAN></FONT></P>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</DIV></BODY>
+</HTML>

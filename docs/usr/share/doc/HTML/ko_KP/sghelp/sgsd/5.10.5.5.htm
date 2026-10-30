@@ -1,0 +1,148 @@
+﻿<html dir='ltr'>
+	<head>
+		<META http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+		<title>수식의 오유 찾기 및 수정</title>
+		<link rel='stylesheet' type='text/css' href='../css/main.css'/>
+		<script type='text/javascript' language='Javascript' src='../js/mexpcol.js'></script>
+		<script type='text/javascript' language='JavaScript' src='../js/glossary.js'></script>
+	</head>
+	<body>
+		<h1>&nbsp;<img align="absbottom" src="../image/external_images/crystal/svtools/res/new_doc.png"/>&nbsp;수식의 오유 찾기 및 수정</h1>
+		<p id='ExpandAllLine' class='ExpFav'>
+			<a href='#' onClick='ExpandAll()' onKeyPress='ExpandAll()' class='DropDown'>
+				<img id='picHeader' border='0' src='../image/image/common/expandtri.gif' alt='모두 표시'>
+				<span id='ExpandAll'>모두 표시</span>
+			</a>
+		</p>
+		<p>다음표는 표처리프로그람에서 표시되는 오유통보문을 설명한것입니다.</p>
+		<p>오유가 발생한 경우에 상태띠에 오유통보문이 표시됩니다.</p>
+		<table>
+			<tr>
+				<th>오유 코드</th>
+				<th>통보문</th>
+				<th>설명 및 수정방법</th>
+			</tr>
+			<tr>
+				<td>501</td>
+				<td>무효한 문자</td>
+				<td>수식의 문자가 잘못되였습니다(례: "=1E2" 대신 "=1Eq"를 사용한 경우).</td>
+			</tr>
+			<tr>
+				<td>502</td>
+				<td>무효한 인수</td>
+				<td>함수인수가 잘못되였습니다(례: 제곱함수에 부수를 사용한 경우).</td>
+			</tr>
+			<tr>
+				<td>503</td>
+				<td>무효한 부동소수점 연산</td>
+				<td>0으로 나누거나 지정된 값 범위를 벗어나는 계산입니다.</td>
+			</tr>
+			<tr>
+				<td>504</td>
+				<td>파라메터목록에서 오유</td>
+				<td>함수변수가 잘못되였습니다(례: 수자대신 본문을 사용한 경우).</td>
+			</tr>
+			<tr>
+				<td>508</td>
+				<td>괄호</td>
+				<td>괄호가 없습니다(례: 닫는 괄호만 있고 여는 괄호가 없는 경우).</td>
+			</tr>
+			<tr>
+				<td>509</td>
+				<td>연산자가 없습니다.</td>
+				<td>연산자가 없습니다(례: "=2(3+4) * "의 경우 "2"와 "("사이에 연산자가 없음).</td>
+			</tr>
+			<tr>
+				<td>510</td>
+				<td>변수가 없습니다</td>
+				<td>변수가 없습니다(례: "=1+*2" 같이 두 연산자가 함께 있는 경우).</td>
+			</tr>
+			<tr>
+				<td>511</td>
+				<td>변수가 없습니다</td>
+				<td>제공된것보다 많은 변수가 함수에 필요합니다(례: <b class="bterm">AND</b>() 및 <b class="bterm">OR</b>()).</td>
+			</tr>
+			<tr>
+				<td>512</td>
+				<td>수식이 너무 깁니다</td>
+				<td><b class="bterm">콤파일러</b>: 수식에 있는 총 내부통표(즉, 연산자, 변수, 괄호)의 수가 512개를 초과합니다.
+					<p><b class="bterm">해석기</b>: 수식이 만드는 총 행렬수가 150개를 초과합니다. 거기에는 매우 큰 행렬(최대 0xFFFE, 례를 들면 65534바이트)을 매개 변수로 받는 기본함수가 포함됩니다.</p>
+				</td>
+			</tr>
+			<tr>
+				<td>513</td>
+				<td>문자렬이 너무 깁니다</td>
+				<td><b class="bterm">콤파일러</b>: 수식의 확인자 크기가 64KB를 초과합니다. 
+					<p><b class="bterm">해석기</b>: 문자렬 연산결과의 크기가 64KB를 초과합니다.</p>
+				</td>
+			</tr>
+			<tr>
+				<td>514</td>
+				<td>내부자리넘침</td>
+				<td>너무 많은 수자자료(최대 100 000개)에 대한 정렬작업을 시도했거나 계산탄창자리넘침이 발생하였습니다.</td>
+			</tr>
+			<tr>
+				<td>516</td>
+				<td>내부적문법오유</td>
+				<td>행렬이 계산탄창에 필요하지만 사용할수 없습니다.</td>
+			</tr>
+			<tr>
+				<td>517</td>
+				<td>내부문법오유</td>
+				<td>알수 없는 코드입니다(례: 최신함수가 있는 문서를 이러한 함수가 없는 기존판본에서 적재할 경우).</td>
+			</tr>
+			<tr>
+				<td>518</td>
+				<td>내부문법오유</td>
+				<td>변수를 사용할수 없습니다.</td>
+			</tr>
+			<tr>
+				<td>519</td>
+				<td>결과가 없습니다(세포에 <b class="bterm">오유:519</b>가 아닌 <b class="bterm">#VALUE!</b>가 있습니다).</td>
+				<td>수식이 정의에 해당하지 않는 값을 생성하거나 수식에서 참조된 세포에 수자대신 본문이 포함되여있습니다.</td>
+			</tr>
+			<tr>
+				<td>520</td>
+				<td>내부문법오유</td>
+				<td>콤파일러가 알수 없는 콤파일러코드를 만듭니다.</td>
+			</tr>
+			<tr>
+				<td>521</td>
+				<td>내부문법오유</td>
+				<td>결과가 없습니다.</td>
+			</tr>
+			<tr>
+				<td>522</td>
+				<td>순환참조</td>
+				<td>수식이 직접 또는 간접적으로 자기 자신을 참조하며 <b class="bterm">&lt;서광사무처리&gt;/&lt;환경설정&gt;/&lt;서광사무처리 표처리프로그람&gt;/&lt;계산&gt;</b>에서 <b class="bterm">&lt;반복회수&gt;</b>확인칸을 선택하지 않았습니다.</td>
+			</tr>
+			<tr>
+				<td>523</td>
+				<td>계산결과가 수렴하지 않습니다.</td>
+				<td>함수에 대상값이 없거나 반복참조가 설정된 최대단계내에서 최소변경에 도달하지 않았습니다.</td>
+			</tr>
+			<tr>
+				<td>524</td>
+				<td>유효하지 않는 참조 (세포에 <b class="bterm">오유:524</b>가 아닌 <b class="bterm">#REF!</b>가 있습니다!)</td>
+				<td><b class="bterm">콤파일러</b>: 렬 또는 행 설명이름을 확인할수 없습니다. <b class="bterm">해석기</b>: 참조된 세포를 포함하는 렬, 행 또는 표가 수식에 없습니다.</td>
+			</tr>
+			<tr>
+				<td>525</td>
+				<td>무효한 이름 (세포에는 <b class="bterm">오유:525</b>가 아니라 <b class="bterm">#NAME?</b>이 있습니다.)</td>
+				<td>확인자를 평가할수 없습니다(례: 유효한 참조가 없거나, 유효한 령역 이름이 없거나, 렬/행 표제가 없거나, 소수점 구분기호가 잘못된 경우).</td>
+			</tr>
+			<tr>
+				<td>526</td>
+				<td>내부적문법오유</td>
+				<td>결과가 령역 수식인 경우, 오래되여 더이상 사용하지 않는 이전 문서에서 온것일수 있습니다.</td>
+			</tr>
+			<tr>
+				<td>527</td>
+				<td>내부자리넘침</td>
+				<td><b class="bterm">해석기</b>: 참조가 너무 많이 교갑화되였습니다(례: 세포가 세포를 참조하는 경우).</td>
+			</tr>
+		</table>
+		<script type="text/javascript" language="Javascript">footerView()</script>
+	
+</body>
+</html>

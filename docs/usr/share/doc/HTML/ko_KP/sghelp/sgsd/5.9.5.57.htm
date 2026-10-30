@@ -1,0 +1,120 @@
+﻿<html dir='ltr'>
+	<head>
+		<META http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+		<title>XNPV</title>
+		<link rel='stylesheet' type='text/css' href='../css/main.css'/>
+		<script type='text/javascript' language='Javascript' src='../js/mexpcol.js'></script>
+		<script type='text/javascript' language='JavaScript' src='../js/glossary.js'></script>
+	</head>
+	<body>
+		<h1>&nbsp;<img align="absbottom" src="../image/external_images/crystal/svtools/res/new_doc.png"/>&nbsp;XNPV</h1>
+		<p id='ExpandAllLine' class='ExpFav'>
+			<a href='#' onClick='ExpandAll()' onKeyPress='ExpandAll()' class='DropDown'>
+				<img id='picHeader' border='0' src='../image/image/common/expandtri.gif' alt='모두 표시'>
+				<span id='ExpandAll'>모두 표시</span>
+			</a>
+		</p>
+		<p><b class="bterm">참고항목</b>&emsp;
+			<a href="5.9.5.1.htm">재정함수목록</a>,
+			<a href="5.9.5.30.htm">IRR</a>, 
+			<a href="5.9.5.33.htm">MIRR</a>, 
+			<a href="5.9.5.37.htm">NPV</a>, 
+			<a href="5.9.5.48.htm">RATE</a>, 
+			<a href="5.9.5.56.htm">XIRR</a> 
+		</p>
+		<p>비정기적인 납입에 대한 순수 현재가치를 구합니다.</p>
+		<p><b class="bterm">문법:&emsp;&emsp;		XNPV(리자률,값,날자)</b></p>
+		<table>
+			<tr>
+				<th width="5%">인수명</th>
+				<th>설명</th>
+			</tr>
+			<tr>
+				<td>리자률</td>
+				<td>현금지출에 적용할 리자률입니다.</td>
+			</tr>
+			<tr>
+				<td>값</td>
+				<td><b class="bterm">날자</b>의 지불일정에 대응하는 일련의 현금지출입니다. 최초 상환금은 선택사항으로서 투자초기에 발생하는 비용이나 상환금에 해당됩니다. 최초 상환금이 비용이나 상환금인 경우에는 부수가 되여야 합니다. 이후의 모든 상환금은 년간날자수 365일을 기준으로 할인됩니다. 일련의 값들에는 정수와 부수가 최소한 하나씩 포함되여야 합니다.</td>
+			</tr>
+			<tr>
+				<td>날자</td>
+				<td>현금지출상의 상환금에 대응하는 지불일정입니다. 최초 상환날자는 지불일정의 시작을 나타냅니다. 그밖의 모든 상환날자는 이 후의 날자여야 하지만 발생순서는 관계없습니다. </td>
+			</tr>
+		</table>
+		<p><b class="bterm">주의</b></p>
+			<ul>
+				<li><b class="bterm">날자</b>에 포함된 수자는 소수점이하를 잘라서 옹근수로 변환됩니다.</li>
+				<li> 수자가 아닌 인수가 하나라도 있으면 <b class="bterm">오유:[오유번호]</b>가 반환됩니다.</li>
+				<li><b class="bterm">날자</b>의 수자중 무효한 날자가 있으면 <b class="bterm">오유:[오유번호]</b>가 반환됩니다.</li>
+				<li><b class="bterm">날자</b>에 포함된 날자가 시작날자보다 전 날자일 때에는 <b class="bterm">오유:[오유번호]</b>가 반환됩니다.</li>
+				<li><b class="bterm">값</b>과 <b class="bterm">날자</b>에 있는 값의 개수가 서로 다를 때에는 <b class="bterm">오유:[오유번호]</b>가 반환됩니다.</li>
+				<li><b class="bterm">XNPV</b>함수는 반복기법을 사용하여 계산됩니다. 
+					<p><img border='0' src='../image/image/sgsd/formula-20.gif' alt='표시'></p>
+					<p>여기서</p>
+					<p><b class="bterm">di</b> = i번째 또는 마지막상환날자입니다.</p>
+					<p><b class="bterm">d1</b> = 0번째 상환날자입니다.</p>
+					<p><b class="bterm">Pi</b> = i번째 또는 마지막상환금입니다.</p>
+				</li>
+			</ul>
+		<p><b class="bterm">실례</b></p>			
+<p><a href="1.5.1.htm">실례의 리용방법</a>을 참고하십시오.</p>
+			<table>
+				<tr>
+					<td>
+						<table>
+							<tr><td>&nbsp;</td></tr>
+							<tr><th>1</th></tr>
+							<tr><th>2</th></tr>
+							<tr><th>3</th></tr>
+							<tr><th>4</th></tr>
+							<tr><th>5</th></tr>
+							<tr><th>6</th></tr>
+						</table>
+					</td>
+					<td>
+						<table>
+							<tr>
+								<th>A</th>
+								<th>B</th>
+							</tr>
+							<tr>
+								<th>값</th>
+								<th>날자</th>
+							</tr>
+							<tr>
+								<td>-10 000</td>
+								<td>2008/1/1</td>
+							</tr>
+							<tr>
+								<td>2 750</td>
+								<td>2008/3/1</td>
+							</tr>
+							<tr>
+								<td>4 250</td>
+								<td>2008/10/30</td>
+							</tr>
+							<tr>
+								<td>3 250</td>
+								<td>2009/2/15</td>
+							</tr>
+							<tr>
+								<td>2 750</td>
+								<td>2009/4/1</td>
+							</tr>
+							<tr>
+								<th>수식</th>
+								<th>설명(결과)</th>
+							</tr>
+							<tr>
+								<td>=XNPV(.09,A2:A6,B2:B6)</td>
+								<td>우와 같은 비용과 회수률의 투자에 대한 현재가치입니다. 현금지출은 9%에서 할인됩니다. (2086.6476, 즉 2086.65)</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>	
+		<script type="text/javascript" language="Javascript">footerView()</script>
+	
+</body>
+</html>														

@@ -1,0 +1,60 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+	<TITLE></TITLE>
+	<META NAME="GENERATOR" CONTENT="《Sogwang 3.0》  (Linux)">
+	<META NAME="CREATED" CONTENT="20091205;15361500">
+	<META NAME="CHANGED" CONTENT="20091205;16584200">
+	<STYLE TYPE="text/css">
+	<!--
+		H2 { margin-bottom: 0.18cm; font-family: "Bitstream Vera Sans", "Arial", "Helvetica", "Lucida", "Geneva", "Helmet", sans-serif, "Andale Sans UI", "Arial Unicode MS", "Lucida Sans Unicode", "Tahoma"; font-size: 14pt }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="ko-KP" DIR="LTR"><DIV style="margin-left: 25">
+<H1><A NAME="whilewend"></A><A NAME="bm_id3150400"></A><FONT FACE="Thorndale, serif"><SPAN LANG="en-US">While...Wend
+Statement[Runtime]</SPAN></FONT></H1>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">When a
+program encounters a While statement, it tests the condition. If the
+condition is False, the program continues directly following the Wend
+statement. If the condition is True, the loop is executed until the
+program finds Wend and then jumps back to the <B>While </B>statement.
+If the condition is still True, the loop is executed again.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Unlike
+the <A 
+HREF="./Do...Loop Statement.html">Do...Loop</A>
+statement, you cannot cancel a <B>While...Wend</B> loop with <A 
+HREF="./Exit Statement.html">Exit</A>.
+Never exit a While...Wend loop with <A 
+HREF="./GoTo Statement.html">GoTo</A>,
+since this can cause a run-time error.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">A
+Do...Loop is more flexible than a While...Wend.</SPAN></FONT></P>
+<H2><SPAN LANG="en-US">Syntax:</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">While
+Condition [Statement] Wend</SPAN></FONT></P>
+<H2><SPAN LANG="en-US">Example:</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Sub
+ExampleWhileWend</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Dim
+stext As String</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Dim iRun
+As Integer</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">sText
+=&quot;This is a short text&quot;</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">iRun = 1</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">while
+iRun &lt; Len(sText)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">if
+Mid(sText,iRun,1 )&lt;&gt; &quot; &quot; then Mid( sText ,iRun, 1,
+Chr( 1 + Asc( Mid(sText,iRun,1 )) )</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">iRun =
+iRun + 1</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Wend</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">MsgBox
+sText,0,&quot;Text encoded&quot;</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">end sub</SPAN></FONT></P>
+
+</DIV></BODY>
+</HTML>

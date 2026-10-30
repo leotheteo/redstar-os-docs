@@ -1,0 +1,100 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <META NAME="GENERATOR" CONTENT="LinuxDoc-Tools 0.9.21">
+ <TITLE>ISDN4LINUX - FAQ (deutsche Version): pap: Saubere Authentifikation (speziell mit PAP) </TITLE>
+ <LINK HREF="i4lfaq-de-13.html" REL=next>
+ <LINK HREF="i4lfaq-de-11.html" REL=previous>
+ <LINK HREF="i4lfaq-de.html#toc12" REL=contents>
+</HEAD>
+<BODY>
+<A HREF="i4lfaq-de-13.html">Next</A>
+<A HREF="i4lfaq-de-11.html">Previous</A>
+<A HREF="i4lfaq-de.html#toc12">Contents</A>
+<HR>
+<H2><A NAME="pap"></A> <A NAME="s12">12.</A> <A HREF="i4lfaq-de.html#toc12">pap: Saubere Authentifikation (speziell mit PAP) </A></H2>
+
+<H2><A NAME="pap_optionauth"></A> <A NAME="ss12.1">12.1</A> <A HREF="i4lfaq-de.html#toc12.1">pap_optionauth: Beim Hinausw&auml;hlen bekomme ich die Meldung 'pppd: peer authentication required but no authentication files accessible.' Was bedeutet das? </A>
+</H2>
+
+<P>Wahrscheinlich wurde irrt&uuml;mlich die Option 'auth' gesetzt. Dann
+muss sich die <EM>andere</EM> Seite authentifizieren.</P>
+
+<H2><A NAME="pap_requestauth"></A> <A NAME="ss12.2">12.2</A> <A HREF="i4lfaq-de.html#toc12.2">pap_requestauth: Ich kann keine Verbindung aufbauen -  sie wird von der anderen Seite abgelehnt. Im Logfile finde ich eine Meldung, &auml;hnlich wie: 'sent (0) (LCP ConfReq id=0x1 mru 1500 auth pap magic 0xcd12e9c4' </A>
+</H2>
+
+<P>Wie bei der letzten Frage wurde eine Option eingestellt, die verlangt,
+da&szlig; die <EM>andere</EM> Seite sich authentifiziert. Diese
+Optionen sollten vermieden werden. M&ouml;gliche Kandidaten sind:
+"+pap" und "+chap".</P>
+
+<H2><A NAME="pap_rejectauth"></A> <A NAME="ss12.3">12.3</A> <A HREF="i4lfaq-de.html#toc12.3">pap_rejectauth: Ich kann keine Verbindung aufbauen - sie wird von der Gegenseite abgewiesen. Im Logfile finde ich eine Meldung, &auml;hnlich wie: 'sent (0) (LCP ConfRej id=0x1 auth pap' </A>
+</H2>
+
+<P>Dein Computer lehnt es ab, sich mit Usernamen (z.B. XXX) und Password
+(z.B. YYY) zu identifizieren. Das funktioniert nur, wenn die
+Autorisierungsoptionen 'user XXX' und 'remotename YYY' f&uuml;r ipppd
+oder pppd richtig in einer korrekten (!) /etc/ppp/pap-secrets
+eingetragen sind. Mit einem Password ZZZ sollte des so aussehen:
+<HR>
+<PRE>
+XXX YYY ZZZ *
+</PRE>
+<HR>
+
+Wenn in XXX, YYY oder ZZZ spezielle Zeichen enthalten sind, solltest
+Du die W&ouml;rter in Anf&uuml;hrungszeichen setzen. Wenn das nicht
+funktioniert, kannst Du Wildcards benutzen, etwa so:
+<HR>
+<PRE>
+* * ZZZ *
+</PRE>
+<HR>
+
+Dann hat <EM>jeder</EM> Benutzer das Password ZZZ. Wenn chap zur
+Autorisierung ben&ouml;tigt wird, muss /etc/ppp/chap-secrets korrekt
+eingestellt sein. Wichtig: das Format ist nicht das gleiche wie bei
+pap-secrets!
+Wichtig ist auf jeden Fall, zum Trennen von Username, Computer und
+Passwort nur den Tabulator und nicht die Leertaste zu verwenden.</P>
+<P>Lies auf jeden Fall die READMEs oder schau Dir <CODE>
+<A HREF="http://www.lrz-muenchen.de/~ui161ab/www/isdn/">http://www.lrz-muenchen.de/~ui161ab/www/isdn/</A></CODE>
+an. Sieh Dir ebenfalls die n&auml;chste Frage 
+<A HREF="#pap_passwd">pap_passwd</A> an.</P>
+
+<H2><A NAME="pap_checkpwd"></A> <A NAME="ss12.4">12.4</A> <A HREF="i4lfaq-de.html#toc12.4">pap_checkpwd: Wie stelle ich fest, welches Password an die Gegenseite geschickt wird? </A>
+</H2>
+
+<P>Nutze die Optionen <CODE>debug</CODE> und <CODE>+pwlog</CODE> f&uuml;r ipppd oder
+pppd. Dann kannst Du Dein Password im Logfile sehen.</P>
+
+<H2><A NAME="pap_passwd"></A> <A NAME="ss12.5">12.5</A> <A HREF="i4lfaq-de.html#toc12.5">pap_passwd: Ich habe Probleme mit der Authentifikation durch PAP oder CHAP. Sie schl&auml;gt fehl obwohl ich sicher bin, Password usw. korrekt eingetragen zu haben. </A>
+</H2>
+
+<P>Stefan A. M&uuml;hlenweg <CODE>
+<A HREF="mailto:Stefan.A.Muehlenweg@samhh.hanse.de">Stefan.A.Muehlenweg@samhh.hanse.de</A></CODE> schrieb am 4. Okt
+1996:
+<BLOCKQUOTE>
+Ich hatte genau das gleiche Problem / die gleiche Fehlermeldung. Der
+Grund daf&uuml;r war, da&szlig; ich drei Eintr&auml;ge in chap-secrets
+/ pap-secrets (f&uuml;r client, server, secret) aber keinen vierten
+Eintrag (IP Addresse) hatte. ABER: hinter dem dritten Eintrag kamen
+einige Leerzeichen. Nach dem Entfernen dieser Leerzeichen und/oder
+TABs ist der (i)pppd jetzt sehr zufrieden mit meinen
+Authentifizierungs-Dateien.
+</BLOCKQUOTE>
+
+Eine weitere Problemquelle kann das Password selbst sein. Wenn es das
+Zeichen '#' enth&auml;lt, wird alles Nachfolgende als Kommentar
+verstanden. Leerzeichen oder TABs k&ouml;nnen gleiche Probleme
+verursachen. L&ouml;sung: Setze das Password in
+Anf&uuml;hrungszeichen!</P>
+
+
+
+<HR>
+<A HREF="i4lfaq-de-13.html">Next</A>
+<A HREF="i4lfaq-de-11.html">Previous</A>
+<A HREF="i4lfaq-de.html#toc12">Contents</A>
+</BODY>
+</HTML>

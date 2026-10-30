@@ -1,0 +1,1001 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+	<TITLE></TITLE>
+	<META NAME="GENERATOR" CONTENT="《Sogwang 3.0》  (Linux)">
+	<META NAME="CREATED" CONTENT="20091205;10241300">
+	<META NAME="CHANGED" CONTENT="20091205;11063000">
+	<STYLE TYPE="text/css">
+	<!--
+		H3 { margin-bottom: 0.18cm; font-family: "Bitstream Vera Sans", "Arial", "Helvetica", "Lucida", "Geneva", "Helmet", sans-serif, "Andale Sans UI", "Arial Unicode MS", "Lucida Sans Unicode", "Tahoma"; font-size: 12pt }
+		H2 { margin-bottom: 0.18cm; font-family: "Bitstream Vera Sans", "Arial", "Helvetica", "Lucida", "Geneva", "Helmet", sans-serif, "Andale Sans UI", "Arial Unicode MS", "Lucida Sans Unicode", "Tahoma"; font-size: 14pt }
+		TD P.tableheadintable { margin-bottom: 0.05cm; font-weight: bold }
+		TD P.tablecontentintable { font-family: "Bitstream Vera Sans", "Arial", "Helvetica", "Lucida", "Geneva", "Helmet", sans-serif, "Andale Sans UI", "Arial Unicode MS", "Lucida Sans Unicode", "Tahoma" }
+		TD P.howtogetheader { background: #ffffff; border: 1px solid #999999; padding: 0.08cm; font-weight: bold }
+		P.code { margin-top: 0.04cm; margin-bottom: 0.04cm; font-family: "Bitstream Vera Sans Mono", "Cumberland", "Courier New", "Courier", "Lucida Sans Typewriter", "Lucida Typewriter", "Monaco", "Monospaced" }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="ko-KP" DIR="LTR"><DIV style="margin-left: 25">
+<H1><A NAME="bm_id3148522"></A><FONT FACE="Thorndale, serif"><SPAN LANG="en-US">Spreadsheet
+Functions</SPAN></FONT></H1>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">This
+section contains descriptions of the <B>Spreadsheet</B> functions
+together with an example. </SPAN></FONT>
+</P>
+
+<TABLE WIDTH=95% BORDER=1 CELLPADDING=3 CELLSPACING=0 BGCOLOR="#eeeeee">
+	<COL WIDTH=256*>
+	<TR>
+		<TD WIDTH=100%>
+			<P CLASS="howtogetheader"><FONT FACE="청봉, serif"><SPAN LANG="en-US">To
+			access this command... </SPAN></FONT>
+			</P>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><SPAN STYLE="background: #eeeeee"><B>Insert
+			- Function</B> - Category <B>Spreadsheet</B> </SPAN></SPAN></FONT>
+			</P>
+		</TD>
+	</TR>
+</TABLE>
+<P>
+<BR>
+<BR>
+</P>
+<H2><SPAN LANG="en-US">ADDRESS</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Returns
+a cell address (reference) as text, according to the specified row
+and column numbers. You can determine whether the address is
+interpreted as an absolute address (for example, $A$1) or as a
+relative address (as A1) or in a mixed form (A$1 or $A1). You can
+also specify the name of the sheet.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Syntax</SPAN></H3>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">ADDRESS(Row; Column; Abs; &quot;Sheet&quot;)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Row</B>
+represents the row number for the cell reference</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Column</B>
+represents the column number for the cell reference (the number, not
+the letter)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Abs</B>
+determines the type of reference:</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">1:
+absolute ($A$1)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">2: row
+reference type is absolute; column reference is relative (A$1)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">3: row
+(relative); column (absolute) ($A1)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">4:
+relative (A1)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Sheet</B>
+represents the name of the sheet. It must be placed in double quotes.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Example:</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">=ADDRESS(1;1;2;&quot;Sheet2&quot;)
+returns the following: Sheet2.A$1</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">If the
+cell A1 in sheet 2 contains the value -6, you can refer indirectly to
+the referenced cell using a function in B2 by entering
+=ABS(INDIRECT(B2)). The result is the absolute value of the cell
+reference specified in B2, which in this case is 6.</SPAN></FONT></P>
+<H2><A NAME="Section2"></A><A NAME="bm_id3150372"></A><A NAME="bm_id3149721"></A>
+<SPAN LANG="en-US">AREAS</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Returns
+the number of individual ranges that belong to a multiple range. A
+range can consist of contiguous cells or a single cell.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Syntax</SPAN></H3>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">AREAS(Reference)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Reference
+represents the reference to a cell or cell range.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Example</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">=AREAS(A1:B3;F2;G1)
+returns 3, as it is a reference to three cells and/or areas.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">=AREAS(All)
+returns 1 if you have defined an area named All under <B>Data -
+Define Range</B>.</SPAN></FONT></P>
+<H2><A NAME="Section3"></A><A NAME="bm_id3148727"></A><A NAME="bm_id3154680"></A>
+<SPAN LANG="en-US">DDE</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Returns
+the result of a DDE-based link. If the contents of the linked range
+or section changes, the returned value will also change. You must
+reload the spreadsheet or choose <B>Edit - Links</B> to see the
+updated links. Cross-platform links, for example from a
+</SPAN></FONT><FONT FACE="청봉, serif"><SPAN LANG="en-US">Sogwang installation
+running on a Windows machine to a document created on a Linux
+machine, are not allowed.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Syntax</SPAN></H3>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">DDE(&quot;Server&quot;; &quot;File&quot;;
+&quot;Range&quot;; Mode)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Server</B>
+is the name of a server application. </SPAN></FONT><FONT FACE="청봉, serif"><SPAN LANG="en-US">Sogwang applications
+have the server name &quot;Soffice&quot;.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>File</B>
+is the complete file name, including path specification.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Range</B>
+is the area containing the data to be evaluated.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Mode</B>
+is an optional parameter that controls the method by which the DDE
+server converts its data into numbers.</SPAN></FONT></P>
+<TABLE WIDTH=668 BORDER=1 CELLPADDING=2 CELLSPACING=0>
+	<COL WIDTH=72>
+	<COL WIDTH=380>
+	<TR VALIGN=TOP>
+		<TD WIDTH=103>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Mode</B>
+			</SPAN></FONT>
+			</P>
+		</TD>
+		<TD WIDTH=551>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Effect</B>
+			</SPAN></FONT>
+			</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=103>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">0 or
+			missing</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=551>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Number
+			format from the &quot;Default&quot; cell style</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=103>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">1</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=551>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Data
+			are always interpreted in the standard format for US English</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=103>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">2</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=551>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Data
+			are retrieved as text; no conversion to numbers</SPAN></FONT></P>
+		</TD>
+	</TR>
+</TABLE>
+<P><BR><BR>
+</P>
+<H3><SPAN LANG="en-US">Example</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">=DDE(&quot;soffice&quot;;&quot;c:\office\document\data1.sxc&quot;;&quot;sheet1.A1&quot;)
+reads the contents of cell A1 in sheet1 of the </SPAN></FONT><FONT FACE="청봉, serif"><SPAN LANG="en-US">Sogwang Calc
+spreadsheet data1.sxc.</SPAN></FONT></P>
+<P STYLE="margin-top: 0.04cm; margin-bottom: 0.04cm"><FONT FACE="청봉, serif"><SPAN LANG="en-US">=DDE(&quot;soffice&quot;;&quot;c:\office\document\motto.sxw&quot;;&quot;Today's
+motto&quot;) returns a motto in the cell containing this formula.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+First, you must enter a line in the motto.sxw document containing the
+motto text and define it as the first line of a section named Today's
+Motto (in Sogwang Writer under <B>Insert - Section</B>). If the motto is 
+modified (and saved) in the Sogwang Writer
+document, the motto is updated in all Sogwang Calc cells
+in which this DDE link is defined.</SPAN></FONT></P>
+<H2><A NAME="Section4"></A><A NAME="bm_id3153114"></A><A NAME="bm_id3153000"></A>
+<SPAN LANG="en-US">ERRORTYPE</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Returns
+the number corresponding to an <A HREF="../General Information and User Interface Usage/Error Codes in.html">error
+value</A> occurring in a different cell. With the aid of this number,
+you can generate an error message text.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">If
+an error occurs, the function returns a logical or numerical value. </SPAN></FONT>
+</P>
+<TABLE WIDTH=916 BORDER=0 CELLPADDING=5 CELLSPACING=0>
+	<COL WIDTH=33>
+	<COL WIDTH=584>
+	<TR>
+		<TD WIDTH=47>
+			<P><IMG SRC="../../Image/note.png" NAME="graphics1" ALT="Note Icon " ALIGN=BOTTOM WIDTH=33 HEIGHT=42 BORDER=0></P>
+		</TD>
+		<TD WIDTH=849>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">The
+			Status Bar displays the predefined error code from </SPAN></FONT><FONT FACE="청봉, serif"><SPAN LANG="en-US">Sogwang if you
+			click the cell containing the error.</SPAN></FONT></P>
+		</TD>
+	</TR>
+</TABLE>
+<P><BR><BR>
+</P>
+<H3><SPAN LANG="en-US">Syntax</SPAN></H3>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">ERRORTYPE(Reference)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Reference</B>
+contains the address of the cell in which the error occurs.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Example</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">If cell
+A1 displays Err:518, the function =ERRORTYPE(A1) returns the number
+518.</SPAN></FONT></P>
+<H2><A NAME="Section5"></A><A NAME="bm_id3151221"></A><A NAME="bm_id3157989"></A>
+<SPAN LANG="en-US">INDEX</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">INDEX
+returns a sub range, specified by row and column number, or an
+optional range index. Depending on context, INDEX returns a reference
+or content.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Syntax</SPAN></H3>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">INDEX(Reference; Row; Column;
+Range)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Reference</B>
+is a reference, entered either directly or by specifying a range
+name. If the reference consists of multiple ranges, you must enclose
+the reference or range name in parentheses.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Row</B>
+(optional) represents the row index of the reference range, for which
+to return a value. In case of zero (no specific row) all referenced
+rows are returned.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Column</B>
+(optional) represents the column index of the reference range, for
+which to return a value. In case of zero (no specific column) all
+referenced columns are returned.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Range</B>
+(optional) represents the index of the subrange if referring to a
+multiple range.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Example</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">=INDEX(Prices;4;1)
+returns the value from row 4 and column 1 of the database range
+defined in <B>Data - Define</B> as <B>Prices</B>.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">=INDEX(SumX;4;1)
+returns the value from the range <B>SumX</B> in row 4 and column 1 as
+defined in <B>Insert - Names - Define</B>.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">=INDEX(A1:B6;1)
+returns a reference to the first row of A1:B6.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">=INDEX(A1:B6;0;1)
+returns a reference to the first column of A1:B6.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">=INDEX((multi);4;1)
+indicates the value contained in row 4 and column 1 of the (multiple)
+range, which you named under <B>Insert - Names - Set</B> as <B>multi</B>.
+The multiple range may consist of several rectangular ranges, each
+with a row 4 and column 1. If you now want to call the second block
+of this multiple range enter the number 2 as the <B>range</B>
+parameter.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">=INDEX(A1:B6;1;1)
+indicates the value in the upper-left of the A1:B6 range.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">=INDEX((multi);0;0;2)
+returns a reference to the second range of the multiple range.</SPAN></FONT></P>
+<H2><A NAME="Section6"></A><A NAME="bm_id3153181"></A><A NAME="bm_id3153922"></A>
+<SPAN LANG="en-US">INDIRECT</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Returns
+the <B>reference</B> specified by a text string. This function can
+also be used to return the area of a corresponding string.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Syntax</SPAN></H3>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">INDIRECT(Ref)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Ref</B>
+represents a reference to a cell or an area (in text form) for which
+to return the contents.</SPAN></FONT></P>
+<TABLE WIDTH=940 BORDER=0 CELLPADDING=5 CELLSPACING=0>
+	<COL WIDTH=33>
+	<COL WIDTH=584>
+	<TR>
+		<TD WIDTH=48>
+			<P><IMG SRC="../../Image/note.png" NAME="graphics2" ALT="Note Icon " ALIGN=BOTTOM WIDTH=33 HEIGHT=42 BORDER=0></P>
+		</TD>
+		<TD WIDTH=872>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">If
+			you open an Excel spreadsheet that uses indirect addresses
+			calculated from string functions, the sheet addresses will not be
+			translated automatically. For example, the Excel address in
+			INDIRECT(&quot;filename!sheetname&quot;&amp;B1) is not converted
+			into the Calc address in INDIRECT(&quot;filename.sheetname&quot;&amp;B1).</SPAN></FONT></P>
+		</TD>
+	</TR>
+</TABLE>
+<P STYLE="margin-top: 0.05cm; margin-bottom: 0cm"><BR>
+</P>
+<TABLE WIDTH=873 BORDER=0 CELLPADDING=5 CELLSPACING=0>
+	<COL WIDTH=33>
+	<COL WIDTH=420>
+	<TR>
+		<TD WIDTH=47>
+			<P><IMG SRC="../../Image/note.png" NAME="graphics3" ALT="Note Icon " ALIGN=BOTTOM WIDTH=33 HEIGHT=42 BORDER=0></P>
+		</TD>
+		<TD WIDTH=806>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">INDIRECT
+			cannot resolve range names as in INDIRECT(&quot;RangeName&quot;).</SPAN></FONT></P>
+		</TD>
+	</TR>
+</TABLE>
+<P><BR><BR>
+</P>
+<H3><SPAN LANG="en-US">Example</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">=INDIRECT(A1)
+equals 100 if A1 contains C108 as a reference and cell C108 contains
+a value of 100.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">=SUM(INDIRECT(&quot;a1:&quot;
+&amp; ADDRESS(1;3))) totals the cells in the area of A1 up to the
+cell with the address defined by row 1 and column 3. This means that
+area A1:C1 is totaled.</SPAN></FONT></P>
+<H2><A NAME="Section21"></A><A NAME="bm_id3691824"></A><A NAME="bm_id5369426"></A>
+<SPAN LANG="en-US">INFO</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Returns
+specific information about the current working environment. The
+function receives a single text argument and returns data depending
+on that parameter.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Syntax</SPAN></H3>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">INFO(&quot;Type&quot;)</SPAN></FONT></P>
+<P STYLE="margin-top: 0.04cm; margin-bottom: 0.04cm"><FONT FACE="청봉, serif"><SPAN LANG="en-US">The
+following table lists the values for the text parameter &quot;Type&quot;
+and the return values of the INFO function.</SPAN></FONT></P>
+<TABLE WIDTH=635 BORDER=1 CELLPADDING=2 CELLSPACING=0>
+	<COL WIDTH=89>
+	<COL WIDTH=538>
+	<TR VALIGN=TOP>
+		<TD WIDTH=88>
+			<P CLASS="tableheadintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Value
+			for &quot;Type&quot;</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=533>
+			<P CLASS="tableheadintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Return
+			value</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=88>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">&quot;osversion&quot;</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=533>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Always &quot;Windows
+			(32-bit) NT 5.01&quot;, for compatibility reasons</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=88>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">&quot;system&quot;</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=533>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">The type of the
+			operating system. <BR>&quot;WNT&quot; for Microsoft Windows
+			<BR>&quot;LINUX&quot; for Linux <BR>&quot;SOLARIS&quot; for
+			Solaris</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=88>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">&quot;release&quot;</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=533>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">The product
+			release identifier, for example &quot;680m5(Build:9011)&quot;</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=88>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">&quot;numfile&quot;</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=533>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Always 1, for
+			compatibility reasons</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=88>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">&quot;recalc&quot;</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=533>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Current formula
+			recalculation mode, either &quot;Automatic&quot; or &quot;Manual&quot;
+			(localized into </SPAN>Sogwang
+			<SPAN LANG="en-US">language)</SPAN></FONT></P>
+		</TD>
+	</TR>
+</TABLE>
+<P STYLE="margin-top: 0.05cm; margin-bottom: 0cm"><BR>
+</P>
+<TABLE WIDTH=945 BORDER=0 CELLPADDING=5 CELLSPACING=0>
+	<COL WIDTH=33>
+	<COL WIDTH=584>
+	<TR>
+		<TD WIDTH=40>
+			<P><IMG SRC="../../Image/note.png" NAME="graphics4" ALT="Note Icon " ALIGN=BOTTOM WIDTH=33 HEIGHT=42 BORDER=0></P>
+		</TD>
+		<TD WIDTH=885>
+			<P STYLE="margin-top: 0.04cm"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Other
+			spreadsheet applications may accept localized values for the Type
+			parameter, but Sogwang Calc	will only accept the English values.</SPAN></FONT></P>
+		</TD>
+	</TR>
+</TABLE>
+<P><BR><BR>
+</P>
+<H3><SPAN LANG="en-US">Example</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">=INFO(&quot;release&quot;)
+returns the product release number of the </SPAN></FONT><FONT FACE="청봉, serif"><SPAN LANG="en-US">Sogwang in use.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">=INFO(D5)
+with cell D5 containing a text string system returns the operation
+system type.</SPAN></FONT></P>
+<H2><A NAME="Section7"></A><A NAME="bm_id3154818"></A><A NAME="bm_id3156378"></A>
+<SPAN LANG="en-US">COLUMN</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Returns
+the column number of a cell reference. If the reference is a cell the
+column number of the cell is returned; if the parameter is a cell
+area, the corresponding column numbers are returned in a single-row
+<A HREF="Array Functions.html">array</A>
+if the formula is entered <A HREF="Spreadsheet Functions/Handling of Empty Cells.html">as
+an array formula</A>. If the COLUMN function with an area reference
+parameter is not used for an array formula, only the column number of
+the first cell within the area is determined.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Syntax</SPAN></H3>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">COLUMN(Reference)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Reference</B>
+is the reference to a cell or cell area whose first column number is
+to be found.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">If no
+reference is entered, the column number of the cell in which the
+formula is entered is found. </SPAN></FONT><FONT FACE="청봉, serif"><SPAN LANG="en-US">Sogwang Calc
+automatically sets the reference to the current cell.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Example</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">=COLUMN(A1)
+equals 1. Column A is the first column in the table.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">=COLUMN(C3:E3)
+equals 3. Column C is the third column in the table.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">=COLUMN(D3:G10)
+returns 4 because column D is the fourth column in the table and the
+COLUMN function is not used as an array formula. (In this case, the
+first value of the array is always used as the result.)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">{=COLUMN(B2:B7)}
+and =COLUMN(B2:B7) both return 2 because the reference only contains
+column B as the second column in the table. Because single-column
+areas have only one column number, it does not make a difference
+whether or not the formula is used as an array formula.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">=COLUMN()
+returns 3 if the formula was entered in column C.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">{=COLUMN(Rabbit)}
+returns the single-row array (3, 4) if &quot;Rabbit&quot; is the
+named area (C1:D3).</SPAN></FONT></P>
+<H2><A NAME="Section8"></A><A NAME="bm_id3154643"></A><A NAME="bm_id3156134"></A>
+<SPAN LANG="en-US">COLUMNS</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Returns
+the number of columns in the given reference.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Syntax</SPAN></H3>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">COLUMNS(Array)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Array</B>
+is the reference to a cell range whose total number of columns is to
+be found. The argument can also be a single cell.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Example</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">=COLUMNS(B5)
+returns 1 because a cell only contains one column.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">=COLUMNS(A1:C5)
+equals 3. The reference comprises three columns.</SPAN></FONT></P>
+<P STYLE="margin-top: 0.04cm; margin-bottom: 0.04cm"><FONT FACE="청봉, serif"><SPAN LANG="en-US">=COLUMNS(Rabbit)
+returns 2 if Rabbit is the named range (C1:D3).</SPAN></FONT></P>
+<H2><SPAN LANG="en-US">VLOOKUP</SPAN></H2>
+<P STYLE="margin-top: 0.04cm; margin-bottom: 0.04cm"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Vertical
+search with reference to adjacent cells to the right. This function
+checks if a specific value is contained in the first column of an
+array. The function then returns the value in the same row of the
+column named by Index.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+If the SortOrder parameter is omitted or set to TRUE or one, it is assumed 
+that the data is sorted in ascending order.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+In this case, if the exact SearchCriterion is not found, the last value that 
+is smaller than the criterion  will be returned. 
+&nbsp;&nbsp;&nbsp;
+If SortOrder is set to FALSE or zero, an exact match must be found, 
+otherwise the error <B>Error: Value Not Available</B> will be the result. Thus with
+a value of zero the data does not need to be sorted in ascending order.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">The
+search supports <A HREF="../../Common Help Topics/Search_Repl/list.html">regular
+expressions</A>. You can enter &quot;all.*&quot;, for example to find
+the first location of &quot;all&quot; followed by any characters. If
+you want to search for a text that is also a regular expression, you
+must precede every character with a \ character. You can switch the
+automatic evaluation of regular expression on and off in <A HREF="../General Information and User Interface Usage/Error Codes in/Calculate.html">Sogwang Office - Reference - Sogwang Calc - Calculate</A>. </SPAN></FONT>
+</P>
+<H3><SPAN LANG="en-US">Syntax</SPAN></H3>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">=VLOOKUP(SearchCriterion; Array;
+Index; SortOrder)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>SearchCriterion</B>
+is the value searched for in the first column of the array.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Array</B>
+is the reference, which is to comprise at least two columns.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Index</B>
+is the number of the column in the array that contains the value to
+be returned. The first column has the number 1.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>SortOrder</B>
+is an optional parameter that indicates whether the first column in
+the array is sorted in ascending order. Enter the Boolean value FALSE
+or zero if the first column is not sorted in ascending order. Sorted
+columns can be searched much faster and the function always returns a
+value, even if the search value was not matched exactly, if it is
+between the lowest and highest value of the sorted list. In unsorted
+lists, the search value must be matched exactly. Otherwise the
+function will return this message: <B>Error: Value Not Available</B>.</SPAN></FONT></P>
+<P><A NAME="empty_cells"></A><FONT FACE="청봉, serif"><SPAN LANG="en-US"><A HREF="Spreadsheet Functions/Handling of Empty Cells.html">Handling
+of Empty Cells</A> </SPAN></FONT>
+</P>
+<H3><SPAN LANG="en-US">Example</SPAN></H3>
+<P STYLE="margin-top: 0.04cm; margin-bottom: 0.04cm"><FONT FACE="청봉, serif"><SPAN LANG="en-US">You
+want to enter the number of a dish on the menu in cell A1, and the
+name of the dish is to appear as text in the neighboring cell (B1)
+immediately. The Number to Name assignment is contained in the
+D1:E100 array. D1 contains 100, E1 contains the name Vegetable Soup,
+and so forth, for 100 menu items. The numbers in column D are sorted
+in ascending order; thus, the optional <FONT FACE="Bitstream Vera Sans Mono, Cumberland, Courier New, Courier, Lucida Sans Typewriter, Lucida Typewriter, Monaco, Monospaced">SortOrder</FONT>
+parameter is not necessary.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Enter
+the following formula in B1:</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">=VLOOKUP(A1;D1:E100;2)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">As soon
+as you enter a number in A1 B1 will show the corresponding text
+contained in the second column of reference D1:E100. Entering a
+nonexistent number displays the text with the next number down. To
+prevent this, enter FALSE as the last parameter in the formula so
+that an error message is generated when a nonexistent number is
+entered.</SPAN></FONT></P>
+<H2><A NAME="Section10"></A><A NAME="bm_id3153905"></A><A NAME="bm_id3154693"></A>
+<SPAN LANG="en-US">SHEET</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Returns
+the sheet number of a reference or a string representing a sheet
+name. If you do not enter any parameters, the result is the sheet
+number of the spreadsheet containing the formula.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Syntax</SPAN></H3>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">SHEET(Reference)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Reference</B>
+is optional and is the reference to a cell, an area, or a sheet name
+string.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Example</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">=SHEET(Sheet2.A1)
+returns 2 if Sheet2 is the second sheet in the spreadsheet document.</SPAN></FONT></P>
+<H2><A NAME="Section11"></A><A NAME="bm_id3148829"></A><A NAME="bm_id3150524"></A>
+<SPAN LANG="en-US">SHEETS</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Determines
+the number of sheets in a reference. If you do not enter any
+parameters, it returns the number of sheets in the current document.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Syntax</SPAN></H3>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">SHEETS(Reference)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Reference</B>
+is the reference to a sheet or an area. This parameter is optional.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Example</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">=SHEETS(Sheet1.A1:Sheet3.G12)
+returns 3 if Sheet1, Sheet2, and Sheet3 exist in the sequence
+indicated.</SPAN></FONT></P>
+<H2><A NAME="Section12"></A><A NAME="bm_id3158407"></A><A NAME="bm_id3154210"></A>
+<SPAN LANG="en-US">MATCH</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Returns
+the relative position of an item in an array that matches a specified
+value. The function returns the position of the value found in the
+lookup_array as a number.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Syntax</SPAN></H3>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">MATCH(SearchCriterion;
+LookupArray; Type)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>SearchCriterion</B>
+is the value which is to be searched for in the single-row or
+single-column array.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>LookupArray</B>
+is the reference searched. A lookup array can be a single row or
+column, or part of a single row or column.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Type</B>
+may take the values 1, 0, or -1. If Type = 1 or if this optional
+parameter is missing, it is assumed that the first column of the
+search array is sorted in ascending order. If Type = -1 it is assumed
+that the column in sorted in descending order. This corresponds to
+the same function in Microsoft Excel.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">If Type
+= 0, only exact matches are found. If the search criterion is found
+more than once, the function returns the index of the first matching
+value. Only if Type = 0 can you search for regular expressions.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">If Type
+= 1 or the third parameter is missing, the index of the last value
+that is smaller or equal to the search criterion is returned. This
+applies even when the search array is not sorted. For Type = -1, the
+first value that is larger or equal is returned.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">The
+search supports <A HREF="../../Common Help Topics/Search_Repl/list.html">regular
+expressions</A>. You can enter &quot;all.*&quot;, for example to find
+the first location of &quot;all&quot; followed by any characters. If
+you want to search for a text that is also a regular expression, you
+must precede every character with a \ character. You can switch the
+automatic evaluation of regular expression on and off in <A HREF="../General Information and User Interface Usage/Error Codes in.html">Sogwang Office - Reference - Sogwang
+Calc -
+Calculate</A>. </SPAN></FONT>
+</P>
+<H3><SPAN LANG="en-US">Example</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">=MATCH(200;D1:D100)
+searches the area D1:D100, which is sorted by column D, for the value
+200. As soon as this value is reached, the number of the row in which
+it was found is returned. If a higher value is found during the
+search in the column, the number of the previous row is returned.</SPAN></FONT></P>
+<H2><A NAME="Section13"></A><A NAME="bm_id3158430"></A><A NAME="bm_id3148926"></A>
+<SPAN LANG="en-US">OFFSET</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Returns
+the value of a cell offset by a certain number of rows and columns
+from a given reference point.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Syntax</SPAN></H3>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">OFFSET(Reference; Rows; Columns;
+Height; Width)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Reference</B>
+is the reference from which the function searches for the new
+reference.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Rows</B>
+is the number of rows by which the reference was corrected up
+(negative value) or down.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Columns</B>
+(optional) is the number of columns by which the reference was
+corrected to the left (negative value) or to the right.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Height</B>
+(optional) is the vertical height for an area that starts at the new
+reference position.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Width</B>
+(optional) is the horizontal width for an area that starts at the new
+reference position.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Arguments
+<B>Rows</B> and <B>Columns</B> must not lead to zero or negative
+start row or column</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Arguments
+<B>Height</B> and <B>Width</B> must not lead to zero or negative
+count of rows or columns.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">In
+the </SPAN></FONT><FONT FACE="청봉, serif"><SPAN LANG="en-US">Sogwang Calc
+functions, parameters marked as &quot;optional&quot; can be left out
+only when no parameter follows. 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+For example, in a function with four
+parameters, where the last two parameters are marked as &quot;optional&quot;,
+you can leave out parameter 4 or parameters 3 and 4, but you cannot
+leave out parameter 3 alone. </SPAN></FONT>
+</P>
+<H3><SPAN LANG="en-US">Example</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">=OFFSET(A1;2;2)
+returns the value in cell C3 (A1 moved by two rows and two columns
+down). If C3 contains the value 100 this function returns the value
+100.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">=OFFSET(B2:C3;1;1)
+returns a reference to B2:C3 moved down by 1 row and one column to
+the right (C3:D4).</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">=OFFSET(B2:C3;-1;-1)
+returns a reference to B2:C3 moved up by 1 row and one column to the
+left (A1:B2).</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">=OFFSET(B2:C3;0;0;3;4)
+returns a reference to B2:C3 resized to 3 rows and 4 columns (B2:E4).</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">=OFFSET(B2:C3;1;0;3;4)
+returns a reference to B2:C3 moved down by one row resized to 3 rows
+and 4 columns (B2:E4).</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">=SUM(OFFSET(A1;2;2;5;6))
+determines the total of the area that starts in cell C3 and has a
+height of 5 rows and a width of 6 columns (area=C3:H7).</SPAN></FONT></P>
+<H2><A NAME="Section14"></A><A NAME="bm_id3159273"></A><A NAME="bm_id3152877"></A>
+<SPAN LANG="en-US">LOOKUP</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Returns
+the contents of a cell either from a one-row or one-column range.
+Optionally, the assigned value (of the same index) is returned in a
+different column and row. As opposed to VLOOKUP and HLOOKUP, search
+and result vector may be at different positions; they do not have to
+be adjacent. Additionally, the search vector for the LOOKUP must be
+sorted ascending, otherwise the search will not return any usable
+results.</SPAN></FONT></P>
+<TABLE WIDTH=945 BORDER=0 CELLPADDING=5 CELLSPACING=0>
+	<COL WIDTH=33>
+	<COL WIDTH=584>
+	<TR>
+		<TD WIDTH=46>
+			<P><IMG SRC="../../Image/note.png" NAME="graphics5" ALT="Note Icon " ALIGN=BOTTOM WIDTH=33 HEIGHT=42 BORDER=0></P>
+		</TD>
+		<TD WIDTH=879>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">If
+			LOOKUP cannot find the search criterion, it matches the largest
+			value in the search vector that is less than or equal to the
+			search criterion.</SPAN></FONT></P>
+		</TD>
+	</TR>
+</TABLE>
+<P><BR><BR>
+</P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">The
+search supports <A HREF="../../Common Help Topics/Search_Repl/list.html">regular
+expressions</A>. You can enter &quot;all.*&quot;, for example to find
+the first location of &quot;all&quot; followed by any characters. If
+you want to search for a text that is also a regular expression, you
+must precede every character with a \ character. You can switch the
+automatic evaluation of regular expression on and off in <A HREF="../General Information and User Interface Usage/Error Codes in.html">Sogwang Office - Reference - Sogwang Office
+Calc - Calculate</A>. </SPAN></FONT>
+</P>
+<H3><SPAN LANG="en-US">Syntax</SPAN></H3>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">LOOKUP(SearchCriterion;
+SearchVector; ResultVector)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>SearchCriterion</B>
+is the value to be searched for; entered either directly or as a
+reference.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>SearchVector</B>
+is the single-row or single-column area to be searched.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>ResultVector</B>
+is another single-row or single-column range from which the result of
+the function is taken. The result is the cell of the result vector
+with the same index as the instance found in the search vector.</SPAN></FONT></P>
+<P><A NAME="empty_cells1"></A><FONT FACE="청봉, serif"><SPAN LANG="en-US"><A HREF="Spreadsheet Functions/Handling of Empty Cells.html">Handling
+of Empty Cells</A> </SPAN></FONT>
+</P>
+<H3><SPAN LANG="en-US">Example</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">=LOOKUP(A1;D1:D100;F1:F100)
+searches the corresponding cell in range D1:D100 for the number you
+entered in A1. 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+For the instance found, the index is determined, for
+example, the 12th cell in this range. Then, the contents of the 12th
+cell are returned as the value of the function (in the result
+vector).</SPAN></FONT></P>
+<H2><A NAME="Section15"></A><A NAME="bm_id3149425"></A><A NAME="bm_id3154342"></A>
+<SPAN LANG="en-US">STYLE</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Applies
+a style to the cell containing the formula. After a set amount of
+time, another style can be applied. This function always returns the
+value 0, allowing you to add it to another function without changing
+the value. Together with the CURRENT function you can apply a color
+to a cell regardless of the value. For example:
+=...+STYLE(IF(CURRENT()&gt;3;&quot;red&quot;;&quot;green&quot;))
+applies the style &quot;red&quot; to the cell if the value is greater
+than 3, otherwise the style &quot;green&quot; is applied. Both cell
+formats have to be defined beforehand.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Syntax</SPAN></H3>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">STYLE(&quot;Style&quot;; Time;
+&quot;Style2&quot;)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Style</B>
+is the name of a cell style assigned to the cell. Style names must be
+entered in quotation marks.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Time</B>
+is an optional time range in seconds. If this parameter is missing
+the style will not be changed after a certain amount of time has
+passed.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Style2</B>
+is the optional name of a cell style assigned to the cell after a
+certain amount of time has passed. If this parameter is missing
+&quot;Default&quot; is assumed.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">In
+the </SPAN></FONT><FONT FACE="청봉, serif"><SPAN LANG="en-US">Sogwang Calc
+functions, parameters marked as &quot;optional&quot; can be left out
+only when no parameter follows. 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+For example, in a function with four
+parameters, where the last two parameters are marked as &quot;optional&quot;,
+you can leave out parameter 4 or parameters 3 and 4, but you cannot
+leave out parameter 3 alone. </SPAN></FONT>
+</P>
+<H3><SPAN LANG="en-US">Example</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">=STYLE(&quot;Invisible&quot;;60;&quot;Default&quot;)
+formats the cell in transparent format for 60 seconds after the
+document was recalculated or loaded, then the Default format is
+assigned. Both cell formats have to be defined beforehand.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Since
+STYLE() has a numeric return value of zero, this return value gets
+appended to a string. This can be avoided using T() as in the
+following example </SPAN></FONT>
+</P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">=&quot;Text&quot;&amp;T(STYLE(&quot;myStyle&quot;))
+</SPAN></FONT>
+</P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">See also
+CURRENT() for another example.</SPAN></FONT></P>
+<H2><A NAME="Section16"></A><A NAME="bm_id3150430"></A><A NAME="bm_id3153947"></A>
+<SPAN LANG="en-US">CHOOSE</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Uses an
+index to return a value from a list of up to 30 values.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Syntax</SPAN></H3>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">CHOOSE(Index; Value1; ...;
+Value30)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Index</B>
+is a reference or number between 1 and 30 indicating which value is
+to be taken from the list.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Value1...Value30</B>
+is the list of values entered as a reference to a cell or as
+individual values.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Example</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">=CHOOSE(A1;B1;B2;B3;&quot;Today&quot;;&quot;Yesterday&quot;;&quot;Tomorrow&quot;),
+for example, returns the contents of cell B2 for A1 = 2; for A1 = 4,
+the function returns the text &quot;Today&quot;.</SPAN></FONT></P>
+<H2><A NAME="Section17"></A><A NAME="bm_id3151001"></A><A NAME="bm_id3149481"></A>
+<SPAN LANG="en-US">HLOOKUP</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Searches
+for a value and reference to the cells below the selected area. This
+function verifies if the first row of an array contains a certain
+value. The function returns then the value in a row of the array,
+named in the <B>Index</B>, in the same column.</SPAN></FONT></P>
+<P><A NAME="regulaer3"></A><FONT FACE="청봉, serif"><SPAN LANG="en-US">The
+search supports <A HREF="../../Common Help Topics/Search_Repl/list.html">regular
+expressions</A>. You can enter &quot;all.*&quot;, for example to find
+the first location of &quot;all&quot; followed by any characters. If
+you want to search for a text that is also a regular expression, you
+must precede every character with a \ character. You can switch the
+automatic evaluation of regular expression on and off in <A HREF="../General Information and User Interface Usage/Error Codes in.html">Sogwang Office - Reference - Sogwang Office
+Calc -
+Calculate</A>. </SPAN></FONT>
+</P>
+<H3><SPAN LANG="en-US">Syntax</SPAN></H3>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">HLOOKUP(SearchCriteria; Array;
+Index; Sorted)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">See
+also:VLOOKUP (columns and rows are exchanged)</SPAN></FONT></P>
+<P><A NAME="empty_cells2"></A><FONT FACE="청봉, serif"><SPAN LANG="en-US"><A HREF="Spreadsheet Functions/Handling of Empty Cells.html">Handling
+of Empty Cells</A> </SPAN></FONT>
+</P>
+<H2><A NAME="Section18"></A><A NAME="bm_id3147321"></A><A NAME="bm_id3147333"></A>
+<SPAN LANG="en-US">ROW</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Returns
+the row number of a cell reference. If the reference is a cell, it
+returns the row number of the cell. If the reference is a cell range,
+it returns the corresponding row numbers in a one-column <A HREF="Array Functions.html">Array</A>
+if the formula is entered <A HREF="Array Functions.html">as
+an array formula</A>. If the ROW function with a range reference is
+not used in an array formula, only the row number of the first range
+cell will be returned.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Syntax</SPAN></H3>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">ROW(Reference)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Reference</B>
+is a cell, an area, or the name of an area.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">If you
+do not indicate a reference, the row number of the cell in which the
+formula is entered will be found. </SPAN></FONT><FONT FACE="청봉, serif"><SPAN LANG="en-US">Sogwang Calc
+automatically sets the reference to the current cell.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Example</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">=ROW(B3)
+returns 3 because the reference refers to the third row in the table.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">{=ROW(D5:D8)}
+returns the single-column array (5, 6, 7, 8) because the reference
+specified contains rows 5 through 8.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">=ROW(D5:D8)
+returns 5 because the ROW function is not used as array formula and
+only the number of the first row of the reference is returned.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">{=ROW(A1:E1)}
+and =ROW(A1:E1) both return 1 because the reference only contains row
+1 as the first column in the table. (Because single-row areas only
+have one row number it does not make any difference whether or not
+the formula is used as an array formula.)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">=ROW()
+returns 3 if the formula was entered in row 3.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">{=ROW(Rabbit)}
+returns the single-column array (1, 2, 3) if &quot;Rabbit&quot; is
+the named area (C1:D3).</SPAN></FONT></P>
+<H2><A NAME="Section19"></A><A NAME="bm_id3145772"></A><A NAME="bm_id3150667"></A>
+<SPAN LANG="en-US">ROWS</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Returns
+the number of rows in a reference or array.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Syntax</SPAN></H3>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">ROWS(Array)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Array</B>
+is the reference or named area whose total number of rows is to be
+determined.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Example</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">=Rows(B5)
+returns 1 because a cell only contains one row.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">=ROWS(A10:B12)
+returns 3.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">=ROWS(Rabbit)
+returns 3 if &quot;Rabbit&quot; is the named area (C1:D3).</SPAN></FONT></P>
+<H2><A NAME="Section20"></A><A NAME="bm_id8036439"></A><A NAME="bm_id9959410"></A>
+<SPAN LANG="en-US">HYPERLINK</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">When you
+click a cell that contains the HYPERLINK function, the hyperlink
+opens.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">If you
+use the optional <B>cell text</B> parameter, the formula locates the
+URL, and then displays the text.</SPAN></FONT></P>
+<TABLE WIDTH=944 BORDER=0 CELLPADDING=5 CELLSPACING=0>
+	<COL WIDTH=40>
+	<COL WIDTH=577>
+	<TR>
+		<TD WIDTH=46>
+			<P><IMG SRC="../../Image/tip.png" NAME="graphics6" ALT="Tip Icon " ALIGN=BOTTOM WIDTH=40 HEIGHT=43 BORDER=0></P>
+		</TD>
+		<TD WIDTH=878>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">To
+			open a hyperlinked cell with the keyboard, select the cell, press
+			F2 to enter the Edit mode, move the cursor in front of the
+			hyperlink, press Shift+F10, and then choose <B>Open Hyperlink</B>.</SPAN></FONT></P>
+		</TD>
+	</TR>
+</TABLE>
+<P><BR><BR>
+</P>
+<H3><SPAN LANG="en-US">Syntax</SPAN></H3>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">HYPERLINK(&quot;URL&quot;) or
+HYPERLINK(&quot;URL&quot;; &quot;CellText&quot;)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>URL</B>
+specifies the link target. The optional <B>CellText</B> parameter is
+the text that is displayed in the cell and the result of the
+function. If the <B>CellText</B> parameter is not specified, the <B>URL</B>
+is displayed in the cell text and in the result of the function.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Example</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">=HYPERLINK(&quot;http://www.example&quot;)
+displays the text &quot;http://www.example&quot; in the cell and
+executes the hyperlink http://www.example.org when clicked.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">=HYPERLINK(&quot;http://www.example&quot;;&quot;Click
+here&quot;) displays the text &quot;Click here&quot; in the cell and
+executes the hyperlink http://www.example when clicked.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">=HYPERLINK($B4)
+where cell B4 contains http://www.example. The function adds
+http://www.example to the URL of the hyperlink cell and returns
+the same text which is used as formula result.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">=HYPERLINK(&quot;http://www.example&quot;;&quot;Click
+&quot;) &amp; &quot;example.org&quot; displays the text Click
+example.org in the cell and executes the hyperlink
+http://www.example when clicked.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">=HYPERLINK(&quot;#Sheet1.A1&quot;;&quot;Go
+to top&quot;) displays the text Go to top and jumps to cell Sheet1.A1
+in this document.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">=HYPERLINK(&quot;file:///C:/writer.odt#Specification&quot;;&quot;Go
+to Writer bookmark&quot;) displays the text Go to Writer bookmark,
+loads the specified text document and jumps to bookmark
+&quot;Specification&quot;.</SPAN></FONT></P>
+<H2><A NAME="getpivotdata"></A><A NAME="bm_id7682424"></A><A NAME="bm_id897854"></A>
+<SPAN LANG="en-US">GETPIVOTDATA</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">The
+GETPIVOTDATA function returns a result value from a DataPilot table.
+The value is addressed using field and item names, so it remains
+valid if the layout of the DataPilot table changes.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Syntax</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Two
+different syntax definitions can be used:</SPAN></FONT></P>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">GETPIVOTDATA(TargetField;
+DataPilot; [ Field 1; Item 1; ... ])</SPAN></FONT></P>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">GETPIVOTDATA(DataPilot;
+Constraints)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">The
+second syntax is assumed if exactly two parameters are given, of
+which the first parameter is a cell or cell range reference. The
+first syntax is assumed in all other cases. The Function Wizard shows
+the first syntax.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">First Syntax</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>TargetField</B>
+is a string that selects one of the DataPilot table's data fields.
+The string can be the name of the source column, or the data field
+name as shown in the table (like &quot;Sum - Sales&quot;).</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>DataPilot</B>
+is a reference to a cell or cell range that is positioned within a
+DataPilot table or contains a DataPilot table.
+&nbsp;&nbsp;&nbsp; 
+If the cell range contains several DataPilot tables, the table that 
+was created last is used.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">If no
+<B>Field n / Item n</B> pairs are given, the grand total is returned.
+Otherwise, each pair adds a constraint that the result must satisfy.
+<B>Field n</B> is the name of a field from the DataPilot table. <B>Item
+n</B> is the name of an item from that field.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">If the
+DataPilot table contains only a single result value that fulfills all
+of the constraints, or a subtotal result that summarizes all matching
+values, that result is returned. If there is no matching result, or
+several ones without a subtotal for them, an error is returned. These
+conditions apply to results that are included in the DataPilot table.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">If the
+source data contains entries that are hidden by settings of the
+DataPilot table, they are ignored. The order of the Field/Item pairs
+is not significant. Field and item names are not case-sensitive.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">If no
+constraint for a page field is given, the field's selected value is
+implicitly used. If a constraint for a page field is given, it must
+match the field's selected value, or an error is returned. Page
+fields are the fields at the top left of a DataPilot table, populated
+using the &quot;Page Fields&quot; area of the DataPilot Layout
+dialog. From each page field, an item (value) can be selected, which
+means only that item is included in the calculation.</SPAN></FONT></P>
+<P STYLE="margin-top: 0.04cm; margin-bottom: 0.04cm"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Subtotal
+values from the DataPilot table are only used if they use the
+function &quot;auto&quot; (except when specified in the constraint,
+see <FONT FACE="Bitstream Vera Sans Mono, Cumberland, Courier New, Courier, Lucida Sans Typewriter, Lucida Typewriter, Monaco, Monospaced">Second
+Syntax</FONT> below).</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Second Syntax</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>DataPilot</B>
+has the same meaning as in the first syntax.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Constraints</B>
+is a space-separated list. Entries can be quoted (single quotes). The
+whole string must be enclosed in quotes (double quotes), unless you
+reference the string from another cell.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">One of
+the entries can be the data field name. The data field name can be
+left out if the DataPilot table contains only one data field,
+otherwise it must be present. </SPAN></FONT>
+</P>
+<P STYLE="margin-top: 0.04cm; margin-bottom: 0.04cm"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Each
+of the other entries specifies a constraint in the form Field[Item]
+(with literal characters [ and ]), or only Item
+if the item name is unique within all fields that are used in the
+DataPilot table.</FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><SPAN STYLE="font-weight: medium">A
+function name can be added in the form </SPAN><B>Field[Item;Function]</B><SPAN STYLE="font-weight: medium">,
+which will cause the constraint to match only subtotal values which
+use that function. The possible function names are Sum, Count,
+Average, Max, Min, Product, Count (Numbers only), StDev (Sample),
+StDevP (Population), Var (Sample), and VarP (Population),
+case-insensitive.</SPAN></SPAN></FONT></P>
+
+</DIV></BODY>
+</HTML>
+

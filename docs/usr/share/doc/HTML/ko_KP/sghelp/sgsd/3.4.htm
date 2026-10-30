@@ -1,0 +1,107 @@
+﻿<html dir='ltr'>
+	<head>
+		<META http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+		<title>인쇄에서 발생하는 문제의 해결</title>
+		<link rel='stylesheet' type='text/css' href='../css/main.css'/>
+		<script type='text/javascript' language='Javascript' src='../js/mexpcol.js'></script>
+		<script type='text/javascript' language='JavaScript' src='../js/glossary.js'></script>
+	</head>
+	<body>
+		<h1>&nbsp;<img align="absbottom" src="../image/external_images/crystal/svtools/res/new_doc.png"/>&nbsp;인쇄에서 발생하는 문제의 해결</h1>
+		<p id='ExpandAllLine' class='ExpFav'>
+			<a href='#' onClick='ExpandAll()' onKeyPress='ExpandAll()' class='DropDown'>
+				<img id='picHeader' border='0' src='../image/image/common/expandtri.gif' alt='모두 표시'>
+				<span id='ExpandAll'>모두 표시</span>
+			</a>
+		</p>
+		<h2>자료가 요구대로 인쇄되지 않는 경우</h2>
+		<p><b class="bterm">표용지의 일부만 인쇄되는 경우</b></p>
+			<p><b class="bterm">인쇄범위가 정의되였는가를 확인:</b>	표용지에 <a href="#" class="glossary" onClick="AppendPopup(this,'IDG_PRINTAREA')" onKeyPress="AppendPopup(this,'IDG_PRINTAREA')">인쇄범위</a>가 있으면 그 인쇄범위만 인쇄됩니다. 표용지에 인쇄범위가 있는가를 확인하려면 <b class="bterm">&lt;보기&gt;</b>차림표에서 <b class="bterm">&lt;페지 가르기 미리보기&gt;</b>를 찰칵합니다.
+			<p>흰색 배경에 나타나는 표용지령역이 인쇄될 범위입니다.</p></p>
+			<p>인쇄범위를 제거하려면 <b class="bterm">&lt;서식&gt;</b>차림표에서 <b class="bterm">&lt;인쇄범위&gt;</b>를 찰칵하고 <b class="bterm">&lt;제거&gt;</b>를 찰칵합니다.</p>
+		<p><b class="bterm">행이나 렬이 너무 많이 인쇄되는 경우</b></p>
+			<p>인쇄범위를 정의합니다.</p>
+				<p>
+					<a href='#' class='DropDown' onClick='Outline2()' onKeyPress='Outline2()'>
+					<img border='0' src='../image/image/common/blueup.gif' alt='표시'>방법</a>
+				</p>
+				<div id='ExpCol' class='collapsed' border='0'>
+					<ol>
+						<li><b class="bterm">&lt;보기&gt;</b>차림표에서 <b class="bterm">&lt;페지 가르기 미리보기&gt;</b>를 찰칵합니다.</li>
+						<li>인쇄하려는 령역을 선택합니다.</li>
+						<li><b class="bterm">&lt;서식&gt;</b>차림표에서 <b class="bterm">&lt;인쇄범위&gt;</b>의 <b class="bterm">&lt;정의&gt;</b>를 찰칵합니다.</li>
+						<li>문서를 보관하면 인쇄범위도 보관됩니다.</li>
+					</ol>
+				</div>
+		<h2>인쇄모양이 정확하지 않은 경우</h2>
+		<p><b class="bterm">머리부나 바닥부가 요구하는대로 인쇄되지 않는 경우</b></p>
+			<p>제공된 몇가지 머리부 및 바닥부중에서 선택할수도 있고 머리부나 바닥부를 직접 만들수도 있습니다. 머리부 및 바닥부에는 도형이나 특정세포에 대한 련결이 포함될수 없습니다.</p>
+		<p><b class="bterm">머리부 및 바닥부의 여백이 맞지 않는 경우</b></p>
+			<p><b class="bterm">왼쪽 및 오른쪽여백 사용:</b>   머리부 및 바닥부의 왼쪽/오른쪽여백은 페지의 왼쪽/오른쪽여백에 관계없이 사용자가 설정하여줍니다. <b class="bterm">&lt;페지격식&gt;</b>대화창의 <b class="bterm">&lt;머리부&gt;</b>표쪽이나 <b class="bterm">&lt;바닥부&gt;</b>표쪽에서 <b class="bterm">&lt;왼쪽 여백&gt;</b>본문칸과 <b class="bterm">&lt;오른쪽 여백&gt;</b>본문칸에 값을 입력하여 머리부나 바닥부의 여백을 조절할수 있습니다.</p>
+			<p><b class="bterm">머리부 및 바닥부의 간격, 높이조절:</b>   페지의 웃쪽, 아래쪽과 머리부 및 바닥부사이의 간격을 조절할수 있습니다. 또한 표용지의 자료와 머리부 및 바닥부사이의 간격도 변경할수 있습니다. <b class="bterm">&lt;서식&gt;</b>차림표에서 <b class="bterm">&lt;페지&gt;</b>를 찰칵한 다음 <b class="bterm">&lt;페지격식&gt;</b>대화창의 <b class="bterm">&lt;머리부&gt;</b>표쪽이나 <b class="bterm">&lt;바닥부&gt;</b>표쪽에서 간격과 높이를 조절합니다.</p>
+		<h2>페지번호가 인쇄되지 않은 경우</h2>
+		<p><b class="bterm">일부 렬과 행이 잘못된 페지에 인쇄된 경우</b></p>
+			<p>렬너비, 행높이, 페지여백, 페지가르기 등에 따라 한 페지에 인쇄되는 행과 렬의 개수가 결정됩니다.</p>
+			<p><b class="bterm">여백 줄이기:</b>   일부 렬이나 행이 다음페지에 인쇄되는 경우에는 <b class="bterm">&lt;웃쪽&gt;</b>, <b class="bterm">&lt;아래쪽&gt;</b>, <b class="bterm">&lt;왼쪽&gt;</b>, <b class="bterm">&lt;오른쪽&gt;</b>여백의 크기를 줄입니다.</p>
+				<p>
+					<a href='#' class='DropDown' onClick='Outline2()' onKeyPress='Outline2()'>
+					<img border='0' src='../image/image/common/blueup.gif' alt='표시'>방법 </a>
+				</p>
+				<div id='ExpCol' class='collapsed' border='0'>
+					<ol>
+						<li><b class="bterm">&lt;서식&gt;</b>차림표에서 <b class="bterm">&lt;페지&gt;</b>를 찰칵합니다.</li>
+						<li><b class="bterm">&lt;페지&gt;</b>표쪽을 찰칵하고 다음의 방법들중에서 하나를 실행합니다.</li>
+						<p>
+							<a href='#' class='DropDown' onClick='Outline2()' onKeyPress='Outline2()'>
+							<img border='0' src='../image/image/common/blueup.gif' alt='표시'>페지여백의 설정</a>
+						</p>
+						<div id='ExpCol' class='collapsed' border='0'>
+							<p><b class="bterm">&lt;여백&gt;</b>부분에서 <b class="bterm">&lt;웃쪽&gt;</b>, <b class="bterm">&lt;아래쪽&gt;</b>, <b class="bterm">&lt;왼쪽&gt;</b>, <b class="bterm">&lt;오른쪽&gt;</b> 본문칸에 요구하는 <a href="#" class="glossary" onClick="AppendPopup(this,'IDG_PAGESPACE')" onKeyPress="AppendPopup(this,'IDG_PAGESPACE')">여백</a>크기를 입력합니다.</p>
+						</div>
+						<p>
+							<a href='#' class='DropDown' onClick='Outline2()' onKeyPress='Outline2()'>
+							<img border='0' src='../image/image/common/blueup.gif' alt='표시'>머리부 및 바닥부의 여백설정</a>
+						</p>
+						<div id='ExpCol' class='collapsed' border='0'>
+							<ul>
+								<li>머리부에서 제일 웃쪽까지의 여백을 변경하려면 <b class="bterm">&lt;머리부&gt;</b>표쪽에서 요구하는 여백크기를 입력합니다.</li>
+								<li>바닥부에서 제일 아래쪽까지의 여백을 변경하려면 <b class="bterm">&lt;바닥부&gt;</b>표쪽에서 요구하는 여백크기를 입력합니다. 머리부 및 바닥부여백은 웃쪽과 아래쪽의 페지여백보다 작아야 하며 최소 인쇄기여백보다는 크거나 같아야 합니다.</li>
+							</ul>
+						</div>
+					</ol>
+				</div>
+			<p><b class="bterm">페지가르기 조정:</b>   문서를 인쇄하기 전에 페지가르기를 조정할수 있습니다. <b class="bterm">&lt;보기&gt;</b>차림표에서 <b class="bterm">&lt;페지 가르기 미리보기&gt;</b>를 찰칵합니다.</p>
+			<p><b class="bterm">용지방향 바꾸기:</b>   같은 페지에 더 많은 렬을 인쇄하려면 용지를 가로방향으로 바꿉니다. 용지방향을 바꾸려면 다음과 같은 조작을 합니다.
+				<ol>
+						<li><b class="bterm">&lt;서식&gt;</b>차림표에서 <b class="bterm">&lt;페지&gt;</b>를 찰칵합니다.</li>
+						<li><b class="bterm">&lt;페지격식&gt;</b>대화창에서 <b class="bterm">&lt;페지&gt;</b>표쪽을 찰칵합니다.</li>
+						<li><b class="bterm">&lt;용지형식&gt;</b>부분의 <b class="bterm">&lt;방향&gt;</b>에서 <b class="bterm">&lt;세로&gt;</b> 혹은 <b class="bterm">&lt;가로&gt;</b>단일선택단추를 선택합니다.</li>
+						<li><b class="bterm">&lt;확인&gt;</b>단추를 찰칵합니다.</li>				
+				</ol>
+			</p>
+		<p><b class="bterm">여러 인쇄범위가 같은 페지에 인쇄되지 않는 경우</b></p>
+			<p>인쇄범위가 서로 떨어져있으면 각기 다른 페지에 인쇄됩니다. 그러나 다음의 방법들중에서 하나를 사용하면 표용지에서 서로 떨어져있는 부분이 같은 페지에 인쇄되도록 지정할수 있습니다.</p>
+				<p>
+					<a href='#' class='DropDown' onClick='Outline2()' onKeyPress='Outline2()'>
+					<img border='0' src='../image/image/common/blueup.gif' alt='표시'>서로 떨어져있는 렬을 좌우로 인쇄</a>
+				</p>
+				<div id='ExpCol' class='collapsed' border='0'>
+					<ol>
+						<li>인쇄하지 않을 렬을 선택하고 <b class="bterm">&lt;서식&gt;</b>차림표에서 <b class="bterm">&lt;렬&gt;</b>을 찰칵한 다음 <b class="bterm">&lt;숨기기&gt;</b>를 찰칵합니다.</li>
+						<li>숨겨진 렬을 포함하여 모든 렬이 들어가도록 인쇄범위를 설정합니다.</li>
+					</ol>
+				</div>
+				<p>
+					<a href='#' class='DropDown' onClick='Outline2()' onKeyPress='Outline2()'>
+					<img border='0' src='../image/image/common/blueup.gif' alt='표시'>서로 떨어져있는 행을 아래우로 인쇄</a>
+				</p>
+				<div id='ExpCol' class='collapsed' border='0'>
+					<ol>
+						<li>인쇄하지 않을 행을 선택하고 <b class="bterm">&lt;서식&gt;</b>차림표에서 <b class="bterm">&lt;행&gt;</b>을 찰칵한 다음 <b class="bterm">&lt;숨기기&gt;</b>를 찰칵합니다.</li>
+						<li>숨겨진 행을 포함하여 모든 행이 들어가도록 인쇄범위를 설정합니다.</li>
+					</ol>
+				</div>
+		<script type="text/javascript" language="Javascript">footerView()</script>
+	
+</body>
+</html>

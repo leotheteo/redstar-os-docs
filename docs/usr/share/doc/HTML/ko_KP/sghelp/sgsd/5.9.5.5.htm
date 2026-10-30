@@ -1,0 +1,154 @@
+﻿<html dir='ltr'>
+	<head>
+		<META http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+		<title>AMORDEGRC</title>
+		<link rel='stylesheet' type='text/css' href='../css/main.css'/>
+		<script type='text/javascript' language='Javascript' src='../js/mexpcol.js'></script>
+		<script type='text/javascript' language='JavaScript' src='../js/glossary.js'></script>
+	</head>
+	<body>
+		<h1>&nbsp;<img align="absbottom" src="../image/external_images/crystal/svtools/res/new_doc.png"/>&nbsp;AMORDEGRC</h1>
+		<p id='ExpandAllLine' class='ExpFav'>
+			<a href='#' onClick='ExpandAll()' onKeyPress='ExpandAll()' class='DropDown'>
+				<img id='picHeader' border='0' src='../image/image/common/expandtri.gif' alt='모두 표시'>
+				<span id='ExpandAll'>모두 표시</span>
+			</a>
+		</p>
+		<p><b class="bterm">참고항목</b>&emsp; 
+		   <a href='5.9.5.1.htm'>재정함수목록</a>, 
+		   <a href='5.9.5.6.htm'>AMORLINC</a>, 
+		   <a href='5.9.4.7.htm'>DAYS360</a>
+		</p>
+		<p>매 회계기간에 대한 재산의 선형감가상각을 구합니다.</p>
+		<p><b class="bterm">문법:&emsp;&emsp;		AMORDEGRC(구입비용,구입날자,첫번째 기간,잔존가치,기간,감가상각률,기준)</b></p>
+		<p><b class="bterm">중요:</b>&emsp;   날자는 <b class="bterm">DATE</b>함수를 사용하거나 다른 수식 또는 함수의 결과로 입력하여야 합니다. 례를 들어 2008년 5월 23일의 경우 DATE(2008,5,23)을 사용합니다.</p>
+		<table>
+			<tr>
+				<th>인수명</th>
+				<th>설명</th>
+			</tr>
+			<tr>
+				<td>구입비용</td>
+				<td>재산구입비용입니다.</td>
+			</tr>
+			<tr>
+				<td>구입날자</td>
+				<td>재산구입날자입니다.</td>
+			</tr>
+			<tr>
+				<td>첫번째 기간</td>
+				<td>첫 회계기의 결산날자입니다.</td>
+			</tr>
+			<tr>
+				<td>잔존가치</td>
+				<td>내용년한이 끝나는 시점에서의 재산의 잔존가치입니다.</td>
+			</tr>
+			<tr>
+				<td>기간</td>
+				<td>기간입니다.</td>
+			</tr>
+			<tr>
+				<td>감가상각률</td>
+				<td>감가상각률입니다.</td>
+			</tr>
+			<tr>
+				<td>기준</td>
+				<td>계산에 리용하는 년도                                                                                                                           기준입니다. 추가선택인수입니다. 지정하지 않으면 0으로 됩니다.</td>
+			</tr>
+		</table>
+		<p><b class="bterm">주의</b></p>
+			<ul>
+				<li>이 함수는 재산의 수명이 다하는 마지막기간까지 또는 감가상각루계액이 재산의 구입비용에서 잔존가치를 던 값보다 커질 때까지 감가상각을 반환합니다.</li>
+				<li>감가상각곁수는 다음과 같습니다.</li>
+					<table>
+						<tr>
+							<th>재산의 수명(1/비률)</th>
+							<th>감가상각곁수</th>
+						</tr>
+						<tr>
+							<td>3년부터 4년사이</td>
+							<td>1.5</td>
+						</tr>
+						<tr>
+							<td>5년부터 6년사이</td>
+							<td>2</td>
+						</tr>
+						<tr>
+							<td>6년 초과</td>
+							<td>2.5</td>
+						</tr>
+					</table>
+				<li>감가상각률은 마지막기간 바로 앞의 기간동안 50%까지 증가하고 마지막기간에 100%로 증가합니다.</li>
+				<li>재산의 수명이 1년이하, 1년부터 2년, 2년부터 3년 또는 4년부터 5년사이인 경우 <b class="bterm">오유:[오유번호]</b>가 반환됩니다.</li>
+			</ul>
+		<p><b class="bterm">실례</b></p>
+			<p><a href='1.5.1.htm'>실례의 리용방법</a>을 참고하십시오.</p>
+			<table>
+				<tr>
+					<td>
+						<table>
+							<tr><td>&nbsp;</td></tr>
+							<tr><th>1</th></tr>
+							<tr><th>2</th></tr>
+							<tr><th>3</th></tr>
+							<tr><th>4</th></tr>
+							<tr><th>5</th></tr>
+							<tr><th>6</th></tr>
+							<tr><th>7</th></tr>
+							<tr><th>8</th></tr>
+						</table>
+					</td>
+					<td>
+						<table>
+							<tr>
+								<th>A</th>
+								<th>B</th>
+							</tr>
+							<tr>
+								<th>자료</th>
+								<th>설명</th>
+							</tr>
+							<tr>
+								<td>2 400</td>
+								<td>재산구입비용입니다.</td>
+							</tr>
+							<tr>
+								<td>2008-08-19</td>
+								<td>재산구입날자입니다.</td>
+							</tr>
+							<tr>
+								<td>2008-12-31</td>
+								<td>첫 회계기간의 마지막날자입니다.</td>
+							</tr>
+							<tr>
+								<td>300</td>
+								<td>잔존가치입니다.</td>
+							</tr>
+							<tr>
+								<td>1</td>
+								<td>기간입니다.</td>
+							</tr>
+							<tr>
+								<td>15%</td>
+								<td>감가상각률입니다.</td>
+							</tr>
+							<tr>
+								<td>1</td>
+								<td>정확한 그달의 날자수, 정확한 그해의 날자수.</td>
+							</tr>
+							<tr>
+								<th>수식</th>
+								<th>설명(결과)</th>
+							</tr>
+							<tr>
+								<td>=AMORDEGRC(A2,A3,A4,A5,A6,A7,A8)</td>
+								<td>첫번째 기간의 감가상각액입니다. (776)</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>	
+		<script type="text/javascript" language="Javascript">footerView()</script>
+	
+</body>
+</html>

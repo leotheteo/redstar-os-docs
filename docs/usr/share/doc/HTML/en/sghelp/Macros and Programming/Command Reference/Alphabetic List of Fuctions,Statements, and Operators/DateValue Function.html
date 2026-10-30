@@ -1,0 +1,66 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+	<TITLE></TITLE>
+	<META NAME="GENERATOR" CONTENT="《Sogwang 3.0》  (Linux)">
+	<META NAME="CREATED" CONTENT="20091205;11384400">
+	<META NAME="CHANGED" CONTENT="20091205;11585200">
+	<STYLE TYPE="text/css">
+	<!--
+		H2 { margin-bottom: 0.18cm; font-family: "Bitstream Vera Sans", "Arial", "Helvetica", "Lucida", "Geneva", "Helmet", sans-serif, "Andale Sans UI", "Arial Unicode MS", "Lucida Sans Unicode", "Tahoma"; font-size: 14pt }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="ko-KP" DIR="LTR"><DIV style="margin-left: 25">
+<H1><A NAME="datevalue"></A><A NAME="bm_id3156344"></A><FONT FACE="Thorndale, serif"><SPAN LANG="en-US">DateValue
+Function [Runtime]</SPAN></FONT></H1>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Returns
+a date value from a date string. The date string is a complete date
+in a single numeric value. You can also use this serial number to
+determine the difference between two dates.</SPAN></FONT></P>
+<H2><SPAN LANG="en-US">Syntax:</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">DateValue
+[(date)]</SPAN></FONT></P>
+<H2><SPAN LANG="en-US">Return value:</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Date</SPAN></FONT></P>
+<H2><SPAN LANG="en-US">Parameters:</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Date:</B>
+String expression that contains the date that you want to calculate.
+The date can be specified in almost any format.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">You can
+use this function to convert a date that occurs between December 1,
+1582 and December 31, 9999 into a single integer value. You can then
+use this value to calculate the difference between two dates. If the
+date argument lies outside the acceptable range, </SPAN></FONT><FONT FACE="청봉, serif"><SPAN LANG="en-US">Sogwang Basic
+returns an error message.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">In
+contrast to the DateSerial function that passes years, months, and
+days as separate numeric values, the DateValue function passes the
+date using the format &quot;month.[,]day.[,]year&quot;.</SPAN></FONT></P>
+<P><A NAME="languageformat"></A><FONT FACE="청봉, serif"><SPAN LANG="en-US">You
+can set the locale used for controlling the formatting numbers, dates
+and currencies in </SPAN></FONT><FONT FACE="청봉, serif"><SPAN LANG="en-US">Sogwang Basic in
+<B>Sogwang Office - Reference - Language Settings - Languages</B>. In Basic
+format codes, the decimal point (<B>.</B>) is always used as
+<B>placeholder</B> for the decimal separator defined in your locale
+and will be replaced by the corresponding character.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">The same
+applies to the locale settings for date, time and currency formats.
+The Basic format code will be interpreted and displayed according to
+your locale setting.</SPAN></FONT></P>
+<H2><A NAME="errorcode"></A><SPAN LANG="en-US">Error Codes </SPAN>
+</H2>
+<P><A NAME="err5"></A><FONT FACE="청봉, serif"><SPAN LANG="en-US">5
+Invalid procedure call </SPAN></FONT>
+</P>
+<H2><SPAN LANG="en-US">Example:</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Sub
+ExampleDateValue</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">msgbox
+DateValue(&quot;12/02/1997&quot;)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><SPAN STYLE="font-weight: medium">end
+sub</SPAN></SPAN></FONT></P>
+
+</DIV></BODY>
+</HTML>

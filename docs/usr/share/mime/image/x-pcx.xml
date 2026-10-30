@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="image/x-pcx">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>PCX image</comment>
+  <acronym>PCX</acronym>
+  <expanded-acronym>PiCture eXchange</expanded-acronym>
+</mime-type>

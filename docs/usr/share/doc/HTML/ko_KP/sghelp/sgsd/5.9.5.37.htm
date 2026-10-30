@@ -1,0 +1,186 @@
+﻿<html dir='ltr'>
+	<head>
+		<META http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+		<title>NPV</title>
+		<link rel='stylesheet' type='text/css' href='../css/main.css'/>
+		<script type='text/javascript' language='Javascript' src='../js/mexpcol.js'></script>
+		<script type='text/javascript' language='JavaScript' src='../js/glossary.js'></script>
+	</head>
+	<body>
+		<h1>&nbsp;<img align="absbottom" src="../image/external_images/crystal/svtools/res/new_doc.png"/>&nbsp;NPV</h1>
+		<p id='ExpandAllLine' class='ExpFav'>
+			<a href='#' onClick='ExpandAll()' onKeyPress='ExpandAll()' class='DropDown'>
+				<img id='picHeader' border='0' src='../image/image/common/expandtri.gif' alt='모두 표시'>
+				<span id='ExpandAll'>모두 표시</span>
+			</a>
+		</p>
+		<p><b class="bterm">참고항목</b>&emsp;
+			<a href="5.9.5.1.htm">재정함수목록</a>,
+			<a href="5.9.5.26.htm">FV</a>,
+			<a href="5.9.5.30.htm">IRR</a>, 
+			<a href="5.9.5.47.htm">PV</a>, 
+			<a href="5.9.5.57.htm">XNPV</a> 
+		</p>
+		<p>순 현재가치입니다. 일정한 금액을 정기적으로 납입하고 일정한 리자률을 적용하는 투자의 순 현재가치를 계산합니다.</p>
+		<p><b class="bterm">문법:&emsp;&emsp;		NPV(할인률,값1,값2, ...)</b></p>
+		<table>
+			<tr>
+				<th>인수명</th>
+				<th>설명</th>
+			</tr>
+			<tr>
+				<td>할인률</td>
+				<td>한 기간에 대한 할인률입니다.</td>
+			</tr>
+			<tr>
+				<td>값1,값2,..</td>
+				<td>지출과 수입을 표시하는 인수입니다. 1개부터 30까지 사용할수 있습니다.
+				인수는 모두 시간간격이 같아야 하며 각 기간의 마감에 발생해야 합니다.
+				<b class="bterm">NPV</b>는 인수의 순서를 현금지출의 순서로 해석하므로 지출과 수입을 정확한 순서로 입력하여야 합니다.
+				수자, 빈 세포, 론리값, 수자의 본문표시로 지정된 인수는 계산되고 오유값 또는 수자로 변환될수 없는 본문으로 지정된 인수는 무시됩니다.
+				인수가 배렬이나 참조이면 그 배렬이나 참조값만 사용됩니다. 배렬이나 참조의 빈 세포와 본문값은 무시됩니다.</td>
+			</tr>
+		</table>
+		<p><b class="bterm">주의</b></p>
+			<ul>
+				<li><b class="bterm">NPV</b> 투자는 <b class="bterm">값1</b>현금지출날자에서 한 기간전에 시작하여 목록의 마지막현금지출에서 끝납니다. <b class="bterm">NPV</b> 계산은 앞으로의 현금지출을 기초로 합니다. 첫번째 현금지출이 첫번째 기간초기에 발생하면 첫번째 값은 <b class="bterm">값</b>인수에 포함되지 않고 NPV함수결과에 추가되야 합니다. 자세한 내용은 아래 실례를 참고하십시오.</li>
+				<li><b class="bterm">n</b>이 값 목록의 현금지출의 회수일 때 <b class="bterm">NPV</b>를 계산하는 식은 다음과 같습니다.
+					<p><img border='0' src='../image/image/sgsd/formula-7.gif' alt='표시'></p>
+				</li>
+				<li><b class="bterm">NPV</b>는 <b class="bterm">PV</b>함수(현재가치)와 류사합니다. <b class="bterm">PV</b>함수와 <b class="bterm">NPV</b>함수의 주요차이점은 <b class="bterm">PV</b>함수는 기간의 마감이나 초기에 현금지출을 시작할수 있다는것입니다. <b class="bterm">NPV</b> 현금지출값은 변하지만 <b class="bterm">PV</b>현금지출은 투자기간내에 일정해야 합니다. 년금과 재정함수에 대한 자세한 내용은 <b class="bterm">PV</b>를 참고하십시오.</li>
+				<li><b class="bterm">NPV</b>는 <b class="bterm">IRR</b>함수(내부수익률)와도 관련이 있습니다. <b class="bterm">IRR</b>함수는 NPV = 0인 경우의 할인률입니다. NPV(IRR(...), ...)=0.</li>
+			</ul>
+		<p><b class="bterm">실례1</b></p>
+			<p><a href="1.5.1.htm">실례의 리용방법</a>을 참고하십시오.</p>
+			<table>
+				<tr>
+					<td>
+						<table>
+							<tr><td>&nbsp;</td></tr>
+							<tr><th>1</th></tr>
+							<tr><th>2</th></tr>
+							<tr><th>3</th></tr>
+							<tr><th>4</th></tr>
+							<tr><th>5</th></tr>
+							<tr><th>6</th></tr>
+						</table>
+					</td>
+					<td>
+						<table>
+							<tr>
+								<th>A</th>
+								<th>B</th>
+							</tr>
+							<tr>
+								<th>자료</th>
+								<th>설명</th>
+							</tr>
+							<tr>
+								<td>10%</td>
+								<td>년간할인률입니다.</td>
+							</tr>
+							<tr>
+								<td>-10 000</td>
+								<td>현재로부터 초기1년의 투자비용입니다.</td>
+							</tr>
+							<tr>
+								<td>3 000</td>
+								<td>첫번째 년도의 회수금입니다.</td>
+							</tr>
+							<tr>
+								<td>4 200</td>
+								<td>두번째 년도의 회수금입니다.</td>
+							</tr>
+							<tr>
+								<td>6 800</td>
+								<td>세번째 년도의 회수금입니다.</td>
+							</tr>
+							<tr>
+								<th>수식</th>
+								<th>설명(결과)</th>
+							</tr>
+							<tr>
+								<td>=NPV(A2,A3,A4,A5,A6)</td>
+								<td>이 투자의 순수현재가치입니다. (1 188.44￦)</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>	
+			<p>우의 실례에서는 초기투자액 10 000이 하나의 값으로 포함됩니다. 첫번째 기간의 말에 지불이 이루어졌기때문입니다.</p>
+		<p><b class="bterm">실례2</b></p>
+			<p><a href="1.5.1.htm">실례의 리용방법</a>을 참고하십시오.</p>
+			<table>
+				<tr>
+					<td>
+						<table>
+							<tr><td>&nbsp;</td></tr>
+							<tr><th>1</th></tr>
+							<tr><th>2</th></tr>
+							<tr><th>3</th></tr>
+							<tr><th>4</th></tr>
+							<tr><th>5</th></tr>
+							<tr><th>6</th></tr>
+							<tr><th>7</th></tr>
+							<tr><th>8</th></tr>
+						</table>
+					</td>
+					<td>
+						<table>
+							<tr>
+								<th>A</th>
+								<th>B</th>
+							</tr>
+							<tr>
+								<th>자료</th>
+								<th>설명</th>
+							</tr>
+							<tr>
+								<td>8%</td>
+								<td>년간할인률입니다. 이 값은 인플레비률이나 투자리자률을 나타낼수도 있습니다.</td>
+							</tr>
+							<tr>
+								<td>-40 000</td>
+								<td>투자의 초기비용입니다.</td>
+							</tr>
+							<tr>
+								<td>8 000</td>
+								<td>첫번째 년도의 회수금입니다.</td>
+							</tr>
+							<tr>
+								<td>9 200</td>
+								<td>두번째 년도의 회수금입니다.</td>
+							</tr>
+							<tr>
+								<td>10 000</td>
+								<td>세번째 년도의 회수금입니다.</td>
+							</tr>
+							<tr>
+								<td>12 000</td>
+								<td>네번째 년도의 회수금입니다.</td>
+							</tr>
+							<tr>
+								<td>14 500</td>
+								<td>다섯번째 년도의 회수금입니다.</td>
+							</tr>
+							<tr>
+								<th>수식</th>
+								<th>설명(결과)</th>
+							</tr>
+							<tr>
+								<td>=NPV(A2,A4:A8)+A3</td>
+								<td>이 투자의 순수현재가치입니다. (1 922￦)</td>
+							</tr>
+							<tr>
+								<td>=NPV(A2,A4:A8,-9 000)+A3</td>
+								<td>여섯번째 년도의 손실 9 000이 포함된 이 투자의 순수현재가치입니다. (-3 749￦)</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>	
+			<p>우의 실례에서 초기비용 40 000은 하나의 값으로 포함되지 않았습니다. 첫번째 기간의 초기에 지불이 이루어졌기때문입니다.</p>
+		<script type="text/javascript" language="Javascript">footerView()</script>
+	
+</body>
+</html>								

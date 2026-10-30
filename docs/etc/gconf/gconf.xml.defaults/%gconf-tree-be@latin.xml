@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<gconf>
+	<dir name="schemas">
+		<dir name="apps">
+			<dir name="gnome-keyring">
+				<dir name="daemon-components">
+					<entry name="pkcs11">
+						<local_schema short_desc="Ci ŭklučać kampanent PKCS#11 dla klučnika.">
+							<longdesc>Hetaja opcyja ŭklučaje kampanent PKCS#11 dla demana gnome-keyring. Opcyja ŭździejničaje tolki pry ŭruchamleńni demana gnome-keyring-daemon, h.zn. kali karystalnik uvachodzić u systemu. Hetaja nałada moža być źmieniena z dapamohaj peŭnych arhumentaŭ zahadnaha radka, pieradadzienych demanu.</longdesc>
+						</local_schema>
+					</entry>
+					<entry name="ssh">
+						<local_schema short_desc="Ci ŭklučać agenta SSH dla klučnika.">
+							<longdesc>Hetaja opcyja ŭklučaje agenta SSH dla demana gnome-keyring. Opcyja ŭździejničaje tolki pry ŭruchamleńni demana gnome-keyring-daemon, h.zn. kali karystalnik uvachodzić u systemu. Hetaja nałada moža być źmieniena z dapamohaj peŭnych arhumentaŭ zahadnaha radka, pieradadzienych demanu.</longdesc>
+						</local_schema>
+					</entry>
+				</dir>
+			</dir>
+		</dir>
+	</dir>
+</gconf>

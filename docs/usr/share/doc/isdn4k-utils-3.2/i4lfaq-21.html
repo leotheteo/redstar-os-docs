@@ -1,0 +1,173 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <META NAME="GENERATOR" CONTENT="LinuxDoc-Tools 0.9.21">
+ <TITLE>FAQ for isdn4linux: dialin: Configuration of a Dial-In Server </TITLE>
+ <LINK HREF="i4lfaq-22.html" REL=next>
+ <LINK HREF="i4lfaq-20.html" REL=previous>
+ <LINK HREF="i4lfaq.html#toc21" REL=contents>
+</HEAD>
+<BODY>
+<A HREF="i4lfaq-22.html">Next</A>
+<A HREF="i4lfaq-20.html">Previous</A>
+<A HREF="i4lfaq.html#toc21">Contents</A>
+<HR>
+<H2><A NAME="dialin"></A> <A NAME="s21">21.</A> <A HREF="i4lfaq.html#toc21">dialin: Configuration of a Dial-In Server </A></H2>
+
+<H2><A NAME="dialin_config"></A> <A NAME="ss21.1">21.1</A> <A HREF="i4lfaq.html#toc21.1">dialin_config: How can I enable others to login via ISDN? </A>
+</H2>
+
+<P>Some configuration examples can be found at:
+<A HREF="http://www.rosat.mpe-garching.mpg.de/~web/ISDN.html">http://www.rosat.mpe-garching.mpg.de/~web/ISDN.html</A>.
+If you have trouble setting it up, try to obtain the latest packages for
+isdn4linux (see question 
+<A HREF="i4lfaq-2.html#distrib_getlatest">distrib_getlatest</A>).
+As usual, you can also ask in the mailing list.
+In general, there are several ways to configure dialin, depending
+on how you want others to dial in.
+<UL>
+<LI>Set up networking devices for dialin via syncppp, or rawip. Set option
+<CODE>secure off</CODE> to allow everybody to dial in, or set option <CODE>secure on</CODE>
+to only allow dialin by the isdn numbers you configure, which you set
+up with <CODE>isdnctrl addphone &lt;device&gt; in &lt;phonenumber&gt;</CODE>.
+It has been reported that you need to set option <CODE>ms-dns</CODE> for ipppd to
+have successful IPCP negotion.</LI>
+<LI>Use the ttyI* devices for asyncppp or X.75.</LI>
+</UL>
+
+Here some more details for setting up the ttyI* devices. The setup is like for
+a serial port.  Start a getty (mgetty from Gert Doering is highly recommended)
+on one of the ISDN devices (/dev/ttyI*). The entry in /etc/inittab looks like
+this:
+<HR>
+<PRE>
+I0:56:respawn:/usr/local/sbin/mgetty ttyI0
+I1:56:respawn:/usr/local/sbin/mgetty ttyI1
+</PRE>
+<HR>
+
+The init string needs to be entered in the <CODE>mgetty.config</CODE>, since
+mgetty needs to know which MSN or EAZ to listen to. For example, if your MSN is
+123456:
+<HR>
+<PRE>
+port ttyI0
+modem-type data
+speed 38400
+init-chat &quot;&quot; ATZ OK AT&amp;E123456 OK AT&amp;B512 OK
+</PRE>
+<HR>
+
+For X.75 the block size was set to 512 bytes.
+Alternatively you can enter the entire configuration onto a single line
+in <CODE>/etc/inittab</CODE> (here printed on two lines!):
+<HR>
+<PRE>
+i0:45:respawn:/sbin/mgetty -D -m '&quot;&quot; ATZ OK AT&amp;E123456 OK
+AT&amp;B512 OK' -s 38400 ttyI0
+</PRE>
+<HR>
+
+The most elegant way is to use iprofd. This daemon takes advantage of
+the <CODE>AT&amp;W0</CODE> command in the i4l modem emulation. You start iprofd
+with a path as parameter, e.g. <CODE>&quot;iprofd /etc/i4lprofile&quot;</CODE>
+Then with minicom or another terminal program, open an ISDN tty
+device and enter the necessary AT command by hand.
+When finished, enter the command <CODE>AT&amp;W0</CODE>, then the kernel notifies
+iprofd to write the current configuration to the file. From now on it is enough
+to start iprofd in you isdn init script, and to initialize the appropriate
+ISDN tty devices with <CODE>ATZ</CODE>.</P>
+
+<H2><A NAME="dialin_manyparallel"></A> <A NAME="ss21.2">21.2</A> <A HREF="i4lfaq.html#toc21.2">dialin_manyparallel: How can I allow several people to call in to me at the same time? </A>
+</H2>
+
+<P>You have to configure exactly as many gettys or network interfaces as the
+number of people allowed to call in at one time. These gettys or network
+interfaces can be set to the same MSN, since several people can be
+connected to a MSN at the same time (as long as there are B channels free).
+However, not more than one getty can be assigned to a single ttyI* device.</P>
+
+<H2><A NAME="dialin_manycards"></A> <A NAME="ss21.3">21.3</A> <A HREF="i4lfaq.html#toc21.3">dialin_manycards: When using several ISDN cards, how can I react upon on a call received via a specific ISDN card? </A>
+</H2>
+
+<P>You can use the EAZ mapping feature for this to map incoming MSN numbers
+to new internal MSN numbers, in the same way as described for question
+<A HREF="i4lfaq-10.html#dialout_manycards">dialout_manycards</A>. Usage of a card can be prevented by
+using the dash during the mapping. Please note that it is not possible to
+have any limitations based upon the B channel, since channel assignment
+is normally done by the exchange.</P>
+
+<H2><A NAME="dialin_analogditalsamettyi"></A> <A NAME="ss21.4">21.4</A> <A HREF="i4lfaq.html#toc21.4">dialin_analogditalsamettyi: Can I configure a ttyI* device to accept both digital and analog modem dialins? </A>
+</H2>
+
+<P>Since the digital mode requires different register settings than the analog
+mode, this is not possible. Therefore you have to set up a two dedicated
+devices for this purpose. Please note that analog modem dialins are only
+possible if card and isdn4linux driver support it, which is only the case
+for a few cards.</P>
+
+<H2><A NAME="dialin_fixedip"></A> <A NAME="ss21.5">21.5</A> <A HREF="i4lfaq.html#toc21.5">dialin_fixedip: How can I assign fixed ip addresses per user who dials in via ipppd? </A>
+</H2>
+
+<P>Just specify the fixed ip address with the user name and password in the
+pap/chap-secrets file (see man ipppd).</P>
+
+<H2><A NAME="dialin_hdlc"></A> <A NAME="ss21.6">21.6</A> <A HREF="i4lfaq.html#toc21.6">dialin_hdlc: Someone would like to dial in to my mgetty with HDLC. Is ttyI1 correct, or do I have to start with ttyI0? </A>
+</H2>
+
+<P>No, it doesn't matter. It also has nothing to do with the number of the
+B channel (0 or 1). You just have to activate HDLC in the init string
+(ATS14=3).</P>
+
+<H2><A NAME="dialin_autoppp"></A> <A NAME="ss21.7">21.7</A> <A HREF="i4lfaq.html#toc21.7">dialin_autoppp: Is it possible with mgetty to automatically start pppd when LCP frames are received? </A>
+</H2>
+
+<P>Yes, it is. This feature is called `AutoPPP'. See the configuration for
+mgetty.</P>
+
+<H2><A NAME="dialin_passwd"></A> <A NAME="ss21.8">21.8</A> <A HREF="i4lfaq.html#toc21.8">dialin_passwd: How can I have (i)pppd check passwords from /etc/passwd instead of /etc/ppp/pap-secrets when someone dials in? </A>
+</H2>
+
+<P>ipppd needs to be started with the options &quot;login&quot; and
+&quot;auth&quot;. In /etc/ppp/pap-secrets, each user must have the
+following line to allow only certain users:
+<HR>
+<PRE>
+login-name * &quot;&quot; *
+</PRE>
+<HR>
+
+To allow all users simply:
+<HR>
+<PRE>
+* * &quot;&quot; *
+</PRE>
+<HR>
+
+The latter can also be achieved when the file pap-secrets does not
+exist.</P>
+
+<H2><A NAME="dialin_ignored"></A> <A NAME="ss21.9">21.9</A> <A HREF="i4lfaq.html#toc21.9">dialin_ignored: I keep getting the message &quot;isdn_tty: call from XXX - YYY ignored&quot;. Why does isdn4linux (syncPPP) ignore this dialin attempt? </A>
+</H2>
+
+<P>There are two possible explanations. Either your own MSN (here: YYY)
+is not correctly set with &quot;isdnctrl eaz interface YYY&quot;. Or
+&quot;isdnctrl secure interface on&quot; was set, without allowing calls from
+the incoming number (here: XXX) with &quot;isdnctrl addphone interface in
+XXX&quot;.</P>
+
+<H2><A NAME="dialin_async"></A> <A NAME="ss21.10">21.10</A> <A HREF="i4lfaq.html#toc21.10">dialin_async: A SunISDN tries to dial into my i4l system. </A>
+</H2>
+
+<P>The Sun tries to communicate with asyncPPP. ipppd can't handle
+this, you have to use the ttyI* devices and the standard pppd.</P>
+
+
+
+
+<HR>
+<A HREF="i4lfaq-22.html">Next</A>
+<A HREF="i4lfaq-20.html">Previous</A>
+<A HREF="i4lfaq.html#toc21">Contents</A>
+</BODY>
+</HTML>

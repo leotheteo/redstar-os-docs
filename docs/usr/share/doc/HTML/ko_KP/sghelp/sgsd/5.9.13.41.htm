@@ -1,0 +1,93 @@
+﻿<html dir='ltr'>
+	<head>
+		<META http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+		<title>OCT2HEX</title>
+		<link rel='stylesheet' type='text/css' href='../css/main.css'/>
+		<script type='text/javascript' language='Javascript' src='../js/mexpcol.js'></script>
+		<script type='text/javascript' language='JavaScript' src='../js/glossary.js'></script>
+	</head>
+	<body>
+		<h1>&nbsp;<img align="absbottom" src="../image/external_images/crystal/svtools/res/new_doc.png"/>&nbsp;OCT2HEX</h1>
+		<p id='ExpandAllLine' class='ExpFav'>
+			<a href='#' onClick='ExpandAll()' onKeyPress='ExpandAll()' class='DropDown'>
+				<img id='picHeader' border='0' src='../image/image/common/expandtri.gif' alt='모두 표시'>
+				<span id='ExpandAll'>모두 표시</span>
+			</a>
+		</p>
+		<p><b class="bterm">참고항목</b>&emsp;
+			<a href="5.9.13.1.htm">추가함수목록</a>,
+			<a href="5.9.13.8.htm">BIN2OCT</a>,
+			<a href="5.9.13.13.htm">DEC2OCT</a>,
+			<a href="5.9.13.21.htm">HEX2OCT</a>
+		</p>
+		<p>8진수를 16진수로 변환합니다.</p>
+		<p><b class="bterm">문법:&emsp;&emsp;		OCT2HEX(8진수,자리수)</b></p>
+		<table>
+			<tr>
+				<th>인수명</th>
+				<th>설명</th>
+			</tr>
+			<tr>
+				<td>8진수</td>
+				<td>변환할 8진수입니다. 10자리(30비트)까지 사용할수 있습니다. 최상위비트는 부호비트이고 나머지 29비트는 값을 나타내는 비트입니다. 부수는 2의 보수표기법으로 표시됩니다.</td>
+			</tr>
+			<tr>
+				<td>자리수</td>
+				<td>16진수의 자리수입니다. 추가선택인수입니다. <b class="bterm">자리수</b>를 생략하면 최소한으로 필요한 문자수가 사용됩니다. <b class="bterm">자리수</b>는 반환값의 앞에 0을 넣어 자리수를 맞출 때 유용합니다.</td>
+			</tr>
+		</table>
+		<p><b class="bterm">주의</b></p>
+			<ul>
+				<li><b class="bterm">8진수</b>가 부수이면 <b class="bterm">오유:[오유번호]</b>가 반환됩니다.</li>
+				<li><b class="bterm">8진수</b>가 유효한 8진수가 아니면 <b class="bterm">오유:[오유번호]</b>가 반환됩니다.</li>
+				<li><b class="bterm">자리수</b>가 옹근수가 아니면 소수점이하는 무시됩니다.</li>
+				<li><b class="bterm">자리수</b>가 수자가 아니면 #<b class="bterm">NAME?</b>오유가 반환됩니다.</li>
+				<li><b class="bterm">자리수</b>가 부수이면 <b class="bterm">오유:[오유번호]</b>가 반환됩니다.</li>
+			</ul>
+		<p><b class="bterm">실례</b></p>
+			<p><a href="1.5.1.htm">실례의 리용방법</a>을 참고하십시오.</p>
+			<table>
+				<tr>
+					<td>
+						<table>
+							<tr>
+								<td class="noborder">&nbsp;
+								</td>
+							</tr>
+							<tr>
+								<th>1</th>
+							</tr>
+							<tr>
+								<th>2</th>
+							</tr>
+							<tr>
+								<th>3</th>
+							</tr>
+						</table>
+					</td>
+					<td>
+						<table>
+							<tr>
+								<th>A</th>
+								<th>B</th>
+							</tr>
+							<tr>
+								<th>수식</th>
+								<th>설명(결과)</th>
+							</tr>
+							<tr>
+								<td>=OCT2HEX(100, 4)</td>
+								<td>8진수 100을 네자리 16진수로 변환합니다. (0040)</td>
+							</tr>
+							<tr>
+								<td>=OCT2HEX(7777777533)</td>
+								<td>8진수 7777777533을 16진수로 변환합니다. (FFFFFFFF5B)</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+		<script type="text/javascript" language="Javascript">footerView()</script>
+	
+</body>
+</html>				

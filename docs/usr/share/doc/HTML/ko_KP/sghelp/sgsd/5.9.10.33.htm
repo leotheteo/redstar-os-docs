@@ -1,0 +1,132 @@
+<html dir='ltr'>
+	<head>
+		<META http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+		<title>INTERCEPT</title>
+		<link rel='stylesheet' type='text/css' href='../css/main.css'/>
+		<script type='text/javascript' language='Javascript' src='../js/mexpcol.js'></script>
+		<script type='text/javascript' language='JavaScript' src='../js/glossary.js'></script>
+	</head>
+	<body>
+		<h1>&nbsp;<img align="absbottom" src="../image/external_images/crystal/svtools/res/new_doc.png"/>&nbsp;INTERCEPT</h1>
+		<p id='ExpandAllLine' class='ExpFav'>
+			<a href='#' onClick='ExpandAll()' onKeyPress='ExpandAll()' class='DropDown'>
+				<img id='picHeader' border='0' src='../image/image/common/expandtri.gif' alt='모두 표시'>
+				<span id='ExpandAll'>모두 표시</span>
+			</a>
+		</p>
+		<p><b class="bterm">참고항목</b>&emsp;
+			<a href="5.9.10.1.htm">통계함수목록</a>,
+			<a href="5.9.10.24.htm">FORECAST</a>,
+			<a href="5.9.9.3.htm">GROWTH</a>,
+			<a href="5.9.9.4.htm">LINEST</a>,
+			<a href="5.9.9.5.htm">LOGEST</a>,
+			<a href="5.9.10.49.htm">PEARSON</a>,
+			<a href="5.9.10.59.htm">RSQ</a>,
+			<a href="5.9.10.61.htm">SLOPE</a>,
+			<a href="5.9.10.68.htm">STEYX</a>,
+			<a href="5.9.9.15.htm">TREND</a>
+		</p>
+		<p>선형회귀선과 Y축의 사귐점을 구합니다.</p>
+		<p><b class="bterm">문법:&emsp;&emsp;		INTERCEPT(자료행렬_Y,자료행렬_X)</b></p>
+		<table>
+			<tr>
+				<th>인수명</th>
+				<th>설명</th>
+			</tr>
+			<tr>
+				<td>자료행렬_Y</td>
+				<td>Y자료행렬입니다.</td>
+			</tr>
+			<tr>
+				<td>자료행렬_X</td>
+				<td>X자료행렬입니다.</td>
+			</tr>
+		</table>
+		<p><b class="bterm">주의</b></p>
+			<ul>
+				<li>인수는 수자이거나 수자가 들어있는 이름, 배렬, 참조범위여야 합니다.</li>
+				<li>배렬이나 참조인수에 본문이나 론리값, 빈 세포가 들어있는 경우에는 그러한 값이 무시되지만 0값이 들어있는 세포는 포함됩니다.</li>
+				<li><b class="bterm">자료행렬_Y</b>와 <b class="bterm">자료행렬_X</b>에 서로 다른 개수의 자료점이 들어있거나 자료점이 들어있지 않으면 #<b class="bterm">N</b>/<b class="bterm">A</b> 오유값이 반환됩니다.</li>
+				<li>회귀선의 y축 사귐점 a를 구하는 식은 다음과 같습니다.
+					<p><img border='0' src='../image/image/sgsd/formula-56.gif' alt='표시'></p>
+					<p>여기서 경사도 b는 다음과 같이 계산됩니다.</p>
+					<p><img border='0' src='../image/image/sgsd/formula-57.gif' alt='표시'></p>
+					<p>여기서 x와 y는 표본평균 <b class="bterm">AVERAGE</b>(자료행렬_X)와 <b class="bterm">AVERAGE</b>(자료행렬_Y)입니다.</p>
+				</li>
+			</ul>
+		<p><b class="bterm">실례</b></p>
+			<p><a href="1.5.1.htm">실례의 리용방법</a>을 참고하십시오.</p>
+			<table>
+				<tr>
+					<td>
+						<table>
+							<tr>
+								<td class="noborder">&nbsp;
+								</td>
+							</tr>
+							<tr>
+								<th>1</th>
+							</tr>
+							<tr>
+								<th>2</th>
+							</tr>
+							<tr>
+								<th>3</th>
+							</tr>
+							<tr>
+								<th>4</th>
+							</tr>
+							<tr>
+								<th>5</th>
+							</tr>
+							<tr>
+								<th>6</th>
+							</tr>
+						</table>
+					</td>
+					<td>
+						<table>
+							<tr>
+								<th>A</th>
+								<th>B</th>
+							</tr>
+							<tr>
+								<th>알려진 y</th>
+								<th>알려진 x</th>
+							</tr>
+							<tr>
+								<td>2</td>
+								<td>6</td>
+							</tr>
+							<tr>
+								<td>3</td>
+								<td>5</td>
+							</tr>
+							<tr>
+								<td>9</td>
+								<td>11</td>
+							</tr>
+							<tr>
+								<td>1</td>
+								<td>7</td>
+							</tr>
+							<tr>
+								<td>8</td>
+								<td>5</td>
+							</tr>
+							<tr>
+								<th>수식</th>
+								<th>설명(결과)</th>
+							</tr>
+							<tr>
+								<td>=INTERCEPT(A2:A6, B2:B6)</td>
+								<td>우의 x값과 y값을 사용하여 한개의 선이 y축과 교차되는 지점입니다. (0.05)</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+		<script type="text/javascript" language="Javascript">footerView()</script>
+	
+</body>
+</html>				

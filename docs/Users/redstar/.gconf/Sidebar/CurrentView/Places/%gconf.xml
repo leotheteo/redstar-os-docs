@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<gconf>
+	<entry name="List" mtime="1793385076" type="list" ltype="string">
+		<li type="string">
+			<stringvalue>/Users/redstar : /Users/redstar : inode/directory : redstar</stringvalue>
+		</li>
+		<li type="string">
+			<stringvalue>/Users/redstar/Desktop : /Users/redstar/Desktop : inode/directory : 탁상화면</stringvalue>
+		</li>
+		<li type="string">
+			<stringvalue>/Applications : /Applications : inode/directory : 응용프로그람</stringvalue>
+		</li>
+		<li type="string">
+			<stringvalue>/Users/redstar/Documents : /Users/redstar/Documents : inode/directory : 문서</stringvalue>
+		</li>
+	</entry>
+</gconf>

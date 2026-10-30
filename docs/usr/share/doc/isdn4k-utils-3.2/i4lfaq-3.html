@@ -1,0 +1,526 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <META NAME="GENERATOR" CONTENT="LinuxDoc-Tools 0.9.21">
+ <TITLE>FAQ for isdn4linux: Features</TITLE>
+ <LINK HREF="i4lfaq-4.html" REL=next>
+ <LINK HREF="i4lfaq-2.html" REL=previous>
+ <LINK HREF="i4lfaq.html#toc3" REL=contents>
+</HEAD>
+<BODY>
+<A HREF="i4lfaq-4.html">Next</A>
+<A HREF="i4lfaq-2.html">Previous</A>
+<A HREF="i4lfaq.html#toc3">Contents</A>
+<HR>
+<H2><A NAME="feature"></A> <A NAME="s3">3.</A> <A HREF="i4lfaq.html#toc3">Features</A></H2>
+
+<H2><A NAME="feature_not"></A> <A NAME="ss3.1">3.1</A> <A HREF="i4lfaq.html#toc3.1">feature_not: Which ISDN features cannot be offered by isdn4linux? </A>
+</H2>
+
+<P>Some ISDN features are device-specific and cannot be activated by
+isdn4linux for other devices, unless isdn4linux were to falsify
+the TEI (which would probably confuse the other device).
+Such device-specific ISDN features are, among others: rejection of a
+waiting call, caller id on/off, hold, conference calls, differing COLP/CLRP.</P>
+
+<H2><A NAME="feature_data"></A> <A NAME="ss3.2">3.2</A> <A HREF="i4lfaq.html#toc3.2">feature_data: Which ISDN data transmission modes are supported? </A>
+</H2>
+
+<P>These low-level formats are possible:
+<UL>
+<LI> 56k asynchronous : no</LI>
+<LI> 64k synchronous  : yes</LI>
+<LI>128k synchronous  : yes (channel bundling - see the question
+<A HREF="#feature_2channel">feature_2channel</A>)</LI>
+</UL>
+
+These level2 formats are possible:
+<UL>
+<LI>HDLC</LI>
+<LI>X.75</LI>
+<LI>transparent</LI>
+<LI>V.110</LI>
+</UL>
+
+These encapsulations are possible:
+<UL>
+<LI>rawip</LI>
+<LI>ethernet</LI>
+<LI>Sync PPP</LI>
+<LI>X.25 (requires 2.1 or newer)</LI>
+<LI>cisco and cisco-h</LI>
+<LI>cisco-hk (=cisco with keepalive; requires 2.1 or newer)</LI>
+<LI>plus a few specialities: have a look at the man pages.</LI>
+</UL>
+</P>
+<P>Please note that X.31a is supported as X.25 on top of ISDN, while X.31b
+is not supported (neither in the B channel, nor in the D channel variation).</P>
+
+<H2><A NAME="feature_voice"></A> <A NAME="ss3.3">3.3</A> <A HREF="i4lfaq.html#toc3.3">feature_voice: Has isdn4linux voice support (e.g. answering machine, voice-over-ip gateway for H.323 clients)? </A>
+</H2>
+
+<P>Yes, voice support is included in the current version of isdn4linux.
+For an answering machine you can either use &quot;vgetty&quot; from Gert
+Doerings &quot;mgetty+sendfax&quot;, or &quot;vboxgetty&quot; from
+Michael Herold, which is made especially for isdn4linux.
+The latter is part of the isdn4k-utils package, which can be found on:
+<CODE>
+<A HREF="ftp://ftp.isdn4linux.de/pub/">ftp://ftp.isdn4linux.de/pub/</A></CODE></P>
+<P>Also, you can use isdn4linux as a voice-over-ip gateway to let
+H.323 clients (like Voxilla, Netmeeting) call normal telephones, and/or
+the other way around. For configuration see question
+<A HREF="i4lfaq-6.html#config_h323">config_h323</A>.</P>
+
+<H2><A NAME="feature_fax"></A> <A NAME="ss3.4">3.4</A> <A HREF="i4lfaq.html#toc3.4">feature_fax: Can I fax with isdn4linux? </A>
+</H2>
+
+<P>
+<UL>
+<LI><B>For passive cards: Yes</B>. Since 2005 the GPL software ivcall
+is able to send and receive voice calls and faxes even via passive cards.
+It makes use of the spandsp library which is part of the Asterisk project.
+You can find it on:
+<CODE>
+<A HREF="http://0pointer.de/lennart/projects/ivcall/">http://0pointer.de/lennart/projects/ivcall/</A></CODE>
+An alternative project working on this problem existed (i4lfax) but has not
+made any progress since 1999. For more info on its status have a look at:
+<CODE>
+<A HREF="http://user.cs.tu-berlin.de/~ulfi/osvisions/i4lsoftfax/i4lfax/">http://user.cs.tu-berlin.de/~ulfi/osvisions/i4lsoftfax/i4lfax/</A></CODE>
+Also, an idea exists to extend the new modular mISDN with layer 2 and layer 3
+protocols for fax. Once this works (e.g. with the Sedlbauer Speedfax card)
+then the layer 1 protocol (modulation/demodulation) could be also be
+implemented via the spandsp library.</LI>
+<LI><B>For passive cards from AVM: Yes</B>. AVM recently released a
+binary CAPI 2.0 driver which supports faxing. However, the setup is rather
+complicated. Get a start on:
+<A HREF="http://www.avm.de/ftp/cardware/fritzcrd/linux/index.htm">http://www.avm.de/ftp/cardware/fritzcrd/linux/index.htm</A>.
+Here is a German website which has some nice installation instructions:
+<CODE>
+<A HREF="http://ixi.thepenguin.de">http://ixi.thepenguin.de</A></CODE> or
+<CODE>
+<A HREF="http://capi4linux.thepenguin.de">http://capi4linux.thepenguin.de</A></CODE> or
+<CODE>
+<A HREF="http://www.thepenguin.de">http://www.thepenguin.de</A></CODE>
+Please also have a look on the mailing list for tips how to do it,
+and what the consequences/disadvantages are.</LI>
+<LI><B>For the active card AVM B1: Yes</B> (its firmware has implemented
+fax as one of its features). Get the newest stuff from:
+<CODE>
+<A HREF="ftp://ftp.aeccom.com/pub/fax4i4l/howto/current/">ftp://ftp.aeccom.com/pub/fax4i4l/howto/current/</A></CODE>
+However, it has been reported that setting it up properly is very tricky.
+Another site which could be helpful is:
+<CODE>
+<A HREF="http://www.topf-sicret.de/help/capi20.html">http://www.topf-sicret.de/help/capi20.html</A></CODE></LI>
+<LI><B>For the active Hypercope PCI cards HYSDN Ergo2 and
+HYSDN Metro4: Yes, after upgrade with a special fax card</B>.
+The setup is similar to that of an AVM B1, but may require extra patches.</LI>
+<LI><B>For the active Eicon Diva Server cards (except Diva 2.0Pro):
+Yes</B>. Have a look at README.fax and README.eicon in the
+<CODE>isdn/Documentation/isdn</CODE> directory, as well as:
+<CODE>
+<A HREF="http://www.melware.de/">http://www.melware.de/</A></CODE>. The Eicon Diva Server cards
+allow faxing with class 2 commands.</LI>
+<LI><B>For semiactive cards Sedlbauer Speedfax+ and Siemens I-SURF 1.0: Yes</B>
+But currently this requires some manual work. Check the mailing list on how
+to do it (special patch needed). Only class 1 fax commands are supported.
+You can obtain the patch from:
+<CODE>
+<A HREF="//ftp.isdn4linux.de/pub/isdn4linux/kernel/v2.2/testing/i4l_isar_fclass1.tar.gz">//ftp.isdn4linux.de/pub/isdn4linux/kernel/v2.2/testing/i4l_isar_fclass1.tar.gz</A></CODE>
+The patch is not needed if your kernel is 2.2.15 or later.
+You have to enable the kernel option for FCLASS2 (CONFIG_ISDN_TTY_FAX=Y).
+Also, you need to load the firmware of the card (part of the isdn4k-utils) with
+<HR>
+<PRE>
+hisaxctrl &lt;driver_id&gt; 9 ISAR.BIN
+</PRE>
+<HR>
+
+Then initialize the ttyI* interface with:
+<HR>
+<PRE>
+ATZ&amp;E&lt;your_msn&gt;S0=1S13=1+FCLASS=1
+</PRE>
+<HR>
+
+and use a normal Hylafax class 1 config file, where you've replaced
+non-supported commands (flow control,...) by dummies.
+For the I-Surf 1.0 also check question 
+<A HREF="i4lfaq-5.html#hardware_isurf">hardware_isurf</A>.</LI>
+</UL>
+</P>
+<P>If you do want to fax now, your best choice is to install an analog fax modem
+along with your ISDN card. For companies who want to set up a fax server
+servicing multiple connections you could also have a look at the active
+ISDN cards.</P>
+<P>More information for setting up a fax server with hylafax can be found on:
+on the web site for Hylafax: 
+<A HREF="http://www.hylafax.org">http://www.hylafax.org</A> or on
+<A HREF="http://www.mnd.fh-wiesbaden.de/~dreymann/linux">http://www.mnd.fh-wiesbaden.de/~dreymann/linux</A>.</P>
+
+<H2><A NAME="feature_modem"></A> <A NAME="ss3.5">3.5</A> <A HREF="i4lfaq.html#toc3.5">feature_modem: Can isdn4linux connect to/be called by an analog modem? </A>
+</H2>
+
+<P>Generally: <B>NO</B>. It may only work for cards with which you can fax: see
+question 
+<A HREF="#feature_fax">feature_fax</A>.
+For the Sedlbauer card, you can give the following command on the ttyI*:
+<HR>
+<PRE>
+AT&amp;FS14=10S15=0S18=1&amp;E&lt;your_msn&gt;
+</PRE>
+<HR>
+</P>
+
+<H2><A NAME="feature_divert"></A> <A NAME="ss3.6">3.6</A> <A HREF="i4lfaq.html#toc3.6">feature_divert: Is it possible to initiate call forwarding with i4l? </A>
+</H2>
+
+<P>Call diversion features have been implemented recently. Use the new
+program <CODE>divertctrl</CODE> in conjunction with the HiSax driver.</P>
+<P>If you make use of capi4linux, then you find a similar program named
+<CODE>capidivert</CODE> at:
+<A HREF="http://www.tp1.ruhr-uni-bochum.de/~kai/i4l/">http://www.tp1.ruhr-uni-bochum.de/~kai/i4l/</A>.
+For now this is something only for the more experienced user, as so far there
+is no howto and only little documentation, and it is not automatically included
+in most distributions. However, it can be used with active ISDN cards.</P>
+<P>In the Netherlands, the keypad protocol can be used as an alternative. To use
+it you just dial with the usual dial command from an ttyI device:
+<HR>
+<PRE>
+atd*123*0123456789#
+</PRE>
+<HR>
+</P>
+
+<H2><A NAME="feature_ipx"></A> <A NAME="ss3.7">3.7</A> <A HREF="i4lfaq.html#toc3.7">feature_ipx: Can I route ipx/spx over ISDN with Linux? </A>
+</H2>
+
+<P>Yes, set up an ISDN interface with encapsulation <CODE>ethernet</CODE>, and use
+IPX framing ETHERNET_II. <EM>mars_nwe</EM> can do the rest (e.g. routing).
+Also, you can route ipx with ipppd, see question
+<A HREF="i4lfaq-12.html#syncppp_ipx">syncppp_ipx</A>.
+To use pppd for ipx, you have to give it the compile option IPX_CHANGE.
+However, be careful when using dial out on demand (dod), since frequent ipx
+broadcasts may cause a dod disaster (see question
+<A HREF="i4lfaq-16.html#dod_disaster">dod_disaster</A>).</P>
+
+<H2><A NAME="feature_2channel"></A> <A NAME="ss3.8">3.8</A> <A HREF="i4lfaq.html#toc3.8">feature_2channel: Does isdn4linux support channel bundling? </A>
+</H2>
+
+<P>The current version of isdn4linux support 2 methods of channel
+bundling:
+<UL>
+<LI><B>MPPP</B> (based on sync PPP)</LI>
+<LI><B>Raw bundling</B> (configured by so-called slave channels)</LI>
+</UL>
+
+Both variants have their own advantages and disadvantages.
+See section 
+<A HREF="i4lfaq-18.html#2channel">2channel</A>.
+Bonding (16bit channel) is not supported,
+since it can not work reliably when the dialup connections have deviating
+latency.
+Warning: Channel bundling saves time, but not telephone charges.
+It is useful only if you really need the extra bandwidth.</P>
+
+<H2><A NAME="feature_diald"></A> <A NAME="ss3.9">3.9</A> <A HREF="i4lfaq.html#toc3.9">feature_diald: Can I combine isdn4linux with diald? </A>
+</H2>
+
+<P>Yes, you can. You have to configure it to use the ttyI* devices to dial
+out. E.g. like this:
+<HR>
+<PRE>
+/usr/sbin/diald /dev/ttyI4 -m ppp [...]
+</PRE>
+<HR>
+
+where [...] stands for further dialout parameters.
+The recent diald releases contain configuration files for ISDN. See
+<A HREF="http://diald.sourceforge.net">http://diald.sourceforge.net</A> for details.</P>
+
+<H2><A NAME="feature_dod"></A> <A NAME="ss3.10">3.10</A> <A HREF="i4lfaq.html#toc3.10">feature_dod: Does the driver support &quot;dial on demand&quot;? </A>
+</H2>
+
+<P>Yes. If a network interface (e.g. &quot;isdn0&quot;) is set up, the driver
+will dial the number. If in addition a hangup timeout (Idle Timeout) has been
+given (like: <CODE>isdnctrl huptime &lt;interface&gt; &lt;time&gt;</CODE>), then
+the driver will automatically hang up when no data was been transferred over
+the interface for &gt;time&lt; seconds. However, with syncPPP there are
+problems (see the syncPPP section).
+Also look at the dialmode description (see question
+<A HREF="i4lfaq-10.html#dialout_dialmode">dialout_dialmode</A>).
+You should definitely be very interested in the large section of this FAQ that
+talks about the dangers of unwanted dialouts: (
+<A HREF="i4lfaq-16.html#dod">dod</A>).</P>
+
+<H2><A NAME="feature_sms"></A> <A NAME="ss3.11">3.11</A> <A HREF="i4lfaq.html#toc3.11">feature_sms: Can I send SMS (short messages) to my mobile phone via ISDN? </A>
+</H2>
+
+<P>Yes, you can use the program <CODE>yaps</CODE> to do this. However, due to some
+pecularities in the SMS-callcenter's ISDN connection, you have to compile the
+kernel with the options <CODE>Disable send complete</CODE> and
+<CODE>Disable sending llc</CODE>. For the new CAPI 2.0 interface a patched
+version of yaps, <CODE>capi4yaps</CODE>, is available on
+<A HREF="http://sourceforge.net/projects/capi4yaps/">http://sourceforge.net/projects/capi4yaps/</A>.</P>
+<P>Please note that mainly German providers support sending SMS via ISDN
+connection, in other countries this might not work. Dutch as well as UK
+SMS callcenters seem to not support this feature. Please let me know if
+you have additional information on this.
+A useful sample config for yaps you might find on:
+<A HREF="http://www.tnt-computer.de/linux/yaps-suite1-1.tgz">http://www.tnt-computer.de/linux/yaps-suite1-1.tgz</A></P>
+<P>Another program to send SMS is <CODE>asterisk</CODE>. Have a look at:
+<A HREF="http://www.asterisk.org">http://www.asterisk.org</A> and
+<A HREF="http://www.voip-info.org/wiki-Asterisk+cmd+Sms">http://www.voip-info.org/wiki-Asterisk+cmd+Sms</A>.
+One advantage over yaps is that it can also receive SMS, for Germany
+(you have to register for this first by sending a specific SMS -
+otherwise the SMS will be communicated to you by an automated voice
+call).</P>
+<P>Yet another program to send SMS is <CODE>smsclient</CODE>. You can find it on:
+<A HREF="http://www.smsclient.org">http://www.smsclient.org</A>.</P>
+
+<H2><A NAME="feature_btx"></A> <A NAME="ss3.12">3.12</A> <A HREF="i4lfaq.html#toc3.12">feature_btx: Is the German videotex/Btx/Datex-J possible with isdn4linux? </A>
+</H2>
+
+<P>Yes, it works with the modem emulation with the ttyI* devices. There is
+a special register to set for videotex (ATSx=y -  see the Readme's)
+Warning! XCept (formerly Xbtx) has an ISDN configuration option. This
+should NOT be used. XCept should be configured as if a normal modem
+were being used.</P>
+
+<H2><A NAME="feature_clock"></A> <A NAME="ss3.13">3.13</A> <A HREF="i4lfaq.html#toc3.13">feature_clock: Can I set the clock of my computer with ISDN? </A>
+</H2>
+
+<P>Yes. Isdnlog offers this feature with option &quot;-t&quot;. Unfortunately,
+the seconds are not transmitted via ISDN, and the transmitted time is
+not very accurate - depending on the ISDN equipment of your
+telephone company there may be a deviation of several minutes (!).
+It's better to get a PC clock that is set by radio signals and
+check it with, for example, xntp. You can also use a time server in
+the Internet with &quot;netdate&quot; or &quot;rdate&quot;.
+Check out the following urls on information about using time servers:
+<UL>
+<LI> 
+<A HREF="http://www.eecis.udel.edu/~mills/ntp/servers.html">http://www.eecis.udel.edu/~mills/ntp/servers.html</A></LI>
+<LI> In German: 
+<A HREF="http://www.ptb.de/deutsch/org/4/43/433/verb.htm">http://www.ptb.de/deutsch/org/4/43/433/verb.htm</A></LI>
+<LI> In German: 
+<A HREF="http://www.ptb.de/deutsch/aktuell/pi/pi00/pi0100.htm">http://www.ptb.de/deutsch/aktuell/pi/pi00/pi0100.htm</A></LI>
+</UL>
+</P>
+
+<H2><A NAME="feature_dosemu"></A> <A NAME="ss3.14">3.14</A> <A HREF="i4lfaq.html#toc3.14">feature_dosemu: Can I use isdn4linux under dosemu? </A>
+</H2>
+
+<P>Yes, you can! Steffan Henke
+<CODE>
+<A HREF="mailto:henker@informatik.uni-bremen.de">henker@informatik.uni-bremen.de</A></CODE> wrote on 25 Oct 96:
+<BLOCKQUOTE>
+In dosemu.conf it is enough to enter a virtual com port,
+(for example com2) that can be used with e.g. Telix or
+Terminate: serial { com 2 device /dev/ttyI3 }
+Access with Fossil is possible if fossil.com (included with
+dosemu) is started.  Tested with the following configurations:
+- Kernel 2.0.21, Teles driver incl. Karsten's patches
+- Kernel 2.0.21, HiSax
+</BLOCKQUOTE>
+</P>
+
+<H2><A NAME="feature_capi"></A> <A NAME="ss3.15">3.15</A> <A HREF="i4lfaq.html#toc3.15">feature_capi: Is there a CAPI interface available? </A>
+</H2>
+
+<P>Currently, these cards support the CAPI 2.0 interface:
+<UL>
+<LI> the active card AVM B1.</LI>
+<LI> the active DIVA Server cards from Eicon.</LI>
+<LI> the active cards from Hypercope (HYSDN Champ2, HYSDN Ergo2,
+HYSDN Metro4)</LI>
+<LI> the passive Fritz card from AVM. However, please note that you
+have to download and manually install the binary drivers for this from
+AVMs ftp server. See the following web site for a nice howto:
+<A HREF="http://www.topf-sicret.de/help/capi20.html">http://www.topf-sicret.de/help/capi20.html</A>. There was also
+lots of stuff written in the mailing list on this.
+Here is a German website which has some nice installation instructions:
+<CODE>
+<A HREF="http://ixi.thepenguin.de">http://ixi.thepenguin.de</A></CODE> or
+<CODE>
+<A HREF="http://capi4linux.thepenguin.de">http://capi4linux.thepenguin.de</A></CODE> or
+<CODE>
+<A HREF="http://www.thepenguin.de">http://www.thepenguin.de</A></CODE>
+Please note that due to its binary nature, this driver will not work
+if your distribution is incompatible with it (e.g. based on 64 bit).</LI>
+</UL>
+</P>
+<P>This interface follows the official CAPI 2.0 standard that was established
+recently for Linux by the CAPI Association (see
+<A HREF="http://www.capi.org">http://www.capi.org</A>).
+Since kernel 2.6.0 the CAPI interface has been used as the general
+interface, also for other cards. For passive cards, the new driver
+mISDN will replace the old hisax driver once it is fully functional.</P>
+<P>There are no plans to implement a CAPI 1.1 interface.</P>
+
+<H2><A NAME="feature_uus"></A> <A NAME="ss3.16">3.16</A> <A HREF="i4lfaq.html#toc3.16">feature_uus: Is UUS (user to user signaling) supported? </A>
+</H2>
+
+<P>Yes, isdn4linux could support both sending and receiving, but the
+implementation is currently rather incomplete due to the unclear legal
+situation for using this facility. Receiving UUS is only possible through
+the debug interfaces. Sending is supported in connection with the diversion
+services (when rejecting a call or announcing a busy condition), but not
+on an ordinary call. It is recommended to use subaddressing (see question
+<A HREF="#feature_subaddressing">feature_subaddressing</A>) instead.
+Please note that sending UUS it is not a free service (receiving is free),
+at least with some German phone providers you have to pay extra for it
+(also have a close look on the usage conditions). Additionally, please note
+that if you are connected through a PBX, it may filter out all the UUS
+stuff.</P>
+
+<H2><A NAME="feature_subaddressing"></A> <A NAME="ss3.17">3.17</A> <A HREF="i4lfaq.html#toc3.17">feature_subaddressing: Is subaddressing supported? </A>
+</H2>
+
+<P>Yes, isdn4linux does support subaddressing (available in France).
+To configure it, give HiSax the number in this format:
+<CODE>&lt;number&gt;.&lt;subaddress&gt;</CODE>. However, you may have to order
+it seperately and pay extra for receiving it (sending is free), depeding
+on your ISDN provider.
+Additionally, please note that if you are connected through a PBX, it will
+most likely filter out all the subaddressing stuff.</P>
+
+<H2><A NAME="feature_gsmv110"></A> <A NAME="ss3.18">3.18</A> <A HREF="i4lfaq.html#toc3.18">feature_gsmv110: Can I connect from my PDA via GMS cellular phone to isdn4linux? </A>
+</H2>
+
+<P>Yes, if the provider of the cellular phone has a GSM to ISDN/V.110 gateway.
+This has been reported to work from a PalmPilot to isdn4linux with V.110.
+See question 
+<A HREF="i4lfaq-6.html#config_gsmv110">config_gsmv110</A> for details on how to configure it.</P>
+
+<H2><A NAME="feature_reversedcard"></A> <A NAME="ss3.19">3.19</A> <A HREF="i4lfaq.html#toc3.19">feature_reversedcard: Can isdn4linux log ALL actions happening on the ISDN bus (dual mode/reversed card/COLP/...)? </A>
+</H2>
+
+<P>Yes, isdn4linux offers several possibilities to do this. Have a look at
+question 
+<A HREF="i4lfaq-23.html#isdnlog_reversedcard">isdnlog_reversedcard</A>.</P>
+<P>Please note that you may also use the software ISDN Sniffer for this,
+see the German web site
+<A HREF="http://krypt.cs.uni-sb.de/projects/isdnsniffer/">http://krypt.cs.uni-sb.de/projects/isdnsniffer/</A>.</P>
+
+<H2><A NAME="feature_chargeint"></A> <A NAME="ss3.20">3.20</A> <A HREF="i4lfaq.html#toc3.20">feature_chargeint: Can isdn4linux hang up just before the ISDN provider would charge me for another unit? </A>
+</H2>
+
+<P>Yes, isdn4linux can do this. Check out section 
+<A HREF="i4lfaq-17.html#chargeint">chargeint</A>.</P>
+
+<H2><A NAME="feature_eurofile"></A> <A NAME="ss3.21">3.21</A> <A HREF="i4lfaq.html#toc3.21">feature_eurofile: Can isdn4linux download or offer files via EFT (Eurofile transfer)? </A>
+</H2>
+
+<P>Yes, isdn4linux offers special tools for this which are part of the
+isdn4k-utils.</P>
+
+<H2><A NAME="feature_leased"></A> <A NAME="ss3.22">3.22</A> <A HREF="i4lfaq.html#toc3.22">feature_leased: Can isdn4linux handle leased lines (e.g. D64S)? </A>
+</H2>
+
+<P>Yes, isdn4linux can handle leased lines (explained in the glossary:
+<A HREF="i4lfaq-29.html#glossary_leased">glossary_leased</A>). Have a look at section
+<A HREF="i4lfaq-20.html#leased">leased</A>.</P>
+
+<H2><A NAME="feature_pointtopoint"></A> <A NAME="ss3.23">3.23</A> <A HREF="i4lfaq.html#toc3.23">feature_pointtopoint: Can isdn4linux work in point-to-point mode as well as in multi-device mode? </A>
+</H2>
+
+<P>Yes, isdn4linux supports both. Check the glossary to understand the
+difference: 
+<A HREF="i4lfaq-29.html#glossary_pointtopointmode">glossary_pointtopointmode</A> and
+<A HREF="i4lfaq-29.html#glossary_multidevicemode">glossary_multidevicemode</A>.</P>
+
+<H2><A NAME="feature_ntmode"></A> <A NAME="ss3.24">3.24</A> <A HREF="i4lfaq.html#toc3.24">feature_ntmode: Does isdn4linux support running a card in NT mode? </A>
+</H2>
+
+<P>Yes, isdn4linux does support it, but only for a few special cards.
+See question 
+<A HREF="#feature_crossedcable">feature_crossedcable</A>
+for details. In the glossary there is more information on what the NT mode is:
+<A HREF="i4lfaq-29.html#glossary_ntmode">glossary_ntmode</A>.</P>
+
+<H2><A NAME="feature_crossedcable"></A> <A NAME="ss3.25">3.25</A> <A HREF="i4lfaq.html#toc3.25">feature_crossedcable: Can isdn4linux directly connect two ISDN user devices (two ISDN cards) via a crossed cable? </A>
+</H2>
+
+<P>Yes, isdn4linux can do this. However, this requires that the ISDN card
+can run in NT mode (for details on this mode see the glossary:
+<A HREF="i4lfaq-29.html#glossary_ntmode">glossary_ntmode</A>).
+Only very few cards (e.g. HFC chipset) are cable of doing this.
+Use the following command to start the ISDN card in NT mode:
+<HR>
+<PRE>
+hisaxctrl &lt;id&gt; 98 1
+</PRE>
+<HR>
+
+Make sure that the crossed cable is terminated even if it is very short!
+Nothing will work without termination, not even a 1m cable. Some HFC card
+already have jumpers for termination. Since TX as well as RX circuits must
+be terminated with its own resistor, two jumpers should be present, like this:
+<PRE>
+> 3 RX+ 2a --[100 Ohm]----+     ---------- /      ----------
+> 4 TX+ 1a --[100 Ohm]--+ |    | 87654321 |      | 12345678 |
+> 5 TX- 1b ---oJ1o------+ |    |__      __|/     |/_      /_|
+> 6 RX- 2b ---oJ2o--------+       |____|            |/___|
+</PRE>
+</P>
+<P>It has been reported that for proper functioning even on a short cable a
+termination is required at/near both ends (at the ISDN card as well as at
+the connecting ISDN device).</P>
+<P>However, this will only give you the physical connection. Up to now
+isdn4linux does not (yet?) implement the higher level ISDN protocol DSS1
+(this means that isdn4linux can not pretend to an ISDN device that it is
+an ISDN exchange, and give it the proper ISDN commands). As a result, you can
+simulate a leased line, but not pretend to be the PBX with isdn4linux.</P>
+<P>With the newer mISDN modules the situation is better. A special user space
+module is available for the emulation of a PBX. Development of a kernel module
+is in progress. In any case the chipset has to support the NT mode.</P>
+
+
+<H2><A NAME="feature_lcr"></A> <A NAME="ss3.26">3.26</A> <A HREF="i4lfaq.html#toc3.26">feature_lcr: Can isdn4linux do least cost routing (LCR)? </A>
+</H2>
+
+<P>Yes, this feature is now being supported by isdnlog. What it does is that
+it allows isdnlog to choose your telephone provider when placing a call
+through your ISDN card, depending on the time of day and the current rate
+information. Since isdnlog 4.16 an external script is called (if configured)
+to change various ISP settings (e.g. DNS lookup, proxy setup,...).</P>
+<P>Note: the ABC-extensions (s. 
+<A HREF="i4lfaq-4.html#docu_abc">docu_abc</A>) must be
+installed. Also, isdnlog should always be running (otherwise your dialout
+will be delayed by 3 seconds). If the ABC-extensions are not installed,
+isdnlog prints hints to the log file, which provider would have been chosen.</P>
+
+<H2><A NAME="feature_internetdialin"></A> <A NAME="ss3.27">3.27</A> <A HREF="i4lfaq.html#toc3.27">feature_internetdialin: Can isdn4linux be setup such that it dials into the Internet, whenever I call it via telephone? </A>
+</H2>
+
+<P>Yes, this is possible with isdnlog. You have to configure isdnlog such that
+it can execute a script whenever someone dials in. In the script you can
+check for the correct telephone number, then trigger the dialin.
+To access your computer then over the internet, you can then access it via
+its ip address. In case of dynamic ip address assignment, you probably want
+to store the new ip somehow. Storage in a html page or via dynamic DNS
+may be good possibilities.</P>
+<P>If you understand German, there was an article about exactly this setup in
+ct 18/2002, page 204 (Bei Anruf Internet - Handy-Anruf l&ouml;st
+Internet-Einwahl aus). Also, the following German web site explains
+how to set up such a configuration:
+<CODE>
+<A HREF="http://www.staschke.de/linux/anwahl.html">http://www.staschke.de/linux/anwahl.html</A></CODE></P>
+
+
+
+<H2><A NAME="feature_future"></A> <A NAME="ss3.28">3.28</A> <A HREF="i4lfaq.html#toc3.28">feature_future: Which features are planned for the future? </A>
+</H2>
+
+<P>Actually, most features have been implemented and are now being improved.
+But, who knows what other interesting stuff the developers may come up.
+We'll see...</P>
+
+
+
+<HR>
+<A HREF="i4lfaq-4.html">Next</A>
+<A HREF="i4lfaq-2.html">Previous</A>
+<A HREF="i4lfaq.html#toc3">Contents</A>
+</BODY>
+</HTML>

@@ -1,0 +1,83 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+	<TITLE></TITLE>
+	<META NAME="GENERATOR" CONTENT="《Sogwang 3.0》  (Linux)">
+	<META NAME="CREATED" CONTENT="20091205;14081500">
+	<META NAME="CHANGED" CONTENT="20091205;14120600">
+	<STYLE TYPE="text/css">
+	<!--
+		H2 { margin-bottom: 0.18cm; font-family: "Bitstream Vera Sans", "Arial", "Helvetica", "Lucida", "Geneva", "Helmet", sans-serif, "Andale Sans UI", "Arial Unicode MS", "Lucida Sans Unicode", "Tahoma"; font-size: 14pt }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="ko-KP" DIR="LTR"><DIV style="margin-left: 25">
+<H1><A NAME="ongosub"></A><A NAME="bm_id3153897"></A><FONT FACE="Thorndale, serif"><SPAN LANG="en-US">On...GoSub
+Statement; On...GoTo Statement [Runtime]</SPAN></FONT></H1>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Branches
+to one of several specified lines in the program code, depending on
+the value of a numeric expression.</SPAN></FONT></P>
+<H2><SPAN LANG="en-US">Syntax:</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">On N
+GoSub Label1[, Label2[, Label3[,...]]]</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">On
+NumExpression GoTo Label1[, Label2[, Label3[,...]]]</SPAN></FONT></P>
+<H2><SPAN LANG="en-US">Parameters:</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>NumExpression:</B>
+Any numeric expression between 0 and 255 that determines which of the
+lines the program branches to. If NumExpression is 0, the statement
+is not executed. If NumExpression is greater than 0, the program
+jumps to the label that has a position number that corresponds to the
+expression (1 = First label; 2 = Second label)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Label:</B>
+Target line according to <B>GoTo </B>or <B>GoSub</B> structure.</SPAN></FONT></P>
+<TABLE WIDTH=501 BORDER=0 CELLPADDING=5 CELLSPACING=0>
+	<COL WIDTH=33>
+	<COL WIDTH=254>
+	<TR>
+		<TD WIDTH=33>
+			<P><IMG SRC="../../../Image/note.png" NAME="graphics1" ALT="Note Icon " ALIGN=BOTTOM WIDTH=33 HEIGHT=42 BORDER=0></P>
+		</TD>
+		<TD WIDTH=448>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">The
+			<B>GoTo</B> or <B>GoSub </B>conventions are valid.</SPAN></FONT></P>
+		</TD>
+	</TR>
+</TABLE>
+<P><BR><BR>
+</P>
+<H2><SPAN LANG="en-US">Example:</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Sub
+ExampleOnGosub</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Dim iVar
+As Integer</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Dim sVar
+As String</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">iVar = 2</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">sVar =&quot;&quot;</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">On iVar
+GoSub Sub1, Sub2</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">On iVar
+GoTo Line1, Line2</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Exit Sub</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Sub1:</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">sVar
+=sVar &amp; &quot; From Sub 1 to&quot; : Return</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Sub2:</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">sVar
+=sVar &amp; &quot; From Sub 2 to&quot; : Return</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Line1:</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">sVar
+=sVar &amp; &quot; Label 1&quot; : GoTo Ende</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Line2:</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">sVar
+=sVar &amp; &quot; Label 2&quot;</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Ende:</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">MsgBox
+sVar,0,&quot;On...Gosub&quot;</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">End
+Sub</SPAN></FONT></P>
+
+</DIV></BODY>
+</HTML>

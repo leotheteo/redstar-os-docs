@@ -1,0 +1,127 @@
+<html dir='ltr'>
+	<head>
+		<META http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+		<title>PEARSON</title>
+		<link rel='stylesheet' type='text/css' href='../css/main.css'/>
+		<script type='text/javascript' language='Javascript' src='../js/mexpcol.js'></script>
+		<script type='text/javascript' language='JavaScript' src='../js/glossary.js'></script>
+	</head>
+	<body>
+		<h1>&nbsp;<img align="absbottom" src="../image/external_images/crystal/svtools/res/new_doc.png"/>&nbsp;PEARSON</h1>
+		<p id='ExpandAllLine' class='ExpFav'>
+			<a href='#' onClick='ExpandAll()' onKeyPress='ExpandAll()' class='DropDown'>
+				<img id='picHeader' border='0' src='../image/image/common/expandtri.gif' alt='모두 표시'>
+				<span id='ExpandAll'>모두 표시</span>
+			</a>
+		</p>
+		<p><b class="bterm">참고항목</b>&emsp;
+			<a href="5.9.10.1.htm">통계함수목록</a>,
+			<a href="5.9.10.33.htm">INTERCEPT</a>,
+			<a href="5.9.9.4.htm">LINEST</a>,
+			<a href="5.9.10.59.htm">RSQ</a>,
+			<a href="5.9.10.61.htm">SLOPE</a>,
+			<a href="5.9.10.68.htm">STEYX</a>,
+			<a href="5.9.9.15.htm">TREND</a>
+		</p>
+		<p>피어슨제곱의 모멘트상관곁수를 구합니다.</p>
+		<p><b class="bterm">문법:&emsp;&emsp;		PEARSON(자료행렬_1,자료행렬_2)</b></p>
+		<table>
+			<tr>
+				<th>인수명</th>
+				<th>설명</th>
+			</tr>
+			<tr>
+				<td>자료행렬_1</td>
+				<td>첫번째 통계량행렬입니다.</td>
+			</tr>
+			<tr>
+				<td>자료행렬_2</td>
+				<td>두번째 통계량행렬입니다.</td>
+			</tr>
+		</table>
+		<p><b class="bterm">주의</b></p>
+			<ul>
+				<li>인수는 수자나 수자를 포함한 이름, 참조범위여야 합니다.</li>
+				<li>배렬 또는 참조인수에 본문, 론리값 또는 빈 세포가 있는 경우 그 값들은 포함되지 않지만 값이 0인 세포는 포함됩니다.</li>
+				<li><b class="bterm">자료행렬_1</b>과 <b class="bterm">자료행렬_2</b>가 비여있거나 자료점개수가 다르면 #<b class="bterm">N</b>/<b class="bterm">A</b> 오유값을 표시합니다.</li>
+				<li>피어슨제곱의 모멘트상관곁수 r에 대한 수식은 다음과 같습니다.
+					<p><img border='0' src='../image/image/sgsd/formula-64.gif' alt='표시'></p>
+					<p>여기서 x와 y는 표본평균 AVERAGE(자료행렬_1)과 AVERAGE(자료행렬_2)입니다.</p>
+				</li>
+			</ul>
+		<p><b class="bterm">실례</b></p>
+			<p><a href="1.5.1.htm">실례의 리용방법</a>을 참고하십시오.</p>
+			<table>
+				<tr>
+					<td>
+						<table>
+							<tr>
+								<td class="noborder">&nbsp;
+								</td>
+							</tr>
+							<tr>
+								<th>1</th>
+							</tr>
+							<tr>
+								<th>2</th>
+							</tr>
+							<tr>
+								<th>3</th>
+							</tr>
+							<tr>
+								<th>4</th>
+							</tr>
+							<tr>
+								<th>5</th>
+							</tr>
+							<tr>
+								<th>6</th>
+							</tr>
+						</table>
+					</td>
+					<td>
+						<table>
+							<tr>
+								<th>A</th>
+								<th>B</th>
+							</tr>
+							<tr>
+								<th>독립 변량</th>
+								<th>종속 변량</th>
+							</tr>
+							<tr>
+								<td>9</td>
+								<td>10</td>
+							</tr>
+							<tr>
+								<td>7</td>
+								<td>6</td>
+							</tr>
+							<tr>
+								<td>5</td>
+								<td>1</td>
+							</tr>
+							<tr>
+								<td>3</td>
+								<td>5</td>
+							</tr>
+							<tr>
+								<td>1</td>
+								<td>3</td>
+							</tr>
+							<tr>
+								<th>수식</th>
+								<th>설명(결과)</th>
+							</tr>
+							<tr>
+								<td>=PEARSON(A2:A6,B2:B6)</td>
+								<td>우에 있는 자료집합에 대한 피어슨제곱의 모멘트상관곁수입니다. (0.7)</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+		<script type="text/javascript" language="Javascript">footerView()</script>
+	
+</body>
+</html>				

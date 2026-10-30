@@ -1,0 +1,103 @@
+﻿<html dir='ltr'>
+	<head>
+		<META http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+		<title>TIME</title>
+		<link rel='stylesheet' type='text/css' href='../css/main.css'/>
+		<script type='text/javascript' language='Javascript' src='../js/mexpcol.js'></script>
+		<script type='text/javascript' language='JavaScript' src='../js/glossary.js'></script>
+	</head>
+	<body>
+		<p id='ExpandAllLine' class='ExpFav'>
+			<a href='#' onClick='ExpandAll()' onKeyPress='ExpandAll()' class='DropDown'>
+				<img id='picHeader' border='0' src='../image/image/common/expandtri.gif' alt='모두 표시'>
+				<span id='ExpandAll'>모두 표시</span>
+			</a>
+		</p>
+		<h1>&nbsp;<img align="absbottom" src="../image/external_images/crystal/svtools/res/new_doc.png"/>&nbsp;TIME</h1>
+		<p><b class="bterm">참고항목</b>&emsp;
+		   <a href='5.9.4.1.htm'>날자 및 시간함수목록</a>,  
+		   <a href='5.9.4.12.htm'>HOUR</a>, 
+		   <a href='5.9.4.14.htm'>MINUTE</a>, 
+		   <a href='5.9.4.18.htm'>NOW</a>, 
+		   <a href='5.9.4.19.htm'>SECOND</a>
+		</p>
+		<p>시, 분, 초의 세부사항으로부터 시간값을 결정합니다.</p>
+		<p><b class="bterm">문법:&emsp;&emsp;	TIME(시,분,초)</b></p>
+		<table>
+			<tr>
+				<th>인수명</th>
+				<th>설명</th>
+			</tr>
+			<tr>
+				<td>시</td>
+				<td>시간을 나타내는 수자입니다. 23보다 큰값은 24로 나눈 그 나머지가 <b class="bterm">시</b>값으로 처리됩니다. 례를 들어 TIME(27,0,0)은 TIME(3,0,0)이 되고 이 값은 0.125 또는 오전 3:00입니다.</td>
+			</tr>
+			<tr>
+				<td>분</td>
+				<td>분을 나타내는 수자입니다. 59보다 큰값은 시간과 분으로 변환됩니다. 례를 들어 TIME(0,750,0)은 TIME(12,30,0)이 되고 이 값은 0.520833 또는 오후 12:30입니다.</td>
+			</tr>
+			<tr>
+				<td>초</td>
+				<td>초를 나타내는 수자입니다. 59보다 큰값은 시간, 분, 초로 변환됩니다. 례를 들어 TIME(0,0,2000)은 TIME(0,33,22)이 되고 이 값은 0.023148 또는 오전 12:33:20입니다.</td>
+			</tr>
+		</table>
+		<p><b class="bterm">주의</b></p>
+		<p>시간값은 날자값의 일부이며 실수로 표시됩니다. 례를 들어 오후12:00는 하루의 절반이므로 0.5로 표시됩니다.</p>
+		<p><b class="bterm">실례</b></p>
+			<p><a href='1.5.1.htm'>실례의 리용방법</a>을 참고하십시오.</p>
+			<table>
+				<tr>
+					<td>
+						<table>
+							<tr><td>&nbsp;</td></tr>
+							<tr><th>1</th></tr>
+							<tr><th>2</th></tr>
+							<tr><th>3</th></tr>
+						</table>
+					</td>
+					<td>
+						<table>
+							<tr>
+								<th>A</th>
+								<th>B</th>
+								<th>C</th>
+							</tr>
+							<tr>
+								<th>시</th>
+								<th>분</th>
+								<th>초</th>
+							</tr>
+							<tr>
+								<td>12</td>
+								<td>0</td>
+								<td>0</td>
+							</tr>
+							<tr>
+								<td>16</td>
+								<td>48</td>
+								<td>10</td>
+							</tr>
+							<tr>
+								<th>수식</th>
+								<th>설명(결과)</th>
+								<td>&nbsp;</td>
+							</tr>
+							<tr>
+								<td>=TIME(A2,B2,C2)</td>
+								<td>첫번째 시간의 하루에 대한 소수부분입니다. (12:00:00)</td>
+								<td>&nbsp;</td>
+							</tr>
+							<tr>
+								<td>=TIME(A3,B3,C3)</td>
+								<td>두번째 시간의 하루에 대한 소수부분입니다. (16:48:10)</td>
+								<td>&nbsp;</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>	
+			<P><b class="bterm">참고:</b>   시간을 실수로 표시하려면 세포를 선택하고 <b class="bterm">&lt;서식&gt;</b>차림표에서 <b class="bterm">&lt;세포&gt;</b>를 찰칵한 다음 <b class="bterm">&lt;수자&gt;</b>표쪽을 찰칵하고 <b class="bterm">&lt;종류&gt;</b>목록칸에서 <b class="bterm">&lt;수값&gt;</b>을 찰칵합니다.</P>
+		<script type="text/javascript" language="Javascript">footerView()</script>
+	
+</body>
+</html>

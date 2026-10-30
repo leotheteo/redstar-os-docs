@@ -1,0 +1,168 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <META NAME="GENERATOR" CONTENT="LinuxDoc-Tools 0.9.21">
+ <TITLE>FAQ for isdn4linux: Other countries</TITLE>
+ <LINK HREF="i4lfaq-28.html" REL=next>
+ <LINK HREF="i4lfaq-26.html" REL=previous>
+ <LINK HREF="i4lfaq.html#toc27" REL=contents>
+</HEAD>
+<BODY>
+<A HREF="i4lfaq-28.html">Next</A>
+<A HREF="i4lfaq-26.html">Previous</A>
+<A HREF="i4lfaq.html#toc27">Contents</A>
+<HR>
+<H2><A NAME="s27">27.</A> <A HREF="i4lfaq.html#toc27">Other countries</A></H2>
+
+<H2><A NAME="country_austria"></A> <A NAME="ss27.1">27.1</A> <A HREF="i4lfaq.html#toc27.1">country_austria: Austria: We have neither an MSN nor an EAZ, only a normal plain telephone number. What do we have to use for i4l? </A>
+</H2>
+
+<P>In Austria ISDN lines are by standard installed <EM>without</EM> MSN (which is
+different from Germany). That means when somebody calls the installed ISDN
+number the called party gets signalled a &quot;global call&quot;. i4l then
+says &quot;incoming call without CPN&quot; - &quot;CPN&quot; means called
+party number. Solution: Set the incoming &quot;MSN&quot; (in reality: none) to
+&quot;0&quot;, then i4l responds to the global call. Otherwise it waits for
+the signalling of the number you told i4l, and that won't happen (happens only
+for *additional* MSN). The same applies to the setup of your getty.</P>
+<P>On the other hand you should set the outgoing MSN correctly (without area
+code) -- however, a wrong MSN will be replaced with the correct one by your
+telecommunications provider.</P>
+
+<H2><A NAME="country_brazil"></A> <A NAME="ss27.2">27.2</A> <A HREF="i4lfaq.html#toc27.2">country_brazil: Brazil: How does our MSN look like? </A>
+</H2>
+
+<P>For use with Telemar you have to configure your MSN as your phone number
+without the leading area code.</P>
+<P>Brazil is using EuroISDN. The ISDN service DVI which was launched by Telemar
+is based on a hardware solution from Teles (BRI PCI card), which has to be
+configured as NETjet card. However, since this card is very incompatible
+to the motherboards sold in Brazil, Telemar also offers the option of a
+Teles 16.3c ISA. You may be able to find some configuration help on
+<A HREF="http://www.olinux.com.br">http://www.olinux.com.br</A> for this card.</P>
+
+<H2><A NAME="country_france"></A> <A NAME="ss27.3">27.3</A> <A HREF="i4lfaq.html#toc27.3">country_france: France: How does our MSN look like? </A>
+</H2>
+
+<P>If you don't have MSN, you need to specify as local number only the last 4
+digits of you phone number. A good thing is that you can also use
+sub-addressing. If your phone number is 01 41 33 67 87, and you want to use
+sub-address 02, then configure the local phone number of the HiSax driver as
+6787.02 .</P>
+
+<H2><A NAME="country_italy"></A> <A NAME="ss27.4">27.4</A> <A HREF="i4lfaq.html#toc27.4">country_italy: Italy: What does our MSN look like? </A>
+</H2>
+
+<P>isdn4linux also works in Italy (ICN card). The MSN must be the phone number
+with the Italian area code, and since middle of 2001 includes the leading 0.
+For example, if my phone number is 72004681 and my area code is 045, my MSN
+is 04572004681.  Now with the setting AT&amp;E04572004681 isdn4linux works fine.</P>
+
+<H2><A NAME="country_netherlands"></A> <A NAME="ss27.5">27.5</A> <A HREF="i4lfaq.html#toc27.5">country_netherlands: Netherlands: What does our MSN look like? </A>
+</H2>
+
+<P>In The Netherlands the MSN includes (as opposed to the German
+Telekom) <EM>also the area code</EM> - but without the leading zero.</P>
+
+<H2><A NAME="country_northamerica"></A> <A NAME="ss27.6">27.6</A> <A HREF="i4lfaq.html#toc27.6">country_northamerica: North America: Can we use isdn4linux in North America? </A>
+</H2>
+
+<P>Yes, you can use isdn4linux in North America. However, some specialties
+apply.</P>
+<P>In North America the telephone company will only provide a U instead of an S
+interface. This means that the customer rather than the telephone company
+has to supply the network terminator (NT-1). Your easiest solution
+is a card which has an integrated NT-1 and supports the U interface.
+Alternatively buy an external NT which translates between U and S interface,
+and connect your ISDN card with S interface (without NT-1) to it.</P>
+<P>In North America the channel protocol NI-1 is being used. NI-1 is related
+to DSS1 (both are Q.931 Protocols), but both have totally different groups
+of functions. Support for NI-1 has recently been added to HiSax, the driver
+for passive cards, with great help from Traverse Technologies:
+<CODE>
+<A HREF="http://www.ttcomms.com">http://www.ttcomms.com</A></CODE>.
+Since they helped to implement and verify NI-1 usability, we would recommend
+you buy their card NETspider-U (with integrated NT-1), as a thank-you
+for their contribution to isdn4linux open source development.</P>
+<P>See Documentation/isdn/README.HiSax for details on how to set up your
+system with HiSax (protocol type is 4, give SPID together with your own
+number in the form of &lt;OWNNUMBER&gt;:&lt;SPID&gt;).</P>
+<P>Quite some time ago, the firm &quot;Spellcaster&quot; has written their own
+isdn4linux driver for their (active) cards. Both BRI and PRI cards are
+available. More information is available on:
+<CODE>
+<A HREF="http://www.spellcast.com">http://www.spellcast.com</A></CODE></P>
+<P>Also, the active Eicon DIVA cards work fine in North America and have
+5ESS and NI drivers, which are currently ported to UltraSparc.</P>
+
+
+<H2><A NAME="country_pakistan"></A> <A NAME="ss27.7">27.7</A> <A HREF="i4lfaq.html#toc27.7">country_pakistan: Pakistan: What should we use as MSN? </A>
+</H2>
+
+<P>It seems that no MSN functionality is supported. Therefore the MSN should be
+set to &quot;0&quot;.</P>
+
+<H2><A NAME="country_portugal"></A> <A NAME="ss27.8">27.8</A> <A HREF="i4lfaq.html#toc27.8">country_portugal: Portugal: What should we use as MSN? </A>
+</H2>
+
+<P>As long as only one telephone number or MSN was applied for, the telephone
+company sends no caller ID. Therefore the MSN should be set to &quot;0&quot;.
+If more than one MSNs was applied for, then these should be set as usual.</P>
+
+<H2><A NAME="country_switzerland"></A> <A NAME="ss27.9">27.9</A> <A HREF="i4lfaq.html#toc27.9">country_switzerland: Switzerland: We have neither an MSN nor an EAZ, just a plain telephone number. What do we have to use for i4l? </A>
+</H2>
+
+<P>In Switzerland usually you have to use the telephone number without area
+code. For old ISDN numbers where you have been assigned ten numbers in a
+row this may be different; in that case use the <EM>last digit</EM> of your
+telephone number as your MSN/EAZ (&quot;6&quot; if you have the telephone
+number &quot;123456&quot;).</P>
+
+<H2><A NAME="country_uk"></A> <A NAME="ss27.10">27.10</A> <A HREF="i4lfaq.html#toc27.10">country_uk: UK: What should we use as MSN? </A>
+</H2>
+
+<P>It depends on your ISDN option.
+<UL>
+<LI> ISDN: Does not allow normal MSNs in UK. Each MSN is actually a single
+digit, 0 - 9, corresponding to the last digit of the actual phone number.
+You either have *no* MSNs (then configure isdn4linux to use '0' as MSN,
+e.g. with <CODE>AT&amp;E0</CODE>), or 10 MSNs; you then always get a block of
+10 sequential telephone numbers
+(xxx0-xxx9), of which the last digit (0-9) is your MSN (0 is used in case
+you use an invalid number).</LI>
+<LI> ISDN2e: Seems to be normal EuroISDN. You are assigned MSNs which you
+can use and configure for isdn4linux. The MSN is reported to consist of the
+last 6 digits of your telephone number (try to add digits from your area
+code, if the local number part is shorter than 6 digits).</LI>
+<LI> BTHH (BT HomeHighway): additionally to 2 ISDN ports it includes two
+analog lines with separate telephone number - but calls to and fro for those
+won't be signalled on the ISDN line, even so they use up a B-channel.
+Additional MSN are NOT available (therefore use '0' as MSN to configure
+isdn4linux). Charge info is possible for extra cost. Configure isdn4linux
+only with your 'digital number' as MSN.</LI>
+<LI> BTBH (BT BusinessHighway): The additional paperwork including a
+credit-check enables you to get MSNs and other extras for extra cost.
+Otherwise pretty much like BTHH. Configure isdn4linux to use your 'digital
+number' and/or your MSNs.</LI>
+</UL>
+
+Please note that BT offers an unexpected special "feature" on
+international calls. For international data calls you have to dial
+000&lt;country_code&gt; (three zeros), rather than the 00&lt;country_code&gt;
+(two zeros) for international voice calls.</P>
+<P>By the way: for a BT Speedway card try to select AVM Fritz card (either
+ISA or PCI - depends on what you got; see question 
+<A HREF="i4lfaq-5.html#hardware_fritz">hardware_fritz</A>).</P>
+<P>Since about November 2001, all BT home highway and possibly Business Highway
+NTE boxes come with a built in USB terminal adapter. This terminal adapter is
+based on the ST-5481 chipset. Load the module st5481 for this device, then
+set up your isdn configuration with isdnctrl.</P>
+<P>Also, check out 
+<A HREF="http://www.wurtel.cistron.nl/i4l-howto-uk.html">http://www.wurtel.cistron.nl/i4l-howto-uk.html</A>.</P>
+
+<HR>
+<A HREF="i4lfaq-28.html">Next</A>
+<A HREF="i4lfaq-26.html">Previous</A>
+<A HREF="i4lfaq.html#toc27">Contents</A>
+</BODY>
+</HTML>

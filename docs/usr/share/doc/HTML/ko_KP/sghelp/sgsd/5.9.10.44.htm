@@ -1,0 +1,115 @@
+<html dir='ltr'>
+	<head>
+		<META http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+		<title>NEGBINOMDIST</title>
+		<link rel='stylesheet' type='text/css' href='../css/main.css'/>
+		<script type='text/javascript' language='Javascript' src='../js/mexpcol.js'></script>
+		<script type='text/javascript' language='JavaScript' src='../js/glossary.js'></script>
+	</head>
+	<body>
+		<h1>&nbsp;<img align="absbottom" src="../image/external_images/crystal/svtools/res/new_doc.png"/>&nbsp;NEGBINOMDIST</h1>
+		<p id='ExpandAllLine' class='ExpFav'>
+			<a href='#' onClick='ExpandAll()' onKeyPress='ExpandAll()' class='DropDown'>
+				<img id='picHeader' border='0' src='../image/image/common/expandtri.gif' alt='모두 표시'>
+				<span id='ExpandAll'>모두 표시</span>
+			</a>
+		</p>
+		<p><b class="bterm">참고항목</b>&emsp;
+			<a href="5.9.10.1.htm">통계함수목록</a>,
+			<a href="5.9.10.8.htm">BINOMDIST</a>,
+			<a href="5.9.8.13.htm">COMBIN</a>,
+			<a href="5.9.8.25.htm">FACT</a>,
+			<a href="5.9.10.32.htm">HYPGEOMDIST</a>,
+			<a href="5.9.10.52.htm">PERMUT</a>
+		</p>
+		<p>부수 2항분포값을 구합니다.</p>
+		<p><b class="bterm">문법:&emsp;&emsp;		NEGBINOMDIST(실패회수,성공회수,성공확률)</b></p>
+		<table>
+			<tr>
+				<th>인수명</th>
+				<th>설명</th>
+			</tr>
+			<tr>
+				<td>실패회수</td>
+				<td>시행중 실패회수입니다.</td>
+			</tr>
+			<tr>
+				<td>성공회수</td>
+				<td>련속시행에서의 성공회수입니다.</td>
+			</tr>
+			<tr>
+				<td>성공확률</td>
+				<td>시행중 성공확률입니다.</td>
+			</tr>
+		</table>
+		<p><b class="bterm">주의</b></p>
+			<ul>
+				<li><b class="bterm">실패회수</b>와 <b class="bterm">성공회수</b>는 옹근수로 반올림됩니다.</li>
+				<li><b class="bterm">성공확률</b> < 0거나 <b class="bterm">성공확률</b> > 1이면 <b class="bterm">오유:[오유번호]</b>를 표시합니다.</li>
+				<li><b class="bterm">실패회수</b> < 0이거나 <b class="bterm">성공회수</b> < 1이면 <b class="bterm">오유:[오유번호]</b>를 표시합니다.</li>
+				<li>부의 2항분포식은 다음과 같습니다.
+					<p><img border='0' src='../image/image/sgsd/formula-61.gif' alt='표시'></p>
+				</li>
+			</ul>
+		<p><b class="bterm">실례</b></p>
+			<p><a href="1.5.1.htm">실례의 리용방법</a>을 참고하십시오.</p>
+			<table>
+				<tr>
+					<td>
+						<table>
+							<tr>
+								<td class="noborder">&nbsp;
+								</td>
+							</tr>
+							<tr>
+								<th>1</th>
+							</tr>
+							<tr>
+								<th>2</th>
+							</tr>
+							<tr>
+								<th>3</th>
+							</tr>
+							<tr>
+								<th>4</th>
+							</tr>
+						</table>
+					</td>
+					<td>
+						<table>
+							<tr>
+								<th>A</th>
+								<th>B</th>
+							</tr>
+							<tr>
+								<th>자료</th>
+								<th>설명</th>
+							</tr>
+							<tr>
+								<td>10</td>
+								<td>실패회수입니다.</td>
+							</tr>
+							<tr>
+								<td>5</td>
+								<td>성공회수 기준값입니다.</td>
+							</tr>
+							<tr>
+								<td>0.25</td>
+								<td>성공 확률입니다.</td>
+							</tr>
+							<tr>
+								<th>수식</th>
+								<th>설명(결과)</th>
+							</tr>
+							<tr>
+								<td>=NEGBINOMDIST(A2,A3,A4)</td>
+								<td>우에 있는 조건에 대한 부의 2항분포입니다. (0.06)</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+		<script type="text/javascript" language="Javascript">footerView()</script>
+	
+</body>
+</html>				

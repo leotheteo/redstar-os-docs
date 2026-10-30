@@ -1,0 +1,169 @@
+﻿<html dir='ltr'>
+	<head>
+		<META http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+		<title>CONVERT</title>
+		<link rel='stylesheet' type='text/css' href='../css/main.css'/>
+		<script type='text/javascript' language='Javascript' src='../js/mexpcol.js'></script>
+		<script type='text/javascript' language='JavaScript' src='../js/glossary.js'></script>
+	</head>
+	<body>
+		<h1>&nbsp;<img align="absbottom" src="../image/external_images/crystal/svtools/res/new_doc.png"/>&nbsp;CONVERT</h1>
+		<p id='ExpandAllLine' class='ExpFav'>
+			<a href='#' onClick='ExpandAll()' onKeyPress='ExpandAll()' class='DropDown'>
+				<img id='picHeader' border='0' src='../image/image/common/expandtri.gif' alt='모두 표시'>
+				<span id='ExpandAll'>모두 표시</span>
+			</a>
+		</p>
+		<p><b class="bterm">참고항목</b>&emsp;
+			<a href="5.9.8.1.htm">수학함수목록</a>,
+			<a href="5.9.13.6.htm">BIN2DEC</a>,
+			<a href="5.9.13.7.htm">BIN2HEX</a>,
+			<a href="5.9.13.8.htm">BIN2OCT</a>,
+			<a href="5.9.13.19.htm">HEX2BIN</a>,
+			<a href="5.9.13.39.htm">OCT2BIN</a>
+		</p>
+		<p>이전 유럽의 나라별 통화와 유로통화를 구성변환표(calc.xml)에 따라 환산합니다.</p>
+		<p><b class="bterm">문법:&emsp;&emsp;		CONVERT(값,본문,본문)</b></p>
+		<table>
+			<tr>
+				<th>인수명</th>
+				<th>설명</th>
+			</tr>
+			<tr>
+				<td>값</td>
+				<td>변환할 값입니다</td>
+			</tr>
+			<tr>
+				<td>본문</td>
+				<td>변환할 통화단위명입니다. 대문자/소문자를 구별합니다.</td>
+			</tr>
+			<tr>
+				<td>본문</td>
+				<td>변환할 단위입니다. 대문자/소문자를 구별합니다.</td>
+			</tr>
+		</table>
+		<p>아래의 표는 통화이름과 함수에서 사용하고있는 €환률입니다. 계산기준은 1€입니다.</p>
+		<table>
+			<tr>
+				<th>기준통화	</th>
+				<th>환산통화	</th>
+				<th>환률	</th>
+				<th>환산통화명</th>
+			</tr>
+			<tr>
+				<td>"EUR"</td>
+				<td>"ATS"</td>
+				<td>13.7603</td>
+				<td>오스트리아 쉴링</td>
+			</tr>
+			<tr>
+				<td>"EUR"</td>
+				<td>"BEF"</td>
+				<td>40.3399</td>
+				<td>벨지끄 프랑</td>
+			</tr>
+			<tr>
+				<td>"EUR"</td>
+				<td>"DEM"</td>
+				<td>1.95583</td>
+				<td>도이췰란드 마르크</td>
+			</tr>
+			<tr>
+				<td>"EUR"</td>
+				<td>"ESP"</td>
+				<td>166.386</td>
+				<td>에스빠냐 뻬쎄따</td>
+			</tr>
+			<tr>
+				<td>"EUR"</td>
+				<td>"FIM"</td>
+				<td>5.94573</td>
+				<td>핀란드 마르크</td>
+			</tr>
+			<tr>
+				<td>"EUR"</td>
+				<td>"FRF"</td>
+				<td>6.55957</td>
+				<td>프랑스 프랑</td>
+			</tr>
+			<tr>
+				<td>"EUR"</td>
+				<td>"IEP"</td>
+				<td>0.787564</td>
+				<td>아일랜드 파운드</td>
+			</tr>
+			<tr>
+				<td>"EUR"</td>
+				<td>"ITL"</td>
+				<td>1936.27</td>
+				<td>이딸리아 리라</td>
+			</tr>
+			<tr>
+				<td>"EUR"</td>
+				<td>"LUF"</td>
+				<td>40.3399</td>
+				<td>룩셈부르그 프랑</td>
+			</tr>
+			<tr>
+				<td>"EUR"</td>
+				<td>"NLG"	</td>
+				<td>2.20371</td>
+				<td>네데를란드 굴덴</td>
+			</tr>
+			<tr>
+				<td>"EUR"</td>
+				<td>"PTE"</td>
+				<td>200.482</td>
+				<td>뽀루뚜갈 에쓰꾸도</td>
+			</tr>
+			<tr>
+				<td>"EUR"</td>
+				<td>"GRD"</td>
+				<td>340.750</td>
+				<td>그리스 드라크마</td>
+			</tr>
+			<tr>
+				<td>"EUR"</td>
+				<td>"SIT"</td>
+				<td>239.640</td>
+				<td>슬로베니아 톨라</td>
+			</tr>
+		</table>
+		<p><b class="bterm">실례</b></p>			
+<p><a href="1.5.1.htm">실례의 리용방법</a>을 참고하십시오.</p>
+			<table>
+				<tr>
+					<td>
+						<table>
+							<tr><td>&nbsp;</td></tr>
+							<tr><th>1</th></tr>
+							<tr><th>2</th></tr>
+						</table>
+					</td>
+					<td>
+						<table>
+							<tr>
+								<th>A</th>
+								<th>B</th>
+							</tr>
+								<tr>
+								<th>수식</th>
+								<th>설명(결과)</th>
+							</tr>
+							<tr>
+								<td>=CONVERT(100, "ATS", "EUR")</td>
+								<td>100오스트리아 쉴링을 €로 변환합니다. (7.27)</td>
+							</tr>
+							<tr>
+								<td>=CONVERT(100, "EUR", "DEM")</td>
+								<td>100€를 도이췰란드 마르크로 변환합니다. (195.58)</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>		
+		</div>					
+		<script type="text/javascript" language="Javascript">footerView()</script>
+	
+</body>
+</html>														

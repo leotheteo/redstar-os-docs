@@ -1,0 +1,112 @@
+﻿<html dir='ltr'>
+	<head>
+		<META http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+		<title>FDIST</title>
+		<link rel='stylesheet' type='text/css' href='../css/main.css'/>
+		<script type='text/javascript' language='Javascript' src='../js/mexpcol.js'></script>
+		<script type='text/javascript' language='JavaScript' src='../js/glossary.js'></script>
+	</head>
+	<body>
+		<h1>&nbsp;<img align="absbottom" src="../image/external_images/crystal/svtools/res/new_doc.png"/>&nbsp;FDIST</h1>
+		<p id='ExpandAllLine' class='ExpFav'>
+		<a href='#' onClick='ExpandAll()' onKeyPress='ExpandAll()' class='DropDown'>
+		<img id='picHeader' border='0' src='../image/image/common/expandtri.gif' alt='모두 표시'>
+		<span id='ExpandAll'>모두 표시</span>
+		</a>
+		</p>
+		<p><b class="bterm">참고항목</b>&emsp;
+			<a href="5.9.10.1.htm">통계함수목록</a>,
+			<a href="5.9.10.21.htm">FINV</a>,
+			<a href="5.9.10.25.htm">FTEST</a>
+		</p>
+		<p>F-확률분포값을 구합니다.</p>
+		<p><b class="bterm">문법:&emsp;&emsp;		FDIST(수값,자유도1,자유도2)</b></p>
+		<table>
+			<tr>
+				<th>인수명</th>
+				<th>설명</th>
+			</tr>
+			<tr>
+				<td>수값</td>
+				<td>F-분포를 계산하려는 값입니다.</td>
+			</tr>
+			<tr>
+				<td>자유도1</td>
+				<td>F-분포분자의 자유도입니다.</td>
+			</tr>
+			<tr>
+				<td>자유도2</td>
+				<td>F-분포분모의 자유도입니다.</td>
+			</tr>
+		</table>
+		<p><b class="bterm">주의</b></p>
+			<ul>
+				<li>인수가 수자가 아니면 <b class="bterm">오유:[오유번호]</b>를 반환합니다.</li>
+				<li><b class="bterm">수값</b>이 부수이면 <b class="bterm">오유:[오유번호]</b>를 반환합니다.</li>
+				<li><b class="bterm">자유도1</b>또는 <b class="bterm">자유도2</b>가 옹근수가 아니면 소수점이하를 잘라서 옹근수로 변환합니다.</li>
+				<li><b class="bterm">자유도1</b> < 1이거나 <b class="bterm">자유도1</b> ≧ 10 ^ 10이면 <b class="bterm">오유:[오유번호]</b>를 반환합니다.</li>
+				<li><b class="bterm">자유도2</b> < 1이거나 <b class="bterm">자유도2</b> ≧ 10 ^ 10이면 <b class="bterm">오유:[오유번호]</b>를 반환합니다.</li>
+				<li><b class="bterm">FDIST</b>는 FDIST = P( F><b class="bterm">수값</b>)으로 계산되며 여기서 F는 자유도가 <b class="bterm">자유도1</b>과 <b class="bterm">자유도2</b>인 F-분포를 가지는 임의의 변수입니다.</li>
+			</ul>
+		<p><b class="bterm">실례</b></p>
+			<p><a href="1.5.1.htm">실례의 리용방법</a>을 참고하십시오.</p>
+			<table>
+				<tr>
+					<td>
+						<table>
+							<tr>
+								<td class="noborder">&nbsp;
+								</td>
+							</tr>
+							<tr>
+								<th>1</th>
+							</tr>
+							<tr>
+								<th>2</th>
+							</tr>
+							<tr>
+								<th>3</th>
+							</tr>
+							<tr>
+								<th>4</th>
+							</tr>
+						</table>
+					</td>
+					<td>
+						<table>
+							<tr>
+								<th>A</th>
+								<th>B</th>
+							</tr>
+							<tr>
+								<th>자료</th>
+								<th>설명</th>
+							</tr>
+							<tr>
+								<td>15.20675</td>
+								<td>함수를 계산하려는 값입니다.</td>
+							</tr>
+							<tr>
+								<td>6</td>
+								<td>분자의 자유도입니다.</td>
+							</tr>
+							<tr>
+								<td>4</td>
+								<td>분모의 자유도입니다.</td>
+							</tr>
+							<tr>
+								<th>수식</th>
+								<th>설명(결과)</th>
+							</tr>
+							<tr>
+								<td>=FDIST(A2,A3,A4)</td>
+								<td>우에 있는 조건에 대한 F-확률분포입니다. (0.01)</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+		<script type="text/javascript" language="Javascript">footerView()</script>
+	
+</body>
+</html>				

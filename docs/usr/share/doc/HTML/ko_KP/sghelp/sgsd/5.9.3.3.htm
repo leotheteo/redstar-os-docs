@@ -1,0 +1,177 @@
+﻿<html dir='ltr'>
+	<head>
+		<META http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+		<title>자료기지함수에서의 탐색기준</title>
+		<link rel='stylesheet' type='text/css' href='../css/main.css'/>
+		<script type='text/javascript' language='Javascript' src='../js/mexpcol.js'></script>
+		<script type='text/javascript' language='JavaScript' src='../js/glossary.js'></script>
+	</head>
+	<body>
+		<h1>&nbsp;<img align="absbottom" src="../image/external_images/crystal/svtools/res/new_doc.png"/>&nbsp;자료기지함수에서의 탐색기준</h1>
+		<p id='ExpandAllLine' class='ExpFav'>
+			<a href='#' onClick='ExpandAll()' onKeyPress='ExpandAll()' class='DropDown'>
+				<img id='picHeader' border='0' src='../image/image/common/expandtri.gif' alt='모두 표시'>
+				<span id='ExpandAll'>모두 표시</span>
+			</a>
+		</p>
+		<p><b class="bterm">즉시도움말</b></p>
+			<ul>
+				<li>탐색기준지정을 위하여 최소한 렬표식자 하나와 그 아래의 한 세포가 포함되면 그 범위를 <b class="bterm">탐색기준</b>인수로 사용할수 있습니다.
+					례를 들어 범위 G1:G2에서 G1에 렬표식자인 《수입》이 있고 G2에 10 000이라는 값이 있으면 이 범위를 《수입금비교》로 정의하고 해당이름을 자료기지함수의 <b class="bterm">탐색기준</b>인수로 사용할수 있습니다.
+				</li>
+				<li>탐색기준의 위치는 자료표의 어느곳이든 상관없지만 목록아래에 탐색기준이 있으면 안됩니다.</li>
+				<li>탐색기준이 목록과 겹치지 않도록 해야 합니다.</li>
+				<li>자료기지의 하나의 렬에 대하여 연산을 수행하려면 탐색기준에 있는 렬표식자아래에 빈행을 입력합니다.</li>
+			</ul>
+		<p><b class="bterm">탐색기준실례</b></p>
+				<p>
+					<a href='#' class='DropDown' onClick='Outline2()' onKeyPress='Outline2()'>
+					<img border='0' src='../image/image/common/blueup.gif' alt='표시'>하나의 렬에 여러 탐색기준을 사용</a>
+				</p>
+				<div id='ExpCol' class='collapsed' border='0'>
+					<p>하나의 렬에 두개이상의 탐색기준을 사용하려면 각 행을 구분하여 탐색기준을 직접 입력합니다. 
+						례를 들어 다음과 같이 탐색기준을 지정하면 판매원렬에 《김송희》, 《김은희》, 《리순희》중 하나가 있는 행이 표시됩니다.
+					</p>
+					<table>
+						<tr>
+							<th>판매원</th>
+						</tr>
+						<tr>
+							<td>김송희</td>
+						</tr>
+						<tr>
+							<td>김은희</td>
+						</tr>
+						<tr>
+							<td>리순희</td>
+						</tr>
+					</table>
+				</div>
+				<p>
+					<a href='#' class='DropDown' onClick='Outline2()' onKeyPress='Outline2()'>
+					<img border='0' src='../image/image/common/blueup.gif' alt='표시'>두개이상의 렬에 한 탐색기준을 사용
+				</a>
+				</p>
+				<div id='ExpCol' class='collapsed' border='0'>
+					<p>두개이상의 렬에서 한 탐색기준에 맞는 자료를 찾으려면 탐색기준의 같은 행에 모든 탐색기준을 입력합니다. 
+						례를 들어 다음과 같이 탐색기준을 지정하면 종류가 《농산물》이고 판매원은 《김송희》이고 판매액이 1 000원을 넘는 행이 모두 표시됩니다.
+					</p>
+					<table>
+						<tr>
+							<th>종류</th>
+							<th>판매원</th>
+							<th>판매액</th>
+						</tr>
+						<tr>
+							<td>농산물</td>
+							<td>김송희</td>
+							<td>>1000</td>
+						</tr>
+					</table>
+				</div>
+				<p>
+					<a href='#' class='DropDown' onClick='Outline2()' onKeyPress='Outline2()'>
+					<img border='0' src='../image/image/common/blueup.gif' alt='표시'>하나의 렬에 한 탐색기준을 사용
+				</a>
+				</p>
+				<div id='ExpCol' class='collapsed' border='0'>
+					<p>각 렬의 탐색기준중에서 하나를 만족하는 자료를 찾으려면 탐색기준의 각행에 탐색기준을 입력합니다. 
+						례를 들어 다음과 같이 탐색기준을 지정하면 종류가 《농산물》이거나 판매원이 《김송희》이거나 판매액이 1 000원을 넘는 행이 모두 표시됩니다.
+					</p>
+					<table>
+						<tr>
+							<th>종류</th>
+							<th>판매원</th>
+							<th>판매액</th>
+						</tr>
+						<tr>
+							<td>농산물</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+						</tr>
+						<tr>
+							<td>&nbsp;</td>
+							<td>김송희</td>
+							<td>&nbsp;</td>
+						</tr>
+						<tr>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+							<td>>1000</td>
+						</tr>
+					</table>
+				</div>
+				<p>
+					<a href='#' class='DropDown' onClick='Outline2()' onKeyPress='Outline2()'>
+					<img border='0' src='../image/image/common/blueup.gif' alt='표시'>두 렬에 두 탐색기준집합중 하나를 사용
+				</a>
+				</p>
+				<div id='ExpCol' class='collapsed' border='0'>
+					<p>두개이상의 렬에 대한 탐색기준이 있는 두 탐색기준집합중 하나를 만족하는 행을 찾으려면 별도의 행에 탐색기준을 입력합니다. 
+						례를 들어 다음과 같이 탐색기준을 지정하면 판매원이 《김송희》이고 판매액이 3 000원을 넘는 행과 판매원이 《문광남》이고 판매액이 1 500원을 넘는 행이 표시됩니다.
+					</p>
+					<table>
+						<tr>
+							<th>판매원</th>
+							<th>판매액</th>
+						</tr>
+						<tr>
+							<td>김송희</td>
+							<td>>3000</td>
+						</tr>
+						<tr>
+							<td>문광남</td>
+							<td>>1500</td>
+						</tr>
+					</table>
+				</div>
+				<p>
+					<a href='#' class='DropDown' onClick='Outline2()' onKeyPress='Outline2()'>
+					<img border='0' src='../image/image/common/blueup.gif' alt='표시'>하나의 렬에 세개이상의 탐색기준집합을 사용
+				</a>
+				</p>
+				<div id='ExpCol' class='collapsed' border='0'>
+					<p>세개이상의 탐색기준집합을 만족하는 행을 찾으려면 렬머리부가 같은 렬을 여러개 포함시킵니다. 
+						례를 들어 다음과 같이 탐색기준을 지정하면 판매액이 500원미만인 행과 판매액이 5 000원에서 8 000원사이인 행이 표시됩니다.
+					</p>
+					<table>
+						<tr>
+							<th>판매액</th>
+							<th>판매액</th>
+						</tr>
+						<tr>
+							<td>>5000</td>
+							<td><8000</td>
+						</tr>
+						<tr>
+							<td><500</td>
+							<td>&nbsp;</td>
+						</tr>
+					</table>
+				</div>
+				<p>
+					<a href='#' class='DropDown' onClick='Outline2()' onKeyPress='Outline2()'>
+					<img border='0' src='../image/image/common/blueup.gif' alt='표시'>수식의 결과로 만들어지는 탐색기준
+				</a>
+				</p>
+				<div id='ExpCol' class='collapsed' border='0'>
+					<p><a href="#" class="glossary" onClick="AppendPopup(this,'IDG_FORMULA')" onKeyPress="AppendPopup(this,'IDG_FORMULA')">수식</a>의 결과로 만들어진 계산값을 탐색기준으로 사용할수 있습니다. 수식을 사용하여 탐색기준을 만들 때에는 렬표식자를 탐색기준표식에 사용하지 말고 탐색기준표식을 비워두거나 목록에 있는 렬표식자외의 표식을 사용합니다. 례를 들어 다음과 같은 탐색기준은 C7:C10 세포의 평균보다 큰 C렬값이 있는 행을 표시합니다.
+					</p>
+					<table>
+						<tr>
+							<td>=C7>AVERAGE($C$7:$C$10)</td>
+						</tr>
+					</table>
+				</div>
+				<p><b class="bterm">참고:</b></p>
+				<ul>
+					<li>탐색기준에 대해 사용하는 수식에는 <a href="#" class="glossary" onClick="AppendPopup(this,'IDG_RELATIVEREF')" onKeyPress="AppendPopup(this,'IDG_RELATIVEREF')">상대참조</a>를 사용하여 렬표식자(례: 판매액)나 첫번째 기록편의 해당 마당을 참조해야 합니다. 수식의 다른 모든 참조에는 <a href="#" class="glossary" onClick="AppendPopup(this,'IDG_ABSREFERENCE')" onKeyPress="AppendPopup(this,'IDG_ABSREFERENCE')">절대참조</a>를 사용해야 하며 수식은 참이나 거짓이여야 합니다. 
+						수식실례에서 《C7》은 목록의 첫번째 기록편(7행)에 대한 마당(C렬)을 참조합니다.
+					</li>
+					<li>수식에서 상대세포참조나 범위이름대신 렬표식자를 사용할수 있습니다. 탐색기준이 들어있는 세포에 <b class="bterm">오유:[오유번호]</b>와 같은 오유값이 나타나도 자료려과방식에는 영향이 없으므로 무시할수 있습니다.</li>
+					<li><b class="bterm">&lt;서광사무처리&gt;/&lt;환경설정&gt;/&lt;서광사무처리 표처리프로그람&gt;/&lt;계산&gt;</b>을 선택하여 표처리프로그람이 동일한 항목을 탐색할 때 어떤 방식으로 실행하는가를 지정합니다.</li>
+				</ul>
+		<script type="text/javascript" language="Javascript">footerView()</script>
+	
+</body>
+</html>

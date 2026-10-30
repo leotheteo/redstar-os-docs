@@ -1,0 +1,172 @@
+<html dir='ltr'>
+	<head>
+		<META http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+		<title>EUROCONVERT</title>
+		<link rel='stylesheet' type='text/css' href='../css/main.css'/>
+		<script type='text/javascript' language='Javascript' src='../js/mexpcol.js'></script>
+		<script type='text/javascript' language='JavaScript' src='../js/glossary.js'></script>
+	</head>
+	<body>
+		<h1>&nbsp;<img align="absbottom" src="../image/external_images/crystal/svtools/res/new_doc.png"/>&nbsp;EUROCONVERT</h1>
+		<p id='ExpandAllLine' class='ExpFav'>
+			<a href='#' onClick='ExpandAll()' onKeyPress='ExpandAll()' class='DropDown'>
+				<img id='picHeader' border='0' src='../image/image/common/expandtri.gif' alt='모두 표시'>
+				<span id='ExpandAll'>모두 표시</span>
+			</a>
+		</p>
+		<p><b class="bterm">참고항목</b>&emsp; 
+			<a href="5.9.8.1.htm">수학함수목록</a>
+		</p>
+		<p>구유럽민족화페와 유로의 호상변환을 진행합니다.</p>
+		<p><b class="bterm">문법:&emsp;&emsp;	EUROCONVERT(값,변환될 통화,변환된 통화,정확도,삼각변환정확도)</b></p>
+		<table>
+			<tr>
+				<th>인수명</th>
+				<th>설명</th>
+			</tr>
+			<tr>
+				<td>값</td>
+				<td>변환할 값입니다.</td>
+			</tr>
+			<tr>
+				<td>변환될 통화</td>
+				<td>ISO 4217 코드통화로부터 변환합니다. 대/소문자를 구별합니다. <b class="bterm">변환될 통화</b>인수는 "EUR"와 같은 본문이여야 합니다. </td>
+			</tr>
+			<tr>
+				<td>변환된 통화</td>
+				<td>ISO 4217 코드통화에로 변환합니다. 대/소문자를 구별합니다. <b class="bterm">변환된 통화</b>인수는 "EUR"와 같은 본문이여야 합니다. </td>
+			</tr>
+			<tr>
+				<td>정확도</td>
+				<td>값을 생략하거나 0 또는 거짓이면 결과가 변환된 통화의 소수점으로 반올림됩니다. 그렇지 않으면 결과가 반올림되지 않습니다. 추가선택인수입니다.</td>
+			</tr>
+			<tr>
+				<td>삼각변환정확도</td>
+				<td>지정된 값이 3보다 크거나 같으면 삼각변환의 중간결과가 해당 정확도로 반올림됩니다. 값을 생략하면 결과가 반올림되지 않습니다. 또한 <b class="bterm">변환된 통화</b>가 "EUR"이면 <b class="bterm">삼각변환정확도</b>는 삼각변환을 EUR에서부터 EUR에로 진행하게 합니다. 추가선택인수입니다.</td>
+			</tr>
+		</table>		
+		<p>아래의 표는 통화이름과 함수에서 사용하고있는 €환률입니다. 계산기준은 1€입니다.</p>
+		<table>
+			<tr>
+				<th>기준통화	</th>
+				<th>환산통화	</th>
+				<th>환률	</th>
+				<th>환산통화명</th>
+			</tr>
+			<tr>
+				<td>"EUR"</td>
+				<td>"ATS"</td>
+				<td>13.7603</td>
+				<td>오스트리아 쉴링</td>
+			</tr>
+			<tr>
+				<td>"EUR"</td>
+				<td>"BEF"</td>
+				<td>40.3399</td>
+				<td>벨지끄 프랑</td>
+			</tr>
+			<tr>
+				<td>"EUR"</td>
+				<td>"DEM"</td>
+				<td>1.95583</td>
+				<td>도이췰란드 마르크</td>
+			</tr>
+			<tr>
+				<td>"EUR"</td>
+				<td>"ESP"</td>
+				<td>166.386</td>
+				<td>에스빠냐 뻬쎄따</td>
+			</tr>
+			<tr>
+				<td>"EUR"</td>
+				<td>"FIM"</td>
+				<td>5.94573</td>
+				<td>핀란드 마르크</td>
+			</tr>
+			<tr>
+				<td>"EUR"</td>
+				<td>"FRF"</td>
+				<td>6.55957</td>
+				<td>프랑스 프랑</td>
+			</tr>
+			<tr>
+				<td>"EUR"</td>
+				<td>"IEP"</td>
+				<td>0.787564</td>
+				<td>아일랜드 파운드</td>
+			</tr>
+			<tr>
+				<td>"EUR"</td>
+				<td>"ITL"</td>
+				<td>1936.27</td>
+				<td>이딸리아 리라</td>
+			</tr>
+			<tr>
+				<td>"EUR"</td>
+				<td>"LUF"</td>
+				<td>40.3399</td>
+				<td>룩셈부르그 프랑</td>
+			</tr>
+			<tr>
+				<td>"EUR"</td>
+				<td>"NLG"	</td>
+				<td>2.20371</td>
+				<td>네데를란드 굴덴</td>
+			</tr>
+			<tr>
+				<td>"EUR"</td>
+				<td>"PTE"</td>
+				<td>200.482</td>
+				<td>뽀루뚜갈 에쓰꾸도</td>
+			</tr>
+			<tr>
+				<td>"EUR"</td>
+				<td>"GRD"</td>
+				<td>340.750</td>
+				<td>그리스 드라크마</td>
+			</tr>
+			<tr>
+				<td>"EUR"</td>
+				<td>"SIT"</td>
+				<td>239.640</td>
+				<td>슬로베니아 톨라</td>
+			</tr>
+		</table>
+		<p><b class="bterm">실례</b></p>			
+<p><a href="1.5.1.htm">실례의 리용방법</a>을 참고하십시오.</p>
+			<table>
+				<tr>
+					<td>
+						<table>
+							<tr><td>&nbsp;</td></tr>
+							<tr><th>1</th></tr>
+							<tr><th>2</th></tr>
+						</table>
+					</td>
+					<td>
+						<table>
+							<tr>
+								<th>A</th>
+								<th>B</th>
+							</tr>
+								<tr>
+								<th>수식</th>
+								<th>설명(결과)</th>
+							</tr>
+							<tr>
+								<td>=EUROCONVERT(100,"ATS","EUR")</td>
+								<td>100오스트리아 쉴링을 €로 변환합니다. (7.27)</td>
+							</tr>
+							<tr>
+								<td>=EUROCONVERT(100,"EUR","DEM") </td>
+								<td>100€를 도이췰란드 마르크로 변환합니다. (195.58)</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>		
+		</div>					
+		<script type="text/javascript" language="Javascript">footerView()</script>
+	
+</body>
+</html>														

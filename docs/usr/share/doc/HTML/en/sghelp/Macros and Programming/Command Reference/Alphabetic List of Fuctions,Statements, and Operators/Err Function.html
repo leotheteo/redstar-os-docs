@@ -1,0 +1,58 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+	<TITLE></TITLE>
+	<META NAME="GENERATOR" CONTENT="《Sogwang 3.0》  (Linux)">
+	<META NAME="CREATED" CONTENT="20091205;11384400">
+	<META NAME="CHANGED" CONTENT="20091205;12035500">
+	<STYLE TYPE="text/css">
+	<!--
+		H2 { margin-bottom: 0.18cm; font-family: "Bitstream Vera Sans", "Arial", "Helvetica", "Lucida", "Geneva", "Helmet", sans-serif, "Andale Sans UI", "Arial Unicode MS", "Lucida Sans Unicode", "Tahoma"; font-size: 14pt }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="ko-KP" DIR="LTR"><DIV style="margin-left: 25">
+<H1><A NAME="err"></A><A NAME="bm_id3156343"></A><FONT FACE="Thorndale, serif"><SPAN LANG="en-US">Err
+Function [Runtime]</SPAN></FONT></H1>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Returns
+an error code that identifies the error that occurred during program
+execution.</SPAN></FONT></P>
+<H2><SPAN LANG="en-US">Syntax:</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Err</SPAN></FONT></P>
+<H2><SPAN LANG="en-US">Return value:</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Integer</SPAN></FONT></P>
+<H2><SPAN LANG="en-US">Parameters:</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">The Err
+function is used in error-handling routines to determine the error
+and the corrective action.</SPAN></FONT></P>
+<H2><SPAN LANG="en-US">Example:</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">sub
+ExampleError</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">on error
+goto ErrorHandler REM Set up error handler</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Dim iVar
+as Integer</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Dim sVar
+As String</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">REM
+Error occurs due to non-existent file</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">iVar =
+Freefile</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Open
+&quot;\file9879.txt&quot; for Input as #iVar</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Line
+Input #iVar, sVar</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Close
+#iVar</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">exit sub</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">ErrorHandler:</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">MsgBox
+&quot;Error &quot; &amp; Err &amp; &quot;: &quot; &amp; Error$ +
+chr(13) + &quot;At line : &quot; + Erl + chr(13) + Now , 16 ,&quot;an
+error occurred&quot;</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><SPAN STYLE="font-weight: medium">end
+sub</SPAN></SPAN></FONT></P>
+
+</DIV></BODY>
+</HTML>

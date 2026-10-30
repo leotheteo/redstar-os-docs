@@ -1,0 +1,118 @@
+﻿<html dir='ltr'>
+	<head>
+		<META http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+		<title>SEARCH</title>
+		<link rel='stylesheet' type='text/css' href='../css/main.css'/>
+		<script type='text/javascript' language='Javascript' src='../js/mexpcol.js'></script>
+		<script type='text/javascript' language='JavaScript' src='../js/glossary.js'></script>
+	</head>
+	<body>
+		<h1>&nbsp;<img align="absbottom" src="../image/external_images/crystal/svtools/res/new_doc.png"/>&nbsp;SEARCH</h1>
+		<p id='ExpandAllLine' class='ExpFav'>
+			<a href='#' onClick='ExpandAll()' onKeyPress='ExpandAll()' class='DropDown'>
+				<img id='picHeader' border='0' src='../image/image/common/expandtri.gif' alt='모두 표시'>
+				<span id='ExpandAll'>모두 표시</span>
+			</a>
+		</p>
+		<p><b class="bterm">참고항목</b>&emsp;
+			<a href="5.9.12.1.htm">본문함수목록</a>,
+			<a href="5.9.12.16.htm">MID</a>,
+			<a href="5.9.12.11.htm">FIND</a>,
+			<a href="5.9.12.24.htm">SUBSTITUTE</a>,
+			<a href="5.9.12.18.htm">REPLACE</a>
+		</p>
+		<p>본문값을 다른 본문에서 찾습니다(대문자/소문자 구별하지 않음).</p>
+		<p><b class="bterm">문법:&emsp;&emsp;		SEARCH(찾으려는 본문,본문,시작위치)</b></p>
+		<table>
+			<tr>
+				<th>인수명</th>
+				<th>설명</th>
+			</tr>
+			<tr>
+				<td>찾으려는 본문</td>
+				<td>찾으려는 본문입니다. <b class="bterm">찾으려는 본문</b>에 통용문자인 물음표(?)와 별표(*)를 사용할수 있습니다. 물음표는 한 문자에 해당하고 별표는 일련의 문자에 해당합니다. 실제물음표나 별표를 찾으려면 문자앞에 물결표(~)를 입력합니다.</td>
+			</tr>
+			<tr>
+				<td>본문</td>
+				<td>탐색되는 본문입니다.</td>
+			</tr>
+			<tr>
+				<td>시작위치</td>
+				<td>탐색을 시작할 본문의 위치입니다. 추가선택인수입니다.</td>
+			</tr>
+		</table>
+		<p><b class="bterm">즉시도움말</b></p>
+			<p><b class="bterm">시작위치</b>를 사용하여 지정된 문자수만큼 건너뛸수 있습니다. 례를 들어 본문문자렬 《AYF0093.YoungMensApparel》에서 본문문자렬의 설명부분에 있는 첫번째 《Y》의 번호를 찾으려면 본문의 수자부분은 탐색하지 않도록 <b class="bterm">시작위치</b>를 8로 설정합니다. <b class="bterm">SEARCH</b>는 문자 8로 시작하여 다음문자에서 <b class="bterm">찾으려는 본문</b>을 찾아 번호 9를 반환합니다. <b class="bterm">SEARCH</b>는 <b class="bterm">시작위치</b>가 1보다 큰 경우 건너뛴 문자수도 계산하여 항상 <b class="bterm">본문</b>의 시작부분부터 센 문자번호를 구합니다.</p>
+		<p><b class="bterm">주의</b></p>
+			<ul>
+				<li><b class="bterm">SEARCH</b>함수는 본문을 탐색할 때 대문자/소문자를 구별하지 않습니다.</li>
+				<li><b class="bterm">SEARCH</b>함수는 <b class="bterm">FIND</b>함수와 비슷하지만 <b class="bterm">FIND</b>함수는 대문자/소문자를 구별합니다.</li>
+				<li><b class="bterm">찾으려는 본문</b>이 발견되지 않으면 <b class="bterm">오유:[오유번호]</b>가 반환됩니다.</li>
+				<li><b class="bterm">시작위치</b>를 생략하면 1로 간주합니다.</li>
+				<li><b class="bterm">시작위치</b>가 0보다 크지 않거나 <b class="bterm">본문</b>의 길이보다 크면 <b class="bterm">오유:[오유번호]</b>가 반환됩니다.</li>
+			</ul>
+		<p><b class="bterm">실례</b></p>
+			<p><a href="1.5.1.htm">실례의 리용방법</a>을 참고하십시오.</p>
+			<table>
+				<tr>
+					<td>
+						<table>
+							<tr>
+								<td class="noborder">&nbsp;
+								</td>
+							</tr>
+							<tr>
+								<th>1</th>
+							</tr>
+							<tr>
+								<th>2</th>
+							</tr>
+							<tr>
+								<th>3</th>
+							</tr>
+							<tr>
+								<th>4</th>
+							</tr>
+						</table>
+					</td>
+					<td>
+						<table>
+							<tr>
+								<th>A</th>
+							</tr>
+							<tr>
+								<th>자료</th>
+							</tr>
+							<tr>
+								<td>도마도</td>
+							</tr>
+							<tr>
+								<td>시작위치</td>
+							</tr>
+							<tr>
+								<td>시작</td>
+							</tr>
+							<tr>
+								<th>수식</th>
+								<th>설명(결과)</th>
+							</tr>
+							<tr>
+								<td>=SEARCH("도",A2,3)</td>
+								<td>우의 문자렬 세번째 위치에서 시작하여 첫번째 《도》의 위치를 찾습니다. (3)</td>
+							</tr>
+							<tr>
+								<td>=SEARCH(A4,A3)</td>
+								<td>《시작위치》에서 《시작》의 위치를 찾습니다. (1)</td>
+							</tr>
+							<tr>
+								<td>=REPLACE(A3,SEARCH(A4,A3),2,"마감")</td>
+								<td>《시작》을 《마감》으로 치환합니다. (마감위치)</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+		<script type="text/javascript" language="Javascript">footerView()</script>
+	
+</body>
+</html>				

@@ -1,0 +1,291 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+	<TITLE></TITLE>
+	<META NAME="GENERATOR" CONTENT="《Sogwang 3.0》  (Linux)">
+	<META NAME="CREATED" CONTENT="20091205;15361500">
+	<META NAME="CHANGED" CONTENT="20091205;17054200">
+	<STYLE TYPE="text/css">
+	<!--
+		H2 { margin-bottom: 0.18cm; font-family: "Bitstream Vera Sans", "Arial", "Helvetica", "Lucida", "Geneva", "Helmet", sans-serif, "Andale Sans UI", "Arial Unicode MS", "Lucida Sans Unicode", "Tahoma"; font-size: 14pt }
+		H3 { margin-bottom: 0.18cm; font-family: "Bitstream Vera Sans", "Arial", "Helvetica", "Lucida", "Geneva", "Helmet", sans-serif, "Andale Sans UI", "Arial Unicode MS", "Lucida Sans Unicode", "Tahoma"; font-size: 12pt }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="ko-KP" DIR="LTR"><DIV style="margin-left: 25">
+<H1><A NAME="basicfehler"></A><A NAME="bm_id3153344"></A><FONT FACE="Thorndale, serif"><SPAN LANG="en-US">Debugging
+a Basic Program</SPAN></FONT></H1>
+<H2><SPAN LANG="en-US">Breakpoints and Single Step Execution</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">You can
+check each line in your Basic program for errors using single step
+execution. Errors are easily traced since you can immediately see the
+result of each step. A pointer in the breakpoint column of the Editor
+indicates the current line. You can also set a breakpoint if you want
+to force the program to be interrupted at a specific position.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Double-click
+in the <B>breakpoint</B> column at the left of the Editor window to
+toggle a breakpoint at the corresponding line. When the program
+reaches a breakpoint, the program execution is interrupted.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">The
+<B>single step </B>execution using the <B>Single Step</B> icon causes
+the program to branch into procedures and functions.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">The
+procedure step execution using the <B>Procedure Step</B> icon causes
+the program to skip over procedures and functions as a single step.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Properties of a Breakpoint</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">The
+properties of a breakpoint are available through its context menu by
+right-clicking the breakpoint in the breakpoint column.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">You can
+<B>activate</B> and <B>deactivate</B> a breakpoint by selecting
+<B>Active</B> from its context menu. When a breakpoint is
+deactivated, it does not interrupt the program execution. </SPAN></FONT>
+</P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Select
+<B>Properties</B> from the context menu of a breakpoint or select
+<B>Breakpoints</B> from the context menu of the breakpoint column to
+call the <B>Breakpoints</B> dialog where you can specify other
+breakpoint options.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">The list
+displays all <B>breakpoints</B> with the corresponding line number in
+the source code. You can activate or deactivate a selected breakpoint
+by checking or clearing the <B>Active</B> box.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">The <B>Pass
+Count</B> specifies the number of times the breakpoint can be passed
+over before the program is interrupted. If you enter 0 (default
+setting) the program is always interrupted as soon as a breakpoint is
+encountered.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Click
+<B>Delete</B> to remove the breakpoint from the program.</SPAN></FONT></P>
+<H2><SPAN LANG="en-US">Observing the Value of Variables</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">You can
+monitor the values of a variable by adding it to the <B>Watch</B>
+window. To add a variable to the list of watched variables, type the
+variable name in the <B>Watch</B> text box and press Enter.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">The
+values of variables are only displayed if they are in scope.
+Variables that are not defined at the current source code location
+display (&quot;Out of Scope&quot;) instead of a value.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">You can
+also include arrays in the Watch window. If you enter the name of an
+array variable without an index value in the Watch text box, the
+content of the entire array is displayed.</SPAN></FONT></P>
+<TABLE WIDTH=960 BORDER=0 CELLPADDING=5 CELLSPACING=0>
+	<COL WIDTH=40>
+	<COL WIDTH=581>
+	<TR>
+		<TD WIDTH=46>
+			<P><IMG SRC="../../Image/tip.png" NAME="graphics1" ALT="Tip Icon " ALIGN=BOTTOM WIDTH=40 HEIGHT=43 BORDER=0></P>
+		</TD>
+		<TD WIDTH=962>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">If
+			you rest the mouse over a predefined variable in the Editor at
+			run-time, the content of the variable is displayed in a pop-up
+			box.</SPAN></FONT></P>
+		</TD>
+	</TR>
+</TABLE>
+<P><BR><BR>
+</P>
+<H2><SPAN LANG="en-US">The Call Stack Window</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Provides
+an overview of the call hierarchy of procedures and functions. You
+can determine which procedures and functions called which other
+procedures and functions at the current point in the source code.</SPAN></FONT></P>
+<H2><SPAN LANG="en-US">List of Run-Time Errors</SPAN></H2>
+<P><A NAME="allerrors"></A><A NAME="err2"></A><FONT FACE="청봉, serif"><SPAN LANG="en-US">2
+Unspecified syntax error </SPAN></FONT>
+</P>
+<P><A NAME="err3"></A><FONT FACE="청봉, serif"><SPAN LANG="en-US">3
+Return without Gosub </SPAN></FONT>
+</P>
+<P><A NAME="err4"></A><FONT FACE="청봉, serif"><SPAN LANG="en-US">4
+Redo from start </SPAN></FONT>
+</P>
+<P><A NAME="err5"></A><FONT FACE="청봉, serif"><SPAN LANG="en-US">5
+Invalid procedure call </SPAN></FONT>
+</P>
+<P><A NAME="err6"></A><FONT FACE="청봉, serif"><SPAN LANG="en-US">6
+Overflow </SPAN></FONT>
+</P>
+<P><A NAME="err7"></A><FONT FACE="청봉, serif"><SPAN LANG="en-US">7
+Out of memory </SPAN></FONT>
+</P>
+<P><A NAME="err8"></A><FONT FACE="청봉, serif"><SPAN LANG="en-US">8
+Array already dimensioned </SPAN></FONT>
+</P>
+<P><A NAME="err9"></A><FONT FACE="청봉, serif"><SPAN LANG="en-US">9
+Subscript out of range </SPAN></FONT>
+</P>
+<P><A NAME="err10"></A><FONT FACE="청봉, serif"><SPAN LANG="en-US">10
+Duplicate definition </SPAN></FONT>
+</P>
+<P><A NAME="err11"></A><FONT FACE="청봉, serif"><SPAN LANG="en-US">11
+Division by zero </SPAN></FONT>
+</P>
+<P><A NAME="err12"></A><FONT FACE="청봉, serif"><SPAN LANG="en-US">12
+Variable undefined </SPAN></FONT>
+</P>
+<P><A NAME="err13"></A><FONT FACE="청봉, serif"><SPAN LANG="en-US">13
+Type mismatch </SPAN></FONT>
+</P>
+<P><A NAME="err14"></A><FONT FACE="청봉, serif"><SPAN LANG="en-US">14
+Invalid parameter </SPAN></FONT>
+</P>
+<P><A NAME="err18"></A><FONT FACE="청봉, serif"><SPAN LANG="en-US">18
+User interrupt occurred </SPAN></FONT>
+</P>
+<P><A NAME="err20"></A><FONT FACE="청봉, serif"><SPAN LANG="en-US">20
+Resume without error </SPAN></FONT>
+</P>
+<P><A NAME="err28"></A><FONT FACE="청봉, serif"><SPAN LANG="en-US">28
+Out of stack space </SPAN></FONT>
+</P>
+<P><A NAME="err35"></A><FONT FACE="청봉, serif"><SPAN LANG="en-US">35
+Sub or Function not defined </SPAN></FONT>
+</P>
+<P><A NAME="err48"></A><FONT FACE="청봉, serif"><SPAN LANG="en-US">48
+Error in loading DLL </SPAN></FONT>
+</P>
+<P><A NAME="err49"></A><FONT FACE="청봉, serif"><SPAN LANG="en-US">49
+Bad DLL calling convention </SPAN></FONT>
+</P>
+<P><A NAME="err51"></A><FONT FACE="청봉, serif"><SPAN LANG="en-US">51
+Internal error </SPAN></FONT>
+</P>
+<P><A NAME="err52"></A><FONT FACE="청봉, serif"><SPAN LANG="en-US">52
+Bad file name or number </SPAN></FONT>
+</P>
+<P><A NAME="err53"></A><FONT FACE="청봉, serif"><SPAN LANG="en-US">53
+File not found </SPAN></FONT>
+</P>
+<P><A NAME="err54"></A><FONT FACE="청봉, serif"><SPAN LANG="en-US">54
+Bad file mode </SPAN></FONT>
+</P>
+<P><A NAME="err55"></A><FONT FACE="청봉, serif"><SPAN LANG="en-US">55
+File already open </SPAN></FONT>
+</P>
+<P><A NAME="err57"></A><FONT FACE="청봉, serif"><SPAN LANG="en-US">57
+Device I/O error </SPAN></FONT>
+</P>
+<P><A NAME="err58"></A><FONT FACE="청봉, serif"><SPAN LANG="en-US">58
+File already exists </SPAN></FONT>
+</P>
+<P><A NAME="err59"></A><FONT FACE="청봉, serif"><SPAN LANG="en-US">59
+Bad record length </SPAN></FONT>
+</P>
+<P><A NAME="err61"></A><FONT FACE="청봉, serif"><SPAN LANG="en-US">61
+Disk full </SPAN></FONT>
+</P>
+<P><A NAME="err62"></A><FONT FACE="청봉, serif"><SPAN LANG="en-US">62
+Input past end of file </SPAN></FONT>
+</P>
+<P><A NAME="err63"></A><FONT FACE="청봉, serif"><SPAN LANG="en-US">63
+Bad record number </SPAN></FONT>
+</P>
+<P><A NAME="err67"></A><FONT FACE="청봉, serif"><SPAN LANG="en-US">67
+Too many files </SPAN></FONT>
+</P>
+<P><A NAME="err68"></A><FONT FACE="청봉, serif"><SPAN LANG="en-US">68
+Device not available </SPAN></FONT>
+</P>
+<P><A NAME="err70"></A><FONT FACE="청봉, serif"><SPAN LANG="en-US">70
+Permission denied </SPAN></FONT>
+</P>
+<P><A NAME="err71"></A><FONT FACE="청봉, serif"><SPAN LANG="en-US">71
+Disk not ready </SPAN></FONT>
+</P>
+<P><A NAME="err73"></A><FONT FACE="청봉, serif"><SPAN LANG="en-US">73
+Feature not implemented </SPAN></FONT>
+</P>
+<P><A NAME="err74"></A><FONT FACE="청봉, serif"><SPAN LANG="en-US">74
+No rename with different drive </SPAN></FONT>
+</P>
+<P><A NAME="err75"></A><FONT FACE="청봉, serif"><SPAN LANG="en-US">75
+Path/file access error </SPAN></FONT>
+</P>
+<P><A NAME="err76"></A><FONT FACE="청봉, serif"><SPAN LANG="en-US">76
+Path not found </SPAN></FONT>
+</P>
+<P><A NAME="err91"></A><FONT FACE="청봉, serif"><SPAN LANG="en-US">91
+Object variable not set </SPAN></FONT>
+</P>
+<P><A NAME="err93"></A><FONT FACE="청봉, serif"><SPAN LANG="en-US">93
+Invalid pattern string </SPAN></FONT>
+</P>
+<P><A NAME="err94"></A><FONT FACE="청봉, serif"><SPAN LANG="en-US">94
+Invalid use of Null </SPAN></FONT>
+</P>
+<P><A NAME="err323"></A><FONT FACE="청봉, serif"><SPAN LANG="en-US">323
+Can't load module </SPAN></FONT>
+</P>
+<P><A NAME="err341"></A><FONT FACE="청봉, serif"><SPAN LANG="en-US">341
+Invalid object index </SPAN></FONT>
+</P>
+<P><A NAME="err366"></A><FONT FACE="청봉, serif"><SPAN LANG="en-US">366
+No active view or document </SPAN></FONT>
+</P>
+<P><A NAME="err380"></A><FONT FACE="청봉, serif"><SPAN LANG="en-US">380
+Bad property value </SPAN></FONT>
+</P>
+<P><A NAME="err382"></A><FONT FACE="청봉, serif"><SPAN LANG="en-US">382
+Property is read only </SPAN></FONT>
+</P>
+<P><A NAME="err394"></A><FONT FACE="청봉, serif"><SPAN LANG="en-US">394
+Property is write only </SPAN></FONT>
+</P>
+<P><A NAME="err420"></A><FONT FACE="청봉, serif"><SPAN LANG="en-US">420
+Invalid object reference </SPAN></FONT>
+</P>
+<P><A NAME="err423"></A><FONT FACE="청봉, serif"><SPAN LANG="en-US">423
+Property or method not found </SPAN></FONT>
+</P>
+<P><A NAME="err424"></A><FONT FACE="청봉, serif"><SPAN LANG="en-US">424
+Object required </SPAN></FONT>
+</P>
+<P><A NAME="err425"></A><FONT FACE="청봉, serif"><SPAN LANG="en-US">425
+Invalid use of object </SPAN></FONT>
+</P>
+<P><A NAME="err430"></A><FONT FACE="청봉, serif"><SPAN LANG="en-US">430
+Class does not support OLE </SPAN></FONT>
+</P>
+<P><A NAME="err438"></A><FONT FACE="청봉, serif"><SPAN LANG="en-US">438
+Object doesn't support method </SPAN></FONT>
+</P>
+<P><A NAME="err440"></A><FONT FACE="청봉, serif"><SPAN LANG="en-US">440
+OLE automation error </SPAN></FONT>
+</P>
+<P><A NAME="err445"></A><FONT FACE="청봉, serif"><SPAN LANG="en-US">445
+Object doesn't support this action </SPAN></FONT>
+</P>
+<P><A NAME="err446"></A><FONT FACE="청봉, serif"><SPAN LANG="en-US">446
+Object doesn't support named args </SPAN></FONT>
+</P>
+<P><A NAME="err447"></A><FONT FACE="청봉, serif"><SPAN LANG="en-US">447
+Object doesn't support current locale setting </SPAN></FONT>
+</P>
+<P><A NAME="err448"></A><FONT FACE="청봉, serif"><SPAN LANG="en-US">448
+Named argument not found </SPAN></FONT>
+</P>
+<P><A NAME="err449"></A><FONT FACE="청봉, serif"><SPAN LANG="en-US">449
+Argument not optional </SPAN></FONT>
+</P>
+<P><A NAME="err450"></A><FONT FACE="청봉, serif"><SPAN LANG="en-US">450
+Wrong number of arguments </SPAN></FONT>
+</P>
+<P><A NAME="err451"></A><FONT FACE="청봉, serif"><SPAN LANG="en-US">451
+Object not a collection </SPAN></FONT>
+</P>
+<P><A NAME="err452"></A><FONT FACE="청봉, serif"><SPAN LANG="en-US">452
+Invalid ordinal </SPAN></FONT>
+</P>
+<P><A NAME="err453"></A><FONT FACE="청봉, serif"><SPAN LANG="en-US">453
+Specified DLL function not found </SPAN></FONT>
+</P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><SPAN STYLE="font-weight: medium">460
+Invalid clipboard format </SPAN></SPAN></FONT>
+</P>
+
+</DIV></BODY>
+</HTML>

@@ -1,0 +1,102 @@
+﻿<html dir='ltr'>
+	<head>
+		<META http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+		<title>INFO</title>
+		<link rel='stylesheet' type='text/css' href='../css/main.css'/>
+		<script type='text/javascript' language='Javascript' src='../js/mexpcol.js'></script>
+		<script type='text/javascript' language='JavaScript' src='../js/glossary.js'></script>
+	</head>
+	<body>
+		<h1>&nbsp;<img align="absbottom" src="../image/external_images/crystal/svtools/res/new_doc.png"/>&nbsp;INFO</h1>
+		<p id='ExpandAllLine' class='ExpFav'>
+			<a href='#' onClick='ExpandAll()' onKeyPress='ExpandAll()' class='DropDown'>
+				<img id='picHeader' border='0' src='../image/image/common/expandtri.gif' alt='모두 표시'>
+				<span id='ExpandAll'>모두 표시</span>
+			</a>
+		</p>
+		<p><b class="bterm">참고항목</b>&emsp;
+			<a href="5.9.6.1.htm" >정보함수목록</a>
+		</p>
+		<p>환경에 대한 정보를 구합니다.</p>
+		<p><b class="bterm">문법:&emsp;&emsp;		INFO(본문)</b></p>
+		<table>
+			<tr>
+				<th>인수명</th>
+				<th>설명</th>
+			</tr>
+			<tr>
+				<td> 본문</td>
+				<td>"osversion", "system", "release", "numfile" 및 "recalc"일수 있습니다.</td>
+			</tr>
+		</table>		
+		<table>
+			<tr>
+				<th>Value</th>
+				<th>TYPE 결과</th>
+			</tr>		
+			<tr>
+				<td> osversion</td>
+				<td>호환성을 위해 항상 "Windows(32-bit) NT 5.01"를 반환합니다.</td>
+			</tr>
+		
+			<tr>
+				<td>system</td>
+				<td>조작체계의 류형입니다. "LINUX"(Linux)</td>
+			</tr>
+			<tr>
+				<td>release</td>
+				<td>제품출하 확인자를 반환합니다.</td>
+			</tr>
+			<tr>
+				<td>numfile</td>
+				<td>호환성을 위해 항상 1을 반환합니다.</td>
+			</tr>
+			<tr>
+				<td>recalc</td>
+				<td>현재 수식 재계산 방식("자동" 또는 "수동")을 반환합니다.</td>
+			</tr>
+		</table>
+		<p><b class="bterm">실례</b></p>			
+<p><a href="1.5.1.htm">실례의 리용방법</a>을 참고하십시오.</p>
+			<table>
+				<tr>
+					<td>
+						<table>
+							<tr><td>&nbsp;</td></tr>
+							<tr><th>1</th></tr>
+							<tr><th>2</th></tr>
+							<tr><th>3</th></tr>							
+							<tr><th>4</th></tr>							
+						</table>
+					</td>
+					<td>
+						<table>
+							<tr>
+								<th>A</th>
+								<th>B</th>
+							</tr>
+
+							<tr>
+								<th>수식</th>
+								<th>설명(결과)</th>
+							</tr>
+							<tr>
+								<td>=INFO("osversion")</td>
+								<td>호환성을 위해 항상 "Windows(32-bit) NT 5.01"을 반환합니다.</td>
+							</tr>
+							<tr>
+								<td>=INFO("system")</td>
+								<td>조작체계의 류형입니다. (LINUX)</td>
+							</tr>
+							<tr>
+								<td>=INFO("release")</td>
+								<td>제품출하 확인자를 반환합니다. (300m2(Build:9301))</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>		
+		<script type="text/javascript" language="Javascript">footerView()</script>
+	
+</body>
+</html>														

@@ -1,0 +1,72 @@
+﻿<html dir='ltr'>
+	<head>
+		<META http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+		<title>한 문서의 전체 또는 일부를 인쇄</title>
+		<link rel='stylesheet' type='text/css' href='../css/main.css'/>
+		<script type='text/javascript' language='Javascript' src='../js/mexpcol.js'></script>
+		<script type='text/javascript' language='JavaScript' src='../js/glossary.js'></script>
+	</head>
+	<body>
+		<h1>&nbsp;<img align="absbottom" src="../image/external_images/crystal/svtools/res/new_doc.png"/>&nbsp;한 문서의 전체 또는 일부를 인쇄</h1>
+		<p id='ExpandAllLine' class='ExpFav'>
+			<a href='#' onClick='ExpandAll()' onKeyPress='ExpandAll()' class='DropDown'>
+				<img id='picHeader' border='0' src='../image/image/common/expandtri.gif' alt='모두 표시'>
+				<span id='ExpandAll'>모두 표시</span>
+			</a>
+		</p>
+		<p><b class="bterm">페지범위의 인쇄</b></p>
+		<ol>
+			<li>
+				<b class="bterm">&lt;파일&gt;</b>차림표에서 <b class="bterm">&lt;인쇄&gt;</b>를 찰칵하여 <b class="bterm">&lt;인쇄&gt;</b>대화창을 현시합니다.
+			</li>
+			<li>
+				<b class="bterm">&lt;페지범위&gt;</b>령역에서 다음의 단일선택단추중의 하나를 찰칵합니다.
+				<ul>
+					<li>
+						<b class="bterm">모두:</b>&nbsp;&nbsp;&nbsp;현재문서전체를 인쇄하려고 하는 경우 이 단일선택단추를 찰칵합니다.
+					</li>
+<!--					<li>
+						<p><b class="bterm">페지:</b>&nbsp;&nbsp;&nbsp;문서의 특정한 페지나 범위를 인쇄하려고 하는 경우 이 단일선택단추를 찰칵합니다.</p>
+						<p>단추옆의 본문칸에서 인쇄할 페지번호나 페지범위를 입력합니다.</p>
+					</li>-->
+					<li>
+						<b class="bterm">시작페지, 끝페지:</b>&nbsp;&nbsp;&nbsp;일정한 범위의 문서를 인쇄하려고 하는 경우 이 단일선택단추를 선택합니다. 인쇄가 시작되는 페지번호를 <b class="bterm">&lt;시작페지&gt;</b>본문칸에 입력하고 인쇄가 끝나게 되는 페지번호를 <b class="bterm">&lt;끝페지&gt;</b>본문칸에 입력합니다.
+					</li>
+<!--					<li>
+						<b class="bterm">선택부분 인쇄:</b>&nbsp;&nbsp;&nbsp;현재문서에서 선택한 령역이나 선택한 객체만 인쇄하려고 하는 경우 이 단일선택단추를 찰칵합니다.
+					</li>-->
+				</ul>
+			</li>
+			<li>
+				<b class="bterm">&lt;인쇄&gt;</b>단추를 찰칵하여 대화창을 닫습니다. 인쇄가 진행되는것을 확인합니다.
+			</li>
+		</ol>
+		<p><b class="bterm">특정한 페지의 인쇄</b></p>
+		<p>특정한 페지, 여러 령역에 걸쳐있는 페지범위를 인쇄할수 있습니다.</p>
+		<ol>
+			<li><b class="bterm">&lt;서광사무처리&gt;</b>차림표에서 <b class="bterm">&lt;환경설정&gt;</b>을 찰칵하여 <b class="bterm">&lt;환경설정&gt;</b>대화창을 현시합니다.</li>
+			<li>왼쪽목록칸에서 <b class="bterm">&lt;서광사무처리&gt;</b>의 <b class="bterm">&lt;일반&gt;</b>을 찰칵합니다.</li>
+			<li><b class="bterm">&lt;인쇄대화창&gt;</b>령역에서 <b class="bterm">&lt;서광사무처리 대화창 사용&gt;</b>확인칸을 선택하고 <b class="bterm">&lt;확인&gt;</b>단추를 찰칵합니다.</li>
+			<li>
+				<b class="bterm">&lt;파일&gt;</b>차림표에서 <b class="bterm">&lt;인쇄&gt;</b>를 찰칵합니다.
+			</li>
+				<li><b class="bterm">&lt;인쇄&gt;</b>대화창에서 <b class="bterm">&lt;일반&gt;</b>표쪽을 찰칵합니다.</li>				
+			<li>
+				<b class="bterm">&lt;범위와 부수&gt;</b>령역에서 <b class="bterm">&lt;페지&gt;</b>단일선택단추를 찰칵합니다.
+			</li>
+			<p><b class="bterm">린접하지 않은 특정한 페지</b></p>
+				<p>페지번호를 반점으로 구분하여 입력합니다. 례를 들어 2, 4, 5, 8, 10페지를 인쇄하려면 <b class="bterm">2,4,5,8,10</b>을 입력합니다.</p>
+			<p><b class="bterm">린접하여있는 특정한 페지범위</b></p>
+				<p>페지범위를 지정하려면 시작번호와 끝번호사이에 련결부호(-)를 사용합니다. 례를 들어 3페지부터 10페지까지만 인쇄하려면 <b class="bterm">3-10</b>을 입력합니다.</p>
+			<p>특정한 페지와 페지범위를 조합하여 인쇄할수 있습니다.
+				례를 들어 3, 5, 7페지와 10페지부터 15페지까지만 인쇄하려 한다면 페지본문칸에 <b class="bterm">3,5,7,10-15</b>와 같이 입력하면 됩니다.
+			</p>
+			<li>
+				<b class="bterm">&lt;인쇄&gt;</b>단추를 찰칵하여 대화창을 닫습니다.
+			</li>
+		</ol>
+		<b class="bterm">참고:</b> 인쇄설정을 보다 상세하게 하려면 <b class="bterm">&lt;서광사무처리&gt;/&lt;환경설정&gt;/&lt;서광사무처리&gt;/&lt;일반&gt;</b>에서   <b class="bterm">&lt;인쇄대화창&gt;</b>령역에 있는 <b class="bterm">&lt;서광사무처리 대화창 사용&gt;</b>확인칸을 선택합니다.
+		<script type="text/javascript" language="Javascript">footerView()</script>
+	
+</body>
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+	<TITLE></TITLE>
+	<META NAME="GENERATOR" CONTENT="《Sogwang 3.0》  (Linux)">
+	<META NAME="CREATED" CONTENT="20091214;18322100">
+	<META NAME="CHANGED" CONTENT="20091214;18391200">
+	<STYLE TYPE="text/css">
+	<!--
+		P.related { margin-top: 0.71cm; margin-bottom: 0.05cm; border-top: 1px solid #000000; border-bottom: none; border-left: none; border-right: none; padding-top: 0.05cm; padding-bottom: 0cm; padding-left: 0cm; padding-right: 0cm; font-weight: bold }
+		H2 { margin-bottom: 0.18cm; font-family: "Bitstream Vera Sans", "Arial", "Helvetica", "Lucida", "Geneva", "Helmet", sans-serif, "Andale Sans UI", "Arial Unicode MS", "Lucida Sans Unicode", "Tahoma"; font-size: 14pt }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="ko-KP" DIR="LTR"><DIV style="margin-left: 25">
+<H1><A NAME="bm_id7430951"></A><A NAME="digital_signatures"></A><FONT FACE="Thorndale, serif"><SPAN LANG="en-US">About
+Digital Signatures </SPAN></FONT>
+</H1>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">In
+</SPAN></FONT><FONT FACE="청봉, serif"><SPAN LANG="en-US">Sogwang ,
+you can digitally sign your documents and macros. </SPAN></FONT>
+</P>
+<H2><SPAN LANG="en-US">Certificates</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">To sign
+a document digitally, you need a personal key, the certificate. A
+personal key is stored on your computer as a combination of a private
+key, which must be kept secret, and a public key, which you add to
+your documents when you sign them.</SPAN></FONT></P>
+<H2><SPAN LANG="en-US">Save and sign the document</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">When you
+apply a digital signature to a document, a kind of checksum is
+computed from the document's content plus your personal key. The
+checksum and your public key are stored together with the document.</SPAN></FONT></P>
+<H2><SPAN LANG="en-US">Open a signed document</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">When
+someone later opens the document on any computer with a recent
+version of </SPAN></FONT><FONT FACE="청봉, serif"><SPAN LANG="en-US">Sogwang ,
+the program will compute the checksum again and compare it with the
+stored checksum. If both are the same, the program will signal that
+you see the original, unchanged document. In addition, the program
+can show you the public key information from the certificate.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">You can
+compare the public key with the public key that is published on the
+web site of the certificate authority.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Whenever
+someone changes something in the document, this change breaks the
+digital signature. After the change, there will be no sign that you
+see the original document.</SPAN></FONT></P>
+<H2><SPAN LANG="en-US">Security Warnings</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">When you
+receive a signed document, and the software reports that the
+signature is valid, this does not mean that you can be absolutely
+sure that the document is the same that the sender has sent. Signing
+documents with software certificates is not a perfectly secure
+method. Numerous ways are possible to circumvent the security
+features.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Example:
+Think about someone wants to camouflage his identity to be a sender
+from your bank. He can easily get a certificate using a false name,
+then send you any signed e-mail pretending he is working for your
+bank. You will get that e-mail, and the e-mail or the document within
+has the &quot;valid signed&quot; icon. </SPAN></FONT>
+</P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Do not
+trust the icon. Inspect and verify the certificates.</SPAN></FONT></P>
+<TABLE WIDTH=929 BORDER=0 CELLPADDING=5 CELLSPACING=0>
+	<COL WIDTH=25>
+	<COL WIDTH=431>
+	<TR>
+		<TD WIDTH=47>
+			<P><IMG SRC="../../../Image/warning.png" NAME="graphics1" ALT="Warning Icon " ALIGN=BOTTOM WIDTH=25 HEIGHT=42 BORDER=0></P>
+		</TD>
+		<TD WIDTH=862>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">The
+			validation of a signature is not a legally binding guarantee of
+			any kind.</SPAN></FONT></P>
+		</TD>
+	</TR>
+</TABLE>
+<P><BR><BR>
+</P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">On
+Windows operating systems, the Windows features of validating a
+signature are used. On Solaris and Linux systems, files that are
+supplied by Thunderbird, Mozilla or Firefox are used. You must ensure
+that the files that are in use within your system are really the
+original files that were supplied by the original developers. For
+malevolent intruders, there are numerous ways to replace original
+files with other files that they supply.</SPAN></FONT></P>
+<TABLE WIDTH=947 BORDER=0 CELLPADDING=5 CELLSPACING=0>
+	<COL WIDTH=25>
+	<COL WIDTH=535>
+	<TR>
+		<TD WIDTH=47>
+			<P><IMG SRC="../../../Image/warning.png" NAME="graphics2" ALT="Warning Icon " ALIGN=BOTTOM WIDTH=25 HEIGHT=42 BORDER=0></P>
+		</TD>
+		<TD WIDTH=880>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">The
+			messages about validation of a signature that you see in
+			</SPAN></FONT><FONT FACE="청봉, serif"><SPAN LANG="en-US">Sogwang are
+			the messages that the validation files return. The </SPAN></FONT><FONT FACE="청봉, serif"><SPAN LANG="en-US">Sogwang software
+			has no way to ensure that the messages reflect the true status of
+			any certificate. The </SPAN></FONT><FONT FACE="청봉, serif"><SPAN LANG="en-US">Sogwang software
+			only displays the messages that other files that are not under
+			control of </SPAN></FONT><FONT FACE="청봉, serif"><SPAN LANG="en-US">Sogwang report.
+			There is no legal responsibility of </SPAN></FONT><FONT FACE="청봉, serif"><SPAN LANG="en-US">Sogwang that the
+			displayed messages reflect the true status of a digital signature.</SPAN></FONT></P>
+		</TD>
+	</TR>
+</TABLE>
+<P><BR>
+  <BR>
+</P>
+<P CLASS="related"><A NAME="related"></A><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Related
+Topics</B> </SPAN></FONT>
+</P>
+<P STYLE="margin-left: 0.13cm; margin-top: 0.05cm; margin-bottom: 0.05cm">
+<FONT FACE="청봉, serif"><SPAN LANG="en-US">Applying
+digital signatures</SPAN></A></SPAN></FONT></P>
+<P STYLE="margin-left: 0.13cm; margin-top: 0.05cm; margin-bottom: 0.05cm">
+<FONT FACE="청봉, serif"><SPAN LANG="en-US">Opening
+a document using WebDAV over HTTPS</SPAN></A></SPAN></FONT></P>
+
+</DIV></BODY>
+</HTML>

@@ -1,0 +1,114 @@
+<html dir='ltr'>
+	<head>
+		<META http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+		<title>MAX</title>
+		<link rel='stylesheet' type='text/css' href='../css/main.css'/>
+		<script type='text/javascript' language='Javascript' src='../js/mexpcol.js'></script>
+		<script type='text/javascript' language='JavaScript' src='../js/glossary.js'></script>
+	</head>
+	<body>
+		<h1>&nbsp;<img align="absbottom" src="../image/external_images/crystal/svtools/res/new_doc.png"/>&nbsp;MAX</h1>
+		<p id='ExpandAllLine' class='ExpFav'>
+			<a href='#' onClick='ExpandAll()' onKeyPress='ExpandAll()' class='DropDown'>
+				<img id='picHeader' border='0' src='../image/image/common/expandtri.gif' alt='모두 표시'>
+				<span id='ExpandAll'>모두 표시</span>
+			</a>
+		</p>
+		<p><b class="bterm">참고항목</b>&emsp;
+			<a href="5.9.10.1.htm">통계함수목록</a>,
+			<a href="5.9.3.8.htm">DMAX</a>,
+			<a href="5.9.10.39.htm">MAXA</a>,
+			<a href="5.9.10.41.htm">MIN</a>,
+			<a href="5.9.10.42.htm">MINA</a>
+		</p>
+		<p>인수목록에서 최대값을 구합니다.</p>
+		<p><b class="bterm">문법:&emsp;&emsp;		MAX(수값 1,수값 2,...)</b></p>
+		<table>
+			<tr>
+				<th>인수명</th>
+				<th>설명</th>
+			</tr>
+			<tr>
+				<td>수값 1,수값 2,...</td>
+				<td>최대값을 지정하는 1부터 30까지의 수값인수입니다.</td>
+			</tr>
+		</table>
+		<p><b class="bterm">주의</b></p>
+			<ul>
+				<li>수자, 빈 세포, 론리값 또는 수자로 표시되는 본문을 인수로 지정할수 있습니다.</li>
+				<li>인수가 배렬이나 참조인 경우에는 그 배렬이나 참조의 수자만 사용됩니다. 배렬이나 참조의 빈 세포나 본문 등은 무시됩니다. 본문을 무시하지 않으려면 <b class="bterm">MAXA</b>함수를 사용합니다.</li>
+				<li>인수에 수자가 들어있지 않으면 0이 반환됩니다.</li>
+			</ul>
+		<p><b class="bterm">실례</b></p>
+			<p><a href="1.5.1.htm">실례의 리용방법</a>을 참고하십시오.</p>
+			<table>
+				<tr>
+					<td>
+						<table>
+							<tr>
+								<td class="noborder">&nbsp;
+								</td>
+							</tr>
+							<tr>
+								<th>1</th>
+							</tr>
+							<tr>
+								<th>2</th>
+							</tr>
+							<tr>
+								<th>3</th>
+							</tr>
+							<tr>
+								<th>4</th>
+							</tr>
+							<tr>
+								<th>5</th>
+							</tr>
+							<tr>
+								<th>6</th>
+							</tr>
+						</table>
+					</td>
+					<td>
+						<table>
+							<tr>
+								<th>A</th>
+							</tr>
+							<tr>
+								<th>자료</th>
+							</tr>
+							<tr>
+								<td>10</td>
+							</tr>
+							<tr>
+								<td>7</td>
+							</tr>
+							<tr>
+								<td>9</td>
+							</tr>
+							<tr>
+								<td>27</td>
+							</tr>
+							<tr>
+								<td>2</td>
+							</tr>
+							<tr>
+								<th>수식</th>
+								<th>설명(결과)</th>
+							</tr>
+							<tr>
+								<td>=MAX(A2:A6)</td>
+								<td>우에 있는 수자들중 가장 큰 수값입니다. (27)</td>
+							</tr>
+							<tr>
+								<td>=MAX(A2:A6, 30)</td>
+								<td>우에 있는 수자와 30중 가장 큰 수값입니다. (30)</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+		<script type="text/javascript" language="Javascript">footerView()</script>
+	
+</body>
+</html>				

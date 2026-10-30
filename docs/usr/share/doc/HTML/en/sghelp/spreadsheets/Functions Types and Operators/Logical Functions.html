@@ -1,0 +1,229 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+	<TITLE></TITLE>
+	<META NAME="GENERATOR" CONTENT="《Sogwang 3.0》  (Linux)">
+	<META NAME="CREATED" CONTENT="20091205;10241300">
+	<META NAME="CHANGED" CONTENT="20091205;11033300">
+	<STYLE TYPE="text/css">
+	<!--
+		H3 { margin-bottom: 0.18cm; font-family: "Bitstream Vera Sans", "Arial", "Helvetica", "Lucida", "Geneva", "Helmet", sans-serif, "Andale Sans UI", "Arial Unicode MS", "Lucida Sans Unicode", "Tahoma"; font-size: 12pt }
+		H2 { margin-bottom: 0.18cm; font-family: "Bitstream Vera Sans", "Arial", "Helvetica", "Lucida", "Geneva", "Helmet", sans-serif, "Andale Sans UI", "Arial Unicode MS", "Lucida Sans Unicode", "Tahoma"; font-size: 14pt }
+		TD P.howtogetheader { background: #ffffff; border: 1px solid #999999; padding: 0.08cm; font-weight: bold }
+		P.code { margin-top: 0.04cm; margin-bottom: 0.04cm; font-family: "Bitstream Vera Sans Mono", "Cumberland", "Courier New", "Courier", "Lucida Sans Typewriter", "Lucida Typewriter", "Monaco", "Monospaced" }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="ko-KP" DIR="LTR"><DIV style="margin-left: 25">
+<H1><A NAME="bm_id3153484"></A><FONT FACE="Thorndale, serif"><SPAN LANG="en-US">Logical
+Functions</SPAN></FONT></H1>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">This
+category contains the <B>Logical</B> functions. </SPAN></FONT>
+</P>
+
+<TABLE WIDTH=95% BORDER=1 CELLPADDING=3 CELLSPACING=0 BGCOLOR="#eeeeee">
+	<COL WIDTH=256*>
+	<TR>
+		<TD WIDTH=100%>
+			<P CLASS="howtogetheader"><FONT FACE="청봉, serif"><SPAN LANG="en-US">To
+			access this command... </SPAN></FONT>
+			</P>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><SPAN STYLE="background: #eeeeee"><B>Insert
+			- Function</B> - Category <B>Logical</B> </SPAN></SPAN></FONT>
+			</P>
+		</TD>
+	</TR>
+</TABLE>
+<P>
+<BR>
+<BR>
+</P>
+<H2><SPAN LANG="en-US">AND</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Returns
+TRUE if all arguments are TRUE. If one of the elements is FALSE, this
+function returns the FALSE value.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">The
+arguments are either logical expressions themselves (TRUE, 1&lt;5,
+2+3=7, B8&lt;10) that return logical values, or arrays (A1:C3)
+containing logical values.</SPAN></FONT></P>
+<TABLE WIDTH=955 BORDER=0 CELLPADDING=5 CELLSPACING=0>
+	<COL WIDTH=33>
+	<COL WIDTH=584>
+	<TR>
+		<TD WIDTH=43>
+			<P><IMG SRC="../../Image/note.png" NAME="graphics1" ALT="Note Icon " ALIGN=BOTTOM WIDTH=33 HEIGHT=42 BORDER=0></P>
+		</TD>
+		<TD WIDTH=892>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">When
+			a function expects a single value, but you entered a cell range,
+			then the value from the cell range is taken that is in the same
+			column or row as the formula.</SPAN></FONT></P>
+		</TD>
+	</TR>
+</TABLE>
+<P STYLE="margin-top: 0.05cm; margin-bottom: 0cm"><BR>
+</P>
+<TABLE WIDTH=957 BORDER=0 CELLPADDING=5 CELLSPACING=0>
+	<COL WIDTH=33>
+	<COL WIDTH=584>
+	<TR>
+		<TD WIDTH=42>
+			<P><IMG SRC="../../Image/note.png" NAME="graphics2" ALT="Note Icon " ALIGN=BOTTOM WIDTH=33 HEIGHT=42 BORDER=0></P>
+		</TD>
+		<TD WIDTH=895>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">If
+			the entered range is outside of the current column or row of the
+			formula, the function returns the error value #VALUE!</SPAN></FONT></P>
+		</TD>
+	</TR>
+</TABLE>
+<P><BR><BR>
+</P>
+<H3><SPAN LANG="en-US">Syntax</SPAN></H3>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">AND(LogicalValue1; LogicalValue2
+...LogicalValue30)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>LogicalValue1;
+LogicalValue2 ...LogicalValue30</B> are conditions to be checked. All
+conditions can be either TRUE or FALSE. If a range is entered as a
+parameter, the function uses the value from the range that is in the
+current column or row. The result is TRUE if the logical value in all
+cells within the cell range is TRUE.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Example</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">The
+logical values of entries 12&lt;13; 14&gt;12, and 7&lt;6 are to be
+checked:</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">=AND(12&lt;13;14&gt;12;7&lt;6)
+returns FALSE.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">=AND
+(FALSE;TRUE) returns FALSE.</SPAN></FONT></P>
+<H2><A NAME="Section5"></A><A NAME="bm_id3149015"></A><A NAME="bm_id3154678"></A>
+<SPAN LANG="en-US">FALSE</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Returns
+the logical value FALSE. The FALSE() function does not require any
+arguments, and always returns the logical value FALSE.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Syntax</SPAN></H3>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">FALSE()</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Example</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">=FALSE()
+returns FALSE</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">=NOT(FALSE())
+returns TRUE</SPAN></FONT></P>
+<H2><A NAME="Section4"></A><A NAME="bm_id3150141"></A><A NAME="bm_id3152789"></A>
+<SPAN LANG="en-US">IF</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Specifies
+a logical test to be performed.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Syntax</SPAN></H3>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">IF(Test; ThenValue;
+&quot;OtherwiseValue&quot;)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Test</B>
+is any value or expression that can be TRUE or FALSE.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>ThenValue</B>
+(optional) is the value that is returned if the logical test is TRUE.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>OtherwiseValue</B>
+(optional) is the value that is returned if the logical test is
+FALSE.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">In
+the </SPAN></FONT><FONT FACE="청봉, serif"><SPAN LANG="en-US">Sogwang Calc
+functions, parameters marked as &quot;optional&quot; can be left out
+only when no parameter follows. 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+For example, in a function with four
+parameters, where the last two parameters are marked as &quot;optional&quot;,
+you can leave out parameter 4 or parameters 3 and 4, but you cannot
+leave out parameter 3 alone. </SPAN></FONT>
+</P>
+<H3><SPAN LANG="en-US">Examples</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">=IF(A1&gt;5;100;&quot;too
+small&quot;) If the value in A1 is higher than 5, the value 100 is
+entered in the current cell; otherwise, the text “too small”
+(without quotes) is entered.</SPAN></FONT></P>
+<H2><A NAME="Section3"></A><A NAME="bm_id3155954"></A><A NAME="bm_id3145168"></A>
+<SPAN LANG="en-US">NOT</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Reverses
+the logical value.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Syntax</SPAN></H3>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">NOT(LogicalValue)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>LogicalValue</B>
+is any value to be reversed.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Example</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">=NOT(A).
+A=TRUE reverses to A=FALSE.</SPAN></FONT></P>
+<H2><A NAME="Section2"></A><A NAME="bm_id3148394"></A><A NAME="bm_id3155620"></A>
+<SPAN LANG="en-US">OR</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Returns
+TRUE if at least one argument is TRUE. This function returns the
+value FALSE, if all the arguments have the logical value FALSE.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">The
+arguments are either logical expressions themselves (TRUE, 1&lt;5,
+2+3=7, B8&lt;10) that return logical values, or arrays (A1:C3)
+containing logical values.</SPAN></FONT></P>
+<TABLE WIDTH=952 BORDER=0 CELLPADDING=5 CELLSPACING=0>
+	<COL WIDTH=33>
+	<COL WIDTH=584>
+	<TR>
+		<TD WIDTH=40>
+			<P><IMG SRC="../../Image/note.png" NAME="graphics3" ALT="Note Icon " ALIGN=BOTTOM WIDTH=33 HEIGHT=42 BORDER=0></P>
+		</TD>
+		<TD WIDTH=892>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">When
+			a function expects a single value, but you entered a cell range,
+			then the value from the cell range is taken that is in the same
+			column or row as the formula.</SPAN></FONT></P>
+		</TD>
+	</TR>
+</TABLE>
+<P STYLE="margin-top: 0.05cm; margin-bottom: 0cm"><BR>
+</P>
+<TABLE WIDTH=949 BORDER=0 CELLPADDING=5 CELLSPACING=0>
+	<COL WIDTH=33>
+	<COL WIDTH=584>
+	<TR>
+		<TD WIDTH=41>
+			<P><IMG SRC="../../Image/note.png" NAME="graphics4" ALT="Note Icon " ALIGN=BOTTOM WIDTH=33 HEIGHT=42 BORDER=0></P>
+		</TD>
+		<TD WIDTH=888>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">If
+			the entered range is outside of the current column or row of the
+			formula, the function returns the error value #VALUE!</SPAN></FONT></P>
+		</TD>
+	</TR>
+</TABLE>
+<P><BR><BR>
+</P>
+<H3><SPAN LANG="en-US">Syntax</SPAN></H3>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">OR(LogicalValue1; LogicalValue2
+...LogicalValue30)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>LogicalValue1;
+LogicalValue2 ...LogicalValue30</B> are conditions to be checked. All
+conditions can be either TRUE or FALSE. If a range is entered as a
+parameter, the function uses the value from the range that is in the
+current column or row.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Example</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">The
+logical values of entries 12&lt;11; 13&gt;22, and 45=45 are to be
+checked.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">=OR(12&lt;11;13&gt;22;45=45)
+returns TRUE.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">=OR(FALSE;TRUE)
+returns TRUE.</SPAN></FONT></P>
+<H2><A NAME="Section1"></A><A NAME="bm_id3156256"></A><A NAME="bm_id3148426"></A>
+<SPAN LANG="en-US">TRUE</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">The
+logical value is set to TRUE. The TRUE() function does not require
+any arguments, and always returns the logical value TRUE.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Syntax</SPAN></H3>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">TRUE()</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Example</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">If
+A=TRUE and B=FALSE the following examples appear:</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">=AND(A;B)
+returns FALSE</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">=OR(A;B)
+returns TRUE</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">=NOT(AND(A;B))
+returns TRUE</SPAN></A></SPAN></FONT></P>
+
+</DIV></BODY>
+</HTML>
+

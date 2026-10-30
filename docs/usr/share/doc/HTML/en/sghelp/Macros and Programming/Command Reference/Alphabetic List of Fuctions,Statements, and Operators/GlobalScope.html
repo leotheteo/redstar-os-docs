@@ -1,0 +1,58 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+	<TITLE></TITLE>
+	<META NAME="GENERATOR" CONTENT="《Sogwang 3.0》  (Linux)">
+	<META NAME="CREATED" CONTENT="20091205;11384400">
+	<META NAME="CHANGED" CONTENT="20091205;12084400">
+	<STYLE TYPE="text/css">
+	<!--
+		H2 { margin-bottom: 0.18cm; font-family: "Bitstream Vera Sans", "Arial", "Helvetica", "Lucida", "Geneva", "Helmet", sans-serif, "Andale Sans UI", "Arial Unicode MS", "Lucida Sans Unicode", "Tahoma"; font-size: 14pt }
+		P.listitem { font-family: "Bitstream Vera Sans", "Arial", "Helvetica", "Lucida", "Geneva", "Helmet", sans-serif, "Andale Sans UI", "Arial Unicode MS", "Lucida Sans Unicode", "Tahoma" }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="ko-KP" DIR="LTR"><DIV style="margin-left: 25">
+<H1><A NAME="globalscope"></A><A NAME="bm_id3150682"></A><FONT FACE="Thorndale, serif"><SPAN LANG="en-US">GlobalScope
+[Runtime]</SPAN></FONT></H1>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Basic
+source code and dialogs are organized in a library system.</SPAN></FONT></P>
+<UL>
+	<LI><P CLASS="listitem"><FONT FACE="청봉, serif"><SPAN LANG="en-US">The LibraryContainer
+	contains libraries</SPAN></FONT></P>
+	<LI><P CLASS="listitem"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Libraries can contain
+	modules and dialogs</SPAN></FONT></P>
+</UL>
+<H2><SPAN LANG="en-US">In Basic:</SPAN></H2>
+<UL>
+	<LI><P CLASS="listitem"><FONT FACE="청봉, serif"><SPAN LANG="en-US">The LibraryContainer is
+	called <B>BasicLibraries</B>.</SPAN></FONT></P>
+</UL>
+<H2><SPAN LANG="en-US">In dialogs:</SPAN></H2>
+<UL>
+	<LI><P CLASS="listitem"><FONT FACE="청봉, serif"><SPAN LANG="en-US">The LibraryContainer is
+	called <B>DialogLibraries</B>.</SPAN></FONT></P>
+</UL>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Both
+LibraryContainers exist in an application level and within every
+document. In the document Basic, the document's LibraryContainers are
+called automatically. If you want to call the global
+LibraryContainers from within a document, you must use the keyword
+<B>GlobalScope</B>.</SPAN></FONT></P>
+<H2><SPAN LANG="en-US">Syntax:</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">GlobalScope</SPAN></FONT></P>
+<H2><SPAN LANG="en-US">Example:</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Example
+in the document Basic</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">'
+calling Dialog1 in the document library Standard</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">oDlgDesc
+= DialogLibraries.Standard.Dialog1</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">'
+calling Dialog2 in the application library Library1</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><SPAN STYLE="font-weight: medium">oDlgDesc
+= GlobalScope.DialogLibraries.Library1.Dialog2</SPAN></SPAN></FONT></P>
+
+</DIV></BODY>
+</HTML>

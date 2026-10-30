@@ -1,0 +1,77 @@
+﻿<html dir='ltr'>
+	<head>
+		<META http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+		<title>참조사용</title>
+		<link rel='stylesheet' type='text/css' href='../css/main.css'/>
+		<script type='text/javascript' language='Javascript' src='../js/mexpcol.js'></script>
+		<script type='text/javascript' language='JavaScript' src='../js/glossary.js'></script>
+	</head>
+	<body>
+		<h1>&nbsp;<img align="absbottom" src="../image/external_images/crystal/svtools/res/new_doc.png"/>&nbsp;참조사용</h1>
+		<p id='ExpandAllLine' class='ExpFav'>
+			<a href='#' onClick='ExpandAll()' onKeyPress='ExpandAll()' class='DropDown'>
+				<img id='picHeader' border='0' src='../image/image/common/expandtri.gif' alt='모두 표시'>
+				<span id='ExpandAll'>모두 표시</span>
+			</a>
+		</p>
+		<p>참조는 표용지의 세포나 세포범위에 대한 련결입니다. 수식에서는 참조를 사용하여 표용지의 여러 부분에 있는 자료로 값을 계산하거나 여러 수식들이 한 세포의 값을 사용할수 있습니다. 
+			또한 같은 자료표문서의 다른 표용지에 있는 세포와 다른 자료표문서의 세포나 세포범위를 참조할수도 있습니다. 다른 자료표문서의 세포에 대한 참조를 <b class="bterm">련결</b>이라고 합니다.</p>
+		<p><b class="bterm">A1참조격식</b></p>
+			<p>표처리프로그람에서는 문자(총 256개의 렬에 대해 A부터 IV까지)로 렬을 참조하고 수자(1부터 65 536까지)로 행을 참조하는 A1참조격식을 사용할수 있습니다. 
+				이러한 문자와 수자를 각각 행머리부, 렬머리부라고 합니다. 세포를 참조하려면 렬문자 다음에 행번호를 입력합니다. 례를 들어 B2는 B렬과 2행이 만나는 위치의 세포를 가리킵니다.
+			</p>
+			<table>
+				<tr>
+					<th>참조 대상</th>
+					<th>사용</th>
+				</tr>
+				<tr>
+					<td>A렬의 10행에 있는 세포</td>
+					<td>A10</td>
+				</tr>
+				<tr>
+					<td>A렬의 10행부터 20행까지의 세포범위</td>
+					<td>A10:A20</td>
+				</tr>
+				<tr>
+					<td>15행의 B렬부터 E렬까지의 세포범위</td>
+					<td>B15:E15</td>
+				</tr>
+				<tr>
+					<td>A렬부터 E렬까지와 10행부터 20행까지의 세포범위</td>
+					<td>A10:E20</td>
+				</tr>
+			</table>
+			<p><b class="bterm">다른 표용지에 대한 참조</b></p>
+			<p>다음실례에서 <b class="bterm">AVERAGE</b>함수는 자료표문서안에서 《Sogwang》이라는 표용지의 B1:B10범위에 대한 평균값을 계산합니다.</p>
+			<ol>
+				<p><img border='0' src='../image/image/sgsd/extref.gif' alt='표시'></p>
+				<p>같은 자료표문서의 다른 표용지에 련결</p>
+			</ol>
+			<p>다른 표용지에 대한 참조는 참조앞에 표용지의 이름과 끝점(.)이 와야 합니다.</p>
+		<p><b class="bterm">상대참조와 절대참조의 차이점</b></p>
+			<p><b class="bterm">상대참조</b></p>
+			<p>수식의 상대참조(례: A1)는 해당 참조가 가리키는 세포의 상대위치를 기반으로 합니다. 수식이 들어있는 세포의 위치가 바뀌면 참조도 바뀝니다. 
+				즉 어떤 세포의 수식을 다른 행이나 렬사이에 복사하면 참조도 상대위치를 기반으로 하여 자동적으로 설정됩니다. 
+				례를 들어 B2세포의 상대참조(=A1)를 B3세포에 복사하면 참조가 자동적으로 =A2이 됩니다. 새로 만드는 수식에는 기본적으로 상대참조가 사용됩니다.
+			</p>
+			<p><img border='0' src='../image/image/sgsd/relabs2.gif' alt='표시'></p>
+			<p>상대참조가 있는 수식복사</p>
+			<p><b class="bterm">절대참조</b></p>
+			<p>수식의 절대참조(례: $A$1)는 항상 특정한 위치의 세포를 가리킵니다. 수식이 들어있는 세포의 위치가 바뀌여도 절대참조는 바뀌지 않고 그대로 유지됩니다. 
+				수식을 다른 세포나 렬사이에 복사해도 절대참조는 변경되지 않습니다. 례를 들어 B2 세포의 절대참조(=$A$1)를 B3세포로 복사하면 두 세포가 모두 =$A$1이 됩니다. 
+				새로 만드는 수식에는 기본적으로 상대참조가 사용되므로 절대참조를 리용하려면 수식에 절대참조기호($)를 입력하여야 합니다.
+			</p>
+			<p><img border='0' src='../image/image/sgsd/absref.gif' alt='표시'></p>
+			<p>절대참조가 있는 수식복사</p>
+			<p><b class="bterm">혼합참조</b></p>
+			<p>혼합참조에는 절대렬과 상대행 또는 절대행과 상대렬이 있습니다. 절대렬참조는 $A1, $B1 와 같은 형태이며 절대행참조는 A$1, B$1와 같은 형태입니다. 
+				수식이 들어있는 세포의 위치가 바뀔 때 상대참조는 재설정되지만 절대참조는 변경되지 않습니다. 즉 다른 행이나 세포사이에 수식을 복사하면 상대참조는 자동적으로 설정되지만 절대참조는 재설정되지 않고 그대로 유지됩니다. 
+				례를 들어 혼합참조를 A2세포에서 B3세포로 복사하면 =A$1에서 =B$1로 설정됩니다.
+			</p>
+			<p><img border='0' src='../image/image/sgsd/mixref.gif' alt='표시'></p>
+			<p>혼합참조가 있는 수식복사</p>
+		<script type="text/javascript" language="Javascript">footerView()</script>
+	
+</body>
+</html>

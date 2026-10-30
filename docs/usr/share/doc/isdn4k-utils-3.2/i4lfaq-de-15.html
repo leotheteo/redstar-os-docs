@@ -1,0 +1,54 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <META NAME="GENERATOR" CONTENT="LinuxDoc-Tools 0.9.21">
+ <TITLE>ISDN4LINUX - FAQ (deutsche Version): rawip: Raw IP </TITLE>
+ <LINK HREF="i4lfaq-de-16.html" REL=next>
+ <LINK HREF="i4lfaq-de-14.html" REL=previous>
+ <LINK HREF="i4lfaq-de.html#toc15" REL=contents>
+</HEAD>
+<BODY>
+<A HREF="i4lfaq-de-16.html">Next</A>
+<A HREF="i4lfaq-de-14.html">Previous</A>
+<A HREF="i4lfaq-de.html#toc15">Contents</A>
+<HR>
+<H2><A NAME="rawip"></A> <A NAME="s15">15.</A> <A HREF="i4lfaq-de.html#toc15">rawip: Raw IP </A></H2>
+
+<H2><A NAME="rawip_whatis"></A> <A NAME="ss15.1">15.1</A> <A HREF="i4lfaq-de.html#toc15.1">rawip_whatis: Was ist Raw IP, wann sollte ich es benutzen? </A>
+</H2>
+
+<P>Raw IP kommt ohne Protokolle wie X.75, HDLC (f&uuml;r Modememulation,
+usw.) oder PPP aus. Die TCP/IP-Pakete werden direkt ausgetauscht.  Raw
+IP hat sowohl Vor- als auch Nachteile.  Vorteile:
+<UL>
+<LI> Kein handshaking (= schnellerer Verbindungsaufbau)</LI>
+<LI> Autorisierung durch Caller ID (= schnell, sicher, kein Password)</LI>
+<LI> Feste IP-Addresse (= eine abgebbrochene Verbindung kann durch
+Wahlwiederholung fortgesetzt werden)</LI>
+<LI> H&ouml;here Datentransferraten</LI>
+<LI> Bessere Stabilit&auml;t (kleinerer Treiber = fast ohne Fehler)</LI>
+</UL>
+
+Nachteile:
+<UL>
+<LI> Kein handshaking 
+=&gt; Die Konfiguration muss vorher stattfinden (IP-Addressen,...)
+=&gt; sollte nicht mit mehreren Providern gleichzeitig genutzt werden </LI>
+<LI> Autorisierung nur durch Caller ID
+=&gt; Einwahl nur von einer vorher bekannten Telefonnummer m&ouml;glich</LI>
+<LI> Feste IP-Addresse
+=&gt; muss im Voraus bekannt sein, es werden mehr IP-Addressen
+ben&ouml;tigt, kein dynamisches Zuteilen von Addressen m&ouml;glich.</LI>
+</UL>
+
+Aufgrund dieser Zusammenstellung sollte klar sein, unter welchen
+Voraussetzungen die Verwendung von raw IP sinnvoll ist.</P>
+
+
+
+<HR>
+<A HREF="i4lfaq-de-16.html">Next</A>
+<A HREF="i4lfaq-de-14.html">Previous</A>
+<A HREF="i4lfaq-de.html#toc15">Contents</A>
+</BODY>
+</HTML>

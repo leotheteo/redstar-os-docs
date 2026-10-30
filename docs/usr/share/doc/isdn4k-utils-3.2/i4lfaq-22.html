@@ -1,0 +1,176 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <META NAME="GENERATOR" CONTENT="LinuxDoc-Tools 0.9.21">
+ <TITLE>FAQ for isdn4linux: callback: Callback </TITLE>
+ <LINK HREF="i4lfaq-23.html" REL=next>
+ <LINK HREF="i4lfaq-21.html" REL=previous>
+ <LINK HREF="i4lfaq.html#toc22" REL=contents>
+</HEAD>
+<BODY>
+<A HREF="i4lfaq-23.html">Next</A>
+<A HREF="i4lfaq-21.html">Previous</A>
+<A HREF="i4lfaq.html#toc22">Contents</A>
+<HR>
+<H2><A NAME="callback"></A> <A NAME="s22">22.</A> <A HREF="i4lfaq.html#toc22">callback: Callback </A></H2>
+
+<H2><A NAME="callback_delay"></A> <A NAME="ss22.1">22.1</A> <A HREF="i4lfaq.html#toc22.1">callback_delay: An incoming call is rejected by i4l. i4l then calls back. The reject is not recognized by the other side which keeps on dialing to i4l. </A>
+</H2>
+
+<P>Most problems with callback can be solved by adjusting the callback
+delay with <CODE>isdnctrl cbdelay</CODE>. One second on the triggering side A
+(set callback mode to out) and two seconds on the triggered side B
+(set callback mode to in) has been successful in most cases.</P>
+<P>The reason for the problem is a design bug in the link level driver.
+A calls B to trigger a callback. B rejects the call and calls back to A,
+establishing a working connection within less than 4 seconds.
+However, the triggering call from A to B will need 4 seconds to be
+terminated by the ISDN provider (giving other devices on B's
+side a chance to take the call). When it is finally terminated, the
+working connection from B to A is unfortunately also terminated.</P>
+
+<H2><A NAME="callback_cisco"></A> <A NAME="ss22.2">22.2</A> <A HREF="i4lfaq.html#toc22.2">callback_cisco: Somehow i4l can not callback a Cisco? </A>
+</H2>
+
+<P>Torsten Hentschel <CODE>
+<A HREF="mailto:Torsten.Hentschel@DInet.de">Torsten.Hentschel@DInet.de</A></CODE> wrote on 3 Oct 1996:
+<BLOCKQUOTE>
+A Cisco may dial so heavily that the ipppd has no chance to callback.
+That's how they are programmed (firm statement of a Cisco developer):
+If a Cisco receives a packet that should be routed through a &quot;dial on
+demand&quot; telephone connection, and there is a D-channel available for
+dialing out, it dials out immediately.
+If in such a situation (which has be the case with Delta Internet for half
+a year now) a Cisco with 8 D-channels is on the other side and somebody
+does a simple &quot;ping RemoteIP&quot; then the Cisco will use (worst case) all
+8 D-channels to dial out. Of course it can't dial the same telephone
+number with two D-channels in parallel (would be immediately busy). Its
+programming is not so stupid, but it sets up the next D-channel for
+dialout before it assumes the previous D-channel as failed. Such a Cisco
+works like a machine gun in respect to dialout. And i4l won't get a free
+D-channel for dialin if the Cisco doesn't want.
+The bad thing: a Cisco always expects (even when configured on &quot;callback
+client&quot; = i4l dials back) that the other side unhooks the line, then both
+hang up and then comes the callback. Username and password always have to
+be exchanged before the callback is allowed when using PPP, to be sure
+that the person requesting callback is allowed to do so. (Cisco seems to
+obey the rules of the (German) Telekom that no information are to be ex-
+changed without a B-channel connection. A callback request just by caller
+id could in doubt be considered as a transmission of information).
+</BLOCKQUOTE>
+
+Torsten Hentschel <CODE>
+<A HREF="mailto:Torsten.Hentschel@DInet.de">Torsten.Hentschel@DInet.de</A></CODE> additionally wrote on
+20. Nov 1996:
+<BLOCKQUOTE>
+I've often tried callback over PPP with two CISCOs. From my experience,
+trials in the combination CISCO - Linux will not be successful.
+A CISCO always handshakes a callback request via PPP. To do this, the
+other side has to first unhook and then do all the handshaking
+(authentication,...). Then both hang up and the callback is placed.
+isdnctrl commands of Linux influence only the kernels net devices
+and have no or hardly any influence on how the ipppd handles callbacks.
+He does not recognize that he is supposed to expect that the remote
+side calls back.
+Accordingly he rejects the offer of the CISCO via PPP, that the CISCO
+is ready to call back. Then the CISCO assumes that it should not call
+back (it wants to see an explicit callback request during the PPP
+handshaking).
+The CISCO will confirm this when you log onto it and check with these
+commands:
+deb ppp chap
+deb ppp negotiotion
+deb ppp error
+term mon
+its debug messages about the dial in trials of your Linux computer.
+You have to do this via telnet instead of on the console - otherwise
+the CISCO won't be able to handle the logging via the serial interface.
+</BLOCKQUOTE>
+</P>
+
+<H2><A NAME="callback_ascend"></A> <A NAME="ss22.3">22.3</A> <A HREF="i4lfaq.html#toc22.3">callback_ascend: Callback from an Ascend works only when I set &quot;Active=Yes&quot; in the Ascend menu; but then the Ascend keeps calling me, even when my machine is off. </A>
+</H2>
+
+<P>Ulrich Klein <CODE>
+<A HREF="mailto:ulik@hprc.tandem.com">ulik@hprc.tandem.com</A></CODE> wrote on 14 Dec 1996:</P>
+<P>Somewhere in the Ascend menus you can set &quot;dial broadcast&quot; to
+&quot;no&quot; or &quot;off&quot;. Otherwise the thing will dial with every
+broadcast. At least that helped me. In case anyone from the network on which
+the Ascend is attached really wants to establish a connection, then you have to
+use the strange filters. I believe there's one that will dial out only for
+callback.</P>
+
+<H2><A NAME="callback_banzai"></A> <A NAME="ss22.4">22.4</A> <A HREF="i4lfaq.html#toc22.4">callback_banzai: How can I callback a Banzai!? </A>
+</H2>
+
+<P>Jan-Olaf Droese <CODE>
+<A HREF="mailto:jano@layla.RoBIN.de">jano@layla.RoBIN.de</A></CODE> wrote on 31 Jan 1997:</P>
+<P>On the Banzai side, a "c" should be added to the outgoing number,
+so it will be ready for the return call. Just to be safe, you can
+the dialout attempts on the Banzai to 1, so there won't be any
+call collisions.
+On the i4l I've set the following:
+<HR>
+<PRE>
+isdnctrl callback isdn0 in
+isdnctrl cbdelay isdn0 1
+</PRE>
+<HR>
+</P>
+
+<H2><A NAME="callback_microsoft"></A> <A NAME="ss22.5">22.5</A> <A HREF="i4lfaq.html#toc22.5">callback_microsoft: Does isdn4linux support Microsoft Callback (CBCP)? </A>
+</H2>
+
+<P>Yes, this is implemented in ipppd. To enable it you have to set the
+parameter &quot;callback 6&quot; as an ipppd option on the client side
+for an admin managed callback. This means the server will call back on
+the number it has been configured for.
+More interesting is a user managed callback, since the number to be called
+back can be provided by the user. Set the paramter
+&quot;callback 123456&quot; if you want to be dialed back on number 123456.
+To start the callback trigger it from the client via:
+<HR>
+<PRE>
+isdnctrl cbdelay &lt;device&gt; 5
+isdnctrl callback &lt;device&gt; out
+</PRE>
+<HR>
+
+Please remember that using the CBCP callback always requires both parties to
+connect and exchange data, so telephone charges will be incurred.
+Please note that the man page may be confusing about the callback parameter for
+ipppd. Please note these hints from NOTES.IPPPD:
+<PRE>
+- 'callback type[,message]' enables the callback feature
+  also UNTESTED!
+  ie: 'callback 0'       -> simple callback (info via auth. etc.)
+      'callback 3,12346' -> us E.164 (tel) number 123456 for callback
+      'callback 6' is different. This value means, that the whole negotiation
+  is done with a seperate protocol after the authentification phase. Currently
+  it's not possible to set any options in this case. The ipppd accepts
+  everything from the remote side.
+</PRE>
+
+The server side is not tested so far - please let me know if you have some
+feedback on using CBCP as a server).</P>
+<P>If you have a Red Hat distribution, setting the following parameters in
+ifcfg-ippp0 might do the trick for an admin managed callback:
+<HR>
+<PRE>
+CALLBACK=out
+CBDELAY=5
+CBCP=on
+</PRE>
+<HR>
+
+For user managed callback please follow the hints on:
+<A HREF="https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=125710">https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=125710</A>.</P>
+
+
+
+<HR>
+<A HREF="i4lfaq-23.html">Next</A>
+<A HREF="i4lfaq-21.html">Previous</A>
+<A HREF="i4lfaq.html#toc22">Contents</A>
+</BODY>
+</HTML>

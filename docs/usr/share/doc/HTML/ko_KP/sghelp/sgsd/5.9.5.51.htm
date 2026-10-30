@@ -1,0 +1,104 @@
+﻿<html dir='ltr'>
+	<head>
+		<META http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+		<title>SYD</title>
+		<link rel='stylesheet' type='text/css' href='../css/main.css'/>
+		<script type='text/javascript' language='Javascript' src='../js/mexpcol.js'></script>
+		<script type='text/javascript' language='JavaScript' src='../js/glossary.js'></script>
+	</head>
+	<body>
+		<h1>&nbsp;<img align="absbottom" src="../image/external_images/crystal/svtools/res/new_doc.png"/>&nbsp;SYD</h1>
+		<p id='ExpandAllLine' class='ExpFav'>
+			<a href='#' onClick='ExpandAll()' onKeyPress='ExpandAll()' class='DropDown'>
+				<img id='picHeader' border='0' src='../image/image/common/expandtri.gif' alt='모두 표시'>
+				<span id='ExpandAll'>모두 표시</span>
+			</a>
+		</p>
+		<p><b class="bterm">참고항목</b>&emsp;
+			<a href="5.9.5.1.htm">재정함수목록</a>,
+			<a href="5.9.5.18.htm">DDB</a>, 
+			<a href="5.9.5.50.htm">SLN</a>, 
+			<a href="5.9.5.55.htm">VDB</a> 
+		</p>
+		<p>특정한 기간동안 재산가치의 산수적감쇠(감가상각)를 구합니다.</p>
+		<p><b class="bterm">문법:&emsp;&emsp;		SYD(구입비용,잔존가치,내용년한,기간)</b></p>
+		<table>
+			<tr>
+				<th>인수명</th>
+				<th>설명</th>
+			</tr>
+			<tr>
+				<td>구입비용</td>
+				<td>구입비용입니다. 재산의 시초비용입니다.</td>
+			</tr>
+			<tr>
+				<td>잔존가치</td>
+				<td>잔존가치입니다. 재산의 내용년한이 끝나는 시점에서의 재산의 잔존가치입니다.</td>
+			</tr>
+			<tr>
+				<td>내용년한</td>
+				<td>내용년한입니다. 재산이 감가상각되는 기간수(재산의 내용년한)입니다.</td>
+			</tr>
+			<tr>
+				<td>기간</td>
+				<td>기간입니다. 평균내용년한과 같은 시간단위를 사용하는 감가상각기간입니다.</td>
+			</tr>
+		</table>
+		<p><b class="bterm">주의</b></p>
+			<p><b class="bterm">SYD</b>를 계산하는 식은 다음과 같습니다.</p>
+			<p><img border='0' src='../image/image/sgsd/formula-16.gif' alt='표시'></p>
+		<p><b class="bterm">실례</b></p>
+			<p><a href="1.5.1.htm">실례의 리용방법</a>을 참고하십시오.</p>
+			<table>
+				<tr>
+					<td>
+						<table>
+							<tr><td>&nbsp;</td></tr>
+							<tr><th>1</th></tr>
+							<tr><th>2</th></tr>
+							<tr><th>3</th></tr>
+							<tr><th>4</th></tr>
+						</table>
+					</td>
+					<td>
+						<table>
+							<tr>
+								<th>A</th>
+								<th>B</th>
+							</tr>
+							<tr>
+								<th>자료</th>
+								<th>설명</th>
+							</tr>
+							<tr>
+								<td>30 000</td>
+								<td>구입비용입니다.</td>
+							</tr>
+							<tr>
+								<td>7 500</td>
+								<td>잔존가치입니다.</td>
+							</tr>
+							<tr>
+								<td>10</td>
+								<td>내용년한입니다.</td>
+							</tr>
+							<tr>
+								<th>수식</th>
+								<th>설명(결과)</th>
+							</tr>
+							<tr>
+								<td>=SYD(A2,A3,A4,1)</td>
+								<td>첫번째 년도의 년간감가상각편차입니다. (￦4 091.91)</td>
+							</tr>
+							<tr>
+								<td>=SYD(A2,A3,A4,10)</td>
+								<td>열번째 년도의 년간감가상각편차입니다. (￦409.09)</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>	
+		<script type="text/javascript" language="Javascript">footerView()</script>
+	
+</body>
+</html>												

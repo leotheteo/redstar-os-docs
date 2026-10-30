@@ -1,0 +1,103 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <META NAME="GENERATOR" CONTENT="LinuxDoc-Tools 0.9.21">
+ <TITLE>ISDN4LINUX - FAQ (deutsche Version): asyncppp: Konfiguration von asynchronem PPP </TITLE>
+ <LINK HREF="i4lfaq-de-15.html" REL=next>
+ <LINK HREF="i4lfaq-de-13.html" REL=previous>
+ <LINK HREF="i4lfaq-de.html#toc14" REL=contents>
+</HEAD>
+<BODY>
+<A HREF="i4lfaq-de-15.html">Next</A>
+<A HREF="i4lfaq-de-13.html">Previous</A>
+<A HREF="i4lfaq-de.html#toc14">Contents</A>
+<HR>
+<H2><A NAME="asyncppp"></A> <A NAME="s14">14.</A> <A HREF="i4lfaq-de.html#toc14">asyncppp: Konfiguration von asynchronem PPP </A></H2>
+
+<H2><A NAME="asyncppp_whichppp"></A> <A NAME="ss14.1">14.1</A> <A HREF="i4lfaq-de.html#toc14.1">asyncppp_whichppp: pppd, ipppd, asyncPPP, syncPPP - was ist das? Welches sollte ich benutzen? </A>
+</H2>
+
+<P><B>asyncPPP</B> ist ein auf Zeichen basierendes Protokoll, das
+vorwiegend auf analogen seriellen Leitungen verwendet wird (async =
+asynchron). Du musst dazu das Programm <CODE>pppd</CODE> mit den Devices ttyI*
+benutzen.</P>
+<P>Im Gegensatz dazu ist <B>syncPPP</B> ein bit-orientiertes Protokoll
+(sync = synchron), bei dem das originale <CODE>pppd</CODE> nicht benutzt
+werden kann. Michael Hipp hat eine abgeleitete Version namens
+<CODE>ipppd</CODE> geschrieben, die die Netz-Devices ipppd* benutzt.</P>
+<P>I4L kann beide Arten verwenden. Es kommt darauf an, was Deine
+ISDN-Gegenstelle benutzt. Wenn Du sofort nach Verbindungsaufbau Frames
+gesendet bekommst, bist Du vermutlich mit einer Maschine mit syncPPP
+verbunden. Ein Anzeichen einer asyncPPP-Verbindung ist es, wenn Du
+&uuml;ber einen Terminalschirm einloggen und dann <CODE>pppd</CODE> starten
+kannst.</P>
+<P>Normalerweise funktioniert <B>syncPPP</B> recht gut und es ist etwas
+effizienter. Die Vorteile neuer Leistungsmerkmale des <CODE>pppd</CODE>
+erh&auml;ltst Du beim Gebrauch von <B>asyncPPP</B>.</P>
+
+<H2><A NAME="asyncppp_config"></A> <A NAME="ss14.2">14.2</A> <A HREF="i4lfaq-de.html#toc14.2">asyncppp_config: Wie richte ich asyncPPP ein? </A>
+</H2>
+
+<P>Richte einen ganz normalen pppd ein, allerdings zum Gebrauch eines der
+ttyI* Devices, z.B. /dev/ttyI0. Du kannst mehrere pppds mit
+unterschiedlicher Einstellung auf unterschiedlichen ttyI* Devices
+einrichten.</P>
+<P>Es ist sehr wichtig, da&szlig; die Authentifizierungsinformationen
+richtig eingestellt werden. Unsaubere Authentifikation ist das
+vermutlich meist beschriebene Problem in der Mailingliste. Bitte,
+arbeite den Abschnitt 
+<A HREF="i4lfaq-de-12.html#pap">pap</A> erst selbst komplett
+durch, bevor Du andere um Hilfe bittest.</P>
+<P>Bei Problemen solltest Du auch den Abschnitt &uuml;ber die Probleme
+bei syncPPP beachten, da sowohl pppd (asyncPPP) als auch ipppd
+(syncPPP) viele Konfigurationsprobleme gemein haben.</P>
+
+<H2><A NAME="asyncppp_logindelay"></A> <A NAME="ss14.3">14.3</A> <A HREF="i4lfaq-de.html#toc14.3">asyncppp_logindelay: Wie kann ich das Login beschleunigen? </A>
+</H2>
+
+<P>Lass Dir eine Login-Prozedur im 'Debug-Log' protokollieren und suche
+danach, welche Optionen der andere Computer ablehnt. Danach
+konfigurierst Du ipppd ohne diese nicht ben&ouml;tigten Optionen. Ein
+Seiteneffekt ist, da&szlig; solche unben&ouml;tigten Optionen die
+Redundanz vergr&ouml;&szlig;ern (wenn der andere Computer z.B. Fehler
+hat und die Optionen nicht korrekt ablehnt). Wie Du ein Logfile
+erstellst siehst Du in 'Wie erstelle ich ein Log f&uuml;r ipppd'.</P>
+
+<H2><A NAME="asyncppp_fast"></A> <A NAME="ss14.4">14.4</A> <A HREF="i4lfaq-de.html#toc14.4">asyncppp_fast: Wie kann ich meine Datentransferraten per PPP verbessern? </A>
+</H2>
+
+<P>Du kannst mehrere Kan&auml;le mit MPPP nutzen (siehe Frage 
+<A HREF="i4lfaq-de-19.html#2channel_mppp">2channel_mppp</A>).  F&uuml;r alle, denen das
+zu teuer ist und die <EM>asyncPPP</EM> benutzen, gibt es einen kleinen
+Trick. Mit der Option 'asyncmap 0' vermeidest Du, da&szlig;
+Steuerzeichen (ASCII-Codes kleiner als 32) in extra Zeichen eingerahmt
+werden, die ihre Sonderstellung markieren sollen (derartige
+Mechanismen m&uuml;ssen zwischen beiden Partnern abgesprochen werden,
+andernfalls kommt es zu Missinterpretationen und
+Synchronisationsverlust).  Wenn die andere Seite das mitmacht,
+verbesserst Du die Transferrate um ungef&auml;hr 12% (im Besten
+aller F&auml;lle!).</P>
+
+<H2><A NAME="asyncppp_log"></A> <A NAME="ss14.5">14.5</A> <A HREF="i4lfaq-de.html#toc14.5">asyncppp_log: Wie erstelle ich ein Log des pppd? </A>
+</H2>
+
+<P>Schau bei der Frage 
+<A HREF="i4lfaq-de-13.html#syncppp_log">syncppp_log</A> nach, es
+funktioniert mit pppd genauso.</P>
+
+<H2><A NAME="asyncppp_suddendeath"></A> <A NAME="ss14.6">14.6</A> <A HREF="i4lfaq-de.html#toc14.6">asyncppp_suddendeath: Der Verbindungsaufbau funktioniert gut. Der pppd bricht jedoch kurz danach ab (d.h., das erste Byte geht durch, danach h&auml;lt alles an). </A>
+</H2>
+
+<P>Das wird vermutlich durch eine nicht korrekte Blockgr&ouml;&szlig;e
+auf Deiner Seite verursacht. Verwende f&uuml;r Dein ttyI*-Device den
+Init-String <CODE>AT&amp;B512</CODE> oder eine noch kleinere
+Blockgr&ouml;&szlig;e.</P>
+
+
+
+<HR>
+<A HREF="i4lfaq-de-15.html">Next</A>
+<A HREF="i4lfaq-de-13.html">Previous</A>
+<A HREF="i4lfaq-de.html#toc14">Contents</A>
+</BODY>
+</HTML>

@@ -1,0 +1,107 @@
+﻿<html dir='ltr'>
+	<head>
+		<META http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+		<title>FLOOR</title>
+		<link rel='stylesheet' type='text/css' href='../css/main.css'/>
+		<script type='text/javascript' language='Javascript' src='../js/mexpcol.js'></script>
+		<script type='text/javascript' language='JavaScript' src='../js/glossary.js'></script>
+	</head>
+	<body>
+		<h1>&nbsp;<img align="absbottom" src="../image/external_images/crystal/svtools/res/new_doc.png"/>&nbsp;FLOOR</h1>
+		<p id='ExpandAllLine' class='ExpFav'>
+			<a href='#' onClick='ExpandAll()' onKeyPress='ExpandAll()' class='DropDown'>
+				<img id='picHeader' border='0' src='../image/image/common/expandtri.gif' alt='모두 표시'>
+				<span id='ExpandAll'>모두 표시</span>
+			</a>
+		</p>
+		<p><b class="bterm">참고항목</b>&emsp;
+			<a href="5.9.8.1.htm">수학함수목록</a>,
+			<a href="5.9.8.12.htm">CEILING</a>,
+			<a href="5.9.8.23.htm">EVEN</a>,
+			<a href="5.9.8.29.htm">INT</a>,
+			<a href="5.9.8.40.htm">ODD</a>,
+			<a href="5.9.8.48.htm">ROUND</a>,
+			<a href="5.9.8.49.htm">ROUNDDOWN</a>,
+			<a href="5.9.8.50.htm">ROUNDUP</a>,
+			<a href="5.9.8.63.htm">TRUNC</a>
+		</p>
+		<p>가장 가까운 유의값 배수로 반내림합니다.</p>
+		<p><b class="bterm">문법:&emsp;&emsp;		FLOOR(수값,유의값,방식)</b></p>
+		<table>
+			<tr>
+				<th>인수명</th>
+				<th>설명</th>
+			</tr>
+			<tr>
+				<td>수값</td>
+				<td>반내림할 수값입니다.</td>
+			</tr>
+			<tr>
+				<td>유의값</td>
+				<td>배수로 값을 반내림할 수값입니다.</td>
+			</tr>
+			<tr>
+				<td>방식</td>
+				<td>지정한 값이 0이 아니면 부수 및 유의값인 경우 량에 따라 반내림합니다. 추가선택인수입니다. <b class="bterm">MS Excel</b>은 함수에서 제3의 인수를 인식하지 못하기때문에 <b class="bterm">MS Excel</b>로 반출할 때 이 값이 무시될수도 있습니다.</td>
+			</tr>
+		</table>
+		<p><b class="bterm">주의</b></p>
+			<ul>
+				<li> <b class="bterm">수값</b>이 수자가 아니면 <b class="bterm">오유:[오유번호]</b>가 반환됩니다.</li>
+				<li><b class="bterm">수값</b>과 <b class="bterm">유의값</b>의 부호가 다르면 <b class="bterm">오유:[오유번호]</b>를 반환합니다.</li>
+				<li><b class="bterm">수값</b>이 <b class="bterm">유의값</b>의 배수이면 내림되지 않습니다.</li>
+			</ul>
+		<p><b class="bterm">실례</b></p>			
+<p><a href="1.5.1.htm">실례의 리용방법</a>을 참고하십시오.</p>
+			<table>
+				<tr>
+					<td>
+						<table>
+							<tr><td>&nbsp;</td></tr>
+							<tr><th>1</th></tr>
+							<tr><th>2</th></tr>
+							<tr><th>3</th></tr>
+							<tr><th>4</th></tr>
+							<tr><th>5</th></tr>
+							<tr><th>6</th></tr>						
+						</table>
+					</td>
+					<td>
+						<table>
+							<tr>
+								<th>A</th>
+								<th>B</th>
+							</tr>
+								<tr>
+								<th>수식</th>
+								<th>설명(결과)</th>
+							</tr>
+							<tr>
+								<td>=FLOOR(2.5, 1)</td>
+								<td>2.5를 가장 가까운 1의 배수로 반내림합니다. (2)</td>
+							</tr>
+							<tr>
+								<td>=FLOOR(-2.5, -2)</td>
+								<td>-2.5를 가장 가까운 -2의 배수로 반내림합니다. (-4)</td>
+							</tr>
+							<tr>
+								<td>=FLOOR(-2.5, 2)</td>
+								<td>-2.5와 2의 부호가 다르기때문에 오유가 발생합니다. (오유:502)</td>
+							</tr>
+							<tr>
+								<td>=FLOOR(1.5, 0.1)</td>
+								<td>1.5를 가장 가까운 0.1의 배수로 반내림합니다. (1.5)</td>
+							</tr>
+							<tr>
+								<td>=FLOOR(0.234, 0.01)</td>
+								<td>0.234를 가장 가까운 0.01의 배수로 반내림합니다. (0.23)</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>		
+		</div>					
+		<script type="text/javascript" language="Javascript">footerView()</script>
+	
+</body>
+</html>														

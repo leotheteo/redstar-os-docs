@@ -1,0 +1,259 @@
+﻿<html dir='ltr'>
+	<head>
+		<META http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+		<title>도구</title>
+		<link rel='stylesheet' type='text/css' href='../css/main.css'/>
+		<script type='text/javascript' language='Javascript' src='../js/mexpcol.js'></script>
+		<script type='text/javascript' language='JavaScript' src='../js/glossary.js'></script>
+	</head>
+	<body>
+		<h1>&nbsp;<img align="absbottom" src="../image/external_images/crystal/svtools/res/new_doc.png"/>&nbsp;도구</h1>
+		<p id='ExpandAllLine' class='ExpFav'>
+			<a href='#' onClick='ExpandAll()' onKeyPress='ExpandAll()' class='DropDown'>
+				<img id='picHeader' border='0' src='../image/image/common/expandtri.gif' alt='모두 표시'>
+				<span id='ExpandAll'>모두 표시</span>
+			</a>
+		</p>
+		<table>
+			<tr>
+				<th>지령명</th>
+				<th>설명</th>
+				<th>지름건</th>
+			</tr>
+			<tr>
+				<td>철자법 검사</td>
+				<td>수동으로 철자를 검사합니다. (조선어에 대하여 이 지령이 실행되려면 <b class="bterm">&lt;서광사무처리&gt;/&lt;환경설정&gt;/&lt;언어 설정&gt;/&lt;언어&gt;/&lt;동양언어&gt;</b>가 <b class="bterm">&lt;조선어&gt;</b>로 설정되여있어야 합니다.)</td>
+				<td>F7</td>
+			</tr>
+			<tr>
+				<td><a href="#ID_LANG">언어</a></td>
+				<td>입력된 문자에 대한 처리를 진행합니다.</td>
+				<td>&nbsp;</td>
+			</tr>
+			<tr>
+				<td><a href="#ID_TRACE">추적</a></td>
+				<td>수식을 포함하는 세포와 수식에 사용된 세포사이의 관계를 추적하기 위한 지령들을 포함하고있습니다.</td>
+				<td>&nbsp;</td>
+			</tr>
+			<tr>
+				<td>자동교정 추가선택</td>
+				<td>입력할 때 자동적으로 본문을 치환하는 추가선택을 설정합니다.</td>
+				<td>&nbsp;</td>
+			</tr>
+			<tr>
+				<td>목표 탐색</td>
+				<td>변수가 포함된 수식의 결과를 얻는 대화창을 엽니다.</td>
+				<td>&nbsp;</td>
+			</tr>
+			<tr>
+				<td>선형계획법 해석</td>
+				<td>미지수 여러개를 구하는 방정식을 풀기할수 있는 대화창을 현시합니다.</td>
+				<td>&nbsp;</td>
+			</tr>
+			<tr>
+				<td>대본</td>
+				<td>선택한 표용지령역에 대한 대본을 지정합니다.</td>
+				<td>&nbsp;</td>
+			</tr>
+			<tr>
+				<td>문서 공유</td>
+				<td>많은 사용자들이 같은 시간에 같은 자료표를 쓰기 가능한 상태로 열수 있게 합니다.</td>
+				<td>&nbsp;</td>
+			</tr>
+			<tr>
+				<td><a href="#ID_PROTECTION">문서 보호</a></td>
+				<td>문서의 내용이 변경되는것을 방지합니다.</td>
+				<td>&nbsp;</td>
+			</tr>
+			<tr>
+				<td><a href="#ID_CELLCONTENT">세포내용</a></td>
+				<td>세포내용에 대한 여러가지 계산을 진행합니다.</td>
+				<td>&nbsp;</td>
+			</tr>
+			<tr>
+				<td>화첩</td>
+				<td>문서에 삽입할 그림과 음성을 선택할수 있는 화첩을 엽니다.</td>
+				<td>&nbsp;</td>
+			</tr>
+			<tr>
+				<td><a href="#ID_MACRO">마크로</a></td>
+				<td>반복되는 작업에 대하여 마크로를 기록하거나 구성하여 편집할수 있습니다.</td>
+				<td>&nbsp;</td>
+			</tr>
+			<tr>
+				<td>사용자전용화</td>
+				<td>차림표, 지름건, 도구띠를 사용자정의합니다.</td>
+				<td>&nbsp;</td>
+			</tr>
+		</table>
+		<a name="ID_LANG"></a>
+		<p>
+			<a href="#" class="DropDown" onClick="Outline2()" onKeyPress="Outline2()">
+			<img border="0" src="../image/image/common/blueup.gif" alt="표시">언어</a>
+		</p>
+		<div id="ExpCol" class="collapsed" border="0">
+			<table>
+				<tr>
+					<th>지령명</th>
+					<th>설명</th>
+					<th>지름건</th>
+				</tr>
+				<tr>
+					<td>우리글/한자 변환</td>
+					<td>우리글을 한자로 변환하기 위한 <b class="bterm">&lt;우리글/한자 변환&gt;</b>대화창을 엽니다.</td>
+					<td>Ctrl+Shift+F7</td>
+				</tr>
+				<tr>
+					<td>단어끊기</td>
+					<td>입력된 영문자에 대한 단어끊기를 진행합니다.</td>
+					<td>&nbsp;</td>
+				</tr>
+			</table>
+		</div>
+		<a name="ID_TRACE"></a>
+		<p>
+			<a href="#" class="DropDown" onClick="Outline2()" onKeyPress="Outline2()">
+			<img border="0" src="../image/image/common/blueup.gif" alt="표시">추적</a>
+		</p>
+		<div id="ExpCol" class="collapsed" border="0">
+			<table>
+				<tr>
+					<th width="165">지령명</th>
+					<th width="63">설명</th>
+					<th width="63">지름건</th>
+				</tr>
+				<tr>
+					<td>참조대상 추적</td>
+					<td>수식을 포함하는 현재세포와 수식에 사용된 세포사이의 관계를 표시합니다.</td>
+					<td>Shift+F7</td>
+				</tr>
+				<tr>
+					<td>참조대상 제거</td>
+					<td>참조대상 추적지령으로 삽입한 한 준위의 추적화살표를 삭제합니다. 같은 세포범위에 대하여 여러개의 참조대상 추적을 적용했을 경우 이것들중 하나를 제거하면 나머지 참조대상 추적들에 대해서는 화살표만 나타납니다.</td>
+					<td>&nbsp;</td>
+				</tr>
+				<tr>
+					<td>의존대상 추적</td>
+					<td>활성상태로 만든 세포의 값에 의존하는 수식에서 해당 활성상태로 만든 세포까지의 추적련결선을 그립니다.</td>
+					<td>Shift+F5</td>
+				</tr>
+				<tr>
+					<td>의존대상 제거</td>
+					<td>의존대상 추적을 사용하여 만든 추적련결선을 삭제합니다.</td>
+					<td>&nbsp;</td>
+				</tr>
+				<tr>
+					<td>모든 추적 제거</td>
+					<td>자료표에서 모든 추적련결선을 제거합니다.</td>
+					<td>&nbsp;</td>
+				</tr>
+				<tr>
+					<td>오유 추적</td>
+					<td>선택한 세포에서 오유값을 발생시키는 모든 참조대상세포에 대한 련결선을 표시합니다.</td>
+					<td>&nbsp;</td>
+				</tr>
+				<tr>
+					<td>무효자료 표식</td>
+					<td>유효성검사규칙을 벗어나는 값이 포함된 표용지의 모든 세포에 표시합니다.</td>
+					<td>&nbsp;</td>
+				</tr>
+				<tr>
+					<td>추적 갱신</td>
+					<td>표용지의 모든 추적을 다시 그립니다. 추적을 다시 그릴 때 변경된 수식이 적용됩니다.</td>
+					<td>&nbsp;</td>
+				</tr>
+				<tr>
+					<td>자동갱신</td>
+					<td>수식을 수정할 때마다 표용지의 모든 추적을 자동적으로 새롭게 갱신합니다.</td>
+					<td>&nbsp;</td>
+				</tr>
+				<tr>
+					<td>참조대상 추적방식</td>
+					<td>추적의 참조대상 추적방식을 활성상태로 만듭니다. 마우스유표가 특수한 기호로 바뀌며 임의의 세포를 찰칵하여 참조대상세포에 대한 추적을 표시할수 있습니다.</td>
+					<td>&nbsp;</td>
+				</tr>
+			</table>
+		</div>
+		<a name="ID_PROTECTION"></a>
+		<p>
+			<a href="#" class="DropDown" onClick="Outline2()" onKeyPress="Outline2()">
+			<img border="0" src="../image/image/common/blueup.gif" alt="표시">문서 보호</a>
+		</p>
+		<div id="ExpCol" class="collapsed" border="0">
+			<table>
+				<tr>
+					<th width="165">지령명</th>
+					<th width="63">설명</th>
+				</tr>
+				<tr>
+					<td>표용지</td>
+					<td>현재표용지의 세포가 수정되는것을 방지합니다.</td>
+				</tr>
+				<tr>
+					<td>문서</td>
+					<td>현재문서의 세포가 수정되는것을 방지합니다.</td>
+				</tr>
+			</table>
+		</div>
+		<a name="ID_CELLCONTENT"></a>
+		<p>
+			<a href="#" class="DropDown" onClick="Outline2()" onKeyPress="Outline2()">
+			<img border="0" src="../image/image/common/blueup.gif" alt="표시">세포내용</a>
+		</p>
+		<div id="ExpCol" class="collapsed" border="0">
+			<table>
+				<tr>
+					<th width="165">지령명</th>
+					<th width="165">설명</th>
+					<th width="63">지름건</th>
+				</tr>
+				<tr>
+					<td>재계산</td>
+					<td>현재표용지를 수동으로 다시 계산합니다. 이 지령을 사용하여 문서의 모든 계산을 갱신하고(자동적으로 다시 계산기능을 선택취소한 경우) NOW()함수도 갱신합니다.</td>
+					<td>F9</td>
+				</tr>
+				<tr>
+					<td>자동계산</td>
+					<td>문서의 모든 수식을 자동적으로 다시 계산합니다.</td>
+					<td>&nbsp;</td>
+				</tr>    
+				<tr>
+					<td>자동입력</td>
+					<td>같은 렬의 세포인 경우 입력시 이미 있는 세포의 내용을 탐색하여 자동적으로 입력을 완료하는 자동입력기능을 절환합니다.</td>
+					<td>&nbsp;</td>
+				</tr>
+			</table>
+		</div>
+		<a name="ID_MACRO"></a>
+		<p>
+			<a href="#" class="DropDown" onClick="Outline2()" onKeyPress="Outline2()">
+			<img border="0" src="../image/image/common/blueup.gif" alt="표시">마크로</a>
+		</p>
+		<div id="ExpCol" class="collapsed" border="0">
+			<table>
+				 <tr>
+					<th>지령명</th>
+					<th>설명</th>
+				</tr>
+				<tr>
+					<td>마크로 기록</td>
+					<td>마크로기록은 현재파일에 적용되는 마크로들을 기록합니다.</td>
+				</tr>
+				<tr>
+					<td>마크로 실행</td>
+					<td>마크로실행은 원하는 마크로를 선택하여 실행할수 있는 대화창을 현시합니다.</td>
+				</tr>
+				<tr>
+					<td>마크로 관리</td>
+					<td>마크로관리를 선택하면 서광사무처리 Basic의 부분차림표를 현시합니다.</td>
+				</tr>
+				<tr>
+					<td>대화창의 관리</td>
+					<td>서광사무처리 Basic 마크로를 관리할수 있는 대화창을 현시합니다.</td>
+				</tr>
+			 </table>
+		</div>
+		<script type="text/javascript" language="Javascript">footerView()</script>
+	
+</body>
+</html>

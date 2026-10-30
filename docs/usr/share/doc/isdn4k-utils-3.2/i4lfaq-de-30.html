@@ -1,0 +1,239 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <META NAME="GENERATOR" CONTENT="LinuxDoc-Tools 0.9.21">
+ <TITLE>ISDN4LINUX - FAQ (deutsche Version): glossary: ISDN-spezifische Begriffe, die in dieser FAQ benutzt werden </TITLE>
+ <LINK HREF="i4lfaq-de-29.html" REL=previous>
+ <LINK HREF="i4lfaq-de.html#toc30" REL=contents>
+</HEAD>
+<BODY>
+Next
+<A HREF="i4lfaq-de-29.html">Previous</A>
+<A HREF="i4lfaq-de.html#toc30">Contents</A>
+<HR>
+<H2><A NAME="glossary"></A> <A NAME="s30">30.</A> <A HREF="i4lfaq-de.html#toc30">glossary: ISDN-spezifische Begriffe, die in dieser FAQ benutzt werden </A></H2>
+
+<P>
+<DL>
+<DT><B>active card</B><DD><P>
+<A NAME="glossary_active"></A> 
+Es gibt Karten in verschiedenen Versionen: passive, semi-aktive und
+aktive. Aktive Karten behandeln das D-Kanal- und B-Kanal-Protokoll mit
+ihrer Hardware. Die zus&auml;tzliche Hardware macht sie
+teurer. Daf&uuml;r sind sie aber auch eher geeignet, wenn es um eine
+niedrige Beanspruchung der CPU geht (wenn sich z. B. mehrere
+ISDN-Karten in einem Computer befinden). Wegen dieser speziellen
+Hardware wird auch ein spezieller Treiber ben&ouml;tigt.
+Abh&auml;ngig von der Hardware / dem Treiber sind spezielle Aufgaben
+wie z.B. das Senden/Empfangen von G3-Faxen m&ouml;glicherweise sehr
+leicht zu implementieren.  Wenn Du diese Features brauchst, dann kaufe
+Dir eine aktive Karte.</P>
+
+<DT><B>AOC-D</B><DD><P>"Advice Of Charge During the Call" (Geb&uuml;hren&uuml;bermittlung
+w&auml;hrend des Gespr&auml;ches).</P>
+
+<DT><B>AOC-E</B><DD><P>"Advice of Charge at the End of the Call"
+(Geb&uuml;hren&uuml;bermittlung am Ende des Gespr&auml;ches). In
+Deutschland ist dieser Service im 'Komfortanschlu&szlig;' enthalten.</P>
+
+<DT><B>BRI</B><DD><P>BRI steht f&uuml;r Basic Rate Interface und ist das am weitesten
+verbreitete Interface. In Europa enth&auml;lt ein BRI 2 B-Kan&auml;le
+f&uuml;r die Daten&uuml;bertragung und 1 D-Kanal f&uuml;r die
+Verwaltung der Daten&uuml;bertragung. Die Alternative w&auml;re ein
+PRI (Primary Rate Interface).</P>
+
+<DT><B>CLIP</B><DD><P>CLIP (Calling Line Identification Presentation = Anzeige der
+Anruferkennung) kann vom ISDN-Dienstleister angeboten werden. Wenn Du
+jemanden anrufst so wird Deine Telefonnummer an das andere Telefon
+&uuml;bertragen. Das Gegenteil zu CLIP ist CLIR. In Deutschland ist
+CLIP der Normalfall.</P>
+
+<DT><B>CLIR</B><DD><P>CLIR (Calling Line Identification Restriction = Einschr&auml;nkung der
+Identifikation der Anruferkennung) kann vom ISDN-Provider angeboten
+werden: man kann (von Ruf zu Ruf) die &Uuml;bermittlung der eigenen
+Caller ID an den Angerufenen vermeiden. Das Gegenteil von CLIR ist
+CLIP. In Deutschland muss das beantragt werden, ist aber kostenfrei
+(die Call-by-Call-&Uuml;bermittlung der Caller ID ist jedoch
+kostenpflichtig).</P>
+
+<DT><B>COLP</B><DD><P>COLP (Connected Line Identification Presentation) ist ebenfalls ein
+Angebot des ISDN-Providers. Du bekommst auf Deinen Antrag hin ein
+erweitertes W&auml;hl-Protokoll. Du bekommst R&uuml;ckmeldungen
+&uuml;ber Deine ausgehenden Verbindungen von Deiner
+Telefongesellschaft. Normalerweise bekommst Du die gleiche Nummer wie
+vorher geliefert. Bei Anrufweiterleitung kann das jedoch auch eine
+andere Nummer sein.  In Deutschland muss COLP beantragt werden und ist
+kostenpflichtig. Mehr Informationen als durch COLP bekommst Du durch
+eine umgekehrt angeschlossene zweite ISDN-Karte.</P>
+
+<DT><B>CVS Tree</B><DD><P>Die Entwickler von I4L haben sich zu einem Team zusammen
+geschlossen. Das Tool CVS erleichtert den Mitgliedern des Teams Patches
+zu erstellen und einzuarbeiten. Des weiteren wird die Entwicklung des
+Projektes dadurch dokumentiert und die Reproduktion alter Versionen
+erleichtert.</P>
+
+<DT><B>EAZ</B><DD><P>Dies ist ein deutsches &Auml;quivalent f&uuml;r eine MSN. In
+Deutschland werden EAZ und MSN synonym benutzt obwohl man je nach
+benutztem Protokoll Unterschiede machen sollte. Das, was im
+Euro-ISDN-Protokoll MSN genannt wird, war die EAZ im deutschen
+1TR6-ISDN-Protokoll (ein deutscher Vorl&auml;ufer des Euro-ISDN).</P>
+
+<DT><B>HDLC</B><DD><P>Ein gebr&auml;uchliches low-level Protokoll, normalerweise f&uuml;r
+die Verbindung Deines Computers mit Deinem Internet Provider. F&uuml;r
+die Verbindung zu einer Mailbox wird normalerweise X.75 benutzt.</P>
+
+<DT><B>HSCX</B><DD><P>Ein Siemens-Chip, den man wie den ISAC auf vielen passiven Karten
+findet. Er &uuml;bernimmt den seriellen Bus vom ISAC und setzt
+zwischen diesem und den B-Kan&auml;len beim Empfang (demultiplexing)
+oder Senden (multiplexing, Einsetzen der Bits in der korrekten
+Anordnung) um.</P>
+
+<DT><B>ISAC</B><DD><P>Ein Siemens-Chip, den man wie den HSCX auf vielen passiven Karten
+findet. Er ist f&uuml;r die Kommunikationsschicht 1 verantwortlich und
+sitzt daher (fast) direkt in der Leitung. Er behandelt das
+D-Kanal-Protokoll und sendet die S0-Daten zu einem speziellen
+seriellen Bus (IOM). Beim Senden verf&auml;hrt er entgegengesetzt.</P>
+
+<DT><B>leased line</B><DD><P>
+<A NAME="glossary_leased"></A> 
+Deine Telefongesellschaft kann die Verbindung zwischen zwei ihrer
+ISDN-Benutzer fest verdrahten. Dann sind diese Teilnehmer st&auml;ndig
+miteinander verbunden ohne jeweils den anderen anw&auml;len zu
+m&uuml;ssen. Sie k&ouml;nnen allerdings mit dieser Leitung auch keinen
+anderen Anschlu&szlig; anw&auml;hlen.</P>
+
+<DT><B>MSN</B><DD><P>Im Gegensatz zu einer normalen Telefonverbindung kann eine
+ISDN-Verbindung mehr als eine Telefonnummer haben - jede einzelne davon
+wird MSN (Multiple Subscriber Number) genannt.</P>
+
+<DT><B>NT</B><DD><P>NT ist eine Abk&uuml;rzung f&uuml;r Network Terminator. Dies ist die
+Schnittstelle zwischen dem ISDN-Benutzer und dem ISDN Provider. Es ist
+eine kleine Dose an die der Benutzer seine ISDN-Karte &uuml;ber den
+sogenannten S0-Bus anschlie&szlig;t.
+In den meisten europ&auml;ischen L&auml;ndern stellt der ISDN Provider
+die NT-Box. Die Benutzer in Nordamerika m&uuml;ssen sie meist selbst
+kaufen. Daher ist dort der NT oft in die ISDN-Karte integriert.</P>
+
+<DT><B>NT mode</B><DD><P>
+<A NAME="glossary_ntmode"></A> 
+Wenn mehrere Ger&auml;te an die ISDN-Verbindung angeschlossen sind,
+verhalten sich alle Benutzer-Ger&auml;te als Slave w&auml;hrend der
+Netzwerk Terminator (NT) als Master die Kommunikation auf dem S0-Bus
+regelt. Dieses Verhalten des NT wird NT Modus
+genannt. Benutzer-Ger&auml;te sind normalerweise nicht dazu
+f&auml;hig. Daher k&ouml;nnen Benutzer-Ger&auml;te nicht miteinander
+kommunizieren, selbst wenn sie durch ein gekreuztes Kabel verbunden
+sind.
+Nur einige spezielle ISDN-Karten mit dem HFC Chipset k&ouml;nnen im NT
+Modus laufen und &uuml;ber ein gekreuztes Kabel direkt mit anderen
+ISDN Benutzer-Ger&auml;ten kommunizieren.</P>
+
+<DT><B>multi-device mode</B><DD><P>
+<A NAME="glossary_multidevicemode"></A> 
+Dein ISDN-Anschluss ist entweder ein Mehrger&auml;teanschluss oder ein
+Anlagenanschluss).
+Der Mehrger&auml;teanschluss ist die normale Anschlussart f&uuml;r
+private ISDN-Benutzer oder sehr kleine Firmen. Der Benutzer kann
+mehrere Ger&auml;te mit dem ISDN-Anschluss verbinden. Der ISDN
+Provider stellt ein kleine Anzahl von festgelegten Telefonnummern
+(normalerweise bis zu 10) zur Verf&uuml;gung.</P>
+
+<DT><B>passive card</B><DD><P>
+<A NAME="glossary_passive"></A> 
+Es gibt Karten in verschiedenen Versionen: passive, semi-aktive und
+aktive. Passive Karten verarbeiten das D-Kanal- und B-Kanal-Protokoll
+softwarem&auml;&szlig;ig. Dadurch sind sie kosteng&uuml;nstiger,
+jedoch nur dort einsetzbar, wo die CPU die zus&auml;tzliche Arbeit
+leisten kann (bei normalem Datenverkehr ist jeder Computer ab einem
+486er oder gar einem 386er in der Lage, eine oder zwei Karten zu
+versorgen). Da nur wenige Hardware-Chips weit verbreitet sind, kann
+ein allgemeiner Treiber (HiSax) f&uuml;r fast alle passiven Karten
+eingesetzt werden.</P>
+
+<DT><B>PBX</B><DD><P>Eine PBX (Private Branch eXchange = Private Telefonanlage) dient dazu,
+verschiedene interne Ger&auml;te mit dem ISDN-Netzwerk zu
+verbinden. Das gilt normalerweise f&uuml;r analoge Ger&auml;te, die
+nicht direkt an das ISDN-Netzwerk angeschlossen werden
+k&ouml;nnen. Die PBX kann auch einen internen digitalen S0-Bus
+f&uuml;r den Anschlu&szlig; von ISDN-Ger&auml;ten zur Verf&uuml;gung
+stellen, &uuml;ber den interne Gespr&auml;che ohne Umweg &uuml;ber die
+Vermittlungsstelle gef&uuml;hrt werden k&ouml;nnen (dabei werden
+Geb&uuml;hren der Telefongesellschaft vermieden).</P>
+
+<DT><B>Point-to-Point Mode</B><DD><P>
+<A NAME="glossary_pointtopointmode"></A> 
+Dein Interface kann entweder im Multi-Device-Mode
+(Mehrger&auml;teanschluss) oder im Point-to-Point-Mode
+(Anlagenanschluss) konfiguriert werden. 
+Der Anlagenanschluss ist die normale Anschlussart f&uuml;r
+Unternehmen. Der Benutzer kann nur ein einzelnes Ger&auml;t mit dem
+ISDN-Anschluss verbinden, das dann alle Anrufe annehmen und behandeln
+muss (&uuml;blicherweise eine TK-Anlage). Der ISDN Provider wird
+diesem ISDN-Anschluss einen Telefonnummernbereich zuteilen. Jeder
+Anruf an eine Nummer in diesem Bereich wird an diesen Benutzer
+gehen. Der ISDN Provider &uuml;berl&auml;sst dem Benutzer die
+Zuordnung der letzten Ziffern an einzelne Nebenstellen.
+Diese Anschlussart erlaubt zus&auml;tzliche Eigenschaften, ist
+allerdings auch kostspieliger.</P>
+
+<DT><B>PRI</B><DD><P>PRI steht f&uuml;r Primary Rate Interface und wird benutzt, wenn ein
+einzelnes oder mehrere BRI nicht gen&uuml;gend Bandbreite liefern. In
+Europa enth&auml;lt ein PRI 30 B-Kan&auml;le f&uuml;r den Datenverkehr
+und 1 D-Kanal f&uuml;r die Verwaltung des Datenverkehrs.</P>
+
+<DT><B>semi-active card</B><DD><P>
+<A NAME="glossary_semiactive"></A> 
+Es gibt Karten in verschiedenen Versionen: passive, semi-aktive und
+aktive. Es gibt f&uuml;r semi-aktive Karten keine feste Definition,
+das Folgende ist also unsere Definition: semi-aktive Karten
+verarbeiten das B-Kanal-Protokoll mit ihrer Hardware, einem speziellen
+DSP (Digital Signal Processor), das D-Kanal-Protokoll wird jedoch der
+Software &uuml;berlassen. Dadurch sind sie besser f&uuml;r spezielle
+Aufgaben geeignet, z.B. f&uuml;r das Senden und Empfangen von analogen
+G3-Faxen. F&uuml;r ihre spezielle Hardware wird ein besonderer Treiber
+ben&ouml;tigt. Beachte aber, da&szlig; aus Marketing-Gr&uuml;nden
+manche Karten als semi-aktiv bezeichnet werden, in Wirklichkeit aber
+passive Karten sind (z.B. Teleint).</P>
+
+<DT><B>subaddressing</B><DD><P>Beim W&auml;hlen kann man eine zus&auml;tzliche Nummer angeben, die
+Sub-Addresse. Die Subaddresse wird an die Gegenstelle &uuml;bertragen,
+die darauf reagieren kann. Dieses Feature ist vielleicht nicht
+&uuml;berall verf&uuml;gbar, zumindest nicht kostenlos (au&szlig;er in
+Frankreich).</P>
+
+<DT><B>TEI</B><DD><P>TEI steht f&uuml;r Terminal End Identifier. Die lokale
+Vermittlungsstelle (bei einem internen S0 die PBX) ordnet automatisch
+oder permanent jedem Endger&auml;t einen TEI zu. Das erm&ouml;glicht
+die Addressierung des D-Kanals. TEIs haben die folgende Werte:
+<UL>
+<LI>0-63 = permanente TEIs (z.B. 0 f&uuml;r Point-to-Point Verbindungen)</LI>
+<LI>64-126 = automatisch zugeteilte TEIs</LI>
+<LI>127 = Sendung an alle Ger&auml;te (z.B. ein eingehender Anruf)</LI>
+</UL>
+</P>
+
+<DT><B>UUS</B><DD><P>UUS steht f&uuml;r User-to-User Signalling. Es bedeutet, da&szlig;
+beim Anruf einige Bytes mit Benutzerdaten zusammen mit den Daten
+f&uuml;r den Verbindungsaufbau gesendet werden. Diese Eigenschaft
+wurde in Deutschland in der Vergangenheit zu stark ausgenutzt,
+soda&szlig; die lokalen Vermittlungsstellen immer weniger freie
+Kan&auml;le hatten (die Rufanmeldung bewirkt die Reservierung eines
+B-Kanals). Seither ist dieses Feature normalerweise kostenpflichtig
+und die Menge der Daten ist limitiert (abh&auml;ngig von Deinem
+ISDN-Provider). Sieh Dir die Benutzungsbestimmungen an. Kurz gesagt,
+ist es nur erlaubt, wenn Du tats&auml;chlich eine Verbindung aufbauen
+willst. Beachte bitte, da&szlig; laut einigen Berichten einige
+fehlerhafte PBX (wie die ISTEC 1003) eine Verbindung ablehnen, wenn
+ihnen die Unterst&uuml;tzung f&uuml;r UUS angezeigt wird.</P>
+
+<DT><B>X.75</B><DD><P>Ein verbreitetes low-level Protokoll, normalerweise zur Verbindung Deines Computers mit einer Computer_Mailbox. Zur Verbindung mit dem Internet wird allgemein HDLC benutzt.</P>
+
+</DL>
+</P>
+
+<HR>
+Next
+<A HREF="i4lfaq-de-29.html">Previous</A>
+<A HREF="i4lfaq-de.html#toc30">Contents</A>
+</BODY>
+</HTML>

@@ -1,0 +1,32 @@
+﻿<html dir='ltr'>
+	<head>
+		<META http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+		<title>자료편집에서 발생하는 문제의 해결</title>
+		<link rel='stylesheet' type='text/css' href='../css/main.css'/>
+		<script type='text/javascript' language='Javascript' src='../js/mexpcol.js'></script>
+		<script type='text/javascript' language='JavaScript' src='../js/glossary.js'></script>
+	</head>
+	<body>
+		<h1>&nbsp;<img align="absbottom" src="../image/external_images/crystal/svtools/res/new_doc.png"/>&nbsp;자료편집에서 발생하는 문제의 해결</h1>
+		<p id='ExpandAllLine' class='ExpFav'>
+			<a href='#' onClick='ExpandAll()' onKeyPress='ExpandAll()' class='DropDown'>
+				<img id='picHeader' border='0' src='../image/image/common/expandtri.gif' alt='모두 표시'>
+				<span id='ExpandAll'>모두 표시</span>
+			</a>
+		</p>
+		<h2>세포를 이동하거나 복사한 후 세포참조가 달라지는 경우</h2>
+			<p>복사한 수식에 세포참조가 들어있으면 복제된 수식의 참조(및 혼합된 세포참조의 상대적인 부분)가 자동적으로 조정됩니다. 
+				례를 들어 B8세포에 수식 =SUM(B1:B7)이 들어있는 경우 이 수식을 C8세포에 복사하면 복제된 수식은 새로운 렬의 해당 세포를 참조하여 =SUM(C1:C7)이 됩니다.
+			</p>
+		<h2>탐색과 치환지령으로 자료를 찾을수 없는 경우</h2>
+			<p><b class="bterm">전체 세포의 내용일치:</b>&emsp;   <b class="bterm">&lt;편집&gt;</b>차림표에서 <b class="bterm">&lt;탐색 및 치환&gt;</b>을 찰칵합니다. <b class="bterm">&lt;세포전체&gt;</b>확인칸 선택을 취소하고 탐색을 다시 진행합니다. 
+				이 확인칸을 선택하면 <b class="bterm">&lt;탐색 및 치환&gt;</b>지령이 <b class="bterm">&lt;탐색대상&gt;</b>본문칸에 지정된 문자들만 정확하게 들어있는 세포를 찾습니다. 다른 문자가 덧붙여진 세포는 찾지 않습니다.
+			</p>
+			<p><b class="bterm">표용지나 자료표문서 전체 확인:</b>&emsp; 표용지안의 전체 범위에서 찾으려면 아무 세포나 찰칵하여 현재 선택령역을 취소한 다음에 <b class="bterm">&lt;탐색 및 치환&gt;</b>지령을 사용합니다.</p>
+			<p><b class="bterm">수식과 주해확인:</b>&emsp;   찾을 문자가 상수값이거나 수식의 결과값이면 <b class="bterm">&lt;탐색 및 치환&gt;</b>대화창에서 <b class="bterm">&lt;상세히&gt;</b>단추를 찰칵하고 <b class="bterm">&lt;탐색범위&gt;</b>목록칸에서 <b class="bterm">&lt;값&gt;</b>을 선택합니다. 
+				문자가 수식이나 주해에 포함되여있으면 <b class="bterm">&lt;탐색범위&gt;</b>목록칸에서 <b class="bterm">&lt;수식&gt;</b> 또는 <b class="bterm">&lt;주해&gt;</b>를 선택합니다.
+			</p>
+		<script type="text/javascript" language="Javascript">footerView()</script>
+	
+</body>
+</html>

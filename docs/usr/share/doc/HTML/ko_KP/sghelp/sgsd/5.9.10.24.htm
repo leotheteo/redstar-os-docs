@@ -1,0 +1,131 @@
+<html dir='ltr'>
+	<head>
+		<META http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+		<title>FORECAST</title>
+		<link rel='stylesheet' type='text/css' href='../css/main.css'/>
+		<script type='text/javascript' language='Javascript' src='../js/mexpcol.js'></script>
+		<script type='text/javascript' language='JavaScript' src='../js/glossary.js'></script>
+	</head>
+	<body>
+		<h1>&nbsp;<img align="absbottom" src="../image/external_images/crystal/svtools/res/new_doc.png"/>&nbsp;FORECAST</h1>
+		<p id='ExpandAllLine' class='ExpFav'>
+			<a href='#' onClick='ExpandAll()' onKeyPress='ExpandAll()' class='DropDown'>
+				<img id='picHeader' border='0' src='../image/image/common/expandtri.gif' alt='모두 표시'>
+				<span id='ExpandAll'>모두 표시</span>
+			</a>
+		</p>
+		<p><b class="bterm">참고항목</b>&emsp;
+			<a href="5.9.10.1.htm">통계함수목록</a>,
+			<a href="5.9.9.3.htm">GROWTH</a>,
+			<a href="5.9.9.4.htm">LINEST</a>,
+			<a href="5.9.9.5.htm">LOGEST</a>,
+			<a href="5.9.9.15.htm">TREND</a>
+		</p>
+		<p>선형회귀값을 구합니다.</p>
+		<p><b class="bterm">문법:&emsp;&emsp;		FORECAST(값,자료행렬_Y,자료행렬_X)</b></p>
+		<table>
+			<tr>
+				<th>인수명</th>
+				<th>설명</th>
+			</tr>
+			<tr>
+				<td>값</td>
+				<td>값을 예측하려고 하는 자료점입니다.</td>
+			</tr>
+			<tr>
+				<td>자료행렬_Y</td>
+				<td>자료의 종속배렬 또는 범위입니다.</td>
+			</tr>
+			<tr>
+				<td>자료행렬_X</td>
+				<td>자료의 독립배렬 또는 범위입니다.</td>
+			</tr>
+		</table>
+		<p><b class="bterm">주의</b></p>
+			<ul>
+				<li><b class="bterm">값</b>이 수자가 아니면 <b class="bterm">오유:[오유번호]</b>를 반환합니다.</li>
+				<li><b class="bterm">자료행렬_Y</b>와 <b class="bterm">자료행렬_X</b>가 비였거나 자료점의 개수가 서로 다르면 #<b class="bterm">N</b>/<b class="bterm">A</b> 오유값을 반환합니다.</li>
+				<li><b class="bterm">자료행렬_X</b>의 분산이 0이면 <b class="bterm">오유:[오유번호]</b>를 반환합니다.</li>
+				<li><b class="bterm">FORECAST</b>의 수식은 a+bx이며 여기서
+					<p><img border='0' src='../image/image/sgsd/formula-47.gif' alt='표시'></p>
+					<p>그리고</p>
+					<p><img border='0' src='../image/image/sgsd/formula-48.gif' alt='표시'></p>
+					<p>여기서 x와 y는 표본평균 <b class="bterm">AVERAGE</b>(자료행렬_X)와 <b class="bterm">AVERAGE</b>(자료행렬_Y)입니다.</p>
+				</li>
+			</ul>
+		<p><b class="bterm">실례</b></p>
+			<p><a href="1.5.1.htm">실례의 리용방법</a>을 참고하십시오.</p>
+			<table>
+				<tr>
+					<td>
+						<table>
+							<tr>
+								<td class="noborder">&nbsp;
+								</td>
+							</tr>
+							<tr>
+								<th>1</th>
+							</tr>
+							<tr>
+								<th>2</th>
+							</tr>
+							<tr>
+								<th>3</th>
+							</tr>
+							<tr>
+								<th>4</th>
+							</tr>
+							<tr>
+								<th>5</th>
+							</tr>
+							<tr>
+								<th>6</th>
+							</tr>
+						</table>
+					</td>
+					<td>
+						<table>
+							<tr>
+								<th>A</th>
+								<th>B</th>
+							</tr>
+							<tr>
+								<th>알려진 Y</th>
+								<th>알려진 X</th>
+							</tr>
+							<tr>
+								<td>6</td>
+								<td>20</td>
+							</tr>
+							<tr>
+								<td>7</td>
+								<td>28</td>
+							</tr>
+							<tr>
+								<td>9</td>
+								<td>ATRUE</td>
+							</tr>
+							<tr>
+								<td>15</td>
+								<td>38</td>
+							</tr>
+							<tr>
+								<td>21</td>
+								<td>40</td>
+							</tr>
+							<tr>
+								<th>수식</th>
+								<th>설명(결과)</th>
+							</tr>
+							<tr>
+								<td>=FORECAST(30,A2:A6,B2:B6)</td>
+								<td>x 값이 30으로 주어질 때 y 값을 예측합니다. (11.19)</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+		<script type="text/javascript" language="Javascript">footerView()</script>
+	
+</body>
+</html>				

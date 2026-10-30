@@ -1,0 +1,186 @@
+﻿<html dir='ltr'>
+	<head>
+		<META http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+		<title>시간의 변환</title>
+		<link rel='stylesheet' type='text/css' href='../css/main.css'/>
+		<script type='text/javascript' language='Javascript' src='../js/mexpcol.js'></script>
+		<script type='text/javascript' language='JavaScript' src='../js/glossary.js'></script>
+	</head>
+	<body>
+		<h1>&nbsp;<img align="absbottom" src="../image/external_images/crystal/svtools/res/new_doc.png"/>&nbsp;시간의 변환</h1>
+		<p id='ExpandAllLine' class='ExpFav'>
+			<a href='#' onClick='ExpandAll()' onKeyPress='ExpandAll()' class='DropDown'>
+				<img id='picHeader' border='0' src='../image/image/common/expandtri.gif' alt='모두 표시'>
+				<span id='ExpandAll'>모두 표시</span>
+			</a>
+		</p>
+		<h2>시간단위의 변환</h2>
+			<p>이 작업을 수행하려면 <b class="bterm">CONVERT_ADD</b>함수를 사용합니다.</p>
+			<p><b class="bterm">실례</b></p>
+			<p><a href="1.5.1.htm">실례의 리용방법</a>을 참고하십시오.</p>
+			<table>
+				<tr>
+					<td>
+						<table>
+							<tr>
+								<td class="noborder">&nbsp;</td>
+							</tr>
+							<tr>
+								<th>1</th>
+							</tr>
+							<tr>
+								<th>2</th>
+							</tr>
+						</table>
+					</td>
+					<td>
+						<table>
+							<tr>
+								<th>A</th>
+							</tr>
+							<tr>
+								<th>자료</th>
+							</tr>
+							<tr>
+								<td>6</td>
+							</tr>
+							<tr>
+								<th>수식</th>
+								<th>설명(결과)</th>
+							</tr>
+							<tr>
+								<td>=CONVERT_ADD(A2;"day";"hr")</td>
+								<td>6일을 시간으로 변환합니다. (144)</td>
+							</tr>
+							<tr>
+								<td>=CONVERT_ADD(A2;"hr";"mn")</td>
+								<td>6시간을 분으로 변환합니다. (360)</td>
+							</tr>
+							<tr>
+								<td>=CONVERT_ADD(A2;"yr";"day")</td>
+								<td>6년을 일로 변환합니다. (2191.5)</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+			<p><b class="bterm">참고:</b>   년도사용을 편리하게 하기 위하여 1년은 365.25일로 처리됩니다.</p>
+			<p><b class="bterm">참조함수</b></p>
+			<p><a href='5.9.13.10.htm'>CONVERT_ADD</a></p>
+		<h2>표준시간형식(시 : 분 : 초)을 실수로 변환</h2>
+			<p>이 작업을 수행하려면 <b class="bterm">INT</b>함수를 사용합니다.</p>
+			<p><b class="bterm">실례</b></p>
+			<p><a href="1.5.1.htm">실례의 리용방법</a>을 참고하십시오.</p>
+			<table>
+				<tr>
+					<td>
+						<table>
+							<tr>
+								<td class="noborder">&nbsp;</td>
+							</tr>
+							<tr>
+								<th>1</th>
+							</tr>
+							<tr>
+								<th>2</th>
+							</tr>
+							<tr>
+								<th>3</th>
+							</tr>
+						</table>
+					</td>
+					<td>
+						<table>
+							<tr>
+								<th>A</th>
+							</tr>
+							<tr>
+								<th>시간</th>
+							</tr>
+							<tr>
+								<td>10:35</td>
+							</tr>
+							<tr>
+								<td>12:15</td>
+							</tr>
+							<tr>
+								<th>수식</th>
+								<th>설명(결과)</th>
+							</tr>
+							<tr>
+								<td>=(A2-INT(A2))*24</td>
+								<td>시간10:35을 실수값으로 변환합니다. (10.58)</td>
+							</tr>
+							<tr>
+								<td>=(A3-INT(A3))*24</td>
+								<td>시간12:15를 실수값으로 변환합니다. (12.25)</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+			<p><b class="bterm">참조함수</b></p>
+			<p><a href='5.9.8.29.htm'>INT</a></p>
+		<h2>실수에서 표준시간형식(시 : 분 : 초)으로 변환</h2>
+			<p>이 작업을 수행하려면 나누기(/) 연산자와 <b class="bterm">TEXT</b>함수를 사용합니다.</p>
+			<p><b class="bterm">실례</b></p>
+			<p><a href="1.5.1.htm">실례의 리용방법</a>을 참고하십시오.</p>
+			<table>
+				<tr>
+					<td>
+						<table>
+							<tr>
+								<td class="noborder">&nbsp;</td>
+	
+							</tr>
+							<tr>
+								<th>1</th>
+							</tr>
+							<tr>
+								<th>2</th>
+							</tr>
+							<tr>
+								<th>3</th>
+							</tr>
+						</table>
+					</td>
+					<td>
+						<table>
+							<tr>
+								<th>A</th>
+							</tr>
+							<tr>
+								<th>시간</th>
+							</tr>
+							<tr>
+								<td>10.5833</td>
+							</tr>
+							<tr>
+								<td>12.25</td>
+							</tr>
+							<tr>
+								<th>수식</th>
+								<th>설명(결과)</th>
+							</tr>
+							<tr>
+								<td>=TEXT(A2/24; "h:mm")</td>
+								<td>실수값 10.5833을 시간으로 변환합니다. (10:35)</td>
+							</tr>
+							<tr>
+								<td>=TEXT(A3/24; "h:mm")</td>
+								<td>실수값 12.25를 시간으로 변환합니다. (12:15)</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+			<p><b class="bterm">참고:</b>   <b class="bterm">TEXT</b>함수를 사용하여 서식을 지정하지 않고 시간수자서식을 적용할수도 있습니다. 
+				수자를 시간으로 보려면 세포를 선택하고 <b class="bterm">&lt;서식&gt;</b>차림표에서 <b class="bterm">&lt;세포&gt;</b>를 찰칵한 다음 <b class="bterm">&lt;수자&gt;</b>표쪽을 찰칵하고 <b class="bterm">&lt;종류&gt;</b>목록칸에서 <b class="bterm">&lt;시간&gt;</b>을 찰칵합니다. 
+				그러나 <b class="bterm">TEXT</b>함수와 수자서식이 모두 적용된 서식을 사용하는 경우에는 <b class="bterm">TEXT</b>함수가 우선적으로 사용됩니다.
+			</p>
+			<p><b class="bterm">참조함수</b></p>
+			<p><a href='5.9.12.26.htm'>TEXT</a></p>
+		<script type="text/javascript" language="Javascript">footerView()</script>
+	
+</body>
+</html>

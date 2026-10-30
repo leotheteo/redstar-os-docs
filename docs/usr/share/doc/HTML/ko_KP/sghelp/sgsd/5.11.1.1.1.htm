@@ -1,0 +1,61 @@
+﻿<html dir='ltr'>
+	<head>
+		<META http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+		<title>도표</title>
+		<link rel='stylesheet' type='text/css' href='../css/main.css'/>
+		<script type='text/javascript' language='Javascript' src='../js/mexpcol.js'></script>
+		<script type='text/javascript' language='JavaScript' src='../js/glossary.js'></script>
+	</head>
+	<body>
+		<h1>&nbsp;<img align="absbottom" src="../image/external_images/crystal/svtools/res/new_doc.png"/>&nbsp;도표</h1>
+		<p id='ExpandAllLine' class='ExpFav'>
+			<a href='#' onClick='ExpandAll()' onKeyPress='ExpandAll()' class='DropDown'>
+				<img id='picHeader' border='0' src='../image/image/common/expandtri.gif' alt='모두 표시'>
+				<span id='ExpandAll'>모두 표시</span>
+			</a>
+		</p>
+		<p>	도표는 시각적으로 명백하며 쉽게 자료의 류형을 살펴보고 비교할수 있습니다. 
+			례를 들어 표용지에서 자료를 분석하는 대신 도표를 리용하면 계획/실적률을 쉽게 알수 있을뿐 아니라 어느 분기동안 실적이 증가했는가 감소했는가도 한눈에 볼수 있습니다.
+		</p>
+		<p><img border='0' src='../image/image/sgsd/about0.gif' alt='표시'></p>
+		<p>
+			<a href='#' class='DropDown' onClick='Outline2()' onKeyPress='Outline2()'>
+			<img border='0' src='../image/image/common/blueup.gif' alt='표시'>도표의 만들기</a>
+		</p>
+		<div id='ExpCol' class='collapsed' border='0'>
+			<p>도표를 만들려면 표용지에 도표에 사용할 자료를 먼저 입력하여야 합니다. 자료가 있는 세포범위를 선택한 다음 <b class="bterm">&lt;표준&gt;</b>도구띠에서 <b class="bterm">&lt;도표&gt;</b><img border='0' src='../image/external_images/crystal/res/commandimagelist/sc_drawchart.png' alt='표시'>를 찰칵하여 나타나는 <b class="bterm">&lt;도표자동안내처리&gt;</b>대화창의 매 단계에서 자료범위와 도표류형, 여러가지 속성을 설정하여 도표를 만듭니다.
+			</p>
+			<p><img border='0' src='../image/image/sgsd/about1.gif' alt='표시'></p>
+			<p><img border='0' src='../image/image/common/callout1.gif' alt='표시'> 표용지자료</p>
+			<p><img border='0' src='../image/image/common/callout2.gif' alt='표시'> 표용지자료로 만든 도표</p>
+		</div>
+		<p>
+			<a href='#' class='DropDown' onClick='Outline2()' onKeyPress='Outline2()'>
+			<img border='0' src='../image/image/common/blueup.gif' alt='표시'>표용지자료를 도표에 표시하는 방식</a>
+		</p>
+		<div id='ExpCol' class='collapsed' border='0'>
+			<p>도표는 도표가 만들어진 원본표용지의 자료에 련결되여있으므로 원본표용지의 자료가 변경되면 도표도 자동적으로 갱신됩니다.</p>
+			<p><img border='0' src='../image/image/sgsd/about2.gif' alt='표시'></p>
+			<p><img border='0' src='../image/image/common/callout1.gif' alt='표시'> 자료점</p>
+			<p><img border='0' src='../image/image/common/callout2.gif' alt='표시'> 기본눈금선</p>
+			<p><img border='0' src='../image/image/common/callout3.gif' alt='표시'> X축표식자</p>
+			<p><img border='0' src='../image/image/common/callout4.gif' alt='표시'> 일러두기</p>
+			<ul>
+				<li><b class="bterm">자료점:</b>   매 <a href="#" class="glossary" onClick="AppendPopup(this,'IDG_DATAPOINTER')" onKeyPress="AppendPopup(this,'IDG_DATAPOINTER')">자료점</a>들은 표용지에서 수자하나에 대응됩니다. 같은 색의 <b class="bterm">자료점</b>들은 하나의 <a href="#" class="glossary" onClick="AppendPopup(this,'IDG_DATASERIAL')" onKeyPress="AppendPopup(this,'IDG_DATASERIAL')">자료계렬</a>을 나타냅니다. 
+					우의 례제에서 가장 오른쪽의 <b class="bterm">자료점</b>은 2분기 실적 값 99를 나타냅니다.
+				</li>
+				<li><b class="bterm">기본눈금선:</b>   표처리프로그람에서는 표용지의 자료로부터 <b class="bterm">자료점</b>값이 만들어집니다. 
+					우의 례제에서는 <b class="bterm">자료점</b>값의 범위가 표용지값의 범위를 포함하는 0부터 100까지임을 알수 있습니다. 기본<a href="#" class="glossary" onClick="AppendPopup(this,'IDG_GRID')" onKeyPress="AppendPopup(this,'IDG_GRID')">눈금선</a>은 축에서 주요간격을 나타냅니다.
+				</li>
+				<li><b class="bterm">X축표식자:</b>   표처리프로그람에서는 표용지자료의 렬표식자나 행표식자를 <b class="bterm">X축표식자</b>로 사용할수 있습니다. 
+					우의 례제에서는 표용지자료의 렬표식자 《1분기》와 《2분기》가 <b class="bterm">X축표식자</b>로 됩니다.
+				</li>
+				<li><b class="bterm">일러두기:</b>   표처리프로그람에서는 표용지자료의 렬표식자나 행표식자가 <a href="#" class="glossary" onClick="AppendPopup(this,'IDG_DATASERIAL')" onKeyPress="AppendPopup(this,'IDG_DATASERIAL')">자료계렬</a>의 이름으로 사용되기도 합니다. 
+					<b class="bterm">자료계렬</b>이름은 도표<a href="#" class="glossary" onClick="AppendPopup(this,'IDG_REVIEW')" onKeyPress="AppendPopup(this,'IDG_REVIEW')">일러두기</a>에 표시됩니다. 우의 례제에서는 행표식자 <b class="bterm">계획</b>과 <b class="bterm">실적</b>이 <b class="bterm">자료계렬</b>이름으로 표시됩니다.
+				</li>
+			</ul>
+		</div>
+		<script type="text/javascript" language="Javascript">footerView()</script>
+
+</body>
+</html>

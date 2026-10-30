@@ -1,0 +1,167 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <META NAME="GENERATOR" CONTENT="LinuxDoc-Tools 0.9.21">
+ <TITLE>ISDN4LINUX - FAQ (deutsche Version): msn: Konfiguration/MSNs </TITLE>
+ <LINK HREF="i4lfaq-de-10.html" REL=next>
+ <LINK HREF="i4lfaq-de-8.html" REL=previous>
+ <LINK HREF="i4lfaq-de.html#toc9" REL=contents>
+</HEAD>
+<BODY>
+<A HREF="i4lfaq-de-10.html">Next</A>
+<A HREF="i4lfaq-de-8.html">Previous</A>
+<A HREF="i4lfaq-de.html#toc9">Contents</A>
+<HR>
+<H2><A NAME="msn"></A> <A NAME="s9">9.</A> <A HREF="i4lfaq-de.html#toc9">msn: Konfiguration/MSNs </A></H2>
+
+<H2><A NAME="msn_my1"></A> <A NAME="ss9.1">9.1</A> <A HREF="i4lfaq-de.html#toc9.1">msn_my1: Wie lautet meine MSN? Was, wenn ich keine habe? </A>
+</H2>
+
+<P>Deine Telefongesellschaft nennt Dir Deine MSN. Es ist Deine
+Telefonnummer. Denke daran, da&szlig; Du in I4L mindestens eine MSN
+eintragen <B>musst</B>. Wenn Du keine hast, kannst Du '0' benutzen. '0'
+wird angenommen wenn Deine Telefongesellschaft keine MSN
+mitteilt. Lies den Abschnitt 
+<A HREF="i4lfaq-de-26.html#countries">countries</A>
+zusammen mit den folgenden Fragen, wie man MSN(s) einrichtet.</P>
+
+<H2><A NAME="msn_my2"></A> <A NAME="ss9.2">9.2</A> <A HREF="i4lfaq-de.html#toc9.2">msn_my2: Wie finde ich heraus, wie meine Telefonnummer zur anrufenden Stelle &uuml;bertragen wird? </A>
+</H2>
+
+<P>Die &uuml;bertragene MSN kann leicht durch einen Anruf bei Dir selbst
+(z.B. mittels Telefon) festgestellt werden. In den Log-Dateien findest
+Du einen Eintrag wie: 'isdn_tty: call from XXX - YYY ignored' (dazu
+m&uuml;ssen nat&uuml;rlich die ISDN-Treiber schon im Kernel
+konfiguriert und aktiv sein).</P>
+
+<H2><A NAME="msn_config"></A> <A NAME="ss9.3">9.3</A> <A HREF="i4lfaq-de.html#toc9.3">msn_config: Wie stelle ich meine MSN ein? </A>
+</H2>
+
+<P>Wenn Deine Telefonnummer 56789 ist, wird sie folgenderma&szlig;en
+eingestellt:
+<UL>
+<LI>Modememulation: <CODE>'AT&amp;E56789'</CODE></LI>
+<LI>Netzwerk Interface: <CODE>'isdnctrl msn &lt;interface&gt;
+56789'</CODE></LI>
+<LI>Bei Testanrufen an Dich selbst musst Du die Ortsvorwahl
+hinzuf&uuml;gen (z.B. 01234):
+<HR>
+<PRE>
+isdnctrl addphone &lt;interface&gt; in 123456789 (ohne vorangestellte 0)
+isdnctrl addphone &lt;interface&gt; out 0123456789 (mit vorangestellter 0)
+</PRE>
+<HR>
+</LI>
+</UL>
+
+Es gibt dabei m&ouml;glicherweise nationale Unterschiede (siehe
+Abschnitt
+<A HREF="i4lfaq-de-26.html#countries">countries</A>).  </P>
+
+<H2><A NAME="msn_max"></A> <A NAME="ss9.4">9.4</A> <A HREF="i4lfaq-de.html#toc9.4">msn_max: Wieviele MSNs kann ich maximal mit einer ISDN-Karte nutzen?</A>
+</H2>
+
+<P>Bei ausgehenden Rufen kann nur eine MSN benutzt werden. Nur bei
+ankommenden Rufen k&ouml;nnen mehrere MSNs benutzt werden.</P>
+<P>Bei ttyI* Devices kann man JEDE vorhandene MSN benutzen, indem man ein
+"*" als Platzhalter verwendet:
+<HR>
+<PRE>
+at&amp;l*
+</PRE>
+<HR>
+</P>
+<P>Bei einer Point-to-Point-Verbindung sollte man die L&auml;nge des
+Nummernbereiches mit "?" (entsprechend der Anzahl der Ziffern)
+definieren. Anderenfalls k&ouml;nnte Deine Nummer vorzeitig angenommen
+werden, obwohl noch weitere Nummern gew&auml;hlt wurden. F&uuml;r 3
+Ziffern bedeutet das:
+<HR>
+<PRE>
+at&amp;l???
+</PRE>
+<HR>
+</P>
+
+
+<P>Bei Netzwerk-Devices kannst Du auch ein "*" als Wildcard an das Ende
+der empfangenden Nummer setzen (z.B.: <CODE>'isdnctrl msn
+&lt;interface&gt; 123*'</CODE>). 
+Das kann jedoch bei ausgehenden Rufen Probleme bereiten. Zur
+sauberen Behandlung dieses Problems solltest Du das Mapping des
+isdnctrl benutzen (siehe Frage 
+<A HREF="i4lfaq-de-11.html#dialout_manycards">dialout_manycards</A>).</P>
+
+
+<H2><A NAME="msn_mindialin"></A> <A NAME="ss9.5">9.5</A> <A HREF="i4lfaq-de.html#toc9.5">msn_mindialin: Wie kann ich den Gebrauch von MSNs bei digitaler Einwahl minimieren? </A>
+</H2>
+
+<P>In I4L haben Netz-Interfaces Priorit&auml;t. Daher reicht Dir eine
+MSN, wenn Du folgendes Setup benutzt:
+<OL>
+<LI>Konfiguriere Netz-Interfaces (sync ppp, rawip) f&uuml;r alle
+User, die sie benutzen wollen (ipppd oder rawip), mit ihrer
+Einwahl-Telefonnummer (Vorbedingung ist, da&szlig; diese
+&uuml;bermittelt wird).</LI>
+<LI>Konfiguriere ttyI* f&uuml;r alle anderen User (X.75, async ppp).</LI>
+<LI>Setze die Option 'secure on'.</LI>
+</OL>
+
+In I4L haben Netz-Interfaces Priorit&auml;t. 'secure on' stellt
+sicher, da&szlig; nur entsprechend eingestellte User mit einem
+Netz-Interface verbunden werden. User, die zwischen beiden
+M&ouml;glichkeiten w&auml;hlen wollen, m&uuml;ssen andere MSNs zur
+Anwahl benutzen.</P>
+
+<H2><A NAME="msn_onlyone"></A> <A NAME="ss9.6">9.6</A> <A HREF="i4lfaq-de.html#toc9.6">msn_onlyone: Wie kann ich eine MSN f&uuml;r alles benutzen? </A>
+</H2>
+
+<P>In Deutschland ist das kein schwieriges Problem mehr seit man 10 MSNs
+kostenlos von der Deutschen Telekom (
+<A HREF="http://www.telekom.de/index.html">http://www.telekom.de/index.html</A>) bekommen kann. Andere
+Telefongesellschaften m&ouml;gen weniger MSNs kostenlos
+anbieten. Generell bekommt man mindestens 3 MSNs. Jedoch mag eine
+Minimierung des Gebrauchs von MSNs in anderen L&auml;ndern immer noch
+interessant sein oder wenn Du sehr viele Nummern ben&ouml;tigst. Auf
+einem normalen ISDN-Bus gibt es maximal 10 MSNs. Bei einem
+gr&ouml;&szlig;eren Bedarf gibt es nur die - normalerweise teurere -
+Alternative der Point-to-Point ISDN Verbindung.</P>
+<P>Ankommende digitale Daten k&ouml;nnen leicht durch den Code f&uuml;r
+die 'Dienstekennung' ('digital, data') von Anrufen durch Stimme
+(Telefon) bzw. analoge Modems unterschieden werden.</P>
+<P>Die Unterscheidung zwischen Netz-Interfaces (ipppd, rawip) und ttyI*
+(X.75) behandelt die vorhergehende Frage.</P>
+<P>Um Telefon und analoges Modem parallel zu betreiben nutzt man mgetty
+f&uuml;r das analoge Modem. Mgetty kann analoge Daten, Faxe und sogar
+Stimmen als Anrufbeantworter empfangen, wenn das Modem dies
+unterst&uuml;tzt. Stelle mgetty auf 10 Klingelsignale ein. Wenn Du den
+Telefonh&ouml;rer abnimmst und ein Faxger&auml;t oder Modem
+h&ouml;rst, sendest Du ein USR1 Signal (<CODE>kill -USR1
+&lt;mgetty-pid&gt;</CODE>) an mgetty. Wenn Dein Telefonanschlu&szlig;
+richtig verdrahtet ist, wird das Modem die Verbindung &uuml;bernehmen
+und das Telefon deaktivieren. Bei einem ISDN PBX kannst Du einen
+Fax/Modem-Anruf an einen anderen analogen Port weiterleiten.</P>
+<P>Kann Dein analoges Modem keine Stimmanrufe verarbeiten, so musst Du
+Dich entscheiden, da hereinkommende Stimmanrufe nicht von analogen
+Faxen oder Datenverbindungen unterschieden werden
+k&ouml;nnen. Entweder nimmst Du per VBOX Deine Stimmanrufe als
+Anrufbeantworter auf oder Du vergisst Stimmanrufe ganz und richtest
+Dein Modem nur zum Faxempfang und/oder analogen Datenverkehr ein.</P>
+
+<H2><A NAME="msn_buendel"></A> <A NAME="ss9.7">9.7</A> <A HREF="i4lfaq-de.html#toc9.7">msn_buendel: Kann ich mehrere NTBAs, alle mit der gleichen MSN, benutzen? </A>
+</H2>
+
+<P>Ja, Du brauchst dazu jedoch die Hilfe Deiner Telefongesellschaft. Sie
+kann mehrere BRIs mit gleicher MSN im Point-to-point-Modus
+einrichten. In Deutschland nennt man das einen
+"B&uuml;ndelanschlu&szlig;".</P>
+<P>Beachte, da&szlig; in diesem Fall die MSN vielleicht nicht an Dich
+&uuml;bertragen wird. Benutze dann die vorgegebene MSN 0.</P>
+
+
+<HR>
+<A HREF="i4lfaq-de-10.html">Next</A>
+<A HREF="i4lfaq-de-8.html">Previous</A>
+<A HREF="i4lfaq-de.html#toc9">Contents</A>
+</BODY>
+</HTML>

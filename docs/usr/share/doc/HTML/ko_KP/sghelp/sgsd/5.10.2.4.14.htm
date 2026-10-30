@@ -1,0 +1,96 @@
+﻿<html dir='ltr'>
+	<head>
+		<META http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+		<title>수자의 곱하기</title>
+		<link rel='stylesheet' type='text/css' href='../css/main.css'/>
+		<script type='text/javascript' language='Javascript' src='../js/mexpcol.js'></script>
+		<script type='text/javascript' language='JavaScript' src='../js/glossary.js'></script>
+	</head>
+	<body>
+		<h1>&nbsp;<img align="absbottom" src="../image/external_images/crystal/svtools/res/new_doc.png"/>&nbsp;수자의 곱하기</h1>
+		<p id='ExpandAllLine' class='ExpFav'>
+			<a href='#' onClick='ExpandAll()' onKeyPress='ExpandAll()' class='DropDown'>
+				<img id='picHeader' border='0' src='../image/image/common/expandtri.gif' alt='모두 표시'>
+				<span id='ExpandAll'>모두 표시</span>
+			</a>
+		</p>
+		<p>세포에 =5*10을 입력하여 결과 50을 표시합니다.</p>
+		<h2>수자범위와 수자를 곱하기</h2>
+			<p><b class="bterm">중요:</b>   이 절차로 해당 범위의 수자들이 곱하기결과로 바뀌게 됩니다.</p>
+			<ol>
+				<li>곱하려는 수자를 빈 세포에 입력합니다.</li>
+				<li>세포를 선택하고 <b class="bterm">&lt;편집&gt;</b>차림표에서 <b class="bterm">&lt;복사&gt;</b>를 찰칵합니다.</li>
+				<li>곱할 수자범위를 선택합니다.</li>
+				<li><b class="bterm">&lt;편집&gt;</b>차림표에서 <b class="bterm">&lt;형식을 선택하여 붙이기&gt;</b>를 찰칵합니다.</li>
+				<li><b class="bterm">&lt;연산&gt;</b>부분에서 <b class="bterm">&lt;곱하기&gt;</b>단일선택단추를 찰칵합니다.</li>
+				<li><b class="bterm">&lt;확인&gt;</b>단추를 찰칵합니다.</li>
+				<li>첫째 단계에서 입력한 세포내용을 삭제합니다.</li>
+			</ol>
+		<h2>수식을 사용하여 여러 세포의 수자들을 곱하기</h2>
+			<p>이 작업을 수행하려면 별표(*) 연산자나 <b class="bterm">PRODUCT</b>함수를 사용합니다.</p>
+			<p><b class="bterm">실례</b></p>
+			<p><a href='1.5.1.htm'>실례의 리용방법</a>을 참고하십시오.</p>
+			<table>
+				<tr>
+					<td>
+						<table>
+							<tr>
+								<td class="noborder">&nbsp;</td>
+							</tr>
+							<tr>
+								<th>1</th>
+							</tr>
+							<tr>
+								<th>2</th>
+							</tr>
+							<tr>
+								<th>3</th>
+							</tr>
+							<tr>
+								<th>4</th>
+							</tr>
+						</table>
+					</td>
+					<td>
+						<table>
+							<tr>
+								<th>A</th>
+							</tr>
+							<tr>
+								<th>자료</th>
+							</tr>
+							<tr>
+								<td>10</td>
+							</tr>
+							<tr>
+								<td>20</td>
+							</tr>
+							<tr>
+								<td>30</td>
+							</tr>
+							<tr>
+								<th>수식</th>
+								<th>설명(결과)</th>
+							</tr>
+							<tr>
+								<td>=A2*A3</td>
+								<td>처음 두 세포의 수자들을 곱합니다. (200)</td>
+							</tr>
+							<tr>
+								<td>=PRODUCT(A2:A4)</td>
+								<td>범위의 모든 수자들을 곱합니다. (6 000)</td>
+							</tr>
+							<tr>
+								<td>=PRODUCT(A2:A4;2)</td>
+								<td>범위의 모든 수자들과 2를 곱합니다. (12 000)</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+			<p><b class="bterm">참조함수</b></p>
+			<p><a href='5.9.8.43.htm'>PRODUCT</a></p>
+		<script type="text/javascript" language="Javascript">footerView()</script>
+	
+</body>
+</html>																

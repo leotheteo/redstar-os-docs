@@ -1,0 +1,761 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <META NAME="GENERATOR" CONTENT="LinuxDoc-Tools 0.9.21">
+ <TITLE>ISDN4LINUX - FAQ (deutsche Version): hardware: Unterst&uuml;tzte Hardware, ihre Eigenheiten und Hardware-bezogene Probleme</TITLE>
+ <LINK HREF="i4lfaq-de-7.html" REL=next>
+ <LINK HREF="i4lfaq-de-5.html" REL=previous>
+ <LINK HREF="i4lfaq-de.html#toc6" REL=contents>
+</HEAD>
+<BODY>
+<A HREF="i4lfaq-de-7.html">Next</A>
+<A HREF="i4lfaq-de-5.html">Previous</A>
+<A HREF="i4lfaq-de.html#toc6">Contents</A>
+<HR>
+<H2><A NAME="hardware"></A> <A NAME="s6">6.</A> <A HREF="i4lfaq-de.html#toc6">hardware: Unterst&uuml;tzte Hardware, ihre Eigenheiten und Hardware-bezogene Probleme</A></H2>
+
+<H2><A NAME="hardware_support"></A> <A NAME="ss6.1">6.1</A> <A HREF="i4lfaq-de.html#toc6.1">hardware_support: Welche Hardware wird unterst&uuml;tzt? </A>
+</H2>
+
+<P>Unterst&uuml;tzt werden nur interne Karten f&uuml;r den ISA- oder
+PCI-Bus.  Auch ISA Plug&amp;Play Karten werden unterst&uuml;tzt,
+ben&ouml;tigen aber etwas zus&auml;tzliche Handarbeit mit den
+<CODE>isapnptools</CODE>. Details der Konfiguration findest Du bei der Frage
+<A HREF="i4lfaq-de-7.html#config_pnp">config_pnp</A>.</P>
+<P>Es gibt 
+<A HREF="i4lfaq-de-30.html#glossary_active">aktive</A>, 
+<A HREF="i4lfaq-de-30.html#glossary_semiactive">semi-aktive</A> oder 
+<A HREF="i4lfaq-de-30.html#glossary_passive">passive</A> interne Karten. Wenn Du nicht
+gerade viel Geld ausgegeben hast, kannst Du davon ausgehen, da&szlig;
+Du eine passive Karte hast. Mehr &uuml;ber den Unterschied findest Du
+bei 
+<A HREF="#hardware_activepassive">hardware_activepassive</A>.</P>
+<P>Z.Zt. gibt es einen Treiber f&uuml;r alle passiven Karten mit
+bestimmten Siemens Chips (HiSax Treiber). In der mit dem Treiber
+gelieferten Datei <CODE>README.HiSax</CODE> findest Du die neuesten
+Informationen &uuml;ber unterst&uuml;tzte Karten und welche Parameter
+dem HiSax &uuml;bergeben werden m&uuml;ssen. Dies ist der Status vom
+4. September 1999 (wird laufend verbessert):
+<UL>
+<LI>Teles 8.0/16.0/16.3 und kompatible (wie: Dr. Neuhaus Niccy 1016,
+Creatix 16/S0)</LI>
+<LI>Teles 16.3c (kann nicht als "umgekehrte" Karte benutzt werden)</LI>
+<LI>Teles S0/PCMCIA (alte Hardware)</LI>
+<LI>Teles PCI</LI>
+<LI>Teles S0Box</LI>
+<LI>Creatix S0Box</LI>
+<LI>Creatix PnP S0</LI>
+<LI>Compaq ISDN S0 ISA Karte</LI>
+<LI>AVM A1 (Fritz, Teledat 150 ISA)</LI>
+<LI>AVM Fritz PCMCIA</LI>
+<LI>AVM Fritz PnP (Teledat 150 PnP)</LI>
+<LI>AVM Fritz PCI (Teledat 150 PCI)</LI>
+<LI>ELSA Microlink PCC-16, PCF, PCF-Pro, PCC-8</LI>
+<LI>ELSA Quickstep 1000</LI>
+<LI>ELSA Quickstep 1000PCI (neuer Name: ELSA Microlink PCI)</LI>
+<LI>ELSA Quickstep 3000 (Einstellungen wie QS1000)</LI>
+<LI>ELSA Quickstep 3000PCI</LI>
+<LI>ELSA PCMCIA</LI>
+<LI>ITK ix1-micro Rev.2 (auch: ITK Colombus Karte)</LI>
+<LI>Eicon.Diva 2.0 ISA und PCI (S0 und U Interface, nicht die 
+PRO Version)</LI>
+<LI>Eicon.Diva Piccola</LI>
+<LI>ASUSCOM NETWORK INC. ISDNLink 128K PC Adapter
+(Bestell-Nr. I-IN100-ST-D)</LI>
+<LI>Dynalink IS64PH (OEM Version der ASUSCOM NETWORK INC. 
+ISDNLink 128K Adapter)</LI>
+<LI>Alle anderen ASUSCOM/Dynalink Karten (inkludsive der OEM
+Versionen; insgesamt mehr als 50 Karten)</LI>
+<LI>PCBIT-DP (OEM Version der ASUSCOM NETWORK INC. ISDNLink)</LI>
+<LI>HFC-2BS0 basierende Karten (TeleInt SA1)</LI>
+<LI>Sedlbauer Speed Card (Speed Win, Teledat 100, PCI, Fax+)</LI>
+<LI>Sedlbauer Speed Star/Speed Star2 (PCMCIA)</LI>
+<LI>Sedlbauer ISDN-Controller PC/104</LI>
+<LI>USR Sportster interner TA (kompatible Stollmann tina-pp V3)</LI>
+<LI>ith Kommunikationstechnik GmbH MIC 16 ISA Karte</LI>
+<LI>Traverse Technologie NETjet PCI S0 Karte</LI>
+<LI>Dr. Neuhaus Niccy PnP/PCI</LI>
+<LI>Siemens I-Surf 1.x (mit ISAR =&lt; versuche Typ 29)</LI>
+<LI>Siemens I-Surf 2.x (mit IPAC =&gt; versuche Typ 12 asuscom)</LI>
+<LI>Trust PCI (nur die alte Karte mit Siemens Chip; die in den 
+Niederlanden genannte 'Wisecom' funktioniert nicht)</LI>
+<LI>ACER P10</LI>
+<LI>HSR Saphir</LI>
+<LI>Berkom Telekom A4T</LI>
+<LI>Scitel Quadro</LI>
+<LI>Gazel ISDN Karten</LI>
+<LI>HFC-PCI basierende Karten</LI>
+<LI>PCI/Winbond W6692 basierende Karten</LI>
+<LI>USB ISDN Adapter mit dem ST5481, z.B. BeWan Gazel 128 USB</LI>
+</UL>
+
+Hinweis:
+<UL>
+<LI>AVM A1+ wird nicht unterst&uuml;tzt</LI>
+<LI>PCF, PCF-Pro: bis jetzt wird nur der ISDN-Teil unterst&uuml;tzt</LI>
+<LI>PCC-8: noch nicht getestet </LI>
+<LI>Eicon.Diva U Interface nicht getestet </LI>
+<LI>Einige Karten funktionieren nur als Module, nicht fest in den
+Kernel eingebunden </LI>
+<LI>Asuscom-Karte: Beachte, da&szlig; die ISA-Version ein anderer
+Typ ist (12) als die PCI-Version (35 mit HFC oder 36 mit Winbond chip)!</LI>
+<LI>Zur Unterscheidung zwischen HFC-PCI und PCI/Winbond dient der
+Output des Befehls <CODE>cat /proc/pci</CODE>. Bei HFC-PCI bekommst Du
+bei Deiner Karte eine Zeile mit dem Text "Master capable".</LI>
+<LI>DataFire Micro V PCI = Karte mit HFC-Chip (Typ 35)</LI>
+</UL>
+</P>
+<P>F&uuml; deutsche Leser: Jede Karte, die die Deutsche Telekom in der
+Vergangenheit herausgab, wird unterst&uuml;tzt. Das gilt NICHT
+f&uuml;r die TK-Anlagen!</P>
+<P>Die folgenden Karten werden definitiv nicht unterst&uuml;tzt,
+vermutlich auch in Zukunft nicht, da die Hersteller die
+Spezifikationen f&uuml;r ihre sehr propriet&auml;re Hardware und
+Protokolle nicht herausgegeben haben:
+<UL>
+<LI>Fritz!X</LI>
+<LI>Eumex 404</LI>
+</UL>
+</P>
+<P>F&uuml;r die Eumex 404 gibt es ein inoffizielles Treiber-Binary
+f&uuml;r ISDN4LINUX mit SuSE 6.3, das hilfreich sein k&ouml;nnte (oder
+auch nicht). Benutzung auf eigene Gefahr: 
+<A HREF="http://home.t-online.de/home/MetalMilitia/eumex.htm">http://home.t-online.de/home/MetalMilitia/eumex.htm</A>.</P>
+
+<H2><A NAME="hardware_activepassive"></A> <A NAME="ss6.2">6.2</A> <A HREF="i4lfaq-de.html#toc6.2">hardware_activepassive: Was ist der Unterschied zwischen einer aktiven und einer passiven ISDN-Karte?</A>
+</H2>
+
+<P>Eine aktive ISDN-Karte f&uuml;hrt die meisten
+ISDN-Verbindungsprotokolle (Anwahl, Empfang von Anrufen, usw.) selbst
+aus, da sie eine Art Minicomputer mit eigener Software (Firmware)
+besitzt. Bei einer passiven ISDN-Karte muss der Computer, in dem die
+Karte sitzt, diese Funktionen ausf&uuml;hren.</P>
+<P>Prinzipiell werden beide Arten von ISDN4LINUX unterst&uuml;tzt. Da
+jedoch aktive Karten ein nicht standardisiertes Interface haben, kann
+ein Treiber nur dann erstellt werden, wenn der Hersteller die
+Spezifikationen f&uuml;r das Interface herausgibt. Ebenfalls muss die
+Firmware der Karte frei verf&uuml;gbar sein. Im Unterschied dazu
+enthalten viele passive Karten den gleichen Chipset. Wenn einmal ein
+Treiber f&uuml;r einen Chipset existiert werden daher viele passive
+Karten unterst&uuml;tzt.</P>
+<P>Diese aktiven Karten werden z.Zt. von einem speziellen Treiber
+unterst&uuml;tzt:
+<UL>
+<LI>AVM B1</LI>
+<LI>AVM C4</LI>
+<LI>Eicon DIVA Server BRI PCI</LI>
+<LI>Eicon DIVA Server 4BRI</LI>
+<LI>IBM Active 2000 ISDN Karte</LI>
+<LI>ICN</LI>
+<LI>PCBIT-D</LI>
+</UL>
+</P>
+
+<H2><A NAME="hardware_recommend"></A> <A NAME="ss6.3">6.3</A> <A HREF="i4lfaq-de.html#toc6.3">hardware_recommend: Welche Karte wird von den Entwicklern empfohlen?</A>
+</H2>
+
+<P>Die Entwickler schlagen ELSA Karten vor. ELSA stellte den Entwicklern
+ihre Spezifikationen zur Verf&uuml;gung und gab eine Menge
+Unterst&uuml;tzung, was zu einem exzellenten Treiber
+f&uuml;hrte. Ausserdem sind ELSA Karten in Deutschland zum Gebrauch an
+&ouml;ffentlichen Netzen zugelassen (siehe Frage 
+<A HREF="i4lfaq-de-26.html#country_certified">country_certified</A>).</P>
+<P>F&uuml;r den Kauf einer aktiven Karte w&uuml;rden die Entwickler die
+PCI Serverkarte von Eicon empfehlen. Sie kann auf beiden Kan&auml;len
+Faxe mit Class 2 Befehlen verschicken/empfangen und enth&auml;lt ein
+V.90 Modem.  Die AVM B1 arbeitet ebenfalls recht gut, kann jedoch nur
+auf einem Kanal faxen.  Auch die Karten von Hypercope funktionieren
+recht gut mit allen verf&uuml;gbaren Fax-Kan&auml;len. Sie
+ben&ouml;tigen jedoch ein Hardware-Upgrade f&uuml;r den Faxbetrieb und
+der Linux-Treiber ist recht neu.  Wenn der Faxbetrieb f&uuml;r Dich
+wichtig ist aber die Kosten f&uuml;r eine aktive Karte zu hoch sind,
+k&ouml;nnte Dir eine Karte mit ISAR Chipset eher dienlich sein. Es
+gibt z.B. die Sedlbauer Speedfax+, die man in Deutschland u.a. bei
+Conrad bekommt.</P>
+
+<H2><A NAME="hardware_external"></A> <A NAME="ss6.4">6.4</A> <A HREF="i4lfaq-de.html#toc6.4">hardware_external: Unterst&uuml;tzt ISDN4LINUX externe Terminaladapter?</A>
+</H2>
+
+<P>Nein, aber das ist auch nicht n&ouml;tig. Terminaladapter benehmen
+sich entweder wie ein Modem oder wie eine Netzwerkkarte. Linux
+unterst&uuml;tzt bereits sowohl Modems als auch Netzwerkkarten ohne
+ISDN4LINUX - also wird kein spezieller ISDN-Treiber ben&ouml;tigt
+(wodurch sich gew&ouml;hnlich die Konfiguration sehr vereinfacht).
+Schau Dir z.B. das Programm wvdial an.</P>
+
+<H2><A NAME="hardware_cabeling"></A> <A NAME="ss6.5">6.5</A> <A HREF="i4lfaq-de.html#toc6.5">hardware_cabeling: Wie belege ich die ISDN-Kabel? </A>
+</H2>
+
+<P>Alle Details dieser Art werden in der excellenten Kabel-FAQ behandelt,
+die Du zumindest auf Deutsch auf <CODE>
+<A HREF="http://www.in-berlin.de/User/scorpio/faqkabel.html">http://www.in-berlin.de/User/scorpio/faqkabel.html</A></CODE>
+findest.</P>
+
+<H2><A NAME="hardware_irq"></A> <A NAME="ss6.6">6.6</A> <A HREF="i4lfaq-de.html#toc6.6">hardware_irq: Warum sollte ich die IRQs 12 und 15 f&uuml;r meine ISDN-Karte vermeiden?</A>
+</H2>
+
+<P>Auf vielen PCI-Boards wird der Interrupt 12 von der PS/2 Maus belegt
+(auch wenn Du keine solche hast oder der IRQ nicht daf&uuml;r
+aktiviert ist). Der IRQ k&ouml;nnte sogar belegt sein wenn Du keinen
+PS/2 Anschluss hast.  Interrupt 15 wird auch oft vom zweiten IDE Bus
+benutzt (auch wenn Du ihn nicht benutzt oder der IRQ daf&uuml;r nicht
+festgelegt ist). Sogar wenn man denkt, da&szlig; einige IRQs
+verf&uuml;gbar sind, k&ouml;nnen sie dennoch irgendwie vom BIOS
+reserviert sein. Eine gute Wahl ist immer IRQ 5 und IRQ 9. Ohne Modem
+oder Maus kannst Du auch 4 und 3 versuchen, die auch auf exotischen
+Boards funktionieren.</P>
+
+<H2><A NAME="hardware_irqsharing"></A> <A NAME="ss6.7">6.7</A> <A HREF="i4lfaq-de.html#toc6.7">hardware_irqsharing: Unterst&uuml;tzt der ISDN4LINUX-Treiber auch geteilte (Shared) Interrupts? </A>
+</H2>
+
+<P>Ja, die Treiber wurden so geschrieben, da&szlig; es geht. Zumindest
+bei der Karte AVM Fritz!PCI wurden jedoch manchmal auftretende
+Probleme bei Motherboards mit einem BIOS-Bug berichtet (DFI
+Motherboards K6BV3+, P5BV3+ K6XV3). 
+Als Workaround kann man versuchen, die BIOS-Option <CODE>CPU to PCI
+WRITE Buffer</CODE> zu deaktivieren.</P>
+
+<H2><A NAME="hardware_s2m"></A> <A NAME="ss6.8">6.8</A> <A HREF="i4lfaq-de.html#toc6.8">hardware_s2m: Welche S2M Karten werden unterst&uuml;tzt? </A>
+</H2>
+
+<P>Zumindest von diesen S2M Karten wurde berichtet, da&szlig; sie
+funktionieren:
+<UL>
+<LI>AVM T1</LI>
+<LI>Eicon.S2M-ISA oder DIVA Server PRI/PCI (siehe 
+<A HREF="http://www.melware.de/">http://www.melware.de/</A>)</LI>
+</UL>
+</P>
+
+<H2><A NAME="hardware_pcmcia"></A> <A NAME="ss6.9">6.9</A> <A HREF="i4lfaq-de.html#toc6.9">hardware_pcmcia: Welche PCMCIA Karten werden unterst&uuml;tzt? </A>
+</H2>
+
+<P>Zumindest von diesen PCMCIA Karten wurde berichtet, da&szlig; sie
+funktionieren:
+<UL>
+<LI>ELSA Microlink (NICHT: ELSA Microlink/all)</LI>
+<LI>Sedlbauer</LI>
+<LI>AVM</LI>
+<LI>Teles PCMCIA (alte Hardware) - abzuraten, da Teles die Hardware
+oft wechselt und die Entwickler nicht unterst&uuml;tzt (siehe Frage 
+<A HREF="#hardware_teles">hardware_teles</A>).</LI>
+</UL>
+</P>
+
+<H2><A NAME="hardware_smp"></A> <A NAME="ss6.10">6.10</A> <A HREF="i4lfaq-de.html#toc6.10">hardware_smp: Kann ich ISDN4LINUX auf meinem Multiprozessor-Board betreiben?</A>
+</H2>
+
+<P>Ja, das geht gut. Kompiliere jedoch auf jeden Fall den Kernel und alle
+Module mit der Option <CODE>SMP</CODE>. Wenn Du Probleme hast, wenn beide CPUs
+auf denselben IRQ zugreifen wollen, versuche die Bootoption
+<CODE>noapic</CODE>.</P>
+
+<H2><A NAME="hardware_alpha"></A> <A NAME="ss6.11">6.11</A> <A HREF="i4lfaq-de.html#toc6.11">hardware_alpha: L&auml;uft ISDN4LINUX auf einem DEC Alpha mit Linux?</A>
+</H2>
+
+<P>Ja, die meisten Karten sollten mit ISDN4LINUX auf einem DEC Alpha
+laufen. Von vielen Karten ist ein einwandfreier Betrieb mit dem HiSax
+Treiber bekannt. Auch die aktive ICN Karte soll funktionieren.</P>
+
+<H2><A NAME="hardware_sun"></A> <A NAME="ss6.12">6.12</A> <A HREF="i4lfaq-de.html#toc6.12">hardware_sun: L&auml;uft ISDN4LINUX auf einer Sun-Workstation?</A>
+</H2>
+
+<P>Vermutlich nicht. Es gibt drei (interne) M&ouml;glichkeiten f&uuml;r
+ISDN in der SUN:
+<OL>
+<LI> SBUS ISDN Adapter:
+
+&Auml;ltere SUN-Workstations haben ein SBUS Interface f&uuml;r
+zus&auml;tzliche Karten.
+Es gibt eine ISDN SBUS-Karte "X1012". Es gibt jedoch keinen Support
+f&uuml;r diese Karten, da es keine Informationen dar&uuml;ber gibt!
+</LI>
+<LI> Eingebaute ISDN Adapter:
+Die Sparc-Station-LX, Sparc-Station-10 und der Sparc-Server-10 haben
+einen ISDNAdapter, der in das Motherboard integriert ist.
+Diese Workstations wurden von HISAX (Kernel 2.3.0)
+unterst&uuml;tzt. Der Code wurde allerdings schon eine l&auml;ngere
+Zeit (&uuml;ber neuen Monate) nicht mehr weiter entwickelt.
+Es gibt da alle m&ouml;glichen uralten HISAX Definitionen in diesen
+Treibern. Es muss eine Menge getan werden, um diese Treiber wieder zum
+Laufen zu bringen.  Der urspr&uuml;ngliche Entwickler warnt jedoch
+davor, zuviel zu erwarten: der DBRI-Chip erlaubt kein buffern (es muss
+ein IRQ f&uuml;r jedes Byte ausgel&ouml;st werden) und raw-hdlc muss
+software-seits realisiert werden anstatt in der Hardware vorhanden zu
+sein...
+Der Autor von dbri.c hat die Arbeit daran beendet. Er hat jedoch
+f&uuml;r jeden, der die noch vorhandenen Fehler beseitigen will, eine
+Kopie des DBRI Datenblattes auf 
+<A HREF="http://www.freesoft.org/Linux/DBRI">http://www.freesoft.org/Linux/DBRI</A> abgelegt (Stand 10. Januar
+2000). Es ist zu beachten, da&szlig; der Code der letzten
+Entwicklungen nicht f&uuml;r 32-Bit Maschinen kompiliert werden kann.
+</LI>
+<LI> PCI ISDN Adapter:
+Moderne SUN-Workstations und Server haben heute eine ander
+Busstruktur. Die ULTRA Serie benutzt den PCI-Bus.
+Obwohl einige PC-Karten in SUNs zu funktionieren scheinen gibt es
+(noch) KEINE Berichte &uuml;ber sauber arbeitende ISDN-PCI-Karten in
+der SUN. Bitte schreibt mir in einem solchen Erfolgsfall.
+</LI>
+</OL>
+</P>
+
+<H2><A NAME="hardware_ppc"></A> <A NAME="ss6.13">6.13</A> <A HREF="i4lfaq-de.html#toc6.13">hardware_ppc: Kann ich ISDN4LINUX auf einem PowerPC mit Linux betreiben?</A>
+</H2>
+
+<P>Ja, die meisten Karten sollten laufen. Zumindest die AVMFritz!PCI
+Karte wird jedoch nicht funktionieren, da der PPC ein
+unterschiedliches Endian-Format f&uuml;r die 32-Bit B-Kanal Daten
+benutzt.</P>
+<P>Auf jeden Fall kannst Du auch einen Terminaladapter (= externes ISDN
+Modem) benutzen. Da Du dann kein ISDN4LINUX ben&ouml;tigst (siehe
+Frage 
+<A HREF="#hardware_external">hardware_external</A>), wird
+dies hier nicht weiter behandelt.</P>
+
+<H2><A NAME="hardware_maxcards"></A> <A NAME="ss6.14">6.14</A> <A HREF="i4lfaq-de.html#toc6.14">hardware_maxcards: Wieviele ISDN-Karten kann ich in meinen Computer einbauen?</A>
+</H2>
+
+<P>Das h&auml;ngt von den verf&uuml;gbaren Slots, den freien Interrupts
+und IO-Addressen in Deinem Computer und den M&ouml;glichkeiten der
+ISDN Karte ab. Die meisten passiven Karten haben ihre Grenzen durch
+die unterst&uuml;tzten IO-Addressen (z.B. sind bei der Teles 16.x nur
+3 Addressen gesetzlich zugelassen: 0xf80, 0xd80 und 0xe80) und die
+Gesamtzahl an Interrupts (jede Karte ben&ouml;tigt einen).
+<CODE>Anm.d.&Uuml;bers.: Da HiSax und auch PCI laut Definition mit
+IRQ-Sharing zurecht kommen, ist diese Limitierung (zumindest f&uuml;r
+PCI-Karten) eigentlich nicht mehr gegeben.</CODE></P>
+<P>Falls mehr Karten ben&ouml;tigt werden k&ouml;nnte die ICN Karte Deine
+Wahl sein. Sie belegt keine Interrupts, bietet eine flexiblere
+Einstellung des IO-Ports, und der Treiber plaziert die Shared Memory
+Bereiche aller ICN Karten an derselben Addresse. Der Kartenspeicher
+wird nur soweit gemapped wie er ben&ouml;tigt wird. Daher kann man
+soviele Karten benutzen wie Slots verf&uuml;gbar sind.</P>
+<P>Wenn Du wirklich eine Menge Anschl&uuml;sse ben&ouml;tigst w&auml;re
+schlie&szlig;lich noch eine S2M Karte von Interesse, siehe Frage 
+<A HREF="#hardware_s2m">hardware_s2m</A>.</P>
+<P>Bei Frage 
+<A HREF="i4lfaq-de-7.html#config_manycards">config_manycards</A> bekommst
+Du Antworten zu den Eigenheiten der Konfiguration von mehr als einer
+Karte.</P>
+
+<H2><A NAME="hardware_hfc"></A> <A NAME="ss6.15">6.15</A> <A HREF="i4lfaq-de.html#toc6.15">hardware_hfc: Was ist Besonderes an einer Karte mit HFC Chip? </A>
+</H2>
+
+<P>Karten mit einem HFC-PCI Chip erlauben einige Spezialit&auml;ten, die
+mit anderen ISDN Karten nicht m&ouml;glich sind. So kannst Du z.B. die
+Karte im NT-Modus betreiben (dabei muss die ISDN-Verbindung gekreuzt
+und die Software ausgetauscht werden) - das bedeutet, Deine Karte
+simuliert einen NTBA gegen&uuml;ber einer anderen ISDN Karte. Da
+jedoch ISDN4LINUX das beim Austausch benutzte Level 3 Protokoll nicht
+unterst&uuml;tzt kannst Du diesen Modus nur wie eine Standleitung
+benutzen.</P>
+<P>Ebenso kannst Du einen B-Kanal aufgeben und daf&uuml;r das komplette
+D-Kanal-Protokoll auslesen, eine tolle Sache f&uuml;r isdnlog. Das
+letztere kann man auch mit einer umgekehrt angeschlossenen Karte
+erreichen (siehe Frage 
+<A HREF="i4lfaq-de-24.html#isdnlog_reversedcard">isdnlog_reversedcard</A>), mit HFC Chips funktioniert es aber viel
+verl&auml;sslicher und sauberer. Du aktivierst diesen speziellen Echo
+Modus mit:
+<HR>
+<PRE>
+hisaxctrl &lt;treiber_name&gt; 10 1
+hisaxctrl &lt;treiber_name&gt; 12 1
+</PRE>
+<HR>
+
+Du schaltest das wieder ab mit:
+<HR>
+<PRE>
+hisaxctrl &lt;treiber_name&gt; 12 0
+hisaxctrl &lt;treiber_name&gt; 10 2
+</PRE>
+<HR>
+
+Der Parameter 10 bestimmt die Anzahl der verf&uuml;gbaren Kan&auml;le, 
+Parameter 12 wechselt den Echo Modus.</P>
+
+<H2><A NAME="hardware_elsa"></A> <A NAME="ss6.16">6.16</A> <A HREF="i4lfaq-de.html#toc6.16">hardware_elsa: Was sollte ich &uuml;ber ISDN Karten von ELSA wissen?</A>
+</H2>
+
+<P>Im allgemeinen unterst&uuml;tzt ELSA die ISDN4LINUX Entwickler sehr
+gut mit Dokumentationen &uuml;ber den Zugriff auf ihre Karten. Daher
+werden diese Karten sehr gut unterst&uuml;tzt und sind zum Gebrauch
+mit ISDN4LINUX sehr empfehlenswert. Zus&auml;tzlich ist die ELSA
+Quickstep 1000 PCI (neuer Name Microlink PCI) das einzige Kartenmodell
+mit offizieller Zulassung in Deutschland und daher auch in der EU
+(siehe Frage 
+<A HREF="i4lfaq-de-26.html#country_certified">country_certified</A> zu
+mehr Informationen &uuml;ber die Zulassung).</P>
+<P>Es gibt jedoch eine Eigenheit beim Gebrauch der ELSA Quickstep
+1000pro-PCI und einigen nicht PCI-konformen Mainboards. Diese setzen
+die IO-Addresse auf unzul&auml;ssige Werte (sie liegen im h&ouml;heren
+Speicherbereich und m&uuml;ssen an runden 0x100-Adressen liegen). Das
+kann eine Fehlermeldung ("You may have the wrong PCI bios") bewirken
+und das System anhalten. Die beste Abhilfe ist ein Bios Upgrade. Wenn
+das nicht m&ouml;glich ist, besorge Dir das Modul <CODE>pcitest</CODE> von
+Karsten Keil <CODE>
+<A HREF="mailto:keil@isdn4linux.de">keil@isdn4linux.de</A></CODE>. Es wird die Karte korrekt einrichten
+und sich dann mit einem gewollten Fehler schlie&szlig;en (und dadurch
+keinen Speicher belegen).</P>
+<P>Die Verbindung von ELSA's RJ11 Stecker zu einem RJ45 Kabel sieht so aus:
+<PRE>
+          RJ11   -   RJ45
+Pins      1234       12345678
+Kabel     abcd       --abcd--
+</PRE>
+</P>
+<P>Was die ELSA Microlink ISDN USB betrifft: Sie arbeitet - entgegen den
+bisherigen Aussagen - NICHT wie ein serieller Adapter mit dem USB
+Communication Class Treiber. Zur Zeit wird dieser Adapter nicht von
+ISDN4LINUX unterst&uuml;tzt.</P>
+
+<H2><A NAME="hardware_sedlbauer"></A> <A NAME="ss6.17">6.17</A> <A HREF="i4lfaq-de.html#toc6.17">hardware_sedlbauer: Was ist bei der Sedlbauer-Karte zu beachten?</A>
+</H2>
+
+<P>Die Sedlbauer-Karte gibt es in mehreren Versionen:
+<UL>
+<LI> Sedlbauer Speedwin</LI>
+<LI> Sedlbauer Speedfax</LI>
+<LI> Sedlbauer Speedfax PCI</LI>
+</UL>
+
+Die Speedwin ist eine normale passive Karte mit keinerlei Besonderheiten.</P>
+<P>Die Speedfax besitzt eine sehr spezielle Hardwareausstattung:
+Es ist eine semiaktive Karte mit einem ISAR Chipsatz, der das Senden und
+Empfangen von Faxen und den Betrieb als 14.4-Modem
+erm&ouml;glicht. Das Besondere an der Karte ist, da&szlig; sie mit
+HiSax benutzt wird, der normalerweise nur mit passiven Karten
+arbeitet. Du musst jedoch, wie bei allen aktiven Karten, die Firmware
+laden (in diesem Fall nach dem HiSax). Die Datei ISAR.BIN mit der
+Firmware ist Teil der isdn4k-utils.</P>
+<P>Hinweis: Kompressionsverfahren (V42bis, MNP) sind nicht in die
+Firmware implementiert und werden daher beim Modem-Betrieb nicht
+unterst&uuml;tzt. Der ideale Initstring zur Modem-Einwahl ist
+<CODE>AT%C0\N0</CODE>.</P>
+<P>Falls bei einigen Faxsendern der Empfang durch Hylafax nicht
+funktioniert, versuchen Sie die folgenden Parameter f&uuml;r Hylafax
+einzustellen:
+<HR>
+<PRE>
+Class1SwitchingDelay:  75
+</PRE>
+<HR>
+</P>
+<P>Die Sedlbauer Speedfax PCI ist eine Besonderheit, da sie speziell
+f&uuml;r Linux produziert wurde - es gibt f&uuml;r sie keinen
+Windows-Treiber.</P>
+
+<H2><A NAME="hardware_teles"></A> <A NAME="ss6.18">6.18</A> <A HREF="i4lfaq-de.html#toc6.18">hardware_teles: Was sollte ich vor dem Kauf einer ISDN Karte von Teles wissen?</A>
+</H2>
+
+
+<P>Zuerst die neuesten Nachrichten: Nach Berichten des deutschen Magazins
+c't, Ausgabe 02/2001, hat Teles seine Aktivit&auml;ten im ISDN-Bereich
+aufgegeben. Deshalb ist diese FAQ eigentlich nicht weiter von
+Interesse. Ich behalte sie trotzdem einstweilen bei um Teles'
+Verhalten gegen&uuml;ber ihren Kunden aufzuzeigen. Der Autor hat seit
+1994 pers&ouml;nliche Erfahrungen mit Teles.</P>
+<P>Eine der meist gestellten Fragen zu Teles-Karten: Die Teles Karte
+16.3c hat einen defekten FIFO und ben&ouml;tigt daher f&uuml;r den
+Gebrauch der ttyI* Devices die Eingabe von <CODE>AT&amp;B1024</CODE> (wenn die
+andere Seite noch Pakete mit mehr als 1024 Bytes sendet wird die Karte
+nicht funktionieren - leider nutzen viele CAPIs 2048 Bytes als
+Voreinstellung). Die neueste Teles PCI Karte ben&ouml;tigt den
+<CODE>netjet</CODE> Treiber, da der Teles Treiber NICHT funktioniert (diese
+Karte wird bei <CODE>cat /proc/pci</CODE> als 'TigerJet Tiger300'
+angezeigt).</P>
+<P>Nun einige Bemerkungen &uuml;ber Teles im allgemeinen (diese sind die
+pers&ouml;nliche Ansicht des Autors dieser FAQ und niemand ausser mir
+ist daf&uuml;r verantwortlich) (<CODE>Anm.d.&Uuml;bers.: Diese Ansichten
+teile ich ebenfalls voll und ganz!</CODE>):</P>
+<P>Die Gesch&auml;ftspraktiken von Teles sind sehr Kunden- und
+Entwickler- unfreundlich verglichen mit anderen Firmen.
+Selbstverst&auml;ndlich k&uuml;mmern sich die Entwickler vordringlich
+um Karten, f&uuml;r die Support geleistet wird und deren
+Spezifikationen frei verf&uuml;gbar sind.</P>
+<P>Bisher hat sich Teles gegen&uuml;ber den Entwicklern von I4L sehr
+unfreundlich verhalten. Es wurde von Teles weder irgenwelche
+Unterst&uuml;tzung geleistet noch wurden Informationen &uuml;ber den
+Zugriff auf ihre Karten ver&ouml;ffentlicht. Die Entwickler haben von
+Anfang an eine Menge an privatem Engagement investiert um diese Karte
+zum Laufen zu bringen ohne irgendeine Unterst&uuml;tzung zu
+bekommen. Der Treiber ist also ein Resultat von rein privater
+Arbeit. Trotzdem br&uuml;stet sich Teles auf ihrer Website damit,
+da&szlig; ihre Karten unter Linux laufen ohne die wirklich
+Verantwortlichen zu nennen.</P>
+<P>Noch nicht einmal Firmen, die Teles Karten kaufen und unter ihrem
+eigenen Namen weiter verkaufen, ist es gelungen, den Support zu
+verbessern. Das f&uuml;hrte dazu, da&szlig; sich eine re-branding
+Firma (!)  selbst um eine Genehmigung f&uuml;r den Gebrauch von I4L
+mit einer Teles Karte in Deutschland bem&uuml;hen musste.</P>
+<P>Aus Verbrauchersicht sollte man sich die Preise f&uuml;r die Hotline
+ansehen bevor man Hardware von Teles kauft! Der Autor der FAQ (<CODE>und
+der &Uuml;bersetzer</CODE>) weigert sich, eine Hotline zu benutzen, die
+216,- DM pro Stunde kostet. Berichte &uuml;ber die Qualit&auml;t und
+die Wartezeiten waren nicht immer positiv.</P>
+<P>Diese Firma gab &uuml;ber Jahre hinweg (meines Wissens 1995-2000) noch
+nicht einmal Treiber f&uuml;r andere Betriebssysteme wie z.B. Windows
+kostenlos heraus.  Erst seit April 2000 kann man die Treiber &uuml;ber
+das Internet beziehen.  Vorher musste man zum Download eines Treibers
+in Deutschland eine sehr teure Nummer (0190, DM 1,20/Minute)
+anw&auml;hlen. Nicht, da&szlig; es &uuml;berhaupt ratsam w&auml;re,
+Windows zu benutzen. Ich wollte es nur erw&auml;hnen...</P>
+<P>Warnung: Teles hat ihre Karten sehr oft ohne Bekanntgabe ge&auml;ndert
+ohne den Modellnamen zu &auml;ndern. Nach dem Kauf einer Teles Karte
+kannst Du eventuell feststellen, da&szlig; Deine brandneue Karte nicht
+von I4L unterst&uuml;tzt wird!  (Wie es mehrere Male geschehen ist...)</P>
+<P>Die Entwickler werden versuchen, neue Teles Karten zu
+unterst&uuml;tzen sobald Informationen &uuml;ber den Zugriff auf die
+Karte verf&uuml;gbar sind und keine anderen Priorit&auml;ten
+vorliegen. Nat&uuml;rlich kannst Du jederzeit einen Patch einsenden.</P>
+
+<H2><A NAME="hardware_fritz"></A> <A NAME="ss6.19">6.19</A> <A HREF="i4lfaq-de.html#toc6.19">hardware_fritz: Was ist beim Konfigurieren einer Fritz!Karte (auch bekannt als: AVM A1, Teledat 150, BT Speedway) zu beachten?</A>
+</H2>
+
+<P>Die Fritz!Karte gibt es in mehreren Variationen. Da die PCI-Karte und
+die ISA/PNP-Karte den gleichen Typ angeben (27), wird hisax bei der
+Angabe einer IO-Adresse eine ISA/PNP-Karte und bei keiner Angabe einer
+IO-Adresse eine PCI-Karte annehmen. Beachte also genau, was Du
+angibst.</P>
+<P>Die aktuelle Fritz! PCI Karte (v2.0) wird jetzt von einem neuen Treiber
+unterst&uuml;tzt. Dieser wurde jedoch noch nicht ernsthaft getestet. Die
+Karte kann mittels lspci identifiziert werden: Die Karten-ID ist 0e00.</P>
+<P>Wenn der Interrupt der Karte mit anderen Karten geteilt wird und die
+ISDN-Karte nicht funktioniert kann das am Motherboard liegen. Dazu
+mehr unter 
+<A HREF="#hardware_irqsharing">hardware_irqsharing</A>.</P>
+<P>Ein interessanter Aspekt: Die Fritz!Karte ist z.Zt. die einzige
+passive Karte mit einem existierenden CAPI-Treiber und damit imstande
+Faxe zu senden/empfangen. Weitere Informationen dazu gibt es unter
+<A HREF="i4lfaq-de-4.html#feature_capi">feature_capi</A> und bei 
+<A HREF="http://www.avm.de/ftp/cardware/fritzcrd/linux/index.htm">http://www.avm.de/ftp/cardware/fritzcrd/linux/index.htm</A>.</P>
+
+<H2><A NAME="hardware_avmb1"></A> <A NAME="ss6.20">6.20</A> <A HREF="i4lfaq-de.html#toc6.20">hardware_avmb1: Was ist Besonderes an der AVM B1 Karte? </A>
+</H2>
+
+
+<P>Diese Karte beinhaltet viele spezielle Eigenschaften in ihrer Firmware
+und wird von ihrem Linuxtreiber sehr gut unterst&uuml;tzt. Sie ist zur
+Zeit eine der wenigen ISDN Karten mit denen Du unter ISDN4LINUX Faxe
+versenden kannst oder die das CAPI 2.0 Interface unterst&uuml;tzen. Die
+neuesten Treiber bekommst Du auf 
+<A HREF="ftp://calle.in-berlin.de/pub/capi4linux/">ftp://calle.in-berlin.de/pub/capi4linux/</A>.</P>
+<P>Zum Downloaden der Firmware ben&ouml;tigen Sie die beiden Perl-Scripts von:
+<A HREF="ftp://calle.in-berlin.de/pub/capi4linux/firmware/">ftp://calle.in-berlin.de/pub/capi4linux/firmware/</A>.
+Diese Scripts bewirken den Download und das Auspacken der Firmware vom AVM
+FTP-Server: 
+<A HREF="ftp://ftp.avm.de/cardware/b1/linux/">ftp://ftp.avm.de/cardware/b1/linux/</A>.</P>
+<P>Zum Gebrauch der AVM an einem Anlagenanschluss musst Du 'DSS1 P2P' zum
+Ladebefehl der Firmware hinzuf&uuml;gen:</P>
+<P>
+<HR>
+<PRE>
+avmcapictrl load /usr/lib/isdn/b1 t4 0 DSS1 P2P
+</PRE>
+<HR>
+</P>
+<P>Es gibt eine Mailingliste f&uuml;r Probleme mit der AVM B1 auf:
+linux-avmb1@calle.in-berlin.de (sende eine Mail an
+majordomo@calle.in-berlin.de mit <CODE>subscribe linux-avmb1 &lt;Deine
+Email Addresse&gt;</CODE> im Text).</P>
+
+<H2><A NAME="hardware_hypercope"></A> <A NAME="ss6.21">6.21</A> <A HREF="i4lfaq-de.html#toc6.21">hardware_hypercope: Was ist Besonderes an den Hypercope Karten?</A>
+</H2>
+
+<P>Diese Karten bieten einige spezielle Eigenschaften in ihrer Firmware
+und werden neuerdings durch einen Linux-Treiber unterst&uuml;tzt. Sie
+geh&ouml;ren z.Zt. zu den wenigen ISDN-Karten, die das CAPI 2.0
+Interface unterst&uuml;tzen.  Zus&auml;tzlich lassen sie sich sehr gut
+zum Faxen unter ISDN4LINUX nutzen (nach einem Upgrade durch eine
+Faxkarte - das gilt f&uuml;r die HYSDN Ergo2 und HYSDN Metro4).</P>
+<P>Weitere Informationen zum Hersteller und zur Hardware bekommt man auf
+<A HREF="http://www.hypercope.de">http://www.hypercope.de</A>.
+Die Konfiguration ist so &auml;hnlich wie bei der AVM B1.</P>
+
+<H2><A NAME="hardware_icn"></A> <A NAME="ss6.22">6.22</A> <A HREF="i4lfaq-de.html#toc6.22">hardware_icn: Was ist Besonderes an der ICN Karte? </A>
+</H2>
+
+<P>Dies war die erste von ISDN4LINUX unterst&uuml;tzte aktive Karte. Der
+Hersteller (<CODE>
+<A HREF="http://www.think.de/">http://www.think.de/</A></CODE>) hat die I4L
+Entwickler immer unterst&uuml;tzt. Die ICN ben&ouml;tigt keine
+Interrupts (polling). Daher kann man den PC mit vielen von ihnen ohne
+Interrupt-Konflikte ausr&uuml;sten. Die neueste Firmware sollte auf
+<CODE>
+<A HREF="ftp://ftp.think.de/pub/isdn4linux/firmware/">ftp://ftp.think.de/pub/isdn4linux/firmware/</A></CODE> zur
+Verf&uuml;gung stehen. Leider wird die ICN nicht mehr hergestellt.</P>
+
+<H2><A NAME="hardware_isurf"></A> <A NAME="ss6.23">6.23</A> <A HREF="i4lfaq-de.html#toc6.23">hardware_isurf: Was sollte ich &uuml;ber die I-Surf-Karten von Siemens wissen? </A>
+</H2>
+
+<P>Da gibt es einige interessante Sachen:
+<UL>
+<LI> Zwei Versionen: Es gibt zwei unterschiedliche Versionen
+(Version 1.0 und Version 2.0) mit unterschiedlichen Chipsets. Beide
+arbeiten gut. Du musst allerdings den Typ korrekt bestimmen (29
+f&uuml;r Version 1.0, 12 f&uuml;r Version 2.0).</LI>
+<LI> PnP Bug: Wegen eines Bugs im PnP-Chip m&uuml;ssen f&uuml;r die
+I-Surf 1.0 die folgenden PEEK und POKE Zeilen in Deiner Datei
+<CODE>isapnp.conf</CODE> stehen um die PnP-Register richtig zu
+initialisieren:
+<HR>
+<PRE>
+(MEM 0 (BASE 0x0c8000) (MODE bu) (UPPER 0x0c8400))
+# (MEM 0 (BASE 0x0c8000) (MODE br) (UPPER 0x000400))
+(REG 0x31 (PEEK))
+(REG 0x31 (POKE 0))
+(REG 0x31 (PEEK))
+(ACT Y)
+))
+</PRE>
+<HR>
+</LI>
+<LI> Memory mapping: Da die I-Surf 1.0 Memory mapping f&uuml;r den
+ISA-Bus benutzt musst Du darauf achten, da&szlig; der benutzte
+Speicherbereich im BIOS nicht als Shadowed oder Cached eingetragen
+ist.</LI>
+<LI> Firmware: Vor dem Gebrauch muss die Firmware geladen werden:
+<HR>
+<PRE>
+hisaxctrl &lt;id&gt; 9 ISAR.BIN
+</PRE>
+<HR>
+
+(Du findest die Datei ISAR.BIN in den isdn4k-utils oder auf der I-SURF
+CD.)  </LI>
+<LI> Fax: Die I-Surf 1.0 kann zum Senden und Empfangen von Fax
+eingestellt werden (siehe 
+<A HREF="i4lfaq-de-4.html#feature_fax">feature_fax</A>).</LI>
+</UL>
+</P>
+
+
+<H2><A NAME="hardware_crossedcable1"></A> <A NAME="ss6.24">6.24</A> <A HREF="i4lfaq-de.html#toc6.24">hardware_crossedcable1: Wenn I4L einen B-Kanal benutzt ist der andere blockiert (eingehende wie ausgehende Signale)...</A>
+</H2>
+
+<P>Dieses Verhalten ist typisch f&uuml;r ein Kabel mit falscher
+Verdrahtung des a/b-Anschlusses. Einige NTs von Quante hatten eine
+falsche Beschriftung. Sie verursachten genau das beschriebene
+Verhalten, wenn eine PBX an der Buchse und eine ISDN Karte an dem
+Stecker des NT angeschlossen waren. Sowie ein Ger&auml;t den Bus
+aktiviert, kann das andere Ger&auml;t keine Verbindung mehr aufbauen.</P>
+
+<H2><A NAME="hardware_crossedcable2"></A> <A NAME="ss6.25">6.25</A> <A HREF="i4lfaq-de.html#toc6.25">hardware_crossedcable2: Wie kann ich feststellen, ob ein a/b-Kabel gekreuzt wurde?</A>
+</H2>
+
+<P>Diese Antwort nimmt an, da&szlig; Du &uuml;ber einen installierten
+internen Bus direkt an den NT angeschlossen bist (ohne ein RJ45
+Kabel).</P>
+<P>Die einfachste Art zu testen ist die mit einem kleinen Kabel-Tester
+(der Autor erwarb einen von Conrad Electronics in Deutschland f&uuml;r
+29,- DM - folge einfach den leichten Anweisungen).</P>
+<P>Anderenfalls hast Du etwas mehr Arbeit. Vertausche Leitung a1 und
+b1. Wenn das nicht funktioniert, mache das wieder r&uuml;ckg&auml;ngig
+und vertausche Leitung a2 und b2. Wenn das immer noch nicht
+l&auml;uft, versuche beide Leitungen zu vertauschen. Solange {a|b}1
+und {a|b}2 unter sich bleiben kann nichts passieren. Um sicher zu
+gehen kannst Du vor dem Einstecken pr&uuml;fen, da&szlig; zwischen
+Pins 4 und 5 und zwischen Pins 2 und 6 des Steckers keine Spannung
+anliegt.  Zwischen 3 und 4 und zwischen 6 und 5 sollten 40 V, 6 und 3
+positiv gemessen werden.</P>
+<P>Mit dem Westernstecker funktioniert das &auml;hnlich. 4 Leitungen
+werden benutzt:
+<PRE>
+| | | | 
+| | | |
+1 2 3 4
+</PRE>
+
+Du kannst 1 mit 4 oder 2 mit 3 oder beide Paare
+vertauschen. Vertausche nie die &auml;usseren mit den inneren
+Leitungen - das w&uuml;rde die RX und TX Leitungen kreuzen und nichts
+mehr w&uuml;rde funktionieren.</P>
+<P>In der Kabel FAQ findest Du mehr Details dar&uuml;ber, welche Leitung
+wie anzuschlie&szlig;en ist.</P>
+<P>Wenn beide Ger&auml;te &uuml;ber RJ45 angeschlossen sind, ist eines
+der beiden Kabel verdreht. Das passiert normalerweise wenn einer der
+RJ45 Stecker verkehrt herum angeschlossen wurde (a1/b1 sind innen,
+a2/b2 sind aussen, so wird die Anordnung der
+Sender-/Empf&auml;ngerpaare erhalten). Jetzt brauchst Du nur einen
+neuen Stecker und nat&uuml;rlich Klammern f&uuml;r den RJ45: alter
+Stecker ab, neuer Stecker (in der richtigen Anordnung) dran.</P>
+
+<H2><A NAME="hardware_pbx"></A> <A NAME="ss6.26">6.26</A> <A HREF="i4lfaq-de.html#toc6.26">hardware_pbx: i4l ist am internen Bus einer PBX angeschlossen. Probleme?</A>
+</H2>
+
+<P>Viele PBX benutzen nicht standardisierte ISDN-Protokolle auf ihrem
+internen Bus. Das kann I4L dazu bringen, eine Warnung "Unexpected
+discriminator 0xZZ" (wobei ZZ eine hexadezimale Zahl ist) auszugeben,
+wenn es auf unerwartete Frames trifft (einige alte Versionen
+st&uuml;rzen sogar ab). Das kann Deine Logdatei um bis zu 1 MB in 3
+Tagen vergr&ouml;&szlig;ern.  Die PBX <CODE>Ackermann Euracom 181</CODE>
+(Discriminator 0xaa) und <CODE>Ascom</CODE> (Discriminator 0x44/0x47) scheinen
+daf&uuml;r bekannt zu sein.  Du kannst die Warnung vermeiden indem Du
+in der Funktion <CODE>processctrl()</CODE> in <CODE>processor.c</CODE> den
+switch/case Code anpasst und isdnlog neu kompilierst. Beachte bitte,
+da&szlig; nun isdnlog keine ankommenden Datenpakete mehr loggen kann,
+da die PBX die Pakete &uuml;bergeben muss. Zum Loggen aller Pakete
+muss die PBX umgangen werden.  Achte darauf, da&szlig; die PBX
+h&auml;ngen bleiben kann, wenn die ISDN Karte nicht auf ihre Requests
+antwortet - &uuml;bergehe die PBX in diesem Fall.</P>
+<P>Es kann auch sein, da&szlig; eine PBX per default das 1TR6 Protokoll
+anstatt des EuroISDN auf dem internen Bus benutzt. Du musst I4L (oder
+die PBX) entsprechend konfigurieren. Am besten versuchst Du beide auf
+das gleiche Protokoll einzustellen.</P>
+<P>Auch die MSN kann anders aussehen als Du erwartest. Versuche es mit
+verschiedenen Versionen, keine Ziffer (dann nimm <CODE>0</CODE>, wird in dem
+Fall von I4L erwartet), eine Ziffer oder zwei Ziffern oder die gesamte
+MSN. Am besten rufst Du ein Ger&auml;t (z.B. das ISDN Telefon) auf dem
+internen Bus an und schaust nach, was I4L im Logfile schreibt.  Wenn
+eine Hinauswahl misslingt liegt es meist daran, da&szlig; Du die MSN
+f&uuml; die Hinauswahl nicht korrekt angegeben hast. Dann lehnt die
+PBX das W&auml;hlverlangen ab.</P>
+<P>Bei ankommenden Gespr&auml;chen solltest Du beachten, da&szlig; manche
+Telefonanlagen eine 0 vor die Nummer jedes hereinw&auml;hlenden
+Ger&auml;tes setzen. Also musst Du die Einstellungen der
+Secure-Optionen dementsprechend &auml;ndern.</P>
+<P>Zuletzt solltest Du daran denken, da&szlig; Du Deine PBX so einstellen
+musst, da&szlig; sie ankommende Gespr&auml;che auf den internen ISDN
+Bus 'routen' muss.</P>
+<P>Bei einer Point-to-Point Konfiguration ('Anlagenanschluss') kannst Du
+Deine Karte nicht - parallel zur PBX - direkt an den S0 Bus
+anschlie&szlig;en (dann geht gar nichts mehr). Du musst sie mit dem
+internen ISDN Bus verbinden. Deine MSN ist dann normalerweise die
+Durchwahl am Ende der Telefonnummer.</P>
+<P>Besitzer der <CODE>Ackermann Euracom</CODE> finden Hinweise zur
+Konfigurations-Software auf der deutschen Seite: 
+<A HREF="http://www.ganzfix.de">http://www.ganzfix.de</A></P>
+
+<H2><A NAME="hardware_telestrouble"></A> <A NAME="ss6.27">6.27</A> <A HREF="i4lfaq-de.html#toc6.27">hardware_telestrouble: Die PNP-Tools funktionieren nicht mit meiner Teles 16.3 PNP Karte!</A>
+</H2>
+
+<P>Es ist m&ouml;glicherweise gar keine Plug 'n' Play Karte - obwohl
+Teles jetzt auf alle ihre Karten und Kartons PNP druckt. Der
+Unterschied ist leicht zu erkennen: eine wahre Teles PnP Karte hat die
+(winzigen) DIP-Schalter zur Einstellung der IO-Addresse nicht mehr.</P>
+
+<H2><A NAME="hardware_elsacabletrouble"></A> <A NAME="ss6.28">6.28</A> <A HREF="i4lfaq-de.html#toc6.28">hardware_elsacabletrouble: Auf meiner ELSA Karte blinkt oft die LED die den Verlust des TE anzeigt Meine Verbindungen werden auch oft unterbrochen...</A>
+</H2>
+
+<P>Diese blinkenden LEDS werden oft durch ein schlechtes Kabel oder einen
+zu langen oder nicht terminierten Bus verursacht.</P>
+
+<H2><A NAME="hardware_elsairq"></A> <A NAME="ss6.29">6.29</A> <A HREF="i4lfaq-de.html#toc6.29">hardware_elsairq:Meine ELSA Quickstep1000 ISA Karte l&ouml;st mit dem HiSax Treiber sehr viele Interrupts aus. Ist das normal oder ein Problem des HiSax Treibers?</A>
+</H2>
+
+<P>Es ist normal. Die ELSA Quickstep 1000 ISA Karte hat einen Hardware
+Timer, der nicht durch Software deaktiviert werden kann. Wenn Du ihn
+loswerden willst musst Du die Hardware ver&auml;ndern. Frag bei
+Karsten Keil nach: <CODE>
+<A HREF="mailto:keil@isdn4linux.de">keil@isdn4linux.de</A></CODE></P>
+
+
+
+
+<HR>
+<A HREF="i4lfaq-de-7.html">Next</A>
+<A HREF="i4lfaq-de-5.html">Previous</A>
+<A HREF="i4lfaq-de.html#toc6">Contents</A>
+</BODY>
+</HTML>

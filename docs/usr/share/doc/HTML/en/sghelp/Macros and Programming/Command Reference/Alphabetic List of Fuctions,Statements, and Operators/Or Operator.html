@@ -1,0 +1,57 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+	<TITLE></TITLE>
+	<META NAME="GENERATOR" CONTENT="《Sogwang 3.0》  (Linux)">
+	<META NAME="CREATED" CONTENT="20091205;14081500">
+	<META NAME="CHANGED" CONTENT="20091205;14134200">
+	<STYLE TYPE="text/css">
+	<!--
+		H2 { margin-bottom: 0.18cm; font-family: "Bitstream Vera Sans", "Arial", "Helvetica", "Lucida", "Geneva", "Helmet", sans-serif, "Andale Sans UI", "Arial Unicode MS", "Lucida Sans Unicode", "Tahoma"; font-size: 14pt }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="ko-KP" DIR="LTR"><DIV style="margin-left: 25">
+<H1><A NAME="or"></A><A NAME="bm_id3150986"></A><FONT FACE="Thorndale, serif"><SPAN LANG="en-US">Or
+Operator [Runtime]</SPAN></FONT></H1>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Performs
+a logical OR disjunction on two expressions.</SPAN></FONT></P>
+<H2><SPAN LANG="en-US">Syntax:</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Result =
+Expression1 Or Expression2</SPAN></FONT></P>
+<H2><SPAN LANG="en-US">Parameters:</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Result:</B>
+Any numeric variable that contains the result of the disjunction.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Expression1,
+Expression2:</B> Any numeric expressions that you want to compare.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">A
+logical OR disjunction of two Boolean expressions returns the value
+True if at least one comparison expression is True.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">A
+bit-wise comparison sets a bit in the result if the corresponding bit
+is set in at least one of the two expressions.</SPAN></FONT></P>
+<H2><SPAN LANG="en-US">Example:</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Sub
+ExampleOr</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Dim vA
+as Variant, vB as Variant, vC as Variant, vD as Variant</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Dim vOut
+as Variant</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">vA = 10:
+vB = 8: vC = 6: vD = Null</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">vOut =
+vA &gt; vB Or vB &gt; vC REM -1</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">vOut =
+vB &gt; vA Or vB &gt; vC REM -1</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">vOut =
+vA &gt; vB Or vB &gt; vD REM -1</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">vOut =
+(vB &gt; vD Or vB &gt; vA) REM 0</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">vOut =
+vB Or vA REM 10</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">End
+Sub</SPAN></FONT></P>
+
+</DIV></BODY>
+</HTML>

@@ -1,0 +1,697 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <META NAME="GENERATOR" CONTENT="LinuxDoc-Tools 0.9.21">
+ <TITLE>ISDN4Linux Tutorial: syncPPP Verbindung herstellen </TITLE>
+ <LINK HREF="EN-i4l-6.html" REL=next>
+ <LINK HREF="EN-i4l-4.html" REL=previous>
+ <LINK HREF="EN-i4l.html#toc5" REL=contents>
+</HEAD>
+<BODY>
+<A HREF="EN-i4l-6.html">Next</A>
+<A HREF="EN-i4l-4.html">Previous</A>
+<A HREF="EN-i4l.html#toc5">Contents</A>
+<HR>
+<H2><A NAME="syncPPP"></A> <A NAME="s5">5.</A> <A HREF="EN-i4l.html#toc5">syncPPP Verbindung herstellen </A>    </H2>
+
+<P>Point-to-Point Protocol (PPP) ist u.a. in den 
+RFCs 1661, 1662, 1332 and 1334 definiert.
+Es wurde ursprünglich entwickelt, um Daten über serielle Leitungen
+zu verschicken. Es bietet grundsätzlich auch weitere Netzwerkprotokolle
+(Apple, IPX, ...) unter Linux ist aber nur IP vorgesehen.
+PPP bietet verschiedene Features wie z.B. den Austausch der IP-Nummern,
+Authentication, Compressions etc.</P>
+<P>Aus diesem Grund findet zunächst durch das Link Control Protocol
+(LCP) ein Handshake statt, durch den die Verbindung initialisisert
+wird (oder auch nicht). In der Praxis ergeben sich genau hierdurch
+die Probleme gemäß der Richtlinie <I>das schöne an Standards ist,
+daß sich jeder seinen eigenen aussuchen kann</I>.</P>
+
+<H2><A NAME="pppIppp"></A> <A NAME="ss5.1">5.1</A> <A HREF="EN-i4l.html#toc5.1">Unterschiede analog - ISDN</A>
+            </H2>
+
+<P>Wer analoges PPP gewöhnt ist, muß hier ein umdenken.
+Bei ISDN dreht sich alles um.
+Die Netzverbindung besteht logisch immer, gewählt wird aber nur 
+bei Bedarf.</P>
+
+<H3>Analog:        </H3>
+
+<P>
+<UL>
+<LI> manuelles starten eines Scripte oder über diald</LI>
+<LI> wählen, z.B. mit 'chat'</LI>
+<LI> pppd fährt hoch und macht Handshake mit Partner</LI>
+<LI> ifconfig und route Aufrufe durch pppd</LI>
+<LI> Optionsfile: <CODE>/etc/ppp/options</CODE></LI>
+<LI> liest automatisch <CODE>/etc/ppp/options.DEVICE</CODE>
+(DEVICE ist das aktuell verwendete serielle Device).</LI>
+</UL>
+</P>
+
+<H3>ISDN:        </H3>
+
+<P>
+<UL>
+<LI> Netz wird konfiguriert, diverse isdnctrl und ein 
+ifconfig Aufruf</LI>
+<LI> Setzen der Route</LI>
+<LI> starten ipppd</LI>
+<LI> Verbindungswunsch -> i4l wählt selbstständig Nummern 
+(isdnctrl)</LI>
+<LI> ipppd wird aktiviert (er läuft die ganze Zeit!)</LI>
+<LI> ipppd macht Handshake</LI>
+<LI> Bei dynamischen IP-Nummern legt der ipppd das Device 
+neu an und startet <CODE>/etc/ppp/ip-up</CODE></LI>
+<LI> Beim (automatischen Abbau) macht der ipppd ein 
+Reconnect auf das Device bei analog beendet er sich.</LI>
+<LI> Beim Abbau startet der ipppd <CODE>/etc/ppp/ip-down</CODE></LI>
+<LI> Optionsfile: <CODE>/etc/ppp/ioptions</CODE></LI>
+<LI> Liest kein weiteres Optionfile automatisch ein.</LI>
+</UL>
+</P>
+
+<H2><A NAME="syncPPPwas"></A> <A NAME="ss5.2">5.2</A> <A HREF="EN-i4l.html#toc5.2">Was ist eigentlich synchrones PPP</A>
+            </H2>
+
+<P>Der Unterschied zwischen synchronem und asynchronem PPP ist das 
+<B>Framing</B> also das Einpacken der
+Rohdaten für die jeweilige Verbindungsart.
+SyncPPP packt in HDLC ein. Auf einer Modemstrecke
+bzw. einer seriellen Schnittstelle kann man aber
+nur characterweise verschicken. Entsprechend packt asyncPPP
+seine Päckchen anders ein. Es gibt ein ausgewiesenes
+Byte welches den Paketanfang bzw. das Ende markiert.
+Diese Byte muss, sofern es im Datenstrom auftaucht natürlich
+anders dargestellt werden. Dafür gibt es ein weiteres
+reserviertes Byte, das Escape-Byte.</P>
+
+<H2><A NAME="ipppdConfig"></A> <A NAME="ss5.3">5.3</A> <A HREF="EN-i4l.html#toc5.3">Die Konfiguration</A>
+            </H2>
+
+
+<H3>Netzdevices anlegen und konfigurieren            </H3>
+
+<P>Beispiel:
+<HR>
+<PRE>
+NETDEV='ippp0'
+# neues Device
+isdnctrl addif $NETDEV
+
+# setzte MSN/EAZ
+isdnctrl eaz $NETDEV 456
+
+# def. Nummer(n) zum rauswaehlen
+isdnctrl addphone $NETDEV out 09011
+
+# erlaube Nummern, die anrufen duerfen
+#isdnctrl addphone $NETDEV in 
+
+# duerfen alle anrufen? Nein: setze secure=on
+isdnctrl secure $NETDEV on
+
+# Layer-2 Protokoll: (x75i, x75ui, x75bui, hdlc)
+isdnctrl l2_prot $NETDEV hdlc
+
+# Layer-3 (nur trans)
+isdnctrl l3_prot $NETDEV trans
+
+# Ecapsulation: (rawip, cisco_h, syncppp)
+isdnctrl encap $NETDEV syncppp
+
+# Idletime
+isdnctrl huptimeout $NETDEV 60
+
+# maximale Waehlversuche
+isdnctrl dialmax $NETDEV 5
+
+# nur einen bestimmten Kanal benutzen
+#isdnctrl bind $NETDEV 
+
+# PPP an Netzdevice binden
+isdnctrl pppbind $NETDEV 0
+
+# Netzdevice konfigurieren
+ifconfig $NETDEV 1.1.1.1 pointopoint 193.102.150.13 up
+
+# OPEN-Meldung ausgeben:
+isdnctrl verbose 3
+            
+</PRE>
+<HR>
+</P>
+<P>Gelöscht wird das Interface durch die Befehle:
+<HR>
+<PRE>
+ifconfig $NETDEV down
+isdnctrl delif $NETDEV
+            
+</PRE>
+<HR>
+</P>
+
+<H3><A NAME="ipppdStart"></A> ipppd starten                    </H3>
+
+
+<P>Vor dem Start des ipppd müssen drei Voraussetzungen
+erfüllt sein:
+<OL>
+<LI> ISDN-Hardwareunterstützung</LI>
+<LI> syncPPP Untersützung im Kernel</LI>
+<LI> Das zu verwendene Device muß angelegt sein
+(<CODE>isdnctrl addif</CODE>)</LI>
+</OL>
+</P>
+<P>Die syncPPP Unterstützung des Kernels prüft der ipppd
+leider über eine etwas unglücklich Methode ab:
+Es muß ein Device <CODE>ippp0</CODE> vorhanden sein. Außerdem
+kann man das Device nicht beliebig benennen, es muß mit
+<CODE>ippp</CODE> beginnen. Merke: <B>Benutze immer als Devicename
+<CODE>ippp0</CODE></B></P>
+<P>Der ipppd kann über 2,5 Arten Optionen annehmen:
+<OL>
+<LI> Kommandozeilenparameter</LI>
+<LI> Das Optionsfile <CODE>/etc/ppp/ioptions</CODE></LI>
+</OL>
+
+Die 2,5te Methode ist die Angabe eines Optionsfile als
+Kommandozeilenparameter (<CODE>-file</CODE>).</P>
+<P>In Anlehnung an den pppd empfehle ich folgende Struktur:
+<UL>
+<LI> Globale Optionen (für alle ipppd's) in 
+<CODE>/etc/ppp/ioptions</CODE></LI>
+<LI> Devicespezifische Optionen (z.B. für ippp0) in
+<CODE>/etc/ppp/options.ippp0</CODE></LI>
+<LI> Start des ipppd mit
+<CODE>ipppd pidfile /var/run/ipppd.ippp0.pid file /etc/ppp/options.ippp0 &amp; </CODE></LI>
+</UL>
+</P>
+<P>Folgendes sollte man noch über den ipppd wissen:
+<UL>
+<LI> Es werden z.T. andere Optionen als beim pppd 
+benutzt, zu den Unterschieden siehe <CODE>man ipppd</CODE></LI>
+<LI> Die Optionen und Paßwörter werden nur beim Start 
+neu eingelesen.
+Beim Testen sollte man also immer nachschauen, ob 
+noch ipppd'd laufen und neustarten.</LI>
+<LI> Es können verschiedene ipppd auf ein Device
+reagieren, daher <CODE>pppbind</CODE>. </LI>
+<LI> Die Datei <CODE>/etc/ppp/ioptions</CODE> muß existieren.</LI>
+</UL>
+</P>
+<P>Folgende Optionen haben sich für die verschiedensten ISP's
+als stabil erwiesen:
+<A NAME="optionsippp0"></A> 
+<HR>
+<PRE>
+# /etc/ppp/options.ippp0
+#
+# for isdn4linux/syncPPP and dynamic IP-numbers
+#
+#
+# Klaus Franken, kfr@suse.de
+# Version: 27.08.97 (5.1)
+# 
+# This file is copy by YaST from /etc/ppp/ioptions.YaST 
+#   to options.&lt;device>
+
+# The device(s)
+# for more than one device try:
+# /dev/ippp0 /dev/ippp1 ...
+/dev/ippp0
+
+# The IP addresses: &lt;local>:&lt;remote>
+# just "0.0.0.0:" or nothing for dynamic IP
+#0.0.0.0:
+
+# my user name
+user suse
+
+# my system name (only for CHAP!)
+# name my_system_name
+
+# accept IP addresses from peer
+# use with dynamic IP
+ipcp-accept-local
+ipcp-accept-remote
+noipdefault
+
+# try to get IP address from interface
+# option specific to ipppd (as opposed to pppd)
+# use only with static IP
+#useifip
+
+# disable all header-compression
+-vj
+-vjccomp
+-ac
+-pc
+-bsdcomp
+
+# sometimes you need this:
+#noccp
+
+# max receive unit
+mru 1524
+# max transmit unit
+mtu 1500
+
+# If this machine is a server, force authentication by uncommenting one
+# of the following. However, if this machine is a client, doing this will
+# prevent a succesful connection! (message "peer refused to authenticate").
+# So, only uncomment on a server.
+# "+pap" / "+chap" NUR AKTIVIEREN, WENN DIES EIN SERVER IST!!!
+#+pap
+#+chap
+
+# if you have problems with handshaking (no response for first
+# lcp-package) try to decrease the retry-cycle. Default is 3 sec,
+# try for example 2 sec:
+# lcp-restart 2
+            
+</PRE>
+<HR>
+</P>
+
+<H3><A NAME="ipppdAuth"></A> Authentifizierung beim ipppd                    </H3>
+
+<P>Der ipppd verhält sich bei der Benutzerauthentifizierung
+exakt genauso wie der pppd. Daher nur ein kurzer
+Abriss.</P>
+<P>Es stehen zwei Methoden zur Verfügung: PAP und CHAP.
+Meistens wird PAP angeboten über CHAP kann man 
+im <CODE>PPP-Howto</CODE> nachlesen.</P>
+<P>Die Benutzerdaten werden an zwei Stellen konfiguriert;
+als wird dem ipppd durch das Schlüsselword <CODE>user</CODE>
+mitgeteilt, welche User-Id dem gegnerischen PPP-Daemon
+angeboten werden soll. </P>
+<P>Als nächstes wird das Passwort selbst (in Klartext) in
+der Datei <CODE>/etc/ppp/pap-secrets</CODE> abgelegt.
+Diese Datei darf nur für root lesbar sein! Also
+<CODE>chmod 600 /etc/ppp/pap-secrets</CODE>.</P>
+<P>Für jeden verwendeten User wird eine Zeile eingetragen,
+z.B. sei der Username <CODE>suse</CODE> und Passwort <CODE>linux</CODE>:
+<HR>
+<PRE>
+# client        server  pw              iplist
+"suse"          *       "linux"
+            
+</PRE>
+<HR>
+</P>
+<P>Dies ist die einzige Stelle, wo der Username und das
+Passwort definiert ist (sein sollte).
+Der Benutzername muß nicht im System bekannt sein,
+zumindest besteht zwischen dem PAP (oder CHAP) Benutzernamen
+und dem Systembenutzer kein Zusammenhang.</P>
+<P>Nachdem der ipppd gestartet ist und ev. eine Route
+darüber definiert ist, wird bei Bedarf automatisch ein
+Wählvorgang ausgelöst. Manuell kann man dies auslösen
+durch <CODE>isdnctrl dial ippp0</CODE>.
+Meldungen werden über syslog nach <CODE>/var/log/messages</CODE>
+geschrieben.</P>
+
+<H3><A NAME="ipppdPars"></A> Welche Daten muß ich über den Zugang kennen?                    </H3>
+
+<P>Folgende Daten sollte man kennen, die meisten sollte der
+ISP zur Verfügung stellen.</P>
+<P>
+<DL>
+<DT><B>Protokoll</B><DD><P>Es sollte syncPPP sein.</P>
+
+<DT><B>Telefonnummer des ISP</B><DD><P>klar...</P>
+
+<DT><B>meine MSN</B><DD><P>Mit welcher meiner Telefonnummern möchte/muß ich wählen,
+siehe 
+<A HREF="EN-i4l-4.html#msnWelche">Was ist meine MSN?</A>.</P>
+
+<DT><B>IP-Nummern</B><DD><P>Wenn man feste IP-Nummern hat, gibt der ISP zumindest
+die persönlich an, die IP-Nummer des PtP (also die des
+ISP) kennt deswegen noch nicht unbedingt. In diesem
+Fall, gibt man <I>irgendeine</I> ein (wie bei dynamischen)
+und läßt eine Verbingung herstellen, damit sieht man
+die IP-Nummer, die man dann hier fest einträgt.</P>
+<P>Bei dynamischen IP-Nummern, trägt man <I>irgendwelche</I>
+ein, siehe 
+<A HREF="EN-i4l-6.html#dynIP">Probleme mit dynamischen IP-Nummern</A>.</P>
+
+<DT><B>Authentication-Typ</B><DD><P>PAP oder CHAP</P>
+
+<DT><B>Username, Passwort</B><DD><P>klar ...</P>
+
+<DT><B>Nameserver</B><DD><P>Sollte man vom ISP mitgeteilt bekommen. Ansonsten
+siehe 
+<A HREF="http://www.suse.de/Support/sdb/nonameserver.html">http://www.suse.de/Support/sdb/nonameserver.html</A></P>
+
+</DL>
+</P>
+<P>Mit folgenden weiteren Parametern, kann man die ISDN-Verbindung 
+steuern.
+<DL>
+<DT><B>Idle-Time</B><DD><P>Nach wie vielen Sekunden Inaktivität soll aufgelegt
+werden. Will man dieses Feature abstellen, kann man
+die Zeit auf <CODE>0</CODE> stellen.</P>
+<P>Hinweis: Diese Zeitangabe ist nicht exakt.</P>
+
+<DT><B>Maximale Wählversuche</B><DD><P>Wie oft soll gewählt werden, wenn der Gegner nicht
+abnimmt?</P>
+<P>Hinweis: Diese Anzahl gilt nicht, wenn es Hardwareprobleme
+gibt, zieht man z.B. das ISDN-Kabel, wird unendlich oft
+probiert.</P>
+<P>Hinweis: Diese Anzahl gilt nicht, wenn die Wählverbindung
+zustandekam, aber die PPP-Verbindung nicht aufgebaut werden
+konnte. Ist z.B. das Passwort falsch eingetragen, wird 
+immer wieder eine Verbindung aufgebaut, solange Pakete
+verschickt werden.</P>
+
+<DT><B>einkommende Telefonnumern</B><DD><P>In diesem Fall soll keiner die Verbindung von außen aufbauen
+dürfen, deshalb sollte man keine eingehende Telefonnummer
+angeben und die Option <CODE>secure</CODE> bzw.
+<CODE>Nur angegeben Nummern erlaubt</CODE> aktivieren.</P>
+
+<DT><B>Callback</B><DD><P>mehr dazu siehe in 
+<A HREF="file:/usr/doc/packages/doc/rc.config.i4l.add">file:/usr/doc/packages/doc/rc.config.i4l.add</A></P>
+</DL>
+</P>
+
+<H3><A NAME="pppSuSE"></A> PPP bei S.u.S.E. einrichten                    </H3>
+
+<P>Die Konfiguration wird in der Datei <CODE>/etc/rc.config</CODE>
+eingetragen (ausser Routing), dies kann manuell oder
+über YaST geschehen.</P>
+
+<H3>Konfiguration mit YaST:                </H3>
+
+<P>
+<UL>
+<LI> Menüpunkt <CODE>Administration des Systems</CODE>, 
+<CODE>Netzwerk konfigurieren</CODE> und <CODE>Netzwerk Grundkonfiguration</CODE>
+auswählen. </LI>
+<LI> Es erscheint eine Maske der konfigurierten
+Netzdevices, wähle ein freies aus (sofern es nicht schon
+<CODE>ippp0</CODE> gibt. Mit <CODE>F5</CODE> wählt man den Netzwerktyp aus,
+hier also <CODE>ISDN SyncPP</CODE>.</LI>
+<LI> Mit <CODE>F6</CODE> vergibt man die IP-Nummern 
+(siehe 
+<A HREF="EN-i4l-6.html#ipDynWelche">Welche IP-Nummer setze ich denn eigentlich?</A>
+und kann auch direkt das Default-Gateway angeben
+(siehe 
+<A HREF="EN-i4l-7.html#routing">Routing</A>).</LI>
+<LI> Mit <CODE>F8</CODE> werden nun die ISDN-relevanten Daten 
+eingetragen.
+Nachdem man das Device aktiviert hat, kann man es in
+der ISDN-Maske direkt hochfahren mit: <CODE>Starten</CODE>.</LI>
+</UL>
+</P>
+<P>Damit sind die rc.config-Variablen, die PPP-Options,
+die Passwortdatei und das Routing angepasst.</P>
+
+<H3>manuelle Konfiguration:                </H3>
+
+<P>Durch folgende Variablen in 
+<CODE>/etc/rc.config</CODE> wird eine syncPPP-Verbindung
+gesteuert, hier als echtes Bsp. (mit <CODE>_0</CODE>):
+<HR>
+<PRE>
+IPADDR_2="1.1.1.1"
+NETDEV_2="ippp0"
+IFCONFIG_2="1.1.1.1 pointopoint 193.102.150.13 up"
+I4L_IDLETIME_2="60"
+I4L_DIALMAX_2="5"
+I4L_LOCALMSN_2="7417559"
+I4L_REMOTE_OUT_2="52145922"
+I4L_REMOTE_IN_2=""
+I4L_ENCAP_2="syncppp"
+I4L_SECURE_2="on"
+                
+</PRE>
+<HR>
+
+Erklärung: die Bedeutung der Felder ist oben angegeben,
+in der <CODE>/etc/rc.config</CODE> sind auch vor den Feldern 
+entsprechende Kommentare.</P>
+<P>Es können beliebig viele Netzdevices definiert werden 
+(auch wenn per Default nur 4 angegeben sind), die jeweils
+durch eine Extension, z.B. <CODE>_2</CODE> gekennzeichnet werden.
+Dabei müssen nicht alle aktiv sein. Welche aktiviert
+werden sollen, wird in der Variablen <CODE>NETCONFIG</CODE>
+gesteuert, sollen z.B. <CODE>_0</CODE> und <CODE>_2</CODE> aktiv sein,
+setzt man:  <CODE>NETCONFIG="_0 _2"</CODE>.</P>
+<P>Als nächstes muß der ipppd konfiguriert werden, erstelle
+eine Datei <CODE>/etc/ppp/options.ippp0</CODE>
+(siehe 
+<A HREF="#optionsippp0">PPP-Optionen</A>) am besten in 
+dem Du
+<CODE>/etc/ppp/ioptions.YaST</CODE> kopierst.
+In der Optionsdatei, setzte den Usernamen und prüfe, ob das
+Device stimmt. 
+Dann trägst Du das Passwort passend zum Usernamen in
+<CODE>/etc/ppp/pap-secrets</CODE> ein.</P>
+<P>Zum manuellen Starten, siehe: 
+<A HREF="#ipppdStart">ipppd starten</A> </P>
+
+<H2><A NAME="syncPPPtrouble"></A> <A NAME="ss5.4">5.4</A> <A HREF="EN-i4l.html#toc5.4">Probleme beim Verbindungsaufbau, Troubleshooting.</A>
+            </H2>
+
+
+<P>Checkliste:</P>
+<P>
+<OL>
+<LI> Wurde der ipppd überhaupt gestartet?
+<P>Kontrolliere mit <CODE>ps ax|grep ipppd</CODE> ob einer
+läuft bzw. wieviele laufen.</P>
+<P>Kontrolliere in <CODE>/var/log/messages</CODE> die Startmeldungen,
+z.B.:
+<HR>
+<PRE>
+syslog: info: no CHAP secret entry for this user! 
+ipppd[536]: Found 1 devices: /dev/ippp0, 
+ipppd[540]: ipppd i2.2.9 (isdn4linux version of pppd by MH) started
+ipppd[540]: init_unit: 0 
+ipppd[540]: Connect[0]: /dev/ippp0, fd: 8
+            
+</PRE>
+<HR>
+</P>
+</LI>
+<LI> Stimmen die Benutzerdaten?
+<P>Der ipppd prüft schon beim Start, mit welchen Usernamen
+gearbeitet wird (<CODE>user suse</CODE>), zu diesem Namen
+das entprechende Passwort gelesen. Klappt das nicht,
+wird eine Meldung ausgegen, z.B.
+<HR>
+<PRE>
+Apr  9 20:32:17 glen syslog: info: no PAP secret entry for this user! 
+            
+</PRE>
+<HR>
+
+In diesem Fall wird eine Einwahl mittels PAP nicht 
+funktionieren, die 12 Pfennige kann man sich also sparen.
+Ursache ist meist ein Tippfehler beim Benutzernamen oder
+falsche Permisssions der pap-secrets.</P>
+<P>Analoges gilt für CHAP.</P>
+
+</LI>
+<LI> Wird überhaupt eine Verbindung aufgebaut?
+<P>Sobald die Gegenstelle abnimmt (und damit Kosten
+entstehen) erscheint eine <CODE>connect</CODE>-Meldung.</P>
+<P>Wird keine Verbindung aufgebaut, gibt es vermutlich
+eine <CODE>cause</CODE>-Meldung. Siehe: 
+<A HREF="EN-i4l-4.html#cause">Cause Meldungen</A>.</P>
+<P>Erscheinen nur <CODE>dialing</CODE>-Meldungen, aber sonst nichts,
+liegt es an der Hardware oder am Hardware-Modul,
+siehe 
+<A HREF="EN-i4l-3.html#hwTesten">Hardware testen</A> und 
+<A HREF="EN-i4l-13.html#installation">Installation</A>.</P>
+
+</LI>
+<LI> Klappt die Einwahl?
+<P>Bei Erfolgreicher Einwahl erscheinen Meldungen über die 
+IP-Nummern, z.B.:
+<HR>
+<PRE>
+ipppd[540]: local  IP address 149.228.142.59
+ipppd[540]: remote IP address 193.102.150.13
+            
+</PRE>
+<HR>
+
+Sieht man diese Meldungen, dann Glückwunsch! Der
+Gegner wird ab jetzt zum Partner.</P>
+
+</LI>
+<LI> <CODE>select: Bad file number</CODE>
+<P>Direkt nach der Ausgabe der IP-Nummern ercheint:
+<HR>
+<PRE>
+ipppd[353]: select: Bad file number
+ipppd[353]: Couldn't restore device fd flags: Bad file number
+ipppd[353]: Exit.
+            
+</PRE>
+<HR>
+</P>
+<P>Was hat es damit auf sich? Zunächst einmal: die Verbindung
+ist trotz allem aufgebaut.</P>
+<P>Ursache: der ipppd startet beim (Dis-) Connect das
+Script <CODE>/etc/ppp/ip-up</CODE> (<CODE>ip-down</CODE>). 
+Aufgrund eines kleinen Fehlers im offiziellen ipppd
+(behoben in der CVS-Version und ab S.u.S.E. 5.2) ist die
+Abprüfung auf Ausführbarkeit fehlerhaft, woraufhin
+trotzdem versucht wird das Script zu starten. 
+Nach der Ferhlermeldung passiert genau nichts.#</P>
+<P>Allerdings sollte die Meldung trotzdem beachtet werden,
+denn da wir dynamische IP-Nummer benutzen, muß das
+Routing angepasst werden, was genau über diese Scripte
+geschehen soll, die hier nicht vorhanden sind.</P>
+
+</LI>
+<LI> <B>Die Einwahl klappt nicht:</B>
+<P>Wenn die Einwahl nicht klappt, sieht man in 
+<CODE>/var/log/messages</CODE> meist nur, daß die Gegenstelle
+aufgelegt hat, um den Grund dafür zu ermitteln, braucht man
+mehr Meldungen vom LCP. Dazu trägt man in
+<CODE>/etc/ppp/ioptions</CODE> folgendes ein:
+<HR>
+<PRE>
+# Set 'debug' to create a lot of information in /var/log/messages
+debug
+# Set '+pwlog' for logging passwords in /var/log/messages
+#+pwlog
+            
+</PRE>
+<HR>
+
+und startet den ipppd neu.
+Durch <CODE>debug</CODE> werden die LCP-Messages ausgegeben, 
+durch <CODE>+pwlog</CODE> kann man sich zusätzlich das
+verschickte Passwort angeben lassen - letzteres ist nur
+empfohlen, wenn ansonsten alles richtig scheint, denn
+wenn jemand fremndes Zugriff auf <CODE>/var/log/messages</CODE> 
+bekommt...</P>
+<P>Häufige Ursachen:
+<UL>
+<LI> Username/Passwort falsch:
+<P>in diesem Fall wird etwas in dieser Art protokolliert,
+<HR>
+<PRE>
+ipppd[10314]: sent [0][PAP AuthReq id=0x1 user="kfr" password="falsch"]
+ipppd[10314]: rcvd [0][PAP AuthNak id=0x1msg=""]
+ipppd[10314]: Remote message: 
+ipppd[10314]: PAP authentication failed
+                
+</PRE>
+<HR>
+
+wobei es richtig so aussehen sollte:
+<HR>
+<PRE>
+ipppd[7840]: sent [0][PAP AuthReq id=0x1 user="kfr" password="isdnworkshop"]
+ipppd[7840]: rcvd [0][PAP AuthAck id=0x1msg=""]
+ipppd[7840]: Remote message: 
+ipppd[7840]: bundle, he: 0 we: 0
+                
+</PRE>
+<HR>
+</P>
+
+</LI>
+<LI> LCP-Messages werden nicht beantwortet:
+<P>Normalerweise LCP-Messages gesendet und empfangen um das
+Handshaking durchzuführen (send, rcvd):
+<HR>
+<PRE>
+ipppd[10314]: sent [0][LCP ConfReq id=0x1 &lt;mru 1524> &lt;magic0x93ade903>]
+ipppd[10314]: rcvd [0][LCP ConfReq id=0x1 &lt;mru 1524> &lt;auth pap> 
+&lt;MPdiscr: 0x3 [ 00 c0 7b 70 d5 fa ]>]
+                
+</PRE>
+<HR>
+
+Wenn die Gegenseite nicht antwortet, kann es sein, daß
+sie nicht schnell genug hochkommt (<CODE>lcp-restart</CODE>
+erhöhen), oder kein (sync-) PPP-Daemon dort läuft.
+Ist dies nicht nur ein temporäres Problem, ist entweder
+die Nummer falsch, oder der ISP bietet tatsächlich kein
+syncPPP an.</P>
+<P>Im letzteren Fall muß man asyncPPP fahren, siehe 
+<A HREF="http://www.suse.de/Support/sdb/ppp_async.html">http://www.suse.de/Support/sdb/ppp_async.html</A></P>
+</LI>
+<LI> Noch während der LCP-Messages legt die Gegenstelle
+auf.
+<P>Hierbei sollte man am Protokoll erkennen welche
+Optionen angefordert oder abgewiesen werden. Danach
+bleibt einem nur der mühsame Weg, diese Optionen
+zu setzen/deaktivieren, siehe Bsp-Optionsfile
+und <CODE>man ipppd</CODE>.</P>
+</LI>
+<LI> <CODE>peer refused to authenticate</CODE>
+<P>Man hat selbst <CODE>+pap</CODE> oder <CODE>+chap</CODE> angegeben.
+Ein häufiges Mißverständnis: diese Optionen geben,
+an, daß man selber der Authetication-Server sein
+möchte, nicht daß man PAP oder CHAP benutzen möchte;
+letzteres geschieht nur implizit durch Angabe <CODE>user</CODE>,
+<CODE>name</CODE> und den Eintragungen in
+<CODE>pap-secrets</CODE> bzw. <CODE>chap-secrets</CODE>.</P>
+
+</LI>
+</UL>
+</P>
+</LI>
+<LI> <B>Die Einwahl klappt, weitere Tests:</B>
+<P>
+<UL>
+<LI> Zunächst vergleiche man die Ausgabe des ipppd mit
+der Ausgabe von <CODE>ifconfig</CODE>. Die IP-Nummern
+müssen übereinstimmen (und gegenüber der Grundeinstellung
+verändert sein).</LI>
+<LI> Ist das Routing richtig gesetzt? Prüfe <CODE>route -n</CODE>.
+Siehe 
+<A HREF="EN-i4l-7.html#routing">Routing</A>. 
+Es muß eine Hostroute für den
+PtP-Partner gesetzt sein.</LI>
+<LI> Versuche die Gegenstelle anzupingen, 
+z.B. <CODE>ping 193.102.150.13</CODE>.</LI>
+<LI> Warte, bis die Verbindung automatisch abbricht und
+prüfe die Routingtabelle erneut.</LI>
+<LI>beobachte, ob wieder automatische gewählt wird.    </LI>
+</UL>
+</P>
+</LI>
+</OL>
+</P>
+
+<H2><A NAME="uebungPPP"></A> <A NAME="ss5.5">5.5</A> <A HREF="EN-i4l.html#toc5.5">Übung: syncPPP-Verbindung herstellen</A>
+            </H2>
+
+<P>Ziel: PPP-Verbindung aufbauen und testen (kein Routing)
+<OL>
+<LI> Stelle eine Verbindung zu einem syncPPP-Server her.
+Wenn Du keinen anderen kennst, benutze den S.u.S.E. 
+ISDN-Testrechner mit folgenden Daten:
+<UL>
+<LI> Protokoll: syncPPP</LI>
+<LI> Telefon: +49 911 3206726</LI>
+<LI> Username: suse</LI>
+<LI> Passwort: linux</LI>
+<LI> IP-Nummer Server: 192.168.0.1</LI>
+<LI> IP-Nummer Client: 192.168.0.99</LI>
+</UL>
+</LI>
+<LI> Gehe die Checkliste durch und führe die dortigen Tests
+aus, siehe 
+<A HREF="#syncPPPtrouble">syncPPP Troubleshooting</A></LI>
+<LI> Prüfe die IP-Nummer(n) des Servers, wenn diese fest ist,
+ändere die Konfiguration entsprechend.</LI>
+</OL>
+</P>
+
+
+<HR>
+<A HREF="EN-i4l-6.html">Next</A>
+<A HREF="EN-i4l-4.html">Previous</A>
+<A HREF="EN-i4l.html#toc5">Contents</A>
+</BODY>
+</HTML>

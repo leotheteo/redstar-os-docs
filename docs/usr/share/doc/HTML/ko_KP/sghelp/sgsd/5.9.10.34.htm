@@ -1,0 +1,145 @@
+﻿<html dir='ltr'>
+	<head>
+		<META http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+		<title>KURT</title>
+		<link rel='stylesheet' type='text/css' href='../css/main.css'/>
+		<script type='text/javascript' language='Javascript' src='../js/mexpcol.js'></script>
+		<script type='text/javascript' language='JavaScript' src='../js/glossary.js'></script>
+	</head>
+	<body>
+		<h1>&nbsp;<img align="absbottom" src="../image/external_images/crystal/svtools/res/new_doc.png"/>&nbsp;KURT</h1>
+		<p id='ExpandAllLine' class='ExpFav'>
+			<a href='#' onClick='ExpandAll()' onKeyPress='ExpandAll()' class='DropDown'>
+				<img id='picHeader' border='0' src='../image/image/common/expandtri.gif' alt='모두 표시'>
+				<span id='ExpandAll'>모두 표시</span>
+			</a>
+		</p>
+		<p><b class="bterm">참고항목</b>&emsp;
+			<a href="5.9.10.1.htm">통계함수목록</a>,
+			<a href="5.9.10.60.htm">SKEW</a>,
+			<a href="5.9.10.64.htm">STDEV</a>,
+			<a href="5.9.10.66.htm">STDEVP</a>,
+			<a href="5.9.10.73.htm">VAR</a>,
+			<a href="5.9.10.75.htm">VARP</a>
+		</p>
+		<p>분포의 뾰족도를 구합니다.</p>
+		<p><b class="bterm">문법:&emsp;&emsp;		KURT(수값 1,수값 2,...)</b></p>
+		<table>
+			<tr>
+				<th>인수명</th>
+				<th>설명</th>
+			</tr>
+			<tr>
+				<td>수값 1,수값 2,...</td>
+				<td>표본집단을 나타내는 1부터 30까지의 수값인수입니다. 단일배렬 또는 배렬에 대한 참조를 사용할수도 있습니다.</td>
+			</tr>
+		</table>
+		<p><b class="bterm">주의</b></p>
+			<ul>
+				<li>인수는 수자나 수자를 포함한 이름, 배렬, 참조범위 등이여야 합니다.</li>
+				<li>배렬이나 참조인수에 본문이나 론리값, 빈 세포가 들어있는 경우에는 그러한 값이 무시되지만 0값이 들어있는 세포는 포함됩니다.</li>
+				<li>인수의 개수가 네개미만이거나 표본의 표준편차가 0이면 #DIV/0! 오유값이 반환됩니다.</li>
+				<li>뾰족도는 다음과 같이 정의합니다.
+					<p><img border='0' src='../image/image/sgsd/formula-58.gif' alt='표시'></p>
+					<p>여기서 x1, x2,..는 수값이고 s는 표본의 표준편차입니다.</p>
+				</li>
+			</ul>
+		<p><b class="bterm">실례</b></p>
+			<p><a href="1.5.1.htm">실례의 리용방법</a>을 참고하십시오.</p>
+			<table>
+				<tr>
+					<td>
+						<table>
+							<tr>
+								<td class="noborder">&nbsp;
+								</td>
+							</tr>
+							<tr>
+								<th>1</th>
+							</tr>
+							<tr>
+								<th>2</th>
+							</tr>
+							<tr>
+								<th>3</th>
+							</tr>
+							<tr>
+								<th>4</th>
+							</tr>
+							<tr>
+								<th>5</th>
+							</tr>
+							<tr>
+								<th>6</th>
+							</tr>
+							<tr>
+								<th>7</th>
+							</tr>
+							<tr>
+								<th>8</th>
+							</tr>
+							<tr>
+								<th>9</th>
+							</tr>
+							<tr>
+								<th>10</th>
+							</tr>
+							<tr>
+								<th>11</th>
+							</tr>
+						</table>
+					</td>
+					<td>
+						<table>
+							<tr>
+								<th>A</th>
+							</tr>
+							<tr>
+								<th>자료</th>
+							</tr>
+							<tr>
+								<td>3</td>
+							</tr>
+							<tr>
+								<td>4</td>
+							</tr>
+							<tr>
+								<td>5</td>
+							</tr>
+							<tr>
+								<td>2</td>
+							</tr>
+							<tr>
+								<td>3</td>
+							</tr>
+							<tr>
+								<td>4</td>
+							</tr>
+							<tr>
+								<td>5</td>
+							</tr>
+							<tr>
+								<td>6</td>
+							</tr>
+							<tr>
+								<td>4</td>
+							</tr>
+							<tr>
+								<td>7</td>
+							</tr>
+							<tr>
+								<th>수식</th>
+								<th>설명(결과)</th>
+							</tr>
+							<tr>
+								<td>=KURT(A2:A11)</td>
+								<td>우에 있는 자료집합의 뾰족도입니다. (-0.15)</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+		<script type="text/javascript" language="Javascript">footerView()</script>
+	
+</body>
+</html>				

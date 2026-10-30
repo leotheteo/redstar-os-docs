@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="application/vnd.lotus-1-2-3">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>Lotus 1-2-3 spreadsheet</comment>
+  <alias type="application/x-lotus123"/>
+  <alias type="application/x-123"/>
+  <alias type="application/lotus123"/>
+  <alias type="application/wk1"/>
+</mime-type>

@@ -1,0 +1,183 @@
+﻿<html dir='ltr'>
+	<head>
+		<META http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+		<title>수자서식코드</title>
+		<link rel='stylesheet' type='text/css' href='../css/main.css'/>
+		<script type='text/javascript' language='Javascript' src='../js/mexpcol.js'></script>
+		<script type='text/javascript' language='JavaScript' src='../js/glossary.js'></script>
+	</head>
+	<body>
+		<h1>&nbsp;<img align="absbottom" src="../image/external_images/crystal/svtools/res/new_doc.png"/>&nbsp;수자서식코드</h1>
+		<p id='ExpandAllLine' class='ExpFav'>
+			<a href='#' onClick='ExpandAll()' onKeyPress='ExpandAll()' class='DropDown'>
+				<img id='picHeader' border='0' src='../image/image/common/expandtri.gif' alt='모두 표시'>
+				<span id='ExpandAll'>모두 표시</span>
+			</a>
+		</p>
+		<h2>본문과 간격</h2>
+			<p><b class="bterm">본문과 수자를 함께 표시:</b>   본문과 수자를 한 세포에 표시하려면 본문문자를 큰 옮김표(" ")로 묶거나 수자와 함께 표시할 본문이 단일문자인 경우 그앞에 거꿀빗선(\)을 입력합니다. 
+				서식코드의 해당 구역에 문자를 포함시킵니다.
+			</p>
+			<p><b class="bterm">본문입력을 위한 구역포함:</b>   본문을 포함하는 경우 본문구역은 항상 수자서식의 마지막구역이 됩니다. 세포에 입력된 본문을 표시할 위치의 구역에 @ 문자를 포함시킵니다. 
+				입력된 본문과 함께 특정한 본문문자를 항상 표시하려면 <b class="bterm">"총액 "@</b>과 같이 큰 옮김표(" ")로 추가본문을 묶습니다.
+				서식에 본문구역이 포함되여있지 않으면 입력하는 본문에 서식이 적용되지 않습니다.
+			</p>
+			<p><b class="bterm">공백 추가:</b>   수자서식에서 문자의 너비와 같은 크기의 공백을 만들려면 해당 문자앞에 밑줄(_)을 지정합니다. 
+				례를 들어 (_))와 같이 밑줄과 닫는 괄호를 지정하면 정수가 괄호안에서 부수와 정확하게 줄이 맞춰집니다.
+			</p>
+		<h2>소수점자리수, 공백, 색, 조건</h2>
+			<p><b class="bterm">소수점자리수와 유효자리수:</b>   분수나 소수점이 있는 수자에 서식을 지정하려면 구역에 다음과 같은 자리표시자를 포함합니다. 
+				소수점오른쪽의 자리수가 서식에 지정된 자리표시자보다 많은 수자는 지정된 자리표시자만큼 소수점자리수가 반올림됩니다. 
+				소수점 왼쪽의 자리수가 지정된 자리표시자보다 많으면 남는 자리수도 그대로 표시됩니다. 
+				서식에서 소수점왼쪽에 수자기호(#)만 있으면 1보다 작은 수자는 제일 앞에 0이 표시되지 않고 소수점부터 표시됩니다.
+			</p>
+			<p>#은 유효자리수만 나타내고 무효한 0은 나타내지 않습니다.</p>
+			<p>서식의 0의 수보다 자리수가 적은 수자에서 0(령)은 무효한 0을 나타냅니다.</p>
+			<p>?는 소수점의 왼쪽이나 오른쪽에 있는 무효한 0 대신 공백을 추가하여 소수점을 맞춥니다. 자리수가 다른 분수에도 ?를 사용할수 있습니다.</p>
+			<table>
+				<tr>
+					<th>표시할 서식</th>
+					<th>서식코드</th>
+				</tr>
+				<tr>
+					<td>1 234.59를 1 234.6으로</td>
+					<td># ###.#</td>
+				</tr>
+				<tr>
+					<td>8.9를 8.900으로</td>
+					<td>#.000</td>
+				</tr>
+				<tr>
+					<td>0.631을 0.6으로</td>
+					<td>0.#</td>
+				</tr>
+				<tr>
+					<td>12를 12.0으로, 1234.568을 1234.57로</td>
+					<td>#.0#</td>
+				</tr>
+				<tr>
+					<td>44.398, 102.65, 2.8의 소수자리수를 맞춰 표시</td>
+					<td>???.???</td>
+				</tr>
+				<tr>
+					<td>5.25를 5 1/4로, 5.3을 5 3/10으로 빗선기호를 맞춰 표시</td>
+					<td># ???/???</td>
+				</tr>
+			</table>
+			<p><b class="bterm">천단위구분기호:</b>   천단위구분기호로 공백을 사용하거나 천단위로 수자를 구분하려면 수자서식에 공백을 사용합니다.</p>
+			<table>
+				<tr>
+					<th>표시할 서식</th>
+					<th>서식코드</th>
+				</tr>
+				<tr>
+					<td>12000을 12 000으로</td>
+					<td># ###</td>
+				</tr>
+			</table>
+			<p><b class="bterm">색:</b>   서식구역에 색을 설정하려면 해당 구역에 다음과 같은 여러가지 색중 하나의 이름을 꺾쇠괄호로 묶어서 입력합니다. 구역에서 가장 먼저 지정하는 항목은 색코드여야 합니다.</p>
+			<ol><p>[Black], [Blue], [Cyan], [Green], [Margenta], [Red], [White], [Yellow]</p></ol>
+		<p>백분률, 과학의 표기</b></p>
+			<p><b class="bterm">백분률:</b>   수자를 백분률로 표시하려면 수자서식에 백분률기호(%)를 포함합니다. 례를 들어 .08은 8%로 표시되고 2.8은 280%로 표시됩니다.</p>
+			<p><b class="bterm">과학표기:</b>   수자를 과학형식으로 표시하려면 과학을 표시하여야 하는 구역에서  해당한 과학코드를 사용합니다. 
+				서식에서 지수코드의 오른쪽에 0(령)이나 수자기호(#)가 있으면 그 수자에 《E》나 《e》가 삽입되여 지수형식으로 표시됩니다. 
+				코드오른쪽에 있는 0이나 수자기호의 개수에 따라 과학의 자리수가 결정됩니다. 
+			</p>
+		<h2>날자와 시간</h2>
+			<p><b class="bterm">년, 월, 일:</b>   《H》나 《HH》 코드 다음에 또는 《SS》 코드 전에 《M》을 사용하면 월 대신 분이 표시됩니다.</p>
+			<table>
+				<tr>
+					<th>표시할 서식</th>
+					<th>서식코드</th>
+				</tr>
+				<tr>
+					<td>월을 1~12로 표시</td>
+					<td>M</td>
+				</tr>
+				<tr>
+					<td>월을 01~12로 표시</td>
+					<td>MM</td>
+				</tr>
+				<tr>
+					<td>일을 1~31로 표시</td>
+					<td>D</td>
+				</tr>
+				<tr>
+					<td>일을 01~31로 표시</td>
+					<td>DD</td>
+				</tr>
+				<tr>
+					<td>요일을 일-토로 표시</td>
+					<td>DDD</td>
+				</tr>
+				<tr>
+					<td>요일을 일요일~토요일로 표시</td>
+					<td>DDDD</td>
+				</tr>
+				<tr>
+					<td>년도를 00~99로 표시</td>
+					<td>YY</td>
+				</tr>
+				<tr>
+					<td>년도를 1900~9999로 표시</td>
+					<td>YYYY</td>
+				</tr>
+			</table>
+			<p><b class="bterm">시, 분, 초</b></p>
+			<table>
+				<tr>
+					<th>표시할 서식</th>
+					<th>서식코드</th>
+				</tr>
+				<tr>
+					<td>시를 0~23으로 표시</td>
+					<td>H</td>
+				</tr>
+				<tr>
+					<td>시를 00~23으로 표시</td>
+					<td>HH</td>
+				</tr>
+				<tr>
+					<td>분을 0~59로 표시</td>
+					<td>M</td>
+				</tr>
+				<tr>
+					<td>분을 00~59로 표시</td>
+					<td>MM</td>
+				</tr>
+				<tr>
+					<td>초를 0~59로 표시</td>
+					<td>S</td>
+				</tr>
+				<tr>
+					<td>초를 00~59로 표시</td>
+					<td>SS</td>
+				</tr>
+				<tr>
+					<td>시간을 4 오전으로 표시</td>
+					<td>H AM/PM</td>
+				</tr>
+				<tr>
+					<td>시간을 4:36 오후로 표시</td>
+					<td>H:MM AM/PM</td>
+				</tr>
+				<tr>
+					<td>경과된 시간을 시로 표시(례: 25.02)</td>
+					<td>[H]:MM</td>
+				</tr>
+				<tr>
+					<td>경과된 시간을 분으로 표시(례: 63:46)</td>
+					<td>[MM]:SS</td>
+				</tr>
+				<tr>
+					<td>경과된 시간을 초로 표시</td>
+					<td>[SS]</td>
+				</tr>
+			</table>
+			<p><b class="bterm">AM과 PM:</b>   서식에 AM이나 PM이 있으면 시간을 12시간제로 표현합니다. 여기서 《AM》은 자정부터 정오까지의 시간 즉 오전을 표시하며 《PM》은 정오부터 자정까지의 시간 즉 오후를 표시합니다. 
+				그외의 경우는 24시간제를 표시합니다. 《M》이나 《MM》 코드는 《H》나 《HH》 코드 다음이나 《SS》 코드 앞에 와야 합니다. 그렇지 않으면 분이 아닌 월이 표시됩니다.
+			</p>
+		<script type="text/javascript" language="Javascript">footerView()</script>
+	
+</body>
+</html>

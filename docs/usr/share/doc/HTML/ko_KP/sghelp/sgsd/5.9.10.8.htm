@@ -1,0 +1,122 @@
+﻿<html dir='ltr'>
+	<head>
+		<META http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+		<title>BINOMDIST</title>
+		<link rel='stylesheet' type='text/css' href='../css/main.css'/>
+		<script type='text/javascript' language='Javascript' src='../js/mexpcol.js'></script>
+		<script type='text/javascript' language='JavaScript' src='../js/glossary.js'></script>
+	</head>
+	<body>
+		<p id='ExpandAllLine' class='ExpFav'>
+			<a href='#' onClick='ExpandAll()' onKeyPress='ExpandAll()' class='DropDown'>
+				<img id='picHeader' border='0' src='../image/image/common/expandtri.gif' alt='모두 표시'>
+				<span id='ExpandAll'>모두 표시</span>
+			</a>
+		</p>
+		<h1>&nbsp;<img align="absbottom" src="../image/external_images/crystal/svtools/res/new_doc.png"/>&nbsp;BINOMDIST</h1>
+		<p><b class="bterm">참고항목</b>&emsp;
+			<a href="5.9.10.1.htm">통계함수목록</a>,
+			<a href="5.9.8.13.htm">COMBIN</a>,
+			<a href="5.9.10.17.htm">CRITBINOM</a>,
+			<a href="5.9.8.25.htm">FACT</a>,
+			<a href="5.9.10.32.htm">HYPGEOMDIST</a>,
+			<a href="5.9.10.44.htm">NEGBINOMDIST</a>,
+			<a href="5.9.10.52.htm">PERMUT</a>,
+			<a href="5.9.10.56.htm">PROB</a>
+		</p>
+		<p>2항분포값을 구합니다.</p>
+		<p><b class="bterm">문법:&emsp;&emsp;		BINOMDIST(성공회수,시행회수,확률,류형)</b></p>
+		<table>
+			<tr>
+				<th width="5%">인수명</th>
+				<th>설명</th>
+			</tr>
+			<tr>
+				<td>성공회수</td>
+				<td>시행중 성공회수입니다.</td>
+			</tr>
+			<tr>
+				<td>시행회수</td>
+				<td>총 시행회수입니다.</td>
+			</tr>
+			<tr>
+				<td>확률</td>
+				<td>시행중 성공할 확률입니다.</td>
+			</tr>
+			<tr>
+				<td>류형</td>
+				<td>적분류형입니다. 함수류형을 결정하는 론리값으로서 <b class="bterm">류형</b>이 1이면 루적분포함수의 값 즉 많아야 <b class="bterm">성공회수</b>회 성공할 확률을 구하고 1이면 확률 밀도 함수의 값 즉 <b class="bterm">성공회수</b>회 성공할 확률을 구합니다.</td>
+			</tr>
+		</table>
+		<p><b class="bterm">주의</b></p>
+			<ul>
+				<li><b class="bterm">성공회수</b>와 <b class="bterm">시행회수</b>는 소수점이하를 잘라서 옹근수로 변환합니다.</li>
+				<li><b class="bterm">성공회수</b>, <b class="bterm">시행회수</b> 또는 <b class="bterm">확률</b>이 수자가 아니면 <b class="bterm">오유:[오유번호]</b>를 반환합니다.</li>
+				<li><b class="bterm">성공회수</b> < 0이거나 <b class="bterm">성공회수</b> > <b class="bterm">시행회수</b>이면 <b class="bterm">오유:[오유번호]</b>를 반환합니다.</li>
+				<li><b class="bterm">확률</b> < 0이거나 <b class="bterm">확률</b> > 1이면 <b class="bterm">오유:[오유번호]</b>를 반환합니다.</li>
+				<li>2항확률 밀도함수식은 다음과 같습니다.
+					<P><img border='0' src='../image/image/sgsd/formula-37.gif' alt='표시'></P>
+				</li>
+			</ul>
+		<p><b class="bterm">실례</b></p>
+			<p><a href="1.5.1.htm">실례의 리용방법</a>을 참고하십시오.</p>
+			<table>
+				<tr>
+					<td>
+						<table>
+							<tr>
+								<td class="noborder">&nbsp;
+								</td>
+							</tr>
+							<tr>
+								<th>1</th>
+							</tr>
+							<tr>
+								<th>2</th>
+							</tr>
+							<tr>
+								<th>3</th>
+							</tr>
+							<tr>
+								<th>4</th>
+							</tr>
+						</table>
+					</td>
+					<td>
+						<table>
+							<tr>
+								<th>A</th>
+								<th>B</th>
+							</tr>
+							<tr>
+								<th>자료</th>
+								<th>설명</th>
+							</tr>
+							<tr>
+								<td>6</td>
+								<td>성공회수입니다.</td>
+							</tr>
+							<tr>
+								<td>10</td>
+								<td>독립 시행회수입니다.</td>
+							</tr>
+							<tr>
+								<td>0.5</td>
+								<td>각 시행에서 성공확률입니다.</td>
+							</tr>
+							<tr>
+								<th>수식</th>
+								<th>설명(결과)</th>
+							</tr>
+							<tr>
+								<td>=BINOMDIST(A2,A3,A4,0)</td>
+								<td>10번 시행하여 정확히 6번 성공할 확률입니다. (0.21)</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+		<script type="text/javascript" language="Javascript">footerView()</script>
+	
+</body>
+</html>				

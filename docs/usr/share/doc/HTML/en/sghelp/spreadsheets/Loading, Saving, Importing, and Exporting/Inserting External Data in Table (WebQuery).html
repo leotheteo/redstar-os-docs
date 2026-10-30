@@ -1,0 +1,100 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+	<TITLE></TITLE>
+	<META NAME="GENERATOR" CONTENT="《Sogwang 3.0》  (Linux)">
+	<META NAME="CREATED" CONTENT="20091205;10241300">
+	<META NAME="CHANGED" CONTENT="20091205;11094900">
+	<STYLE TYPE="text/css">
+	<!--
+		H2 { margin-bottom: 0.18cm; font-family: "Bitstream Vera Sans", "Arial", "Helvetica", "Lucida", "Geneva", "Helmet", sans-serif, "Andale Sans UI", "Arial Unicode MS", "Lucida Sans Unicode", "Tahoma"; font-size: 14pt }
+		P.listitem { font-family: "Bitstream Vera Sans", "Arial", "Helvetica", "Lucida", "Geneva", "Helmet", sans-serif, "Andale Sans UI", "Arial Unicode MS", "Lucida Sans Unicode", "Tahoma" }
+		P.related { margin-top: 0.71cm; margin-bottom: 0.05cm; border-top: 1px solid #000000; border-bottom: none; border-left: none; border-right: none; padding-top: 0.05cm; padding-bottom: 0cm; padding-left: 0cm; padding-right: 0cm; font-weight: bold }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="ko-KP" DIR="LTR"><DIV style="margin-left: 25">
+<H1><A NAME="bm_id3154346"></A><A NAME="webquery"></A><FONT FACE="Thorndale, serif"><SPAN LANG="en-US">Inserting
+External Data in Table (WebQuery) </SPAN></FONT>
+</H1>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">With the
+help of the <B>Web Page Query (SogwangCalc)</B>
+import filter, you can insert tables from HTML documents in a Calc
+spreadsheet.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">You can
+use the same method to insert ranges defined by name from a Calc or
+Microsoft Excel spreadsheet.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">The
+following insert methods are available:</SPAN></FONT></P>
+<H2><SPAN LANG="en-US">Inserting by Dialog</SPAN></H2>
+<OL>
+	<LI><P CLASS="listitem"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Set the cell cursor at
+	the cell where the new content will be inserted.</SPAN></FONT></P>
+	<LI><P CLASS="listitem"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Choose <B>Insert - Link
+	to External Data</B>. This opens the <A HREF="../Command and Menu Reference/Menus/Insert/Link to External Data.html">External
+	Data</A> dialog.</SPAN></FONT></P>
+	<LI><P CLASS="listitem"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Enter the URL of the HTML
+	document or the name of the spreadsheet. Press Enter when finished.
+	Click the <B>...</B> button to open a file selection dialog.</SPAN></FONT></P>
+	<LI><P CLASS="listitem"><FONT FACE="청봉, serif"><SPAN LANG="en-US">In the large list box of
+	the dialog, select the named ranges or tables you want to insert.</SPAN></FONT></P>
+	<LI><P CLASS="listitem"><FONT FACE="청봉, serif"><SPAN LANG="en-US">You can also specify that
+	the ranges or tables are updated every n seconds.</SPAN></FONT></P>
+</OL>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">The
+import filter can create names for cell ranges on the fly. As much
+formatting as possible is retained, while the filter intentionally
+does not load any images.</SPAN></FONT></P>
+<H2><SPAN LANG="en-US">Inserting by Navigator</SPAN></H2>
+<OL>
+	<LI><P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Open
+	two documents: the </SPAN></FONT><FONT FACE="청봉, serif"><SPAN LANG="en-US">Sogwang Calc
+	spreadsheet in which the external data is to be inserted (target
+	document) and the document from which the external data derives
+	(source document).</SPAN></FONT></P>
+	<LI><P><FONT FACE="청봉, serif"><SPAN LANG="en-US">In
+	the target document open the Navigator.</SPAN></FONT></P>
+	<LI><P><FONT FACE="청봉, serif"><SPAN LANG="en-US">In
+	the lower combo box of the Navigator select the source document. The
+	Navigator now shows the range names and database ranges or the
+	tables contained in the source document.</SPAN></FONT></P>
+	<LI><P><FONT FACE="청봉, serif"><SPAN LANG="en-US">In
+	the Navigator select the <B>Insert as link</B> drag mode 
+	<IMG SRC="../../Image/sc20238.png" NAME="graphics1" ALT="Icon" ALIGN=BOTTOM WIDTH=16 HEIGHT=16 BORDER=0>.</SPAN></FONT></P>
+	<LI><P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Drag
+	the desired external data from the Navigator into the target
+	document.</SPAN></FONT></P>
+</OL>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">If you
+have loaded an HTML document with the <B>Web Page Query</B> filter as
+the source document, you will find the tables in the Navigator, named
+continuously from &quot;HTML_table1&quot; onwards, and also two range
+names that have been created:</SPAN></FONT></P>
+<UL>
+	<LI><P CLASS="listitem" STYLE="margin-top: 0.04cm; margin-bottom: 0.04cm"><FONT FACE="청봉, serif">
+	<SPAN LANG="en-US">HTML_all
+	- designates the entire document</SPAN></FONT></P>
+	<LI><P CLASS="listitem" STYLE="margin-top: 0.04cm; margin-bottom: 0.04cm"><FONT FACE="청봉, serif">
+	<SPAN LANG="en-US">HTML_tables
+	- designates all HTML tables in the document</SPAN></FONT></P>
+</UL>
+<H2><SPAN LANG="en-US">Editing the external data</SPAN></H2>
+<UL>
+	<LI><P CLASS="listitem"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Open <B>Edit - Links</B>.
+	Here you can edit the link to the external data.</SPAN></FONT></P>
+</UL>
+<P CLASS="related"><A NAME="relatedtopics"></A><A NAME="related"></A><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Related
+Topics</B> </SPAN></FONT>
+</P>
+<P STYLE="margin-left: 0.13cm; margin-top: 0.05cm; margin-bottom: 0.05cm">
+<FONT FACE="청봉, serif"><SPAN LANG="en-US"><A HREF="../Command and Menu Reference/Menus/Insert/Link to External Data.html"><SPAN STYLE="font-weight: medium">External
+data dialog</SPAN></A></SPAN></FONT></P>
+<P STYLE="margin-left: 0.13cm; margin-top: 0.05cm; margin-bottom: 0.05cm">
+<FONT FACE="청봉, serif"><SPAN LANG="en-US"><SPAN STYLE="font-weight: medium"><A HREF="../References/Referencing URLs.html">Referencing
+URLs</A> </SPAN></SPAN></FONT>
+</P>
+
+</DIV></BODY>
+</HTML>
+

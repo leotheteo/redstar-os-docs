@@ -1,0 +1,81 @@
+﻿<html dir='ltr'>
+	<head>
+		<META http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+		<title>DOLLARFR</title>
+		<link rel='stylesheet' type='text/css' href='../css/main.css'/>
+		<script type='text/javascript' language='Javascript' src='../js/mexpcol.js'></script>
+		<script type='text/javascript' language='JavaScript' src='../js/glossary.js'></script>
+	</head>
+	<body>
+		<h1>&nbsp;<img align="absbottom" src="../image/external_images/crystal/svtools/res/new_doc.png"/>&nbsp;DOLLARFR</h1>
+		<p id='ExpandAllLine' class='ExpFav'>
+			<a href='#' onClick='ExpandAll()' onKeyPress='ExpandAll()' class='DropDown'>
+				<img id='picHeader' border='0' src='../image/image/common/expandtri.gif' alt='모두 표시'>
+				<span id='ExpandAll'>모두 표시</span>
+			</a>
+		</p>
+		<p><b class="bterm">참고항목</b>&emsp; 
+			<a href="5.9.5.1.htm">재정함수목록</a>,
+			<a href="5.9.12.9.htm">DOLLAR</a>, 
+			<a href="5.9.5.20.htm">DOLLARDE</a> 
+		</p>
+		<p>소수로 표시되는 금액을 분수로 표시하도록 변환합니다.</p>
+		<p><b class="bterm">문법:&emsp;&emsp;		DOLLARFR(10진수 통화단위,분수)</b></p>
+		<table>
+			<tr>
+				<th>인수명</th>
+				<th>설명</th>
+			</tr>
+			<tr>
+				<td>10진수 통화단위</td>
+				<td>10진수입니다.</td>
+			</tr>
+			<tr>
+				<td>분수</td>
+				<td>나누는 수입니다.</td>
+			</tr>
+		</table>
+		<p><b class="bterm">주의</b></p>
+			<ul>
+				<li> <b class="bterm">분수</b>가 옹근수가 아니면 소수점이하를 잘라서 옹근수로 변환됩니다.</li>
+				<li><b class="bterm">분수</b>가 0보다 작으면 <b class="bterm">오유:[오유번호]</b>가 반환됩니다.</li>
+				<li><b class="bterm">분수</b>가 0이면 <b class="bterm">오유:[오유번호]</b>가 반환됩니다.</li>
+			</ul>
+		<p><b class="bterm">실례</b></p>
+			<p><a href='1.5.1.htm'>실례의 리용방법</a>을 참고하십시오.</p>
+			<table>
+				<tr>
+					<td>
+						<table>
+							<tr><td>&nbsp;</td></tr>
+							<tr><th>1</th></tr>
+							<tr><th>2</th></tr>
+							<tr><th>3</th></tr>
+						</table>
+					</td>
+					<td>
+						<table>
+							<tr>
+								<th>A</th>
+								<th>B</th>
+							</tr>
+							<tr>
+								<th>수식</th>
+								<th>설명(결과)</th>
+							</tr>
+							<tr>
+								<td>=DOLLARFR(1.125,16)</td>
+								<td>소수 1.125를 1과 2/16을 나타내는 수자로 변환합니다. (1.02)</td>
+							</tr>
+							<tr>
+								<td>=DOLLARFR(1.125,32)</td>
+								<td>소수 1.125를 1과 1/8을 나타내는 수자로 변환합니다. (1.04)</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>	
+		<script type="text/javascript" language="Javascript">footerView()</script>
+	
+</body>
+</html>

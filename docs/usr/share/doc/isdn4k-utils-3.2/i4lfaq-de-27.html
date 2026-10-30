@@ -1,0 +1,77 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <META NAME="GENERATOR" CONTENT="LinuxDoc-Tools 0.9.21">
+ <TITLE>ISDN4LINUX - FAQ (deutsche Version): 1tr6: Deutsche Eigenheiten bei 1TR6 </TITLE>
+ <LINK HREF="i4lfaq-de-28.html" REL=next>
+ <LINK HREF="i4lfaq-de-26.html" REL=previous>
+ <LINK HREF="i4lfaq-de.html#toc27" REL=contents>
+</HEAD>
+<BODY>
+<A HREF="i4lfaq-de-28.html">Next</A>
+<A HREF="i4lfaq-de-26.html">Previous</A>
+<A HREF="i4lfaq-de.html#toc27">Contents</A>
+<HR>
+<H2><A NAME="1tr6"></A> <A NAME="s27">27.</A> <A HREF="i4lfaq-de.html#toc27">1tr6: Deutsche Eigenheiten bei 1TR6 </A></H2>
+
+<H2><A NAME="1tr6_eaz"></A> <A NAME="ss27.1">27.1</A> <A HREF="i4lfaq-de.html#toc27.1">1tr6_eaz: Welche EAZ soll ich mit I4L benutzen? </A>
+</H2>
+
+<P>Du kannst alle verf&uuml;gbaren EAZ nehmen. Zwei EAZs haben jedoch
+eine spezielle Bedeutung und k&ouml;nnen Probleme verursachen:
+<PRE>
+EAZ 0: Gruppenruf (alle Telefone der Anlage l&auml;uten)
+EAZ 9: Gruppenruf (kein Telefon der Anlage l&auml;utet)
+</PRE>
+
+Gernot Zander <CODE>
+<A HREF="mailto:hifi@scorpio.in-berlin.de">hifi@scorpio.in-berlin.de</A></CODE> schrieb am 06. Januar 1997
+dazu:
+<BLOCKQUOTE>
+Ich w&uuml;rde die 0 nicht benutzen, da es f&uuml;r meinen Geschmack
+zu wahrscheinlich ist, da&szlig; I4L alle Audio-Verbindungen an sich
+reissen w&uuml;rde.
+</BLOCKQUOTE>
+</P>
+
+<H2><A NAME="1tr6_extension"></A> <A NAME="ss27.2">27.2</A> <A HREF="i4lfaq-de.html#toc27.2">1tr6_extension: Ich benutze 1TR6 an einer Nebenstelle - die Nebenstellennummer hat mehr als eine Ziffer (z.B. 206). Wie lautet meine EAZ? </A>
+</H2>
+
+<P>Jens Ey <CODE>
+<A HREF="mailto:jens@jeyhh.shnet.org">jens@jeyhh.shnet.org</A></CODE> schrieb am 10. Januar 1997:
+<BLOCKQUOTE>
+Die EAZ f&uuml;r Nebenstellen ist normalerweise die letzte Ziffer der
+Nebenstellennummer. Als EAZ f&uuml;r den Linux Computer solltest Du in
+diesem Fall '6' benutzen.
+</BLOCKQUOTE>
+</P>
+
+<H2><A NAME="1tr6_spv"></A> <A NAME="ss27.3">27.3</A> <A HREF="i4lfaq-de.html#toc27.3">1tr6_spv: Was ist eine SPV? </A>
+</H2>
+
+<P>SPV steht f&uuml;r 'semipermanente Verbindung' und ist eine
+(mittlerweile &uuml;berholte) Spezialit&auml;t der Deutschen
+Telekom. Wie bei einer Standleitung ist der Verbindungspartner
+festgelegt, die Verbindung wird jedoch nur hergestellt, wenn sie
+ben&ouml;tigt wird (was dann allerdings viel schneller als bei einer
+W&auml;hlverbindung geschieht). Da die Telekom die Leitung in der
+&uuml;brigen Zeit f&uuml;r andere Verbindungen nutzen kann, ist eine
+SPV billiger als eine Standleitung.</P>
+<P>Diese SPV darf nicht mit der &Ouml;sterreicher SPV verwechselt
+werden. Die &Ouml;sterreicher SPV besteht aus einem Kanal als
+Standleitung und einem Kanal als W&auml;hlleitung.</P>
+
+<H2><A NAME="1tr6_spv"></A> <A NAME="ss27.4">27.4</A> <A HREF="i4lfaq-de.html#toc27.4">1tr6_spv: Unterst&uuml;tzt ISDN4LINUX SPVs? Wie? </A>
+</H2>
+
+<P>Zur Aktivierung von SPVs musst Du ein 'S' vor die zu w&auml;hlende
+Nummer setzen. Das funktioniert recht gut mit Modememulationen und
+auch mit definierten Netzwerk-Interfaces.</P>
+
+
+<HR>
+<A HREF="i4lfaq-de-28.html">Next</A>
+<A HREF="i4lfaq-de-26.html">Previous</A>
+<A HREF="i4lfaq-de.html#toc27">Contents</A>
+</BODY>
+</HTML>

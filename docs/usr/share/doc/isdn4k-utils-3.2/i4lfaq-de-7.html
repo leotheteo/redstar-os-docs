@@ -1,0 +1,356 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <META NAME="GENERATOR" CONTENT="LinuxDoc-Tools 0.9.21">
+ <TITLE>ISDN4LINUX - FAQ (deutsche Version): config: Allgemeine Informationen zur Konfiguration </TITLE>
+ <LINK HREF="i4lfaq-de-8.html" REL=next>
+ <LINK HREF="i4lfaq-de-6.html" REL=previous>
+ <LINK HREF="i4lfaq-de.html#toc7" REL=contents>
+</HEAD>
+<BODY>
+<A HREF="i4lfaq-de-8.html">Next</A>
+<A HREF="i4lfaq-de-6.html">Previous</A>
+<A HREF="i4lfaq-de.html#toc7">Contents</A>
+<HR>
+<H2><A NAME="config"></A> <A NAME="s7">7.</A> <A HREF="i4lfaq-de.html#toc7">config: Allgemeine Informationen zur Konfiguration </A></H2>
+
+<H2><A NAME="config_msn"></A> <A NAME="ss7.1">7.1</A> <A HREF="i4lfaq-de.html#toc7.1">config_msn: Wie sollte ich meine MSNs in ISDN4LINUX einstellen?</A>
+</H2>
+
+<P>Siehe Abschnitt 
+<A HREF="i4lfaq-de-9.html#msn">msn</A>.</P>
+
+<H2><A NAME="config_hardware"></A> <A NAME="ss7.2">7.2</A> <A HREF="i4lfaq-de.html#toc7.2">config_hardware: Wie sollte ich meine Hardware einrichten? Gibt es etwas Spezielles, das ich &uuml;ber meine ISDN Karte wissen sollte? </A>
+</H2>
+
+<P>Schau Dir den Abschnitt 
+<A HREF="i4lfaq-de-6.html#hardware">hardware</A> an.</P>
+
+<H2><A NAME="config_dialout"></A> <A NAME="ss7.3">7.3</A> <A HREF="i4lfaq-de.html#toc7.3">config_dialout: Wie konfiguriere ich das Hinausw&auml;hlen? </A>
+</H2>
+
+<P>Siehe Abschnitt 
+<A HREF="i4lfaq-de-11.html#dialout">dialout</A>.</P>
+
+<H2><A NAME="config_dialin"></A> <A NAME="ss7.4">7.4</A> <A HREF="i4lfaq-de.html#toc7.4">config_dialin: Wie konfiguriere ich das Einw&auml;hlen? </A>
+</H2>
+
+<P>Siehe Abschitt 
+<A HREF="i4lfaq-de-22.html#dialin">dialin</A>.</P>
+
+<H2><A NAME="config_suse"></A> <A NAME="ss7.5">7.5</A> <A HREF="i4lfaq-de.html#toc7.5">config_suse: Ich kann meine Karte in YaST nicht ausw&auml;hlen? </A>
+</H2>
+
+<P>Wenn Du bei Deiner SuSE Distribution Deine Karte in YaST nicht finden
+kannst, stelle die <CODE>generic</CODE> Karte ein und gib die exakten
+Parameter in der daf&uuml;r bestimmten Zeile ein, z.B.: <CODE>type=27
+protocol=2</CODE> f&uuml;r die Fritz!PCI und Euro ISDN. Besorge Dir
+einen neueren Kernel wenn der gew&uuml;nschte Typ noch nicht
+unterst&uuml;tzt wird.</P>
+
+<H2><A NAME="config_pnp"></A> <A NAME="ss7.6">7.6</A> <A HREF="i4lfaq-de.html#toc7.6">config_pnp: Wie konfiguriere ich eine PNP (Plug and Play) Karte?</A>
+</H2>
+
+<P>Bei PCI Karten funktioniert Plug and Play automatisch, sie
+ben&ouml;tigen keine manuelle Konfiguration, wenn der korrekte
+Kartentyp angegeben wird. ISA PNP Karten ben&ouml;tigen etwas manuelle
+Konfiguration:
+<OL>
+<LI>Setze mit 'make menuconfig' (oder 'make config')
+die folgenden Kerneloptionen:
+<UL>
+<LI>ISDN = 'M' (als Modul - sonst funktioniert PNP nicht!)</LI>
+<LI>HiSax = 'M' (als Modul - sonst funktioniert PNP nicht!)</LI>
+<LI>16.3/PNP support</LI>
+<LI>EURO support</LI>
+</UL>
+</LI>
+<LI>Kompiliere und installiere den Kernel und die Module,
+depmod. (Reboot!)</LI>
+<LI>Lies die Konfiguration der PNP Karte aus mit:
+<HR>
+<PRE>
+pnpdump -c &gt; /etc/isapnp.conf
+</PRE>
+<HR>
+</LI>
+<LI>Pr&uuml;fe ob pnpdump die Konfigurationsdatei
+<CODE>/etc/isapnp.conf</CODE> richtig vorbereitet hat.
+<UL>
+<LI>INT0 - der Interrupt der Karte (Default f&uuml;r Teles 16.3 PNP:
+10).  Die Interrupts 3 und 4 sollten nicht verwendet werden, da sie
+f&uuml;r die seriellen Ports reserviert sind (was leider der serielle
+Treiber vergessen haben kann). Gleiches gilt f&uuml;r die Interrupts
+12 und 15, die durch PS/2-Maus und zweiten IDE-Controller
+bzw. USB-Anschlu&szlig; belegt werden.</LI>
+<LI>IO0, IO1 - die IO Ports der Karte (Default f&uuml;r Teles 16.3
+PNP: 0x580 and 0x180) (Achtung: diese Werte m&uuml;ssen passend
+f&uuml;r 64-bit sein (enden auf 0, 4, 8, or c)! Fr&uuml;he Versionen
+der PNP Karten k&ouml;nnen falsche Werte vorschlagen!)</LI>
+<LI>Entferne das Kommentarzeichen (#) vor ACT Y!</LI>
+</UL>
+</LI>
+<LI>Aktiviere die Konfiguration mit:
+<HR>
+<PRE>
+isapnp /etc/isapnp.conf
+</PRE>
+<HR>
+ 
+(muss bei jedem Boot gestartet
+werden)</LI>
+<LI>Nun kann das HiSax Modul f&uuml;r Euro-ISDN gestartet werden:
+<HR>
+<PRE>
+modprobe hisax hisax=4,2,INT,IO0,IO1
+</PRE>
+<HR>
+
+(Ersetze INT, IO0 und IO1 mit den Werten in Deiner isapnp.conf.)</LI>
+</OL>
+</P>
+
+<H2><A NAME="config_startstop"></A> <A NAME="ss7.7">7.7</A> <A HREF="i4lfaq-de.html#toc7.7">config_startstop: Wie starte und beende ich die Aktivierung von ISDN?</A>
+</H2>
+
+<P>Es gibt mehrere M&ouml;glichkeiten:
+<UL>
+<LI> Reboot: ein Neustart des Computers wirkt immer. Wenn I4L fest
+in den Kernel eingebunden wurde ist das tats&auml;chlich die einzige
+M&ouml;glichkeit. Die anderen Verfahren wirken nur, wenn I4L als Modul
+eingerichtet wurde.</LI>
+<LI> Manuell: Entlade die von I4L benutzten Module mit rmmod und
+lade sie wiederum mit modprobe.</LI>
+<LI> Runlevel: Schalte mit telinit auf einen Runlevel ohne ISDN und
+schalte dann wieder zur&uuml;ck zum Ausgangslevel.</LI>
+<LI> Scripts: In den meisten Distributionen findest Du
+Start/Stop-Scripts. Bei einer Suse 7.0 stoppt dieser Befehl ISDN:
+<HR>
+<PRE>
+rcroute stop
+rci4l stop
+rci4l_hardware stop
+</PRE>
+<HR>
+
+Dieser Befehl startet ISDN wieder:
+<HR>
+<PRE>
+rci4l_hardware start
+rci4l start
+rcroute start
+</PRE>
+<HR>
+</LI>
+</UL>
+</P>
+
+<H2><A NAME="config_kerneld"></A> <A NAME="ss7.8">7.8</A> <A HREF="i4lfaq-de.html#toc7.8">config_kerneld: Warum sollte ich nicht <EM>kerneld</EM> benutzen, um die ISDN Module bei Bedarf in den Kernel zu laden? </A>
+</H2>
+
+<P><EM>kerneld</EM> arbeitet nicht allzu gut mit den ISDN Modulen, da die
+ISDN Module ihren Status nicht speichern k&ouml;nnen und wichtige
+Meldungen auf dem D-Kanal verpassen k&ouml;nnten. Neuere Versionen von
+I4L lassen sich nicht vom kerneld entladen. Dennoch solltest Du den
+kerneld mit keiner Version von I4L benutzen.</P>
+
+<H2><A NAME="config_runlevel"></A> <A NAME="ss7.9">7.9</A> <A HREF="i4lfaq-de.html#toc7.9">config_runlevel: Wie kann ich Linux manchmal mit und manchmal ohne ISDN booten? </A>
+</H2>
+
+<P>Du kannst dazu zwei verschiedene Runlevel in <CODE>/etc/inittab</CODE>
+definieren (unter SysV-Init). Ein Runlevel enth&auml;lt die ISDN
+Prozesse, der andere nicht.</P>
+
+<H2><A NAME="config_manycards"></A> <A NAME="ss7.10">7.10</A> <A HREF="i4lfaq-de.html#toc7.10">config_manycards: Wie richte ich mehr als 1 ISDN-Karte ein? </A>
+</H2>
+
+<P>Bei der Konfiguration von mehreren Karten gibt es einige
+Spezialit&auml;ten zu beachten:
+<UL>
+<LI>Du musst f&uuml;r jeden installierten Kartentyp den passenden
+Treiber und dabei jeden dieser Treiber mindestens einmal mit den
+korrekten Einstellungen starten.</LI>
+<LI>F&uuml;r den Betrieb von mehreren Karten mit dem gleichen
+Treiber (z.B. sollte HiSax f&uuml;r ELSA und ASUS Karten
+funktionieren) m&uuml;ssen die Konfigurationswerte f&uuml;r alle
+Karten an den Treiber &uuml;bergeben werden. Beachte bitte, dass Du
+f&uuml;r mehr als 2 Karten Module benutzen musst um die Parameter zu
+&uuml;bergeben. Du kannst z.B. mit dem folgenden Befehl hisax f&uuml;r
+zwei Sedlbauer-Karten laden:
+<HR>
+<PRE>
+modprobe -v hisax protocol=2,2 type=28,28
+</PRE>
+<HR>
+</LI>
+<LI>Gleichzeitige Einwahl mehrerer Personen: N&auml;heres bei der
+Frage 
+<A HREF="i4lfaq-de-22.html#dialin_manyparallel">dialin_manyparallel</A>.</LI>
+<LI>W&auml;hlen &uuml;ber mehrere Karten: N&auml;heres bei der Frage
+<A HREF="i4lfaq-de-11.html#dialout_manycards">dialout_manycards</A>.</LI>
+</UL>
+</P>
+
+<H2><A NAME="config_manychannels"></A> <A NAME="ss7.11">7.11</A> <A HREF="i4lfaq-de.html#toc7.11">config_manychannels: Wie kann ich die maximale Anzahl der Kan&auml;le in I4L erh&ouml;hen? </A>
+</H2>
+
+<P>Erh&ouml;he den Wert ISDN_MAX_CHANNELS in
+<CODE>/usr/src/linux/include/linux/isdn.h</CODE> und &uuml;bersetze den
+ISDN-Teil neu. Vergiss nicht, die zus&auml;tzlichen Ger&auml;te mit
+makedev.sh (in isdn4k-utils) oder "von Hand" anzulegen.</P>
+
+<H2><A NAME="config_gsmv110"></A> <A NAME="ss7.12">7.12</A> <A HREF="i4lfaq-de.html#toc7.12">config_gsmv110: Wie verbinde ich meinen PalmPilot via GSM per V.110 mit meinem  Computer? </A>
+</H2>
+
+<P>Eine GSM-Verbindung geht zuerst &uuml;ber ein spezielles
+Sendeprotokoll zum GSM Provider. Dieses hat ein Adapter mit der
+Bezeichnung IWF (interworking function) dann in das entsprechende
+Sendeprotokoll f&uuml;r Analog- oder ISDN-Verbindungen
+umzusetzen. Welches analoge oder digitale Sendeprotokoll da benutzt
+wird h&auml;ngt davon ab, auf welche Art das mobile Telefon die
+GSM-Verbindung anfordert.</P>
+<P>Eine analoge Verbindung ist wegen der langen Modemangleichung nicht
+sehr attraktiv. Da ISDN, HDLC und X.75 von den IWF-Adaptern noch nicht
+unterst&uuml;tzt werden, bleiben nur V.110 und V.120 &uuml;brig. V.120
+hat zwar eine bessere Flow Control und Fehlerberichtigung aber zur
+Zeit wird nur V.110 von ISDN4LINUX unterst&uuml;tzt.</P>
+<P>Auf dem Dial-Up Server musst Du asyncPPP mit dem normalen pppd
+f&uuml;r ein ttyI* Device einrichten (syncPPP wird nicht
+funktionieren). Neben dem Eintragen der MSN musst Du die
+&Uuml;bertragungsrate mit <CODE>AT&amp;R9600</CODE> auf 9600 setzen
+(<CODE>/usr/src/linux/Documentation/isdn/README</CODE> gibt Dir
+Einzelheiten zu dem Thema). Schalte beim Gebrauch von <CODE>mgetty</CODE> die
+automatische Rufannahme ab mit <CODE>ATS0=0</CODE>; pppd wird mit den Optionen
+<CODE>noccp</CODE> und <CODE>require-pap</CODE> aufgerufen.</P>
+<P>Im Ger&auml;t, das an das Mobiltelefon angeschlossen ist, wird eine
+ISDN V.110 Verbindung wie folgt angefordert:
+<HR>
+<PRE>
+AT+CBST=71,0,1+CHSN=1,0,0,0
+</PRE>
+<HR>
+</P>
+<P>Bei einem Nokia 7110 musst Du eventuell den folgenden undokumentierten
+Befehl benutzen:
+<HR>
+<PRE>
+AT+CBST=75,0,1
+</PRE>
+<HR>
+</P>
+<P>Wenn die Tr&auml;ger-Eigenschaft von ISDN4LINUX mit '88 90 21 48 06
+bb' angegeben wird, ist die Einstellung korrekt (88 90 21 bedeutet
+V.110, 48 bedeutet ASYNC 9,6kbit, 06 bedeutet Flowcontrol RX/TX und bb
+bedeutet 8 Bit 1 Stopbit No Parity).</P>
+<P>Wird ein ankommender Ruf mit dem Service-Indicator-Byte 2 = 0
+angezeigt und dadurch nicht angenommen (bei manchen falsch
+eingestelleten Telefonanlagen), so l&auml;sst sich das mit dem Befehl
+<CODE>ATS19=0</CODE> abstellen.</P>
+<P>Eine h&ouml;here Bandbreite von 19.2kbit (HSCSD) kann mit folgendem
+Befehl angefordert werden:
+<HR>
+<PRE>
+AT+CBST=81,0,1+CHSN=3,0,0,0
+</PRE>
+<HR>
+
+Es ist jedoch abh&auml;ngig von Deinem GSM Provider, ob er diese
+&Uuml;bertragungsrate anbietet. Wenn ja, sollte der Dialin Server
+entsprechend eingestellt werden.
+Ein Mini-Howto dazu findest Du auf:
+<A HREF="http://www.oltom.com/Linux/Docs/GSM%20over%20V.110%20Mini-HOWTO.txt">http://www.oltom.com/Linux/Docs/GSM%20over%20V.110%20Mini-HOWTO.txt</A></P>
+
+<H2><A NAME="config_h323"></A> <A NAME="ss7.13">7.13</A> <A HREF="i4lfaq-de.html#toc7.13">config_h323: Wie konfiguriere ich ISDN4LINUX als Voice-over-IP-Gateway f&uuml;r H.323 Clients? </A>
+</H2>
+
+<P>Du musst das Linux H.323 - ISDN Gateway installieren. Du findest es
+auf 
+<A HREF="http://www.telos.de/linux/H323/">http://www.telos.de/linux/H323/</A>.  
+Beachte bitte, da&szlig; nicht jedes ISDN-Ger&auml;t Voll-Duplex-Audio
+unterst&uuml;tzt. Vielleicht leistet Deine Hardware nur
+uni-direktionale Sprach&uuml;bertragung.</P>
+
+<H2><A NAME="config_point2point"></A> <A NAME="ss7.14">7.14</A> <A HREF="i4lfaq-de.html#toc7.14">config_point2point: Wie richte ich eine Point-to-Point Verbindung ein?</A>
+</H2>
+
+<P>Der wichtigste Punkt: die Point-to-Point Verbindung funktioniert nur
+bei dem einzelnen Device, das damit verbunden ist. Daher sollte auch
+nichts anderes als Deine ISDN-Karte damit verbunden sein. So versetzt
+Du HiSax in den Point-to-Point Mode:
+<HR>
+<PRE>
+hisaxctrl &lt;treiber_id&gt; 7 1
+</PRE>
+<HR>
+
+Zus&auml;tzlich kannst Du mit dem Befehl ' AT&amp;Lxxx' den Bereich
+der Telephonnummern angeben auf die ISDN4LINUX an den ttyI* Devices
+lauschen soll.
+Wenn Sie Ihre ISDN-Karte absolut nur zum Auslesen parallel zu Ihrer
+Telefonanlage mit einer Point-to-Point-Verbindung betreiben wollen
+m&uuml;ssen Sie die RX-Kontakte (Pin 3 und Pin 6 im Western-Stecker)
+l&ouml;sen, soda&szlig; der NTBA die ISDN-Karte nicht erkennt. Dann
+konfigurieren Sie den HiSax normal, nicht im Point-to-Point-Modus.</P>
+
+<H2><A NAME="config_links"></A> <A NAME="ss7.15">7.15</A> <A HREF="i4lfaq-de.html#toc7.15">config_links: Welche hilfreichen Links gibt es zu ISDN4LINUX? </A>
+</H2>
+
+<P>Hier folgen zur Zeit verf&uuml;gbare hilfreiche Links zur
+Konfiguration von ISDN4LINUX:
+<UL>
+<LI>Englisch: 
+<A HREF="http://www.wurtel.demon.nl/i4l-howto-uk.html">http://www.wurtel.demon.nl/i4l-howto-uk.html</A></LI>
+<LI>Deutsch: 
+<A HREF="http://www.franken.de/users/klaus/">http://www.franken.de/users/klaus/</A></LI>
+<LI>Franz&ouml;sisch: 
+<A HREF="http://www.linux-france.org/article/connex/ISDN/">http://www.linux-france.org/article/connex/ISDN/</A> und 
+<A HREF="http://www.linux-france.org/prj/inetdoc/guides/rnis/">http://www.linux-france.org/prj/inetdoc/guides/rnis/</A></LI>
+<LI>Suse Support Datenbank: 
+<A HREF="http://sdb.suse.de/sdb/de/html/index.html">http://sdb.suse.de/sdb/de/html/index.html</A>; da gibt es auch ein
+ISDN HOWTO (isdn.html) sowie eine Kurzanleitung zur Installation von
+ISDN (isdnquick.html).</LI>
+<LI>Tips zur Konfiguration unter SuSE (und zum Offline-Lesen):
+<A HREF="http://www.schlenn.de/isdn4linux/">http://www.schlenn.de/isdn4linux/</A></LI>
+<LI>Tips zur Konfiguration unter Red Hat Linux:
+<A HREF="http://www.webideal.de/rh-isdn/">http://www.webideal.de/rh-isdn/</A></LI>
+<LI>Tips zur Konfiguration unter Linux-Mandrake:
+<A HREF="http://www.mandrakeuser.org/connect/cisdn.html">http://www.mandrakeuser.org/connect/cisdn.html</A></LI>
+<LI>fli4l, eine vorbereitete Linux-Version zur Benutzung eines alten
+PCs als Router:
+<A HREF="http://www.fli4l.de">http://www.fli4l.de</A> (tolle Seite!)</LI>
+<LI>Scripts und Installationstips von verschiedenen Leuten: <CODE>
+<A HREF="http://www.rosat.mpe-garching.mpg.de/~web/ISDN.html">http://www.rosat.mpe-garching.mpg.de/~web/ISDN.html</A></CODE> </LI>
+<LI>Dokumentation zu ABC Erweiterungen:
+<CODE>
+<A HREF="http://i4l.mediatronix.de/">http://i4l.mediatronix.de/</A></CODE></LI>
+<LI>Vbox Entwicklung:
+<CODE>
+<A HREF="http://innominate.org/projects/vbox/index.php3">http://innominate.org/projects/vbox/index.php3</A></CODE></LI>
+<LI>Michael Hipp's Seite (allgemeine Informationen):
+<CODE>
+<A HREF="http://www-ti.informatik.uni-tuebingen.de/~hippm/isdn.html">http://www-ti.informatik.uni-tuebingen.de/~hippm/isdn.html</A></CODE></LI>
+<LI>Tips zur Geb&uuml;hren&uuml;bermittling:
+<CODE>
+<A HREF="http://www.auf-der-er.de/chargeint.html">http://www.auf-der-er.de/chargeint.html</A></CODE></LI>
+<LI>Homepage von kISDN (l&auml;uft nur mit Qt/KDE):
+<CODE>
+<A HREF="http://www.millenniumx.de/kisdn.html">http://www.millenniumx.de/kisdn.html</A></CODE></LI>
+<LI>Konfiguration nicht nur f&uuml;r England (folge dem Link zum
+Linux-Setup): 
+<CODE>
+<A HREF="http://www.oakhaven-consultants.co.uk">http://www.oakhaven-consultants.co.uk</A></CODE></LI>
+<LI>SOftwaremakros zur Einstellung der Ackermann Euracom (nicht
+f&uuml;r ISDN4LINUX):
+<CODE>
+<A HREF="http://www.ganzfix.de">http://www.ganzfix.de</A></CODE></LI>
+</UL>
+</P>
+
+
+
+<HR>
+<A HREF="i4lfaq-de-8.html">Next</A>
+<A HREF="i4lfaq-de-6.html">Previous</A>
+<A HREF="i4lfaq-de.html#toc7">Contents</A>
+</BODY>
+</HTML>

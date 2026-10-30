@@ -1,0 +1,159 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <META NAME="GENERATOR" CONTENT="LinuxDoc-Tools 0.9.21">
+ <TITLE>ISDN4LINUX - FAQ (deutsche Version): audio: Umgang mit Audio &uuml;ber ISDN</TITLE>
+ <LINK HREF="i4lfaq-de-26.html" REL=next>
+ <LINK HREF="i4lfaq-de-24.html" REL=previous>
+ <LINK HREF="i4lfaq-de.html#toc25" REL=contents>
+</HEAD>
+<BODY>
+<A HREF="i4lfaq-de-26.html">Next</A>
+<A HREF="i4lfaq-de-24.html">Previous</A>
+<A HREF="i4lfaq-de.html#toc25">Contents</A>
+<HR>
+<H2><A NAME="audio"></A> <A NAME="s25">25.</A> <A HREF="i4lfaq-de.html#toc25">audio: Umgang mit Audio &uuml;ber ISDN</A></H2>
+
+<P>Die meisten der hier aufgef&uuml;hrten Antworten stammen aus dem -
+jetzt leider nicht mehr aktuellen - vbox Manual von Matthias Hessler
+<CODE>
+<A HREF="mailto:hessler@isdn4linux.de">hessler@isdn4linux.de</A></CODE> und Bernhard Hailer <CODE>
+<A HREF="mailto:dl4mhk@lrz.uni-muenchen.de">dl4mhk@lrz.uni-muenchen.de</A></CODE>. Du bekommst das Manual auf:
+<CODE>
+<A HREF="http://www.lrz-muenchen.de/~ui161ab/www/isdn/">http://www.lrz-muenchen.de/~ui161ab/www/isdn/</A></CODE> -
+klicke auf 'Audio!'. Die Antworten sind zwar sehr veraltet,
+k&ouml;nnen Dir aber vielleicht ein paar Hinweise geben?</P>
+<P>Eine aktuellere Adresse hat sich als Platz f&uuml;r die weitere
+vbox-Entwicklung etabliert: <CODE>
+<A HREF="http://innominate.org/projects/vbox/index.php3">http://innominate.org/projects/vbox/index.php3</A></CODE></P>
+
+<H2><A NAME="audio_links"></A> <A NAME="ss25.1">25.1</A> <A HREF="i4lfaq-de.html#toc25.1">audio_links: Wo finde ich hilfreiche Links zu vbox?</A>
+</H2>
+
+<P>Es gibt mehrere Skripts zur Verwendung mit vbox. Der Autor der FAQ ist
+allerdings nicht auf dem Laufenden. Das letzte Skript, &uuml;ber das
+ich Informationen habe, liegt auf:
+<CODE>
+<A HREF="http://innominate.org/projects/vbox/index.php3">http://innominate.org/projects/vbox/index.php3</A></CODE>.
+Schickt mir bitte Informationen &uuml;ber hilfreiche Links, HowTos
+oder anderes...  Es gibt eine Dokumentation in den Kernel-Sources:
+<CODE>/usr/src/linux/Documentation/isdn/README.audio</CODE></P>
+
+
+<H2><A NAME="audio_format"></A> <A NAME="ss25.2">25.2</A> <A HREF="i4lfaq-de.html#toc25.2">audio_format: Welches Format benutzt vbox f&uuml;r die Audio-Meldungen (.msg) bei der Annahme eines Anrufes?</A>
+</H2>
+
+<P>Du bekommst das Format von den Meldungen mit rmdgetheader. Die
+Beispielmeldungen in den Paketen werden im Format 4 aufgenommen (die
+neueste Zyxel-Kompression).</P>
+
+
+<H2><A NAME="audio_recordmsg"></A> <A NAME="ss25.3">25.3</A> <A HREF="i4lfaq-de.html#toc25.3">audio_recordmsg: Wie kann ich meine eigenen Meldungen f&uuml;r vboxgetty aufnehmen?</A>
+</H2>
+
+<P>Rufe zuerst Deine Nummer, auf die vboxgetty antworten soll, an und
+hinterlasse eine Nachricht. Dann benenne diese Nachricht um in *.msg
+(standard.msg f&uuml;r die allgemeine Meldung des Anrufbeantworters)
+und kopiere sie in das Verzeichnis, in dem sich alle Meldungen
+befinden (normalerweise /var/spool/vbox/user/messages, wobei user der
+Benutzer ist, f&uuml;r den vboxgetty konfiguriert wurde). Du kannst
+eine Meldung auch mit Mikrofon und Soundkarte aufnehmen.</P>
+
+<H2><A NAME="audio_play"></A> <A NAME="ss25.4">25.4</A> <A HREF="i4lfaq-de.html#toc25.4">audio_play: Wie kann ich Audio-Nachrichten lokal mit /dev/audio abspielen?</A>
+</H2>
+
+<P>Das geht mit vbox am besten mit dem Format 6 (uLaw - muss beim
+kompilieren eingebunden sein). Du kannst dann die Nachrichten einfach
+mit dem folgenden Befehl abspielen:
+<HR>
+<PRE>
+cat xxx &gt; /dev/audio
+</PRE>
+<HR>
+
+wobei xxx die Nachrichtendatei ist.</P>
+
+<H2><A NAME="audio_convertto"></A> <A NAME="ss25.5">25.5</A> <A HREF="i4lfaq-de.html#toc25.5">audio_convertto: Wie kann ich von vbox aufgenommene Audio-Nachrichten in andere Formate (z.B. von uLaw in WAV) konvertieren? </A>
+</H2>
+
+<P>Das Standardwerkzeug zum Umformen aller Soundformate ist SOX. SOX kann
+man als Sourcecode f&uuml;r Unix und DOS auf <CODE>
+<A HREF="http://www.powerweb.de/mpeg/util/msdos/sox10c.zip">http://www.powerweb.de/mpeg/util/msdos/sox10c.zip</A></CODE> bekommen
+(inklusive Quellcode, der unter Linux kompilierbar ist).</P>
+
+<H2><A NAME="audio_convertfrom"></A> <A NAME="ss25.6">25.6</A> <A HREF="i4lfaq-de.html#toc25.6">audio_convertfrom: Wie kann ich WAV f&uuml;r uLaw formatieren (f&uuml;r meine vbox-Ansage)? </A>
+</H2>
+
+<P>Wir bekamen am 15. Januar 1997 den folgenden Tip von Christian Stueble
+<CODE>
+<A HREF="mailto:stueble@ls6.informatik.uni-dortmund.de">stueble@ls6.informatik.uni-dortmund.de</A></CODE>:
+<BLOCKQUOTE>
+Bei mir funktioniert die folgende (etwas indirekte) Methode: 
+<HR>
+<PRE>
+sox file.wav -r 8000 file.ul rate
+rmdcatheader -u file.ul &gt; file.msg
+cat file.ul &gt;&gt; file.msg
+</PRE>
+<HR>
+
+Vielleicht musst Du andere Parameter f&uuml;r SOX eingeben. Als ersten
+Test kannst Du <CODE>cat file.msg &gt; /dev/audio</CODE> versuchen. Du
+solltest dabei etwas h&ouml;ren k&ouml;nnen.
+</BLOCKQUOTE>
+</P>
+
+<H2><A NAME="audio_dtmf"></A> <A NAME="ss25.7">25.7</A> <A HREF="i4lfaq-de.html#toc25.7">audio_dtmf: Wie kann ich die Erkennung von W&auml;hlt&ouml;nen (DTMF) verbessern? </A>
+</H2>
+
+<P>Du kannst die Parameter DTMF_TRESH, SILENCE_TRESH und H2_TRESH in der
+Datei <CODE>linux/drivers/isdn/isdn_audio.c</CODE> anpassen. Ein DTMF-Ton
+wird erkannt, wenn die Amplitude der korrekten Frequenz
+gr&ouml;&szlig;er als DTMF_TRESH, und die Amplitude der zweiten
+Harmoniefrequenzkleiner als H2_TRESH ist.</P>
+<P>Wenn ein W&auml;hlton erkannt wird obwohl nicht gea&auml;hlt wurde,
+versuche, die Werte von DTMF_TRESH zu erh&ouml;hen und/oder senke die
+Werte von H2_TRESH. Probiere am besten mehrere Telefone aus - die
+besten Parameter erh&auml;lt man erst nach einigem Tuning.</P>
+
+
+
+<H2><A NAME="audio_e0265"></A> <A NAME="ss25.8">25.8</A> <A HREF="i4lfaq-de.html#toc25.8">audio_e0265: Mein vboxgetty bekommt einen Modem-Timeout und meldet den Fehler E0265.</A>
+</H2>
+
+<P>Vermutlich ben&ouml;tigst Du einen Patch, der vor einiger Zeit
+(08. Dezember 1999) in der Mailingliste gepostet wurde.</P>
+
+
+<H2><A NAME="audio_noanswer"></A> <A NAME="ss25.9">25.9</A> <A HREF="i4lfaq-de.html#toc25.9">audio_noanswer: Mein vboxgetty beantwortet keine ankommenden Gespr&auml;che.</A>
+</H2>
+
+<P>vboxgetty ben&ouml;tigt '.vboxrc' im Verzeichnis des Benutzers,
+f&uuml;r den vboxgetty konfiguriert wurde. In dieser Datei steht die
+Anzahl der Rufsignale nach denen vboxgetty abheben soll.</P>
+
+<H2><A NAME="audio_nocat"></A> <A NAME="ss25.10">25.10</A> <A HREF="i4lfaq-de.html#toc25.10">audio_nocat: Wenn vboxgetty eine Nachricht in einem Format aufgezeichnet hat, das ich nicht mit 'cat xxx &gt; /dev/audio' abspielen kann; wie kann ich mir dann die Nachricht anh&ouml;ren?</A>
+</H2>
+
+<P>Vboxgetty kann alle Formate abspielen. Du kannst die Nachricht in die
+Standard-Meldung-Datei (standard.msg im Nachrichten-Verzeichnis)
+kopieren und Dich selbst anrufen. Dabei wird Dir die Nachricht
+vorgespielt. (Vergiss nicht, danach die Originaldatei zur&uuml;ck zu
+kopieren :-) ). Siehe Frage 
+<A HREF="#audio_recordmsg">audio_recordmsg</A>.</P>
+
+<H2><A NAME="audio_earlyrecording"></A> <A NAME="ss25.11">25.11</A> <A HREF="i4lfaq-de.html#toc25.11">audio_earlyrecording: Am Anfang einer von vboxgetty aufgenommenen Nachricht h&ouml;rt man oft einen Teil meiner eigenen Ansage? </A>
+</H2>
+
+<P>Dies ist ein bekannter Fehler, der beim Umschalten zwischen dem
+Abspielen der Ansage und dem Aufnehmen der Nachricht passiert. Bisher
+ist keine L&ouml;sung bekannt.</P>
+
+
+
+<HR>
+<A HREF="i4lfaq-de-26.html">Next</A>
+<A HREF="i4lfaq-de-24.html">Previous</A>
+<A HREF="i4lfaq-de.html#toc25">Contents</A>
+</BODY>
+</HTML>

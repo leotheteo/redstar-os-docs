@@ -1,0 +1,85 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+	<TITLE></TITLE>
+	<META NAME="GENERATOR" CONTENT="《Sogwang 3.0》  (Linux)">
+	<META NAME="CREATED" CONTENT="20091205;15361500">
+	<META NAME="CHANGED" CONTENT="20091205;15383800">
+	<STYLE TYPE="text/css">
+	<!--
+		P.code { margin-top: 0.04cm; margin-bottom: 0.04cm; font-family: "Bitstream Vera Sans Mono", "Cumberland", "Courier New", "Courier", "Lucida Sans Typewriter", "Lucida Typewriter", "Monaco", "Monospaced" }
+		H2 { margin-bottom: 0.18cm; font-family: "Bitstream Vera Sans", "Arial", "Helvetica", "Lucida", "Geneva", "Helmet", sans-serif, "Andale Sans UI", "Arial Unicode MS", "Lucida Sans Unicode", "Tahoma"; font-size: 14pt }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="ko-KP" DIR="LTR"><DIV style="margin-left: 25">
+<H1><A NAME="qbcolor"></A><FONT FACE="Thorndale, serif"><SPAN LANG="en-US">QBColor
+Function [Runtime]</SPAN></FONT></H1>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Returns
+the <A 
+HREF="RGB Function.html">RGB</A>
+color code of the color passed as a color value through an older
+MS-DOS based programming system.</SPAN></FONT></P>
+<H2><SPAN LANG="en-US">Syntax:</SPAN></H2>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">QBColor (ColorNumber As Integer)</SPAN></FONT></P>
+<H2><SPAN LANG="en-US">Return value:</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Long</SPAN></FONT></P>
+<H2><SPAN LANG="en-US">Parameter:</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>ColorNumber</B>:
+Any integer expression that specifies the color value of the color
+passed from an older MS-DOS based programming system.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>ColorNumber</B>
+can be assigned the following values:</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">0 :
+Black</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">1 : Blue</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">2 :
+Green</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">3 : Cyan</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">4 : Red</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">5 :
+Magenta</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">6 :
+Yellow</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">7 :
+White</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">8 : Gray</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">9 :
+Light Blue</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">10 :
+Light Green</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">11 :
+Light Cyan</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">12 :
+Light Red</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">13 :
+Light Magenta</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">14 :
+Light Yellow</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">15 :
+Bright White</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">This
+function is used only to convert from older MS-DOS based BASIC
+applications that use the above color codes. The function returns a
+long integer value indicating the color to be used in the
+</SPAN></FONT><FONT FACE="청봉, serif"><SPAN LANG="en-US">Sogwang IDE.</SPAN></FONT></P>
+<H2><A NAME="errorcode"></A><SPAN LANG="en-US">Error Codes </SPAN>
+</H2>
+<P><A NAME="err5"></A><FONT FACE="청봉, serif"><SPAN LANG="en-US">5
+Invalid procedure call </SPAN></FONT>
+</P>
+<H2><SPAN LANG="en-US">Example:</SPAN></H2>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Sub ExampleQBColor</SPAN></FONT></P>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Dim iColor As Integer</SPAN></FONT></P>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Dim sText As String</SPAN></FONT></P>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">iColor = 7</SPAN></FONT></P>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">sText = &quot;RGB= &quot; &amp;
+Red(QBColor( iColor) ) &amp; &quot;:&quot; &amp; Blue(QBColor(
+iColor) ) &amp; &quot;:&quot; &amp; Green(QBColor( iColor) )</SPAN></FONT></P>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">MsgBox stext,0,&quot;Color &quot;
+&amp; iColor</SPAN></FONT></P>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">End Sub</SPAN></FONT></P>
+
+</DIV></BODY>
+</HTML>

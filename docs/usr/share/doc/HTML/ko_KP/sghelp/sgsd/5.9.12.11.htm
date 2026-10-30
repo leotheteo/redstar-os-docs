@@ -1,0 +1,106 @@
+﻿<html dir='ltr'>
+	<head>
+		<META http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+		<title>FIND</title>
+		<link rel='stylesheet' type='text/css' href='../css/main.css'/>
+		<script type='text/javascript' language='Javascript' src='../js/mexpcol.js'></script>
+		<script type='text/javascript' language='JavaScript' src='../js/glossary.js'></script>
+	</head>
+	<body>
+		<h1>&nbsp;<img align="absbottom" src="../image/external_images/crystal/svtools/res/new_doc.png"/>&nbsp;FIND</h1>
+		<p id='ExpandAllLine' class='ExpFav'>
+			<a href='#' onClick='ExpandAll()' onKeyPress='ExpandAll()' class='DropDown'>
+				<img id='picHeader' border='0' src='../image/image/common/expandtri.gif' alt='모두 표시'>
+				<span id='ExpandAll'>모두 표시</span>
+			</a>
+		</p>
+		<p><b class="bterm">참고항목</b>&emsp;
+			<a href="5.9.12.1.htm">본문함수목록</a>,
+			<a href="5.9.12.10.htm">EXACT</a>,
+			<a href="5.9.12.14.htm">LEN</a>,
+			<a href="5.9.12.23.htm">SEARCH</a>,
+			<a href="5.9.12.16.htm">MID</a>
+		</p>
+		<p>본문문자렬을 다른 본문에서 찾습니다(대문자/소문자 구별).</p>
+		<p><b class="bterm">문법:&emsp;&emsp;		FIND(찾으려는 본문,본문,시작위치)</b></p>
+		<table>
+			<tr>
+				<th>인수명</th>
+				<th>설명</th>
+			</tr>
+			<tr>
+				<td>찾으려는 본문</td>
+				<td>찾으려는 본문입니다.</td>
+			</tr>
+			<tr>
+				<td>본문</td>
+				<td>탐색되는 본문입니다.</td>
+			</tr>
+			<tr>
+				<td>시작위치</td>
+				<td>탐색을 시작할 본문의 위치입니다. 추가선택인수입니다. <b class="bterm">본문</b>에서 첫 문자의 문자번호는 1입니다. <b class="bterm">시작위치</b>를 생략하면 1로 간주됩니다.</td>
+			</tr>
+		</table>
+		<p><b class="bterm">즉시도움말</b></p>
+			<p>지정된 문자수만큼 건너뛰려면 <b class="bterm">시작위치</b>를 사용합니다. 례를 들어 본문문자렬 《AYF0093.Young MensApparel》에서 작업중이라고 가정할 때 본문문자렬의 설명부분에서 첫번째 《Y》의 번호를 찾으려면 해당 본문의 수자부분을 탐색하지 않도록 <b class="bterm">시작위치</b>=8로 설정합니다. <b class="bterm">FIND</b>함수는 문자 8에서 시작하여 다음문자에서 <b class="bterm">찾으려는 본문</b>을 찾은 다음 번호 9를 반환합니다. <b class="bterm">FIND</b>함수는 <b class="bterm">시작위치</b>가 1보다 큰 경우 건너뛰는 문자수를 계산하여 항상 <b class="bterm">본문</b>의 시작부분부터 문자번호를 구합니다.</p>
+		<p><b class="bterm">주의</b></p>
+			<ul>
+				<li><b class="bterm">찾으려는 본문</b>이 "" (빈 문자렬)이면 <b class="bterm">FIND</b>는 탐색 문자렬의 첫 문자를 찾습니다. 즉 <b class="bterm">시작위치</b>번째 또는 첫번째 문자를 찾습니다.</li>
+				<li><b class="bterm">찾으려는 본문</b>은 통용문자를 포함할수 없습니다.</li>
+				<li><b class="bterm">찾으려는 본문</b>이 <b class="bterm">본문</b>에 없으면 <b class="bterm">오유:[오유번호]</b>를 반환합니다.</li>
+				<li><b class="bterm">시작위치</b>가 0보다 크지 않으면 <b class="bterm">오유:[오유번호]</b>를 반환합니다.</li>
+				<li><b class="bterm">시작위치</b>가 <b class="bterm">본문</b>의 길이보다 길면 <b class="bterm">오유:[오유번호]</b>를 반환합니다.</li>
+			</ul>
+		<p><b class="bterm">실례</b></p>
+			<p><a href="1.5.1.htm">실례의 리용방법</a>을 참고하십시오.</p>
+			<table>
+				<tr>
+					<td>
+						<table>
+							<tr>
+								<td class="noborder">&nbsp;
+								</td>
+							</tr>
+							<tr>
+								<th>1</th>
+							</tr>
+							<tr>
+								<th>2</th>
+							</tr>
+						</table>
+					</td>
+					<td>
+						<table>
+							<tr>
+								<th>A</th>
+							</tr>
+							<tr>
+								<th>자료</th>
+							</tr>
+							<tr>
+								<td>Miriam McGovern</td>
+							</tr>
+							<tr>
+								<th>수식</th>
+								<th>설명(결과)</th>
+							</tr>
+							<tr>
+								<td>=FIND("M",A2)</td>
+								<td>우에 있는 문자렬에서 첫번째 "M"의 위치입니다. (1)</td>
+							</tr>
+							<tr>
+								<td>=FIND("m",A2)</td>
+								<td>우에 있는 문자렬에서 첫번째 "m"의 위치입니다. (6)</td>
+							</tr>
+							<tr>
+								<td>=FIND("M",A2,3)</td>
+								<td>우에 있는 문자렬에서 세번째 문자에서 시작하여 처음으로 나오는 "M"의 위치입니다. (8)</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>	
+		<script type="text/javascript" language="Javascript">footerView()</script>
+	
+</body>
+</html>				

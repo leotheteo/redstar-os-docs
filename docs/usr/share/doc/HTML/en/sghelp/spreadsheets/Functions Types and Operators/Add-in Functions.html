@@ -1,0 +1,157 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+	<TITLE></TITLE>
+	<META NAME="GENERATOR" CONTENT="《Sogwang 3.0》  (Linux)">
+	<META NAME="CREATED" CONTENT="20091205;10241300">
+	<META NAME="CHANGED" CONTENT="20091205;11070300">
+	<STYLE TYPE="text/css">
+	<!--
+		H3 { margin-bottom: 0.18cm; font-family: "Bitstream Vera Sans", "Arial", "Helvetica", "Lucida", "Geneva", "Helmet", sans-serif, "Andale Sans UI", "Arial Unicode MS", "Lucida Sans Unicode", "Tahoma"; font-size: 12pt }
+		H2 { margin-bottom: 0.18cm; font-family: "Bitstream Vera Sans", "Arial", "Helvetica", "Lucida", "Geneva", "Helmet", sans-serif, "Andale Sans UI", "Arial Unicode MS", "Lucida Sans Unicode", "Tahoma"; font-size: 14pt }
+		P.code { margin-top: 0.04cm; margin-bottom: 0.04cm; font-family: "Bitstream Vera Sans Mono", "Cumberland", "Courier New", "Courier", "Lucida Sans Typewriter", "Lucida Typewriter", "Monaco", "Monospaced" }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="ko-KP" DIR="LTR"><DIV style="margin-left: 25">
+<H1><A NAME="bm_id3150870"></A><FONT FACE="Thorndale, serif"><SPAN LANG="en-US">Add-in
+Functions</SPAN></FONT></H1>
+<P><A NAME="addintext"></A><FONT FACE="청봉, serif"><SPAN LANG="en-US">The
+following describes and lists some of the available add-in functions.
+</SPAN></FONT>
+</P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><A HREF="../General Information and User Interface Usage/Add-in for Programming in.html">Add-in
+concept</A></SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">You will
+also find a <A HREF="../General Information and User Interface Usage/Add-in for Programming in.html">description
+of the Sogwang Calc add-in interface</A> in the Help. In addition, important functions and their
+parameters are described in the Help for the Shared Library .</SPAN></FONT></P>
+<H2><SPAN LANG="en-US">Add-ins supplied</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Sogwang contains
+examples for the add-in interface of </SPAN></FONT><FONT FACE="청봉, serif"><SPAN LANG="en-US">Sogwang Calc.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><A HREF="Add-in Functions, List of Analysis Functions Part One.html">Analysis
+Functions Part One</A></SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><A HREF="Add-in Functions, List of Analysis Functions Part Two.html">Analysis
+Functions Part Two</A></SPAN></FONT></P>
+<H2><A NAME="isleapyear"></A><A NAME="bm_id3149566"></A><SPAN LANG="en-US">ISLEAPYEAR</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Determines
+whether a year is a leap year. If yes, the function will return the
+value 1 (TRUE); if not, it will return 0 (FALSE).</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Syntax</SPAN></H3>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">ISLEAPYEAR(&quot;Date&quot;)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Date</B>
+specifies whether a given date falls within a leap year. The Date
+parameter must be a valid date according to the locale settings of
+</SPAN></FONT><FONT FACE="청봉, serif"><SPAN LANG="en-US">Sogwang .</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Example</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">=ISLEAPYEAR(A1)
+returns 1, if A1 contains 1968-02-29, the valid date 29th of February
+1968 in your locale setting.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">You may
+also use =ISLEAPYEAR(&quot;1968-02-29&quot;) or
+=ISLEAPYEAR(&quot;2/29/68&quot;).</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Never
+use =ISLEAPYEAR(2/29/68), because this would first evaluate 2 divided
+by 29 divided by 68, and then calculate the ISLEAPYEAR function from
+this small number as a serial date number.</SPAN></FONT></P>
+<H2><A NAME="years"></A><A NAME="bm_id3154656"></A><A NAME="bm_id3150368"></A>
+<SPAN LANG="en-US">YEARS</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Calculates
+the difference in years between two dates.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Syntax</SPAN></H3>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">YEARS(StartDate; EndDate; Type)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>StartDate</B>
+is the first date</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>EndDate</B>
+is the second date</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Type</B>
+calculates the type of difference. Possible values are 0 (interval)
+and 1 (in calendar years).</SPAN></FONT></P>
+<H2><A NAME="months"></A><A NAME="bm_id3152898"></A><A NAME="bm_id3148839"></A>
+<SPAN LANG="en-US">MONTHS</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Calculates
+the difference in months between two dates.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Syntax</SPAN></H3>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">MONTHS(StartDate; EndDate; Type)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>StartDate</B>
+is the first date</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>EndDate</B>
+is the second date</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Type</B>
+calculates the type of difference. Possible values include 0
+(interval) and 1 (in calendar months).</SPAN></FONT></P>
+<H2><A NAME="rot13"></A><A NAME="bm_id3159094"></A><A NAME="bm_id3153283"></A>
+<SPAN LANG="en-US">ROT13</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Encrypts
+a character string by moving the characters 13 positions in the
+alphabet. After the letter Z, the alphabet begins again (Rotation).
+By applying the encryption function again to the resulting code, you
+can decrypt the text.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Syntax</SPAN></H3>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">ROT13(Text)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Text</B>
+is the character string to be encrypted. ROT13(ROT13(Text)) decrypts
+the code.</SPAN></FONT></P>
+<H2><A NAME="daysinyear"></A><A NAME="bm_id3151300"></A><A NAME="bm_id3153972"></A>
+<SPAN LANG="en-US">DAYSINYEAR</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Calculates
+the number of days of the year in which the date entered occurs.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Syntax</SPAN></H3>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">DAYSINYEAR(Date)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Date</B>
+is any date in the respective year. The Date parameter must be a
+valid date according to the locale settings of </SPAN></FONT><FONT FACE="청봉, serif"><SPAN LANG="en-US">Sogwang .</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Example</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">=DAYSINYEAR(A1)
+returns 366 days if A1 contains 1968-02-29, a valid date for the year
+1968.</SPAN></FONT></P>
+<H2><A NAME="daysinmonth"></A><A NAME="bm_id3154737"></A><A NAME="bm_id3155593"></A>
+<SPAN LANG="en-US">DAYSINMONTH</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Calculates
+the number of days of the month in which the date entered occurs.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Syntax</SPAN></H3>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">DAYSINMONTH(Date)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Date</B>
+is any date in the respective month of the desired year. The Date
+parameter must be a valid date according to the locale settings of
+</SPAN></FONT><FONT FACE="청봉, serif"><SPAN LANG="en-US">Sogwang .</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Example</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">=DAYSINMONTH(A1)
+returns 29 days if A1 contains 1968-02-17, a valid date for February
+1968.</SPAN></FONT></P>
+<H2><A NAME="weeks"></A><A NAME="bm_id3149048"></A><A NAME="bm_id3150435"></A>
+<SPAN LANG="en-US">WEEKS</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Calculates
+the difference in weeks between two dates.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Syntax</SPAN></H3>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">WEEKS(StartDate; EndDate; Type)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>StartDate</B>
+is the first date</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>EndDate</B>
+is the second date</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Type</B>
+calculates the type of difference. The possible values are 0
+(interval) and 1 (in numbers of weeks).</SPAN></FONT></P>
+<H2><A NAME="weeksinyear"></A><A NAME="bm_id3145237"></A><A NAME="bm_id3146883"></A>
+<SPAN LANG="en-US">WEEKSINYEAR</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Calculates
+the number of weeks of the year in which the date entered occurs. The
+number of weeks is defined as follows: a week that spans two years is
+added to the year in which most days of that week occur.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Syntax</SPAN></H3>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">WEEKSINYEAR(Date)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Date</B>
+is any date in the respective year. The Date parameter must be a
+valid date according to the locale settings of </SPAN></FONT><FONT FACE="청봉, serif"><SPAN LANG="en-US">Sogwang .</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Example</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">WEEKSINYEAR(A1)
+returns 53 if A1 contains 1970-02-17, a valid date for the year 1970.</SPAN></FONT></P>
+<H2><SPAN LANG="en-US">Add-ins through </SPAN>Sogwang
+<SPAN LANG="en-US">API</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><SPAN STYLE="font-weight: medium">Add-ins
+can also be implemented through the Sogwang.</A></SPAN></SPAN></FONT></P>
+
+</DIV></BODY>
+</HTML>
+

@@ -1,0 +1,130 @@
+﻿<html dir='ltr'>
+	<head>
+		<META http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+		<title>XIRR</title>
+		<link rel='stylesheet' type='text/css' href='../css/main.css'/>
+		<script type='text/javascript' language='Javascript' src='../js/mexpcol.js'></script>
+		<script type='text/javascript' language='JavaScript' src='../js/glossary.js'></script>
+	</head>
+	<body>
+		<h1>&nbsp;<img align="absbottom" src="../image/external_images/crystal/svtools/res/new_doc.png"/>&nbsp;XIRR</h1>
+		<p id='ExpandAllLine' class='ExpFav'>
+			<a href='#' onClick='ExpandAll()' onKeyPress='ExpandAll()' class='DropDown'>
+				<img id='picHeader' border='0' src='../image/image/common/expandtri.gif' alt='모두 표시'>
+				<span id='ExpandAll'>모두 표시</span>
+			</a>
+		</p>
+		<p><b class="bterm">참고항목</b>&emsp;
+			<a href="5.9.5.1.htm">재정함수목록</a>,
+			<a href="5.9.5.30.htm">IRR</a>, 
+			<a href="5.9.5.33.htm">MIRR</a>, 
+			<a href="5.9.5.37.htm">NPV</a>, 
+			<a href="5.9.5.48.htm">RATE</a>, 
+			<a href="5.9.5.57.htm">XNPV</a> 
+		</p>
+		<p>비정기적인 납입에 대한 내부수익률을 구합니다. </p>
+		<p><b class="bterm">문법:&emsp;&emsp;		XIRR(값,날자,추정값)</b></p>
+		<table>
+			<tr>
+				<th width="5%">인수명</th>
+				<th>설명</th>
+			</tr>
+			<tr>
+				<td>값</td>
+				<td><b class="bterm">날자</b>의 지불일정에 대응하는 일련의 현금지출입니다. 최초 상환금은 선택사항으로서 투자초기에 발생하는 비용이나 상환금에 해당됩니다. 최초 상환금이 비용이나 상환금인 경우는 부수가 되여야 합니다. 이후의 모든 상환금은 년간일수 365일을 기준으로 할인됩니다. 일련의 값들에는 정수와 부수가 최소한 하나씩 포함되여야 합니다.</td>
+			</tr>
+			<tr>
+				<td>날자</td>
+				<td>현금지출상의 상환금에 해당하는 지불일정입니다. 최초상환날자는 지불일정의 시작을 나타냅니다. 그외의 모든 상환날자는 이 날자후가 되여야 하지만 발생순서는 관계없습니다. 날자는 <b class="bterm">DATE</b>함수를 사용하거나 다른 수식 또는 함수의 결과로 입력하여야 합니다. 례를 들어 2008년 5월 23일의 경우 DATE(2008,5,23)을 사용합니다. </td>
+			</tr>
+			<tr>
+				<td>추정값</td>
+				<td><b class="bterm">XIRR</b>함수의 결과값에 가깝다고 추측되는 수입니다. 추가선택인수입니다. 생략하면 10%(0.1)로 간주됩니다.</td>
+			</tr>
+		</table>
+		<p><b class="bterm">주의</b></p>
+			<ul>
+				<li><b class="bterm">날자</b>에 포함된 수자는 소수점이하를 잘라서 옹근수로 변환됩니다.</li>
+				<li><b class="bterm">XIRR</b> 함수에는 늘거나 줄어든 현금지출이 최소한 하나씩 필요합니다. 그렇지 않으면 <b class="bterm">오유:[오유번호]</b>가 반환됩니다.</li>
+				<li><b class="bterm">날자</b>의 수자중 무효한 날자가 있으면 <b class="bterm">오유:[오유번호]</b>가 반환됩니다.</li>
+				<li><b class="bterm">날자</b>에 포함된 날자가 시작날자보다 전 날자일 때에는 <b class="bterm">오유:[오유번호]</b>가 반환됩니다.</li>
+				<li><b class="bterm">값</b>과 <b class="bterm">날자</b>에 있는 값의 개수가 서로 다를 때에는 <b class="bterm">오유:[오유번호]</b>가 반환됩니다.</li>
+				<li><b class="bterm">XIRR</b>함수계산에서는 대부분 <b class="bterm">날자</b>를 지정하지 않아도 됩니다. 생략하면 <b class="bterm">추정값</b>은 0.1(10%)로 계산됩니다.</li>
+				<li><b class="bterm">XIRR</b>함수는 순현재가치를 계산하는 XNPV 함수와 밀접한 관계가 있습니다. XIRR로 계산하는 회수률은 XNPV = 0일 때의 리자률과 같습니다.</li>
+				<li><b class="bterm">XIRR</b>함수는 반복기법을 사용하여 계산됩니다. 계속 새로운 리자률을 사용하면서(<b class="bterm">추정값</b>에서 시작하여) 결과의 오차가 0.000001%이내로 정확해질 때까지 반복합니다. <b class="bterm">XIRR</b>함수가 100번 반복실행후에도 결과를 얻지 못하면 <b class="bterm">오유:[오유번호]</b>가 반환됩니다. 다음식을 만족할 때까지 리자률이 변하게 됩니다.
+					<p><img border='0' src='../image/image/sgsd/formula-19.gif' alt='표시'></p>
+					<p>여기서</p>
+					<p><b class="bterm">di</b> = i번째 또는 마지막상환날자입니다.</p>
+					<p><b class="bterm">d1</b> = 0번째 상환날자입니다.</p>
+					<p><b class="bterm">Pi</b> = i번째 또는 마지막상환금입니다.</p>
+				</li>
+			</ul>
+		<p><b class="bterm">실례</b></p>
+			<p><a href="1.5.1.htm">실례의 리용방법</a>을 참고하십시오.</p>
+			<table>
+				<tr>
+					<td>
+						<table>
+							<tr><td>&nbsp;</td></tr>
+							<tr><th>1</th></tr>
+							<tr><th>2</th></tr>
+							<tr><th>3</th></tr>
+							<tr><th>4</th></tr>
+							<tr><th>5</th></tr>
+							<tr><th>6</th></tr>
+						</table>
+					</td>
+					<td>
+						<table>
+							<tr>
+								<th>A</th>
+								<th>B</th>
+							</tr>
+							<tr>
+								<th>값</th>
+								<th>날자</th>
+							</tr>
+							<tr>
+								<td>-10 000</td>
+								<td>2008/1/1</td>
+							</tr>
+							<tr>
+								<td>2 750</td>
+								<td>2008/3/1</td>
+							</tr>
+							<tr>
+								<td>4 250</td>
+								<td>2008/10/30</td>
+							</tr>
+							<tr>
+								<td>3 250</td>
+								<td>2009/2/15</td>
+							</tr>
+							<tr>
+								<td>2 750</td>
+								<td>2009/4/1</td>
+							</tr>
+							<tr>
+								<th>수식</th>
+								<th>설명(결과)</th>
+							</tr>
+							<tr>
+								<td>=XIRR(A2:A6,B2:B6,0.1)</td>
+								<td>내부수익률입니다. (0.37, 즉 37.34%)</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>	
+			<p>
+				<b class="bterm">참고:</b>   수자를 백분률로 표시하려면 세포를 선택하고  
+				<b class="bterm">&lt;서식&gt;</b>차림표에서
+				<b class="bterm">&lt;세포&gt;</b>를 찰칵한 다음 
+				<b class="bterm">&lt;수자&gt;</b>표쪽을 찰칵하고 
+				<b class="bterm">&lt;종류&gt;</b>목록칸에서 
+				<b class="bterm">&lt;백분률&gt;</b>을 찰칵합니다.
+			</p>		
+		<script type="text/javascript" language="Javascript">footerView()</script>
+	
+</body>
+</html>														

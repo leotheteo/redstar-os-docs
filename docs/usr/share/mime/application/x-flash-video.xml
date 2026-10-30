@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="application/x-flash-video">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>Flash video</comment>
+  <alias type="flv-application/octet-stream"/>
+</mime-type>

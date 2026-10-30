@@ -1,0 +1,88 @@
+<html dir='ltr'>
+	<head>
+		<META http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+		<title>WEEKDAY</title>
+		<link rel='stylesheet' type='text/css' href='../css/main.css'/>
+		<script type='text/javascript' language='Javascript' src='../js/mexpcol.js'></script>
+		<script type='text/javascript' language='JavaScript' src='../js/glossary.js'></script>
+	</head>
+	<body>
+		<p id='ExpandAllLine' class='ExpFav'>
+			<a href='#' onClick='ExpandAll()' onKeyPress='ExpandAll()' class='DropDown'>
+				<img id='picHeader' border='0' src='../image/image/common/expandtri.gif' alt='모두 표시'>
+				<span id='ExpandAll'>모두 표시</span>
+			</a>
+		</p>
+		<h1>&nbsp;<img align="absbottom" src="../image/external_images/crystal/svtools/res/new_doc.png"/>&nbsp;WEEKDAY</h1>
+		<p><b class="bterm">참고항목</b>&emsp; 
+		   <a href='5.9.4.1.htm'>날자 및 시간함수목록</a>, 
+		   <a href='5.9.4.5.htm'>DAY</a>, 
+		   <a href='5.9.4.18.htm'>NOW</a>, 
+		   <a href='5.9.12.26.htm'>TEXT</a>, 
+		   <a href='5.9.4.22.htm'>TODAY</a>
+		</p>
+		<p>날자의 요일을 옹근수(1~7)로 구합니다.</p>
+		<p><b class="bterm">문법:&emsp;&emsp;	WEEKDAY(날자,류형)</b></p>
+		<table>
+			<tr>
+				<th>인수명</th>
+				<th>설명</th>
+			</tr>
+			<tr>
+				<td>날자</td>
+				<td>찾을 날자를 나타내는 내부날자입니다. 날자는 <b class="bterm">DATE</b>함수를 사용하여 입력하거나 다른 수식 또는 함수의 결과로 입력하여야 합니다. 
+					례를 들어 2008년 5월 23일을 입력하려면 DATE(2008,5,23)를 사용합니다.
+				</td>
+			</tr>
+				<tr>
+				<td>류형</td>
+				<td><b class="bterm">류형</b> = 1(기본값)에서는 요일이 일요일부터 계산되고 <b class="bterm">류형</b> = 2에서는 요일이 월요일=1부터 계산되며 <b class="bterm">류형</b> = 3에서는 월요일=0부터 계산됩니다. 추가선택인수입니다.</td>
+			</tr>
+		</table>
+		<p><b class="bterm">실례</b></p>
+			<p><a href='1.5.1.htm'>실례의 리용방법</a>을 참고하십시오.</p>
+			<table>
+				<tr>
+					<td>
+						<table>
+							<tr><td>&nbsp;</td></tr>
+							<tr><th>1</th></tr>
+							<tr><th>2</th></tr>
+						</table>
+					</td>
+					<td>
+						<table>
+							<tr>
+								<th>A</th>
+							</tr>
+							<tr>
+								<th>자료</th>
+							</tr>
+							<tr>
+								<td>2008-2-14</td>
+							</tr>
+							<tr>
+								<th>수식</th>
+								<th>설명(결과)</th>
+							</tr>
+							<tr>
+								<td>=WEEKDAY(A2)</td>
+								<td>요일, 1(일요일)부터 7(토요일)까지의 날자를 사용합니다. (5)</td>
+							</tr>
+							<tr>
+								<td>=WEEKDAY(A2,2)</td>
+								<td>요일, 1(월요일)부터 7(일요일)까지의 날자를 사용합니다. (4)</td>
+							</tr>
+							<tr>
+								<td>=WEEKDAY(A2,3)</td>
+								<td>요일, 0(월요일)부터 6(일요일)까지의 날자를 사용합니다. (3)</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>	
+		<P><b class="bterm">참고:</b>&emsp;&emsp;   2008-2-14는 목요일입니다.</P>
+		<script type="text/javascript" language="Javascript">footerView()</script>
+	
+</body>
+</html>

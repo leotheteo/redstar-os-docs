@@ -1,0 +1,129 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+	<TITLE></TITLE>
+	<META NAME="GENERATOR" CONTENT="《Sogwang 3.0》  (Linux)">
+	<META NAME="CREATED" CONTENT="20100316;10342100">
+	<META NAME="CHANGED" CONTENT="20100316;10343900">
+	<STYLE TYPE="text/css">
+	<!--
+		H2 { margin-bottom: 0.18cm; font-family: "Bitstream Vera Sans", "Arial", "Helvetica", "Lucida", "Geneva", "Helmet", sans-serif, "Andale Sans UI", "Arial Unicode MS", "Lucida Sans Unicode", "Tahoma"; font-size: 14pt }
+		H3 { margin-bottom: 0.18cm; font-family: "Bitstream Vera Sans", "Arial", "Helvetica", "Lucida", "Geneva", "Helmet", sans-serif, "Andale Sans UI", "Arial Unicode MS", "Lucida Sans Unicode", "Tahoma"; font-size: 12pt }
+		P.example { margin-top: 0.04cm; margin-bottom: 0.04cm; font-family: "Bitstream Vera Sans Mono", "Cumberland", "Courier New", "Courier", "Lucida Sans Typewriter", "Lucida Typewriter", "Monaco", "Monospaced" }
+		P.listitem { font-family: "Bitstream Vera Sans", "Arial", "Helvetica", "Lucida", "Geneva", "Helmet", sans-serif, "Andale Sans UI", "Arial Unicode MS", "Lucida Sans Unicode", "Tahoma" }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="ko-KP" DIR="LTR"><DIV style="margin-left: 25">
+<H1><A NAME="bm_id3726920"></A><A NAME="jdbc"></A><FONT FACE="Thorndale, serif"><SPAN LANG="en-US">JDBC
+Connection </SPAN></FONT>
+</H1>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Specifies the
+options to access a <A href="../../../../Common Help Topics/General_Information/General_Glossary.html#jdbc">JDBC</A>
+database.</SPAN></FONT></P>
+<H2><SPAN LANG="en-US">JDBC Examples</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">You can use a JDBC
+driver class to connect to a JDBC database from </SPAN></FONT><FONT FACE="청봉, serif"><SPAN LANG="en-US">Sogwang .
+The driver class is provided by the database manufacturer. Two
+examples of JDBC databases are Oracle and MySQL.</SPAN></FONT></P>
+<TABLE WIDTH=857 BORDER=0 CELLPADDING=5 CELLSPACING=0>
+	<COL WIDTH=33>
+	<COL WIDTH=511>
+	<TR>
+		<TD WIDTH=47>
+			<P><IMG SRC="../../../../Image/note.png" NAME="graphics1" ALT="Note Icon " ALIGN=BOTTOM WIDTH=33 HEIGHT=42 BORDER=0></P>
+		</TD>
+		<TD WIDTH=790>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">The driver
+			classes must be added to </SPAN></FONT><FONT FACE="청봉, serif"><SPAN LANG="en-US">Sogwang in Sogwang Office - Reference -
+			</SPAN></FONT><FONT FACE="청봉, serif"><SPAN LANG="en-US">Sogwang -
+			Java.</SPAN></FONT></P>
+		</TD>
+	</TR>
+</TABLE>
+<P><BR><BR>
+</P>
+<H3><SPAN LANG="en-US">Oracle database</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">You can use a JDBC
+driver to access an Oracle database from Solaris or Linux. To access
+the database from Windows, you need an ODBC driver.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">On UNIX, ensure that
+the Oracle database client is installed with JDBC support. The JDBC
+driver class for the Solaris Oracle client version 8.x is located in
+the &lt;Oracle&nbsp;client&gt;/product/jdbc/lib/classes111.zip
+directory. You can also download the latest version from the Oracle
+web site:</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">http://otn.oracle.com/tech/java/sqlj_jdbc/content.html</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">In the <B>Data
+source URL</B> box, enter the location of the Oracle database server.
+The syntax of the URL depends on the database type. See the
+documentation that came with the JDBC driver for more information. </SPAN></FONT>
+</P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">For an Oracle
+database, the syntax of the URL is:</SPAN></FONT></P>
+<P CLASS="example"><SPAN LANG="en-US">oracle:thin:@hostname:port:database_name</SPAN></FONT></P>
+<UL>
+	<LI><P CLASS="listitem"><FONT FACE="청봉, serif"><SPAN LANG="en-US">hostname is the name of
+	the machine that runs the Oracle database. You can also replace
+	hostname with the IP address of the server.</SPAN></FONT></P>
+	<LI><P CLASS="listitem"><FONT FACE="청봉, serif"><SPAN LANG="en-US">port is the port where
+	the Oracle database listens. Ask your database administrator for the
+	correct port address.</SPAN></FONT></P>
+	<LI><P CLASS="listitem"><FONT FACE="청봉, serif"><SPAN LANG="en-US">database_name is the name
+	of the Oracle database. Ask your database administrator for the
+	correct name.</SPAN></FONT></P>
+</UL>
+<H3><A NAME="bm_id3033539"></A><SPAN LANG="en-US">MySQL database</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">The driver for the
+MySQL database is available on the MySQL web site.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">The syntax for a
+MySQL database is:</SPAN></FONT></P>
+<P CLASS="example"><FONT FACE="청봉, serif"><SPAN LANG="en-US">mysql://hostname:port/database_name</SPAN></FONT></P>
+<UL>
+	<LI><P CLASS="listitem"><FONT FACE="청봉, serif"><SPAN LANG="en-US">hostname is the name of
+	the machine that runs the MySQL database. You can also replace
+	hostname with the IP address of the server.</SPAN></FONT></P>
+	<LI><P CLASS="listitem"><FONT FACE="청봉, serif"><SPAN LANG="en-US">port is the default port
+	for MySQL databases, namely 3306.</SPAN></FONT></P>
+	<LI><P CLASS="listitem"><FONT FACE="청봉, serif"><SPAN LANG="en-US">database_name is the name
+	of the database.</SPAN></FONT></P>
+</UL>
+<H2><A NAME="bm_id6293221"></A><A NAME="bm_id3450117"></A><SPAN LANG="en-US">Data
+source URL</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Enter the URL for
+the database. For example, for the MySQL JDBC driver, enter
+&quot;jdbc:mysql://&lt;Servername&gt;/&lt;name of the database&gt;&quot;.
+For more information on the JDBC driver, consult the documentation
+that came with the driver.</SPAN></FONT></P>
+<H2><A NAME="bm_id3153970"></A>
+<SPAN LANG="en-US">JDBC Driver Class</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Enter the name of
+the JDBC driver.</SPAN></FONT></P>
+<TABLE WIDTH=945 BORDER=0 CELLPADDING=5 CELLSPACING=0>
+	<COL WIDTH=25>
+	<COL WIDTH=519>
+	<TR>
+		<TD WIDTH=37>
+			<P><IMG SRC="../../../../Image/warning.png" NAME="graphics2" ALT="Warning Icon " ALIGN=BOTTOM WIDTH=25 HEIGHT=42 BORDER=0></P>
+		</TD>
+		<TD WIDTH=898>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Before you can
+			use a JDBC driver, you need to add its class path. Choose <B>Sogwang Office - Reference - Sogwang Office</B></SPAN></FONT>
+			<FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>- Java</B>, and
+			click the <B>Class Path</B> button. After you add the path
+			information, restart </SPAN></FONT><FONT FACE="청봉, serif"><SPAN LANG="en-US">Sogwang .</SPAN></FONT></P>
+		</TD>
+	</TR>
+</TABLE>
+<P><BR>
+  <BR>
+</P>
+<H2><SPAN LANG="en-US">Test Class</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Tests the connection
+with the current settings.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><A HREF="Authentication.html">Authentication</A></SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><A href="../Database Wizard.html">Database
+Wizard</A></SPAN></FONT></P>
+</DIV></BODY>
+</HTML>

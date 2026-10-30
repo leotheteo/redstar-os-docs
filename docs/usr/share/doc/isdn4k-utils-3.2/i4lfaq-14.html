@@ -1,0 +1,64 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <META NAME="GENERATOR" CONTENT="LinuxDoc-Tools 0.9.21">
+ <TITLE>FAQ for isdn4linux: rawip: Raw IP </TITLE>
+ <LINK HREF="i4lfaq-15.html" REL=next>
+ <LINK HREF="i4lfaq-13.html" REL=previous>
+ <LINK HREF="i4lfaq.html#toc14" REL=contents>
+</HEAD>
+<BODY>
+<A HREF="i4lfaq-15.html">Next</A>
+<A HREF="i4lfaq-13.html">Previous</A>
+<A HREF="i4lfaq.html#toc14">Contents</A>
+<HR>
+<H2><A NAME="rawip"></A> <A NAME="s14">14.</A> <A HREF="i4lfaq.html#toc14">rawip: Raw IP </A></H2>
+
+<H2><A NAME="rawip_whatis"></A> <A NAME="ss14.1">14.1</A> <A HREF="i4lfaq.html#toc14.1">rawip_whatis: What is Raw IP, when should I use it? </A>
+</H2>
+
+<P>Raw IP does without the use of a protocol such as X.75 or HDLC
+(for modem emulation, etc.) or PPP. TCP/IP packets are directly
+exchanged.
+Raw IP has both advantages and disadvantages.
+Advantages:
+<UL>
+<LI> No handshaking (= faster connections)</LI>
+<LI> Authorization by Caller ID (= fast, safe, no password)</LI>
+<LI> Fixed IP address (= a broken connection can be continued by redialing)</LI>
+<LI> Higher data transfer rates</LI>
+<LI> Better stability (smaller driver = almost no bugs)</LI>
+</UL>
+
+Disadvantages:
+<UL>
+<LI> No handshaking
+=&gt; Configuration must occur beforehand (IP addresses,...)
+=&gt; sensible to use for only for one provider at a time</LI>
+<LI> Authorization only by Caller ID
+=&gt; Dialin only possible from one's own number</LI>
+<LI> Fixed IP address
+=&gt; must be known ahead of time, more IP addresses required, no dynamic
+assignment of addresses possible.</LI>
+</UL>
+
+From this summary it should be clear under what conditions it makes sense
+to use raw IP.</P>
+
+<H2><A NAME="rawip_capi"></A> <A NAME="ss14.2">14.2</A> <A HREF="i4lfaq.html#toc14.2">rawip_capi: How can I use Raw IP with the new CAPI 2.0 interface (mISDN)? </A>
+</H2>
+
+<P>Raw IP can still be used with the new CAPI interface and drivers by using
+<CODE>ItunD</CODE>, the ISDN tunnel Daemon. <CODE>ItunD</CODE> (ISDN tunnel Daemon)
+provides a network tunnel over ISDN lines using the CAPI interface. The
+ISDN4Linux isdn-net (raw IP) devices are supported.</P>
+<P>You can find <CODE>ItunD</CODE> at:
+<A HREF="http://sourceforge.net/projects/itund/">http://sourceforge.net/projects/itund/</A></P>
+
+
+<HR>
+<A HREF="i4lfaq-15.html">Next</A>
+<A HREF="i4lfaq-13.html">Previous</A>
+<A HREF="i4lfaq.html#toc14">Contents</A>
+</BODY>
+</HTML>

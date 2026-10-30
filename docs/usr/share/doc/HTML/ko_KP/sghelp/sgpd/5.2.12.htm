@@ -1,0 +1,90 @@
+﻿<html dir='ltr'>
+	<head>
+		<META http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+		<title>도형객체의 그룹 및 배렬</title>
+		<link rel='stylesheet' type='text/css' href='../css/main.css'/>
+		<script type='text/javascript' language='Javascript' src='../js/mexpcol.js'></script>
+		<script type='text/javascript' language='JavaScript' src='../js/glossary.js'></script>
+	</head>
+	<body>
+		<h1>&nbsp;<img align="absbottom" src="../image/external_images/crystal/svtools/res/new_doc.png"/>&nbsp;도형객체의 그룹 및 배렬</h1>
+		<p id="ExpandAllLine" class="ExpFav">
+			<a href="#" onClick="ExpandAll()" onKeyPress="ExpandAll()" class="DropDown">
+				<img id="picHeader" border="0" src="../image/image/common/expandtri.gif" alt="모두 표시">
+				<span id="ExpandAll">모두 표시</span>
+			</a>
+		</p>
+		<p>여러 도형객체를 그룹하면 그룹된 <a href="#" class="glossary" onClick="AppendPopup(this,'IDG_DRAWOBJECT')" onKeyPress="AppendPopup(this,'IDG_DRAWOBJECT')">도형객체</a>를 하나의 도형객체인것처럼 작업할수 있습니다.
+			그룹에 속한 모든 도형객체는 하나의 단위로 대칭이동하거나 회전, 크기조정, 확대/축소할수 있습니다.
+			그룹에 속한 모든 도형객체의 <a href="#" class="glossary" onClick="AppendPopup(this,'IDG_STYLEDOC')" onKeyPress="AppendPopup(this,'IDG_STYLEDOC')">서식</a>을 한번에 바꿀수도 있습니다.
+			례를 들어 그룹에 속한 모든 도형객체의 칠하기색을 바꾸거나 그림자를 추가합니다. 또한 그룹을 해제하지 않은 상태에서 그룹안의 특정한 도형객체를 선택하여 특성을 적용하거나 그룹안에 새 그룹을 만들어 복잡한 그림을 작성할수도 있습니다.
+		</p>
+		<h3>도형객체의 그룹 또는 그룹해제</h3>
+		<p>다음의 방법들중에서 하나를 실행합니다.</p>
+		<p>
+			<a href='#' class='DropDown' onClick='Outline2()' onKeyPress='Outline2()'>
+				<img border='0' src='../image/image/common/blueup.gif' alt='표시'>도형객체의 그룹
+			</a>
+		</p>
+		<div id='ExpCol' class='collapsed' border='0'>
+			<ol>
+				<li>
+					그룹하려는 도형객체들을 선택합니다.
+				</li>
+				<li>
+					<b class="bterm">&lt;서식&gt;</b>차림표에서 <b class="bterm">&lt;그룹&gt;</b>의 <b class="bterm">&lt;그룹&gt;</b>을 찰칵합니다.
+				</li>
+			</ol>
+		</div>
+		<p>
+			<a href='#' class='DropDown' onClick='Outline2()' onKeyPress='Outline2()'>
+				<img border='0' src='../image/image/common/blueup.gif' alt='표시'>도형객체의 그룹해제
+			</a>
+		</p>
+		<div id='ExpCol' class='collapsed' border='0'>
+			<ol>
+				<li>
+					그룹을 해제하려는 도형객체그룹을 선택합니다.
+				</li>
+				<li>
+					<b class="bterm">&lt;서식&gt;</b>차림표에서 <b class="bterm">&lt;그룹&gt;</b>의 <b class="bterm">&lt;그룹 해제&gt;</b>를 찰칵합니다.
+				</li>
+			</ol>
+		</div>
+		<h3>도형객체의 재배치</h3>
+		<p>도형객체를 재배치하려면 다음과 같은 방법으로 진행합니다.</p>
+		<ol>
+			<li>
+				재배치하려는 <a href="#" class="glossary" onClick="AppendPopup(this,'IDG_DRAWOBJECT')" onKeyPress="AppendPopup(this,'IDG_DRAWOBJECT')">도형객체</a>를 선택합니다.
+			</li>
+			<p><b class="bterm">참고:</b>   숨겨진 도형객체인 경우 임의의 도형객체를 선택한 다음 요구하는 도형객체가 선택될 때까지 <b class="bterm">[Tab]</b>건이나 <b class="bterm">[Shift+Tab]</b>건을 누릅니다.
+			</p>
+			<li>
+				다음의 방법들중에서 하나를 실행합니다.
+			</li>
+			<p><b class="bterm">객체를 한 단계 앞면에로 이동</b></p>
+				<p><b class="bterm">&lt;도형&gt;</b><a href="#" class="glossary" onClick="AppendPopup(this,'IDG_TOOLBAR')" onKeyPress="AppendPopup(this,'IDG_TOOLBAR')">도구띠</a>에서 <b class="bterm">&lt;배렬&gt;</b>을 찰칵하고 <b class="bterm">&lt;앞면에로 이동&gt;</b>을 찰칵합니다.
+				</p>
+			<p><b class="bterm">객체를 맨 앞면에로 이동</b></p>
+				<p><b class="bterm">&lt;도형&gt;</b><a href="#" class="glossary" onClick="AppendPopup(this,'IDG_TOOLBAR')" onKeyPress="AppendPopup(this,'IDG_TOOLBAR')">도구띠</a>에서 <b class="bterm">&lt;배렬&gt;</b>을 찰칵하고 <b class="bterm">&lt;맨 앞면에로 이동&gt;</b>을 찰칵합니다.
+				</p>
+			<p><b class="bterm">객체를 한 단계 뒤면에로 이동</b></p>
+				<p><b class="bterm">&lt;도형&gt;</b><a href="#" class="glossary" onClick="AppendPopup(this,'IDG_TOOLBAR')" onKeyPress="AppendPopup(this,'IDG_TOOLBAR')">도구띠</a>에서 <b class="bterm">&lt;배렬&gt;</b>을 찰칵하고 <b class="bterm">&lt;뒤면에로 이동&gt;</b>을 찰칵합니다.
+				</p>
+			<p><b class="bterm">객체를 맨 뒤면에로 이동</b></p>
+				<p><b class="bterm">&lt;도형&gt;</b><a href="#" class="glossary" onClick="AppendPopup(this,'IDG_TOOLBAR')" onKeyPress="AppendPopup(this,'IDG_TOOLBAR')">도구띠</a>에서 <b class="bterm">&lt;배렬&gt;</b>을 찰칵하고 <b class="bterm">&lt;맨 뒤면에로 이동&gt;</b>을 찰칵합니다.
+				</p>
+			<p><b class="bterm">객체 앞면에로 이동</b></p>
+				<p><b class="bterm">&lt;도형&gt;</b><a href="#" class="glossary" onClick="AppendPopup(this,'IDG_TOOLBAR')" onKeyPress="AppendPopup(this,'IDG_TOOLBAR')">도구띠</a>에서 <b class="bterm">&lt;배렬&gt;</b>을 찰칵하고 <b class="bterm">&lt;객체 앞면에로&gt;</b>를 찰칵하고 선택한 객체의 뒤에 놓이게 하려는 객체를 찰칵합니다. 그러면 먼저 선택되였던 객체가 후에 선택한 객체의 앞면으로 이동합니다.
+				</p>
+			<p><b class="bterm">객체 뒤면에로 이동</b></p>
+				<p><b class="bterm">&lt;도형&gt;</b><a href="#" class="glossary" onClick="AppendPopup(this,'IDG_TOOLBAR')" onKeyPress="AppendPopup(this,'IDG_TOOLBAR')">도구띠</a>에서 <b class="bterm">&lt;배렬&gt;</b>을 찰칵하고 <b class="bterm">&lt;객체 뒤면에로&gt;</b>를 찰칵하고 선택한 객체의 앞에 놓이게 하려는 객체를 찰칵합니다. 그러면 먼저 선택하였던 객체가 후에 선택한 객체의 뒤면으로 이동합니다.
+				</p>
+			<p><b class="bterm">순서 바꾸기</b></p>
+				<p><b class="bterm">&lt;도형&gt;</b><a href="#" class="glossary" onClick="AppendPopup(this,'IDG_TOOLBAR')" onKeyPress="AppendPopup(this,'IDG_TOOLBAR')">도구띠</a>에서 <b class="bterm">&lt;배렬&gt;</b>을 찰칵하고 <b class="bterm">&lt;바꾸기&gt;</b>를 찰칵하고 선택한 객체와 순서를 바꾸려는 객체를 찰칵합니다.
+				</p>
+		</ol>
+		<script type="text/javascript" language="Javascript">footerView()</script>
+	
+</body>
+</html>

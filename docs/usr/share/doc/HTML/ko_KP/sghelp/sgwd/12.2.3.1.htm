@@ -1,0 +1,73 @@
+<html dir='ltr'>
+	<head>
+		<META http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+		<title>련결된 객체나 포함된 객체로 정보의 삽입</title>
+		<link rel='stylesheet' type='text/css' href='../css/main.css'/>
+		<script type='text/javascript' language='Javascript' src='../js/mexpcol.js'></script>
+		<script type='text/javascript' language='JavaScript' src='../js/glossary.js'></script>
+	</head>
+	<body>
+		<h1>&nbsp;<img align="absbottom" src="../image/external_images/crystal/svtools/res/new_doc.png"/>&nbsp;련결된 객체나 포함된 객체로 정보의 삽입</h1>
+		<p id='ExpandAllLine' class='ExpFav'>
+			<a href='#' onClick='ExpandAll()' onKeyPress='ExpandAll()' class='DropDown'>
+				<img id='picHeader' border='0' src='../image/image/common/expandtri.gif' alt='모두 표시'>
+				<span id='ExpandAll'>모두 표시</span>
+			</a>
+		</p>
+		<p><a href="#" class="glossary" onClick="AppendPopup(this,'IDG_OBJECT')" onKeyPress="AppendPopup(this,'IDG_OBJECT')">객체</a>를 본문문서에 삽입하여 《서광사무처리》 3.0프로그람이나 <a href="#" class="glossary" onClick="AppendPopup(this,'IDG_OBJECTLINK')" onKeyPress="AppendPopup(this,'IDG_OBJECTLINK')">련결된 객체</a> 및 
+			<a href="#" class="glossary" onClick="AppendPopup(this,'IDG_INCLUDEDOBJECT')" onKeyPress="AppendPopup(this,'IDG_INCLUDEDOBJECT')">포함된 객체</a>를 지원하는 다른 프로그람에서 작성한 파일의 정보를 포함시킬수 있습니다.
+		</p>
+		<p><img border="0" src="../image/image/sgwd/embdlink.gif"></p>
+		<p><img border="0" src="../image/image/common/callout1.gif"> 포함된 객체</p>
+		<p><img border="0" src="../image/image/common/callout2.gif"> 련결된 객체</p>
+		<p><img border="0" src="../image/image/common/callout3.gif"> 원본 파일</p>
+		<p>례를 들어 표처리프로그람의  자료표에서 따로 관리하는 정보를 월간 업무보고서에 포함시킬수 있습니다.
+			보고서를 자료표에 <a href="#" class="glossary" onClick="AppendPopup(this,'IDG_LINK')" onKeyPress="AppendPopup(this,'IDG_LINK')">련결</a>하면 <a href="#" class="glossary" onClick="AppendPopup(this,'IDG_ORIGENFILE')" onKeyPress="AppendPopup(this,'IDG_ORIGENFILE')">원본파일</a>을 갱신할 때마다 보고서의 자료도 갱신됩니다.
+			자료표를 보고서에 <a href="#" class="glossary" onClick="AppendPopup(this,'IDG_INCLUDE')" onKeyPress="AppendPopup(this,'IDG_INCLUDE')">포함</a>하면 보고서 또는 <a href="#" class="glossary" onClick="AppendPopup(this,'IDG_OBJECTFILE')" onKeyPress="AppendPopup(this,'IDG_OBJECTFILE')">대상파일</a>에 자료의 정적복사본이 포함됩니다.
+		</p>
+		<p><b class="bterm">련결된 객체와 포함된 객체의 차이점</b></p>
+		<p>련결된 객체와 포함된 객체의 주요 차이점은 대상파일에 자료를 넣은 후 자료를 보관하는 위치와 자료를 갱신하는 방법입니다.</p>
+		<h2>련결된 객체</h2>
+		<p>객체를 련결하면 원본파일을 수정할 경우에만 정보가 갱신됩니다. 련결된 자료는 원본파일에 보관됩니다.
+			대상파일은 원본파일의 위치만 보관하고 련결된 자료를 현시합니다. 파일크기를 고려해야 할 경우에는 련결된 객체를 사용합니다.
+		</p>
+		<p>또한 다른 부서에서 수집한 자료와 같이 따로 관리되는 정보를 포함하거나 문서처리프로그람에서 최신정보를 유지해야 하는 경우 련결기능을 사용하는것이 좋습니다.
+		</p>
+		<p>표처리프로그람객체에 련결하는 경우 표처리프로그람의 본문 및 수자격식을 사용하거나 문서처리프로그람에서 제공하는 격식을 적용할수 있습니다.
+			문서처리프로그람의 격식을 사용하는 경우 자료를 갱신하더라도 격식을 유지할수 있습니다.
+			례를 들어 련결된 객체의 표, 지면배치, 서체크기, 서체색 등을 변경한 경우 원본파일의 객체가 갱신되더라도 이러한 변경내용은 그대로 유지됩니다.
+		</p>
+		<h2>포함된 객체</h2>
+		<p>객체를 포함한 경우에는 원본파일을 수정해도 대상파일의 정보는 변경되지 않습니다.
+			포함된 객체는 대상파일의 일부가 되며 일단 대상파일에 삽입한 후에는 더이상 원본파일의 일부가 아닙니다.
+		</p>
+		<p>포함기능을 사용하면 하나의 본문문서에 정보전체가 포함되므로 별도로 관리되는 자료표에 접근할수 없는 사람들에게 문서의 직결식판본을 배포할 때 유용합니다.
+		</p>
+		<p>
+			<a href='#' class='DropDown' onClick='Outline2()' onKeyPress='Outline2()'>
+				<img border='0' src='../image/image/common/blueup.gif' alt='표시'>련결된 객체의 편집 및 갱신
+			</a>
+		</p>
+		<div id='ExpCol' class='collapsed' border='0'>
+			<p>문서에 있는 련결된 객체를 편집하려면 <b class="bterm">&lt;편집&gt;</b>차림표의 <b class="bterm">&lt;련결&gt;</b>지령을 사용합니다.</p>
+			<p>기본적으로 련결된 객체는 자동적으로 갱신됩니다.
+				즉 문서처리프로그람에서 대상파일을 열 때마다 련결된 정보가 갱신됩니다.
+			</p>
+<!--			<p>수동으로 갱신할 때만 련결된 객체를 갱신하도록 객체련결을 설정할수 있습니다.</p>-->
+			<p>문서를 인쇄할 때마다 련결된 객체를 갱신하도록 설정하여 문서내용을 항상 최신으로 유지할수도 있습니다.</p>
+			<p>련결된 객체와 원본파일사이의 련결을 영구적으로 해제할수도 있습니다.</p>
+		</div>
+		<p>
+			<a href='#' class='DropDown' onClick='Outline2()' onKeyPress='Outline2()'>
+				<img border='0' src='../image/image/common/blueup.gif' alt='표시'>포함된 객체의 편집
+			</a>
+		</p>
+		<div id='ExpCol' class='collapsed' border='0'>
+			<p>포함된 객체를 편집하려면 객체를 두번 찰칵한 다음 <a href="#" class="glossary" onClick="AppendPopup(this,'IDG_ORIGENPROGRAM')" onKeyPress="AppendPopup(this,'IDG_ORIGENPROGRAM')">원본프로그람</a>에서 객체를 변경합니다.
+				원본프로그람이 없을 경우에는 사용자에게 있는 프로그람파일형식으로 포함된 객체를 변환할수 있습니다.
+			</p>
+		</div>
+		<script type="text/javascript" language="Javascript">footerView()</script>
+	
+</body>
+</html>

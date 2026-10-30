@@ -1,0 +1,105 @@
+﻿<html dir='ltr'>
+	<head>
+		<META http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+		<title>SUMIF</title>
+		<link rel='stylesheet' type='text/css' href='../css/main.css'/>
+		<script type='text/javascript' language='Javascript' src='../js/mexpcol.js'></script>
+		<script type='text/javascript' language='JavaScript' src='../js/glossary.js'></script>
+	</head>
+	<body>
+		<h1>&nbsp;<img align="absbottom" src="../image/external_images/crystal/svtools/res/new_doc.png"/>&nbsp;SUMIF</h1>
+		<p id='ExpandAllLine' class='ExpFav'>
+			<a href='#' onClick='ExpandAll()' onKeyPress='ExpandAll()' class='DropDown'>
+				<img id='picHeader' border='0' src='../image/image/common/expandtri.gif' alt='모두 표시'>
+				<span id='ExpandAll'>모두 표시</span>
+			</a>
+		</p>
+		<p><b class="bterm">참고항목</b>&emsp;
+			<a href="5.9.8.1.htm">수학함수목록</a>,
+			<a href="5.9.8.21.htm">COUNTIF</a>,
+			<a href="5.9.8.58.htm">SUM</a>
+		</p>
+		<p>조건에 맞는 인수의 총합을 구합니다.</p>
+		<p><b class="bterm">문법:&emsp;&emsp;		SUMIF(범위,기준,합계범위)</b></p>
+		<table>
+			<tr>
+				<th>인수명</th>
+				<th>설명</th>
+			</tr>
+			<tr>
+				<td>범위</td>
+				<td>지정한 기준에 의하여 계산될 범위입니다.</td>
+			</tr>
+			<tr>
+				<td>기준</td>
+				<td>탐색기준이 지정된 세포범위입니다.</td>
+			</tr>
+			<tr>
+				<td>합계범위</td>
+				<td>값의 총합을 구할 범위입니다. 추가선택인수입니다. 이 인수를 지정하지 않는 경우 <b class="bterm">범위</b>에서 찾은 수값들이 합계됩니다.</td>
+			</tr>
+		</table>
+		<p><b class="bterm">주의</b></p>
+			<ul>
+				<li><b class="bterm">합계범위</b>의 세포에 대응하는 <b class="bterm">범위</b>의 세포가 찾으려는 조건과 일치할 때만 더할수 있습니다.</li>
+				<li><b class="bterm">합계범위</b>를 생략하면 <b class="bterm">범위</b>에 있는 세포들이 더해집니다.</li>
+				<li>표처리프로그람에서는 조건을 기준으로 자료를 분석하기 위하여 사용할수 있는 함수들을 추가로 제공합니다. 
+					례를 들어 세포범위안에서 본문문자렬이나 수자가 나오는 회수를 구하려면 <b class="bterm">COUNTIF</b>함수를 사용합니다. 
+					수식에서 조건에 따라 두개의 값중 하나가 반환되게 하려면(례: 지정된 판매량에 따른 특별판매수당) <b class="bterm">IF</b>함수를 사용합니다.</li>
+			</ul>
+		<p><b class="bterm">실례</b></p>			
+<p><a href="1.5.1.htm">실례의 리용방법</a>을 참고하십시오.</p>
+			<table>
+				<tr>
+					<td>
+						<table>
+							<tr><td>&nbsp;</td></tr>
+							<tr><th>1</th></tr>
+							<tr><th>2</th></tr>
+							<tr><th>3</th></tr>
+							<tr><th>4</th></tr>
+							<tr><th>5</th></tr>
+						</table>
+					</td>
+					<td>
+						<table>
+							<tr>
+								<th>A</th>
+								<th>B</th>
+							</tr>
+							<tr>
+								<th>속성값</th>
+								<th>수수료</th>
+							</tr>
+							<tr>
+								<td>100 000</td>
+								<td>7 000</td>
+							</tr>
+							<tr>
+								<td>200 000</td>
+								<td>14 000</td>
+							</tr>
+							<tr>
+								<td>300 000</td>
+								<td>21 000</td>
+							</tr>
+							<tr>
+								<td>400 000</td>
+								<td>28 000</td>
+							</tr>
+							<tr>
+								<th>수식</th>
+								<th>설명(결과)</th>
+							</tr>
+							<tr>
+								<td>=SUMIF(A2:A5,">160 000",B2:B5)</td>
+								<td>160 000이 넘는 속성값에 대한 수수료합계입니다. (63 000)</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>		
+		<script type="text/javascript" language="Javascript">footerView()</script>
+	
+</body>
+</html>																

@@ -1,0 +1,146 @@
+﻿<html dir='ltr'>
+	<head>
+		<META http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+		<title>시간의 더하기</title>
+		<link rel='stylesheet' type='text/css' href='../css/main.css'/>
+		<script type='text/javascript' language='Javascript' src='../js/mexpcol.js'></script>
+		<script type='text/javascript' language='JavaScript' src='../js/glossary.js'></script>
+	</head>
+	<body>
+		<h1>&nbsp;<img align="absbottom" src="../image/external_images/crystal/svtools/res/new_doc.png"/>&nbsp;시간의 더하기</h1>
+		<p id='ExpandAllLine' class='ExpFav'>
+			<a href='#' onClick='ExpandAll()' onKeyPress='ExpandAll()' class='DropDown'>
+				<img id='picHeader' border='0' src='../image/image/common/expandtri.gif' alt='모두 표시'>
+				<span id='ExpandAll'>모두 표시</span>
+			</a>
+		</p>
+		<h2>표준시간형식(시 : 분 : 초)으로 입력된 시간의 경우</h2>
+			<p>이 방법이 제대로 실행되자면 시간은 24, 분과 초는 60을 넘지 말아야 합니다.</p>
+			<p><b class="bterm">실례</b></p>
+			<p><a href="1.5.1.htm">실례의 리용방법</a>을 참고하십시오.</p>
+			<table>
+				<tr>
+					<td>
+						<table>
+							<tr><td>&nbsp;</td></tr>
+							<tr><th>1</th></tr>
+							<tr><th>2</th></tr>
+							<tr><th>3</th></tr>
+							<tr><th>4</th></tr>
+							<tr><th>5</th></tr>
+							<tr><th>6</th></tr>
+						</table>
+					</td>
+					<td>
+						<table>
+							<tr>
+								<th>A</th>
+							</tr>
+							<tr>
+								<th>작업시간</th>
+							</tr>
+							<tr>
+								<td>1:35</td>
+							</tr>
+							<tr>
+								<td>8:30</td>
+							</tr>
+							<tr>
+								<td>3:00</td>
+							</tr>
+							<tr>
+								<td>4:15</td>
+							</tr>
+							<tr>
+								<td>8:00</td>
+							</tr>
+							<tr>
+								<th>수식</th>
+								<th>설명(결과)</th>
+							</tr>
+							<tr>
+								<td>=SUM(A2:A5)</td>
+								<td>합계된 시간이 하루시간보다 작은 경우의 총 작업시간입니다. (17:20)</td>
+							</tr>
+							<tr>
+								<td>=SUM(A2:A6)*24</td>
+								<td>합계된 시간이 하루시간보다 큰 경우의 총 작업시간입니다. (25.33333333)</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+			<p><b class="bterm">참조함수</b></p>
+			<p><a href='5.9.8.58.htm'>SUM</a></p>
+		<h2>하나의 단위의 수자로 입력된 시간의 경우</h2>
+			<p><b class="bterm">TIME</b>함수를 사용하여 수식안에서 시 또는 분과 같은 시간의 각 부분을 조작합니다.</p>
+			<p><b class="bterm">실례</b></p>
+			<p><a href="1.5.1.htm">실례의 리용방법</a>을 참고하십시오.</p>
+			<table>
+				<tr>
+					<td>
+						<table>
+							<tr><td>&nbsp;</td></tr>
+							<tr><th>1</th></tr>
+							<tr><th>2</th></tr>
+							<tr><th>3</th></tr>
+							<tr><th>4</th></tr>
+						</table>
+					</td>
+					<td>
+						<table>
+							<tr>
+								<th>A</th>
+								<th>B</th>
+								<th>C</th>
+							</tr>
+							<tr>
+								<th>시간</th>
+								<th>설명</th>
+								<th>합계</th>
+							</tr>
+							<tr>
+								<td>10:35:00</td>
+								<td>시</td>
+								<td>2</td>
+							</tr>
+							<tr>
+								<td>10:35:00</td>
+								<td>분</td>
+								<td>10</td>
+							</tr>
+							<tr>
+								<td>10:35:00</td>
+								<td>초</td>
+								<td>30</td>
+							</tr>
+							<tr>
+								<th>수식</th>
+								<th>설명(결과)</th>
+								<td>&nbsp;</td>
+							</tr>
+							<tr>
+								<td>=A2+TIME(C2;0;0)</td>
+								<td>우의 시간에 2시간을 더합니다. (12:35:00)</td>
+								<td>&nbsp;</td>
+							</tr>
+							<tr>
+								<td>=A3+TIME(0;C3;0)</td>
+								<td>우의 시간에 10분을 더합니다. (10:45:00)</td>
+								<td>&nbsp;</td>
+							</tr>
+							<tr>
+								<td>=A4+TIME(0;0;C4)</td>
+								<td>우의 시간에 30초를 더합니다. (10:35:30)</td>
+								<td>&nbsp;</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+			<p><b class="bterm">참조함수</b></p>
+			<p><a href='5.9.4.20.htm'>TIME</a></p>
+		<script type="text/javascript" language="Javascript">footerView()</script>
+	
+</body>
+</html>

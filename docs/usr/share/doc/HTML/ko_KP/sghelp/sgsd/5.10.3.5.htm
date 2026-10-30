@@ -1,0 +1,112 @@
+﻿<html dir='ltr'>
+	<head>
+		<META http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+		<title>련결갱신시점의 조종</title>
+		<link rel='stylesheet' type='text/css' href='../css/main.css'/>
+		<script type='text/javascript' language='Javascript' src='../js/mexpcol.js'></script>
+		<script type='text/javascript' language='JavaScript' src='../js/glossary.js'></script>
+	</head>
+	<body>
+		<h1>&nbsp;<img align="absbottom" src="../image/external_images/crystal/svtools/res/new_doc.png"/>&nbsp;련결갱신시점의 조종</h1>
+		<p id='ExpandAllLine' class='ExpFav'>
+			<a href='#' onClick='ExpandAll()' onKeyPress='ExpandAll()' class='DropDown'>
+				<img id='picHeader' border='0' src='../image/image/common/expandtri.gif' alt='모두 표시'>
+				<span id='ExpandAll'>모두 표시</span>
+			</a>
+		</p>
+		<p><b class="bterm">다른 자료표문서에 대한 련결</b></p>
+		<p>련결이 들어있는 자료표문서는 대상자료표문서라고 하며 련결되는 자료표문서는 원본자료표문서라고 합니다. 
+			원본자료표문서가 열려있지 않은 상태에서 대상자료표문서를 열면 시작할 때 확인통보문의 표시를 통해 련결을 갱신하겠는가를 확인합니다. 
+			확인통보문을 표시하겠는가를 조종할수 있으며 확인통보문이 표시되지 않는 경우 모든 련결을 갱신하겠는가를 조종할수 있습니다. 
+			자료표문서에 련결이 여러개 있는 경우에는 일부 련결만 갱신할수도 있습니다.
+		</p>
+		<p>
+			<a href='#' class='DropDown' onClick='Outline2()' onKeyPress='Outline2()'>
+			<img border='0' src='../image/image/common/blueup.gif' alt='표시'>자료표문서에서 모든 련결 갱신 또는 갱신하지 않기</a>
+		</p>
+		<div id='ExpCol' class='collapsed' border='0'>
+			<ol>
+				<li>자료표문서를 모두 닫습니다. 원본자료표문서가 열려있는 상태에서 다른 자료표문서를 닫으면 갱신에 일관성이 없게 됩니다.</li>
+				<li>련결이 들어있는 자료표문서를 엽니다. 이때 통보문이 현시됩니다. 이 통보문을 표시하겠는가를 조종할수 있습니다. 이에 대해서는 <a href='5.10.3.3.htm'>련결의 갱신</a>을 참고하십시오.</li>
+				<li>련결을 갱신하려면 <b class="bterm">&lt;예&gt;</b>단추를 찰칵합니다. 련결을 갱신하지 않으려면 <b class="bterm">&lt;아니&gt;</b>단추를 찰칵합니다.</li>
+			</ol>
+		</div>
+		<p>
+			<a href='#' class='DropDown' onClick='Outline2()' onKeyPress='Outline2()'>
+			<img border='0' src='../image/image/common/blueup.gif' alt='표시'>다른 자료표문서에 대한 련결의 일부만 갱신</a>
+		</p>
+		<div id='ExpCol' class='collapsed' border='0'>
+			<ol>
+				<li>자료표문서를 모두 닫습니다.</li>
+				<li>련결이 들어있는 자료표문서를 엽니다.</li>
+				<li>련결갱신을 확인하는 통보문이 나타나면 <b class="bterm">&lt;아니&gt;</b>단추를 찰칵합니다.</li>
+				<li><b class="bterm">&lt;편집&gt;</b>차림표에서 <b class="bterm">&lt;련결&gt;</b>을 찰칵합니다.</li>
+				<li>목록칸에서 갱신하려는 련결된 객체를 찰칵합니다.</li>
+				<li><b class="bterm">&lt;갱신&gt;</b>단추를 찰칵합니다.</li>
+			</ol>
+		</div>
+		<p>
+			<a href='#' class='DropDown' onClick='Outline2()' onKeyPress='Outline2()'>
+			<img border='0' src='../image/image/common/blueup.gif' alt='표시'>다른 프로그람에 대한 련결이 수동으로 갱신되도록 설정</a>
+		</p>
+		<div id='ExpCol' class='collapsed' border='0'>
+			<ol>
+				<li><b class="bterm">&lt;편집&gt;</b>차림표에서 <b class="bterm">&lt;련결&gt;</b>을 찰칵합니다.</li>
+					<p>파일에 련결된 정보가 없으면 <b class="bterm">&lt;련결&gt;</b>지령을 사용할수 없습니다.</p>
+				<li>목록칸에서 갱신하려는 련결된 객체를 찰칵합니다. <b class="bterm">&lt;상태&gt;</b>렬에 <b class="bterm">&lt;자동&gt;</b>이 있는 경우는 련결이 자동갱신으로 설정된것이고, <b class="bterm">&lt;상태&gt;</b>렬에 <b class="bterm">&lt;수동&gt;</b>이 있는 경우는 련결이 <b class="bterm">&lt;수동&gt;</b>갱신으로 설정된것입니다.</li>
+				<li><b class="bterm">&lt;갱신&gt;</b>단추를 찰칵하는 경우에만 련결된 객체를 갱신하려면 <b class="bterm">&lt;수동&gt;</b>단일선택단추를 찰칵합니다.</li>
+			</ol>
+		</div>
+		<p>
+			<a href='#' class='DropDown' onClick='Outline2()' onKeyPress='Outline2()'>
+			<img border='0' src='../image/image/common/blueup.gif' alt='표시'>다른 프로그람에 대한 련결이 자동으로 갱신되도록 설정</a>
+		</p>
+		<div id='ExpCol' class='collapsed' border='0'>
+			<ol>
+				<li><b class="bterm">&lt;편집&gt;</b>차림표에서 <b class="bterm">&lt;련결&gt;</b>을 찰칵합니다.</li>
+					<p>파일에 련결된 정보가 없으면 <b class="bterm">&lt;련결&gt;</b>지령을 사용할수 없습니다.</p>
+				<li>목록칸에서 갱신하려는 련결된 객체를 찰칵합니다. <b class="bterm">&lt;상태&gt;</b>렬에 <b class="bterm">&lt;자동&gt;</b>이 있는 경우는 련결이 자동갱신으로 설정된것이고, <b class="bterm">&lt;상태&gt;</b>렬에 <b class="bterm">&lt;수동&gt;</b>이 있는 경우는 련결이 <b class="bterm">&lt;수동&gt;</b>갱신으로 설정된것입니다.</li>
+				<li>객체가 들어있는 파일을 열 때마다 또는 그 파일이 열려있는 동안 원래정보가 변경될 때마다 련결된 객체를 갱신하려면 <b class="bterm">&lt;자동&gt;</b>단일선택단추를 찰칵합니다.</li>
+				<li><b class="bterm">&lt;확인&gt;</b>단추를 찰칵합니다.</li>
+				<li><b class="bterm">&lt;서광사무처리&gt;</b>차림표에서 <b class="bterm">&lt;환경설정&gt;</b>을 찰칵하고 <b class="bterm">&lt;서광사무처리 표처리프로그람&gt;</b>에서 <b class="bterm">&lt;일반&gt;</b>을 찰칵합니다.</li>
+				<li><b class="bterm">&lt;갱신&gt;</b>부분에서 <b class="bterm">&lt;항상&gt;</b>단일선택단추가 선택되였는가를 확인합니다.</li>
+			</ol>
+		</div>
+		<p>
+			<a href='#' class='DropDown' onClick='Outline2()' onKeyPress='Outline2()'>
+			<img border='0' src='../image/image/common/blueup.gif' alt='표시'>다른 프로그람에 대한 련결의 자동갱신을 무시</a>
+		</p>
+		<div id='ExpCol' class='collapsed' border='0'>
+			<ol>
+				<li>련결이 들어있는 표용지로 전환합니다.</li>
+				<li><b class="bterm">&lt;서광사무처리&gt;</b>차림표에서 <b class="bterm">&lt;환경설정&gt;</b>을 찰칵하고 <b class="bterm">&lt;서광사무처리 표처리프로그람&gt;</b>에서 <b class="bterm">&lt;일반&gt;</b>을 찰칵합니다.</li>
+				<li><b class="bterm">&lt;갱신&gt;</b>부분에서 <b class="bterm">&lt;하지 않음&gt;</b>단일선택단추를 찰칵합니다.</li>
+			</ol>
+		</div>
+		<p>
+			<a href='#' class='DropDown' onClick='Outline2()' onKeyPress='Outline2()'>
+			<img border='0' src='../image/image/common/blueup.gif' alt='표시'>다른 프로그람에 대한 련결을 지금 갱신</a>
+		</p>
+		<div id='ExpCol' class='collapsed' border='0'>
+			<p>이 절차는 갱신이 자동으로 설정되였는가 혹은 수동으로 설정되였는가에 관계없이 언제든지 련결된 객체를 갱신합니다.</p>
+			<ol>
+				<li><b class="bterm">&lt;편집&gt;</b>차림표에서 <b class="bterm">&lt;련결&gt;</b>을 찰칵합니다.</li>
+					<p>파일에 련결된 정보가 없으면 <b class="bterm">&lt;련결&gt;</b>지령을 사용할수 없습니다.</p>
+				<li>목록칸에서 갱신하려는 련결된 객체를 찰칵합니다.</li>
+				<li><b class="bterm">&lt;갱신&gt;</b>단추를 찰칵합니다.</li>
+			</ol>
+		</div>
+		<p>
+			<a href='#' class='DropDown' onClick='Outline2()' onKeyPress='Outline2()'>
+			<img border='0' src='../image/image/common/blueup.gif' alt='표시'>자료표문서를 열 때 갱신확인 통보문을 표시하지 않고 련결을 자동으로 갱신</a>
+		</p>
+		<div id='ExpCol' class='collapsed' border='0'>
+			<ol>
+				<li><b class="bterm">&lt;서광사무처리&gt;</b>차림표에서 <b class="bterm">&lt;환경설정&gt;</b>을 찰칵한 다음 <b class="bterm">&lt;서광사무처리 표처리프로그람&gt;</b>에서 <b class="bterm">&lt;일반&gt;</b>을 찰칵합니다.</li>
+				<li><b class="bterm">&lt;갱신&gt;</b>부분에서 <b class="bterm">&lt;항상&gt;</b>단일선택단추를 찰칵합니다. 이 단일선택단추를 선택하면 련결이 자동으로 갱신되고 통보문이 표시되지 않습니다.</li>
+			</ol>
+		</div>
+		<script type="text/javascript" language="Javascript">footerView()</script>
+	
+</body>
+</html>

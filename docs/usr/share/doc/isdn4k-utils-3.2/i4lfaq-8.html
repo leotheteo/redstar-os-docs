@@ -1,0 +1,151 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <META NAME="GENERATOR" CONTENT="LinuxDoc-Tools 0.9.21">
+ <TITLE>FAQ for isdn4linux: msn: Configuration/MSNs </TITLE>
+ <LINK HREF="i4lfaq-9.html" REL=next>
+ <LINK HREF="i4lfaq-7.html" REL=previous>
+ <LINK HREF="i4lfaq.html#toc8" REL=contents>
+</HEAD>
+<BODY>
+<A HREF="i4lfaq-9.html">Next</A>
+<A HREF="i4lfaq-7.html">Previous</A>
+<A HREF="i4lfaq.html#toc8">Contents</A>
+<HR>
+<H2><A NAME="msn"></A> <A NAME="s8">8.</A> <A HREF="i4lfaq.html#toc8">msn: Configuration/MSNs </A></H2>
+
+<H2><A NAME="msn_my1"></A> <A NAME="ss8.1">8.1</A> <A HREF="i4lfaq.html#toc8.1">msn_my1: What is my MSN? What if I don't have any? </A>
+</H2>
+
+<P>Your telephone company will tell you your MSN. It is your own telephone
+number. Please note that you <B>have</B> to provide i4l with at least one MSN. If
+you don't have any you can use `0', which is assumed if no MSN is transmitted
+from your telephone company. Check section 
+<A HREF="i4lfaq-25.html#countries">countries</A>, together
+with the following questions, on how to configure your MSN(s).</P>
+
+<H2><A NAME="msn_my2"></A> <A NAME="ss8.2">8.2</A> <A HREF="i4lfaq.html#toc8.2">msn_my2: How can I find out how my telephone number is transmitted to the calling party? </A>
+</H2>
+
+<P>The transmitted MSN can simply be determined by calling yourself
+(for example by telephone). In the log files you will find the
+entry that looks like: &quot;isdn_tty: call from XXX - YYY ignored&quot;
+(in order for this to work, you must of course already have the ISDN
+drivers in your kernel and active).</P>
+
+<H2><A NAME="msn_config"></A> <A NAME="ss8.3">8.3</A> <A HREF="i4lfaq.html#toc8.3">msn_config: How do I configure my MSN? </A>
+</H2>
+
+<P>If your telephone number were 56789, then it would be configured as follows:
+<UL>
+<LI>Modem emulation: <CODE>&quot;AT&amp;e56789&quot;</CODE></LI>
+<LI>Network interfaces: <CODE>&quot;isdnctrl msn interface 56789&quot;</CODE></LI>
+<LI>For test calls to yourself add the area code (e.g. 01234):
+<HR>
+<PRE>
+&quot;isdnctrl addphone interface in 123456789&quot; (without leading zero)
+&quot;isdnctrl addphone interface out 0123456789&quot; (with leading zero)
+</PRE>
+<HR>
+</LI>
+</UL>
+
+You may find national differences here (check section 
+<A HREF="i4lfaq-25.html#countries">countries</A>).</P>
+
+
+<H2><A NAME="msn_max"></A> <A NAME="ss8.4">8.4</A> <A HREF="i4lfaq.html#toc8.4">msn_max: How many MSNs as a maximum can I use for an isdn card? </A>
+</H2>
+
+<P>For outgoing calls, at maximum one MSN can be used. Only incoming calls
+may be configured to allow multiple MSNs.</P>
+<P>For ttyI* devices, at a maximum you can listen to EVERY incoming MSN by
+using the * as a wildcard:
+<HR>
+<PRE>
+at&amp;l*
+</PRE>
+<HR>
+</P>
+<P>When you have a point-to-point connection you should rather specify the
+length of your number area with as many times &quot;?&quot; as you
+have digits, otherwise your number may be accepted too early on overlapping
+receiving. I.e. for 3 digits use:
+<HR>
+<PRE>
+at&amp;l???
+</PRE>
+<HR>
+</P>
+<P>For network devices, you can also use a '*' as a wildcard at the end of the
+number for incoming calls (e.g. <CODE>isdnctrl msn interface 123*</CODE>).
+However, this will create problems for outgoing calls. To handle such
+a situation properly, please use the isdnctrl mapping feature
+(see question 
+<A HREF="i4lfaq-10.html#dialout_manycards">dialout_manycards</A>).</P>
+
+
+<H2><A NAME="msn_mindialin"></A> <A NAME="ss8.5">8.5</A> <A HREF="i4lfaq.html#toc8.5">msn_mindialin: How can I minimize usage of MSNs for digital data dialin? </A>
+</H2>
+
+<P>i4l gives priority to net interfaces. Therefore, you can get away with only
+one MSN when you set it up like this:
+<OL>
+<LI>Set up net interfaces (sync ppp, rawip) for all users that will want to
+use them (ipppd or rawip), with their incoming phone number (precondition is
+that it is transmitted).</LI>
+<LI>Set up ttyI* for all other users (X.75, async ppp).</LI>
+<LI>Set option `secure on'.</LI>
+</OL>
+
+i4l gives priority to net interfaces. `secure on' ensures that only users
+that have been set up will be connected to a net interface. Users that want
+to choose between both will have to use different outgoing MSNs to call you.</P>
+
+<H2><A NAME="msn_onlyone"></A> <A NAME="ss8.6">8.6</A> <A HREF="i4lfaq.html#toc8.6">msn_onlyone: How can I use one MSN for everything? </A>
+</H2>
+
+
+<P>In Germany, this is not much of an issue any more since you can get
+10 MSN for free with Deutsche Telekom
+(
+<A HREF="http://www.dtag.de/english/">http://www.dtag.de/english/</A>). Other phone providers may offer
+less MSN for free. In general, you can get at least 3 MSN. However,
+minimizing MSN usage may still be very interesting for other countries
+or if you have a large demand for numbers. On a normal ISDN bus with MSNs,
+10 MSN per bus are the maximum. To get more numbers, your only alternative
+would be to get a usually more expensive point-to-point ISDN connection.</P>
+<P>Digital data dialin can easily be distinguished from voice/analog modem
+dialin by the 'Service Recognition' code (&quot;digital, data&quot;).</P>
+<P>For the differentiation between net interfaces (ipppd, rawip) and ttyI*
+(X.75) see last question.</P>
+<P>To get voice/analog modem to work in parallel, use mgetty for the analog
+modem. Mgetty can handle analog data calls, faxes, and even voice calls as
+answering machine if the modem supports it. Configure it for 10 rings. If
+you take the phone and hear a fax or modem, send mgetty a USR1 signal (kill
+-USR1 mgetty-pid). If your phone socket is correctly wired, the modem will
+take over the connection, cutting off the phone. If you have an ISDN PBX
+then you can forward the call to a different analog port when you picked up
+a fax/modem call.</P>
+<P>If your analog modem can not handle voice calls, then you have to
+choose since incoming voice calls can not be distinguished from analog
+fax/data calls. Use either VBOX to take your voice calls as an answering
+machine. Or forget about voice calls and set up your modem to handle only
+faxes and/or analog data calls.</P>
+
+<H2><A NAME="msn_buendel"></A> <A NAME="ss8.7">8.7</A> <A HREF="i4lfaq.html#toc8.7">msn_buendel: Can I have several NTBAs, all with the same MSN? </A>
+</H2>
+
+<P>Yes, but you need the cooperation of your telecommunication company. They
+can set up several BRIs in Point-to-point mode that have the same MSN. In
+Germany it is called a bundled line (`B&uuml;ndelanschlu&szlig;').</P>
+<P>Please note that in such a case the MSN may not be transmitted to you. Just
+use the default MSN 0 then.</P>
+
+
+<HR>
+<A HREF="i4lfaq-9.html">Next</A>
+<A HREF="i4lfaq-7.html">Previous</A>
+<A HREF="i4lfaq.html#toc8">Contents</A>
+</BODY>
+</HTML>

@@ -1,0 +1,151 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+	<TITLE></TITLE>
+	<META NAME="GENERATOR" CONTENT="《Sogwang 3.0》  (Linux)">
+	<META NAME="CREATED" CONTENT="20091205;11384400">
+	<META NAME="CHANGED" CONTENT="20091205;11571300">
+	<STYLE TYPE="text/css">
+	<!--
+		H2 { margin-bottom: 0.18cm; font-family: "Bitstream Vera Sans", "Arial", "Helvetica", "Lucida", "Geneva", "Helmet", sans-serif, "Andale Sans UI", "Arial Unicode MS", "Lucida Sans Unicode", "Tahoma"; font-size: 14pt }
+		P.listitem { font-family: "Bitstream Vera Sans", "Arial", "Helvetica", "Lucida", "Geneva", "Helmet", sans-serif, "Andale Sans UI", "Arial Unicode MS", "Lucida Sans Unicode", "Tahoma" }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="ko-KP" DIR="LTR"><DIV style="margin-left: 25">
+<H1><A NAME="createunolistener"></A><A NAME="bm_id3155150"></A><FONT FACE="Thorndale, serif"><SPAN LANG="en-US">CreateUnoListener
+Function [Runtime]</SPAN></FONT></H1>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Creates
+a Listener instance.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Many Uno
+interfaces let you register listeners on a special listener
+interface. This allows you to listen for specific events and call up
+the appropriate listener method. The CreateUnoListener function waits
+for the called listener interface and then passes the interface an
+object that the interface supports. This object is then passed to the
+method to register the listener.</SPAN></FONT></P>
+<H2><SPAN LANG="en-US">Syntax:</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">oListener
+= CreateUnoListener( Prefixname, ListenerInterfaceName )</SPAN></FONT></P>
+<H2><SPAN LANG="en-US">Example:</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">The
+following example is based on a Basic library object.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Dim
+oListener</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">oListener
+= CreateUnoListener(
+&quot;ContListener_&quot;,&quot;com.sun.star.container.XContainerListener&quot;
+)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">The
+CreateUnoListener method requires two parameters. The first is a
+prefix and is explained in detail below. The second parameter is the
+fully qualified name of the Listener interface that you want to use.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">The
+Listener must then be added to the Broadcaster Object. This is done
+by calling the appropriate method for adding a Listener. These
+methods always follow the pattern &quot;addFooListener&quot;, where
+&quot;Foo&quot; is the Listener Interface Type, without the 'X'. In
+this example, the addContainerListener method is called to register
+the XContainerListener:</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Dim oLib</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">oLib =
+BasicLibraries.Library1 ' Library1 must exist!</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">oLib.addContainerListener(
+oListener ) ' Register the listener</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">The
+Listener is now registered. When an event occurs, the corresponding
+Listener calls the appropriate method from the
+com.sun.star.container.XContainerListener Interface.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">The
+prefix calls registered Listeners from Basic-subroutines. The Basic
+run-time system searches for Basic-subroutines or functions that have
+the name &quot;PrefixListenerMethode&quot; and calls them when found.
+Otherwise, a run-time error occurs.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">In this
+example, the Listener-Interface uses the following methods:</SPAN></FONT></P>
+<UL>
+	<LI><P CLASS="listitem"><FONT FACE="청봉, serif"><SPAN LANG="en-US">disposing:</SPAN></FONT></P>
+	<LI><P CLASS="listitem"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Listener base interface
+	(com.sun.star.lang.XEventListener): base interface for all Listener
+	Interfaces</SPAN></FONT></P>
+	<LI><P CLASS="listitem"><FONT FACE="청봉, serif"><SPAN LANG="en-US">elementInserted:</SPAN></FONT></P>
+	<LI><P CLASS="listitem"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Method of the
+	com.sun.star.container.XContainerListener interface</SPAN></FONT></P>
+	<LI><P CLASS="listitem"><FONT FACE="청봉, serif"><SPAN LANG="en-US">elementRemoved:</SPAN></FONT></P>
+	<LI><P CLASS="listitem"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Method of the
+	com.sun.star.container.XContainerListener interface</SPAN></FONT></P>
+	<LI><P CLASS="listitem"><FONT FACE="청봉, serif"><SPAN LANG="en-US">elementReplaced:</SPAN></FONT></P>
+	<LI><P CLASS="listitem"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Method of the
+	com.sun.star.container.XContainerListener interface</SPAN></FONT></P>
+</UL>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">In this
+example, the prefix is ContListener_. The following subroutines must
+therefore be implemented in Basic:</SPAN></FONT></P>
+<UL>
+	<LI><P CLASS="listitem"><FONT FACE="청봉, serif"><SPAN LANG="en-US">ContListener_disposing</SPAN></FONT></P>
+	<LI><P CLASS="listitem"><FONT FACE="청봉, serif"><SPAN LANG="en-US">ContListener_elementInserted</SPAN></FONT></P>
+	<LI><P CLASS="listitem"><FONT FACE="청봉, serif"><SPAN LANG="en-US">ContListener_elementRemoved</SPAN></FONT></P>
+	<LI><P CLASS="listitem"><FONT FACE="청봉, serif"><SPAN LANG="en-US">ContListener_elementReplaced</SPAN></FONT></P>
+</UL>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">An event
+structure type that contains information about an event exists for
+every Listener type. When a Listener method is called, an instance of
+this event is passed to the method as a parameter. Basic Listener
+methods can also call these event objects, so long as the appropriate
+parameter is passed in the Sub declaration. For example:</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Sub
+ContListener_disposing( oEvent )</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">MsgBox
+&quot;disposing&quot;</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">MsgBox
+oEvent.Dbg_Properties</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">End Sub</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Sub
+ContListener_elementInserted( oEvent )</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">MsgBox
+&quot;elementInserted&quot;</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">MsgBox
+oEvent.Dbg_Properties</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">End Sub</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Sub
+ContListener_elementRemoved( oEvent )</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">MsgBox
+&quot;elementRemoved&quot;</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">MsgBox
+oEvent.Dbg_Properties</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">End Sub</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Sub
+ContListener_elementReplaced( oEvent )</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">MsgBox
+&quot;elementReplaced&quot;</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">MsgBox
+oEvent.Dbg_Properties</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">End Sub</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">You do
+not need to include the parameter of an event object if the object is
+not used:</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">'
+Minimal implementation of Sub disposing</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Sub
+ContListener_disposing</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">End Sub</SPAN></FONT></P>
+<TABLE WIDTH=756 BORDER=0 CELLPADDING=5 CELLSPACING=0>
+	<COL WIDTH=25>
+	<COL WIDTH=455>
+	<TR>
+		<TD WIDTH=35>
+			<P><IMG SRC="../../../Image/warning.png" NAME="graphics1" ALT="Warning Icon " ALIGN=BOTTOM WIDTH=25 HEIGHT=42 BORDER=0></P>
+		</TD>
+		<TD WIDTH=701>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Listener
+			methods must <B>always</B> be implemented to avoid Basic run-time
+			errors.</SPAN></FONT></P>
+		</TD>
+	</TR>
+</TABLE>
+<P><BR><BR>
+</P>
+
+</DIV></BODY>
+</HTML>

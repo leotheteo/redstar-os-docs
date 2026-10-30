@@ -1,0 +1,159 @@
+<html dir='ltr'>
+	<head>
+		<META http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+		<title>PERCENTRANK</title>
+		<link rel='stylesheet' type='text/css' href='../css/main.css'/>
+		<script type='text/javascript' language='Javascript' src='../js/mexpcol.js'></script>
+		<script type='text/javascript' language='JavaScript' src='../js/glossary.js'></script>
+	</head>
+	<body>
+		<h1>&nbsp;<img align="absbottom" src="../image/external_images/crystal/svtools/res/new_doc.png"/>&nbsp;PERCENTRANK</h1>
+		<p id='ExpandAllLine' class='ExpFav'>
+			<a href='#' onClick='ExpandAll()' onKeyPress='ExpandAll()' class='DropDown'>
+				<img id='picHeader' border='0' src='../image/image/common/expandtri.gif' alt='모두 표시'>
+				<span id='ExpandAll'>모두 표시</span>
+			</a>
+		</p>
+		<p><b class="bterm">참고항목</b>&emsp;
+			<a href="5.9.10.1.htm">통계함수목록</a>,
+			<a href="5.9.10.35.htm">LARGE</a>,
+			<a href="5.9.10.38.htm">MAX</a>,
+			<a href="5.9.10.40.htm">MEDIAN</a>,
+			<a href="5.9.10.41.htm">MIN</a>,
+			<a href="5.9.10.50.htm">PERCENTILE</a>,
+			<a href="5.9.10.57.htm">QUARTILE</a>,
+			<a href="5.9.10.62.htm">SMALL</a>
+		</p>
+		<p>표본집단에서 값의 백분률순위를 구합니다.</p>
+		<p><b class="bterm">문법:&emsp;&emsp;		PERCENTRANK(자료,값)</b></p>
+		<table>
+			<tr>
+				<th>인수명</th>
+				<th>설명</th>
+			</tr>
+			<tr>
+				<td>자료</td>
+				<td>표본집단의 자료배렬입니다.</td>
+			</tr>
+			<tr>
+				<td>값</td>
+				<td>백분률순위를 지정하는 값입니다.</td>
+			</tr>
+		</table>
+		<p><b class="bterm">주의</b></p>
+			<ul>
+				<li><b class="bterm">자료</b>가 비여있으면 <b class="bterm">오유:[오유번호]</b>를 표시합니다.</li>
+				<li><b class="bterm">값</b>과 일치하는 배렬값이 없으면 보간법을 사용하여 정확한 백분률순위를 구합니다.</li>
+			</ul>
+		<p><b class="bterm">실례</b></p>
+			<p><a href="1.5.1.htm">실례의 리용방법</a>을 참고하십시오.</p>
+			<table>
+				<tr>
+					<td>
+						<table>
+							<tr>
+								<td class="noborder">&nbsp;
+								</td>
+							</tr>
+							<tr>
+								<th>1</th>
+							</tr>
+							<tr>
+								<th>2</th>
+							</tr>
+							<tr>
+								<th>3</th>
+							</tr>
+							<tr>
+								<th>4</th>
+							</tr>
+							<tr>
+								<th>5</th>
+							</tr>
+							<tr>
+								<th>6</th>
+							</tr>
+							<tr>
+								<th>7</th>
+							</tr>
+							<tr>
+								<th>8</th>
+							</tr>
+							<tr>
+								<th>9</th>
+							</tr>
+							<tr>
+								<th>10</th>
+							</tr>
+							<tr>
+								<th>11</th>
+							</tr>
+						</table>
+					</td>
+					<td>
+						<table>
+							<tr>
+								<th>A</th>
+							</tr>
+							<tr>
+								<th>자료</th>
+							</tr>
+							<tr>
+								<td>13</td>
+							</tr>
+							<tr>
+								<td>12</td>
+							</tr>
+							<tr>
+								<td>11</td>
+							</tr>
+							<tr>
+								<td>8</td>
+							</tr>
+							<tr>
+								<td>4</td>
+							</tr>
+							<tr>
+								<td>3</td>
+							</tr>
+							<tr>
+								<td>2</td>
+							</tr>
+							<tr>
+								<td>1</td>
+							</tr>
+							<tr>
+								<td>1</td>
+							</tr>
+							<tr>
+								<td>1</td>
+							</tr>
+							<tr>
+								<th>수식</th>
+								<th>설명(결과)</th>
+							</tr>
+							<tr>
+								<td>=PERCENTRANK(A2:A11,2)</td>
+								<td>우에 있는 목록에서 2의 백분률순위입니다. (0.333, 집합에서 3의 값이 2보다 작고 6이 2보다 크기때문입니다. 즉 3/(3+6)=0.33입니다.)</td>
+							</tr>
+							<tr>
+								<td>=PERCENTRANK(A2:A11,4)</td>
+								<td>우에 있는 목록에서 4의 백분률순위입니다. (0.56)</td>
+							</tr>
+							<tr>
+								<td>=PERCENTRANK(A2:A11,8)</td>
+								<td>우에 있는 목록에서 8의 백분률순위입니다. (0.67)</td>
+							</tr>
+							<tr>
+								<td>=PERCENTRANK(A2:A11,5)</td>
+								<td>우에 있는 목록에서 5의 백분률순위입니다. (0.58, 4의 PERCENTRANK와 8의 PERCENTRANK사이의 1/4입니다.)</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+			<p><b class="bterm">참고:</b>   수자를 백분률로 표시하려면 세포를 선택하고 <b class="bterm">&lt;서식&gt;</b>차림표에서 <b class="bterm">&lt;세포&gt;</b>를 찰칵합니다. <b class="bterm">&lt;수자&gt;</b>표쪽을 찰칵한 다음 <b class="bterm">&lt;종류&gt;</b>목록칸에서 <b class="bterm">&lt;백분률&gt;</b>을 찰칵합니다.</p>
+		<script type="text/javascript" language="Javascript">footerView()</script>
+	
+</body>
+</html>				

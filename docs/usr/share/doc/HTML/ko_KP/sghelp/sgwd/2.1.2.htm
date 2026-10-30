@@ -1,0 +1,169 @@
+<html dir="ltr">
+	<head>
+		<META http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+		<title>편집</title>
+		<link rel="stylesheet" type="text/css" href="../css/main.css"/>
+		<script type="text/javascript" language="Javascript" src="../js/mexpcol.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../js/glossary.js"></script>
+	</head>
+	<body>
+		<h1>&nbsp;<img align="absbottom" src="../image/external_images/crystal/svtools/res/new_doc.png"/>&nbsp;편집</h1>
+		<p id="ExpandAllLine" class="ExpFav">
+			<a href="#" onClick="ExpandAll()" onKeyPress="ExpandAll()" class="DropDown">
+				<img id="picHeader" border="0" src="../image/image/common/expandtri.gif" alt="모두 표시">
+				<span id="ExpandAll">모두 표시</span>
+			</a>
+		</p>
+		<table>
+			<tr>
+				<th>지령명</th>
+				<th>설명</th>
+				<th>지름건</th>
+			</tr>
+			<tr>
+				<td>실행 취소</td>
+				<td>마지막지령의 실행을 취소합니다. 실행을 취소할 지령을 선택하려면 <b class="bterm">&lt;표준&gt;</b>도구띠에서 <b class="bterm">&lt;실행 취소&gt;</b>그림기호옆의 화살표를 찰칵합니다.</td>
+				<td>Ctrl+Z</td>
+			</tr>
+			<tr>
+				<td>다시 실행</td>
+				<td>마지막<b class="bterm">&lt;실행 취소&gt;</b>지령의 실행을 취소합니다. 취소할 <b class="bterm">&lt;실행 취소&gt;</b>단계를 선택하려면 <b class="bterm">&lt;표준&gt;</b>도구띠에서 <b class="bterm">&lt;다시 실행&gt;</b>그림기호옆에 있는 화살표를 찰칵합니다.</td>
+				<td>Ctrl+Y</td>
+			</tr>
+			<tr>
+				<td>반복</td>
+				<td>마지막실행내용을 반복하여 실행합니다.</td>
+				<td>Ctrl+Shift+Y</td>
+			</tr>
+			<tr>
+				<td>자르기</td>
+				<td>선택한 내용을 잘라내여 오림판에 복사합니다.</td>
+				<td>Ctrl+X</td>
+			</tr>
+			<tr>
+				<td>복사</td>
+				<td>선택한 내용을 오림판에 복사합니다.</td>
+				<td>Ctrl+C</td>
+			</tr>
+			<tr>
+				<td>붙이기</td>
+				<td>현재유표위치에 오림판내용을 삽입합니다. 선택된 본문이나 객체는 모두 오림판의 내용으로 바뀝니다. 서식을 선택하려면 그림기호옆의 화살표를 찰칵합니다.</td>
+				<td>Ctrl+V</td>
+			</tr>
+			<tr>
+				<td>형식을 선택하여 붙이기</td>
+				<td>오림판의 내용을 지정한 서식으로 현재파일에 삽입합니다.</td>
+				<td>Ctrl+Shift+V</td>
+			</tr>
+			<tr>
+				<td>본문 선택</td>
+				<td>읽기전용의 문서나 도움말에서 선택유표를 활성상태로 만듭니다. <b class="bterm">&lt;파일&gt;</b>/<b class="bterm">&lt;열기&gt;</b>대화창에서 읽기전용항목을 선택하여 파일을 연 다음 이 기능을 사용하여 본문을 선택합니다. 선택유표는 깜빡이지 않습니다.</td>
+				<td>Ctrl+Shift+I</td>
+			</tr>
+			<tr>
+				<td>모두선택</td>
+				<td>현재문서의 전체 내용을 선택합니다.</td>
+				<td>Ctrl+A</td>
+			</tr>
+			<tr>
+				<td><a href="#ID_CHANGE">변경</a></td>
+				<td>파일의 변경을 추적하는데 사용할수 있는 지령을 현시합니다.</td>
+				<td>&nbsp;</td>
+			</tr>
+			<tr>
+				<td>탐색 및 치환</td>
+				<td>현재문서에서 본문 또는 서식을 탐색하거나 치환합니다.</td>
+				<td>Ctrl+Shift+H</td>
+			</tr>
+			<tr>
+				<td>항행기</td>
+				<td>문서의 다른 부분으로 빨리 이동할수 있는 항행기를 보이거나 숨깁니다.</td>
+				<td>F5</td>
+			</tr>
+			<tr>
+				<td>자동본문</td>
+				<td>자동본문을 만들거나 편집하거나 삽입합니다. 서식이 있는 본문, 그림이 있는 본문, 표 및 마당을 자동본문으로 보관할수 있습니다. 자동본문을 빨리 삽입하려면 문서에서 자동본문의 지름건을 입력한 다음 <code>&lt;F3&gt;</code>건을 누릅니다.</td>
+				<td>&nbsp;</td>
+			</tr>
+			<tr>
+				<td>마당</td>
+				<td>마당의 속성을 편집할수 있는 대화창을 현시합니다. <b class="bterm">&lt;삽입/마당&gt;</b>기능을 사용하여 마당을 삽입한 다음 이 지령을 사용할수 있습니다.</td>
+				<td>&nbsp;</td>
+			</tr>
+			<tr>
+				<td>각주/본문끝주</td>
+				<td>선택한 각주나 본문끝주의 지탱점을 편집합니다. <b class="bterm">&lt;삽입&gt;/&lt;각주&gt;/&lt;본문끝주&gt;</b>를 눌러 각주나 본문끝주를 삽입한 후 이 지령을 선택합니다.</td>
+				<td>&nbsp;</td>
+			</tr>
+			<tr>
+				<td>색인항목</td>
+				<td>선택한 색인항목을 편집합니다. <b class="bterm">&lt;삽입&gt;</b>/<b class="bterm">&lt;색인 및 차례&gt;</b>/<b class="bterm">&lt;항목&gt;</b>기능을 사용한 다음 이 지령을 선택할수 있습니다.</td>
+				<td>&nbsp;</td>
+			</tr>
+			<tr>
+				<td>참고문헌항목</td>
+				<td>선택한 참고문헌항목을 편집합니다.</td>
+				<td>&nbsp;</td>
+			</tr>
+			<tr>
+				<td>하이퍼련결</td>
+				<td>하이퍼련결을 만들고 편집할수 있는 대화창을 현시합니다.</td>
+				<td>&nbsp;</td>
+			</tr>
+			<tr>
+				<td>련결</td>
+				<td>원본파일의 경로를 포함하여 현재문서에 있는 모든 련결의 속성을 편집할수 있습니다. 현재문서에 다른 파일에 대한 련결이 없으면 이 지령을 사용할수 없습니다.</td>
+				<td>&nbsp;</td>
+			</tr>
+			<tr>
+				<td>화상</td>
+				<td>그림을 수정하거나 그림의 하이퍼련결부에 URL을 첨부할수 있습니다. 여기서 그림은 하나이상의 하이퍼련결부로 구성된 그룹입니다.</td>
+				<td>&nbsp;</td>
+			</tr>
+			<tr>
+				<td>객체</td>
+				<td>삽입된 OLE 객체를 편집하거나 이름을 달아 보관할수 있습니다.</td>
+				<td>&nbsp;</td>
+			</tr>
+		</table>
+		<a name="ID_CHANGE"></a>
+		<p>
+			<a href="#" class="DropDown" onClick="Outline2()" onKeyPress="Outline2()">
+			<img border="0" src="../image/image/common/blueup.gif" alt="표시">변경</a>
+		</p>
+		<div id="ExpCol" class="collapsed" border="0">
+			<table>
+				<tr>
+					<th>지령명</th>
+					<th>설명</th>
+				</tr>
+				<tr>
+					<td>기록</td>
+					<td>현재문서의 모든 변경을 작성자 및 날자별로 추적합니다.</td>
+				</tr>
+				<tr>
+					<td>기록 보호</td>
+					<td>기록보호는 사용자가 기록변경기능을 비활성상태로 만들거나 암호를 입력하지 않고 변경을 수락하거나 거부할수 없게 합니다.</td>
+				</tr>
+				<tr>
+					<td>보이기</td>
+					<td>기록된 변경을 현시하거나 숨깁니다.</td>
+				</tr>
+				<tr>
+					<td>수락 또는 거부</td>
+					<td>기록된 변경을 수락하거나 거부합니다.</td>
+				</tr>
+				<tr>
+					<td>설명</td>
+					<td>기록된 변경에 대한 설명을 삽입합니다.</td>
+				</tr>
+				<tr>
+					<td>문서 합치기</td>
+					<td>기록된 변경을 합치기 위한 <b class="bterm">&lt;삽입&gt;</b>대화창을 현시합니다.</td>
+				</tr>
+			</table>
+		</div>
+		<script type="text/javascript" language="Javascript">footerView()</script>
+	
+</body>
+</html>

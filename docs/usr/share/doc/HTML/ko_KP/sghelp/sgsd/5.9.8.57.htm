@@ -1,0 +1,144 @@
+﻿<html dir='ltr'>
+	<head>
+		<META http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+		<title>SUBTOTAL</title>
+		<link rel='stylesheet' type='text/css' href='../css/main.css'/>
+		<script type='text/javascript' language='Javascript' src='../js/mexpcol.js'></script>
+		<script type='text/javascript' language='JavaScript' src='../js/glossary.js'></script>
+	</head>
+	<body>
+		<h1>&nbsp;<img align="absbottom" src="../image/external_images/crystal/svtools/res/new_doc.png"/>&nbsp;SUBTOTAL</h1>
+		<p id='ExpandAllLine' class='ExpFav'>
+			<a href='#' onClick='ExpandAll()' onKeyPress='ExpandAll()' class='DropDown'>
+				<img id='picHeader' border='0' src='../image/image/common/expandtri.gif' alt='모두 표시'>
+				<span id='ExpandAll'>모두 표시</span>
+			</a>
+		</p>
+		<p><b class="bterm">참고항목</b>&emsp;
+			<a href="5.9.8.1.htm">수학함수목록</a>
+		</p>
+		<p>자료표에서 부분합을 계산합니다.</p>
+		<p><b class="bterm">문법:&emsp;&emsp;		SUBTOTAL(함수,범위)</b></p>
+		<table>
+			<tr>
+				<th>인수명</th>
+				<th>설명</th>
+			</tr>
+			<tr>
+				<td>함수</td>
+				<td>함수에 대한 색인입니다. 즉 Total, Max, ...와 같은 함수의 색인입니다. 목록에서 부분합을 계산하는데 사용할 함수를 지정하며 1부터 11(숨겨진 값 포함)까지 또는 101부터 111(숨겨진 값 무시)까지의 수값입니다.</td>
+			</tr>
+			<tr>
+				<td>범위</td>
+				<td>계산할 세포범위입니다.</td>
+			</tr>
+		</table>		
+		<table>
+			<tr>
+				<th>함수 색인</th>
+				<th>함수</th>
+			</tr>
+			<tr>
+				<td>1</td>
+				<td>AVERAGE</td>
+			</tr>
+			<tr>
+				<td>2</td>
+				<td>COUNT</td>
+			</tr>
+			<tr>
+				<td>3</td>
+				<td>COUNTA</td>
+			</tr>
+			<tr>
+				<td>4</td>
+				<td>MAX</td>
+			</tr>
+			<tr>
+				<td>5</td>
+				<td>MIN</td>
+			</tr>
+			<tr>
+				<td>6</td>
+				<td>PRODUCT</td>
+			</tr>
+			<tr>
+				<td>7</td>
+				<td>STDEV</td>
+			</tr>
+			<tr>
+				<td>8</td>
+				<td>STDEVP</td>
+			</tr>
+			<tr>
+				<td>9</td>
+				<td>SUM</td>
+			</tr>
+			<tr>
+				<td>10</td>
+				<td>VAR</td>
+			</tr>
+			<tr>
+				<td>11</td>
+				<td>VARP</td>
+			</tr>
+		</table>				
+		<p><b class="bterm">주의</b></p>
+			<ul>
+				<li><b class="bterm">범위</b>안에 다른 부분합이 있으면(또는 중첩된 부분합이면) 2중으로 계산되는것을 피하기 위하여 중첩된 부분합을 무시합니다.</li>
+				<li><b class="bterm">SUBTOTAL</b>함수는 <b class="bterm">&lt;서식&gt;</b>차림표의 <b class="bterm">&lt;행&gt;</b>부분차림표에 있는 <b class="bterm">&lt;숨기기&gt;</b>지령으로 숨겨진 행의 값을 포함합니다.</li>
+			</ul>
+		<p><b class="bterm">실례</b></p>			
+<p><a href="1.5.1.htm">실례의 리용방법</a>을 참고하십시오.</p>
+			<table>
+				<tr>
+					<td>
+						<table>
+							<tr><td>&nbsp;</td></tr>
+							<tr><th>1</th></tr>
+							<tr><th>2</th></tr>
+							<tr><th>3</th></tr>
+							<tr><th>4</th></tr>
+							<tr><th>5</th></tr>
+						</table>
+					</td>
+					<td>
+						<table>
+							<tr>
+								<th>A</th>
+							</tr>
+							<tr>
+								<th>자료</th>
+							</tr>
+							<tr>
+								<td>120</td>
+							</tr>
+							<tr>
+								<td>10</td>
+							</tr>
+							<tr>
+								<td>150</td>
+							</tr>
+							<tr>
+								<td>23</td>
+							</tr>
+							<tr>
+								<th>수식</th>
+								<th>설명(결과)</th>
+							</tr>
+							<tr>
+								<td>=SUBTOTAL(9,A2:A5)</td>
+								<td>SUM함수를 사용한 우에 있는 렬의 부분합입니다. (303)</td>
+							</tr>
+							<tr>
+								<td>=SUBTOTAL(1,A2:A5)</td>
+								<td>AVERAGE함수를 사용한 우에 있는 렬의 부분합입니다. (75.75)</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>		
+		<script type="text/javascript" language="Javascript">footerView()</script>
+	
+</body>
+</html>																

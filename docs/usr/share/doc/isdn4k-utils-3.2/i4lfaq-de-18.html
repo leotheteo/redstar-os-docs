@@ -1,0 +1,116 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <META NAME="GENERATOR" CONTENT="LinuxDoc-Tools 0.9.21">
+ <TITLE>ISDN4LINUX - FAQ (deutsche Version): chargeint: Chargeint </TITLE>
+ <LINK HREF="i4lfaq-de-19.html" REL=next>
+ <LINK HREF="i4lfaq-de-17.html" REL=previous>
+ <LINK HREF="i4lfaq-de.html#toc18" REL=contents>
+</HEAD>
+<BODY>
+<A HREF="i4lfaq-de-19.html">Next</A>
+<A HREF="i4lfaq-de-17.html">Previous</A>
+<A HREF="i4lfaq-de.html#toc18">Contents</A>
+<HR>
+<H2><A NAME="chargeint"></A> <A NAME="s18">18.</A> <A HREF="i4lfaq-de.html#toc18">chargeint: Chargeint </A></H2>
+
+<H2><A NAME="chargeint_whatis"></A> <A NAME="ss18.1">18.1</A> <A HREF="i4lfaq-de.html#toc18.1">chargeint_whatis: Was macht eigentlich Chargeint? </A>
+</H2>
+
+<P>Chargeint ist eine M&ouml;glichkeit, Deine Kosten zu reduzieren, wenn
+diese auf Deiner <B>Onlinezeit</B> basieren und das Intervall zwischen
+zwei Einheiten (das Geb&uuml;hrenintervall) relativ gro&szlig; ist
+(z.B. pro Minute).</P>
+<P>Chargeint beendet die Verbindung nur zwei Sekunden vor dem Ende eines
+Geb&uuml;hrenintervalls. Je nach Tageszeit und Datum erkennt isdnlog
+selbst&auml;ndig die L&auml;nge des Intervalls.</P>
+
+<H2><A NAME="chargeint_config"></A> <A NAME="ss18.2">18.2</A> <A HREF="i4lfaq-de.html#toc18.2">chargeint_config: Wie soll ich Chargeint einrichten? </A>
+</H2>
+
+<P>Du kannst die L&auml;nge einer Geb&uuml;hreneinheit manuell mittels
+isdnctrl Parameter <CODE>chargeset</CODE> bestimmen oder isdnlog so
+einstellen, da&szlig; es automatisch abl&auml;uft:
+<OL>
+<LI>Stelle isdnlog so ein, da&szlig; es alle Informationen &uuml;ber
+Deinen Standort und Deine Telefongesellschaft hat (und dadurch die
+Geb&uuml;hren kennt).</LI>
+<LI>Starte isdnlog mit den Optionen <CODE>-h0</CODE> und <CODE>-w</CODE>.</LI>
+<LI>Stelle den huptimeout (Zeit ohne Datenverkehr, nach der I4L ein
+Beenden der Verbindung herbeif&uuml;hrt) nach Deinem Belieben
+ein. Z.B.:
+<HR>
+<PRE>
+/sbin/isdnctrl huptimeout ippp0 5
+</PRE>
+<HR>
+
+Damit wird I4L nach einer 5 Sekunden dauernden Inaktivit&auml;t der
+Leitung (huptimeout) 2 Sekunden vor dem Ende der Geb&uuml;hreneinheit
+auflegen.</LI>
+</OL>
+</P>
+
+<H2><A NAME="chargeint_whennot"></A> <A NAME="ss18.3">18.3</A> <A HREF="i4lfaq-de.html#toc18.3">chargeint_whennot: Wann ist es <B>unsinnig</B>, Chargeint zu benutzen? </A>
+</H2>
+
+<P>
+<OL>
+<LI>Der Gebrauch von Chargeint ist unsinnig, wenn Deine Kosten nach
+dem <B>Datenvolumen</B> berechnet werden oder Du einen
+<B>Pauschalbetrag</B> bezahlst. Chargeint kann Deine Kosten nur bei
+<B>zeitabh&auml;ngiger</B> Berechnung reduzieren.</LI>
+<LI>Es macht auch keinen Sinn, wenn Deine Kosten in kleinen
+Zeiteinheiten (z.B. pro Sekunde statt pro Minute) berechnet werden.</LI>
+<LI>Chargeint kann sinnvoll sein (oder auch nicht), wenn Du f&uuml;r
+jede neue Einwahl einen festen Betrag zus&auml;tzlich zu den variablen
+Kosten zahlen musst (das h&auml;ngt von der H&ouml;he der
+Geb&uuml;hren ab).</LI>
+<LI>Es gibt Probleme, wenn die IP-Addresse dynamisch vergeben
+wird. Eine abgebrochene Verbindung kann nicht einfach wieder gestartet
+werden, da die IP-Addresse sich dabei ver&auml;ndert. Die
+unterbrochenen FTP-, telnet- oder WWW-Verbindungen m&uuml;ssen dann
+wieder neu aufgebaut werden.</LI>
+</OL>
+</P>
+
+<H2><A NAME="chargeint_correcttime"></A> <A NAME="ss18.4">18.4</A> <A HREF="i4lfaq-de.html#toc18.4">chargeint_correcttime: Wie kann ich sicher gehen, da&szlig; der Chargeint-Patch die korrekte Zeit benutzt? </A>
+</H2>
+
+<P>Am besten synchronisierst Du die Uhr Deines Computers mit der in der
+Vermittlungsstelle. Das geschieht beim Aufruf von isdnlog mit der
+Option <CODE>-t2</CODE>.
+Hinweis: Man sollte dabei jedoch bedenken, da&szlig; die Uhren der
+VSts selten &uuml;bereinstimmen (wichtig bei Preselection und
+Call-by-Call), selten &uuml;berhaupt die genaue Zeit anzeigen, und
+au&szlig;erdem bei ISDN sowieso nur Minuten und keine Sekunden
+&uuml;bertragen werden!</P>
+
+<H2><A NAME="chargeint_nohangup"></A> <A NAME="ss18.5">18.5</A> <A HREF="i4lfaq-de.html#toc18.5">chargeint_nohangup: Die Verbindung wird nicht durch einen Timeout beendet. </A>
+</H2>
+
+<P>Chargeint legt nur auf, wenn es keine Aktivit&auml;t auf der Leitung
+gab. Vielleicht benutzt Dein ISP einen Router (z.B. Cisco), der alle
+zehn Sekunden ein 'keep alive' Paket sendet. Wenn die Cisco auf ihre
+"keep alive" Pakete keine Antwort bekommt, wird sie das Routing
+einstellen. Das geschieht normalerweise nach dem 4. oder
+5.'keep-alive'-Paket. Erst k&uuml;rzlich (Anfang 2001) wurde die
+Unterst&uuml;tzung der 'keep-alive'-Pakete der Cisco
+verbessert/Korrigiert. Du kannst dieses Feature also ohne Probleme
+benutzen oder Deinen Provider bitten, es eben nicht zu benutzen
+(mittels <CODE>'no keepalive'</CODE> in der Cisco-Konfiguration).</P>
+<P>M&ouml;glicherweise sind es auch nicht die 'keep alive' Pakete, die
+die Verbindung offen halten, sondern eher OSPF Routing Updates. Das
+Versenden dieser Updates kann nur an der Cisco abgeschaltet werden. Du
+kannst 'snapshot server' auf dem BRI Interface einstellen. Das
+bewirkt, da&szlig; Routing Updates nur hinausgeschickt werden, wenn
+sie durch dieses Interface empfangen wurden.</P>
+
+
+
+<HR>
+<A HREF="i4lfaq-de-19.html">Next</A>
+<A HREF="i4lfaq-de-17.html">Previous</A>
+<A HREF="i4lfaq-de.html#toc18">Contents</A>
+</BODY>
+</HTML>

@@ -1,0 +1,103 @@
+﻿<html dir='ltr'>
+	<head>
+		<META http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+		<title>ROUNDUP</title>
+		<link rel='stylesheet' type='text/css' href='../css/main.css'/>
+		<script type='text/javascript' language='Javascript' src='../js/mexpcol.js'></script>
+		<script type='text/javascript' language='JavaScript' src='../js/glossary.js'></script>
+	</head>
+	<body>
+		<h1>&nbsp;<img align="absbottom" src="../image/external_images/crystal/svtools/res/new_doc.png"/>&nbsp;ROUNDUP</h1>
+		<p id='ExpandAllLine' class='ExpFav'>
+			<a href='#' onClick='ExpandAll()' onKeyPress='ExpandAll()' class='DropDown'>
+				<img id='picHeader' border='0' src='../image/image/common/expandtri.gif' alt='모두 표시'>
+				<span id='ExpandAll'>모두 표시</span>
+			</a>
+		</p>
+		<p><b class="bterm">참고항목</b>&emsp;
+			<a href="5.9.8.1.htm">수학함수목록</a>,
+			<a href="5.9.8.12.htm">CEILING</a>,
+			<a href="5.9.8.26.htm">FLOOR</a>,
+			<a href="5.9.8.29.htm">INT</a>,
+			<a href="5.9.8.37.htm">MOD</a>,
+			<a href="5.9.8.38.htm">MROUND</a>,
+			<a href="5.9.8.48.htm">ROUND</a>,
+			<a href="5.9.8.49.htm">ROUNDDOWN</a>,
+			<a href="5.9.8.63.htm">TRUNC</a>
+		</p>
+		<p>미리 정의된 정확도로 수값을 올림합니다.</p>
+		<p><b class="bterm">문법:&emsp;&emsp;		ROUNDUP(수값,자리수)</b></p>
+		<table>
+			<tr>
+				<th>인수명</th>
+				<th>설명</th>
+			</tr>
+			<tr>
+				<td>수값</td>
+				<td>올림할 수값입니다.</td>
+			</tr>
+			<tr>
+				<td>자리수</td>
+				<td>올림할 수값의 자리수입니다. 추가선택인수입니다.</td>
+			</tr>
+		</table>						
+		<p><b class="bterm">주의</b></p>
+			<ul>
+				<li><b class="bterm">ROUNDUP</b>함수는 항상 수값을 올림하는것을 제외하고는 <b class="bterm">ROUND</b>함수와 류사합니다.</li>
+				<li><b class="bterm">자리수</b>가 정수이면 <b class="bterm">수값</b>은 지정한 소수점 아래자리에서 올림을 합니다.</li>
+				<li><b class="bterm">자리수</b>가 0이면 <b class="bterm">수값</b>은 가장 가까운 정수로 올림을 합니다.</li>
+				<li><b class="bterm">자리수</b>가 부수이면 <b class="bterm">수값</b>은 소수점 왼쪽에서 올림을 합니다.</li>
+			</ul>
+		<p><b class="bterm">실례</b></p>
+			<p><a href="1.5.1.htm">실례의 리용방법</a>을 참고하십시오.</p>
+			<table>
+				<tr>
+					<td>
+						<table>
+							<tr><td>&nbsp;</td></tr>
+							<tr><th>1</th></tr>
+							<tr><th>2</th></tr>
+							<tr><th>3</th></tr>
+							<tr><th>4</th></tr>
+							<tr><th>5</th></tr>
+							<tr><th>6</th></tr>
+						</table>
+					</td>
+					<td>
+						<table>
+							<tr>
+								<th>A</th>
+								<th>B</th>
+							</tr>
+							<tr>
+								<th>수식</th>
+								<th>설명(결과)</th>
+							</tr>
+							<tr>
+								<td>=ROUNDUP(3.2,0)</td>
+								<td>3.2를 소수점없이 올림합니다. (4)</td>
+							</tr>
+							<tr>
+								<td>=ROUNDUP(76.9,0)</td>
+								<td>76.9를 소수점없이 올림합니다. (77)</td>
+							</tr>
+							<tr>
+								<td>=ROUNDUP(3.14159, 3)</td>
+								<td>3.14159를 소수점 세번째 자리에서 올림합니다. (3.142)</td>
+							</tr>
+							<tr>
+								<td>=ROUNDUP(-3.14159, 1)</td>
+								<td>-3.14159를 소수점 첫번째 자리에서 올림합니다. (-3.2)</td>
+							</tr>
+							<tr>
+								<td>=ROUNDUP(31415.92654, -2)</td>
+								<td>31415.92654를 소수점 왼쪽두번째 자리에서 올림합니다. (31500)</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>		
+		<script type="text/javascript" language="Javascript">footerView()</script>
+	
+</body>
+</html>																

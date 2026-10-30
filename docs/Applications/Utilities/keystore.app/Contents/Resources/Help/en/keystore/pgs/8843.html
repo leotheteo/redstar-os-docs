@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<title>About certificate authorities</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<meta name="hatver" content="v1 beta6"/>
+<meta name="builddefid" content="1002"/>
+<meta name="topicid" content="8843"/>
+<meta name="keywords" content="certificates, digital certificates"/>
+<!-- do not translate --><meta name="keywords" content="email certificate, personal certificates"/><!-- end do not translate -->
+<meta name="description" content="A certificate authority (CA) is a digital identity that signs certificates and makes them valid electronic documents. "/>
+<meta name="template" content="17"/>
+<meta name="pagetype" content="Task"/>
+<meta name="project" content="MacHelp"/>
+<meta name="release" content="First Release"/>
+<meta name="projectcomponent" content="mhSecurityLeopard"/>
+<link href="../sty/task_plain.css" rel="stylesheet" type="text/css"/>
+</head>
+
+<body id="apple-pd">
+<!--top navigation area-->
+<div id="navbox">
+<div id="navrightbox">
+<a class="navlink_right" href="help:anchor='xall' bookID=Mac Help">Index</a>
+</div>
+</div>
+<!--closes top navigation area-->
+
+<!--page head-->
+<div id="headerbox">
+<div id="iconbox">
+<img id="iconimg" src="../gfx/xicnkey.gif" alt="Key Store Icon" height="32" width="32"/>
+</div>
+<div id="pagetitle">
+<h1>About certificate authorities</h1>
+</div>
+</div>
+<!--closes page header-->
+<div id="introbox">
+<div class="introprimtext">
+<p class="introprimtextlongtext">
+A certificate authority (CA) is a digital identity that signs certificates and makes them valid electronic documents. Several levels of certificates are issued, forming what is called a “certificate chain.” For a certificate to be valid, the CA that signed it must be valid, and so on down the chain. The last item on the certificate chain is known as the leaf. The validity of certificates in a chain is automatically determined by RedStar OS when it evaluates a certificate. </p>
+<p class="introprimtextlongtext">Here is an example of the levels of the certificate chain:</p>
+<div id="introauxlist">
+<div class="introauxpair">
+<p class="introauxpairlongtext">
+<span class="introauxpairshorttext">Root certificate:</span> The certificate authority, the certificate is self signed, meaning the signature of the root certificate was created by the root certification authority themselves</p>
+</div>
+<div class="introauxpair">
+<p class="introauxpairlongtext">
+<span class="introauxpairshorttext">Intermediate certificate:</span> Signed by the root certificate authority. The root certification authority creates its own certificate and then creates a certificate for intermediate certification authority</p>
+</div>
+<div class="introauxpair">
+<p class="introauxpairlongtext">
+<span class="introauxpairshorttext">User certificate:</span> Signed by the intermediate certificate. The intermediate certification authority creates the certificate for the user. Since it is the end of the chain it would be considered the leaf. </p>
+</div>
+</div><!--closes introauxlist-->
+</div><!--closes introprimtext-->
+</div> <!--closes introbox -->
+<div id="outrobox">
+<div class="outroprimtext">
+<p class="outroprimtextlongtext">
+You can view and evaluate the validity of a certificate chain using the Certificate Assistant in Key Store.</p>
+</div><!--closes outroprimtext-->
+</div><!--closes outrobox -->
+<div id="linkinternalbox">
+<h3>Related Topics</h3>
+<p class="linkinternal"><a href="../pgs/index_5.html">digital certificates <span class="linkarrow"></span></a></p>
+<p class="linkinternal"><a href="../pgs/8844.html">About certificates</a></p>
+</div><!--closes linkinternalbox-->
+<div id="linkexternalbox">
+</div><!--closes link externalbox-->
+</body>
+</html>

@@ -1,0 +1,285 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+	<TITLE></TITLE>
+	<META NAME="GENERATOR" CONTENT="《Sogwang 3.0》  (Linux)">
+	<META NAME="CREATED" CONTENT="20091205;10241300">
+	<META NAME="CHANGED" CONTENT="20091205;11181200">
+	<STYLE TYPE="text/css">
+	<!--
+		P.listitem { font-family: "Bitstream Vera Sans", "Arial", "Helvetica", "Lucida", "Geneva", "Helmet", sans-serif, "Andale Sans UI", "Arial Unicode MS", "Lucida Sans Unicode", "Tahoma" }
+		P.related { margin-top: 0.71cm; margin-bottom: 0.05cm; border-top: 1px solid #000000; border-bottom: none; border-left: none; border-right: none; padding-top: 0.05cm; padding-bottom: 0cm; padding-left: 0cm; padding-right: 0cm; font-weight: bold }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="ko-KP" DIR="LTR"><DIV style="margin-left: 25">
+<H1><A NAME="bm_id3148798"></A><A NAME="specialfilter"></A><FONT FACE="Thorndale, serif"><SPAN LANG="en-US">Filter:
+Applying Advanced Filters </SPAN></FONT>
+</H1>
+<OL>
+	<LI><P CLASS="listitem"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Copy the column headers
+	of the sheet ranges to be filtered into an empty area of the sheet,
+	and then enter the criteria for the filter in a row beneath the
+	headers. Horizontally arranged data in a row will always be
+	logically connected with AND, and vertically arranged data in a
+	column will always be logically connected with OR.</SPAN></FONT></P>
+	<LI><P CLASS="listitem"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Once you have created a
+	filter matrix, select the sheet ranges to be filtered. Open the
+	<B>Advanced Filter</B> dialog by choosing <B>Data - Filter -
+	Advanced Filter</B>, and define the filter conditions.</SPAN></FONT></P>
+	<LI><P CLASS="listitem"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Then click OK, and you
+	will see that only the rows from the original sheet whose contents
+	have met the search criteria are still visible. All other rows are
+	temporarily hidden and can be made to reappear with the <B>Format -
+	Row - Show </B>command.</SPAN></FONT></P>
+</OL>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Example</B>
+</SPAN></FONT>
+</P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Load a
+spreadsheet with a large number of records. We are using a fictional
+<B>Turnover</B> document, but you can just as easily use any other
+document. The document has the following layout:</SPAN></FONT></P>
+<TABLE WIDTH=460 BORDER=1 CELLPADDING=2 CELLSPACING=0>
+	<COL WIDTH=12>
+	<COL WIDTH=53>
+	<COL WIDTH=54>
+	<COL WIDTH=56>
+	<COL WIDTH=44>
+	<COL WIDTH=72>
+	<TR VALIGN=TOP>
+		<TD WIDTH=19></TD>
+		<TD WIDTH=81>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>A</B>
+			</SPAN></FONT>
+			</P>
+		</TD>
+		<TD WIDTH=80>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>B</B>
+			</SPAN></FONT>
+			</P>
+		</TD>
+		<TD WIDTH=79>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>C</B>
+			</SPAN></FONT>
+			</P>
+		</TD>
+		<TD WIDTH=64>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>D</B>
+			</SPAN></FONT>
+			</P>
+		</TD>
+		<TD WIDTH=99>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>E</B>
+			</SPAN></FONT>
+			</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=19>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>1</B>
+			</SPAN></FONT>
+			</P>
+		</TD>
+		<TD WIDTH=81>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Month</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=80>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Standard</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=79>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Business</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=64>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Luxury</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=99>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Suite</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=19>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>2</B>
+			</SPAN></FONT>
+			</P>
+		</TD>
+		<TD WIDTH=81>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">January</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=80>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">125600</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=79>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">200500</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=64>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">240000</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=99>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">170000</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=19>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>3</B>
+			</SPAN></FONT>
+			</P>
+		</TD>
+		<TD WIDTH=81>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">February</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=80>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">160000</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=79>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">180300</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=64>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">362000</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=99>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">220000</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=19>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>4</B>
+			</SPAN></FONT>
+			</P>
+		</TD>
+		<TD WIDTH=81>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">March</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=80>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">170000</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=79></TD>
+		<TD WIDTH=64></TD>
+		<TD WIDTH=99>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">and
+			so on...</SPAN></FONT></P>
+		</TD>
+	</TR>
+</TABLE>
+<P><BR><BR>
+</P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Copy row
+1 with the row headers (field names), to row 20, for example. Enter
+the filter conditions linked with OR in rows 21, 22, and so on.</SPAN></FONT></P>
+<TABLE WIDTH=279 BORDER=1 CELLPADDING=2 CELLSPACING=0>
+	<COL WIDTH=19>
+	<COL WIDTH=48>
+	<COL WIDTH=54>
+	<COL WIDTH=56>
+	<COL WIDTH=41>
+	<COL WIDTH=33>
+	<TR VALIGN=TOP>
+		<TD WIDTH=19></TD>
+		<TD WIDTH=48>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>A</B>
+			</SPAN></FONT>
+			</P>
+		</TD>
+		<TD WIDTH=54>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>B</B>
+			</SPAN></FONT>
+			</P>
+		</TD>
+		<TD WIDTH=56>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>C</B>
+			</SPAN></FONT>
+			</P>
+		</TD>
+		<TD WIDTH=41>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>D</B>
+			</SPAN></FONT>
+			</P>
+		</TD>
+		<TD WIDTH=33>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>E</B>
+			</SPAN></FONT>
+			</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=19>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>20</B>
+			</SPAN></FONT>
+			</P>
+		</TD>
+		<TD WIDTH=48>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Month</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=54>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Standard</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=56>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Business</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=41>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Luxury</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=33>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Suite</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=19>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>21</B>
+			</SPAN></FONT>
+			</P>
+		</TD>
+		<TD WIDTH=48>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">January</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=54></TD>
+		<TD WIDTH=56></TD>
+		<TD WIDTH=41></TD>
+		<TD WIDTH=33></TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=19>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>22</B>
+			</SPAN></FONT>
+			</P>
+		</TD>
+		<TD WIDTH=48></TD>
+		<TD WIDTH=54>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">&lt;160000</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=56></TD>
+		<TD WIDTH=41></TD>
+		<TD WIDTH=33></TD>
+	</TR>
+</TABLE>
+<P><BR><BR>
+</P>
+<P STYLE="margin-top: 0.04cm; margin-bottom: 0.04cm"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Specify
+that only rows which either have the value January
+in the <B>Month</B> cells OR a value of under 160000 in the <B>Standard</B>
+cells will be displayed.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Choose
+<B>Data - Filter - Advanced Filter</B>, and then select the range
+A20:E22. After you click OK, only the filtered rows will be
+displayed. The other rows will be hidden from view.</SPAN></FONT></P>
+<P CLASS="related"><A NAME="relatedtopics"></A><A NAME="related"></A><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Related
+Topics</B> </SPAN></FONT>
+</P>
+<P STYLE="margin-left: 0.13cm; margin-top: 0.05cm; margin-bottom: 0.05cm"><A NAME="filters"></A>
+<FONT FACE="청봉, serif"><SPAN LANG="en-US"><SPAN STYLE="font-weight: medium"><A HREF="Applying Filters.html">Applying
+Filters</A> </SPAN></SPAN></FONT>
+</P>
+<P STYLE="margin-left: 0.13cm; margin-top: 0.05cm; margin-bottom: 0.05cm"><A NAME="autofilter"></A>
+<FONT FACE="청봉, serif"><SPAN LANG="en-US"><SPAN STYLE="font-weight: medium"><A HREF="Applying AutoFilter.html">Applying
+AutoFilter</A> </SPAN></SPAN></FONT>
+</P>
+<P STYLE="margin-left: 0.13cm; margin-top: 0.05cm; margin-bottom: 0.05cm">
+<FONT FACE="청봉, serif"><SPAN LANG="en-US"><SPAN STYLE="font-weight: medium"><A HREF="../Viewing,Selecting,Copying/Only Copy Visible Cells.html">Only
+Copy Visible Cells</A><A HREF="vnd.sun.star.help://scalc/text/scalc/02/06080000.xhp?Language=en-US&amp;System=UNIX&amp;UseDB=no&amp;DbPAR=scalc">
+</A></SPAN></SPAN></FONT>
+</P>
+
+</DIV></BODY>
+</HTML>
+

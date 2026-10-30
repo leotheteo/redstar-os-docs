@@ -1,0 +1,791 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+	<TITLE></TITLE>
+	<META NAME="GENERATOR" CONTENT="《Sogwang 3.0》  (Linux)">
+	<META NAME="CREATED" CONTENT="20091205;10241300">
+	<META NAME="CHANGED" CONTENT="20091205;10541000">
+	<STYLE TYPE="text/css">
+	<!--
+		H3 { margin-bottom: 0.18cm; font-family: "Bitstream Vera Sans", "Arial", "Helvetica", "Lucida", "Geneva", "Helmet", sans-serif, "Andale Sans UI", "Arial Unicode MS", "Lucida Sans Unicode", "Tahoma"; font-size: 12pt }
+		H2 { margin-bottom: 0.18cm; font-family: "Bitstream Vera Sans", "Arial", "Helvetica", "Lucida", "Geneva", "Helmet", sans-serif, "Andale Sans UI", "Arial Unicode MS", "Lucida Sans Unicode", "Tahoma"; font-size: 14pt }
+		TD P.tableheadintable { margin-bottom: 0.05cm; font-weight: bold }
+		TD P.tablecontentintable { font-family: "Bitstream Vera Sans", "Arial", "Helvetica", "Lucida", "Geneva", "Helmet", sans-serif, "Andale Sans UI", "Arial Unicode MS", "Lucida Sans Unicode", "Tahoma" }
+		P.code { margin-top: 0.04cm; margin-bottom: 0.04cm; font-family: "Bitstream Vera Sans Mono", "Cumberland", "Courier New", "Courier", "Lucida Sans Typewriter", "Lucida Typewriter", "Monaco", "Monospaced" }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="ko-KP" DIR="LTR"><DIV style="margin-left: 25">
+<H1><A NAME="bm_id3148946"></A><FONT FACE="Thorndale, serif"><SPAN LANG="en-US">Database
+Functions</SPAN></FONT></H1>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">This
+section deals with functions used with data organized as one row of
+data for one record. </SPAN></FONT>
+</P>
+<TABLE WIDTH=966 BORDER=0 CELLPADDING=5 CELLSPACING=0>
+	<COL WIDTH=33>
+	<COL WIDTH=584>
+	<TR>
+		<TD WIDTH=47>
+			<P><IMG SRC="../../Image/note.png" NAME="graphics1" ALT="Note Icon " ALIGN=BOTTOM WIDTH=33 HEIGHT=42 BORDER=0></P>
+		</TD>
+		<TD WIDTH=899>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">The
+			Database category may be confused with a database integrated in
+			</SPAN></FONT><FONT FACE="청봉, serif"><SPAN LANG="en-US">Sogwang .
+			However, there is no connection between a database in
+			</SPAN></FONT><FONT FACE="청봉, serif"><SPAN LANG="en-US">Sogwang and
+			the Database category in </SPAN></FONT><FONT FACE="청봉, serif"><SPAN LANG="en-US">Sogwang Calc.</SPAN></FONT></P>
+		</TD>
+	</TR>
+</TABLE>
+<P><BR><BR>
+</P>
+<H3><SPAN LANG="en-US">Example Data:</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">The
+following data will be used in some of the function description
+examples:</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">The
+range A1:E10 lists the children invited to Joe's birthday party. The
+following information is given for each entry: column A shows the
+name, B the grade, then age in years, distance to school in meters
+and weight in kilograms.</SPAN></FONT></P>
+<TABLE WIDTH=336 BORDER=1 CELLPADDING=2 CELLSPACING=0>
+	<COL WIDTH=15>
+	<COL WIDTH=60>
+	<COL WIDTH=41>
+	<COL WIDTH=29>
+	<COL WIDTH=116>
+	<COL WIDTH=47>
+	<TR VALIGN=TOP>
+		<TD WIDTH=15></TD>
+		<TD WIDTH=60>
+			<P CLASS="tableheadintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">A</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=41>
+			<P CLASS="tableheadintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">B</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=29>
+			<P CLASS="tableheadintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">C</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=116>
+			<P CLASS="tableheadintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">D</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=47>
+			<P CLASS="tableheadintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">E</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=15>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">1</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=60>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Name </SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=41>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Grade </SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=29>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Age </SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=116>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Distance to
+			School </SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=47>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Weight </SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=15>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">2</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=60>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Andy </SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=41>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">3 </SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=29>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">9 </SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=116>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">150 </SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=47>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">40 </SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=15>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">3</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=60>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Betty </SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=41>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">4 </SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=29>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">10 </SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=116>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">1000 </SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=47>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">42 </SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=15>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">4</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=60>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Charles </SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=41>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">3 </SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=29>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">10 </SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=116>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">300 </SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=47>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">51 </SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=15>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">5</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=60>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Daniel </SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=41>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">5 </SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=29>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">11 </SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=116>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">1200 </SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=47>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">48 </SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=15>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">6</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=60>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Eva </SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=41>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">2 </SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=29>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">8 </SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=116>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">650 </SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=47>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">33 </SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=15>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">7</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=60>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Frank </SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=41>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">2 </SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=29>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">7 </SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=116>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">300 </SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=47>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">42 </SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=15>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">8</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=60>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Greta </SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=41>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">1 </SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=29>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">7 </SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=116>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">200 </SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=47>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">36 </SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=15>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">9</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=60>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Harry </SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=41>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">3 </SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=29>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">9 </SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=116>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">1200 </SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=47>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">44 </SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=15>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">10</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=60>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Irene </SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=41>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">2 </SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=29>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">8 </SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=116>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">1000 </SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=47>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">42 </SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=15>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">11</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=60></TD>
+		<TD WIDTH=41></TD>
+		<TD WIDTH=29></TD>
+		<TD WIDTH=116></TD>
+		<TD WIDTH=47></TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=15>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">12</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=60></TD>
+		<TD WIDTH=41></TD>
+		<TD WIDTH=29></TD>
+		<TD WIDTH=116></TD>
+		<TD WIDTH=47></TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=15>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">13</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=60>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Name </SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=41>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Grade </SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=29>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Age </SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=116>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Distance to
+			School </SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=47>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Weight </SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=15>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">14</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=60></TD>
+		<TD WIDTH=41></TD>
+		<TD WIDTH=29></TD>
+		<TD WIDTH=116>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">&gt;600 </SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=47></TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=15>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">15</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=60></TD>
+		<TD WIDTH=41></TD>
+		<TD WIDTH=29></TD>
+		<TD WIDTH=116></TD>
+		<TD WIDTH=47></TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=15>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">16</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=60>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">DCOUNT </SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=41>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">5 </SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=29></TD>
+		<TD WIDTH=116></TD>
+		<TD WIDTH=47></TD>
+	</TR>
+</TABLE>
+<P><BR><BR>
+</P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">The
+formula in cell B16 is =DCOUNT(A1:E10;0;A13:E14)</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Database Function Parameters:</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">The
+following items are the parameter definitions for all database
+functions:</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Database</B>
+is the cell range defining the database.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>DatabaseField</B>
+specifies the column where the function operates on after the search
+criteria of the first parameter is applied and the data rows are
+selected. It is not related to the search criteria itself. Use the
+number 0 to specify the whole data range. To reference a column by
+means of the column header name, place quotation marks around the
+header name. </SPAN></FONT>
+</P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>SearchCriteria</B>
+is the cell range containing search criteria. If you write several
+criteria in one row they are connected by AND. If you write the
+criteria in different rows they are connected by OR. Empty cells in
+the search criteria range will be ignored.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Choose
+<A HREF="../General Information and User Interface Usage/Error Codes in/Calculate.html">Sogwang Office - Reference - Sogwang Office Calc - Calculate</A> to define how </SPAN></FONT><FONT FACE="청봉, serif"><SPAN LANG="en-US">Sogwang Calc acts
+when searching for identical entries.</SPAN></FONT></P>
+<H2><A NAME="Section1"></A><A NAME="bm_id3150882"></A><A NAME="bm_id3152926"></A>
+<SPAN LANG="en-US">DCOUNT</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">DCOUNT
+counts the number of rows (records) in a database that match the
+specified search criteria and contain numerical values.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">The
+search supports <A HREF="../../Common Help Topics/Search_Repl/List.html">regular
+expressions</A>. You can enter &quot;all.*&quot;, for example to find
+the first location of &quot;all&quot; followed by any characters. If
+you want to search for a text that is also a regular expression, you
+must precede every character with a \ character. You can switch the
+automatic evaluation of regular expression on and off in <A HREF="../General Information and User Interface Usage/Error Codes in/Calculate.html">Sogwang Office - Reference - Sogwang Office Calc - Calculate</A>. </SPAN></FONT>
+</P>
+<H3><SPAN LANG="en-US">Syntax</SPAN></H3>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">DCOUNT(Database; DatabaseField;
+SearchCriteria)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">For
+the DatabaseField parameter you can enter a cell to specify the
+column, or enter the number 0 for the entire database. The parameter
+cannot be empty. To reference a column by means of the column header
+name, place quotation marks around the header name. </SPAN></FONT>
+</P>
+<H3><SPAN LANG="en-US">Example</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">In the
+example above (scroll up, please), we want to know how many children
+have to travel more than 600 meters to school. The result is to be
+stored in cell B16. Set the cursor in cell B16. Enter the formula
+=DCOUNT(A1:E10;0;A13:E14) in B16. The <B>Function Wizard</B> helps
+you to input ranges.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Database</B>
+is the range of data to be evaluated, including its headers: in this
+case A1:E10. <B>DatabaseField</B> specifies the column for the search
+criteria: in this case, the whole database. <B>SearchCriteria</B> is
+the range where you can enter the search parameters: in this case,
+A13:E14.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">To learn
+how many children in second grade are over 7 years of age, delete the
+entry &gt;600 in cell D14 and enter 2 in cell B14 under Grade, and
+enter &gt;7 in cell C14 to the right. The result is 2. Two children
+are in second grade and over 7 years of age. As both criteria are in
+the same row, they are connected by AND.</SPAN></FONT></P>
+<H2><A NAME="Section2"></A><A NAME="bm_id3156123"></A><A NAME="bm_id3154055"></A>
+<SPAN LANG="en-US">DCOUNTA</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">DCOUNTA
+counts the number of rows (records) in a database that match the
+specified search conditions, and contain numeric or alphanumeric
+values.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">The
+search supports <A HREF="../../Common Help Topics/Search_Repl/List.html">regular
+expressions</A>. You can enter &quot;all.*&quot;, for example to find
+the first location of &quot;all&quot; followed by any characters. If
+you want to search for a text that is also a regular expression, you
+must precede every character with a \ character. You can switch the
+automatic evaluation of regular expression on and off in <A HREF="../General Information and User Interface Usage/Error Codes in/Calculate.html">Sogwang Office - Reference - Sogwang Office Calc - Calculate</A>. </SPAN></FONT>
+</P>
+<H3><SPAN LANG="en-US">Syntax</SPAN></H3>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">DCOUNTA(Database; DatabaseField;
+SearchCriteria)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">To
+reference a column by means of the column header name, place
+quotation marks around the header name. </SPAN></FONT>
+</P>
+<H3><SPAN LANG="en-US">Example</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">In the
+example above (scroll up, please), you can search for the number of
+children whose name starts with an E or a subsequent letter. Edit the
+formula in B16 to read =DCOUNTA(A1:E10;&quot;Age&quot;;A13:E14).
+Delete the old search criteria and enter &gt;=E under Name in field
+A14. The result is 5. If you now delete all number values for Greta
+in row 8, the result changes to 4. Row 8 is no longer included in the
+count because it does not contain any values. The name Greta is text,
+not a value. Note that the DatabaseField parameter must point to a
+column that can contain values.</SPAN></FONT></P>
+<H2><A NAME="Section3"></A><A NAME="bm_id3147256"></A>
+<SPAN LANG="en-US">DGET</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">DGET
+returns the contents of the referenced cell in a database which
+matches the specified search criteria. In case of an error, the
+function returns either #VALUE! for no row found, or Err502 for more
+than one cell found.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">The
+search supports <A HREF="../../Common Help Topics/Search_Repl/List.html">regular
+expressions</A>. You can enter &quot;all.*&quot;, for example to find
+the first location of &quot;all&quot; followed by any characters. If
+you want to search for a text that is also a regular expression, you
+must precede every character with a \ character. You can switch the
+automatic evaluation of regular expression on and off in <A HREF="../General Information and User Interface Usage/Error Codes in/Calculate.html">Sogwang Office - Reference - Sogwang Office Calc - Calculate</A>. </SPAN></FONT>
+</P>
+<H3><SPAN LANG="en-US">Syntax</SPAN></H3>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">DGET(Database; DatabaseField;
+SearchCriteria)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">To
+reference a column by means of the column header name, place
+quotation marks around the header name. </SPAN></FONT>
+</P>
+<H3><SPAN LANG="en-US">Example</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">In the
+above example (scroll up, please), we want to determine what grade a
+child is in, whose name was entered in cell A14. The formula is
+entered in cell B16 and differs slightly from the earlier examples
+because only one column (one database field) can be entered for
+<B>DatabaseField</B>. Enter the following formula:</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">=DGET(A1:E10;&quot;Grade&quot;;A13:E14)
+</SPAN></FONT>
+</P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Enter
+the name Frank in A14, and you see the result 2. Frank is in second
+grade. Enter &quot;Age&quot; instead of &quot;Grade&quot; and you
+will get Frank's age.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Or enter
+the value 11 in cell C14 only, and delete the other entries in this
+row. Edit the formula in B16 as follows:</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">=DGET(A1:E10;&quot;Name&quot;;A13:E14)
+</SPAN></FONT>
+</P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Instead
+of the grade, the name is queried. The answer appears at once: Daniel
+is the only child aged 11.</SPAN></FONT></P>
+<H2><A NAME="Section4"></A><A NAME="bm_id3149766"></A><A NAME="bm_id3158401"></A>
+<SPAN LANG="en-US">DMAX</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">DMAX
+returns the maximum content of a cell (field) in a database (all
+records) that matches the specified search conditions.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">The
+search supports <A HREF="../../Common Help Topics/Search_Repl/List.html">regular
+expressions</A>. You can enter &quot;all.*&quot;, for example to find
+the first location of &quot;all&quot; followed by any characters. If
+you want to search for a text that is also a regular expression, you
+must precede every character with a \ character. You can switch the
+automatic evaluation of regular expression on and off in <A HREF="../General Information and User Interface Usage/Error Codes in/Calculate.html">Sogwang Office - Reference - Sogwang Office Calc - Calculate</A>. </SPAN></FONT>
+</P>
+<H3><SPAN LANG="en-US">Syntax</SPAN></H3>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">DMAX(Database; DatabaseField;
+SearchCriteria)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">To
+reference a column by means of the column header name, place
+quotation marks around the header name. </SPAN></FONT>
+</P>
+<H3><SPAN LANG="en-US">Example</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">To find
+out how much the heaviest child in each grade weighed in the above
+example (scroll up, please), enter the following formula in B16:</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">=DMAX(A1:E10;&quot;Weight&quot;;A13:E14)
+</SPAN></FONT>
+</P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Under
+Grade, enter 1, 2, 3, and so on, one after the other. After entering
+a grade number, the weight of the heaviest child in that grade
+appears.</SPAN></FONT></P>
+<H2><A NAME="Section5"></A><A NAME="bm_id3159141"></A><A NAME="bm_id3159152"></A>
+<SPAN LANG="en-US">DMIN</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">DMIN
+returns the minimum content of a cell (field) in a database that
+matches the specified search criteria.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">The
+search supports <A HREF="../../Common Help Topics/Search_Repl/List.html">regular
+expressions</A>. You can enter &quot;all.*&quot;, for example to find
+the first location of &quot;all&quot; followed by any characters. If
+you want to search for a text that is also a regular expression, you
+must precede every character with a \ character. You can switch the
+automatic evaluation of regular expression on and off in <A HREF="../General Information and User Interface Usage/Error Codes in/Calculate.html">Sogwang Office - Reference - Sogwang Office Calc - Calculate</A>. </SPAN></FONT>
+</P>
+<H3><SPAN LANG="en-US">Syntax</SPAN></H3>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">DMIN(Database; DatabaseField;
+SearchCriteria)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">To
+reference a column by means of the column header name, place
+quotation marks around the header name. </SPAN></FONT>
+</P>
+<H3><SPAN LANG="en-US">Example</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">To find
+the shortest distance to school for the children in each grade in the
+above example (scroll up, please), enter the following formula in
+B16:</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">=DMIN(A1:E10;&quot;Distance
+to School&quot;;A13:E14) </SPAN></FONT>
+</P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">In row
+14, under Grade, enter 1, 2, 3, and so on, one after the other. The
+shortest distance to school for each grade appears.</SPAN></FONT></P>
+<H2><A NAME="Section6"></A><A NAME="bm_id3154274"></A><A NAME="bm_id3166435"></A>
+<SPAN LANG="en-US">DAVERAGE</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">DAVERAGE
+returns the average of the values of all cells (fields) in all rows
+(database records) that match the specified search criteria.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">The
+search supports <A HREF="../../Common Help Topics/Search_Repl/List.html">regular
+expressions</A>. You can enter &quot;all.*&quot;, for example to find
+the first location of &quot;all&quot; followed by any characters. If
+you want to search for a text that is also a regular expression, you
+must precede every character with a \ character. You can switch the
+automatic evaluation of regular expression on and off in <A HREF="../General Information and User Interface Usage/Error Codes in/Calculate.html">Sogwang Office - Reference - Sogwang Office Calc - Calculate</A>. </SPAN></FONT>
+</P>
+<H3><SPAN LANG="en-US">Syntax</SPAN></H3>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">DAVERAGE(Database; DatabaseField;
+SearchCriteria)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">To
+reference a column by means of the column header name, place
+quotation marks around the header name. </SPAN></FONT>
+</P>
+<H3><SPAN LANG="en-US">Example</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">To find
+the average weight of all children of the same age in the above
+example (scroll up, please), enter the following formula in B16:</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">=DAVERAGE(A1:E10;&quot;Weight&quot;;A13:E14)
+</SPAN></FONT>
+</P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">In row
+14, under Age, enter 7, 8, 9, and so on, one after the other. The
+average weight of all children of the same age appears.</SPAN></FONT></P>
+<H2><A NAME="Section7"></A><A NAME="bm_id3159269"></A><A NAME="bm_id3159281"></A>
+<SPAN LANG="en-US">DPRODUCT</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">DPRODUCT
+multiplies all cells of a data range where the cell contents match
+the search criteria.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">The
+search supports <A HREF="../../Common Help Topics/Search_Repl/List.html">regular
+expressions</A>. You can enter &quot;all.*&quot;, for example to find
+the first location of &quot;all&quot; followed by any characters. If
+you want to search for a text that is also a regular expression, you
+must precede every character with a \ character. You can switch the
+automatic evaluation of regular expression on and off in <A HREF="../General Information and User Interface Usage/Error Codes in/Calculate.html">Sogwang Office - Reference - Sogwang Office Calc - Calculate</A>. </SPAN></FONT>
+</P>
+<H3><SPAN LANG="en-US">Syntax</SPAN></H3>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">DPRODUCT(Database; DatabaseField;
+SearchCriteria)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">To
+reference a column by means of the column header name, place
+quotation marks around the header name. </SPAN></FONT>
+</P>
+<H3><SPAN LANG="en-US">Example</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">With the
+birthday party example above (scroll up, please), there is no
+meaningful application of this function.</SPAN></FONT></P>
+<H2><A NAME="Section8"></A><A NAME="bm_id3148462"></A><A NAME="bm_id3145370"></A>
+<SPAN LANG="en-US">DSTDEV</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">DSTDEV
+calculates the standard deviation of a population based on a sample,
+using the numbers in a database column that match the given
+conditions. The records are treated as a sample of data. That means
+that the children in the example represent a cross section of all
+children. Note that a representative result can not be obtained from
+a sample of less than one thousand.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">The
+search supports <A HREF="../../Common Help Topics/Search_Repl/List.html">regular
+expressions</A>. You can enter &quot;all.*&quot;, for example to find
+the first location of &quot;all&quot; followed by any characters. If
+you want to search for a text that is also a regular expression, you
+must precede every character with a \ character. You can switch the
+automatic evaluation of regular expression on and off in <A HREF="../General Information and User Interface Usage/Error Codes in/Calculate.html">Sogwang Office - Reference - Sogwang Office Calc - Calculate</A>. </SPAN></FONT>
+</P>
+<H3><SPAN LANG="en-US">Syntax</SPAN></H3>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">DSTDEV(Database; DatabaseField;
+SearchCriteria)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">To
+reference a column by means of the column header name, place
+quotation marks around the header name. </SPAN></FONT>
+</P>
+<H3><SPAN LANG="en-US">Example</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">To find
+the standard deviation of the weight for all children of the same age
+in the example (scroll up, please), enter the following formula in
+B16:</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">=DSTDEV(A1:E10;&quot;Weight&quot;;A13:E14)
+</SPAN></FONT>
+</P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">In row
+14, under Age, enter 7, 8, 9, and so on, one after the other. The
+result shown is the standard deviation of the weight of all children
+of this age.</SPAN></FONT></P>
+<H2><A NAME="Section9"></A><A NAME="bm_id3150429"></A><A NAME="bm_id3149523"></A>
+<SPAN LANG="en-US">DSTDEVP</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">DSTDEVP
+calculates the standard deviation of a population based on all cells
+of a data range which match the search criteria. The records from the
+example are treated as the whole population.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">The
+search supports <A HREF="../../Common Help Topics/Search_Repl/List.html">regular
+expressions</A>. You can enter &quot;all.*&quot;, for example to find
+the first location of &quot;all&quot; followed by any characters. If
+you want to search for a text that is also a regular expression, you
+must precede every character with a \ character. You can switch the
+automatic evaluation of regular expression on and off in <A HREF="../General Information and User Interface Usage/Error Codes in/Calculate.html">Sogwang Office - Reference - <FONT FACE="청봉, serif"><SPAN LANG="en-US">Sogwang Calc - Calculate</A>. </SPAN></FONT>
+</P>
+<H3><SPAN LANG="en-US">Syntax</SPAN></H3>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">DSTDEVP(Database; DatabaseField;
+SearchCriteria)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">To
+reference a column by means of the column header name, place
+quotation marks around the header name. </SPAN></FONT>
+</P>
+<H3><SPAN LANG="en-US">Example</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">To find
+the standard deviation of the weight for all children of the same age
+at Joe's birthday party (scroll up, please), enter the following
+formula in B16:</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">=DSTDEVP(A1:E10;&quot;Weight&quot;;A13:E14)
+</SPAN></FONT>
+</P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">In row
+14, under Age, enter 7, 8, 9, and so on, one after the other. The
+result is the standard deviation of the weight for all same-aged
+children whose weight was checked.</SPAN></FONT></P>
+<H2><A NAME="Section10"></A><A NAME="bm_id3154794"></A><A NAME="bm_id3148687"></A>
+<SPAN LANG="en-US">DSUM</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">DSUM
+returns the total of all cells in a database field in all rows
+(records) that match the specified search criteria.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">The
+search supports <A HREF="../../Common Help Topics/Search_Repl/List.html">regular
+expressions</A>. You can enter &quot;all.*&quot;, for example to find
+the first location of &quot;all&quot; followed by any characters. If
+you want to search for a text that is also a regular expression, you
+must precede every character with a \ character. You can switch the
+automatic evaluation of regular expression on and off in <A HREF="../General Information and User Interface Usage/Error Codes in/Calculate.html">Sogwang Office - Reference - Sogwang Office Calc - Calculate</A>. </SPAN></FONT>
+</P>
+<H3><SPAN LANG="en-US">Syntax</SPAN></H3>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">DSUM(Database; DatabaseField;
+SearchCriteria)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">To
+reference a column by means of the column header name, place
+quotation marks around the header name. </SPAN></FONT>
+</P>
+<H3><SPAN LANG="en-US">Example</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">To find
+the length of the combined distance to school of all children at
+Joe's birthday party (scroll up, please) who are in second grade,
+enter the following formula in B16:</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">=DSUM(A1:E10;&quot;Distance
+to School&quot;;A13:E14) </SPAN></FONT>
+</P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Enter 2
+in row 14 under Grade. The sum (1950) of the distances to school of
+all the children who are in second grade is displayed.</SPAN></FONT></P>
+<H2><A NAME="Section11"></A><A NAME="bm_id3155614"></A><A NAME="bm_id3159391"></A>
+<SPAN LANG="en-US">DVAR</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">DVAR
+returns the variance of all cells of a database field in all records
+that match the specified search criteria. 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+The records from the
+example are treated as a sample of data. A representative result
+cannot be obtained from a sample population of less than one
+thousand.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">The
+search supports <A HREF="../../Common Help Topics/Search_Repl/List.html">regular
+expressions</A>. You can enter &quot;all.*&quot;, for example to find
+the first location of &quot;all&quot; followed by any characters. If
+you want to search for a text that is also a regular expression, you
+must precede every character with a \ character. You can switch the
+automatic evaluation of regular expression on and off in <A HREF="../General Information and User Interface Usage/Error Codes in/Calculate.html">Sogwang Office - Reference -SogwangCalc - Calculate</A>. </SPAN></FONT>
+</P>
+<H3><SPAN LANG="en-US">Syntax</SPAN></H3>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">DVAR(Database; DatabaseField;
+SearchCriteria)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">To
+reference a column by means of the column header name, place
+quotation marks around the header name. </SPAN></FONT>
+</P>
+<H3><SPAN LANG="en-US">Example</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">To find
+the variance of the weight of all children of the same age of the
+above example (scroll up, please), enter the following formula in
+B16:</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">=DVAR(A1:E10;&quot;Weight&quot;;A13:E14)
+</SPAN></FONT>
+</P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">In row
+14, under Age, enter 7, 8, 9, and so on, one after the other. You
+will see as a result the variance of the weight values for all
+children of this age.</SPAN></FONT></P>
+<H2><A NAME="Section12"></A><A NAME="bm_id3153880"></A><A NAME="bm_id3153891"></A>
+<SPAN LANG="en-US">DVARP</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">DVARP
+calculates the variance of all cell values in a database field in all
+records that match the specified search criteria. The records are
+from the example are treated as an entire population.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">The
+search supports <A HREF="../../Common Help Topics/Search_Repl/List.html">regular
+expressions</A>. You can enter &quot;all.*&quot;, for example to find
+the first location of &quot;all&quot; followed by any characters. If
+you want to search for a text that is also a regular expression, you
+must precede every character with a \ character. You can switch the
+automatic evaluation of regular expression on and off in <A HREF="../General Information and User Interface Usage/Error Codes in/Calculate.html">Sogwang Office - Reference - <FONT FACE="청봉, serif"><SPAN LANG="en-US">Sogwang Calc -
+Calculate</A>. </SPAN></FONT>
+</P>
+<H3><SPAN LANG="en-US">Syntax</SPAN></H3>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">DVARP(Database; DatabaseField;
+SearchCriteria)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">To
+reference a column by means of the column header name, place
+quotation marks around the header name. </SPAN></FONT>
+</P>
+<H3><SPAN LANG="en-US">Example</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">To find
+the variance of the weight for all children of the same age at Joe's
+birthday party (scroll up, please), enter the following formula in
+B16:</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">=DVARP(A1:E10;&quot;Weight&quot;;A13:E14)
+</SPAN></FONT>
+</P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><SPAN STYLE="font-weight: medium">In
+row 14, under Age, enter 7, 8, 9, and so on, one after the other. The
+variance of the weight values for all children of this age attending
+Joe's birthday party appears.</SPAN></SPAN></FONT></P>
+
+</DIV></BODY>
+</HTML>

@@ -1,0 +1,290 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <META NAME="GENERATOR" CONTENT="LinuxDoc-Tools 0.9.21">
+ <TITLE>FAQ for isdn4linux: dialout: Configuration of Dial-Out </TITLE>
+ <LINK HREF="i4lfaq-11.html" REL=next>
+ <LINK HREF="i4lfaq-9.html" REL=previous>
+ <LINK HREF="i4lfaq.html#toc10" REL=contents>
+</HEAD>
+<BODY>
+<A HREF="i4lfaq-11.html">Next</A>
+<A HREF="i4lfaq-9.html">Previous</A>
+<A HREF="i4lfaq.html#toc10">Contents</A>
+<HR>
+<H2><A NAME="dialout"></A> <A NAME="s10">10.</A> <A HREF="i4lfaq.html#toc10">dialout: Configuration of Dial-Out </A></H2>
+
+<H2><A NAME="dialout_config"></A> <A NAME="ss10.1">10.1</A> <A HREF="i4lfaq.html#toc10.1">dialout_config: How do I configure dialout properly? </A>
+</H2>
+
+<P>First you have to decide on how you want to dial out. You will have to
+use whatever your counterpart requires. These are your main options:
+<UL>
+<LI> Sync PPP: This is what most Internet Service Provider expect
+from you. See section 
+<A HREF="i4lfaq-12.html#syncppp">syncppp</A>.</LI>
+<LI> Async PPP: May also be handled by your Internet Service
+Provider. Use when Sync PPP does not work for you. See section
+<A HREF="i4lfaq-13.html#asyncppp">asyncppp</A>.</LI>
+<LI> Raw IP: Most efficient for TCP/IP over ISDN. It has very quick
+dialouts, but is not as common. See section 
+<A HREF="i4lfaq-14.html#rawip">rawip</A>.</LI>
+<LI> X.75: This is what you need to dial into an ISDN mailbox. See
+section 
+<A HREF="i4lfaq-15.html#ttyI">ttyI</A>.</LI>
+<LI> Leased line: For this special case, see section
+<A HREF="i4lfaq-20.html#leased">leased</A>.</LI>
+</UL>
+</P>
+<P>Have a look on section 
+<A HREF="i4lfaq-16.html#dod">dod</A> on how to configure dial on
+demand - and on the dangers attached to it.</P>
+<P>For more advanced dialout features see question
+<A HREF="#dialout_advanced">dialout_advanced</A>.</P>
+<P>Also you may have a look at section 
+<A HREF="i4lfaq-19.html#remote">remote</A>
+when you try to connect to a special remote ISDN device.</P>
+
+<H2><A NAME="dialout_dialmode"></A> <A NAME="ss10.2">10.2</A> <A HREF="i4lfaq.html#toc10.2">dialout_dialmode: When an IP packet should go over the link (which usually triggers a dialout), all I see in the log is: &quot;dial rejected: interface not in dialmode <CODE>auto</CODE>&quot;? </A>
+</H2>
+
+<P>The new ISDN drivers in 2.0.36 defaults to manual dialmode, not
+autodial. This is done to prevent unexpected (and unnoticed) dialouts.
+(See the big section about those and their dangers: 
+<A HREF="i4lfaq-16.html#dod">dod</A>).
+To enable autodial for a given interface e.g. ippp0, use
+<HR>
+<PRE>
+isdnctrl dialmode ippp0 auto
+</PRE>
+<HR>
+</P>
+<P>The meaning of the values for dialmode is:
+<DL>
+<DT><B>off</B><DD><P>means that you (or the system) cannot make any connection
+(neither incoming nor outgoing connections are possible). Use
+this if you want to be sure that no connections will be made.</P>
+
+<DT><B>auto</B><DD><P>means that the interface is in auto-dial mode, and will
+attempt to make a connection whenever a network data packet needs
+the interface's link. Note that this can cause unexpected dialouts,
+and lead to a high phone bill! Some daemons or other pc's that use
+this interface can cause this.
+Incoming connections are also possible.</P>
+
+<DT><B>manual</B><DD><P>(DEFAULT) is a dial mode created to prevent the unexpected dialouts.
+In this mode, the interface will never make any connections on its
+own. You must explicitly initiate a connection with:
+<HR>
+<PRE>
+isdnctrl dial ippp0
+</PRE>
+<HR>
+
+To end the connection, use:
+<HR>
+<PRE>
+isdnctrl hangup ippp0
+</PRE>
+<HR>
+
+Please note that the <CODE>huptimeout</CODE> may still end the connection
+automatically! To ensure that you have to hang up manually, you have to switch
+this off:
+<HR>
+<PRE>
+isdnctrl huptimeout ippp0 0
+</PRE>
+<HR>
+</P>
+</DL>
+</P>
+<P>To allow a normal user to initiate a dialout, have a look at question
+<A HREF="#dialout_permission">dialout_permission</A>.</P>
+
+<H2><A NAME="dialout_advanced"></A> <A NAME="ss10.3">10.3</A> <A HREF="i4lfaq.html#toc10.3">dialout_advanced: What special dialout features are available? </A>
+</H2>
+
+<P>Check out these special dialout features:
+<UL>
+<LI> Save money by hanging up just before a charge unit:
+see section 
+<A HREF="i4lfaq-17.html#chargeint">chargeint</A>.</LI>
+<LI> Dialout on more than 1 channel at the same time:
+see section 
+<A HREF="i4lfaq-18.html#2channel">2channel</A>.</LI>
+<LI> Dialout on one specific channel:
+see question 
+<A HREF="#dialout_fixedchannel">dialout_fixedchannel</A>.</LI>
+<LI> Callback:
+see section 
+<A HREF="i4lfaq-22.html#callback">callback</A>.</LI>
+</UL>
+</P>
+
+<H2><A NAME="dialout_permission"></A> <A NAME="ss10.4">10.4</A> <A HREF="i4lfaq.html#toc10.4">dialout_permission: How can I allow a normal user to initiate dialouts? </A>
+</H2>
+
+<P>ISDN usage depends on the permissions to the devices <CODE>/dev/ttyI*</CODE> and
+<CODE>/dev/cui*</CODE>. You have several choices to selectively allow users to do
+ISDN transactions.
+<OL>
+<LI>You can establish the group `isdn' in <CODE>/etc/group</CODE>, and do:
+<HR>
+<PRE>
+chgrp isdn /dev/ttyI* /dev/cui*
+chmod o-rw /dev/ttyI* /dev/cui*
+</PRE>
+<HR>
+
+It has been reported that you also may have to change group and
+permissions on the programs <CODE>ipppd</CODE> and <CODE>isdnctrl</CODE> to 'isdn'.
+Then all users not in the group 'isdn' have no reading or writing
+privileges for the ISDN ttys. Those allowed to use ISDN have to be
+explicitly added to the group 'isdn'.</LI>
+<LI>You can allow only root to log out, but set up exceptions for other users
+with the su1 functionality (see man su1). As root edit
+<CODE>/etc/su1.priv</CODE>. Add these lines if they (or similar ones) are not yet
+there, to allow users XXXX and YYYY to initiate dialups/hangups:
+<HR>
+<PRE>
+# log all dialouts in syslog
+syslog all
+define PPPUSER XXXX YYYY
+alias dial /sbin/isdnctrl dial ippp0
+alias hangup /sbin/isdnctrl hangup ippp0
+ask never
+allow PPPUSER prefix dial
+allow PPPUSER prefix hangup
+</PRE>
+<HR>
+
+Then create two links for dial and hangup:
+<HR>
+<PRE>
+ln -s /usr/bin/su1 /usr/local/bin/dial
+ln -s /usr/bin/su1 /usr/local/bin/hangup
+</PRE>
+<HR>
+
+Now the users XXXX and YYYY can dial out by typing <CODE>dial</CODE>, and hangup with
+<CODE>hangup</CODE>.</LI>
+<LI>isdnctrl can be set SETUID root. Please not that if it is called by a
+user different from root, isdnctrl will only allow you to dialin/hangup,
+and addlink/removelink/show. However, the setup/configuration data can only be
+modified by root.</LI>
+<LI>If you only have one user that you use for ISDN interactions, you can
+make him owner of the ISDN interface.</LI>
+</OL>
+</P>
+
+<H2><A NAME="dialout_manycards"></A> <A NAME="ss10.5">10.5</A> <A HREF="i4lfaq.html#toc10.5">dialout_manycards: How do I configure dialout with more than 1 ISDN card? </A>
+</H2>
+
+<P>There are several possibilities to configure dialout.
+<UL>
+<LI>Dialout anywhere (default: all available cards are a pool, dialout
+on one MSN):
+just configure your cards in the order in which you want them to be dialed out.
+First all channels on the first card are used, then all on the second card,
+and so on. Please note that the net interface or ttyI device will try to
+dial out using the MSN it was configured for - on all cards. Even on those
+that do not have this MSN! In such a case, the telco will replace that
+invalid MSN with the correct one. Use <CODE>isdnctrl mapping</CODE> to configure the
+correct MSNs (see item 'dialout on one specific card').</LI>
+<LI>Dialout on one specific channel: Use the <CODE>isdnctrl bind</CODE>
+(not pppbind) command to specify which channel should be used.
+Please use this command after all other configuration with isdnctrl has
+been done! Check with <CODE>isdnctrl list</CODE> that the binding actually works.</LI>
+<LI> Dialout with different MSN on each card:
+You can configure this by using the <CODE>isdnctrl mappping</CODE> functionality.
+Just map MSNs on the letters 0 to 9, like this:
+<HR>
+<PRE>
+isdnctrl mapping &lt;carddriver1&gt; 111,222,333,,
+isdnctrl mapping &lt;carddriver2&gt; 999,888,,777
+</PRE>
+<HR>
+
+Now, you could configure for telephone number 0 when you really want to use
+MSN 111 on &lt;carddriver1&gt; or 999 on &lt;carddriver2&gt; (however, since
+0 has a special meaning, try to avoid using number 0). Configure to use
+number 1 when you really want to use MSN 222 on &lt;carddriver1&gt; or 888
+on &lt;carddriver2&gt;. Configure to use telephone number 2 when you really
+want to use only MSN 333 on &lt;carddriver1&gt; (&lt;carddriver2&gt; will
+use the default MSN when used). Configure to use telephone number 3 when you
+really want to use only MSN 777 on &lt;carddriver2&gt; (&lt;carddriver1&gt;
+will use the default MSN when used).</LI>
+<LI>Dialout on one specific card:
+After installing a patch that was posted by Karsten Keil on the mailing
+list against 2.2.12, you can disallow calls on some cards by using the
+<CODE>isdnctrl mapping</CODE> functionality.
+<HR>
+<PRE>
+isdnctrl mapping &lt;carddriver1&gt; 111,222,333,-,
+isdnctrl mapping &lt;carddriver2&gt; 999,888,-,777
+</PRE>
+<HR>
+
+It works as discribed for "Dialout with different MSN on each card", except
+that the "-" means dialing is disallowed. Dialout on telephone number 2 will
+now only dial out with MSN 333 on &lt;carddriver1&gt;, while dialout on 3 will
+now only dial out with MSN 777 on &lt;carddriver2&gt;.</LI>
+</UL>
+</P>
+
+<H2><A NAME="dialout_fixedchannel"></A> <A NAME="ss10.6">10.6</A> <A HREF="i4lfaq.html#toc10.6">dialout_fixedchannel: How can I force HiSax to always dial out on a specific B channel? </A>
+</H2>
+
+<P>HiSax has an undocumented feature for this. Add 'P1' in front of the dialout
+phone number for the first B channel, or 'P2' for the second B channel, like
+this:
+<HR>
+<PRE>
+isdnctrl addphone &lt;device&gt; out P1&lt;your_out_number&gt;
+</PRE>
+<HR>
+
+This will indicate the preferred B channel in the outgoing SETUP message.
+Please note that some PBX may not like this.
+Obviously, a dialout will fail when another device already uses
+the second B channel.</P>
+
+<H2><A NAME="dialout_dynip"></A> <A NAME="ss10.7">10.7</A> <A HREF="i4lfaq.html#toc10.7">dialout_dynip: On dynamic ip assignment, how do I find out which ip address is being used for dialout? </A>
+</H2>
+
+<P>Create a script called <CODE>ip-up</CODE>. It will be called by the ipppd
+whenever the connection is established with several parameters.
+The ip address is passed in as the fourth parameter (access it as <CODE>$4</CODE>).</P>
+
+<H2><A NAME="dialout_bind"></A> <A NAME="ss10.8">10.8</A> <A HREF="i4lfaq.html#toc10.8">dialout_bind: A dns query causes bind to dial out. Why does it take about a minute before it is answered? How do I work around it? </A>
+</H2>
+
+<P>You are probably using the name server in 'forward' mode, and your ISP works
+with dynamic ip addresses. The initial UDP query will be lost since it
+carries the wrong source address. Unfortunately, bind will wait a whole minute
+before retransmitting the query again if you have only one forwarder.</P>
+<P>As a workaround, you can enter 4 times the same forwarder in named.conf
+to adjust retransmission timing (in 'forward' mode, bind retransmits its
+queries after the following period of time: 60 seconds divided by the number
+of nameservers given in the section "forwarders" of named.conf).
+<HR>
+<PRE>
+forwarders { 10.0.0.40; 10.0.0.40; 10.0.0.40; 10.0.0.40; }
+</PRE>
+<HR>
+
+Bind will then retransmit the query every 15 seconds to your forwarder
+(here the forwarder is 10.0.0.40).
+The same principle applies to two or more forwarders.</P>
+<P>Another option are the programs <CODE>ip_resend</CODE> and <CODE>ip_resend_wakeup</CODE>
+which you can find on:
+<A HREF="http://www.baty.hanse.de/ip_resend/">http://www.baty.hanse.de/ip_resend/</A></P>
+
+
+<HR>
+<A HREF="i4lfaq-11.html">Next</A>
+<A HREF="i4lfaq-9.html">Previous</A>
+<A HREF="i4lfaq.html#toc10">Contents</A>
+</BODY>
+</HTML>

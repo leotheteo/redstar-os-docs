@@ -1,0 +1,69 @@
+﻿<html dir='ltr'>
+	<head>
+		<META http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+		<title>본문의 맞추기 및 간격</title>
+		<link rel='stylesheet' type='text/css' href='../css/main.css'/>
+		<script type='text/javascript' language='Javascript' src='../js/mexpcol.js'></script>
+		<script type='text/javascript' language='JavaScript' src='../js/glossary.js'></script>
+	</head>
+	<body>
+		<h1>&nbsp;<img align="absbottom" src="../image/external_images/crystal/svtools/res/new_doc.png"/>&nbsp;본문의 맞추기 및 간격</h1>
+		<p id='ExpandAllLine' class='ExpFav'>
+			<a href='#' onClick='ExpandAll()' onKeyPress='ExpandAll()' class='DropDown'>
+				<img id='picHeader' border='0' src='../image/image/common/expandtri.gif' alt='모두 표시'>
+				<span id='ExpandAll'>모두 표시</span>
+			</a>
+		</p>
+		<p>본문의 위치지정은 여러가지 방법에 의해 결정됩니다.
+			<a href="#" class="glossary" onClick="AppendPopup(this,'IDG_PAGESPACE')" onKeyPress="AppendPopup(this,'IDG_PAGESPACE')">여백</a>은 페지의 모든 본문에 대해 가장자리로부터의 거리를 결정하며 
+			단락들여쓰기 및 맞추기는 여백사이에서 단락이 맞추어지는 방법을 결정합니다. 또한 행간격과 단락전후의 간격을 지정할수도 있습니다.
+		</p>
+		<p><b class="bterm">본문위치의 지정 및 맞추기</b></p>
+		<p>여백은 본문령역의 전체 너비 즉 본문과 페지가장자리와의 간격을 결정합니다.</p>
+		<p>들여쓰기는 왼쪽 또는 오른쪽여백에서 단락까지의 거리를 결정합니다.
+			여백에서 단락 또는 단락그룹의 들여쓰기를 늘이거나 줄일수 있습니다.
+			부수로 지정(부수 내여쓰기)하면 단락이 왼쪽여백밖으로 나옵니다.
+			또한 단락의 왼쪽들여쓰기값과 반대방향인 부수값을 첫행에 설정하여 첫행 내여쓰기를 지정할수도 있습니다.
+		</p>
+		<p><img border="0" src="../image/image/sgwd/parindnt.gif"></p>
+		<p>가로방향의 맞추기는 단락가장자리의 모양과 방향을 왼쪽맞추기, 오른쪽맞추기, 가운데맞추기, 량쪽맞추기로 결정합니다.
+			례를 들어 왼쪽으로 맞추어진 단락(가장 일반적인 맞추기)에서 단락의 왼쪽가장자리는 왼쪽여백만큼 떨어집니다.
+		</p>
+		<p>세로방향의 맞추기는 웃쪽과 아래쪽의 여백을 기준으로 단락의 위치를 결정합니다.
+			이 방법을 사용하면 본문위치를 페지의 웃쪽, 아래쪽 또는 가운데로 세밀하게 지정하거나 페지의 아래쪽으로 단락의 간격이 같도록 세로방향으로 맞출수 있으므로 제목페지 등을 만들 때 사용하면 유용합니다.
+		</p>
+		<p><b class="bterm">틀을 사용하여 페지가운데에 본문맞추기</b></p>
+		<ol>
+			<li>
+				페지가운데에 맞출 본문을 선택합니다.
+			</li>
+			<li>
+				<b class="bterm">&lt;삽입&gt;</b>차림표에서 <b class="bterm">&lt;틀&gt;</b>을 찰칵합니다.
+			</li>
+			<li>
+				<b class="bterm">&lt;류형&gt;</b>표쪽의 <b class="bterm">&lt;지탱점&gt;</b>령역에서 <b class="bterm">&lt;페지에&gt;</b>를 선택합니다.
+			</li>
+			<li>
+				<b class="bterm">&lt;크기&gt;</b>령역에서 틀의 치수를 설정합니다.
+			</li>
+			<li>
+				<b class="bterm">&lt;위치&gt;</b>령역의 <b class="bterm">&lt;가로&gt;</b>복합칸에서 <b class="bterm">&lt;가운데&gt;</b>와 <b class="bterm">&lt;세로&gt;</b>복합칸에서 <b class="bterm">&lt;가운데&gt;</b>를 선택합니다.
+			</li>
+			<li>
+				<b class="bterm">&lt;확인&gt;</b>단추를 찰칵합니다.
+			</li>
+			<p><b class="bterm">참고:</b>   틀의 테두리를 숨기려면 틀을 선택한 다음 <b class="bterm">&lt;서식&gt;</b>차림표의 <b class="bterm">&lt;틀&gt;</b>을 찰칵합니다.
+				<b class="bterm">&lt;테두리&gt;</b>표쪽을 찰칵한 다음 <b class="bterm">&lt;테두리선 배치&gt;</b>령역의 <b class="bterm">&lt;기정&gt;</b>에서 <b class="bterm">&lt;테두리 없애기 설정&gt;</b>을 찰칵합니다.
+			</p>
+		</ol>
+		<p><b class="bterm">단락의 들여쓰기 례</b></p>
+		<p><b class="bterm">첫행 들여쓰기가 지정된 본문</b></p>
+		<p><img border="0" src="../image/image/sgwd/typespa1.gif"></p>
+		<p><b class="bterm">첫행 내여쓰기가 지정된 본문</b></p>
+		<p><img border="0" src="../image/image/sgwd/typespa4.gif"></p>
+		<p><b class="bterm">첫행 부수 내여쓰기가 지정된 본문</b></p>
+		<p><img border="0" src="../image/image/sgwd/typespa5.gif"></p>
+		<script type="text/javascript" language="Javascript">footerView()</script>
+	
+</body>
+</html>

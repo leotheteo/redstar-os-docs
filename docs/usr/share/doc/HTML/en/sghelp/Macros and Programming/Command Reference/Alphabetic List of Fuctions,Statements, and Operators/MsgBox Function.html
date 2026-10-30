@@ -1,0 +1,96 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+	<TITLE></TITLE>
+	<META NAME="GENERATOR" CONTENT="《Sogwang 3.0》  (Linux)">
+	<META NAME="CREATED" CONTENT="20091205;12143400">
+	<META NAME="CHANGED" CONTENT="20091205;12202800">
+	<STYLE TYPE="text/css">
+	<!--
+		P.code { margin-top: 0.04cm; margin-bottom: 0.04cm; font-family: "Bitstream Vera Sans Mono", "Cumberland", "Courier New", "Courier", "Lucida Sans Typewriter", "Lucida Typewriter", "Monaco", "Monospaced" }
+		H2 { margin-bottom: 0.18cm; font-family: "Bitstream Vera Sans", "Arial", "Helvetica", "Lucida", "Geneva", "Helmet", sans-serif, "Andale Sans UI", "Arial Unicode MS", "Lucida Sans Unicode", "Tahoma"; font-size: 14pt }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="ko-KP" DIR="LTR"><DIV style="margin-left: 25">
+<H1><A NAME="msgbox"></A><A NAME="bm_id3153379"></A><FONT FACE="Thorndale, serif"><SPAN LANG="en-US">MsgBox
+Function [Runtime]</SPAN></FONT></H1>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Displays
+a dialog box containing a message and returns a value.</SPAN></FONT></P>
+<H2><SPAN LANG="en-US">Syntax:</SPAN></H2>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">MsgBox (Text As String [,Type As
+Integer [,Dialogtitle As String]])</SPAN></FONT></P>
+<H2><SPAN LANG="en-US">Return value:</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Integer</SPAN></FONT></P>
+<H2><SPAN LANG="en-US">Parameter:</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Text</B>:
+String expression displayed as a message in the dialog box. Line
+breaks can be inserted with Chr$(13).</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>DialogTitle</B>:
+String expression displayed in the title bar of the dialog. If
+omitted, the name of the respective application is displayed.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Type</B>:
+Any integer expression that specifies the dialog type and defines the
+number and type of buttons or icons displayed. <B>Type</B> represents
+a combination of bit patterns (dialog elements defined by adding the
+respective values):</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Values</B>
+</SPAN></FONT>
+</P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">0 :
+Display OK button only.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">1 :
+Display OK and Cancel buttons.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">2 :
+Display Abort, Retry, and Ignore buttons.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">3 :
+Display Yes, No, and Cancel buttons.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">4 :
+Display Yes and No buttons.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">5 :
+Display Retry and Cancel buttons.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">16 : Add
+the Stop icon to the dialog.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">32 : Add
+the Question icon to the dialog.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">48 : Add
+the Exclamation Point icon to the dialog.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">64 : Add
+the Information icon to the dialog.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">128 :
+First button in the dialog as default button.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">256 :
+Second button in the dialog as default button.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">512 :
+Third button in the dialog as default button.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Return
+value:</B> </SPAN></FONT>
+</P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">1 : OK</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">2 :
+Cancel</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">3 :
+Abort</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">4 :
+Retry</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">5 :
+Ignore</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">6 : Yes</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">7 : No</SPAN></FONT></P>
+<H2><A NAME="errorcode"></A><SPAN LANG="en-US">Error Codes </SPAN>
+</H2>
+<P><A NAME="err5"></A><FONT FACE="청봉, serif"><SPAN LANG="en-US">5
+Invalid procedure call </SPAN></FONT>
+</P>
+<H2><SPAN LANG="en-US">Example:</SPAN></H2>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Sub ExampleMsgBox</SPAN></FONT></P>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Dim sVar as Integer</SPAN></FONT></P>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">sVar = MsgBox(&quot;Las Vegas&quot;)</SPAN></FONT></P>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">sVar = MsgBox(&quot;Las Vegas&quot;,1)</SPAN></FONT></P>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">sVar = MsgBox( &quot;Las
+Vegas&quot;,256 + 16 + 2,&quot;Dialog title&quot;)</SPAN></FONT></P>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">end sub</SPAN></FONT></P>
+
+</DIV></BODY>
+</HTML>

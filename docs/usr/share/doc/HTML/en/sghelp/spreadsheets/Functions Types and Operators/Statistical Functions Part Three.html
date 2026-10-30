@@ -1,0 +1,159 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+	<TITLE></TITLE>
+	<META NAME="GENERATOR" CONTENT="《Sogwang 3.0》  (Linux)">
+	<META NAME="CREATED" CONTENT="20091205;10241300">
+	<META NAME="CHANGED" CONTENT="20091205;11055300">
+	<STYLE TYPE="text/css">
+	<!--
+		H3 { margin-bottom: 0.18cm; font-family: "Bitstream Vera Sans", "Arial", "Helvetica", "Lucida", "Geneva", "Helmet", sans-serif, "Andale Sans UI", "Arial Unicode MS", "Lucida Sans Unicode", "Tahoma"; font-size: 12pt }
+		H2 { margin-bottom: 0.18cm; font-family: "Bitstream Vera Sans", "Arial", "Helvetica", "Lucida", "Geneva", "Helmet", sans-serif, "Andale Sans UI", "Arial Unicode MS", "Lucida Sans Unicode", "Tahoma"; font-size: 14pt }
+		P.code { margin-top: 0.04cm; margin-bottom: 0.04cm; font-family: "Bitstream Vera Sans Mono", "Cumberland", "Courier New", "Courier", "Lucida Sans Typewriter", "Lucida Typewriter", "Monaco", "Monospaced" }
+body {
+	margin-left: 0px;
+	margin-right: 0px;
+}
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="ko-KP" DIR="LTR"><DIV style="margin-left: 25">
+<H1><A NAME="kl"></A><FONT FACE="Thorndale, serif"><SPAN LANG="en-US">Statistical
+Functions Part Three </SPAN></FONT>
+</H1>
+<H2><A NAME="large"></A><A NAME="bm_id3149530"></A><A NAME="bm_id3150883"></A>
+<SPAN LANG="en-US">LARGE</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Returns
+the Rank_c-th largest value in a data set.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Syntax</SPAN></H3>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">LARGE(Data; RankC)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Data</B>
+is the cell range of data.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>RankC</B>
+is the ranking of the value.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Example</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">=LARGE(A1:C50;2)
+gives the second largest value in A1:C50.</SPAN></FONT></P>
+<H2><A NAME="small"></A><A NAME="bm_id3154532"></A><A NAME="bm_id3148609"></A>
+<SPAN LANG="en-US">SMALL</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Returns
+the Rank_c-th smallest value in a data set.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Syntax</SPAN></H3>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">SMALL(Data; RankC)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Data</B>
+is the cell range of data.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>RankC</B>
+is the rank of the value.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Example</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">=SMALL(A1:C50;2)
+gives the second smallest value in A1:C50.</SPAN></FONT></P>
+<H2><A NAME="confidence"></A><A NAME="bm_id3153559"></A><A NAME="bm_id3153803"></A>
+<SPAN LANG="en-US">CONFIDENCE</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Returns
+the (1-alpha) confidence interval for a normal distribution.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Syntax</SPAN></H3>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">CONFIDENCE(Alpha; StDev; Size)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Alpha</B>
+is the level of the confidence interval.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>StDev</B>
+is the standard deviation for the total population.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Size</B>
+is the size of the total population.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Example</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">=CONFIDENCE(0.05;1.5;100)
+gives 0.29.</SPAN></FONT></P>
+<H2><A NAME="correl"></A><A NAME="bm_id3148746"></A><A NAME="bm_id3147403"></A>
+<SPAN LANG="en-US">CORREL</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Returns
+the correlation coefficient between two data sets.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Syntax</SPAN></H3>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">CORREL(Data1; Data2)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Data1</B>
+is the first data set.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Data2</B>
+is the second data set.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Example</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">=CORREL(A1:A50;B1:B50)
+calculates the correlation coefficient as a measure of the linear
+correlation of the two data sets.</SPAN></FONT></P>
+<H2><A NAME="covar"></A><A NAME="bm_id3150652"></A><A NAME="bm_id3152983"></A>
+<SPAN LANG="en-US">COVAR</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Returns
+the covariance of the product of paired deviations.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Syntax</SPAN></H3>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">COVAR(Data1; Data2)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Data1</B>
+is the first data set.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Data2</B>
+is the second data set.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Example</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">=COVAR(A1:A30;B1:B30)
+</SPAN></FONT>
+</P>
+<H2><A NAME="critbinom"></A><A NAME="bm_id3147472"></A><A NAME="bm_id3154848"></A>
+<SPAN LANG="en-US">CRITBINOM</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Returns
+the smallest value for which the cumulative binomial distribution is
+less than or equal to a criterion value.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Syntax</SPAN></H3>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">CRITBINOM(Trials; SP; Alpha)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Trials</B>
+is the total number of trials.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>SP</B>
+is the probability of success for one trial.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Alpha</B>
+is the threshold probability to be reached or exceeded.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Example</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">=CRITBINOM(100;0.5;0.1)
+yields 44.</SPAN></FONT></P>
+<H2><A NAME="kurt"></A><A NAME="bm_id3155956"></A><A NAME="bm_id3146847"></A>
+<SPAN LANG="en-US">KURT</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Returns
+the kurtosis of a data set (at least 4 values required).</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Syntax</SPAN></H3>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">KURT(Number1; Number2;
+...Number30)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Number1,Number2,...Number30</B>
+are numeric arguments or ranges representing a random sample of
+distribution.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Example</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">=KURT(A1;A2;A3;A4;A5;A6)
+</SPAN></FONT>
+</P>
+<H2><A NAME="loginv"></A><A NAME="bm_id3150928"></A><A NAME="bm_id3156062"></A>
+<SPAN LANG="en-US">LOGINV</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Returns
+the inverse of the lognormal distribution.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Syntax</SPAN></H3>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">LOGINV(Number; Mean; StDev)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Number</B>
+is the probability value for which the inverse standard logarithmic
+distribution is to be calculated.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Mean</B>
+is the arithmetic mean of the standard logarithmic distribution.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>StDev</B>
+is the standard deviation of the standard logarithmic distribution.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Example</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">=LOGINV(0.05;0;1)
+returns 0.19.</SPAN></FONT></P>
+<H2><A NAME="lognormdist"></A><A NAME="bm_id3158417"></A><A NAME="bm_id3155366"></A>
+<SPAN LANG="en-US">LOGNORMDIST</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Returns
+the cumulative lognormal distribution.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Syntax</SPAN></H3>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">LOGNORMDIST(Number; Mean; StDev)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Number</B>
+is the probability value for which the standard logarithmic
+distribution is to be calculated.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Mean</B>
+is the mean value of the standard logarithmic distribution.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>StDev</B>
+is the standard deviation of the standard logarithmic distribution.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Example</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><SPAN STYLE="font-weight: medium">=LOGNORMDIST(0.1;0;1)
+returns 0.01.</SPAN></SPAN></FONT></P>
+
+</DIV></BODY>
+</HTML>
+

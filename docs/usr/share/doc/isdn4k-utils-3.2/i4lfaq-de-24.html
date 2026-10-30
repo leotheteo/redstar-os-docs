@@ -1,0 +1,244 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <META NAME="GENERATOR" CONTENT="LinuxDoc-Tools 0.9.21">
+ <TITLE>ISDN4LINUX - FAQ (deutsche Version): isdnlog: Isdnlog </TITLE>
+ <LINK HREF="i4lfaq-de-25.html" REL=next>
+ <LINK HREF="i4lfaq-de-23.html" REL=previous>
+ <LINK HREF="i4lfaq-de.html#toc24" REL=contents>
+</HEAD>
+<BODY>
+<A HREF="i4lfaq-de-25.html">Next</A>
+<A HREF="i4lfaq-de-23.html">Previous</A>
+<A HREF="i4lfaq-de.html#toc24">Contents</A>
+<HR>
+<H2><A NAME="isdnlog"></A> <A NAME="s24">24.</A> <A HREF="i4lfaq-de.html#toc24">isdnlog: Isdnlog </A></H2>
+
+<H2><A NAME="isdnlog_rates"></A> <A NAME="ss24.1">24.1</A> <A HREF="i4lfaq-de.html#toc24.1">isdnlog_rates: Wo bekomme ich die aktuellsten Geb&uuml;hreninformationen? </A>
+</H2>
+
+<P>Dies ist die Homepage der "Rate Data Crew": <CODE>
+<A HREF="http://rates4linux.sourceforge.net/">http://rates4linux.sourceforge.net/</A></CODE>. Dort bekommst die
+neuesten Dateien mit den Geb&uuml;hrenraten (die sich recht schnell
+&auml;ndern) oder kannst einen Blick auf die neuesten Nachrichten
+werfen.</P>
+<P>Es gibt f&uuml;r diesen Bereich auch eine Mailingliste. Du abonnierst
+diese durch eine Email mit dem Subject "subscribe" an: <CODE>
+<A HREF="mailto:rates4linux-users-request@lists.sourceforge.net">rates4linux-users-request@lists.sourceforge.net</A></CODE> (mit
+"help" im Subject bekommst Du Instruktionen).  Du schreibst an die
+Mailingliste mittels Email an: <CODE>
+<A HREF="mailto:rates4linux-users@lists.sourceforge.net">rates4linux-users@lists.sourceforge.net</A></CODE>.</P>
+
+
+<H2><A NAME="isdnlog_servicetype"></A> <A NAME="ss24.2">24.2</A> <A HREF="i4lfaq-de.html#toc24.2">isdnlog_servicetype: Kann ich den Dienstetyp eines ankommenden Anrufes in der Ausgabe von isdnrep sehen? </A>
+</H2>
+
+<P>Andreas Kool <CODE>
+<A HREF="mailto:akool@Kool.f.EUnet.de">akool@Kool.f.EUnet.de</A></CODE> schrieb am 03. Dezember 1996:
+<BLOCKQUOTE>
+Indirekt in isdnrep, ja -- sobald Du ein Alias f&uuml;r die
+dekodierten Dienstetypen in Deiner 'isdnlog.conf' angegeben hast ...
+</BLOCKQUOTE>
+</P>
+
+<H2><A NAME="isdnlog_callerid1"></A> <A NAME="ss24.3">24.3</A> <A HREF="i4lfaq-de.html#toc24.3">isdnlog_callerid1: Warum bekomme ich nicht immer die Nummer eines Anrufers ('Caller ID') durch die Deutsche Telekom &uuml;bermittelt?</A>
+</H2>
+
+<P>Aus Gr&uuml;nden des Datenschutzes werden Telefonnummern des analogen
+Netzes nicht &uuml;bermittelt, es sei denn, der Anrufer hat dies der
+Telekom ausdr&uuml;cklich erlaubt (das ist kostenlos).</P>
+<P>Die Teilnehmer mit einem ISDN-Anschlu&szlig; m&uuml;ssen andererseits
+ausdr&uuml;cklich die &Uuml;bermittlung der Nummer durch die Telekom
+verweigern oder beantragen, die &Uuml;bermittlung auf
+Call-by-Call-Basis (CLIR) zu verweigern oder zu gestatten. Die
+Verweigerung bei Call-by-call ist kostenlos, die &Uuml;bertragung bei
+Call-by-Call kostenpflichtig. Es scheint jedoch f&uuml;r die Telekom
+<EM>extrem</EM> schwierig zu sein, das beim ersten Versuch richtig
+einzustellen. Wenn Du Wert auf die &Uuml;bertragung der Caller ID
+legst, solltest Du sehr genau pr&uuml;fen, ob alles richtig
+konfiguriert wurde.</P>
+
+<H2><A NAME="isdnlog_callerid2"></A> <A NAME="ss24.4">24.4</A> <A HREF="i4lfaq-de.html#toc24.4">isdnlog_callerid2: Erhalte ich die Caller ID bei ausl&auml;ndischen Anrufen? </A>
+</H2>
+
+<P>Ja, bei Anrufen aus L&auml;ndern, die das mit der Caller ID nicht ganz
+so streng sehen wie Deutschland (z.B. USA, Canada).</P>
+
+<H2><A NAME="isdnlog_spoofcallerid"></A> <A NAME="ss24.5">24.5</A> <A HREF="i4lfaq-de.html#toc24.5">isdnlog_spoofcallerid: Ich habe geh&ouml;rt, da&szlig; in Wirklichkeit zwei Caller IDs &uuml;bertragen werden?</A>
+</H2>
+
+<P>Richtig, die eine ist 'benutzer-generiert' und nicht &uuml;berwacht
+und die andere ist 'netzwerk-generiert' (durch die
+Telefongesellschaft). Wie der Name schon sagt wird die erste Nummer
+vom Benutzer bereitgestellt w&auml;hrend die zweite vom Netzwerk
+&uuml;bertragen wird.  Die Bereitstellung einer Caller ID ist nur mit
+einer PBX &uuml;ber eine Point-to-Point Konfiguration mit dem Feature
+"CLIP no screening" m&ouml;glich.</P>
+
+<H2><A NAME="isdnlog_betterlogging"></A> <A NAME="ss24.6">24.6</A> <A HREF="i4lfaq-de.html#toc24.6">isdnlog_betterlogging: Wieso zeichnet isdnlog die Nummern, die mit meinen anderen ISDN-Ger&auml;ten gew&auml;hlt werden, nicht auf, obwohl es die Kosten aufzeichnet?</A>
+</H2>
+
+<P>Weil die ISDN-Karte, wie alle ISDN-Ger&auml;te, separate Leitungen
+f&uuml;r das Senden und das Empfangen hat (RX und TX
+Leitungen). Isdnlog m&uuml;sste die Daten der empfangenden Leitung
+lesen um die gew&auml;hlte Nummer zu erkennen. Dies ist nicht
+m&ouml;glich, zumindest nicht f&uuml;r die Teles-Karten, wie Karsten
+Keil <CODE>
+<A HREF="mailto:keil@isdn4linux.de">keil@isdn4linux.de</A></CODE> am 12. Februar 1997 schrieb:
+<BLOCKQUOTE>
+Dies ist der Fall bei allen Karten mit 1 Siemens ISAX; er hat (und
+braucht) nur 1 Sender und 1 Empf&auml;nger.  Theoretisch ist es
+m&ouml;glich, den gesamten D-Kanal mit nur einem Empf&auml;nger (sogar
+mit dem ISAC) auszulesen; die D-Bits der RX-Leitung werden (etwas
+verz&ouml;gert) auf die TX-Leitung kopiert, &uuml;ber die die
+Zugriffskontrolle (Kollisionskontrolle) des S0-Busses
+stattfindet. Leider ist es mit dem ISAC nicht m&ouml;glich, die echo
+bits im TA-Modus aus einem Register auszulesen.
+</BLOCKQUOTE>
+
+In den n&auml;chsten Fragen findest Du vielleicht eine L&ouml;sung.</P>
+
+<H2><A NAME="isdnlog_reversedcard"></A> <A NAME="ss24.7">24.7</A> <A HREF="i4lfaq-de.html#toc24.7">isdnlog_reversedcard: Wie erreiche ich, da&szlig; isdnlog auch die Nummern zeigt, die von anderen ISDN-Ger&auml;ten gew&auml;hlt werden?</A>
+</H2>
+
+<P>Da gibt es mehrere M&ouml;glichkeiten: 
+<UL>
+<LI> COLP: Erstens bietet die Deutsche Telekom den Service COLP
+(Connected Line Identification Presentation) f&uuml;r ca. DM 10 pro
+Monat an, der alle gesendeten Daten zur&uuml;ck sendet. Diese
+k&ouml;nnen dann von isdnlog von der TX-Leitung ausgelesen werden.</LI>
+<LI> Umgepolte Karte/Dualmodus: Alternativ bietet isdnlog die
+M&ouml;glichkeit, mit einer zweiten, "umgepolten" ISDN-Karte zu
+arbeiten. 'Umgepolt' bedeutet in diesem Fall, da&szlig; die RX-Leitung
+mit dem TX-Anschluss der Karte verbunden wird; die RX Leitung der
+Karte sollte nirgends angeschlossen (stillgelegt) werden (selbst wenn
+andere Doks etwas anderes sagen)! Aufgrund dieser Schaltung kann diese
+ISDN-Karte f&uuml;r sonst nichts benutzt werden. Die ganze Schaltung
+sieht dann etwa so aus:
+<PRE>
+      3 -- RX+ 2a ---------------\
+ISDN  4 -- TX+ 1a -- open         ------------  ISDN
+bus   5 -- TX- 1b -- open         ------------  card
+      6 -- RX- 2b ---------------/ 
+</PRE>
+
+Beachte bitte, da&szlig; dies nur funktioniert, wenn die zweite Karte
+einen ISAC-Chip besitzt (z.B. alte Teles-Karten, Fritz! classic), da
+dabei ein spezieller Bug/Feature dieses Chips genutzt wird. Alle
+anderen Karten, wie IPAC-Karten (z.B. ELSA QS1000pro), funktionieren
+nicht in der Rolle der umgepolten Karte. 
+</LI>
+<LI> HFC-Karten: Einige HFC-PCI-Karten verf&uuml;gen &uuml;ber ein
+spezielles Feature. Bei ihnen kann man einen B-Kanal opfern und
+daf&uuml;r das gesamte D-Kanal-Protokoll auslesen - alles mit einer
+Karte. Dies wird auch von ISDN4LINUX unterst&uuml;tzt. Die HFC-Karte
+sollte dann wie folgt konfiguriert werden:
+<HR>
+<PRE>
+hisaxctrl &lt;driver_id&gt; 1 4
+hisaxctrl &lt;driver_id&gt; 10 1
+hisaxctrl &lt;driver_id&gt; 12 1
+</PRE>
+<HR>
+
+Dem isdnlog muss die Kommandozeilenoption '-1' &uuml;bergeben werden,
+da&szlig;er die HFC-Option nutzt.
+Beachte bitte, da&szlig; ein einfacher HFC-S aus hardwaretechnischen
+Gr&uuml;nden nicht gen&uuml;gt, es muss ein neuerer sein. Wenn Deine
+Karte mit dem HiSax-Typ 35 oder 37 l&auml;ft sollte es funktionieren.
+</LI>
+<LI> TK-Anlage: Eine dritte (theoretische) M&ouml;glichkeit besteht
+f&uuml;r die Besitzer einer eigenen TK-Anlage, an die die anderen
+Ger&auml;te angeschlossen sind. Wenn die TK-Anlage alle ausgehenden
+Gespr&auml;che protokollieren kann, so kann man das auslesen
+(&uuml;blicherweise &uuml;ber einen seriellen Anschlu&szlig;).
+Es gibt einen Grund, warum isdnlog dies bisher nicht
+unterst&uuml;tzt. Zur Auswertung dieser Daten muss isdnlog sofort nach
+RELEASE COMPLETE darauf zugreifen k&ouml;nnen, bevor irgendwelche
+anderen Daten &uuml;ber den D-Kanal geschickt werden. Die bisher
+getesteten Anlagen waren dazu alle zu langsam (besonders die
+verbreitete ISTEC). Die einzige M&ouml;glichkeit w&auml;re, die Daten
+hinterher zusammenzuf&uuml;gen. Aber da gibt es wiederum Probleme mit
+den verschiedenen Zeitangaben. Wer auch immer einen Versuch damit
+wagen will ist willkommen (Ich werde die Logs meiner Ackermann Euracom
+zur Verf&uuml;gung stellen - Matthias Hessler <CODE>
+<A HREF="mailto:hessler@wi-inf.uni-essen.de">hessler@wi-inf.uni-essen.de</A></CODE>).</LI>
+</UL>
+</P>
+
+<H2><A NAME="isdnlog_rategraphic"></A> <A NAME="ss24.8">24.8</A> <A HREF="i4lfaq-de.html#toc24.8">isdnlog_rategraphic: Wie kann ich die Transferraten grafisch anzeigen?</A>
+</H2>
+
+<P>Du kannst 'xisdnload' benutzen. Clemens Perz <CODE>
+<A HREF="mailto:listperz@gwsnet.ttt.de">listperz@gwsnet.ttt.de</A></CODE> beschrieb am 06. Februar 1997 eine
+weitere M&ouml;glichkeit:
+<BLOCKQUOTE>
+Auf Sunsite fand ich ein kleines Tool f&uuml;r die Konsole namens
+netload und passte es f&uuml;r die ISDN-Interfaces an. Damit kannst Du
+sehr leicht den aktuellen Verkehr auf der Leitung beobachten. Du
+findest es auf: <CODE>
+<A HREF="ftp://ftp.region.trier.de/pub/unix/linux/sources/ network/isdn/netload-0.92.isdn.tar.gz">ftp://ftp.region.trier.de/pub/unix/linux/sources/ network/isdn/netload-0.92.isdn.tar.gz</A></CODE>.  Starte es einfach mit
+<CODE>netload isdnxx</CODE>.
+</BLOCKQUOTE>
+</P>
+
+<H2><A NAME="isdnlog_2callerid"></A> <A NAME="ss24.9">24.9</A> <A HREF="i4lfaq-de.html#toc24.9">isdnlog_2callerid: Isdnlog (=2.52) zeigt bei einem Anrufer <EM>zwei</EM> Telefonnummern an! Welche davon ist korrekt?</A>
+</H2>
+
+<P>Der Anrufer hat vermutlich das (teure) Feature CLIP (= Calling Line
+Identification Presentation, no screening) aktiviert, was bedeutet,
+da&szlig; jede beliebige Telefonnummer &uuml;bertragen werden
+kann. Sieh nach bei der Frage 
+<A HREF="#isdnlog_spoofcallerid">isdnlog_spoofcallerid</A>.</P>
+<P>Andreas Kool <CODE>
+<A HREF="mailto:akool@Kool.f.EUnet.de">akool@Kool.f.EUnet.de</A></CODE> schrieb am 26. Januar 1997:
+<BLOCKQUOTE>
+Jedenfalls kannst Du nur Software/Anlagen t&auml;uschen, die den
+Screening Indicator (Anzeige, da&szlig; die &uuml;bertragenen Nummern
+auf Korrektheit gepr&uuml;ft werden) nicht auswerten - isdnlog
+(>=2.52) zeigt sowohl die korrekte als auch die vorgegebene
+Telefonnummer an. 'CLIP, no screening' wurde urspr&uuml;nglich
+geschaffen um firmeninterne Rufnummern im &ouml;ffentlichen Netz zu
+&uuml;bertragen.
+</BLOCKQUOTE>
+</P>
+
+<H2><A NAME="isdnlog_soundbusy"></A> <A NAME="ss24.10">24.10</A> <A HREF="i4lfaq-de.html#toc24.10">isdnlog_soundbusy: Ich habe ein Script erstellt um Sound mit cat auf /dev/sound oder einem anderen Ger&auml;t abzuspielen. Wenn einige Ereignisse gleichzeitig geschehen erhalte ich eine Fehlermeldung: <CODE>Can't open output file '/dev/sound': Device or resource busy</CODE>.</A>
+</H2>
+
+<P>Auf das Sound-Device kann nur jeweils ein Prozess zugreifen. Du
+brauchst eine h&ouml;here Instanz, die den Zugriff auf das
+Sound-Device koordiniert. Das k&ouml;nnte NAS (Network Audio System)
+und rplay sein.</P>
+
+<H2><A NAME="isdnlog_noshell"></A> <A NAME="ss24.11">24.11</A> <A HREF="i4lfaq-de.html#toc24.11">isdnlog_noshell: Isdnlog soll ein Programm mit umgeleiteter Ausgabe aufrufen (z.B. <CODE>play anruf.au 2&gt;/dev/null</CODE>). Warum erz&auml;hlt mir ISDN dann: <CODE>Can't start '/usr/local/bin/play anruf.au 2&gt;/dev/null' with execvp()</CODE>? </A>
+</H2>
+
+<P>Weil isdnlog keine (Bourne-)Shell ist ;-). Isdnlog kann nur
+<B>echte</B> Programme starten. Schreibe einfach ein kleines Script
+und mach es ausf&uuml;hrbar (chmod +x):
+<HR>
+<PRE>
+#!/bin/sh
+/usr/local/bin/play anruf.au 2&gt;/dev/null
+</PRE>
+<HR>
+</P>
+
+<H2><A NAME="isdnlog_blankscreen"></A> <A NAME="ss24.12">24.12</A> <A HREF="i4lfaq-de.html#toc24.12">isdnlog_blankscreen: Bei der Hinauswahl wird der Bildschirm kurze Zeit dunkel? </A>
+</H2>
+
+<P>Das kann passieren, wenn Du isdnlog mit der Option <CODE>-t1</CODE> oder
+<CODE>-t2</CODE> startest, denn dann wird die Zeit mit der digitalen
+Vermittlungsstelle abgeglichen. Der Bildschirmschoner denkt, da&szlig;
+mehr als x Minuten vergangen sind und das bewirkt einen kurzen
+Blackout des Bildschirms.</P>
+
+
+
+<HR>
+<A HREF="i4lfaq-de-25.html">Next</A>
+<A HREF="i4lfaq-de-23.html">Previous</A>
+<A HREF="i4lfaq-de.html#toc24">Contents</A>
+</BODY>
+</HTML>

@@ -1,0 +1,212 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <META NAME="GENERATOR" CONTENT="LinuxDoc-Tools 0.9.21">
+ <TITLE>FAQ for isdn4linux: 2channel: Channel bundling (MPPP, raw bundling) </TITLE>
+ <LINK HREF="i4lfaq-19.html" REL=next>
+ <LINK HREF="i4lfaq-17.html" REL=previous>
+ <LINK HREF="i4lfaq.html#toc18" REL=contents>
+</HEAD>
+<BODY>
+<A HREF="i4lfaq-19.html">Next</A>
+<A HREF="i4lfaq-17.html">Previous</A>
+<A HREF="i4lfaq.html#toc18">Contents</A>
+<HR>
+<H2><A NAME="2channel"></A> <A NAME="s18">18.</A> <A HREF="i4lfaq.html#toc18">2channel: Channel bundling (MPPP, raw bundling) </A></H2>
+
+<H2><A NAME="2channel_whatis"></A> <A NAME="ss18.1">18.1</A> <A HREF="i4lfaq.html#toc18.1">2channel_whatis: What is channel bundling and how can I use it? </A>
+</H2>
+
+<P>Channel bundling is currently supported by isdn4Linux in two variations:
+<UL>
+<LI><B>Raw Bundling</B> (configuration of so-called slave channels)</LI>
+<LI><B>MPPP</B> (based on syncPPP)</LI>
+</UL>
+
+Both variations have their own advantages and disadvantages. See the following
+questions. Dynamic adjustment is supported for MPPP by the program
+<CODE>ibod</CODE> - see question 
+<A HREF="#2channel_mpppconfig">2channel_mpppconfig</A> for more
+details.</P>
+
+<H2><A NAME="2channel_raw"></A> <A NAME="ss18.2">18.2</A> <A HREF="i4lfaq.html#toc18.2">2channel_raw: What is raw bundling? </A>
+</H2>
+
+<P>Raw bundling works similarly to raw IP, only with several channels.
+Therefore, it has the theoretical advantages and disadvantages of
+raw IP. Raw bundling requires a network interface for each channel
+that is used. One network interface, the so-called master interface,
+controls the establishment and breaking of connections. For each
+further channel, an additional so-called slave interface is configured,
+that is automatically switched on by the master interface.</P>
+
+<H2><A NAME="2channel_rawconfig"></A> <A NAME="ss18.3">18.3</A> <A HREF="i4lfaq.html#toc18.3">2channel_rawconfig: How do I configure raw bundling? </A>
+</H2>
+
+<P>The master interface is created as usual with
+<HR>
+<PRE>
+isdnctrl addif master interface
+</PRE>
+<HR>
+
+and configured. For all required slave channels, slave interfaces
+are created with the command:
+<HR>
+<PRE>
+isdnctrl addslave master interface slave interface
+</PRE>
+<HR>
+
+and configured as usual (e.g. &quot;isdnctrl sdelay slave interface
+delay&quot;).</P>
+
+<H2><A NAME="2channel_rawgoodbad"></A> <A NAME="ss18.4">18.4</A> <A HREF="i4lfaq.html#toc18.4">2channel_rawgoodbad: What are the advantages and disadvantages of raw bundling? </A>
+</H2>
+
+<P>Raw bundling has all the advantages and disadvantages of raw IP.
+Compared to MPPP, raw bundling has the advantage that isdn4linux
+itself can open and close the needed slave channels. Unfortunately
+raw bundling still has problems with transfer rates. See the further
+questions below.</P>
+
+<H2><A NAME="2channel_mppp"></A> <A NAME="ss18.5">18.5</A> <A HREF="i4lfaq.html#toc18.5">2channel_mppp: What is MPPP? </A>
+</H2>
+
+<P>MPPP or MP or MPP (Warning: MP is also an acronym for 'Multi Processor')
+stands for Multi Point to Point and means bundling of several channels to
+one logical stream. It's a variation of the normal syncPPP. Accordingly, it
+inherits all its advantages and disadvantages. Just for your information: ipppd
+does MPPP according to RFC 1717, instead of the newer RFC 1990 (MLP).</P>
+<P>In contrast to raw bundling only one net interface is needed as interface
+to the ipppd, since the ipppd handles all its channels by itself. Incoming
+data is distributed round-robin by the ipppd on all available channels.
+These channels do not necessarily have to be ISDN channels. In theory,
+modem connections could be mixed with ISDN channels. However, here we only
+cover ISDN channels.</P>
+
+<H2><A NAME="2channel_mpppgoodbad"></A> <A NAME="ss18.6">18.6</A> <A HREF="i4lfaq.html#toc18.6">2channel_mpppgoodbad: What are the advantages and disadvantages of MPPP? </A>
+</H2>
+
+<P>A disadvantage is that the slave channel has to be activated
+&quot;manually&quot;. ipppd cannot by itself turn the slave channel on and
+off as it needs to. The normal automatic functions of ipppd are
+either unreliable (auto hangup) don't work at all (auto dial).
+This is not true for the other encapsulations. The transfers
+rates are very good (ca. 30 KB/s with 4 channels).</P>
+
+<H2><A NAME="2channel_mpppconfig"></A> <A NAME="ss18.7">18.7</A> <A HREF="i4lfaq.html#toc18.7">2channel_mpppconfig: How do I configure MPPP? </A>
+</H2>
+
+<P>First ensure that support for MPPP has been switched on for compilation
+of your ISDN modules. Then define a (normal) interface for ipppd (e.g.
+&quot;isdnctrl addif ippp0&quot;, etc). This interface will be used as
+your master interface.
+Then you must configure a slave device for every additional channel (e.g.
+&quot;isdnctrl addslave ippp0 &lt;slave_interface&gt;&quot;, configure
+slave_interface, etc - see the i4l manual for more).
+To enable MPPP negotiation, ipppd must be called with the &quot;+mp&quot;
+option and both devices have to be given to ipppd. Please note that the
+name of both devices has to start with &quot;ippp&quot;.</P>
+<P>To use channel bundling you must first activate the 'master' or initial
+call. Now you can add the slave channels with the command:
+<HR>
+<PRE>
+isdnctrl addlink device
+</PRE>
+<HR>
+
+and close them with the command:
+<HR>
+<PRE>
+isdnctrl removelink device
+</PRE>
+<HR>
+
+This is different to other encapsulations of isdn4linux!
+If addlink gives you error -2, then this means that there are no slave devices
+configured. Error -5 means that ippp0 is not connected.</P>
+<P>Please also note, that the slave device has to be in dialmode <CODE>auto</CODE> for
+this to work. For manual control, use
+<HR>
+<PRE>
+isdnctrl dial slave
+</PRE>
+<HR>
+
+and
+<HR>
+<PRE>
+isdnctrl hangup slave
+</PRE>
+<HR>
+
+When using manual control please ensure that the slave device is shut down
+before the master device. Currently (August 2002) there is a hard-to-fix bug
+in the MPPP code which will cause a crash on the next dialout. A patch exists
+which cures the symptoms to prevent the crash (see mailing list). However,
+since the dialout will fail in any case it is best to avoid this situation
+altogether by using the proper shutdown sequence.</P>
+<P>With syncPPP, there is no automatic activation of slave devices, they have to
+be added and removed. However, there is the program <CODE>ibod</CODE> available,
+which can do this automatically. Have a look at:
+<A HREF="http://www.compound.se/ibod.html">http://www.compound.se/ibod.html</A>
+or (for a version extended by Karsten Keil):
+<A HREF="http://www.suse.de/~kkeil/xibod/">http://www.suse.de/~kkeil/xibod/</A></P>
+<P>In the file <CODE>etc/rc.isdn.syncppp.MPPP</CODE> in the isdn4k-utils package you
+can find a sample script (unfortunately missing in some i4l versions).</P>
+<P>Please note that your Internet Provider has to allow you to make use of these
+features. Also, there may be a limit on how many channels you are allowed to
+open at the same time. It could be that all links are dropped when you exceed
+this limit.</P>
+
+<H2><A NAME="2channel_mpppcompile"></A> <A NAME="ss18.8">18.8</A> <A HREF="i4lfaq.html#toc18.8">2channel_mpppcompile: I tried MPPP but it doesn't work. The ipppd writes in the debug log something like: &quot; ...  rcvd (0)(proto=0x3d) c0 00 00 00 80 fd 01 01 00 0a ... sent (0)(LCP ProtRej id=0x2 00 3d c0 00 00 00 80 fd 01 ...&quot; </A>
+</H2>
+
+<P>You forgot to compile MPPP/RFC1717 support into the ISDN Subsystem.
+Recompile with this option enabled.</P>
+
+<H2><A NAME="2channel_cantlocateippp1"></A> <A NAME="ss18.9">18.9</A> <A HREF="i4lfaq.html#toc18.9">2channel_cantlocateippp1: When trying to use MPPP I get the error message &quot;modprobe: Can't locate module ippp1&quot; and &quot;ipppd: ioctl(SIOCSIFMTU): No such device...&quot;? </A>
+</H2>
+
+<P>This is a pecularity of ipppd. It tries to set MTU even for slave devices,
+and the kernel can not find a corresponding network device. You can safely
+ignore this information message, MPPP should work nevertheless.</P>
+
+<H2><A NAME="2channel_multiplenumbers"></A> <A NAME="ss18.10">18.10</A> <A HREF="i4lfaq.html#toc18.10">2channel_multiplenumbers: How can I set up multiple number when using MPPP? </A>
+</H2>
+
+<P>Master and slave device are fully independent of each other, except for using
+the same network device to deliver packets. Setting up multiple number for
+master and slave devices will result in synchronized dialout (to the same
+number). Therefore it is best to give the slave device no number by default
+and set up the slave with the same number as the master in some ip-up script.</P>
+
+<H2><A NAME="2channel_freebchannel"></A> <A NAME="ss18.11">18.11</A> <A HREF="i4lfaq.html#toc18.11">2channel_freebchannel: How could I set up isdn4linux to free the second B-channel if a phone call comes in? </A>
+</H2>
+
+<P>Well, this is a tough one, due to technical limits. Even if isdn4linux freed
+a B-channel, the exchange would not repeat the setup call. Therefore, the
+phone would not ring. The phone only signals a second incoming phone call if
+you are on the phone with another call that could be suspended.</P>
+<P>One option would be that isdn4linux frees one B-channel, then takes the call,
+and transfers it to the phone via ECT (explicit call transfer); however, this
+feature requires proprietary (unknown) protocol extensions, and is usually
+only available behind large private exchanges - therefore not implemented
+in isdn4linux.
+Another option is that isdn4linux frees one B-channel, takes the call, then
+suspends it. However, the user would have to know to resume it without any
+phone ringing.
+The most sensible option is that you handle it will a phone application
+making use of isdn4linux. Possibly ant-phone could be used for such a purpose:
+<CODE>
+<A HREF="http://www.antcom.de/">http://www.antcom.de/</A></CODE></P>
+
+
+
+<HR>
+<A HREF="i4lfaq-19.html">Next</A>
+<A HREF="i4lfaq-17.html">Previous</A>
+<A HREF="i4lfaq.html#toc18">Contents</A>
+</BODY>
+</HTML>

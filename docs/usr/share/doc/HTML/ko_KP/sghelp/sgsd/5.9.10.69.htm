@@ -1,0 +1,110 @@
+﻿<html dir='ltr'>
+	<head>
+		<META http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+		<title>TDIST</title>
+		<link rel='stylesheet' type='text/css' href='../css/main.css'/>
+		<script type='text/javascript' language='Javascript' src='../js/mexpcol.js'></script>
+		<script type='text/javascript' language='JavaScript' src='../js/glossary.js'></script>
+	</head>
+	<body>
+		<h1>&nbsp;<img align="absbottom" src="../image/external_images/crystal/svtools/res/new_doc.png"/>&nbsp;TDIST</h1>
+		<p id='ExpandAllLine' class='ExpFav'>
+			<a href='#' onClick='ExpandAll()' onKeyPress='ExpandAll()' class='DropDown'>
+				<img id='picHeader' border='0' src='../image/image/common/expandtri.gif' alt='모두 표시'>
+				<span id='ExpandAll'>모두 표시</span>
+			</a>
+		</p>
+		<p><b class="bterm">참고항목</b>&emsp;
+			<a href="5.9.10.1.htm">통계함수목록</a>,
+			<a href="5.9.10.70.htm">TINV</a>,
+			<a href="5.9.10.72.htm">TTEST</a>
+		</p>
+		<p>t-분포값을 구합니다.</p>
+		<p><b class="bterm">문법:&emsp;&emsp;		TDIST(수값,자유도,방식)</b></p>
+		<table>
+			<tr>
+				<th>인수명</th>
+				<th>설명</th>
+			</tr>
+			<tr>
+				<td>수값</td>
+				<td>t-분포를 계산할 값입니다.</td>
+			</tr>
+			<tr>
+				<td>자유도</td>
+				<td>t-분포의 자유도입니다.</td>
+			</tr>
+			<tr>
+				<td>방식</td>
+				<td>t-분포가 단측분포인가 량측분포인가를 나타내는 수자로서 <b class="bterm">방식</b>= 1이면 단측분포를, <b class="bterm">방식</b>= 2이면 량측분포를 사용하여 확률값을 구합니다.</td>
+			</tr>
+		</table>
+		<p><b class="bterm">주의</b></p>
+			<ul>
+				<li><b class="bterm">자유도</b> < 1이면 <b class="bterm">오유:[오유번호]</b>를 표시합니다.</li>
+				<li><b class="bterm">자유도</b>와 <b class="bterm">방식</b>인수는 옹근수로 변환됩니다.</li>
+				<li><b class="bterm">방식</b>이 1, 2 이외의 값을 가지면 <b class="bterm">오유:[오유번호]</b>를 표시합니다.</li>
+				<li><b class="bterm">수값</b>이 0보다 작으면 <b class="bterm">오유:[오유번호]</b>를 표시합니다.</li>
+				<li><b class="bterm">방식</b> = 1이면 TDIST = P( X>x )와 같이 계산됩니다. 여기서 x는 <b class="bterm">수값</b>이고 X는 t-분포에 따른 우연변량입니다. <b class="bterm">방식</b>= 2이면 TDIST = P(|X| > x) = P(X > x or X < -x)와 같이 계산됩니다.</li>
+				<li>0보다 작은 <b class="bterm">수값</b>은 허용되지 않으므로 <b class="bterm">수값</b>이 0보다 작을 경우에는 <b class="bterm">TDIST</b>함수를 TDIST(-x,df,1) = 1- TDIST(x,df,1) = P(X > -x)와 TDIST(-x,df,2) = TDIST(x, df,2) = P(|X| > x)로 사용합니다.</li>
+			</ul>
+		<p><b class="bterm">실례</b></p>
+			<p><a href="1.5.1.htm">실례의 리용방법</a>을 참고하십시오.</p>
+			<table>
+				<tr>
+					<td>
+						<table>
+							<tr>
+								<td class="noborder">&nbsp;
+								</td>
+							</tr>
+							<tr>
+								<th>1</th>
+							</tr>
+							<tr>
+								<th>2</th>
+							</tr>
+							<tr>
+								<th>3</th>
+							</tr>
+						</table>
+					</td>
+					<td>
+						<table>
+							<tr>
+								<th>A</th>
+								<th>B</th>
+							</tr>
+							<tr>
+								<th>자료</th>
+								<th>설명</th>
+							</tr>
+							<tr>
+								<td>1.96</td>
+								<td>분포를 계산하려는 값입니다.</td>
+							</tr>
+							<tr>
+								<td>60</td>
+								<td>자유도입니다.</td>
+							</tr>
+							<tr>
+								<th>수식</th>
+								<th>설명(결과)</th>
+							</tr>
+							<tr>
+								<td>=TDIST(A2,A3,2)</td>
+								<td>량측검증분포입니다. (0.05 또는 5%)</td>
+							</tr>
+							<tr>
+								<td>=TDIST(A2,A3,1)</td>
+								<td>단측검증분포입니다. (0.03또는 3%)</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+			<p><b class="bterm">참고:</b>   수자를 백분률로 표시하려면 세포를 선택하고 <b class="bterm">&lt;서식&gt;</b>차림표에서 <b class="bterm">&lt;세포&gt;</b>를 찰칵합니다. <b class="bterm">&lt;수자&gt;</b>표쪽을 찰칵한 다음 <b class="bterm">&lt;종류&gt;</b>목록칸에서 <b class="bterm">&lt;백분률&gt;</b>을 찰칵합니다.</p>
+		<script type="text/javascript" language="Javascript">footerView()</script>
+	
+</body>
+</html>				

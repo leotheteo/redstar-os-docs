@@ -1,0 +1,69 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+	<TITLE></TITLE>
+	<META NAME="GENERATOR" CONTENT="《Sogwang 3.0》  (Linux)">
+	<META NAME="CREATED" CONTENT="20091205;15361500">
+	<META NAME="CHANGED" CONTENT="20091205;17041900">
+	<STYLE TYPE="text/css">
+	<!--
+		P.code { margin-top: 0.04cm; margin-bottom: 0.04cm; font-family: "Bitstream Vera Sans Mono", "Cumberland", "Courier New", "Courier", "Lucida Sans Typewriter", "Lucida Typewriter", "Monaco", "Monospaced" }
+		P.related { margin-top: 0.71cm; margin-bottom: 0.05cm; border-top: 1px solid #000000; border-bottom: none; border-left: none; border-right: none; padding-top: 0.05cm; padding-bottom: 0cm; padding-left: 0cm; padding-right: 0cm; font-weight: bold }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="ko-KP" DIR="LTR"><DIV style="margin-left: 25">
+<H1><A NAME="bm_id3154140"></A><A NAME="show_dialog"></A><FONT FACE="Thorndale, serif"><SPAN LANG="en-US">Opening
+a Dialog With Program Code </SPAN></FONT>
+</H1>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">In the
+</SPAN></FONT><FONT FACE="청봉, serif"><SPAN LANG="en-US">Sogwang BASIC
+window for a dialog that you created, leave the dialog editor by
+clicking the name tab of the Module that the dialog is assigned to.
+The name tab is at the bottom of the window.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Enter
+the following code for a subroutine called <B>Dialog1Show</B>. In
+this example, the name of the dialog that you created is &quot;Dialog1&quot;:</SPAN></FONT></P>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Sub Dialog1Show</SPAN></FONT></P>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">BasicLibraries.LoadLibrary(&quot;Tools&quot;)</SPAN></FONT></P>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">oDialog1 = <A 
+HREF="./Programming Examples for Controls in the Dialog Editor.html">LoadDialog</A>(&quot;Standard&quot;,
+&quot;Dialog1&quot;)</SPAN></FONT></P>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">oDialog1.Execute()</SPAN></FONT></P>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">End Sub</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Without
+using &quot;LoadDialog&quot; you can call the code as follows:</SPAN></FONT></P>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Sub Dialog1Show</SPAN></FONT></P>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">DialogLibraries.LoadLibrary(
+&quot;Standard&quot; )</SPAN></FONT></P>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">oDialog1 = CreateUnoDialog(
+DialogLibraries.Standard.Dialog1 )</SPAN></FONT></P>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">oDialog1.Execute()</SPAN></FONT></P>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">End Sub</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">When you
+execute this code, &quot;Dialog1&quot; opens. To close the dialog,
+click the close button (x) on its title bar.</SPAN></FONT></P>
+<P CLASS="related"><A NAME="relatedtopics"></A><A NAME="related"></A><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Related
+Topics</B> </SPAN></FONT>
+</P>
+<P STYLE="margin-left: 0.13cm; margin-top: 0.05cm; margin-bottom: 0.05cm"><A NAME="control_properties"></A>
+<FONT FACE="청봉, serif"><SPAN LANG="en-US"><SPAN STYLE="font-weight: medium"><A HREF="./Changing the Properties of Controls in the Dialog Editor.html">Changing
+the Properties of Controls in the Dialog Editor</A> </SPAN></SPAN></FONT>
+</P>
+<P STYLE="margin-left: 0.13cm; margin-top: 0.05cm; margin-bottom: 0.05cm"><A NAME="create_dialog"></A>
+<FONT FACE="청봉, serif"><SPAN LANG="en-US"><SPAN STYLE="font-weight: medium"><A 
+HREF="./Creating a Basic Dialog.html">Creating
+a Basic Dialog</A> </SPAN></SPAN></FONT>
+</P>
+<P STYLE="margin-left: 0.13cm; margin-top: 0.05cm; margin-bottom: 0.05cm"><A NAME="insert_control"></A>
+<FONT FACE="청봉, serif"><SPAN LANG="en-US"><SPAN STYLE="font-weight: medium"><A HREF="./Creating Controls in the Dialog Editor.html">Creating
+Controls in the Dialog Editor</A> </SPAN></SPAN></FONT>
+</P>
+<P STYLE="margin-left: 0.13cm; margin-top: 0.05cm; margin-bottom: 0.05cm">
+<FONT FACE="청봉, serif"><SPAN LANG="en-US"><SPAN STYLE="font-weight: medium"><A HREF="./Programming Examples for Controls in the Dialog Editor.html">Programming
+Examples for Controls in the Dialog Editor</A> </SPAN></SPAN></FONT>
+</P>
+
+</DIV></BODY>
+</HTML>

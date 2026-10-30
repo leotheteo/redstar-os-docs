@@ -1,0 +1,63 @@
+﻿<html dir='ltr'>
+	<head>
+		<META http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+		<title>철자법 검사에서 발생하는 문제의 해결</title>
+		<link rel='stylesheet' type='text/css' href='../css/main.css'/>
+		<script type='text/javascript' language='Javascript' src='../js/mexpcol.js'></script>
+		<script type='text/javascript' language='JavaScript' src='../js/glossary.js'></script>
+	</head>
+	<body>
+		<h1>&nbsp;<img align="absbottom" src="../image/external_images/crystal/svtools/res/new_doc.png"/>&nbsp;철자법 검사에서 발생하는 문제의 해결</h1>
+		<p id='ExpandAllLine' class='ExpFav'>
+			<a href='#' onClick='ExpandAll()' onKeyPress='ExpandAll()' class='DropDown'>
+				<img id='picHeader' border='0' src='../image/image/common/expandtri.gif' alt='모두 표시'>
+				<span id='ExpandAll'>모두 표시</span>
+			</a>
+		</p>
+		<p><b class="bterm">철자법 검사기에서 철자의 특정오유를 찾지 못하거나 물결모양의 밑줄이 현시되지 않는 경우</b></p>
+		<p>다음과 같이 실행합니다.</p>
+		<ul>
+			<li>
+				자동철자법 검사기능을 설정하고 문서에 입력을 시작합니다.
+				철자법 검사기는 기존의 본문과 새로 입력한 본문을 모두 검사해서 철자오유에 붉은색물결모양의 밑줄을 현시합니다.
+				이 밑줄이 현시되지 않으면 현시되도록 설정합니다.
+			</li>
+			<li>
+				문서의 일부를 선택하지 않았는지 확인하십시오.
+				본문을 선택한 경우에는 철자법 검사기가 선택한 본문만 검사합니다.
+				문서의 나머지부분에 대한 검사여부를 묻는 통보문이 현시되면 <b class="bterm">&lt;예&gt;</b>를 찰칵합니다.
+			</li>
+			<li>
+				장식이 있는 서체나 Standard Symbols L서체가 아닌 서체를 사용하십시오.
+				장식이 있는 서체나 Standard Symbols L서체로 서식이 설정된 본문은 검사되지 않습니다.
+				이러한 본문에는 다른 서체를 적용한 다음 철자법 검사를 다시 실행합니다.
+			</li>
+			<li>
+				문서를 다시 검사합니다. 철자법 검사에 영향을 주는 작업을 수행했을수 있습니다.
+				문서를 다시 검사하려면 <b class="bterm">&lt;도구&gt;</b>차림표의 <b class="bterm">&lt;철자법 및 문법 검사&gt;</b>를 찰칵합니다. 그러면 철자법 검사를 다시 실행합니다.
+			</li>
+		</ul>
+		<p><b class="bterm">철자법 검사기가 철자오유를 옳은것으로 현시할 때</b></p>
+		<p>다음과 같이 실행합니다.</p>
+		<ul>
+			<li>
+				사용자정의사전에 특수용어나 사용자정의 대소문자를 추가합니다.
+				철자법 검사기는 문서의 단어를 기본사전의 단어와 비교합니다.
+				기본사전에는 아주 일반적인 단어는 들어있지만 고유한 이름, 기술용어, 머리글자어 등은 포함되여있지 않습니다.
+				어떤 단어는 기본사전에 있는 단어와 대소문자가 다르게 표기되기도 합니다.
+				이러한 단어나 대소문자를 사용자정의사전에 추가하면 철자오유로 판단되지 않습니다.
+			</li>
+			<li>
+				다른 언어로 된 본문을 검사하도록 설정합니다.
+				다른 언어로 된 본문을 검사하려면 해당 언어용 철자도구를 설치하여 언어를 편집할수 있도록 설정해야 합니다.
+				그러면 문서의 언어가 자동적으로 탐색되고 옳바른 철자도구가 사용됩니다.
+			</li>
+		</ul>
+		<p><b class="bterm">철자법 검사기에서 예상외의 단어를 후보단어로 추천할 때</b></p>
+		<p>철자법 검사기에서 인식할수 없는 단어가 있으면 사전에서 철자법이 비슷한 단어를 찾아 해당 언어에 대한 목록을 현시하고 가장 비슷한 단어를 강조현시합니다.
+			목록의 내용은 철자법에 의해서만 결정되므로 문맥상 맞지 않는 단어가 추천될수 있습니다.
+		</p>
+		<script type="text/javascript" language="Javascript">footerView()</script>
+	
+</body>
+</html>

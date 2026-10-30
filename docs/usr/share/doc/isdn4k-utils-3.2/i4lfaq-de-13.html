@@ -1,0 +1,581 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <META NAME="GENERATOR" CONTENT="LinuxDoc-Tools 0.9.21">
+ <TITLE>ISDN4LINUX - FAQ (deutsche Version): syncppp: Sync PPP </TITLE>
+ <LINK HREF="i4lfaq-de-14.html" REL=next>
+ <LINK HREF="i4lfaq-de-12.html" REL=previous>
+ <LINK HREF="i4lfaq-de.html#toc13" REL=contents>
+</HEAD>
+<BODY>
+<A HREF="i4lfaq-de-14.html">Next</A>
+<A HREF="i4lfaq-de-12.html">Previous</A>
+<A HREF="i4lfaq-de.html#toc13">Contents</A>
+<HR>
+<H2><A NAME="syncppp"></A> <A NAME="s13">13.</A> <A HREF="i4lfaq-de.html#toc13">syncppp: Sync PPP </A></H2>
+
+<H2><A NAME="syncppp_whichppp"></A> <A NAME="ss13.1">13.1</A> <A HREF="i4lfaq-de.html#toc13.1">syncppp_whichppp: pppd, ipppd, syncPPP, asyncPPP .. was ist das alles? Welchen soll ich benutzen? </A>
+</H2>
+
+<P>Siehe zu dieser Frage den Abschnitt in <EM>async PPP</EM>:
+<A HREF="i4lfaq-de-14.html#asyncppp_whichppp">asyncppp_whichppp</A>.</P>
+
+
+<H2><A NAME="syncppp_compile"></A> <A NAME="ss13.2">13.2</A> <A HREF="i4lfaq-de.html#toc13.2">syncppp_compile: Wie kompiliere ich ISDN4LINUX mit syncPPP? </A>
+</H2>
+
+<P>Zum Kompilieren des Kernels mit dem in ISDN4LINUX enthaltenen syncPPP
+musst Du bei der Konfiguration die entsprechenden Fragen mit 'yes'
+beantworten. Vergiss nicht, da&szlig; das Modul slhc.o vor dem Modul
+isdn.o geladen werden muss, wenn die VJ-Kompression nicht in den
+Kernel eingebunden wurde, wenn Du z.B. kein PPP und kein CSLIP im
+Kernel hast. Der Gebrauch von VJ-Kompression ist bei &auml;lteren
+Kernels problematisch und funktioniert nicht verl&auml;&szlig;lich -
+die Unterst&uuml;tzung daf&uuml;r sollte jedoch trotzdem im Kernel
+vorhanden sein, da es sonst zu Nebenwirkungen kommen kann.</P>
+
+<H2><A NAME="syncppp_netinterface"></A> <A NAME="ss13.3">13.3</A> <A HREF="i4lfaq-de.html#toc13.3">syncppp_netinterface: Wie sollte ich mein Netzwerk-Interface benennen? </A>
+</H2>
+
+<P>Der Name des Netzwerk-Interfaces sollte <EM>immer</EM> mit 'ippp'
+beginnen, <EM>nicht</EM> mit 'syncppp' oder 'isdn', da in diesem Fall
+die Verst&auml;ndigung mit dem ipppd nicht ordentlich funktionieren
+wird. Es sollte also <EM>mindestens</EM> ein 'ippp0' vorhanden sein
+sonst wird der ipppd nicht starten. &Uuml;berpr&uuml;fe Deine
+Interfaces mit dem Befehl <CODE>ifconfig</CODE>.</P>
+
+<H2><A NAME="syncppp_config"></A> <A NAME="ss13.4">13.4</A> <A HREF="i4lfaq-de.html#toc13.4">syncppp_config: Wie richte ich ISDN4LINUX mit syncPPP ein? </A>
+</H2>
+
+<P>Synchronous PPP ist einfach eine weitere encapsulation f&uuml;r
+ISDN4LINUX. Diese encapsulation wird 'syncppp' genannt. Hier folgt ein
+Beispiel zur Konfiguration des link level device ippp0:
+<HR>
+<PRE>
+/sbin/isdnctrl addif ippp0
+/sbin/isdnctrl encap ippp0 syncppp
+</PRE>
+<HR>
+</P>
+<P>Beachte bitte, da&szlig; syncppp sehr sensibel in Bezug auf die
+Benennung der Devices reagiert. Es funktionieren nur Devices deren
+Bezeichnung mit 'ippp'beginnt. Zumindest ein Interface sollte den
+Namen 'ippp0' haben (siehe Frage 
+<A HREF="#syncppp_netinterface">syncppp_netinterface</A>). </P>
+<P>Alle in Gebrauch befindlichen ippp*-Devices m&uuml;ssen separat
+konfiguriert werden. Jedes ippp*-Device sollte mit einer eigenen
+IP-Addresse versehen werden (routing!). Mehrere ippp*-Devices
+k&ouml;nnen einer einzelnen MSN zugeordnet werden. Dann k&ouml;nnen
+mehrere Anrufer diese MSN gleichzeitig nutzen.</P>
+<P>Zum Gebrauch dieser Devices ben&ouml;tigst Du das Programm <CODE>ipppd</CODE>,
+das Du konfigurieren musst. ipppd muss nach dem Installieren der
+Module einmal gestartet werden und dann kontinuierlich laufen, um das
+Hinaus- und Hineinw&auml;hlen zu erm&ouml;glichen. Es kommuniziert mit
+den ISDN4LINUX link level devices durch <CODE>/dev/ippp0</CODE> bis
+<CODE>/dev/ippp63</CODE>. Ein einzelnes ipppd kann mit allen Devices
+zugleich arbeiten. Wenn Du zwei PPP-Verbindungen zugleich brauchst,
+musst Du ipppd an zwei Devices binden, usw. Dadurch stellt <CODE>ipppd</CODE>
+das Netzwerk-Device <CODE>ippp0</CODE> zur Verf&uuml;gung, das mit
+<CODE>ifconfig</CODE> &uuml;berpr&uuml;ft werden kann (obwohl es den
+gleichen Namen tr&auml;gt, darf das Netzwerk-Device <CODE>ippp0</CODE> nicht
+mit <CODE>/dev/ippp0</CODE> verwechselt werden, das zur Kommunikation
+zwischen ipppd und dem link level verwendet wird).</P>
+<P>ipppd hat eine weitere Option: 'useifip' benutzt die IP-Addresse des
+verbundenen Netzwerk-Interfaces (wenn diese nicht 0.0.0.0
+lautet. Sogar dann versucht ipppd, die Point-to-Point-Addresse als
+remote IP zu benutzen). Zu Anfang solltest Du alle
+Kompressionsoptionen deaktivieren (lzs/stac, bsd, van jacobson),
+sp&auml;ter kannst Du versuchen, sie zu aktivieren (siehe Frage 
+<A HREF="#syncppp_compression">syncppp_compression</A>).</P>
+<P>Es ist sehr wichtig, die Authentifikations-Informationen sauber
+einzustellen. Unsaubere Authentifikation ist das vermutlich meist
+beschriebene Problem in der Mailingliste. Arbeite bitte erst selbst
+den Abschnitt 
+<A HREF="i4lfaq-de-12.html#pap">pap</A> komplett durch, bevor Du
+andere um Hilfe bittest.</P>
+<P>In dem Paket isdn4kernel-util findest Du ein Konfigurationsbeispiel in
+der Datei <CODE>etc/rc.isdn.syncppp</CODE>.</P>
+<P>Mit mehreren ipppd-Instanzen k&ouml;nnen verschiedene Konfigurationen
+erstellt werden. Dazu dient der Befehl <CODE>'isdnctrl pppbind'</CODE>. Normalerweise sollte der gesamte Verkehr &uuml;ber einen ipppd
+laufen. Die Einrichtung von mehreren ipppds ist wirklich nur
+empfehlenswert, wenn mehrere verschiedene Kofigurationen ben&ouml;tigt
+werden.</P>
+
+<H2><A NAME="syncppp_busy"></A> <A NAME="ss13.5">13.5</A> <A HREF="i4lfaq-de.html#toc13.5">syncppp_busy: Wie stelle ich fest, da&szlig; ein Verbindungsaufbau erfolglos war (besetzt)? </A>
+</H2>
+
+<P>Wenn Du die Option <CODE>defaultroute</CODE> angegeben hast, wartest Du ein
+paar Sekunden und kannst dann pr&uuml;fen, ob die default route
+existiert. Eine weitere M&ouml;glichkeit besteht durch die Option
+<CODE>useifip</CODE>. Du findest dann im syslog Eintr&auml;ge wie
+<CODE>"Local IP: x.y.z.a"</CODE> und/oder <CODE>"Remote IP:
+x.y.z.a"</CODE>. In beiden F&auml;llen besteht eine Verbindung.</P>
+
+<H2><A NAME="syncppp_logindelay"></A> <A NAME="ss13.6">13.6</A> <A HREF="i4lfaq-de.html#toc13.6">syncppp_logindelay: Wie kann ich das Login beschleunigen? </A>
+</H2>
+
+<P>Lass Dir eine Login-Prozedur im 'Debug-Log' protokollieren und suche
+danach, welche Optionen der andere Computer ablehnt. Danach
+konfigurierst Du ipppd ohne diese nicht ben&ouml;tigten Optionen. Ein
+Seiteneffekt ist, da&szlig; solche unben&ouml;tigten Optionen die
+Redundanz vergr&ouml;&szlig;ern (wenn der andere Computer z.B. Fehler
+hat und die Optionen nicht korrekt ablehnt). Wie Du ein Logfile
+erstellst siehst Du in 
+<A HREF="#syncppp_log">syncppp_log</A>.</P>
+
+<H2><A NAME="syncppp_2configs"></A> <A NAME="ss13.7">13.7</A> <A HREF="i4lfaq-de.html#toc13.7">syncppp_2configs: Ich m&ouml;chte Verbindungen mit entfernten Maschinen aufbauen, die unterschiedliche Konfigurationen ben&ouml;tigen. Die einzige Art dazu, die ich fand, besteht darin, den ipppd zu beenden und einen neuen mit anderer Konfiguration f&uuml;r die Verbindung mit der zweiten Maschine zu starten. </A>
+</H2>
+
+<P>Du musst ein Netzwerk-Interface explizit an ein ippp Device binden,
+mit dem Du einen f&uuml;r dieses Interface individuell eingestellten
+ipppd verbinden kannst. Mit dem (leider schlecht dokumentierten)
+Befehl
+<HR>
+<PRE>
+isdnctrl pppbind &lt;interface&gt; &lt;Number&gt;
+</PRE>
+<HR>
+
+kannst Du das Interface interface an das Device Number binden. Du
+l&ouml;st diese Bindung wieder mit 'pppunbind'.</P>
+
+<H2><A NAME="syncppp_pppbind"></A> <A NAME="ss13.8">13.8</A> <A HREF="i4lfaq-de.html#toc13.8">syncppp_pppbind: Wie funktioniert der (wenig dokumentierte) Befehl "pppbind" in isdnctrl? </A>
+</H2>
+
+<P>Zuerst musst Du wissen, wie ipppd seine Daten bekommt. Alle Daten, die
+&uuml;ber die ISDN-Leitung hereinkommen, werden von den
+Netzwerk-Devices empfangen, die mit isdnctrl eingestellt werden. Dann
+werden die Daten an eines der Devices /dev/ippp* &uuml;bergeben - an
+eines, an dem der Systemdienst ipppd auf Daten wartet.</P>
+<P>Was die Netzwerk-Interfaces betrifft, so k&ouml;nnen alle ipppds die
+gerade eingegangenen Daten behandeln. Daher ist es normalerweise
+unm&ouml;glich, vorherzusagen, welcher ipppd Daten von welchem
+Netzwerk-Interface empfangen wird.</P>
+<P>In der Praxis installierst Du normalerweise mehrere ipppds mit
+unterschiedlichen Einstellungen. Jeder davon sollte Daten
+<EM>ausschlie&szlig;lich</EM> von einem bestimmten Netzwerk-Interface
+empfangen, das ebenfalls speziell eingestellt wurde. Der Befehl
+"pppdbind" erf&uuml;llt genau diesen Zweck. Mit:
+<HR>
+<PRE>
+isdnctrl pppbind &lt;interface&gt; &lt;Number&gt;
+</PRE>
+<HR>
+
+wird das Interface &lt;interface&gt; an das Device
+/dev/ippp&lt;number&gt; gebunden.</P>
+<P>Beispiel: Die folgende Konfiguration bindet das Interface 'ippp5'
+an /dev/ippp2:
+<HR>
+<PRE>
+isdnctrl pppbind ippp5 2
+</PRE>
+<HR>
+
+Dementsprechend l&ouml;st der Befehl 'pppunbind' diese Bindung wieder
+auf.</P>
+
+<H2><A NAME="syncppp_dynip"></A> <A NAME="ss13.9">13.9</A> <A HREF="i4lfaq-de.html#toc13.9">syncppp_dynip: Ich m&ouml;chte dynamisch zugeteilte IP-Addressen nutzen. Wie muss ich das Netzerk-Device konfigurieren? </A>
+</H2>
+
+<P>Zumindest musst Du eine route angeben, die ein Datenpaket an das ippp
+Netzwerk-Interface &uuml;bergibt, um ein Hinausw&auml;hlen
+auszul&ouml;sen. Eine defaultroute auf das Interface ippp sollte
+funktionieren. Nun musst Du Deinem Interface eine Dummy-Addresse
+zuteilen. Wenn Du aus irgendwelchen Gr&uuml;nden die defaultroute
+nicht auf das Interface ippp setzen kannst, nimmst Du irgendeine
+Addresse aus dem Subnet, aus dem Du Deine dynamische IP-Nummer
+erwartest und setzt eine 'network route' f&uuml;r dieses Subnet auf
+das Interface ippp.  Rufe ipppd mit der Option 'ipcp-accept-local' auf
+um das &Uuml;berschreiben der Dummy-Addresse zu erm&ouml;glichen. Du
+musst wissen, wie ipppd die Addressen bekommt, die er einstellen
+muss. Wenn Du keine Option aktivierst, versucht ipppd, die Addresse
+des localhost zu &uuml;bertragen!  Mit der Option 'noipdefault'
+verlangt er eine Addresse von der entfernten Maschine. Mit 'useifip'
+bekommt er die Addressen vom Netz-Interface. Du kannst die Addressen
+auch in der Optionszeile mit der Option 'a.b.c.d:e.f.g.h' setzen.</P>
+<P>Hinweis: die IP-Addresse der entfernten Maschine muss lokal gesetzt
+werden oder die entfernte Maschine muss sie in einem IPCP Request
+senden. Wenn Deine Seite die IP-Addresse nach der Verhandlung nicht
+kennt, wird sie die Verbindung abbrechen! Du musst das
+&Uuml;berschreiben der Addressen mit den Optionen
+"ipcp-accept-local/remote" erlauben wenn Du Deine eigene oder die
+entfernte Addresse ausdr&uuml;cklich gesetzt hast. Versuche als
+Beispiel diese Optionen:
+<HR>
+<PRE>
+/sbin/ipppd :$REMOTE noipdefault /dev/ippp0
+</PRE>
+<HR>
+
+wobei REMOTE die Addresse der entfernten Maschine ist (der Maschine,
+von der Du Deine Addresse bekommst).</P>
+
+<H2><A NAME="syncppp_msgetdns"></A> <A NAME="ss13.10">13.10</A> <A HREF="i4lfaq-de.html#toc13.10">syncppp_msgetdns: Mit welcher Einstellung f&uuml;r ipppd erreiche ich, da&szlig; die Adresse des Nameservers bei der Einwahl geholt oder angezeigt wird? </A>
+</H2>
+
+<P>Mit der Option <CODE>ms-get-dns</CODE> wird die Adresse des Nameservers geholt
+wenn Du Deinen Internet Provider anw&auml;hlst. Mit <CODE>ms-dns</CODE> zeigst
+Du die Adresse des Nameservers wenn sich jemand bei Dir einw&auml;hlt.</P>
+
+<H2><A NAME="syncppp_ipx"></A> <A NAME="ss13.11">13.11</A> <A HREF="i4lfaq-de.html#toc13.11">syncppp_ipx: Wie kann ich IPX &uuml;ber den ipppd betreiben? </A>
+</H2>
+
+<P>&Uuml;bergib dem ipppd die Option <CODE>+ipx-protocol</CODE>.</P>
+
+<H2><A NAME="syncppp_faster"></A> <A NAME="ss13.12">13.12</A> <A HREF="i4lfaq-de.html#toc13.12">syncppp_faster: Wie kann ich meine Datentransferraten per PPP verbessern? </A>
+</H2>
+
+<P>Du kannst mehr Kan&auml;le mittels MPPP einrichten (siehe Abschnitt
+MPPP). Eine weitere M&ouml;glichkeit ist die Nutzung von Kompression,
+siehe Frage 
+<A HREF="#syncppp_compression">syncppp_compression</A>.</P>
+
+<H2><A NAME="syncppp_compression"></A> <A NAME="ss13.13">13.13</A> <A HREF="i4lfaq-de.html#toc13.13">syncppp_compression: Welche Kompressionsarten kann ich mit ipppd verwenden? </A>
+</H2>
+
+<P>Mit dem ipppd k&ouml;nnen verschiedene Kompressionsverfahren benutzt
+werden. Bei Fehlern oder Zweifeln sollte man sie jedoch deaktivieren.
+<UL>
+<LI><EM>Van Jacobson compression</EM> (header compression)
+Sollte mit aktuellen Kerneln (neuer als 2.2.14) problemlos
+laufen. Dazu muss VJ in den Kernel kompiliert werden. Um Probleme mit
+dem automatischen Laden des VJ-Moduls zu vermeiden sollte man SLIP und
+CSLIP ebenfalls in den Kernel kompilieren. VJ wird mit den Optionen
+<CODE>-vj -vjccomp</CODE> deaktiviert.</LI>
+<LI><EM>BSD compression</EM>:
+Wenn Dein Netzpartner das auch unterst&uuml;tzt l&auml;uft es gut. Da
+sie von VJ unabh&auml;ngig ist kann man auch beide zusammen benutzen.</LI>
+<LI><EM>LZS compression</EM> (manchmal auch <EM>Stac
+compression</EM> genannt). Arbeitet auch ganz gut. Es ist jedoch etwas
+manuelle Arbeit notwendig, um den Code in den ipppd einzuf&uuml;gen
+(siehe Paket isdn4k-util).</LI>
+</UL>
+</P>
+
+
+<H2><A NAME="syncppp_strategy"></A> <A NAME="ss13.14">13.14</A> <A HREF="i4lfaq-de.html#toc13.14">syncppp_strategy: Ich kann keine Verbindung bekommen. Wie finde ich das Problem? </A>
+</H2>
+
+<P>Die Meldungen des ipppd sind sehr hilfreich... (siehe n&auml;chste
+Frage: 
+<A HREF="#syncppp_log">syncppp_log</A>)
+<UL>
+<LI>Schau Dir die Fehlermeldungen an und beachte die folgenden
+Fragen... </LI>
+<LI>Schau, ob Du ein paar Meldungen mit dem Text 'LCP-conf-req
+SENT' (weniger als zehn) und dann ein 'Term-Req' findest.</LI>
+<LI>&Uuml;berpr&uuml;fe, ob die ISDN-Karte richtig konfiguriert
+wurde, wenn der Computer scheinbar nicht w&auml;hlt (IRQ, IO,
+Protokoll falsch?)</LI>
+<LI>Erscheinen wenigstens ein paar 'RECV' Meldungen: gut! Die Karte
+w&auml;hlt und der empfangende Computer versucht zu
+antworten. Vielleicht funktioniert die Authentifizierung per pap/chap
+nicht (siehe Frage 
+<A HREF="i4lfaq-de-12.html#pap">pap</A>). Pr&uuml;fe die
+Einstellungen des ipppd!</LI>
+<LI>Eine Meldung sagt, da&szlig; der ipppd aus irgendeinem Grund
+beendet wurde: nicht so gut! Schau in <CODE>/var/log/messages</CODE>,
+<CODE>/var/log/debug</CODE> und <CODE>/var/adm/daemon</CODE> (wenn vorhanden)
+nach. Es k&ouml;nnte ein Fehler im ipppd sein.</LI>
+<LI>Die Fehlermeldung <CODE>cause E0010</CODE> ist <B>KEIN</B> Fehler! Es
+ist nur die informative Meldung, da&szlig; die Verbindung beendet
+wurde.</LI>
+</UL>
+</P>
+
+<H2><A NAME="syncppp_log"></A> <A NAME="ss13.15">13.15</A> <A HREF="i4lfaq-de.html#toc13.15">syncppp_log: Wie bekomme ich ein Log des ipppd? </A>
+</H2>
+
+<P>Wenn die Option "debug" f&uuml;r den ipppd gesetzt wurde, erscheinen
+die Meldungen normalerweise in <CODE>/var/log/messages</CODE>,
+<CODE>/var/log/debug</CODE> oder <CODE>/var/adm/daemon</CODE> (abh&auml;ngig
+von Deiner Distribution).</P>
+<P>Zur Fehlersuche kannst Du das PPP-Log in eine gesonderte Datei
+umleiten. Editiere dazu die Datei <CODE>/etc/syslog.conf</CODE> und
+f&uuml;ge die folgende Zeile hinzu (Achtung: gebrauche KEINE
+Leerzeichen sondern TABs - Du findest weitere Details mit <CODE>man 5
+syslog.conf</CODE>):
+<HR>
+<PRE>
+daemon.*          /var/log/ppp-log
+</PRE>
+<HR>
+
+Nun werden alle Informationen des Dienstes PPP in die Datei
+/var/log/ppp-log geschrieben.  Emil Stephan <CODE>
+<A HREF="mailto:ste@esqhen.su.eunet.de">ste@esqhen.su.eunet.de</A></CODE> schrieb dazu:
+<BLOCKQUOTE>
+Entferne das Kommentar-Zeichen vor dieser Zeile in /etc/syslog.conf:
+<HR>
+<PRE>
+#*.=debug        /tmp/debug
+</PRE>
+<HR>
+
+Nach der &Auml;nderung dieser Datei kannst Du den syslogd mit 'kill -1
+pid of syslogd' neu starten. Die Meldungen in /tmp/debug k&ouml;nnen
+zur Optimierung der PPP-Optionen genutzt werden.
+</BLOCKQUOTE>
+</P>
+
+<H2><A NAME="syncppp_nopppsupport"></A> <A NAME="ss13.16">13.16</A> <A HREF="i4lfaq-de.html#toc13.16">syncppp_nopppsupport: Beim Start des ipppd bekomme ich die Fehlermeldung 'this systems lacks ppp support' oder 'isdn driver is out of date. maybe ippp0 has no syncppp0 encapsulation'. </A>
+</H2>
+
+<P>Pr&uuml;fe, ob das Device 'ippp0' existiert (z.B. mit dem Programm
+"ifconfig"). Hinweise zur Benennung von Net-Interfaces bekommst Du bei
+Frage 
+<A HREF="#syncppp_netinterface">syncppp_netinterface</A>.
+Der ipppd <EM>braucht</EM> dieses Device mit exakt <EM>diesem</EM>
+Namen und <EM>syncppp</EM>. Wenn es nicht existiert, muss es definiert
+werden:
+<HR>
+<PRE>
+isdnctrl addif ippp0
+isdnctrl encap ippp0 syncppp
+</PRE>
+<HR>
+
+(weitere Informationen in der Dokumentation zu I4L und bei der Frage
+<A HREF="#syncppp_config">syncppp_config</A>)</P>
+<P>Vielleicht hast Du den ipppd mit den Quellen eines Kernels, den Du
+nicht benutzt, kompiliert...</P>
+
+<H2><A NAME="syncppp_nousabledevice"></A> <A NAME="ss13.17">13.17</A> <A HREF="i4lfaq-de.html#toc13.17">syncppp_nousabledevice: Wenn ich ipppd starten will, bekomme ich die Meldung 'Can't find usable ippp device' </A>
+</H2>
+
+<P>Diese Meldung taucht dann auf, wenn das Verbindungs-Interface
+hinausw&auml;hlen soll, ipppd aber noch nicht l&auml;uft oder nicht
+verf&uuml;gbar ist.</P>
+
+<H2><A NAME="syncppp_starterror"></A> <A NAME="ss13.18">13.18</A> <A HREF="i4lfaq-de.html#toc13.18">syncppp_starterror: Beim Start von ipppd bekomme ich nur Fehlermeldungen vom I4L-Treiber. </A>
+</H2>
+
+<P>Wenn ipppd gestartet wird, ruft er Funktionen auf, die den Transport
+eines Netzwerkpaketes ausl&ouml;sen k&ouml;nnen
+(z.B. gethostbyname()). Ohne ipppd (da zu dieser Zeit ipppd noch nicht
+komplett gestartet ist) kann dieser Netzwerkzugriff nicht
+durchgef&uuml;hrt werden.  Versuche, die gesuchten Host-Namen in die
+lokale /etc/hosts zu schreiben oder sonst irgendwie zu definieren,
+soda&szlig; sie ohne Zugriff auf das ISDN-/ippp-Interface
+aufgel&ouml;st werden k&ouml;nnen.</P>
+
+<H2><A NAME="syncppp_framesdelayed"></A> <A NAME="ss13.19">13.19</A> <A HREF="i4lfaq-de.html#toc13.19">syncppp_framesdelayed: Ich bekomme die Meldung <CODE>IP frames delayed</CODE> - aber keine Verbindung. </A>
+</H2>
+
+<P>Hast Du tats&auml;chlich hinausgew&auml;hlt? Sieh Dir die Frage 
+<A HREF="i4lfaq-de-11.html#dialout_dialmode">dialout_dialmode</A> und Deine Konfiguration
+der verschiedenen Dialmodi an.</P>
+
+<H2><A NAME="syncppp_noroute"></A> <A NAME="ss13.20">13.20</A> <A HREF="i4lfaq-de.html#toc13.20">syncppp_noroute: Ich kann mit dem Befehl <CODE>isdnctrl dial ippp0</CODE> nicht hinausw&auml;hlen. Die Route zu ipppd scheint zu fehlen, obwohl ich sie <B>wirklich</B> gesetzt habe (<CODE>network unreachable</CODE>). Mit dem alten Kernel 2.0 funktionierte alles einwandfrei! </A>
+</H2>
+
+<P>In den neueren Kernel muss der Befehl <CODE>route</CODE> als letztes
+Kommando vor dem W&auml;hlbefehl stehen. Anderenfalls l&ouml;scht der
+Kernel die Route.</P>
+
+<H2><A NAME="syncppp_nodefaultroute"></A> <A NAME="ss13.21">13.21</A> <A HREF="i4lfaq-de.html#toc13.21">syncppp_nodefaultroute: Nachdem ipppd hinausgew&auml;hlt hat ist meine defaultroute verschwunden. </A>
+</H2>
+
+<P>Das liegt am Kernel. Bei neueren Kernel (= 2.0.x) gibt es einige
+&Auml;nderungen beim Routing. L&ouml;sung: installiere ein Script
+/etc/ppp/ip-up, das in etwa so aussieht:
+<HR>
+<PRE>
+#!/bin/sh
+/sbin/route add default ippp0
+</PRE>
+<HR>
+
+Beachte bitte, da&szlig; das bei Kernel 2.2.x NICHT funktioniert (das
+Routing wurde wieder ge&auml;ndert). &Uuml;bergib statt dessen die
+Option "defaultroute" an den ipppd.</P>
+<P>Wenn Du Deine Verbindungen manuell herstellst, kannst Du so etwas wie
+dieses Script benutzen:
+<HR>
+<PRE>
+/sbin/isdn
+#! /bin/sh
+case $1 in
+on)
+/sbin/isdnctrl dial ippp0       #  aufbauen der Verbindung
+sleep 5                         #  abwarten
+/sbin/route add default ippp0   #  Route setzen
+;;
+off)
+/sbin/isdnctrl hangup ippp0     #  Verbindung beenden
+/sbin/route del default         #  L&ouml;schen der Route
+;;
+*)
+echo -e '\a Usage: 'isdn on' or 'isdn off''
+;;
+esac
+</PRE>
+<HR>
+
+Beachte bitte, da&szlig; bei Kernel 2.2.x die Kommandos <CODE>route add
+default</CODE> und <CODE>route del default</CODE> NICHT benutzt werden
+d&uuml;rfen. &Uuml;bergib statt dessen die Option "defaultroute" an
+den ipppd.</P>
+
+<H2><A NAME="syncppp_packettoolarge"></A> <A NAME="ss13.22">13.22</A> <A HREF="i4lfaq-de.html#toc13.22">syncppp_packettoolarge: Ich bekomme oft die Fehlermeldung <CODE>hscx_empty_fifo: incoming packet too large</CODE> </A>
+</H2>
+
+<P>Vermutlich ist eine der Kompressionsoptionen aktiviert (funktionieren
+mit I4L nicht so gut). Mehr dazu in der n&auml;chsten Frage.  Ein
+weiterer m&ouml;glicher Grund k&ouml;nnte ein IRQ-Problem sein - siehe
+Frage 'Warum sollte ich IRQ 12 und 15 f&uuml;r meine ISDN-Karte
+vermeiden?'.  Das Problem kann auch durch '#'-Zeichen in der Datei
+pap-secrets verursacht werden. In diesem Fall musst Du den
+Benutzernamen und/oder das Passwort mit Anf&uuml;hrungszeichen
+einrahmen (je nachdem, was betroffen ist).</P>
+
+<H2><A NAME="syncppp_slow"></A> <A NAME="ss13.23">13.23</A> <A HREF="i4lfaq-de.html#toc13.23">syncppp_slow: Die Verbindung mit ipppd scheint zu stehen, bricht aber schlie&szlig;lich zusammen oder ist sehr langsam. </A>
+</H2>
+
+<P>Vermutlich ist eine der Kompressionsoptionen aktiviert (die I4L nicht
+sauber behandeln kann). Verbreiteter Fehler: '-vj' muss
+*zus&auml;tzlich* zu '-vjccomp' gesetzt werden, um die VJ-Kompression
+v&ouml;llig abzuschalten - in den Beispielscripts von ipppd ist diese
+Option schon nicht mehr enthalten.  Auch andere Kompressionsmodi (bsd,
+pccomp) k&ouml;nnen Probleme verursachen. Daher solltest Du alle
+Kompressionsoptionen deaktivieren (siehe auch Frage 
+<A HREF="#syncppp_compression">syncppp_compression</A>). Auch die Option
+"noccp" kann da helfen.</P>
+
+<H2><A NAME="syncppp_loadproblem"></A> <A NAME="ss13.24">13.24</A> <A HREF="i4lfaq-de.html#toc13.24">syncppp_loadproblem: Ich habe nur dann Probleme mit ipppd, wenn die Verbindung sehr stark belastet wird. Dann bleibt alles stehen. Wodurch kann das hervorgerufen werden? </A>
+</H2>
+
+<P>Sven Engelhardt <CODE>
+<A HREF="mailto:sven@sik.de">sven@sik.de</A></CODE> schrieb am 12. Dezember 1996:
+<BLOCKQUOTE>
+Wir sind ein ISP in Dresden und benutzen Linux (neben anderen
+Systemen) f&uuml;r unseren Zugang (mit I4L ebenso wie mit externen
+Terminaladaptern).  Wir haben dieses Problem haupts&auml;chlich mit
+Kunden, die unter Windows 95 und NT die 'enthaltene' (Modem Netzwerk)
+Software benutzen. Es ist dabei unerheblich, ob der Kunde sich mit
+asynchronem oder synchronem PPP einw&auml;hlt. Es spielt auch keine
+Rolle, welche Modememulation er auf seiner Seite benutzt. Was sie
+gemeinsam haben ist, da&szlig; die Verbindung mit Microsoft's
+Modemadapter und Microsoft's PPP hergestellt wird (obwohl mir ein
+Kollege k&uuml;rzlich von einem &auml;hnlichen Problem mit einem
+Macintosh-Kunden erz&auml;hlte).  Da es bei PPP keinen Unterschied
+macht, wer der Server und wer der Client ist, solltest Du Deinen ISP
+fragen, welche Hardware er zur Einwahl benutzt (wir hatten keine
+Probleme mit Linux-Kunden und Benutzern von Trumpet Winsock, daher
+vermuten wir einen Fehler in MS-PPP).  Die folgende Abhilfe
+funktioniert normalerweise bei uns: (es ist keine Kur, aber es lindert
+die Schmerzen...)
+<UL>
+<LI>Reduziere den Wert f&uuml;r Max MTU auf 576 oder sogar 296</LI>
+<LI>Reduziere das DefaultRcvWindow auf 2144</LI>
+</UL>
+
+Bei Windows 95 sind das zwei Eintr&auml;ge in der Registry, unter
+Linux kannst Du die Optionen 'mtu 576' und 'mru 576' f&uuml;r PPP
+setzen. (Siehe auch: <CODE>
+<A HREF="http://www.winfiles.com/connect/trouble.html">http://www.winfiles.com/connect/trouble.html</A></CODE>)
+</BLOCKQUOTE>
+</P>
+<P>Erik Corry <CODE>
+<A HREF="mailto:ec@sign-tronic.dk">ec@sign-tronic.dk</A></CODE> f&uuml;gte am 16. Dezember 1996 hinzu:
+<BLOCKQUOTE>
+Bei mir half weder das Abschalten der PPP Kompressionsoption noch das
+Setzen von mru/mtu auf 296. Was half, war der AT-Befehl:
+<HR>
+<PRE>
+AT&amp;B512
+</PRE>
+<HR>
+
+der die gesendeten Pakete auf 512 Bytes begrenzt.
+</BLOCKQUOTE>
+</P>
+
+<H2><A NAME="syncppp_mtu"></A> <A NAME="ss13.25">13.25</A> <A HREF="i4lfaq-de.html#toc13.25">syncppp_mtu: Mein ipppd funktioniert. Ich bekomme jedoch laufend die Meldung 'pppd(104): ioctl(SIOCSIFMTU): Invalid argument'. </A>
+</H2>
+
+<P>Wenn der Wert mtu nicht festgesetzt ist, wird ein Defaultwert
+angenommen - m&ouml;glicherweise '0', der nat&uuml;rlich nicht korrekt
+sein kann. F&uuml;ge <CODE>'mtu 1024'</CODE> zu Deinen Optionen f&uuml;r
+ipppd hinzu (1500 kann auch funktionieren).</P>
+
+<H2><A NAME="syncppp_1stpacket"></A> <A NAME="ss13.26">13.26</A> <A HREF="i4lfaq-de.html#toc13.26">syncppp_1stpacket: Bei automatischer Hinauswahl mit dynamischer Zuteilung der IP-Addresse geht das erste IP-Paket verloren. </A>
+</H2>
+
+<P>Es gibt ein paar Probleme mit der Hinauswahl in Verbindung mit syncPPP
+und dynamischer Zuteilung der IP-Addresse. In diesem Fall &auml;ndert
+sich Deine IP-Addresse w&auml;hrend Pakete auf die Versendung
+warten. Alle Pakete, die vor dieser IP-Address&auml;nderung verschickt
+werden, haben dann die falsche R&uuml;ckantwort-Addresse und werden
+nie eine R&uuml;ckmeldung erhalten. Das kann viele vergebliche
+W&auml;hlversuche verursachen (siehe 
+<A HREF="i4lfaq-de-17.html#dod">dod</A>). M&ouml;gliche L&ouml;sungen sind:
+<UL>
+<LI>Manuelle Hinauswahl mit 'isdnctrl dial ipppN'</LI>
+<LI>Benutze diald zur Kontrolle &uuml;ber den Zeitpunkt des
+Verbindungsauf-/abbaus.</LI>
+<LI>Besorge Dir eine feste IP-Addresse</LI>
+<LI>Eine Abhilfe ist in den neuesten Kernels enthalten und kann so
+aktiviert  werden:
+<HR>
+<PRE>
+echo 7 > /proc/sys/net/ipv4/ip_dynaddr
+</PRE>
+<HR>
+
+(nimm 5 statt 7 um Warnungen in /var/log/messages zu vermeiden).
+Bei einer SuSE-Distribution kannst Du diese Abhilfe durch das Setzen
+von <CODE>IP_DYNIP='yes'</CODE> in <CODE>/etc/rc.config</CODE> aktivieren.</LI>
+<LI>Erh&ouml;he den Wert f&uuml;r die Wiederholung des
+Verbindungsaufbaus auf Deiner Windows-Maschine. &Auml;ndere in der
+Registry den Wert
+<CODE>Hkey_Local_Machine\\System\\CurrentControlSet\\Services\\VxD\
+\MSTCP\\MaxConnectRetries</CODE> von 3 auf einen h&ouml;heren Wert (5
+oder 7).</LI>
+</UL>
+</P>
+
+<H2><A NAME="syncppp_droppacket"></A> <A NAME="ss13.27">13.27</A> <A HREF="i4lfaq-de.html#toc13.27">syncppp_droppacket: Was bedeutet die Meldung 'No phone number, packet dropped'? </A>
+</H2>
+
+<P>Michael Engert <CODE>
+<A HREF="mailto:michi@bello.wor.de">michi@bello.wor.de</A></CODE> schrieb im Nov/Dez 1996:</P>
+<P>Das bedeutet, da&szlig; Dein Computer ein IP-Paket von jemandem hat,
+der vor wenigen Sekunden online war aber die Verbindung inzwischen
+unterbrochen hat. Dein Computer versucht nun, dieses Paket zu
+verschicken und findet auch eine passende Route. Das Interface
+isdn(0|1|...) kann jedoch den Zielcomputer nicht erreichen, da es
+keine Telefonnummer zum Hinausw&auml;hlen findet.</P>
+
+<H2><A NAME="syncppp_leadingzero"></A> <A NAME="ss13.28">13.28</A> <A HREF="i4lfaq-de.html#toc13.28">syncppp_leadingzero: Warum w&auml;hlt mein ipppd eine Null zuviel (<CODE>'ippp0: dialing 0 089XXXXXX...'</CODE>)? Ich habe keine Nebenstellen! </A>
+</H2>
+
+<P>Die erste Null wird nicht gew&auml;hlt. Sie zeigt die Anzahl der
+W&auml;hlversuche, festgelegt vom Parameter <CODE>isdnctrl dialmax</CODE>.</P>
+
+<H2><A NAME="syncppp_ethfake"></A> <A NAME="ss13.29">13.29</A> <A HREF="i4lfaq-de.html#toc13.29">syncppp_ethfake: Wenn ich die Werte meines ISDN-Devices mit ifconfig abfrage, wird es mit HWaddr und IRQ=0 und base address = 0 angezeigt. </A>
+</H2>
+
+<P>Das ISDN-Device t&auml;uscht ein Ethernet-Device vor. Es ignoriert IRQ
+und baseaddr und ben&ouml;tigt nur die HWaddr f&uuml;r die
+Ethernet-Encapsulation.</P>
+
+<H2><A NAME="syncppp_lzsproblem"></A> <A NAME="ss13.30">13.30</A> <A HREF="i4lfaq-de.html#toc13.30">syncppp_lzsproblem: Ich bekomme eine Fehlermeldung: <CODE>kernel check for lzs failed</CODE>?</A>
+</H2>
+
+<P>Das bedeutet, da&szlig; ipppd versucht, die LZS-Kompression zu nutzen,
+aber kein kompiliertes Modul mit dem entsprechenden Code findet. Die
+Fehlermeldung hat nur kosmetische Bedeutung, da das System
+weiterarbeitet. Du kannst entweder die LZS-Kompression abstellen
+(setze <CODE>noccp</CODE> als Option f&uuml;r ipppd) oder das LZS Modul
+kompilieren und laden.</P>
+
+
+
+<HR>
+<A HREF="i4lfaq-de-14.html">Next</A>
+<A HREF="i4lfaq-de-12.html">Previous</A>
+<A HREF="i4lfaq-de.html#toc13">Contents</A>
+</BODY>
+</HTML>

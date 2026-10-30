@@ -1,0 +1,124 @@
+﻿<html dir='ltr'>
+	<head>
+		<META http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+		<title>선</title>
+		<link rel='stylesheet' type='text/css' href='../css/main.css'/>
+		<script type='text/javascript' language='Javascript' src='../js/mexpcol.js'></script>
+		<script type='text/javascript' language='JavaScript' src='../js/glossary.js'></script>
+	</head>
+	<body>
+		<h1>&nbsp;<img align="absbottom" src="../image/external_images/crystal/svtools/res/new_doc.png"/>&nbsp;선</h1>
+		<p id="ExpandAllLine" class="ExpFav">
+			<a href="#" onClick="ExpandAll()" onKeyPress="ExpandAll()" class="DropDown">
+				<img id="picHeader" border="0" src="../image/image/common/expandtri.gif" alt="모두 표시">
+				<span id="ExpandAll">모두 표시</span>
+			</a>
+		</p>
+		<p><b class="bterm">선의 그리기</b></p>
+			<p>선을 그리려면 다음과 같은 방법으로 진행합니다.</p>
+			<ol>
+				<li>
+					<b class="bterm">&lt;도형&gt;</b><a href="#" class="glossary" onClick="AppendPopup(this,'IDG_TOOLBAR')" onKeyPress="AppendPopup(this,'IDG_TOOLBAR')">도구띠</a>에서 <b class="bterm">&lt;선&gt;</b><img border="0" src="../image/external_images/crystal/res/commandimagelist/sc_line.png">을 찰칵합니다.
+				</li>
+				<li>
+					선을 삽입하려는 위치를 찰칵하고 마우스로 요구하는 크기가 될 때까지 끌어줍니다.
+				</li>
+				<p><b class="bterm">참고:</b>   선을 시작점에서 45°각도로 그리도록 제한하려면 <b class="bterm">[Shift]</b>건을 누른 상태에서 마우스를 끌어줍니다.</p>
+				<li>
+					투영편의 임의의 위치에서 마우스를 찰칵하여 선그리기상태를 해제합니다.
+				</li>
+			</ol>
+		<p><b class="bterm">선의 변경</b></p>
+			<p>선을 추가한 후 선의 모양을 여러가지로 변경할수 있습니다. 
+				선의 정점의 위치를 변경하여 선의 크기를 변경할수도 있고 선에 정점을 추가하거나 삭제하는 방법으로 선의 모양을 변경할수도 있습니다. 
+				또한 직선을 곡선으로도 변경할수 있습니다. 선을 변경하려면 다음과 같은 방법으로 진행합니다.
+			</p>
+			<ol>
+				<li>
+					변경하려는 선을 선택합니다.
+				</li>
+				<li>
+					<b class="bterm">&lt;도형&gt;</b><a href="#" class="glossary" onClick="AppendPopup(this,'IDG_TOOLBAR')" onKeyPress="AppendPopup(this,'IDG_TOOLBAR')">도구띠</a>의 <b class="bterm">&lt;점&gt;</b>을 찰칵하여 <b class="bterm">&lt;점 편집&gt;</b><a href="#" class="glossary" onClick="AppendPopup(this,'IDG_TOOLBAR')" onKeyPress="AppendPopup(this,'IDG_TOOLBAR')">도구띠</a>를 현시합니다.
+				</li>
+				<li>
+					다음의 방법들중에서 하나를 선택합니다.
+				</li>
+				<p>
+					<a href='#' class='DropDown' onClick='Outline2()' onKeyPress='Outline2()'>
+						<img border='0' src='../image/image/common/blueup.gif' alt='표시'>정점의 위치를 변경하여 선의 모양변경
+					</a>
+				</p>
+				<div id='ExpCol' class='collapsed' border='0'>
+					<p>선을 선택하고 정점을 찰칵하여 요구하는 크기가 될 때까지 마우스끌기를 합니다.</p>
+				</div>
+				<p>
+					<a href='#' class='DropDown' onClick='Outline2()' onKeyPress='Outline2()'>
+						<img border='0' src='../image/image/common/blueup.gif' alt='표시'>정점을 추가 또는 삭제하여 선의 모양변경
+					</a>
+				</p>
+				<div id='ExpCol' class='collapsed' border='0'>
+					<p>다음의 방법들중에서 하나를 실행합니다.</p>
+					<ul>
+						<li>
+							선택한 선에 정점을 추가하여 모양을 변경하려면 <b class="bterm">&lt;점 편집&gt;</b>도구띠에서 <b class="bterm">&lt;점 삽입&gt;</b>을 찰칵합니다. 선우의 정점을 추가하려는 위치를 찰칵하고 마우스를 요구하는 방향으로 끌어줍니다.
+						</li>
+						<p><b class="bterm">참고:</b> <b class="bterm">&lt;점 삽입&gt;</b>을 찰칵한 조건에서 요구하는 개수만큼의 정점을 추가할수 있습니다.</p>
+						<li>
+							선택된 선에서 정점을 삭제하여 모양을 변경하려면 삭제하려는 정점을 찰칵하고 <b class="bterm">&lt;점 편집&gt;</b><a href="#" class="glossary" onClick="AppendPopup(this,'IDG_TOOLBAR')" onKeyPress="AppendPopup(this,'IDG_TOOLBAR')">도구띠</a>에서 <b class="bterm">&lt;점 삭제&gt;</b>를 찰칵합니다.
+						</li>
+					</ul>
+				</div>
+				<p>
+					<a href='#' class='DropDown' onClick='Outline2()' onKeyPress='Outline2()'>
+						<img border='0' src='../image/image/common/blueup.gif' alt='표시'>직선을 곡선으로 변경
+					</a>
+				</p>
+				<div id='ExpCol' class='collapsed' border='0'>
+					<p>다음과 같은 방법으로 진행합니다.</p>
+					<ol>
+						<li>
+							선에서 임의의 정점을 선택합니다.
+						</li>
+						<li>
+							<p><b class="bterm">&lt;점 편집&gt;</b>도구띠의 <b class="bterm">&lt;곡선으로 변환&gt;</b>그림기호을 찰칵합니다.</p>
+							<p>선에 파란색의 원형조종꼭지가 나타납니다.</p>
+						</li>
+						<li>
+							마우스의 왼쪽단추로 조종꼭지를 찰칵하여 선택한 상태에서 선의 모양이 요구하는 곡선이 될 때까지 끌어줍니다.
+						</li>
+						<li>
+							마우스의 왼쪽단추를 놓아 곡선에로의 변환상태를 해제합니다.
+						</li>
+					</ol>
+				</div>
+			</ol>
+		<p><b class="bterm">선에 본문삽입</b></p>
+			<p>선에 본문을 삽입할수 있습니다. 선에 본문을 삽입하려면 다음과 같은 방법으로 진행합니다.</p>
+			<ol>
+				<li>
+					<b class="bterm">&lt;도형&gt;</b><a href="#" class="glossary" onClick="AppendPopup(this,'IDG_TOOLBAR')" onKeyPress="AppendPopup(this,'IDG_TOOLBAR')">도구띠</a>에서 <b class="bterm">&lt;선&gt;</b><img border="0" src="../image/external_images/crystal/res/commandimagelist/sc_line.png">을 찰칵합니다.
+				</li>
+				<li>
+					요구하는 위치에서 마우스를 찰칵하고 요구하는 크기가 될 때까지 끌어줍니다.
+				</li>
+				<li>
+					선우에서 <b class="bterm">[Enter]</b>건을 누르기하여 본문편집상태로 절환합니다.
+				</li>
+				<li>
+					본문을 삽입하고 페지의 임의의 곳을 찰칵합니다.
+				</li>
+			</ol>
+		<p><b class="bterm">선의 삭제</b></p>
+			<p>선을 삭제하려면 다음과 같은 방법으로 진행합니다.</p>
+			<ol>
+				<li>
+					삭제하려는 선을 선택합니다.
+				</li>
+				<li>
+					<b class="bterm">[Delete]</b>건을 누릅니다.
+				</li>
+			</ol>
+		<script type="text/javascript" language="Javascript">footerView()</script>
+	
+</body>
+</html>

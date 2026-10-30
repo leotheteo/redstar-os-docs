@@ -1,0 +1,70 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+	<TITLE></TITLE>
+	<META NAME="GENERATOR" CONTENT="《Sogwang 3.0》  (Linux)">
+	<META NAME="CREATED" CONTENT="20020101;1481500">
+	<META NAME="CHANGED" CONTENT="20020101;1491000">
+</HEAD>
+<BODY LANG="ko-KP" DIR="LTR"><DIV style="margin-left: 25">
+<H1><A NAME="bm_id3163829"></A><FONT FACE="Thorndale, serif"><SPAN LANG="en-US">HTML
+Filters and Forms</SPAN></FONT></H1>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">You can
+use all control elements and form events in HTML documents. There
+have been numerous events to date (for example, focus events), which
+have not been changed. They will continue to be imported and exported
+as ONFOCUS, ONBLUR, and so on for JavaScript and as SDONFOCUS,
+SDONBLUR, and so on for </SPAN></FONT><FONT FACE="청봉, serif"><SPAN LANG="en-US">Sogwang Basic.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Generic
+names that consist of the Listener interface and the method name of
+the event are used for all other events: An event registered as
+XListener::method is exported as</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">SDEvent-XListener-method
+= &quot;/* event-code */&quot;</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Note
+that the XListener- and method components of this option are case
+sensitive.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Event
+handling of controls is performed using the </SPAN></FONT><FONT FACE="청봉, serif"><SPAN LANG="en-US">Sogwang API. If you
+assign an event to a control, an object registers itself internally
+as a &quot;Listener&quot; for a specific control event. To do this,
+the object must use a specific interface, for example the
+XFocusListener Interface, so that it can react to focus events. When
+the event occurs, the control then invokes a special method of the
+Listener interface when the control receives the focus. The
+internally registered object then invokes the JavaScript or
+</SPAN></FONT><FONT FACE="청봉, serif"><SPAN LANG="en-US">Sogwang Basic
+code, which was assigned to the event.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">The HTML
+filter now uses precisely these listener interfaces and method names
+so that it can import and export events as desired. You can register
+a focus event through</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">&lt;INPUT
+TYPE=text ONFOCUS=&quot;/* code */&quot;</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">rather
+than through the</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">&lt;INPUT
+TYPE=text SDEvent-XFocusListener-focusGained=&quot;/* code */&quot;</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">register.
+Events can therefore be registered as desired, including those not
+offered in the list boxes. To define the script language of events,
+you can write the following line in the document header:</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">&lt;META
+HTTP-EQUIV=&quot;content-script-type&quot; CONTENT=&quot;...&quot;&gt;</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">As
+CONTENT you can, for example, use &quot;text/x-StarBasic&quot; for
+</SPAN></FONT><FONT FACE="청봉, serif"><SPAN LANG="en-US">Sogwang Basic
+or a &quot;text/JavaScript&quot; for JavaScript. 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+If no entry is made,JavaScript is assumed.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">During
+exporting, the default script language will be defined based on the
+first module found in macro management. 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+For events, only one language
+can be used per document.</SPAN></FONT></P>
+
+</DIV></BODY>
+</HTML>
+

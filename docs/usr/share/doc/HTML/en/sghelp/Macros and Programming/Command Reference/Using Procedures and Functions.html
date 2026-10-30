@@ -1,0 +1,173 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+	<TITLE></TITLE>
+	<META NAME="GENERATOR" CONTENT="《Sogwang 3.0》  (Linux)">
+	<META NAME="CREATED" CONTENT="20091205;11384400">
+	<META NAME="CHANGED" CONTENT="20091205;11454100">
+	<STYLE TYPE="text/css">
+	<!--
+		H2 { margin-bottom: 0.18cm; font-family: "Bitstream Vera Sans", "Arial", "Helvetica", "Lucida", "Geneva", "Helmet", sans-serif, "Andale Sans UI", "Arial Unicode MS", "Lucida Sans Unicode", "Tahoma"; font-size: 14pt }
+		P.code { margin-top: 0.04cm; margin-bottom: 0.04cm; font-family: "Bitstream Vera Sans Mono", "Cumberland", "Courier New", "Courier", "Lucida Sans Typewriter", "Lucida Typewriter", "Monaco", "Monospaced" }
+		H3 { margin-bottom: 0.18cm; font-family: "Bitstream Vera Sans", "Arial", "Helvetica", "Lucida", "Geneva", "Helmet", sans-serif, "Andale Sans UI", "Arial Unicode MS", "Lucida Sans Unicode", "Tahoma"; font-size: 12pt }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="ko-KP" DIR="LTR"><DIV style="margin-left: 25">
+<H1><A NAME="prozedur"></A><A NAME="bm_id3149456"></A><FONT FACE="Thorndale, serif"><SPAN LANG="en-US">Using
+Procedures and Functions</SPAN></FONT></H1>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">The
+following describes the basic use of procedures and functions in
+</SPAN></FONT><FONT FACE="청봉, serif"><SPAN LANG="en-US">Sogwang Basic.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Procedures
+(SUBS) and functions (FUNCTIONS) help you maintaining a structured
+overview by separating a program into logical pieces.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">One
+benefit of procedures and functions is that, once you have developed
+a program code containing task components, you can use this code in
+another project.</SPAN></FONT></P>
+<H2><SPAN LANG="en-US">Passing Variables to Procedures (SUB) and
+Functions (FUNCTION)</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Variables
+can be passed to both procedures and functions. The SUB or FUNCTION
+must be declared to expect parameters:</SPAN></FONT></P>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">SUB SubName(<B>Parameter1 As Type,
+Parameter2 As Type,...</B>)</SPAN></FONT></P>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Program code</SPAN></FONT></P>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">END SUB</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">The SUB
+is called using the following syntax:</SPAN></FONT></P>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">SubName(Value1, Value2,...)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">The
+parameters passed to a SUB must fit to those specified in the SUB
+declaration.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">The same
+process applies to FUNCTIONS. In addition, functions always return a
+function result. The result of a function is defined by assigning the
+return value to the function name:</SPAN></FONT></P>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">FUNCTION FunctionName(Parameter1
+As Type, Parameter2 As Type,...) As Type</SPAN></FONT></P>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Program code</SPAN></FONT></P>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>FunctionName=Result</B> </SPAN></FONT></P>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">End Function</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">The
+FUNCTION is called using the following syntax:</SPAN></FONT></P>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Variable=FunctionName(Parameter1,
+Parameter2,...)</SPAN></FONT></P>
+<TABLE WIDTH=945 BORDER=0 CELLPADDING=5 CELLSPACING=0>
+	<COL WIDTH=40>
+	<COL WIDTH=555>
+	<TR>
+		<TD WIDTH=47>
+			<P><IMG SRC="../../Image/tip.png" NAME="graphics1" ALT="Tip Icon " ALIGN=BOTTOM WIDTH=40 HEIGHT=43 BORDER=0></P>
+		</TD>
+		<TD WIDTH=878>
+			<P STYLE="margin-top: 0.04cm"><FONT FACE="청봉, serif"><SPAN LANG="en-US">You
+			can also use the fully qualified name to call a procedure or
+			function:Library.Module.Macro()
+			For example, to call the Autotext macro from the Gimmicks
+			library, use the following commandGimmicks.AutoText.Main()
+			</SPAN></FONT>
+			</P>
+		</TD>
+	</TR>
+</TABLE>
+<P><BR><BR>
+</P>
+<H2><SPAN LANG="en-US">Passing Variables by Value or Reference</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Parameters
+can be passed to a SUB or a FUNCTION either by reference or by value.
+Unless otherwise specified, a parameter is always passed by
+reference. That means that a SUB or a FUNCTION gets the parameter and
+can read and modify its value.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">If you
+want to pass a parameter by value insert the key word &quot;ByVal&quot;
+in front of the parameter when you call a SUB or FUNCTION, for
+example:</SPAN></FONT></P>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Result = Function(<B>ByVal</B>
+Parameter)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">In this
+case, the original content of the parameter will not be modified by
+the FUNCTION since it only gets the value and not the parameter
+itself.</SPAN></FONT></P>
+<TABLE WIDTH=971 BORDER=0 CELLPADDING=5 CELLSPACING=0>
+	<COL WIDTH=33>
+	<COL WIDTH=588>
+	<TR>
+		<TD WIDTH=47>
+			<P><IMG SRC="../../Image/note.png" NAME="graphics2" ALT="Note Icon " ALIGN=BOTTOM WIDTH=33 HEIGHT=42 BORDER=0></P>
+		</TD>
+		<TD WIDTH=914>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">When
+			you create a new module, </SPAN></FONT><FONT FACE="청봉, serif"><SPAN LANG="en-US">Sogwang Basic
+			automatically inserts a SUB called &quot;Main&quot;. This default
+			name has nothing to do with the order or the starting point of a
+			</SPAN></FONT><FONT FACE="청봉, serif"><SPAN LANG="en-US">Sogwang Basic
+			project. You can also safely rename this SUB.</SPAN></FONT></P>
+		</TD>
+	</TR>
+</TABLE>
+<P><BR><BR>
+</P>
+<H2><SPAN LANG="en-US">Scope of Variables</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">A
+variable defined within a SUB or FUNCTION, only remains valid until
+the procedure is exited. This is known as a &quot;local&quot;
+variable. In many cases, you need a variable to be valid in all
+procedures, in every module of all libraries, or after a SUB or
+FUNCTION is exited.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Declaring Variables Outside a SUB or FUNCTION</SPAN></H3>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">GLOBAL VarName As TYPENAME</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">The
+variable is valid as long as the </SPAN></FONT><FONT FACE="청봉, serif"><SPAN LANG="en-US">Sogwang session
+lasts.</SPAN></FONT></P>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">PUBLIC VarName As TYPENAME</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">The
+variable is valid in all modules.</SPAN></FONT></P>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">PRIVATE VarName As TYPENAME</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">The
+variable is only valid in this module.</SPAN></FONT></P>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">DIM VarName As TYPENAME</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">The
+variable is only valid in this module.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Example for private variables</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Enforce
+private variables to be private across modules by setting
+CompatibilityMode(true).</SPAN></FONT></P>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">REM ***** Module1 *****</SPAN></FONT></P>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Private myText As String</SPAN></FONT></P>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Sub initMyText</SPAN></FONT></P>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">myText = &quot;Hello&quot;</SPAN></FONT></P>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">print &quot;in module1 : &quot;,
+myText</SPAN></FONT></P>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">End Sub</SPAN></FONT></P>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">REM ***** Module2 *****</SPAN></FONT></P>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">'Option Explicit</SPAN></FONT></P>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Sub demoBug</SPAN></FONT></P>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">CompatibilityMode( true )</SPAN></FONT></P>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">initMyText</SPAN></FONT></P>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">' Now returns empty string</SPAN></FONT></P>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">' (or rises error for Option
+Explicit)</SPAN></FONT></P>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">print &quot;Now in module2 : &quot;,
+myText</SPAN></FONT></P>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">End Sub</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Saving Variable Content after Exiting a SUB or
+FUNCTION</SPAN></H3>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">STATIC VarName As TYPENAME</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">The
+variable retains its value until the next time the FUNCTION or SUB is
+entered. The declaration must exist inside a SUB or a FUNCTION.</SPAN></FONT></P>
+<H2><SPAN LANG="en-US">Specifying the Return Value Type of a FUNCTION</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">As with
+variables, include a type-declaration character after the function
+name, or the type indicated by &quot;As&quot; and the corresponding
+key word at the end of the parameter list to define the type of the
+function's return value, for example:</SPAN></FONT></P>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US"><SPAN STYLE="font-weight: medium">Function
+WordCount(WordText as String) </SPAN><B>as Integer</B><SPAN STYLE="font-weight: medium">
+</SPAN></SPAN></FONT></P>
+
+</DIV></BODY>
+</HTML>

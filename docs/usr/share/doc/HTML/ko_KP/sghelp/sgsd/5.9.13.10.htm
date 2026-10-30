@@ -1,0 +1,457 @@
+<html dir='ltr'>
+	<head>
+		<META http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+		<title>CONVERT_ADD</title>
+		<link rel='stylesheet' type='text/css' href='../css/main.css'/>
+		<script type='text/javascript' language='Javascript' src='../js/mexpcol.js'></script>
+		<script type='text/javascript' language='JavaScript' src='../js/glossary.js'></script>
+	</head>
+	<body>
+		<h1>&nbsp;<img align="absbottom" src="../image/external_images/crystal/svtools/res/new_doc.png"/>&nbsp;CONVERT_ADD</h1>
+		<p id='ExpandAllLine' class='ExpFav'>
+			<a href='#' onClick='ExpandAll()' onKeyPress='ExpandAll()' class='DropDown'>
+				<img id='picHeader' border='0' src='../image/image/common/expandtri.gif' alt='모두 표시'>
+				<span id='ExpandAll'>모두 표시</span>
+			</a>
+		</p>
+		<p><b class="bterm">참고항목</b>&emsp;
+			<a href="5.9.13.1.htm">추가함수목록</a>,
+			<a href="5.9.13.6.htm">BIN2DEC</a>,
+			<a href="5.9.13.7.htm">BIN2HEX</a>,
+			<a href="5.9.13.8.htm">BIN2OCT</a>,
+			<a href="5.9.13.19.htm">HEX2BIN</a>,
+			<a href="5.9.13.39.htm">OCT2BIN</a>
+		</p>
+		<p>일정한 측정체계로부터 다른 측정체계로 수값을 변환합니다.</p>
+		<p><b class="bterm">문법:&emsp;&emsp;		CONVERT_ADD(수값,변환전 단위,변환후 단위)</b></p>
+		<table>
+			<tr>
+				<th>인수명</th>
+				<th>설명</th>
+			</tr>
+			<tr>
+				<td>수값</td>
+				<td>변환할 <b class="bterm">변환전 단위</b>로 환산한 수값입니다.</td>
+			</tr>
+			<tr>
+				<td>변환전 단위</td>
+				<td>수값에 대한 측정단위입니다.</td>
+			</tr>
+			<tr>
+				<td>변환후 단위</td>
+				<td>결과에 대한 측정단위입니다. <b class="bterm">CONVERT_ADD</b>함수는 <b class="bterm">변환전 단위</b>와 <b class="bterm">변환후 단위</b>에 다음과 같이 큰 옮김표로 묶인 본문값을 받아들입니다.</td>
+			</tr>
+		</table>
+		<table>
+			<tr>
+				<th>무게 및 질량</th>
+				<th>변환전 단위 또는 변환후 단위</th>
+			</tr>
+			<tr>
+				<td>그람</td>
+				<td>s</td>
+			</tr>
+			<tr>
+				<td>슬러그</td>
+				<td>slug</td>
+			</tr>
+			<tr>
+				<td>파운드질량</td>
+				<td>lbm</td>
+			</tr>
+			<tr>
+				<td>U(원자 질량단위)</td>
+				<td>u</td>
+			</tr>
+			<tr>
+				<td>온스질량</td>
+				<td>z</td>
+			</tr>
+		</table>
+		<table>
+			<tr>
+				<th>길이</th>
+				<th>변환전 단위 또는 변환후 단위</th>
+			</tr>
+			<tr>
+				<td>메터</td>
+				<td>m</td>
+			</tr>
+			<tr>
+				<td>마일</td>
+				<td>mile</td>
+			</tr>
+			<tr>
+				<td>해리</td>
+				<td>n.mile</td>
+			</tr>
+			<tr>
+				<td>인치</td>
+				<td>in</td>
+			</tr>
+			<tr>
+				<td>피트</td>
+				<td>ft</td>
+			</tr>
+			<tr>
+				<td>야드</td>
+				<td>yd</td>
+			</tr>
+			<tr>
+				<td>옹그스트롬</td>
+				<td>ang</td>
+			</tr>
+			<tr>
+				<td>파이커(1/72 in.)</td>
+				<td>Pica</td>
+			</tr>
+		</table>
+		<table>
+			<tr>
+			<th>시간</th>
+			<th>변환전 단위 또는 변환후 단위</th>
+			</tr>
+			<tr>
+			<td>년</td>
+			<td>yr</td>
+			</tr>
+			<tr>
+			<td>일</td>
+			<td>day</td>
+			</tr>
+			<tr>
+			<td>시</td>
+			<td>hr</td>
+			</tr>
+			<tr>
+			<td>분</td>
+			<td>mn</td>
+			</tr>
+			<tr>
+			<td>초</td>
+			<td>sec</td>
+			</tr>
+		</table>
+		<table>
+			<tr>
+				<th>압력</th>
+				<th>변환전 단위 또는 변환후 단위</th>
+			</tr>
+			<tr>
+				<td>파스칼</td>
+				<td>Pa</td>
+			</tr>
+			<tr>
+				<td>기압</td>
+				<td>atm</td>
+			</tr>
+			<tr>
+				<td>mm수은주</td>
+				<td>mmHg</td>
+			</tr>
+		</table>
+		<table>
+			<tr>
+				<th>힘</th>
+				<th>변환전 단위 또는 변환후 단위</th>
+			</tr>
+			<tr>
+				<td>뉴톤법</td>
+				<td>n</td>
+			</tr>
+			<tr>
+				<td>다인</td>
+				<td>dyn</td>
+			</tr>
+			<tr>
+				<td>파운드 힘</td>
+				<td>lbf</td>
+			</tr>
+		</table>
+		<table>
+			<tr>
+				<th>에네르기</th>
+				<th>변환전 단위 또는 변환후 단위</th>
+			</tr>
+			<tr>
+				<td>쥴</td>
+				<td>J</td>
+			</tr>
+			<tr>
+				<td>에르그</td>
+				<td>e</td>
+			</tr>
+			<tr>
+				<td>카로리(열력학)</td>
+				<td>c</td>
+			</tr>
+			<tr>
+				<td>IT 카로리</td>
+				<td>cal</td>
+			</tr>
+			<tr>
+				<td>볼트(전자)</td>
+				<td>eV</td>
+			</tr>
+			<tr>
+				<td>마력-시</td>
+				<td>HPh</td>
+			</tr>
+			<tr>
+				<td>와트-시</td>
+				<td>Wh</td>
+			</tr>
+			<tr>
+				<td>피트파운드</td>
+				<td>flb</td>
+			</tr>
+			<tr>
+				<td>But</td>
+				<td>But</td>
+			</tr>
+		</table>
+		<table>
+			<tr>
+				<th>동력</th>
+				<th>변환전 단위 또는 변환후 단위</th>
+			</tr>
+			<tr>
+				<td>마력</td>
+				<td>HP</td>
+			</tr>
+			<tr>
+				<td>와트</td>
+				<td>W</td>
+			</tr>
+		</table>
+		<table>
+			<tr>
+				<th>자력</th>
+				<th>변환전 단위 또는 변환후 단위</th>
+			</tr>
+			<tr>
+				<td>테슬라</td>
+				<td>T</td>
+			</tr>
+			<tr>
+				<td>가우스</td>
+				<td>ga</td>
+			</tr>
+		</table>
+		<table>
+			<tr>
+				<th>온도</th>
+				<th>변환전 단위 또는 변환후 단위</th>
+			</tr>
+			<tr>
+				<td>섭씨</td>
+				<td>C</td>
+			</tr>
+			<tr>
+				<td>화씨</td>
+				<td>F</td>
+			</tr>
+			<tr>
+				<td>켈빈</td>
+				<td>K</td>
+			</tr>
+		</table>
+		<table>
+			<tr>
+				<th>액체량</th>
+				<th>변환전 단위 또는 변환후 단위</th>
+			</tr>
+			<tr>
+				<td>차숟가락</td>
+				<td>tsp</td>
+			</tr>
+			<tr>
+				<td>큰 밥숟가락</td>
+				<td>tbs</td>
+			</tr>
+			<tr>
+				<td>액체온스</td>
+				<td>oz</td>
+			</tr>
+			<tr>
+				<td>고뿌</td>
+				<td>cup</td>
+			</tr>
+			<tr>
+				<td>파인트(미국)</td>
+				<td>pt</td>
+			</tr>
+			<tr>
+				<td>파인트(영국)</td>
+				<td>uk_pt</td>
+			</tr>
+			<tr>
+				<td>쿼트</td>
+				<td>qt</td>
+			</tr>
+			<tr>
+				<td>갈론</td>
+				<td>gal</td>
+			</tr>
+			<tr>
+				<td>리터</td>
+				<td>l</td>
+			</tr>
+		</table>
+		<p>다음과 같이 줄여쓴 단위접두사는 모든 <b class="bterm">변환전 단위</b> 또는 <b class="bterm">변환후 단위</b>앞에 붙일수 있습니다.</p>		
+		<table>
+			<tr>
+				<th>접두사	</th>
+				<th>곱하는 수</th>
+				<th>략어</th>
+			</tr>
+			<tr>
+				<td>exa</td>
+				<td>1E+18</td>
+				<td>E</td>
+			</tr>
+			<tr>
+				<td>peta</td>
+				<td>1E+15</td>
+				<td>P</td>
+			</tr>
+			<tr>
+				<td>tera</td>
+				<td>1E+12</td>
+				<td>T</td>
+			</tr>
+			<tr>
+				<td>giga</td>
+				<td>1E+09</td>
+				<td>G</td>
+			</tr>
+			<tr>
+				<td>mega</td>
+				<td>1E+06</td>
+				<td>M</td>
+			</tr>
+			<tr>
+				<td>kilo</td>
+				<td>1E+03</td>
+				<td>k</td>
+			</tr>
+			<tr>
+				<td>hecto</td>
+				<td>1E+02</td>
+				<td>h</td>
+			</tr>
+			<tr>
+				<td>dekao</td>
+				<td>1E+01</td>
+				<td>e</td>
+			</tr>
+			<tr>
+				<td>deci</td>
+				<td>1E-01	</td>
+				<td>d</td>
+			</tr>
+			<tr>
+				<td>centi</td>
+				<td>1E-02</td>
+				<td>c</td>
+			</tr>
+			<tr>
+				<td>milli</td>
+				<td>1E-03</td>
+				<td>m</td>
+			</tr>
+			<tr>
+				<td>micro</td>
+				<td>1E-06</td>
+				<td>u</td>
+			</tr>
+			<tr>
+				<td>nano</td>
+				<td>1E-09</td>
+				<td>n</td>
+			</tr>
+			<tr>
+				<td>pico</td>
+				<td>1E-12</td>
+				<td>p</td>
+			</tr>
+			<tr>
+				<td>femto</td>
+				<td>1E-15</td>
+				<td>f</td>
+			</tr>
+			<tr>
+				<td>atto</td>
+				<td>1E-18</td>
+				<td>a</td>
+			</tr>
+		</table>
+		<p><b class="bterm">주의</b></p>
+			<ul>
+				<li>입력자료의 형식이 틀릴 때에는 <b class="bterm">오유:[오유번호]</b>가 반환됩니다.</li>
+				<li>단위가 없는 경우에는 <b class="bterm">오유:[오유번호]</b>가 반환됩니다.</li>
+				<li>줄여쓴 단위접두사에 해당하는 단위가 없는 경우에는 <b class="bterm">오유:[오유번호]</b>가 반환됩니다.</li>
+				<li>단위가 서로 다른 여러 그룹에 속할 때에는 <b class="bterm">오유:[오유번호]</b>가 반환됩니다.</li>
+				<li>단위이름과 접두사는 대소문자를 구별합니다.</li>
+			</ul>
+		<p><b class="bterm">실례</b></p>
+			<p><a href="1.5.1.htm">실례의 리용방법</a>을 참고하십시오.</p>
+			<table>
+				<tr>
+					<td>
+						<table>
+							<tr>
+								<td class="noborder">&nbsp;
+								</td>
+							</tr>
+							<tr>
+								<th>1</th>
+							</tr>
+							<tr>
+								<th>2</th>
+							</tr>
+							<tr>
+								<th>3</th>
+							</tr>
+							<tr>
+								<th>4</th>
+							</tr>
+							<tr>
+								<th>5</th>
+							</tr>
+						</table>
+					</td>
+					<td>
+						<table>
+							<tr>
+								<th>A</th>
+								<th>B</th>
+							</tr>
+							<tr>
+								<th>수식</th>
+								<th>설명(결과)</th>
+							</tr>
+							<tr>
+								<td>=CONVERT_ADD(1.0, "lbm", "kg")</td>
+								<td>1파운드질량을 키로그람으로 변환합니다. (0.45)</td>
+							</tr>
+							<tr>
+								<td>=CONVERT_ADD (68, "F", "C")</td>
+								<td>화씨 68F를 섭씨로 변환합니다. (20)</td>
+							</tr>
+							<tr>
+								<td>=CONVERT_ADD (2.5, "ft", "sec")</td>
+								<td>자료형식이 같지 않으므로 오유가 반환됩니다. (오유:502)</td>
+							</tr>
+							<tr>
+								<td>=CONVERT_ADD(CONVERT_ADD (100,"ft","m"),"ft","m")</td>
+								<td>100ft를 평방메터로 변환합니다. (9.29)</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+		<script type="text/javascript" language="Javascript">footerView()</script>
+	
+</body>
+</html>				

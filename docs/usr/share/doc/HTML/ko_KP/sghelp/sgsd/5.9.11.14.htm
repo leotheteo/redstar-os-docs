@@ -1,0 +1,143 @@
+<html dir='ltr'>
+	<head>
+		<META http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+		<title>MATCH</title>
+		<link rel='stylesheet' type='text/css' href='../css/main.css'/>
+		<script type='text/javascript' language='Javascript' src='../js/mexpcol.js'></script>
+		<script type='text/javascript' language='JavaScript' src='../js/glossary.js'></script>
+	</head>
+	<body>
+		<h1>&nbsp;<img align="absbottom" src="../image/external_images/crystal/svtools/res/new_doc.png"/>&nbsp;MATCH</h1>
+		<p id='ExpandAllLine' class='ExpFav'>
+			<a href='#' onClick='ExpandAll()' onKeyPress='ExpandAll()' class='DropDown'>
+				<img id='picHeader' border='0' src='../image/image/common/expandtri.gif' alt='모두 표시'>
+				<span id='ExpandAll'>모두 표시</span>
+			</a>
+		</p>
+		<p><b class="bterm">참고항목</b>&emsp;
+			<a href="5.9.11.1.htm">자료표함수목록</a>,
+			<a href="5.9.11.9.htm">HLOOKUP</a>,
+			<a href="5.9.11.11.htm">INDEX</a>,
+			<a href="5.9.11.13.htm">LOOKUP</a>,
+			<a href="5.9.11.21.htm">VLOOKUP</a>
+		</p>
+		<p>값을 비교한 다음 배렬의 위치를 정의합니다.</p>
+		<p><b class="bterm">문법:&emsp;&emsp;		MATCH(탐색기준,탐색범위,류형)</b></p>
+		<table>
+			<tr>
+				<th>인수명</th>
+				<th>설명</th>
+			</tr>
+			<tr>
+				<td>탐색기준</td>
+				<td>비교에 사용되는 값입니다.
+					<p>
+						<ul>
+							<li><b class="bterm">탐색기준</b>은 <b class="bterm">탐색범위</b>에서 찾으려는 값입니다. 례를 들어 전화번호부에서 어떤 사람의 번호를 찾으려고 할 때 그 사람의 이름을 사용하여 찾지만 원하는 탐색범위는 그 사람의 전화번호입니다.</li>
+							<li><b class="bterm">탐색기준</b>은 수자, 본문, 론리값 등의 값이거나 수자, 본문 또는 론리값에 대한 세포 참조일수 있습니다.</li>
+						</ul>
+					</p>
+				</td>
+			</tr>
+			<tr>
+				<td>탐색범위</td>
+				<td>탐색이 수행되는 배렬(범위)입니다. <b class="bterm">탐색범위</b>는 배렬 또는 배렬 참조이여야 합니다.</td>
+			</tr>
+			<tr>
+				<td>류형</td>
+				<td>류형값은 1, 0 또는 -1이 될수 있으며 비교를 목적으로 사용할 기준을 결정합니다. 추가선택인수입니다.
+					<p>
+						<ul>
+							<li><b class="bterm">류형</b>이 1이면 MATCH는 <b class="bterm">탐색기준</b>보다 작거나 같은 값중에서 최대값을 찾습니다. <b class="bterm">탐색범위</b>는 반드시 올리순서(...-2; -1; 0; 1; 2;...A~Z; 거짓; 참)로 정렬되여있어야 합니다.</li>
+							<li><b class="bterm">류형</b>이 0이면 MATCH는 <b class="bterm">탐색기준</b>과 같은 첫번째 값을 찾습니다. <b class="bterm">탐색범위</b>는 임의의 순서이여도 됩니다.</li>
+							<li><b class="bterm">류형</b>이 -1이면 MATCH는 <b class="bterm">탐색기준</b>보다 크거나 같은 값중에서 최소값을 찾습니다. <b class="bterm">탐색범위</b>는 참; 거짓; Z~A; ...2; 1; 0; -1; -2; ...; 등 내리순서로 정렬되여있어야 합니다.</li>
+							<li><b class="bterm">류형</b>을 생략하면 1로 간주합니다.</li>
+						</ul>
+					</p>
+				</td>
+			</tr>
+		</table>
+		<p><b class="bterm">주의</b></p>
+			<ul>
+				<li><b class="bterm">MATCH</b>는 <b class="bterm">탐색범위</b>에서 일치하는 값이 아니라 값의 위치를 표시합니다.</li>
+				<li><b class="bterm">MATCH</b>는 본문의 대소문자를 구분하지 않습니다.</li>
+				<li>일치하는 문자를 찾지 못하면 #<b class="bterm">N</b>/<b class="bterm">A</b> 오유값을 표시합니다.</li>
+				<li><b class="bterm">류형</b>이 0이고 <b class="bterm">탐색기준</b>이 본문이면 <b class="bterm">탐색기준</b>에  별표(*)와 물음표(?)가 포함될수 있습니다. 별표는 여러 문자를 대신하고 물음표는 단일문자를 대신합니다.</li>
+			</ul>
+		<p><b class="bterm">실례</b></p>
+			<p><a href="1.5.1.htm">실례의 리용방법</a>을 참고하십시오.</p>
+			<table>
+				<tr>
+					<td>
+						<table>
+							<tr>
+								<td class="noborder">&nbsp;
+								</td>
+							</tr>
+							<tr>
+								<th>1</th>
+							</tr>
+							<tr>
+								<th>2</th>
+							</tr>
+							<tr>
+								<th>3</th>
+							</tr>
+							<tr>
+								<th>4</th>
+							</tr>
+							<tr>
+								<th>5</th>
+							</tr>
+						</table>
+					</td>
+					<td>
+						<table>
+							<tr>
+								<th>A</th>
+								<th>B</th>
+							</tr>
+							<tr>
+								<th>제품</th>
+								<th>개수</th>
+							</tr>
+							<tr>
+								<td>바나나</td>
+								<td>25</td>
+							</tr>
+							<tr>
+								<td>오렌지</td>
+								<td>38</td>
+							</tr>
+							<tr>
+								<td>사과</td>
+								<td>40</td>
+							</tr>
+							<tr>
+								<td>배</td>
+								<td>41</td>
+							</tr>
+							<tr>
+								<th>수식</th>
+								<th>설명(결과)</th>
+							</tr>
+							<tr>
+								<td>=MATCH(39,B2:B5,1)</td>
+								<td>정확히 일치하는 값이 없기때문에 범위 B2:B5에서 다음으로 낮은 값(38)의 위치를 구합니다. (2)</td>
+							</tr>
+							<tr>
+								<td>=MATCH(41,B2:B5,0)</td>
+								<td>범위 B2:B5에서 41의 위치를 구합니다. (4)</td>
+							</tr>
+							<tr>
+								<td>=MATCH(40,B2:B5,-1)</td>
+								<td>범위 B2:B5가 내리순서가 아니기때문에 오유를 표시합니다. (#N/A)</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+		<script type="text/javascript" language="Javascript">footerView()</script>
+	
+</body>
+</html>				

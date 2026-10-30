@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="video/x-msvideo">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <alias type="video/x-avi"/>
+  <comment>AVI video</comment>
+  <acronym>AVI</acronym>
+  <expanded-acronym>Audio Video Interleave</expanded-acronym>
+</mime-type>

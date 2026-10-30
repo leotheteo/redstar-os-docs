@@ -1,0 +1,79 @@
+<html><head><title>Composer Page</title><link rel="stylesheet" href="help:/common/kde-default.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.67.2"><meta name="keywords" content="KDE, Mail, email, Client, POP3, IMAP, PGP, GnuPG, GPG, Kolab"><link rel="start" href="index.html" title="The Mail Handbook"><link rel="up" href="configure.html" title="Chapter4. Configure Mail"><link rel="prev" href="configure-appearance.html" title="Appearance Page"><link rel="next" href="configure-misc.html" title="
+      Misc Page
+   "><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta name="GENERATOR" content="KDE XSL Stylesheet V1.13 using libxslt"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">
+      Composer Page
+    </th></tr><tr><td width="20%" align="left"><a accesskey="p" href="configure-appearance.html">Prev</a> </td><th width="60%" align="center">Chapter4. Configure <span class="application">Mail</span></th><td width="20%" align="right"> <a accesskey="n" href="configure-misc.html">Next</a></td></tr></table><hr></div><div class="sect1" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="configure-composer"></a>
+      Composer Page
+    </h2></div></div></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="configure-composer-general"></a>
+	General
+      </h3></div></div></div><div class="variablelist"><dl><dt><a name="configure-composer-general-append-signature"></a><span class="term">
+	    <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Automatically append signature</span></span>
+	  </span></dt><dd><p>
+	      If checked, your signature as defined in the <a href="configure-identity.html#configure-identity-signature" title="Signature">identity
+	      page</a> is automatically included at the end of
+              all messages you create (<span class="abbrev">i.e.</span> new messages, replies, <span class="abbrev">etc.</span>).
+	    </p></dd><dt><a name="configure-composer-general-external-editor"></a><span class="term">
+	    <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">External Editor</span></span>
+	  </span></dt><dd><p>
+	      If you do not like the Composer you can use a different
+	      editor. Note that the composer window will still open
+	      and the external editor will open as soon as you type
+	      just one character in the body of the message. If you are
+	      done, save the text and exit the editor. The text will
+	      now appear in the composer window, where you can send
+	      it. Note that your editor may not return immediately,
+	      you have to use <span class="abbrev">e.g.</span>
+	      <strong class="userinput"><code>
+		<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="command"><span><strong class="command">
+		  gvim <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">-f</code></span> <code class="varname">%f</code>
+		</strong></span></span>
+	      </code></strong> for <span class="application">gvim</span>.
+	    </p></dd></dl></div></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="configure-composer-phrases"></a>Phrases</h3></div></div></div><p>The <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Phrases</span></span> tab lets you define the automatically
+generated lines that are added to message replies, forwarded messages, and the
+character that is added in front of quoted text.
+There are special %-denoted characters that will insert certain
+values, which are also displayed at the top of the <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Phrases</span></span> section.
+You can add reply phrases in languages other than
+your default <span class="acronym">KDE</span> language using the <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guibutton">Add...</span></span> button.
+You can then choose between different languages with the
+<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Language</span></span> drop down box.
+This will only work for languages whose i18n package you have installed.</p></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="configure-composer-subject"></a>Subject</h3></div></div></div><p>This section contains a list of prefixes for “<span class="quote">Reply</span>” and
+“<span class="quote">Forward</span>”. If you receive messages that use prefixes different
+to the standard ones, you can add them here so <span class="application">Mail</span> will recognize
+them. This way <span class="application">Mail</span> can ignore them for sorting messages and
+when setting the subject of a reply or a forwarded messages, and optionally
+replace them with “<span class="quote">Re:</span>” or “<span class="quote">Fwd:</span>”
+respectively.</p></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="configure-composer-charset"></a>Charset</h3></div></div></div><p>Here you can manage the default charsets used for your own messages.
+Every message you send will be checked if it is written in one of the listed
+charsets, starting at the top of the list. If it is, this charset will be used.
+If it is not, a dialog will show up and tell you that you manually have to choose
+a charset using
+<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guimenu">Options</span></span>/<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guisubmenu">Set Encoding</span></span>.
+</p><p>If you select <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Keep original charset when replying
+or forwarding (if possible)</span></span>, the original message's charset
+will be kept, unless there are now characters that cannot be
+represented using that charset.</p></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="configure-composer-headers"></a>Headers</h3></div></div></div><p>Check the <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Use custom message-id suffix</span></span>
+checkbox if you want <span class="application">Mail</span> to generate Message-Id's with a custom
+suffix. Enter the desired suffix in the <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Custom message-id
+suffix</span></span> field. Please make sure that the suffix that you
+specify is world-wide unique. The best thing is to use the name of a
+domain which you are the owner of. If you do not check <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Use
+custom Message-Id suffix</span></span> then <span class="application">Mail</span> will automatically
+generate the complete Message-Id. If you do not know what this is all
+about do not check this option.</p><p>The <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Define custom mime header fields</span></span> list
+sets the headers that <span class="application">Mail</span> will use for its outgoing messages. You
+can both invent new fields and overwrite existing ones. This feature
+is only useful for advanced users.</p></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="configure-composer-attachments"></a>Attachments</h3></div></div></div><p>If you have to send attachments with filenames containing non-English
+characters to users of Outlook(TM) or Outlook Express(TM) then you might want
+to check the <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Outlook-compatible attachment naming</span></span> option.
+<span class="application">Mail</span> will then encode the attachment names in a non-standard way that is
+understood by Outlook(TM).</p><p>Note that <span class="application">Mail</span> will create non-standard compliant messages, and
+consequently it is possible that your messages will not be understood by
+standard-compliant mail clients. So, unless you have no other choice, you
+should not enable this option.</p><p>Check the <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Enable detection of missing attachments</span></span>
+checkbox if you want <span class="application">Mail</span> to warn you whenever you are about to send a
+message without attachments although the message text contains certain
+words which indicate that you wanted to include an attachment. The list
+of key words can be modified.</p></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="configure-appearance.html">Prev</a> </td><td width="20%" align="center"><a accesskey="u" href="configure.html">Up</a></td><td width="40%" align="right"> <a accesskey="n" href="configure-misc.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">Appearance Page </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top">
+      Misc Page
+    </td></tr></table></div></body></html>

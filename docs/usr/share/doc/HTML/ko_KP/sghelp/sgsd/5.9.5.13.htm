@@ -1,0 +1,118 @@
+﻿<html dir='ltr'>
+	<head>
+		<META http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+		<title>CUMIPMT</title>
+		<link rel='stylesheet' type='text/css' href='../css/main.css'/>
+		<script type='text/javascript' language='Javascript' src='../js/mexpcol.js'></script>
+		<script type='text/javascript' language='JavaScript' src='../js/glossary.js'></script>
+	</head>
+	<body>
+		<h1>&nbsp;<img align="absbottom" src="../image/external_images/crystal/svtools/res/new_doc.png"/>&nbsp;CUMIPMT</h1>
+		<p id='ExpandAllLine' class='ExpFav'>
+			<a href='#' onClick='ExpandAll()' onKeyPress='ExpandAll()' class='DropDown'>
+				<img id='picHeader' border='0' src='../image/image/common/expandtri.gif' alt='모두 표시'>
+				<span id='ExpandAll'>모두 표시</span>
+			</a>
+		</p>
+		<p><b class="bterm">참고항목</b>&emsp;   
+			<a href="5.9.5.1.htm">재정함수목록</a>,
+			<a href="5.9.5.15.htm">CUMPRINC</a> 
+		</p>
+		<p>루적 복리리자액입니다. 일정한 리자률로서 투자에 대한 기간의 리자몫의 총액을 계산합니다.</p>
+		<p><b class="bterm">문법:&emsp;&emsp;		CUMIPMT(리자률,납입기간,현재가치,시작기간,마감기간,류형)</b></p>
+		<table>
+			<tr>
+				<th>인수명</th>
+				<th>설명</th>
+			</tr>
+			<tr>
+				<td>리자률</td>
+				<td>일정한 기간의 리자률입니다.</td>
+			</tr>
+			<tr>
+				<td>납입기간</td>
+				<td>지불기간의 회수입니다. 년로보장금을 지불하는 주기의 합계입니다.</td>
+			</tr>
+			<tr>
+				<td>현재가치</td>
+				<td>현재가치입니다. 년로보장금이 현재 가지고있는 가치가 현재가치 또는 값입니다.</td>
+			</tr>
+			<tr>
+				<td>시작기간</td>
+				<td>시작기간은 첫 계산을 진행하는 기간입니다. 1은 맨 처음기간이라는것을 의미합니다.</td>
+			</tr>
+			<tr>
+				<td>마감기간</td>
+				<td>마감기간입니다. 계산을 진행하는 마감기간입니다.</td>
+			</tr>
+			<tr>
+				<td>류형</td>
+				<td>류형 = 1은 시작기간, 류형 = 0은 마감기간을 의미합니다.</td>
+			</tr>
+		</table>
+		<p><b class="bterm">주의</b></p>
+			<ul>
+				<li><b class="bterm">리자률</b>과 <b class="bterm">납입기간</b>을 지정할 때 같은 단위를 사용해야 합니다. 년간리자률 10%의 4년만기대부금을 달마다 상환한다면 <b class="bterm">리자률</b>에 대해 10%/12, <b class="bterm">납입기간</b>에 대해 4*12를 사용합니다. 대부금을 해마다 상환한다면 <b class="bterm">리자률</b>에 대해 10%, <b class="bterm">납입기간</b>에 대해 4를 사용합니다.</li>
+				<li><b class="bterm">납입기간</b>, <b class="bterm">시작기간</b>, <b class="bterm">마감기간</b>, <b class="bterm">류형</b>은 소수점이하를 잘라서 옹근수로 변환됩니다.</li>
+				<li><b class="bterm">리자률</b> ≦ 0 또는 <b class="bterm">납입기간</b> ≦ 0 또는 <b class="bterm">현재가치</b> ≦ 0이면 <b class="bterm">오유:[오유번호]</b>가 반환됩니다.</li>
+				<li><b class="bterm">시작기간</b> < 1 또는 <b class="bterm">마감기간</b> < 1 또는 <b class="bterm">시작기간</b> > <b class="bterm">마감기간</b>이면  <b class="bterm">오유:[오유번호]</b>가 반환됩니다.</li>
+				<li><b class="bterm">류형</b>이 0이나 1이 아니면  <b class="bterm">오유:[오유번호]</b>가 반환됩니다.</li>
+			</ul>
+		<p><b class="bterm">실례</b></p>
+			<p><a href='1.5.1.htm'>실례의 리용방법</a>을 참고하십시오.</p>
+			<table>
+				<tr>
+					<td>
+						<table>
+							<tr><td>&nbsp;</td></tr>
+							<tr><th>1</th></tr>
+							<tr><th>2</th></tr>
+							<tr><th>3</th></tr>
+							<tr><th>4</th></tr>
+						</table>
+					</td>
+					<td>
+						<table>
+							<tr>
+								<th>A</th>
+								<th>B</th>
+							</tr>
+							<tr>
+								<th>자료</th>
+								<th>설명</th>
+							</tr>
+							<tr>
+								<td>9%</td>
+								<td>년간리자률입니다.</td>
+							</tr>
+							<tr>
+								<td>30</td>
+								<td>납입기간입니다.</td>
+							</tr>
+							<tr>
+								<td>125 000</td>
+								<td>현재가치입니다.</td>
+							</tr>
+							<tr>
+								<th>수식</th>
+								<th>설명(결과)</th>
+							</tr>
+							<tr>
+								<td>=CUMIPMT(A2/12,A3*12,A4,13,24,0)</td>
+								<td>두번째 상환년도의 13~24회수중 상환한 총리자액입니다. (-11135￦)</td>
+							</tr>
+							<tr>
+								<td>=CUMIPMT(A2/12,A3*12,A4,1,1,0)</td>
+								<td>첫달 한번의 상환으로 납입된 리자액입니다. (-938￦)</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>	
+		<p>
+			<b class="bterm">참고:</b>   리자률을 12로 나누면 월간리자률이 구해집니다. 납입회수를 12와 곱하면 납입기간이 구해집니다.
+		</p>
+		<script type="text/javascript" language="Javascript">footerView()</script>
+	
+</body>
+</html>

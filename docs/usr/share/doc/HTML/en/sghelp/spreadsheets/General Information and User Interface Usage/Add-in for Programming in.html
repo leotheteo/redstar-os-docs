@@ -1,0 +1,916 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+	<TITLE></TITLE>
+	<META NAME="GENERATOR" CONTENT="《Sogwang 3.0》  (Linux)">
+	<META NAME="CREATED" CONTENT="20091205;10241300">
+	<META NAME="CHANGED" CONTENT="20091205;10332900">
+	<STYLE TYPE="text/css">
+	<!--
+		H3 { margin-bottom: 0.18cm; font-family: "Bitstream Vera Sans", "Arial", "Helvetica", "Lucida", "Geneva", "Helmet", sans-serif, "Andale Sans UI", "Arial Unicode MS", "Lucida Sans Unicode", "Tahoma"; font-size: 12pt }
+		H2 { margin-bottom: 0.18cm; font-family: "Bitstream Vera Sans", "Arial", "Helvetica", "Lucida", "Geneva", "Helmet", sans-serif, "Andale Sans UI", "Arial Unicode MS", "Lucida Sans Unicode", "Tahoma"; font-size: 14pt }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="ko-KP" DIR="LTR"><DIV style="margin-left: 25">
+<H1><A NAME="bm_id3151076"></A><FONT FACE="Thorndale, serif"><SPAN LANG="en-US">Add-in
+for Programming in </SPAN></FONT>Sogwang
+<FONT FACE="Thorndale, serif"><SPAN LANG="en-US">Calc</SPAN></FONT></H1>
+<TABLE WIDTH=941 BORDER=0 CELLPADDING=5 CELLSPACING=0>
+	<COL WIDTH=25>
+	<COL WIDTH=592>
+	<TR>
+		<TD WIDTH=38>
+			<P><IMG SRC="../../Image/warning.png" NAME="graphics1" ALT="Warning Icon " ALIGN=BOTTOM WIDTH=25 HEIGHT=42 BORDER=0></P>
+		</TD>
+		<TD WIDTH=883>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">The
+			method of extending Calc by Add-Ins that is described in the
+			following is outdated. The interfaces are still valid and
+			supported, to ensure compatibility with existing Add-Ins, but for
+			programming new Add-Ins you should use the new <A HREF="Add-in for Programming in/Integrating new UNO components.html">API
+			functions</A>.</SPAN></FONT></P>
+		</TD>
+	</TR>
+</TABLE>
+<P><BR><BR>
+</P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Sogwang Calc
+can be expanded by Add-Ins, which are external programming modules
+providing additional functions for working with spreadsheets. These
+are listed in the <B>Function Wizard</B> in the <B>Add-In</B>
+category. If you would like to program an Add-In yourself, you can
+learn here which functions must be exported by the shared library so
+that the Add-In can be successfully attached.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Sogwang searches
+the Add-in folder defined in the configuration for a suitable shared
+library . To be recognized by </SPAN></FONT><FONT FACE="청봉, serif"><SPAN LANG="en-US">Sogwang ,
+the shared library must have certain properties, as explained in the
+following. This information allows you to program your own Add-In for
+<B>Function Wizard</B> of </SPAN></FONT><FONT FACE="청봉, serif"><SPAN LANG="en-US">Sogwang Calc.</SPAN></FONT></P>
+<H2><A NAME="addinconcept"></A><SPAN LANG="en-US">The Add-In Concept</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Each
+Add-In library provides several functions. Some functions are used
+for administrative purposes. You can choose almost any name for your
+own functions. However, they must also follow certain rules regarding
+parameter passing. The exact naming and calling conventions vary for
+different platforms.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Functions of Shared Library </SPAN>
+</H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">At a
+minimum, the administrative functions GetFunctionCount and
+GetFunctionData must exist. Using these, the functions as well as
+parameter types and return values can be determined. As return
+values, the Double and String types are supported. As parameters,
+additionally the cell areas Double Array, String Array, and Cell
+Array are supported.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Parameters
+are passed using references. Therefore, a change of these values is
+basically possible. However, this is not supported in </SPAN></FONT><FONT FACE="청봉, serif"><SPAN LANG="en-US">Sogwang Calc
+because it does not make sense within spreadsheets.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Libraries
+can be reloaded during runtime and their contents can be analyzed by
+the administrative functions. For each function, information is
+available about count and type of parameters, internal and external
+function names and an administrative number.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">The
+functions are called synchronously and return their results
+immediately. Real time functions (asynchronous functions) are also
+possible; however, they are not explained in detail because of their
+complexity.</SPAN></FONT></P>
+<H2><SPAN LANG="en-US">General information about the interface</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">The
+maximum number of parameters in an Add-In function attached to
+</SPAN></FONT><FONT FACE="청봉, serif"><SPAN LANG="en-US">Sogwang Calc
+is 16: one return value and a maximum of 15 function input
+parameters.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">The data
+types are defined as follows:</SPAN></FONT></P>
+<TABLE WIDTH=549 BORDER=1 CELLPADDING=2 CELLSPACING=0>
+	<COL WIDTH=69>
+	<COL WIDTH=303>
+	<TR VALIGN=TOP>
+		<TD WIDTH=88>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Data
+			types</B> </SPAN></FONT>
+			</P>
+		</TD>
+		<TD WIDTH=447>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Definition</B>
+			</SPAN></FONT>
+			</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=88>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">CALLTYPE</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=447>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Under
+			Windows: FAR PASCAL (_far _pascal)</SPAN></FONT></P>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Other:
+			default (operating system specific default)</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=88>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">USHORT</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=447>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">2
+			Byte unsigned Integer</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=88>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">DOUBLE</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=447>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">8
+			byte platform-dependent format</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=88>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Paramtype</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=447>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Platform-dependent
+			like int</SPAN></FONT></P>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">PTR_DOUBLE
+			=0 pointer to a double</SPAN></FONT></P>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">PTR_STRING
+			=1 pointer to a zero-terminated string</SPAN></FONT></P>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">PTR_DOUBLE_ARR
+			=2 pointer to a double array</SPAN></FONT></P>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">PTR_STRING_ARR
+			=3 pointer to a string array</SPAN></FONT></P>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">PTR_CELL_ARR
+			=4 pointer to a cell array</SPAN></FONT></P>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">NONE
+			=5</SPAN></FONT></P>
+		</TD>
+	</TR>
+</TABLE>
+<P><BR><BR>
+</P>
+<H2><SPAN LANG="en-US">Shared Library functions</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Following
+you will find a description of those functions, which are called at
+the Shared Library .</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">For all
+Shared Library functions, the following applies:</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">void
+CALLTYPE fn(out, in1, in2, ...)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Output:
+Resulting value</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Input:
+Any number of types (double&amp;, char*, double*, char**, Cell area),
+where the Cell area is an array of types double array, string array,
+or cell array.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">GetFunctionCount()</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Returns
+the number of functions without the management functions of the
+reference parameter. Each function has a unique number between 0 and
+nCount-1. This number will be needed for the GetFunctionData and
+GetParameterDescription functions later.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Syntax</B>
+</SPAN></FONT>
+</P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">void
+CALLTYPE GetFunctionCount(USHORT&amp; nCount)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Parameter</B>
+</SPAN></FONT>
+</P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">USHORT
+&amp;nCount:</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Output:
+Reference to a variable, which is supposed to contain the number of
+Add-In functions. For example: If the Add-In provides 5 functions for
+</SPAN></FONT><FONT FACE="청봉, serif"><SPAN LANG="en-US">Sogwang Calc,
+then nCount=5.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">GetFunctionData()</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Determines
+all the important information about an Add-In function.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Syntax</B>
+</SPAN></FONT>
+</P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">void
+CALLTYPE GetFunctionData(USHORT&amp; nNo, char* pFuncName, USHORT&amp;
+nParamCount, Paramtype* peType, char* pInternalName)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Parameter</B>
+</SPAN></FONT>
+</P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">USHORT&amp;
+nNo:</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Input:
+Function number between 0 and nCount-1, inclusively.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">char*
+pFuncName:</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Output:
+Function name as seen by the programmer, as it is named in the Shared
+Library . This name does not determine the name used in the <B>Function
+Wizard</B>.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">USHORT&amp;
+nParamCount:</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Output:
+Number of parameters in AddIn function. This number must be greater
+than 0, because there is always a result value; the maximum value is
+16.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Paramtype*
+peType:</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Output:
+Pointer to an array of exactly 16 variables of type Paramtype. The
+first nParamCount entries are filled with the suitable type of
+parameter.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">char*
+pInternalName:</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Output:
+Function name as seen by the user, as it appears in the <B>Function
+Wizard</B>. May contain umlauts.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">The
+pFuncName and pInternalName parameters are char arrays, which are
+implemented with size 256 in </SPAN></FONT><FONT FACE="청봉, serif"><SPAN LANG="en-US">Sogwang Calc.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">GetParameterDescription()</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Provides
+a brief description of the Add-In function and its parameters. As an
+option, this function can be used to show a function and parameter
+description in the <B>Function Wizard</B>.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Syntax</B>
+</SPAN></FONT>
+</P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">void
+CALLTYPE GetParameterDescription(USHORT&amp; nNo, USHORT&amp; nParam,
+char* pName, char* pDesc)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Parameter</B>
+</SPAN></FONT>
+</P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">USHORT&amp;
+nNo:</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Input:
+Number of the function in the library; between 0 and nCount-1.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">USHORT&amp;
+nParam:</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Input:
+Indicates, for which parameter the description is provided;
+parameters start at 1. If nParam is 0, the description itself is
+supposed to be provided in pDesc; in this case, pName does not have
+any meaning.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">char*
+pName:</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Output:
+Takes up the parameter name or type, for example, the word &quot;Number&quot;
+or &quot;String&quot; or &quot;Date&quot;, and so on. Implemented in
+</SPAN></FONT><FONT FACE="청봉, serif"><SPAN LANG="en-US">Sogwang Calc
+as char[256].</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">char*
+pDesc:</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Output:
+Takes up the description of the parameter, for example, &quot;Value,
+at which the universe is to be calculated.&quot; Implemented in
+</SPAN></FONT><FONT FACE="청봉, serif"><SPAN LANG="en-US">Sogwang Calc
+as char[256].</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">pName
+and pDesc are char arrays; implemented in </SPAN></FONT><FONT FACE="청봉, serif"><SPAN LANG="en-US">Sogwang Calc with
+size 256. Please note that the space available in the <B>Function
+Wizard</B> is limited and that the 256 characters cannot be fully
+used.</SPAN></FONT></P>
+<H2><SPAN LANG="en-US">Cell areas</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">The
+following tables contain information about which data structures must
+be provided by an external program module in order to pass cell
+areas. </SPAN></FONT><FONT FACE="청봉, serif"><SPAN LANG="en-US">Sogwang Calc
+distinguishes between three different arrays, depending on the data
+type.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Double Array</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">As a
+parameter, a cell area with values of the Number/Double type can be
+passed. A double array in </SPAN></FONT><FONT FACE="청봉, serif"><SPAN LANG="en-US">Sogwang Calc is
+defined as follows:</SPAN></FONT></P>
+<TABLE WIDTH=785 BORDER=1 CELLPADDING=2 CELLSPACING=0>
+	<COL WIDTH=40>
+	<COL WIDTH=40>
+	<COL WIDTH=543>
+	<TR VALIGN=TOP>
+		<TD WIDTH=61>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Offset</B>
+			</SPAN></FONT>
+			</P>
+		</TD>
+		<TD WIDTH=53>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Name</B>
+			</SPAN></FONT>
+			</P>
+		</TD>
+		<TD WIDTH=651>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Description</B>
+			</SPAN></FONT>
+			</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=61>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">0</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=53>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Col1</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=651>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Column
+			number in the upper-left corner of the cell area. Numbering starts
+			at 0.</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=61>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">2</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=53>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Row1</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=651>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Row
+			number in the upper-left corner of the cell area; numbering starts
+			at 0.</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=61>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">4</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=53>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Tab1</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=651>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Table
+			number in the upper-left corner of the cell area; numbering starts
+			at 0.</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=61>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">6</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=53>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Col2</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=651>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Column
+			number in the lower-right corner of the cell area. Numbering
+			starts at 0.</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=61>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">8</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=53>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Row2</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=651>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Row
+			number in the lower-right corner of the cell area; numbering
+			starts at 0.</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=61>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">10</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=53>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Tab2</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=651>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Table
+			number in the lower-right corner of the cell area; numbering
+			starts at 0.</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=61>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">12</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=53>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Count</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=651>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Number
+			of the following elements. Empty cells are not counted or passed.</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=61>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">14</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=53>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Col</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=651>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Column
+			number of the element. Numbering starts at 0.</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=61>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">16</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=53>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Row</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=651>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Row
+			number of the element; numbering starts at 0.</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=61>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">18</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=53>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Tab</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=651>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Table
+			number of the element; numbering starts at 0.</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=61>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">20</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=53>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Error</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=651>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Error
+			number, where the value 0 is defined as &quot;no error.&quot; If
+			the element comes from a formula cell the error value is
+			determined by the formula.</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=61>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">22</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=53>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Value</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=651>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">8
+			byte IEEE variable of type double/floating point</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=61>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">30</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=53>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">...</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=651>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Next
+			element</SPAN></FONT></P>
+		</TD>
+	</TR>
+</TABLE>
+<P><BR><BR>
+</P>
+<H3><SPAN LANG="en-US">String Array</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">A cell
+area, which contains values of data type Text and is passed as a
+string array. A string array in </SPAN></FONT><FONT FACE="청봉, serif"><SPAN LANG="en-US">Sogwang Calc is
+defined as follows:</SPAN></FONT></P>
+<TABLE WIDTH=851 BORDER=1 CELLPADDING=2 CELLSPACING=0>
+	<COL WIDTH=40>
+	<COL WIDTH=39>
+	<COL WIDTH=545>
+	<TR VALIGN=TOP>
+		<TD WIDTH=61>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Offset</B>
+			</SPAN></FONT>
+			</P>
+		</TD>
+		<TD WIDTH=53>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Name</B>
+			</SPAN></FONT>
+			</P>
+		</TD>
+		<TD WIDTH=717>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Description</B>
+			</SPAN></FONT>
+			</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=61>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">0</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=53>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Col1</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=717>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Column
+			number in the upper-left corner of the cell area. Numbering starts
+			at 0.</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=61>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">2</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=53>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Row1</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=717>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Row
+			number in the upper-left corner of the cell area; numbering starts
+			at 0.</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=61>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">4</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=53>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Tab1</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=717>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Table
+			number in the upper-left corner of the cell area; numbering starts
+			at 0.</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=61>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">6</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=53>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Col2</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=717>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Column
+			number in the lower-right corner of the cell area. Numbering
+			starts at 0.</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=61>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">8</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=53>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Row2</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=717>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Row
+			number in the lower-right corner of the cell area; numbering
+			starts at 0.</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=61>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">10</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=53>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Tab2</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=717>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Table
+			number in the lower-right corner of the cell area; numbering
+			starts at 0.</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=61>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">12</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=53>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Count</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=717>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Number
+			of the following elements. Empty cells are not counted or passed.</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=61>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">14</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=53>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Col</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=717>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Column
+			number of the element. Numbering starts at 0.</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=61>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">16</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=53>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Row</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=717>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Row
+			number of the element; numbering starts at 0.</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=61>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">18</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=53>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Tab</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=717>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Table
+			number of the element; numbering starts at 0.</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=61>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">20</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=53>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Error</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=717>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Error
+			number, where the value 0 is defined as &quot;no error.&quot; If
+			the element comes from a formula cell the error value is
+			determined by the formula.</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=61>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">22</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=53>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Len</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=717>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Length
+			of the following string, including closing zero byte. If the
+			length including closing zero byte equals an odd value a second
+			zero byte is added to the string so that an even value is
+			achieved. Therefore, Len is calculated using ((StrLen+2)&amp;~1).</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=61>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">24</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=53>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">String</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=717>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">String
+			with closing zero byte</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=61>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">24+Len</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=53>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">...</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=717>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Next
+			element</SPAN></FONT></P>
+		</TD>
+	</TR>
+</TABLE>
+<P><BR><BR>
+</P>
+<H3><SPAN LANG="en-US">Cell Array</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Cell
+arrays are used to call cell areas containing text as well as
+numbers. A cell array in </SPAN></FONT><FONT FACE="청봉, serif"><SPAN LANG="en-US">Sogwang Calc is
+defined as follows:</SPAN></FONT></P>
+<TABLE WIDTH=848 BORDER=1 CELLPADDING=2 CELLSPACING=0>
+	<COL WIDTH=50>
+	<COL WIDTH=49>
+	<COL WIDTH=524>
+	<TR VALIGN=TOP>
+		<TD WIDTH=62>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Offset</B>
+			</SPAN></FONT>
+			</P>
+		</TD>
+		<TD WIDTH=53>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Name</B>
+			</SPAN></FONT>
+			</P>
+		</TD>
+		<TD WIDTH=713>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Description</B>
+			</SPAN></FONT>
+			</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=62>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">0</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=53>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Col1</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=713>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Column
+			number in the upper-left corner of the cell area. Numbering starts
+			at 0.</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=62>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">2</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=53>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Row1</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=713>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Row
+			number in the upper-left corner of the cell area; numbering starts
+			at 0.</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=62>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">4</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=53>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Tab1</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=713>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Table
+			number in the upper-left corner of the cell area; numbering starts
+			at 0.</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=62>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">6</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=53>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Col2</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=713>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Column
+			number in the lower-right corner of the cell area. Numbering
+			starts at 0.</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=62>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">8</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=53>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Row2</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=713>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Row
+			number in the lower-right corner of the cell area; numbering
+			starts at 0.</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=62>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">10</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=53>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Tab2</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=713>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Table
+			number in the lower-right corner of the cell area; numbering
+			starts at 0.</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=62>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">12</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=53>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Count</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=713>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Number
+			of the following elements. Empty cells are not counted or passed.</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=62>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">14</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=53>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Col</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=713>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Column
+			number of the element. Numbering starts at 0.</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=62>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">16</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=53>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Row</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=713>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Row
+			number of the element; numbering starts at 0.</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=62>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">18</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=53>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Tab</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=713>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Table
+			number of the element; numbering starts at 0.</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=62>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">20</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=53>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Error</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=713>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Error
+			number, where the value 0 is defined as &quot;no error.&quot; If
+			the element comes from a formula cell the error value is
+			determined by the formula.</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=62>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">22</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=53>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Type</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=713>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Type
+			of cell content, 0 == Double, 1 == String</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=62>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">24</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=53>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Value
+			or Len</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=713>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">If
+			type == 0: 8 byte IEEE variable of type double/floating point</SPAN></FONT></P>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">If
+			type == 1: Length of the following string, including closing zero
+			byte. If the length including closing zero byte equals an odd
+			value a second zero byte is added to the string so that an even
+			value is achieved. Therefore, Len is calculated using
+			((StrLen+2)&amp;~1).</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=62>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">26 if
+			type==1</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=53>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">String</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=713>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">If
+			type == 1: String with closing zero byte</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=62>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">32 or
+			26+Len</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=53>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">...</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=713>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Next
+			element</SPAN></FONT></P>
+		</TD>
+	</TR>
+</TABLE>
+<P><BR><BR>
+</P>
+
+</DIV></BODY>
+</HTML>
+

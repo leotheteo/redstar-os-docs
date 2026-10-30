@@ -1,0 +1,127 @@
+<html dir='ltr'>
+	<head>
+		<META http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+		<title>AND</title>
+		<link rel='stylesheet' type='text/css' href='../css/main.css'/>
+		<script type='text/javascript' language='Javascript' src='../js/mexpcol.js'></script>
+		<script type='text/javascript' language='JavaScript' src='../js/glossary.js'></script>
+	</head>
+	<body>
+		<h1>&nbsp;<img align="absbottom" src="../image/external_images/crystal/svtools/res/new_doc.png"/>&nbsp;AND</h1>
+		<p id='ExpandAllLine' class='ExpFav'>
+			<a href='#' onClick='ExpandAll()' onKeyPress='ExpandAll()' class='DropDown'>
+				<img id='picHeader' border='0' src='../image/image/common/expandtri.gif' alt='모두 표시'>
+				<span id='ExpandAll'>모두 표시</span>
+			</a>
+		</p>
+		<p><b class="bterm">참고항목</b>&emsp;
+			<a href="5.9.7.1.htm">론리함수목록</a>
+		</p>
+		<p>모든 인수가 참인 경우 참입니다.</p>
+		<p><b class="bterm">문법:&emsp;&emsp;		AND(론리값1,론리값2,...)</b></p>
+		<table>
+			<tr>
+				<th>인수명</th>
+				<th>설명</th>
+			</tr>
+			<tr>
+				<td> 론리값1,론리값2,…</td>
+				<td>참 또는 거짓으로 계산될수 있는 조건입니다. 론리값1, 론리값2, ...는 시험되는 1부터 30까지의 조건이며 매개 값은 참 또는 거짓입니다.</td>
+			</tr>
+		</table>
+		<p><b class="bterm">주의</b></p>
+			<ul>
+				<li>인수는 참 또는 거짓과 같은 론리값으로 평가되거나 론리값이 들어있는 참조이여야 합니다.</li>
+				<li>참조인수에 본문 또는 빈 세포가 들어있는 경우에는 그러한 값들이 무시됩니다.</li>
+				<li>지정한 범위에 론리값이 없으면 <b class="bterm">오유:[오유번호]</b>가 반환됩니다.</li>
+			</ul>
+		<p><b class="bterm">실례1</b></p>
+			<p><a href="1.5.1.htm">실례의 리용방법</a>을 참고하십시오.</p>
+			<table>
+				<tr>
+					<td>
+						<table>
+							<tr><td>&nbsp;</td></tr>
+							<tr><th>1</th></tr>
+							<tr><th>2</th></tr>
+							<tr><th>3</th></tr>
+							<tr><th>4</th></tr>
+						</table>
+					</td>
+					<td>
+						<table>
+							<tr>
+								<th>A</th>
+								<th>B</th>
+							</tr>
+							<tr>
+								<th>수식</th>
+								<th>설명(결과)</th>
+							</tr>
+							<tr>
+								<td>=AND(1,1)</td>
+								<td>인수가 모두 1입니다. (참)</td>
+							</tr>
+							<tr>
+								<td>=AND(1,0)</td>
+								<td>인수 하나는 0입니다. (거짓)</td>
+							</tr>
+							<tr>
+								<td>=AND(2+2=4, 2+3=5)</td>
+								<td>인수가 모두 참으로 계산됩니다. (참)</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>	
+		<p><b class="bterm">실례2</b></p>
+			<p><a href="1.5.1.htm">실례의 리용방법</a>을 참고하십시오.</p>
+			<table>
+				<tr>
+					<td>
+						<table>
+							<tr><td>&nbsp;</td></tr>
+							<tr><th>1</th></tr>
+							<tr><th>2</th></tr>
+							<tr><th>3</th></tr>
+						</table>
+					</td>
+					<td>
+						<table>
+							<tr>
+								<th>A</th>
+							</tr>
+							<tr>
+								<th>자료</th>
+							</tr>
+							<tr>
+								<td>50</td>
+							</tr>
+							<tr>
+								<td>104</td>
+							</tr>
+							<tr>
+								<th>수식</th>
+								<th>설명(결과)</th>
+							</tr>
+							<tr>
+								<td>=AND(1&lt,A2, A2&lt,100)</td>
+								<td>50은 1과 100사이에 있습니다. (참)</td>
+							</tr>
+							<tr>
+								<td>=IF(AND(1&lt,A3, A3&lt,100), A3, "범위를 벗어난 값입니다.")</td>
+								<td>우의 수자들중 두번째 수자가 1과 100사이에 있으면 그 수(104)를 표시하고 그렇지 않으면 《범위를 벗어난 값입니다.》 를 표시합니다. (범위를 벗어난 값입니다.)</td>
+							</tr>
+							<tr>
+								<td>=IF(AND(1&lt,A2, A2&lt,100), A2, "범위를 벗어난 값입니다.")</td>
+								<td>우의 수자들중 첫번째 수자가 1과 100사이에 있으면 그 수(50)를 표시하고 그렇지 않으면 《범위를 벗어난 값입니다.》 를 표시합니다. (50)</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>	
+		</div>						
+		<script type="text/javascript" language="Javascript">footerView()</script>
+	
+</body>
+</html>																

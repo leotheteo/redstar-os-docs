@@ -1,0 +1,79 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+	<TITLE></TITLE>
+	<META NAME="GENERATOR" CONTENT="《Sogwang 3.0》  (Linux)">
+	<META NAME="CREATED" CONTENT="20091205;11384400">
+	<META NAME="CHANGED" CONTENT="20091205;11583800">
+	<STYLE TYPE="text/css">
+	<!--
+		H2 { margin-bottom: 0.18cm; font-family: "Bitstream Vera Sans", "Arial", "Helvetica", "Lucida", "Geneva", "Helmet", sans-serif, "Andale Sans UI", "Arial Unicode MS", "Lucida Sans Unicode", "Tahoma"; font-size: 14pt }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="ko-KP" DIR="LTR"><DIV style="margin-left: 25">
+<H1><A NAME="dateserial"></A><A NAME="bm_id3157896"></A><FONT FACE="Thorndale, serif"><SPAN LANG="en-US">DateSerial
+Function [Runtime]</SPAN></FONT></H1>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Returns
+a <B>Date</B> value for a specified year, month, or day.</SPAN></FONT></P>
+<H2><SPAN LANG="en-US">Syntax:</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">DateSerial
+(year, month, day)</SPAN></FONT></P>
+<H2><SPAN LANG="en-US">Return value:</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Date</SPAN></FONT></P>
+<H2><SPAN LANG="en-US">Parameters:</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Year:</B>
+Integer expression that indicates a year. All values between 0 and 99
+are interpreted as the years 1900-1999. For years that fall outside
+this range, you must enter all four digits.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Month:</B>
+Integer expression that indicates the month of the specified year.
+The accepted range is from 1-12.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Day:</B>
+Integer expression that indicates the day of the specified month. The
+accepted range is from 1-31. No error is returned when you enter a
+non-existing day for a month shorter than 31 days. </SPAN></FONT>
+</P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">The
+<B>DateSerial function</B> returns the number of days between
+December 30,1899 and the given date. You can use this function to
+calculate the difference between two dates.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">The
+<B>DateSerial function</B> returns the data type Variant with VarType
+7 (Date). Internally, this value is stored as a Double value, so that
+when the given date is 1.1.1900, the returned value is 2. Negative
+values correspond to dates before December 30, 1899 (not inclusive).</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">If a
+date is defined that lies outside of the accepted range,
+</SPAN></FONT><FONT FACE="청봉, serif"><SPAN LANG="en-US">Sogwang Basic
+returns an error message.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Whereas
+you define the <B>DateValue function</B> as a string that contains
+the date, the <B>DateSerial function</B> evaluates each of the
+parameters (year, month, day) as separate numeric expressions.</SPAN></FONT></P>
+<H2><A NAME="errorcode"></A><SPAN LANG="en-US">Error Codes </SPAN>
+</H2>
+<P><A NAME="err5"></A><FONT FACE="청봉, serif"><SPAN LANG="en-US">5
+Invalid procedure call </SPAN></FONT>
+</P>
+<H2><SPAN LANG="en-US">Example:</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Sub
+ExampleDateSerial</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Dim
+lDate as Long</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Dim
+sDate as String</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">lDate =
+DateSerial(1964, 4, 9)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">sDate =
+DateSerial(1964, 4, 9)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">msgbox
+lDate REM returns 23476</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">msgbox
+sDate REM returns 04/09/1964</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><SPAN STYLE="font-weight: medium">end
+sub</SPAN></SPAN></FONT></P>
+
+</DIV></BODY>
+</HTML>

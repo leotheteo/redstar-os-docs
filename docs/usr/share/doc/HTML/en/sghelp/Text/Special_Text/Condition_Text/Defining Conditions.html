@@ -1,0 +1,572 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+	<TITLE></TITLE>
+	<META NAME="GENERATOR" CONTENT="《Sogwang 3.0》  (Linux)">
+	<META NAME="CREATED" CONTENT="20091218;12103900">
+	<META NAME="CHANGED" CONTENT="20091218;12361900">
+	<STYLE TYPE="text/css">
+	<!--
+		P.listitem { font-family: "Bitstream Vera Sans", "Arial", "Helvetica", "Lucida", "Geneva", "Helmet", sans-serif, "Andale Sans UI", "Arial Unicode MS", "Lucida Sans Unicode", "Tahoma" }
+		H2 { margin-bottom: 0.18cm; font-family: "Bitstream Vera Sans", "Arial", "Helvetica", "Lucida", "Geneva", "Helmet", sans-serif, "Andale Sans UI", "Arial Unicode MS", "Lucida Sans Unicode", "Tahoma"; font-size: 14pt }
+		H3 { margin-bottom: 0.18cm; font-family: "Bitstream Vera Sans", "Arial", "Helvetica", "Lucida", "Geneva", "Helmet", sans-serif, "Andale Sans UI", "Arial Unicode MS", "Lucida Sans Unicode", "Tahoma"; font-size: 12pt }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="ko-KP" DIR="LTR"><DIV style="margin-left: 25">
+<H1><A NAME="bm_id3145828"></A><A NAME="defining_conditions"></A><FONT FACE="Thorndale, serif"><SPAN LANG="en-US">Defining
+Conditions </SPAN></FONT>
+</H1>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Conditions
+are logical expressions that you can use to control the display of
+<A HREF="../../Command_Menu/Toolbars/Toolbar/Status/Field.html">fields</A>
+and sections</A>
+in your document. Although the following examples apply to fields,
+they also apply to sections.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">You can
+define conditions for the following field types:</SPAN></FONT></P>
+<UL>
+	<LI><P CLASS="listitem"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Conditional text:
+	displays text A if the condition is true, or text B if the condition
+	is false.</SPAN></FONT></P>
+	<LI><P CLASS="listitem"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Hidden text: hides the
+	contents of the field if the condition is true.</SPAN></FONT></P>
+	<LI><P CLASS="listitem"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Hidden paragraph: hides
+	the paragraph if the condition is true.</SPAN></FONT></P>
+	<LI><P CLASS="listitem"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Any record and next
+	record: controls the access to database records.</SPAN></FONT></P>
+</UL>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">The
+simplest way to define a condition is to type the logical expression
+directly in a <B>Condition </B>box using the following values:</SPAN></FONT></P>
+<TABLE WIDTH=580 BORDER=1 CELLPADDING=2 CELLSPACING=0>
+	<COL WIDTH=43>
+	<COL WIDTH=527>
+	<TR VALIGN=TOP>
+		<TD WIDTH=43>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">TRUE</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=527>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">The
+			condition is always met. You can also enter any value not equal to
+			0 as the conditional text.</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=43>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">FALSE</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=527>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">The
+			condition is not met. You can also enter the value 0.</SPAN></FONT></P>
+		</TD>
+	</TR>
+</TABLE>
+<P STYLE="margin-top: 0.05cm; margin-bottom: 0cm"><BR>
+</P>
+<TABLE WIDTH=911 BORDER=0 CELLPADDING=5 CELLSPACING=0>
+	<COL WIDTH=33>
+	<COL WIDTH=487>
+	<TR>
+		<TD WIDTH=47>
+			<P><IMG SRC="../../../Image/note.png" NAME="graphics1" ALT="Note Icon " ALIGN=BOTTOM WIDTH=33 HEIGHT=42 BORDER=0></P>
+		</TD>
+		<TD WIDTH=844>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">If
+			you leave the <B>Condition </B>box empty, the condition is
+			interpreted as not being met.</SPAN></FONT></P>
+		</TD>
+	</TR>
+</TABLE>
+<P><BR><BR>
+</P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">When you
+define a condition, use the same elements</A>
+for defining a formula, namely comparative operators, mathematical
+and statistical functions, number formats, variables and constants.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">You can
+use the following types of variables when you define a condition:</SPAN></FONT></P>
+<UL>
+	<LI><P CLASS="listitem"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Predefined </SPAN>
+	Sogwang variables</A> that use statistics on document
+	properties</SPAN></FONT></P>
+	<LI><P CLASS="listitem"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Custom variables, that
+	are a created with the &quot;Set variable&quot; field</SPAN></FONT></P>
+	<LI><P CLASS="listitem"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Variables based on user
+	data</SPAN></FONT></P>
+	<LI><P CLASS="listitem"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Variables based on the
+	contents of database fields</SPAN></FONT></P>
+</UL>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">You
+cannot use internal variables, such as page and chapter numbers, in
+condition expression.</SPAN></FONT></P>
+<H2><SPAN LANG="en-US">Conditions and Variables</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">The
+following examples use a variable called &quot;x&quot;:</SPAN></FONT></P>
+<TABLE WIDTH=374 BORDER=1 CELLPADDING=2 CELLSPACING=0>
+	<COL WIDTH=104>
+	<COL WIDTH=260>
+	<TR VALIGN=TOP>
+		<TD WIDTH=104>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">x ==
+			1 or x EQ 1</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=260>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">The
+			condition is true if &quot;x&quot; is equal to 1.</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=104>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">x !=
+			1 or x NEQ 1</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=260>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">The
+			condition is true if &quot;x&quot; does not equal 1.</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=104>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">sinx
+			== 0</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=260>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">The
+			condition is true if &quot;x&quot; is a multiple of pi.</SPAN></FONT></P>
+		</TD>
+	</TR>
+</TABLE>
+<P><BR><BR>
+</P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">To use
+comparative operators with strings, the operands must be bounded by
+double quotation marks:</SPAN></FONT></P>
+<TABLE WIDTH=568 BORDER=1 CELLPADDING=2 CELLSPACING=0>
+	<COL WIDTH=159>
+	<COL WIDTH=399>
+	<TR VALIGN=TOP>
+		<TD WIDTH=159>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">x ==
+			&quot;ABC&quot; or x EQ &quot;ABC&quot;</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=399>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Checks
+			if variable &quot;x&quot; contains (true) the &quot;ABC&quot;
+			string, or not (false).</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=159>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">x ==
+			&quot;&quot; or x EQ &quot;&quot;</SPAN></FONT></P>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">or</SPAN></FONT></P>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">!x or
+			NOT x</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=399>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Checks
+			if the variable &quot;x&quot; contains an empty string.</SPAN></FONT></P>
+		</TD>
+	</TR>
+</TABLE>
+<P STYLE="margin-top: 0.05cm; margin-bottom: 0cm"><BR>
+</P>
+<TABLE WIDTH=930 BORDER=0 CELLPADDING=5 CELLSPACING=0>
+	<COL WIDTH=33>
+	<COL WIDTH=527>
+	<TR>
+		<TD WIDTH=47>
+			<P><IMG SRC="../../../Image/note.png" NAME="graphics2" ALT="Note Icon " ALIGN=BOTTOM WIDTH=33 HEIGHT=42 BORDER=0></P>
+		</TD>
+		<TD WIDTH=863>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">The
+			&quot;equal&quot; comparative operator must be represented by two
+			equal signs (==) in a condition. For example, if you define a
+			variable &quot;x&quot; with the value of 1, you can enter the
+			condition as x==1.</SPAN></FONT></P>
+		</TD>
+	</TR>
+</TABLE>
+<P><BR><BR>
+</P>
+<H3><SPAN LANG="en-US">User Data</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">You can
+include user data when you define conditions. To change your user
+data, choose <B>Sogwang Office - Reference - Sogwang Office-
+User data</B>. User data must be entered in the form of strings. You
+can query the user data with &quot;==&quot; (EQ), &quot;!=&quot;
+(NEQ), or &quot;!&quot;(NOT).</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">The
+following table lists user data variables and their meanings:</SPAN></FONT></P>
+<TABLE WIDTH=430 BORDER=1 CELLPADDING=2 CELLSPACING=0>
+	<COL WIDTH=87>
+	<COL WIDTH=333>
+	<TR VALIGN=TOP>
+		<TD WIDTH=87>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Variable</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=333>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Meaning</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=87>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">user_firstname</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=333>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">First
+			name</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=87>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">user_lastname</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=333>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Last
+			name</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=87>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">user_initials</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=333>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Initials</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=87>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">user_company</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=333>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Company</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=87>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">user_street</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=333>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Street</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=87>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">user_country</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=333>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Country</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=87>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">user_zipcode</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=333>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Zip
+			code</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=87>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">user_city</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=333>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">City</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=87>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">user_title</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=333>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Title</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=87>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">user_position</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=333>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Position</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=87>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">user_tel_work</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=333>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Business
+			telephone number</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=87>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">user_tel_home</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=333>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Home
+			telephone number</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=87>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">user_fax</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=333>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Fax
+			number</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=87>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">user_email</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=333>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">E-mail
+			address</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=87>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">user_state</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=333>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">State
+			(not in all </SPAN></FONT><FONT FACE="청봉, serif"><SPAN LANG="en-US">Sogwang versions)</SPAN></FONT></P>
+		</TD>
+	</TR>
+</TABLE>
+<P><BR><BR>
+</P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">For
+example, to hide a paragraph, text, or a section from a user with a
+specific initial, such as &quot;LM&quot;, enter the condition:
+user_initials==&quot;LM&quot;.</SPAN></FONT></P>
+<H2><SPAN LANG="en-US">Conditions and Database Fields</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">You can
+define conditions for accessing databases, or database fields. For
+example, you can check the contents of a database field from a
+condition, or use database fields in logical expressions. The
+following table lists a few more examples of using databases in
+conditions:</SPAN></FONT></P>
+<TABLE WIDTH=580 BORDER=1 CELLPADDING=2 CELLSPACING=0>
+	<COL WIDTH=235>
+	<COL WIDTH=335>
+	<TR VALIGN=TOP>
+		<TD WIDTH=235>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Example</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=335>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Meaning</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=235>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Database.Table.Company</SPAN></FONT></P>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Database.Table.Company
+			NEQ &quot;&quot;</SPAN></FONT></P>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Database.Table.Company
+			!= &quot;&quot;</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=335>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">The
+			condition is true if the COMPANY field is not empty. (In the first
+			example, no operator is required.)</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=235>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">!Database.Table.Company</SPAN></FONT></P>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">NOT
+			Database.Table.Company</SPAN></FONT></P>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Database.Table.Company
+			EQ &quot;&quot;</SPAN></FONT></P>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Database.Table.Company
+			==&quot;&quot;</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=335>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Returns
+			TRUE if the COMPANY field is empty. (Exclamation sign represents a
+			logical NOT.)</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=235>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Database.Table.Company
+			!=&quot;Sun Microsystems&quot;</SPAN></FONT></P>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Database.Table.Company
+			NEQ &quot;Sun Microsystems&quot;</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=335>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Returns
+			TRUE if the current entry in the COMPANY field is &quot;Sun
+			Microsystems&quot;.</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=235>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Database.Table.Firstname
+			AND Database.Table.Name</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=335>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Returns
+			TRUE if the record contains the first and the last name.</SPAN></FONT></P>
+		</TD>
+	</TR>
+</TABLE>
+<P STYLE="margin-top: 0.05cm; margin-bottom: 0cm"><BR>
+</P>
+<TABLE WIDTH=914 BORDER=0 CELLPADDING=5 CELLSPACING=0>
+	<COL WIDTH=33>
+	<COL WIDTH=527>
+	<TR>
+		<TD WIDTH=47>
+			<P><IMG SRC="../../../Image/note.png" NAME="graphics3" ALT="Note Icon " ALIGN=BOTTOM WIDTH=33 HEIGHT=42 BORDER=0></P>
+		</TD>
+		<TD WIDTH=847>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Note
+			the difference between the boolean NOT &quot;!&quot; and the
+			comparative operator not equal &quot;!=&quot; (NEQ).</SPAN></FONT></P>
+		</TD>
+	</TR>
+</TABLE>
+<P><BR><BR>
+</P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">When you
+refer to a database field in a condition, use the form
+Databasename.Tablename.Fieldname. If one of the names contains a
+character that is an operator, such as a minus sign (-), enclose the
+name in square brackets, for example,
+Databasename.[Table-name].Fieldname. Never use spaces inside field
+names.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Example:
+Hiding an Empty Database Field</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">You may
+want to create a condition that hides an empty field, for example, if
+the COMPANY field is empty for some of the data records.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Select
+the <B>Hidden Paragraph</B> box, and type the following condition:
+Addressbook.Addresses.Company EQ &quot;&quot;</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">or type
+the following</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">NOT
+Addressbook.Addresses.Company</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">If the
+COMPANY database field is empty, the condition is true and the
+paragraph is hidden.</SPAN></FONT></P>
+<TABLE WIDTH=919 BORDER=0 CELLPADDING=5 CELLSPACING=0>
+	<COL WIDTH=33>
+	<COL WIDTH=527>
+	<TR>
+		<TD WIDTH=47>
+			<P><IMG SRC="../../../Image/note.png" NAME="graphics4" ALT="Note Icon " ALIGN=BOTTOM WIDTH=33 HEIGHT=42 BORDER=0></P>
+		</TD>
+		<TD WIDTH=852>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">To
+			display hidden paragraphs on the screen, you can choose <B>Sogwang Office - Reference - Sogwang Office Writer
+			- Formatting Aids</B>, and clear the <B>Hidden paragraphs</B>
+			check box.</SPAN></FONT></P>
+		</TD>
+	</TR>
+</TABLE>
+<P><BR><BR>
+</P>
+<H2><SPAN LANG="en-US">Examples of Conditions in Fields</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">The
+following examples use the Conditional text field, although they can
+be applied to any fields that can be linked to a condition. The
+syntax used for conditions is also used for the Hidden text, Hidden
+paragraph, Any record or Next record fields.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">To display conditional text based on the
+number of pages:</SPAN></H3>
+<OL>
+	<LI><P CLASS="listitem"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Choose <B>Insert - Fields
+	- Other</B>, and then click the <B>Functions</B> tab.</SPAN></FONT></P>
+	<LI><P CLASS="listitem"><FONT FACE="청봉, serif"><SPAN LANG="en-US">In the <B>Type</B> list,
+	click &quot;Conditional text&quot;.</SPAN></FONT></P>
+	<LI><P CLASS="listitem"><FONT FACE="청봉, serif"><SPAN LANG="en-US">In the <B>Condition </B>box,
+	type &quot;page == 1&quot;.</SPAN></FONT></P>
+	<LI><P CLASS="listitem"><FONT FACE="청봉, serif"><SPAN LANG="en-US">In the <B>Then</B> box,
+	type &quot;There is only one page&quot;.</SPAN></FONT></P>
+	<LI><P CLASS="listitem"><FONT FACE="청봉, serif"><SPAN LANG="en-US">In the <B>Or </B>box,
+	type &quot;There are several pages&quot;.</SPAN></FONT></P>
+	<LI><P CLASS="listitem"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Click <B>Insert</B>, and
+	then click <B>Close</B>.</SPAN></FONT></P>
+</OL>
+<H3><SPAN LANG="en-US">To display conditional text based on a
+user-defined Variable</SPAN></H3>
+<OL>
+	<LI><P CLASS="listitem"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Choose <B>Insert - Fields
+	- Other</B>, and then click the <B>Variables</B> tab.</SPAN></FONT></P>
+	<LI><P CLASS="listitem"><FONT FACE="청봉, serif"><SPAN LANG="en-US">In the <B>Type </B>list,
+	click &quot;Set Variable&quot;.</SPAN></FONT></P>
+	<LI><P CLASS="listitem"><FONT FACE="청봉, serif"><SPAN LANG="en-US">In the <B>Name</B> box,
+	type &quot;Profit&quot;.</SPAN></FONT></P>
+	<LI><P CLASS="listitem"><FONT FACE="청봉, serif"><SPAN LANG="en-US">In the <B>Value</B> box,
+	type &quot;5000&quot;.</SPAN></FONT></P>
+	<LI><P CLASS="listitem"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Click <B>Insert</B>.</SPAN></FONT></P>
+	<LI><P CLASS="listitem"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Click the <B>Functions</B>
+	tab, and click &quot;Conditional text&quot; in the <B>Type</B> list.</SPAN></FONT></P>
+	<LI><P CLASS="listitem"><FONT FACE="청봉, serif"><SPAN LANG="en-US">In the <B>Condition</B>
+	box, type &quot;Profit &lt; 5000&quot;.</SPAN></FONT></P>
+	<LI><P CLASS="listitem"><FONT FACE="청봉, serif"><SPAN LANG="en-US">In the <B>Then</B> box,
+	type &quot;Target is not met&quot;.</SPAN></FONT></P>
+	<LI><P CLASS="listitem"><FONT FACE="청봉, serif"><SPAN LANG="en-US">In the <B>Or </B>box,
+	type &quot;Target is met&quot;.</SPAN></FONT></P>
+	<LI><P CLASS="listitem"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Click <B>Insert</B>.</SPAN></FONT></P>
+</OL>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">To edit
+the contents of the &quot;Profit&quot; variable, double-click the
+variable field.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">To display conditional text based on the
+contents of a database field:</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">The
+first part of this example inserts a space between the &quot;First
+Name&quot; and &quot;Last Name&quot; fields in a document, and the
+second part inserts text based on the contents of a field. This
+example requires that an address data source is registered with
+</SPAN></FONT><FONT FACE="청봉, serif"><SPAN LANG="en-US">Sogwang .</SPAN></FONT></P>
+<OL>
+	<LI><P CLASS="listitem"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Choose <B>Insert - Fields
+	- Other</B>, and then click the <B>Database</B> tab.</SPAN></FONT></P>
+	<LI><P CLASS="listitem"><FONT FACE="청봉, serif"><SPAN LANG="en-US">In the <B>Type </B>list,
+	click &quot;Mail merge fields&quot;.</SPAN></FONT></P>
+	<LI><P CLASS="listitem"><FONT FACE="청봉, serif"><SPAN LANG="en-US">In the <B>Database
+	selection</B> box, double-click an address book, click &quot;First
+	Name&quot;, and then click <B>Insert</B>. Repeat for &quot;Last
+	Name&quot;.</SPAN></FONT></P>
+	<LI><P CLASS="listitem"><FONT FACE="청봉, serif"><SPAN LANG="en-US">In the document, place
+	the cursor between the two fields, press Space, and then return to
+	the <B>Fields </B>dialog:</SPAN></FONT></P>
+	<LI><P CLASS="listitem"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Click the <B>Functions</B>
+	tab, and then click &quot;Conditional text&quot; in the <B>Type</B>
+	list.</SPAN></FONT></P>
+	<LI><P CLASS="listitem"><FONT FACE="청봉, serif"><SPAN LANG="en-US">In the <B>Condition </B>box,
+	type: &quot;Addressbook.addresses.firstname&quot;.</SPAN></FONT></P>
+	<LI><P CLASS="listitem"><FONT FACE="청봉, serif"><SPAN LANG="en-US">In the <B>Then </B>box,
+	type a space and leave the <B>Or </B>box blank.</SPAN></FONT></P>
+</OL>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">You can
+now use a condition to insert text based on the contents of the First
+Name field.</SPAN></FONT></P>
+<OL>
+	<LI><P CLASS="listitem"><FONT FACE="청봉, serif"><SPAN LANG="en-US">In the <B>Fields </B>dialog,
+	click the <B>Functions </B>tab.</SPAN></FONT></P>
+	<LI><P CLASS="listitem"><FONT FACE="청봉, serif"><SPAN LANG="en-US">In the <B>Type </B>box,
+	click &quot;Conditional text&quot;.</SPAN></FONT></P>
+	<LI><P CLASS="listitem"><FONT FACE="청봉, serif"><SPAN LANG="en-US">In the <B>Condition </B>box,
+	type: Addressbook.addresses.firstname == &quot;Michael&quot;</SPAN></FONT></P>
+	<LI><P CLASS="listitem"><FONT FACE="청봉, serif"><SPAN LANG="en-US">In the <B>Then </B>box,
+	type &quot;Dear&quot;.</SPAN></FONT></P>
+	<LI><P CLASS="listitem"><FONT FACE="청봉, serif"><SPAN LANG="en-US">In the <B>Or </B>box,
+	type &quot;Hello&quot;.</SPAN></FONT></P>
+	<LI><P CLASS="listitem"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Click
+	<B>Insert</B>.</A></SPAN></FONT></P>
+</OL>
+
+</DIV></BODY>
+</HTML>

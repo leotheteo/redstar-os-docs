@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="text/calendar">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <alias type="text/x-vcalendar"/>
+  <comment>VCS/ICS calendar</comment>
+  <acronym>VCS/ICS</acronym>
+  <expanded-acronym>vCalendar/iCalendar</expanded-acronym>
+</mime-type>

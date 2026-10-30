@@ -1,0 +1,237 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+	<TITLE></TITLE>
+	<META NAME="GENERATOR" CONTENT="《Sogwang 3.0》  (Linux)">
+	<META NAME="CREATED" CONTENT="20091205;10241300">
+	<META NAME="CHANGED" CONTENT="20091205;10544100">
+	<STYLE TYPE="text/css">
+	<!--
+		H2 { margin-bottom: 0.18cm; font-family: "Bitstream Vera Sans", "Arial", "Helvetica", "Lucida", "Geneva", "Helmet", sans-serif, "Andale Sans UI", "Arial Unicode MS", "Lucida Sans Unicode", "Tahoma"; font-size: 14pt }
+		TD P.tableheadintable { margin-bottom: 0.05cm; font-weight: bold }
+		TD P.tablecontentintable { font-family: "Bitstream Vera Sans", "Arial", "Helvetica", "Lucida", "Geneva", "Helmet", sans-serif, "Andale Sans UI", "Arial Unicode MS", "Lucida Sans Unicode", "Tahoma" }
+		TD P.howtogetheader { background: #ffffff; border: 1px solid #999999; padding: 0.08cm; font-weight: bold }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="ko-KP" DIR="LTR"><DIV style="margin-left: 25">
+<H1><A NAME="bm_id3154536"></A><FONT FACE="Thorndale, serif"><SPAN LANG="en-US">Date
+&amp; Time Functions</SPAN></FONT></H1>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">These
+spreadsheet functions are used for inserting and editing dates and
+times. </SPAN></FONT>
+</P>
+
+<TABLE WIDTH=95% BORDER=1 CELLPADDING=3 CELLSPACING=0 BGCOLOR="#eeeeee">
+	<COL WIDTH=256*>
+	<TR>
+		<TD WIDTH=100%>
+			<P CLASS="howtogetheader"><FONT FACE="청봉, serif"><SPAN LANG="en-US">To
+			access this command... </SPAN></FONT>
+			</P>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><SPAN STYLE="background: #eeeeee"><B>Insert
+			- Function</B> - Category <B>Date&amp;Time</B> </SPAN></SPAN></FONT>
+			</P>
+		</TD>
+	</TR>
+</TABLE>
+<P STYLE="margin-top: 0.05cm; margin-bottom: 0cm">
+<BR>
+</P>
+<TABLE WIDTH=924 BORDER=0 CELLPADDING=5 CELLSPACING=0>
+	<COL WIDTH=33>
+	<COL WIDTH=584>
+	<TR>
+		<TD WIDTH=46>
+			<P><IMG SRC="../../Image/note.png" NAME="graphics1" ALT="Note Icon " ALIGN=BOTTOM WIDTH=33 HEIGHT=42 BORDER=0></P>
+		</TD>
+		<TD WIDTH=858>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">The
+			functions whose names end with _ADD return the same results as the
+			corresponding Microsoft Excel functions. Use the functions without
+			_ADD to get results based on international standards. For example,
+			the WEEKNUM function calculates the week number of a given date
+			based on international standard ISO 6801, while WEEKNUM_ADD
+			returns the same week number as Microsoft Excel.</SPAN></FONT></P>
+		</TD>
+	</TR>
+</TABLE>
+<P><BR><BR>
+</P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Sogwang internally
+handles a date/time value as a numerical value. If you assign the
+numbering format &quot;Number&quot; to a date or time value, it is
+converted to a number. For example, 01/01/2000 12:00 PM, converts to
+36526.5. The value preceding the decimal point corresponds to the
+date; the value following the decimal point corresponds to the time.
+If you do not want to see this type of numerical date or time
+representation, change the number format (date or time) accordingly.
+To do this, select the cell containing the date or time value, call
+its context menu and select <B>Format Cells</B>. The <B>Numbers</B>
+tab page contains the functions for defining the number format.</SPAN></FONT></P>
+<H2><SPAN LANG="en-US">Date base for day zero</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Dates
+are calculated as offsets from a starting day zero. You can set the
+day zero to be one of the following:</SPAN></FONT></P>
+<TABLE WIDTH=340 BORDER=1 CELLPADDING=2 CELLSPACING=0>
+	<COL WIDTH=69>
+	<COL WIDTH=170>
+	<TR VALIGN=TOP>
+		<TD WIDTH=92>
+			<P CLASS="tableheadintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Date
+			base</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=234>
+			<P CLASS="tableheadintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Use</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=92>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">'12/30/1899'</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=234>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">(default)</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=92>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">'01/01/1900'</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=234>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">(used in former
+			StarCalc 1.0)</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=92>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">'01/01/1904'</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=234>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">(used in Apple
+			software)</SPAN></FONT></P>
+		</TD>
+	</TR>
+</TABLE>
+<P><BR><BR>
+</P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Choose
+<B>Sogwang Office - Reference - Sogwang Office Calc
+- Calculate</B> to select the date base.</SPAN></FONT></P>
+<TABLE WIDTH=945 BORDER=0 CELLPADDING=5 CELLSPACING=0>
+	<COL WIDTH=25>
+	<COL WIDTH=592>
+	<TR>
+		<TD WIDTH=46>
+			<P><IMG SRC="../../Image/warning.png" NAME="graphics2" ALT="Warning Icon " ALIGN=BOTTOM WIDTH=25 HEIGHT=42 BORDER=0></P>
+		</TD>
+		<TD WIDTH=879>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">When
+			you copy and paste cells containing date values between different
+			spreadsheets, both spreadsheet documents must be set to the same
+			date base. If date bases differ, the displayed date values will
+			change!</SPAN></FONT></P>
+		</TD>
+	</TR>
+</TABLE>
+<P><BR><BR>
+</P>
+<H2><SPAN LANG="en-US">Two digits years</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">In <B>Sogwang Office - Reference - Sogwang Office-
+General</B> you find the area <B>Year (two digits)</B>. This sets the
+period for which two-digit information applies. Note that changes
+made here have an effect on some of the following functions.</SPAN></FONT></P>
+<TABLE WIDTH=947 BORDER=0 CELLPADDING=5 CELLSPACING=0>
+	<COL WIDTH=33>
+	<COL WIDTH=584>
+	<TR>
+		<TD WIDTH=47>
+			<P><IMG SRC="../../Image/note.png" NAME="graphics3" ALT="Note Icon " ALIGN=BOTTOM WIDTH=33 HEIGHT=42 BORDER=0></P>
+		</TD>
+		<TD WIDTH=880>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">When
+			entering dates, slashes or dashes used as date separators may be
+			interpreted as arithmetic operators. Therefore, dates entered in
+			this format are not always recognized as dates and result in
+			erroneous calculations. To keep dates from being interpreted as
+			parts of formulas, place them in quotation marks, for example,
+			&quot;07/20/54&quot;.</SPAN></FONT></P>
+		</TD>
+	</TR>
+</TABLE>
+<P><BR><BR>
+</P>
+<H2><SPAN LANG="en-US">Functions</SPAN></H2>
+<P><A NAME="workday"></A><FONT FACE="청봉, serif"><SPAN LANG="en-US"><A HREF="Date & Time Functions/WORKDAY.html">WORKDAY</A>
+</SPAN></FONT>
+</P>
+<P><A NAME="yearfrac"></A><FONT FACE="청봉, serif"><SPAN LANG="en-US"><A HREF="Date & Time Functions/YEARFRAC.html">YEARFRAC</A>
+</SPAN></FONT>
+</P>
+<P><A NAME="date"></A><FONT FACE="청봉, serif"><SPAN LANG="en-US"><A HREF="Date & Time Functions/DATE.html">DATE</A>
+</SPAN></FONT>
+</P>
+<P><A NAME="datevalue"></A><FONT FACE="청봉, serif"><SPAN LANG="en-US"><A HREF="Date & Time Functions/DATEVALUE.html">DATEVALUE</A>
+</SPAN></FONT>
+</P>
+<P><A NAME="edate"></A><FONT FACE="청봉, serif"><SPAN LANG="en-US"><A HREF="Date & Time Functions/EDATE.html">EDATE</A>
+</SPAN></FONT>
+</P>
+<P><A NAME="today"></A><FONT FACE="청봉, serif"><SPAN LANG="en-US"><A HREF="Date & Time Functions/TODAY.html">TODAY</A>
+</SPAN></FONT>
+</P>
+<P><A NAME="year"></A><FONT FACE="청봉, serif"><SPAN LANG="en-US"><A HREF="Date & Time Functions/YEAR.html">YEAR</A>
+</SPAN></FONT>
+</P>
+<P><A NAME="now"></A><FONT FACE="청봉, serif"><SPAN LANG="en-US"><A HREF="Date & Time Functions/NOW.html">NOW</A>
+</SPAN></FONT>
+</P>
+<P><A NAME="weeknum"></A><FONT FACE="청봉, serif"><SPAN LANG="en-US"><A HREF="Date & Time Functions/WEEKNUM.html">WEEKNUM</A>
+</SPAN></FONT>
+</P>
+<P><A NAME="weeknumadd"></A><FONT FACE="청봉, serif"><SPAN LANG="en-US"><A HREF="Date & Time Functions/WEEKNUM_ADD.html">WEEKNUM_ADD</A>
+</SPAN></FONT>
+</P>
+<P><A NAME="minute"></A><FONT FACE="청봉, serif"><SPAN LANG="en-US"><A HREF="Date & Time Functions/MINUTE.html">MINUTE</A>
+</SPAN></FONT>
+</P>
+<P><A NAME="month"></A><FONT FACE="청봉, serif"><SPAN LANG="en-US"><A HREF="Date & Time Functions/MONTH.html">MONTH</A>
+</SPAN></FONT>
+</P>
+<P><A NAME="eomonth"></A><FONT FACE="청봉, serif"><SPAN LANG="en-US"><A HREF="Date & Time Functions/EOMONTH.html">EOMONTH</A>
+</SPAN></FONT>
+</P>
+<P><A NAME="networkdays"></A><FONT FACE="청봉, serif"><SPAN LANG="en-US"><A HREF="Date & Time Functions/NETWORKDAYS.html">NETWORKDAYS</A>
+</SPAN></FONT>
+</P>
+<P><A NAME="eastersunday"></A><FONT FACE="청봉, serif"><SPAN LANG="en-US"><A HREF="Date & Time Functions/EASTERSUNDAY.html">EASTERSUNDAY</A>
+</SPAN></FONT>
+</P>
+<P><A NAME="second"></A><FONT FACE="청봉, serif"><SPAN LANG="en-US"><A HREF="Date & Time Functions/SECOND.html">SECOND</A>
+</SPAN></FONT>
+</P>
+<P><A NAME="hour"></A><FONT FACE="청봉, serif"><SPAN LANG="en-US"><A HREF="Date & Time Functions/HOUR.html">HOUR</A>
+</SPAN></FONT>
+</P>
+<P><A NAME="day"></A><FONT FACE="청봉, serif"><SPAN LANG="en-US"><A HREF="Date & Time Functions/DAY.html">DAY</A>
+</SPAN></FONT>
+</P>
+<P><A NAME="days"></A><FONT FACE="청봉, serif"><SPAN LANG="en-US"><A HREF="Date & Time Functions/DAYS.html">DAYS</A>
+</SPAN></FONT>
+</P>
+<P><A NAME="days360"></A><FONT FACE="청봉, serif"><SPAN LANG="en-US"><A HREF="Date & Time Functions/DAYS360.html">DAYS360</A>
+</SPAN></FONT>
+</P>
+<P><A NAME="weekday"></A><FONT FACE="청봉, serif"><SPAN LANG="en-US"><A HREF="Date & Time Functions/WEEKDAY.html">WEEKDAY</A>
+</SPAN></FONT>
+</P>
+<P><A NAME="time"></A><FONT FACE="청봉, serif"><SPAN LANG="en-US"><A HREF="Date & Time Functions/TIME.html">TIME</A>
+</SPAN></FONT>
+</P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><SPAN STYLE="font-weight: medium"><A HREF="Date & Time Functions/TIMEVALUE.html">TIMEVALUE</A>
+</SPAN></SPAN></FONT>
+</P>
+
+</DIV></BODY>
+</HTML>
+

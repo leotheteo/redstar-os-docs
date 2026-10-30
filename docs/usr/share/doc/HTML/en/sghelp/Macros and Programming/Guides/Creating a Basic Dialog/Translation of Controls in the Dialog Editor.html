@@ -1,0 +1,117 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+	<TITLE></TITLE>
+	<META NAME="GENERATOR" CONTENT="《Sogwang 3.0》  (Linux)">
+	<META NAME="CREATED" CONTENT="20100317;17035900">
+	<META NAME="CHANGED" CONTENT="20100317;17045000">
+	<STYLE TYPE="text/css">
+	<!--
+		H2 { margin-bottom: 0.18cm; font-family: "Bitstream Vera Sans", "Arial", "Helvetica", "Lucida", "Geneva", "Helmet", sans-serif, "Andale Sans UI", "Arial Unicode MS", "Lucida Sans Unicode", "Tahoma"; font-size: 14pt }
+		P.related { margin-top: 0.71cm; margin-bottom: 0.05cm; border-top: 1px solid #000000; border-bottom: none; border-left: none; border-right: none; padding-top: 0.05cm; padding-bottom: 0cm; padding-left: 0cm; padding-right: 0cm; font-weight: bold }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="ko-KP" DIR="LTR"><DIV style="margin-left: 25">
+<H1><A NAME="bm_id8915372"></A><A NAME="translation"></A><FONT FACE="Thorndale, serif"><SPAN LANG="en-US">Translation
+of Controls in the Dialog Editor </SPAN></FONT>
+</H1>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">The Language toolbar
+in the Basic IDE dialog editor shows controls to enable and manage
+localizable dialogs.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">By default, any
+dialog that you create only contains string resources for one
+language. You may want to create dialogs that automatically show
+localized strings according to the user's language settings.</SPAN></FONT></P>
+<H2><A NAME="bm_id9421979"></A>
+<SPAN LANG="en-US">To enable localizable dialogs</SPAN></H2>
+<OL>
+	<LI><P><FONT FACE="청봉, serif"><SPAN LANG="en-US">In the Basic
+	IDE dialog editor, open the Language toolbar choosing <B>View -
+	Toolbars - Language</B>. </SPAN></FONT>
+	</P>
+	<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">If the current
+	library already contains a localizable dialog, the Language toolbar
+	is shown automatically.</SPAN></FONT></P>
+	<LI><P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Click the
+	<B>Manage Languages</B> icon 
+	<IMG SRC="../../../Image/sc_managelanguage.png" NAME="graphics1" ALT="Manage Language icon" ALIGN=BOTTOM WIDTH=16 HEIGHT=16 BORDER=0>
+	on the Language toolbar or on the Toolbox bar.</SPAN></FONT></P>
+	<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">You see the Manage
+	User Interface Language dialog. The dialog manages languages for the
+	current library. The name of the current library is shown on the
+	title bar.</SPAN></FONT></P>
+	<LI><P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Click Add in
+	the dialog to add a language entry. </SPAN></FONT>
+	</P>
+	<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">This step enables
+	all new dialogs to contain localizable string resources.</SPAN></FONT></P>
+	<LI><P><FONT FACE="청봉, serif"><SPAN LANG="en-US">The first time
+	you click Add, you see the Set Default User Interface Language
+	dialog. The following times you click Add, this dialog has the name
+	Add User Interface Language.</SPAN></FONT></P>
+	<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">You can also change
+	the default language in the Manage User Interface Language dialog.</SPAN></FONT></P>
+	<LI><P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Select a
+	language. </SPAN></FONT>
+	</P>
+	<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">This adds string
+	resources to contain the translated versions of all strings to the
+	dialog properties. The set of dialog strings of the default language
+	is copied to the new set of strings. Later, you can switch to the
+	new language and then translate the strings.</SPAN></FONT></P>
+	<LI><P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Close the
+	dialog or add additional languages.</SPAN></FONT></P>
+</OL>
+<H2><SPAN LANG="en-US">To edit localizable controls in your dialog</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Once you have added
+the resources for localizable strings in your dialogs, you can select
+the current language from the Current Language listbox on the
+Language toolbar.</SPAN></FONT></P>
+<OL>
+	<LI><P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Switch the
+	Current Language listbox to display the default language.</SPAN></FONT></P>
+	<LI><P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Insert any
+	number of controls to your dialog and enter all strings you want.</SPAN></FONT></P>
+	<LI><P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Select another
+	language in the Current Language listbox.</SPAN></FONT></P>
+	<LI><P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Using the
+	control's property dialogs, edit all strings to the other language.</SPAN></FONT></P>
+	<LI><P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Repeat for all
+	languages that you added.</SPAN></FONT></P>
+</OL>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">The user of your
+dialog will see the strings of the user interface language of the
+user's version of </SPAN></FONT><FONT FACE="청봉, serif"><SPAN LANG="en-US">Sogwang ,
+if you did provide strings in that language. </SPAN></FONT>
+</P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">If no language
+matches the user's version, the user will see the default language
+strings. </SPAN></FONT>
+</P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">If the user has an
+older version of </SPAN></FONT><FONT FACE="청봉, serif"><SPAN LANG="en-US">Sogwang that does not know
+localizable string resources for Basic dialogs, the user will see the
+default language strings.</SPAN></FONT></P>
+<P CLASS="related"><A NAME="relatedtopics"></A><A NAME="related"></A><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Related
+Topics</B> </SPAN></FONT>
+</P>
+<P STYLE="margin-left: 0.13cm; margin-top: 0.05cm; margin-bottom: 0.05cm"><A NAME="create_dialog"></A>
+<FONT FACE="청봉, serif"><SPAN LANG="en-US"><SPAN STYLE="font-weight: medium"><A href="../Creating a Basic Dialog.html">Creating
+a Basic Dialog</A> </SPAN></SPAN></FONT>
+</P>
+<P STYLE="margin-left: 0.13cm; margin-top: 0.05cm; margin-bottom: 0.05cm"><A NAME="insert_control"></A>
+<FONT FACE="청봉, serif"><SPAN LANG="en-US"><SPAN STYLE="font-weight: medium"><A href="../Creating Controls in the Dialog Editor.html">Creating
+Controls in the Dialog Editor</A> </SPAN></SPAN></FONT>
+</P>
+<P STYLE="margin-left: 0.13cm; margin-top: 0.05cm; margin-bottom: 0.05cm"><A NAME="show_dialog"></A>
+<FONT FACE="청봉, serif"><SPAN LANG="en-US"><SPAN STYLE="font-weight: medium"><A href="../Opening a Dialog With Program Code.html">Opening
+a Dialog With Program Code</A> </SPAN></SPAN></FONT>
+</P>
+<P STYLE="margin-left: 0.13cm; margin-top: 0.05cm; margin-bottom: 0.05cm">
+<FONT FACE="청봉, serif"><SPAN LANG="en-US"><SPAN STYLE="font-weight: medium"><A href="../Programming Examples for Controls in the Dialog Editor.html">Programming
+Examples for Controls in the Dialog Editor</A> </SPAN></SPAN></FONT>
+</P></DIV>
+</BODY>
+</HTML>

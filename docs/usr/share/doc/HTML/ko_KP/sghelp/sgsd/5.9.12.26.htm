@@ -1,0 +1,103 @@
+<html dir='ltr'>
+	<head>
+		<META http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+		<title>TEXT</title>
+		<link rel='stylesheet' type='text/css' href='../css/main.css'/>
+		<script type='text/javascript' language='Javascript' src='../js/mexpcol.js'></script>
+		<script type='text/javascript' language='JavaScript' src='../js/glossary.js'></script>
+	</head>
+	<body>
+		<h1>&nbsp;<img align="absbottom" src="../image/external_images/crystal/svtools/res/new_doc.png"/>&nbsp;TEXT</h1>
+		<p id='ExpandAllLine' class='ExpFav'>
+			<a href='#' onClick='ExpandAll()' onKeyPress='ExpandAll()' class='DropDown'>
+				<img id='picHeader' border='0' src='../image/image/common/expandtri.gif' alt='모두 표시'>
+				<span id='ExpandAll'>모두 표시</span>
+			</a>
+		</p>
+		<p><b class="bterm">참고항목</b>&emsp;
+			<a href="5.9.12.1.htm">본문함수목록</a>,
+			<a href="5.9.12.9.htm">DOLLAR</a>,
+			<a href="5.9.12.12.htm">FIXED</a>,
+			<a href="5.9.12.25.htm">T</a>,
+			<a href="5.9.12.29.htm">VALUE</a>
+		</p>
+		<p>지정한 서식에 따라 수값을 본문으로 변환합니다.</p>
+		<p><b class="bterm">문법:&emsp;&emsp;		TEXT(수값,서식)</b></p>
+		<table>
+			<tr>
+				<th>인수명</th>
+				<th>설명</th>
+			</tr>
+			<tr>
+				<td>수값</td>
+				<td>변환할 수값입니다. 수값, 수값을 계산하는 수식 또는 수값이 포함된 세포의 참조입니다.</td>
+			</tr>
+			<tr>
+				<td>서식</td>
+				<td>서식을 서술하는 본문입니다. 세포서식에 설정된 언어에 따라 소수 및 천단위구분기호를 사용합니다.</td>
+			</tr>
+		</table>
+		<p><b class="bterm">주의</b></p>
+			<ul>
+				<li><b class="bterm">서식</b>에 별표(*)는 포함될수 없습니다.</li>
+				<li><b class="bterm">&lt;서식&gt;</b>차림표의 <b class="bterm">&lt;세포&gt;</b>지령을 찰칵하고 <b class="bterm">&lt;수자&gt;</b>표쪽에서 세포서식을 정하면 값은 변경되지 않고 서식만 변경됩니다. <b class="bterm">TEXT</b>함수를 사용하면 값이 서식이 지정된 본문으로 바뀌고 그 결과는 더이상 수자로 계산되지 않습니다.</li>
+			</ul>
+		<p><b class="bterm">실례</b></p>
+			<p><a href="1.5.1.htm">실례의 리용방법</a>을 참고하십시오.</p>
+			<table>
+				<tr>
+					<td>
+						<table>
+							<tr>
+								<td class="noborder">&nbsp;
+								</td>
+							</tr>
+							<tr>
+								<th>1</th>
+							</tr>
+							<tr>
+								<th>2</th>
+							</tr>
+							<tr>
+								<th>3</th>
+							</tr>
+						</table>
+					</td>
+					<td>
+						<table>
+							<tr>
+								<th>A</th>
+								<th>B</th>
+							</tr>
+							<tr>
+								<th>판매원</th>
+								<th>판매</th>
+							</tr>
+							<tr>
+								<td>김명국 </td>
+								<td>28</td>
+							</tr>
+							<tr>
+								<td>김경희</td>
+								<td>40%</td>
+							</tr>
+							<tr>
+								<th>수식</th>
+								<th>설명(결과)</th>
+							</tr>
+							<tr>
+								<td>=A2&"은 신발을 "&TEXT(B2, "\0.00")&"원에 샀다."</td>
+								<td>우에 있는 내용들을 결합합니다. (김명국은 신발을 280.00원에 샀다.)</td>
+							</tr>
+							<tr>
+								<td>=A3&"는 계획을 "&TEXT(B3,"0%")&"로 수행하였다. "</td>
+								<td>우에 있는 내용들을 결합합니다. (김경희는 계획을 40%로 수행하였다.)</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+		<script type="text/javascript" language="Javascript">footerView()</script>
+	
+</body>
+</html>				

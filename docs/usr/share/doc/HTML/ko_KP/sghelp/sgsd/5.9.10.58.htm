@@ -1,0 +1,122 @@
+﻿<html dir='ltr'>
+	<head>
+		<META http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+		<title>RANK</title>
+		<link rel='stylesheet' type='text/css' href='../css/main.css'/>
+		<script type='text/javascript' language='Javascript' src='../js/mexpcol.js'></script>
+		<script type='text/javascript' language='JavaScript' src='../js/glossary.js'></script>
+	</head>
+	<body>
+		<h1>&nbsp;<img align="absbottom" src="../image/external_images/crystal/svtools/res/new_doc.png"/>&nbsp;RANK</h1>
+		<p id='ExpandAllLine' class='ExpFav'>
+			<a href='#' onClick='ExpandAll()' onKeyPress='ExpandAll()' class='DropDown'>
+				<img id='picHeader' border='0' src='../image/image/common/expandtri.gif' alt='모두 표시'>
+				<span id='ExpandAll'>모두 표시</span>
+			</a>
+		</p>
+		<p><b class="bterm">참고항목</b>&emsp;
+			<a href="5.9.10.1.htm">통계함수목록</a>
+		</p>
+		<p>표본집단에서 값의 순위를 구합니다.</p>
+		<p><b class="bterm">문법:&emsp;&emsp;		RANK(값,자료,류형)</b></p>
+		<table>
+			<tr>
+				<th>인수명</th>
+				<th>설명</th>
+			</tr>
+			<tr>
+				<td>값</td>
+				<td>순위를 지정하는 값입니다.</td>
+			</tr>
+			<tr>
+				<td>자료</td>
+				<td>표본집단의 자료배렬입니다. <b class="bterm">자료</b>에 있는 수자값은 무시됩니다.</td>
+			</tr>
+			<tr>
+				<td>류형</td>
+				<td>순위결정방법을 정의하는 수입니다. 추가선택인수입니다.
+					<p><b class="bterm">류형</b>이 0이거나 생략되면 <b class="bterm">자료</b>가 내리순서로 정렬된 목록처럼 <b class="bterm">값</b>의 순위를 부여합니다.</p>
+					<p><b class="bterm">류형</b>이 0이 아니면 <b class="bterm">자료</b>가 올리순서로 정렬된 목록처럼 <b class="bterm">값</b>의 순위를 부여합니다.</p>
+				</td>
+			</tr>
+		</table>
+		<p><b class="bterm">주의</b></p>
+			<ul>
+				<li>중복수자에는 같은 순위가 매겨집니다. 그러나 중복수자가 있으면 다음수자의 순위에 영향을 줍니다. 례를 들어 올리순서로 정렬된 옹근수목록에서 값 10이 두번 나타나고 모두 순위가 5이면 11의 순위는 7이 됩니다. 이 경우 순위 6에 해당하는 수자는 없습니다.</li>
+				<li>몇가지 목적으로 동일한 순위를 고려하는 순위정의를 사용할수도 있습니다. 앞의 실례에서 값 10의 순위를 5.5로 수정하려면 반환값에 다음과 같은 수정곁수를 추가합니다. 이 수정곁수는 내리순서(<b class="bterm">류형</b> = 0 또는 생략)와 올리순서(<b class="bterm">류형</b>= 0 이외의 값) 모두의 순위 계산에 적합합니다.</li>
+				<li>동일한 순위에 대한 수정곁수는 <b class="bterm">[COUNT(자료) + 1 – RANK(값,자료, 0) – RANK(값,자료, 1)]/2</b>입니다.</li>
+				<li>다음의 실례에서 RANK(A2,A1:A5,1)은 3이고 수정곁수는 (5 + 1 – 2 – 3) / 2 = 0.5이므로 동일한 순위를 고려하여 수정된 순위는 3 + 0.5 = 3.5입니다. <b class="bterm">자료</b>에 수자가 한번만 나타나면 수정곁수는 0이며 동일한 순위에 대해서는 <b class="bterm">RANK</b>를 조정하지 않아도 됩니다.</li>
+			</ul>
+		<p><b class="bterm">실례</b></p>
+			<p><a href="1.5.1.htm">실례의 리용방법</a>을 참고하십시오.</p>
+			<table>
+				<tr>
+					<td>
+						<table>
+							<tr>
+								<td class="noborder">&nbsp;
+								</td>
+							</tr>
+							<tr>
+								<th>1</th>
+							</tr>
+							<tr>
+								<th>2</th>
+							</tr>
+							<tr>
+								<th>3</th>
+							</tr>
+							<tr>
+								<th>4</th>
+							</tr>
+							<tr>
+								<th>5</th>
+							</tr>
+							<tr>
+								<th>6</th>
+							</tr>
+						</table>
+					</td>
+					<td>
+						<table>
+							<tr>
+								<th>A</th>
+							</tr>
+							<tr>
+								<th>자료</th>
+							</tr>
+							<tr>
+								<td>7</td>
+							</tr>
+							<tr>
+								<td>3.5</td>
+							</tr>
+							<tr>
+								<td>3.5</td>
+							</tr>
+							<tr>
+								<td>1</td>
+							</tr>
+							<tr>
+								<td>2</td>
+							</tr>
+							<tr>
+								<th>수식</th>
+								<th>설명(결과)</th>
+							</tr>
+							<tr>
+								<td>=RANK(A3,A2:A6,1)</td>
+								<td>우에 있는 목록에서 3.5의 순위입니다. (3)</td>
+							</tr>
+							<tr>
+								<td>=RANK(A2,A2:A6,1)</td>
+								<td>우에 있는 목록에서 7의 순위입니다. (5)</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+		<script type="text/javascript" language="Javascript">footerView()</script>
+	
+</body>
+</html>				

@@ -1,0 +1,430 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <META NAME="GENERATOR" CONTENT="LinuxDoc-Tools 0.9.21">
+ <TITLE>ISDN4LINUX - FAQ (deutsche Version): dod: Unerw&uuml;nschte Hinauswahl mit dial-on-demand </TITLE>
+ <LINK HREF="i4lfaq-de-18.html" REL=next>
+ <LINK HREF="i4lfaq-de-16.html" REL=previous>
+ <LINK HREF="i4lfaq-de.html#toc17" REL=contents>
+</HEAD>
+<BODY>
+<A HREF="i4lfaq-de-18.html">Next</A>
+<A HREF="i4lfaq-de-16.html">Previous</A>
+<A HREF="i4lfaq-de.html#toc17">Contents</A>
+<HR>
+<H2><A NAME="dod"></A> <A NAME="s17">17.</A> <A HREF="i4lfaq-de.html#toc17">dod: Unerw&uuml;nschte Hinauswahl mit dial-on-demand </A></H2>
+
+<H2><A NAME="dod_how"></A> <A NAME="ss17.1">17.1</A> <A HREF="i4lfaq-de.html#toc17.1">dod_how: Wie funktioniert dial-on-demand? </A>
+</H2>
+
+<P>Nachdem Du ein Netzwerk-Interface eingerichtet und eine Route
+daf&uuml;r definiert hast, werden alle IP-Pakete, f&uuml;r die eine
+Route dorthin eingestellt wurde, zu diesem Interface geleitet. Wenn
+<CODE>autodial</CODE> aktiviert wurde (siehe Frage 
+<A HREF="i4lfaq-de-11.html#dialout_dialmode">dialout_dialmode</A> zu den Dialmodes), wird das Interface beim
+Vorliegen von abzusendenden IP-Paketen automatisch eine Hinauswahl
+durchf&uuml;hren. Das bedeutet, da&szlig; <B>jeder</B> Benutzer eine
+Hinauswahl verursachen kann.</P>
+<P>Beispiel: Du &ouml;ffnest einen Browser mit leerer Startseite oder mit
+einer lokalen Homepage. Es passiert nichts. Wenn Du nun einen URL
+eingibst, werden dadurch IP-Pakete zum Netzwerk-Interface gesendet und
+es wird eine Hinauswahl ausgel&ouml;st.</P>
+<P>Der Gebrauch von dial-on-demand ist ein gef&auml;hrliches (=
+kostspieliges) Feature: siehe Frage 
+<A HREF="#dod_disaster">dod_disaster</A>.</P>
+
+<H2><A NAME="dod_disaster"></A> <A NAME="ss17.2">17.2</A> <A HREF="i4lfaq-de.html#toc17.2">dod_disaster: Was ist ein Geb&uuml;hren-GAU? </A>
+</H2>
+
+<P>Der Geb&uuml;hren-GAU kann aus verschiedenen Gr&uuml;nden eintreten
+(Details unter 
+<A HREF="#dod_causes">dod_causes</A>). Das Resultat
+ist jedoch gleich: Dein Computer w&auml;hlt Deinen ISP &ouml;fter an
+als Dir lieb ist und erh&ouml;ht dadurch Deine Telefonrechnung um
+einen gro&szlig;en Betrag (besonders dann, wenn Du nicht nur die
+Online-Zeit sondern auch einen Mindestbetrag/Einheitsbetrag f&uuml;r
+jede Einwahl bezahlen musst). Der Ausdruck 'gro&szlig;er Betrag' ist
+recht dehnbar. Alles ist m&ouml;glich:
+<UL>
+<LI>"Billig": Jede DNS-Anfrage &ouml;ffnet die Leitung und
+verursacht mehrere W&auml;hlvorg&auml;nge pro Tag (ja nach Deinen
+Programmen). Bei 10 Vorg&auml;ngen pro Tag sind das etwa 300
+unn&ouml;tige W&auml;hlvorg&auml;nge pro Monat.</LI>
+<LI>"Nicht ganz so billig": Irgendein Windows 95 Computer in Deinem
+LAN l&ouml;st alle 15 Minuten einen W&auml;hlvorgang f&uuml;r eine
+seiner albernen Meldungen aus (siehe Frage 
+<A HREF="#dod_winclient">dod_win95</A>). Das macht 96 Anwahlen pro Tag oder 2880 pro Monat.</LI>
+<LI>"Mittelma&szlig;": Dein Email-Programm ist so eingestellt,
+da&szlig; es alle 5 Minuten pr&uuml;ft, ob neue Nachrichten bei Deinem
+ISP bereit liegen. Das ergibt 288 W&auml;hlvorg&auml;nge pro Tag, 8640
+pro Monat.</LI>
+<LI>"Kostspielig": 'Keep alive'-Pakete verhindern, da&szlig; Deine
+Verbindung je getrennt wird. Du bist dauernd online. Hinweis: DIES IST
+NICHT DER SCHLIMMSTE FALL!</LI>
+<LI>"Noch kostspieliger": Irgend etwas geht schief mit den
+dynamischen Addressen und es bleiben beim Auflegen offene Sockets
+&uuml;brig. Diese l&ouml;sen beim Versuch, das Problem zu l&ouml;sen,
+eine neue Anwahl aus. Da Du jetzt aber eine neue IP-Addresse hast,
+kann das Problem nicht aufgel&ouml;st werden. Die Verbindung wird
+schlie&szlig;lich beendet (abh&auml;ngig von Deiner
+Timeout-Einstellung), wird aber sofort wieder hergestellt, da die
+Sockets eine weitere Anwahl ausl&ouml;sen. Hast Du kein Gl&uuml;ck, so
+bekommst Du nie die gleiche IP-Addresse wieder und die Sache
+wiederholt sich endlos. Du bist fast dauernd online, jedoch musst Du
+zus&auml;tzlich noch f&uuml;r viele W&auml;hlvorg&auml;nge bezahlen:
+Wenn Dein Timeout auf 30 Sekunden steht, werden daraus 2880
+W&auml;hlvorg&auml;nge pro Tag, 86400 pro Monat.</LI>
+<LI>"Am kostspieligsten - Schlimmster Fall": Du konfigurierst
+dialout/callback falsch. Wenn Dein (der initiierende) Computer Deinen
+ISP anw&auml;hlt und dieser dann die Verbindung abbricht (weil
+z.B. die Anmeldung fehlschl&auml;gt - vielleicht ist er auch falsch
+konfiguriert), so w&auml;hlt Dein Computer sofort neu. Dies wird nur
+begrenzt durch die Zeit, die f&uuml;r das W&auml;hlen ben&ouml;tigt
+wird. Wenn wir f&uuml;r jeden Versuch 2 Sekunden veranschlagen
+(konservativ gesch&auml;tzt), werden daraus 43200 Vorg&auml;nge pro
+Tag oder 1296000 pro Monat!</LI>
+</UL>
+</P>
+<P>Dies ist kein Scherz, all diese Dinge sind tats&auml;chlich passiert,
+sogar bei richtigen ISDN4LINUX-Experten! Schau bei Frage 
+<A HREF="#dod_off">dod_off</A> nach, wie Du jedes Risiko, da&szlig; dies
+Dir passiert, vermeiden kannst.</P>
+
+<H2><A NAME="dod_causes"></A> <A NAME="ss17.3">17.3</A> <A HREF="i4lfaq-de.html#toc17.3">dod_causes: Wodurch wird ein Geb&uuml;hren-GAU ausgel&ouml;st? </A>
+</H2>
+
+<P>Da gibt es viele M&ouml;glichkeiten. Bei Frage 
+<A HREF="#dod_strategy">dod_strategy</A> erf&auml;hrst Du, wie Du herausfindest was gerade
+passiert. Bei der Frage 
+<A HREF="#dod_disaster">dod_disaster</A>
+erf&auml;hrst Du dann, wie teuer das sein kann. Es folgt eine nicht
+vollst&auml;ndige Liste von Ursachen:
+<OL>
+<LI>Du hast Deinen Kernel irrt&uuml;mlich mit der Option Bridging
+kompiliert.</LI>
+<LI>ARP Anfragen oder Broadcasts? Du solltest <CODE>ifconfig</CODE> mit
+den Optionen <CODE>-arp</CODE> und <CODE>-broadcast</CODE> aufrufen und
+dadurch das Herstellen von Verbindungen aus diesen Gr&uuml;nden
+vermeiden. Du erkennst diese Ursache daran, da&szlig; Du einen
+W&auml;hlvorgang hast aber <EM>keine</EM> Daten &uuml;bertragen werden.</LI>
+<LI>Andere Broadcasts von den Interfaces werden von ISDN
+weitergeleitet. 
+</LI>
+<LI>Wenn IP-Verbindungen noch ge&ouml;ffnet sind w&auml;hrend die
+Leitung geschlossen wird und die IP-Addressen dynamisch vergeben
+werden, ist die Katastrophe unausweichlich. Es wird eine neue
+Verbindung aufgebaut, um die offenen IP-Verbindungen zu
+schlie&szlig;en. Das misslingt, da die neue IP-Addresse anders
+lautet. Die Leitung wird aufgelegt aber die offenen IP-Verbindungen
+sind immer noch vorhanden. Daher wird neu gew&auml;hlt, und so
+weiter...
+Dies wird nur durch den RST-Revoking Patch vermieden, der in die
+Kernel 2.0.x eingebunden ist, jedoch nicht in den Kerneln
+2.1/2.2/2.3. Du kannst jedoch einen angepassten Patch f&uuml;r die
+Kernel 2.2.x und etwas Hintergrundwissen dazu von 
+<A HREF="http://www.another.de/linux/router/">http://www.another.de/linux/router/</A> bekommen. Sieh Dir dazu
+auch die Frage 
+<A HREF="i4lfaq-de-13.html#syncppp_1stpacket">syncppp_1stpacket</A>an.
+Beachte auch, da&szlig; Du die Option "defaultroute" des ipppd benutzt
+statt <CODE>route add/del default</CODE> in ip-up/ip-down.</LI>
+<LI>TCP-Wiederholversuche l&ouml;sen Hinauswahlen aus: wenn der
+Kernel versucht, TCP-Pakete zu senden und keine Antwort bekommt, wird
+er versuchen, die Sendung zu wiederholen (normalerweise alle 120
+Sekunden). Pr&uuml;fe, ob Du die folgenden Parameter anpassen willst:
+<UL>
+<LI>/proc/sys/net/ipv4/tcp_syn_retries</LI>
+<LI>/proc/sys/net/ipv4/tcp_retries1</LI>
+<LI>/proc/sys/net/ipv4/tcp_retries2</LI>
+</UL>
+
+Dazu geh&ouml;rende Dokumentation findest Du in
+<CODE>/usr/src/linux/Documentation/proc.txt</CODE>.</LI>
+<LI>Anfragen von Deinem lokalen DNS l&ouml;sen einen
+W&auml;hlvorgang aus: siehe Frage 
+<A HREF="#dod_localdns">dod_localdns</A>.</LI>
+<LI>Sendmail l&ouml;st den W&auml;hlvorgang aus: siehe Frage 
+<A HREF="#dod_sendmail">dod_sendmail</A>.</LI>
+<LI>Windows 95 Clients l&ouml;sen den W&auml;hlvorgang aus: siehe
+Fragen 
+<A HREF="#dod_winclient">dod_win95</A>, 
+<A HREF="#dod_localdns">dod_localdns</A>, und 
+<A HREF="#dod_winclient">dod_win95b</A>.</LI>
+<LI>Samba l&ouml;st den W&auml;hlvorgang aus: siehe Frage 
+<A HREF="#dod_samba">dod_samba</A>.</LI>
+<LI>Netscape l&ouml;st beim Start einen W&auml;hlvorgang aus: siehe
+Frage 
+<A HREF="#dod_netscape">dod_netscape</A>.</LI>
+<LI>dhcpd l&ouml;st Ausw&auml;hlvorg&auml;nge aus: Deaktivieren Sie
+den dhcpd und pr&uuml;fen Sie Ihre Einstellungen...</LI>
+<LI>Schlie&szlig;e manuell noch offene IP-Verbindungen wenn die
+Leitung unterbrochen wird: siehe Frage 
+<A HREF="#dod_closeipconnect">dod_closeipconnect</A>.</LI>
+<LI>Dein Computer ist abgest&uuml;rzt, erzeugt aber noch Interrupts:
+siehe Frage 
+<A HREF="#dod_onlineoncrash">dod_onlineoncrash</A>.</LI>
+</OL>
+</P>
+
+<H2><A NAME="dod_off"></A> <A NAME="ss17.4">17.4</A> <A HREF="i4lfaq-de.html#toc17.4">dod_off: Wie kann ich Dial-on-Demand verl&auml;sslich abschalten? </A>
+</H2>
+
+<P>
+<OL>
+<LI>Wenn Du immer manuell w&auml;hlen willst, setze den Dialmode auf
+<CODE>manual</CODE> (siehe Frage 
+<A HREF="i4lfaq-de-11.html#dialout_dialmode">dialout_dialmode</A>). Dann benutze <CODE>isdnctrl dial
+&lt;device&gt;</CODE> zum Hinausw&auml;hlen und <CODE>isdnctrl hangup
+&lt;device&gt;</CODE> zum Beenden der Verbindung.</LI>
+<LI>Richte Deinen Dialmode korrekt ein (siehe Frage 
+<A HREF="i4lfaq-de-11.html#dialout_dialmode">dialout_dialmode</A>). Setze z.B. den Dialmode
+auf <CODE>manual</CODE> in <CODE>ip-down</CODE>. Dann findet eine automatische
+Hinauswahl nur einmal statt, wenn Du den Dialmode auf <CODE>auto</CODE> setzt.</LI>
+<LI>Entferne die Telefonnummer des Interfaces oder stelle eine
+ung&uuml;ltige Nummer ein. Dann kannst Du an den Beschwerden im syslog
+sehen, ob ein Prozess Pakete in die Welt hinaus schicken will.</LI>
+<LI>Schalte das System ab.</LI>
+<LI>L&ouml;sche die Route zum ISDN-Device.
+Ein Beispiel, wie jedes automatische W&auml;hlen vermieden wird:
+<HR>
+<PRE>
+/sbin/route del default
+/sbin/isdnctrl system off
+/sbin/ifconfig ippp0 down
+</PRE>
+<HR>
+
+So l&auml;uft wieder alles normal:
+<HR>
+<PRE>
+/sbin/isdnctrl system on
+/sbin/ifconfig ippp0 up 
+/sbin/route add $GATE-IP dev ippp0
+/sbin/route add default ippp0
+</PRE>
+<HR>
+
+Diese Methode hat den Nachteil, da&szlig; &uuml;berhaupt kein
+W&auml;hlvorgang m&ouml;glich ist.</LI>
+</OL>
+</P>
+
+<H2><A NAME="dod_strategy"></A> <A NAME="ss17.5">17.5</A> <A HREF="i4lfaq-de.html#toc17.5">dod_strategy: Wie &uuml;berpr&uuml;fe ich unerkl&auml;rbare W&auml;hlvorg&auml;nge? </A>
+</H2>
+
+<P>Das Finden der Ursache von unerwarteten W&auml;hlvorg&auml;ngen ist
+der erste Schritt, sie zu stoppen.
+Dieses Finden ist jedoch normalerweise schwieriger als die
+Probleml&ouml;sung. Hier sind Vorschl&auml;ge, was Du tun kannst:
+<UL>
+<LI> Zuerst trennst Du Deinen Dialout-Server von Deinem LAN, um
+herauszufinden, wer f&uuml;r die W&auml;hlvorg&auml;nge verantwortlich
+ist: der Dialout-Server selbst oder ein Client in Deinem LAN. Bei
+Windows Clients siehe Frage 
+<A HREF="#dod_winclient">dod_winclient</A>.</LI>
+<LI> Versuche, mit 'isdnctrl verbose 3' herauszufinden, welches
+TCP/IP-Paket die Verbindung ausl&ouml;st. Es sollte in den
+Kernelmeldungen (anzusehen mit <CODE>dmesg</CODE>) etwas in dieser Art
+auftauchen: <CODE>OPEN: 141.76.60.54 - 193.171.67.253 TCP, port: 1686 -
+540</CODE>. In diesem Beispiel versucht unser Computer, auf dem Port 540
+Mail abzuholen (UUCP &uuml;ber TCP/IP &uuml;ber ISDN) - die Portnummer
+kann man in <CODE>/etc/services</CODE> nachsehen. Beachte bitte, da&szlig;
+nur das ausl&ouml;sende Paket gemeldet wird.</LI>
+<LI> Wenn Du ipppd benutzt: erstelle ein tcpdump, das Dir die Daten
+der syncPPP encapsulation zeigt (dazu ben&ouml;tigst Du eventuell
+einen Patch - siehe Frage 
+<A HREF="i4lfaq-de-8.html#trouble_tcpdump">trouble_tcpdump</A>).</LI>
+<LI> Versuche, einen Systemdienst nach dem anderen zu deaktivieren
+und pr&uuml;fe, ob sich die Sache beruhigt. named, sendmail und auch
+smbd (Samba) sind gute Kandidaten f&uuml;r das Aufbauen von
+Verbindungen (siehe Fragen 
+<A HREF="#dod_localdns">dod_localdns</A>, 
+<A HREF="#dod_sendmail">dod_sendmail</A>,
+<A HREF="#dod_samba">dod_samba</A>).</LI>
+<LI> Wenn broadcasts das Problem sind, kannst Du auch die
+Zieladdresse auf das dummy0-Interface legen. Das ist zwar nicht sauber
+aber es funktioniert.</LI>
+</UL>
+</P>
+
+<H2><A NAME="dod_winclient"></A> <A NAME="ss17.6">17.6</A> <A HREF="i4lfaq-de.html#toc17.6">dod_winclient: Kann es sein, da&szlig; die Win95-Maschine in meinem LAN automatische W&auml;hlvorg&auml;nge ausl&ouml;st? </A>
+</H2>
+
+<P>Ja. Beim Start von Windows 3.11/95 versucht dieses, sich mit dem
+Nameserver Deines Providers zu unterhalten (falls bekannt) um einige
+Domains aufzul&ouml;sen (z.B. WORKGROUP.xxx). Hier folgen
+M&ouml;glichkeiten, dieses zu vermeiden:
+<UL>
+<LI> Schalte die Option <CODE>Use DNS for Windows Names
+Resolution</CODE> auf allen Windows-Computern Deines LAN ab.</LI>
+<LI> Setze einen lokalen DNS auf, der alle Anfragen
+beantwortet. Siehe Frage 
+<A HREF="#dod_localdns">dod_localdns</A>.</LI>
+</UL>
+</P>
+
+<H2><A NAME="dod_localdns"></A> <A NAME="ss17.7">17.7</A> <A HREF="i4lfaq-de.html#toc17.7">dod_localdns: Ich habe einen lokalen DNS eingerichtet. Warum l&ouml;st dieser unerw&uuml;nschte Anwahlen aus? Wie finde ich die Ursache? </A>
+</H2>
+
+<P>Schalte in named den Debug-Level 1 ein und schau Dir das Logfile in
+<CODE>/var/tmp</CODE> an. Du findest da sehr oft normale DNS-Anfragen von
+Windows-Maschinen. Das Problem ist, da&szlig; Namen wie
+"WORKGROUP.domain.de" abgefragt werden, d.h., Namen, die der DNS nicht
+kennen kann. Windows scheint nach seinem master browser oder einem
+Domain-Controller zu suchen (deutschsprachige Leser finden in der ct
+12/99, Seite 224: "Schnitzeljagd - Netzwerkumgebung und Browserdienst
+im Windows-Netzwerk" weitere Details). Zur Umgehung dieses Problems
+muss der Name der Workgroup per DNS aufgel&ouml;st werden
+k&ouml;nnen. Oder setze einen Primary Domain Controller in Deinem LAN
+ein.</P>
+
+<H2><A NAME="dod_forwarddns"></A> <A NAME="ss17.8">17.8</A> <A HREF="i4lfaq-de.html#toc17.8">dod_forwarddns: Ich habe meinen Nameserver im 'forward' Modus konfiguriert, mit einer Adresse. Nun w&auml;hlt er fast jede Minute?</A>
+</H2>
+
+<P>Von Zeit zu Zeit wird der Nameserver eine Anfrage an seinen Forwarder
+schicken. Das l&ouml;st eine Anwahl aus. Da Dein ISP dynamische
+IP-Adressen benutzt wird die Anfrage mit einer falschen IP-Adresse
+hinaus geschickt (zum Zeitpunkt der Starts der Verbindung). Also wird
+keine Antwort empfangen. Bind wartet eine Minute und wiederholt den
+Vorgang. Wenn Deine Verbindung in dieser Zeit getrennt wurde,
+l&ouml;st das einen neuen W&auml;hlvorgang mit wiederum einer anderen
+Adresse aus, usw.n...</P>
+<P>Als Workaround kannst Du die Wartezeit zwischen den Sendeversuchen
+verk&uuml;rzen, wie es bei der Frage 
+<A HREF="i4lfaq-de-11.html#dialout_bind">dialout_bind</A> beschrieben wird.</P>
+<P>Alternativ kannst Du die Option &quot;dialup yes;&quot; in der
+named.conf setzen. Dadurch wird named beim Start nur eine Interaktion
+mit dem Verteiler durchf&uuml;hren (und dabei ein Ausw&auml;hlen
+ausl&ouml;sen). Danach wird named ein sehr langes Intervall (24h?)
+abwarten ehe er eine erneute Abfrage startet.
+named wird nur bei direkten Anfragen mit dem Verteiler in Kontakt treten
+und das passiert im Normalfall wenn Du sowieso verbunden bist.</P>
+
+<H2><A NAME="dod_sendmail"></A> <A NAME="ss17.9">17.9</A> <A HREF="i4lfaq-de.html#toc17.9">dod_sendmail: Wie kann ich erreichen, da&szlig; sendmail zwar keine Verbindungen aufbaut aber trotzdem die lokale Mail ausliefert? </A>
+</H2>
+
+<P>Zuerst musst Du sendmail dazu bringen, keine DNS-Verbindungen zu
+&ouml;ffnen. Du musst die Optionen 'nodns' und 'nocanonify'
+aktivieren.</P>
+<P>Wenn Du einen smarthost hast, musst Du sicherstellen, da&szlig; wegen
+ihm kein Nameserver abgefragt wird. Du kannst den smarthost direkt mit
+seiner IP-Addresse angeben oder seinen Namen in /etc/hosts eintragen
+(/etc/host.conf sollte dann die Zeile 'order hosts bind' enthalten).</P>
+<P>Setze alle nicht lokalen Mailer auf 'expensive'
+('define(SMTP_MAILER_FLAGS, e)') und verbiete dann sendmail,
+automatisch &uuml;ber diese <I>teueren</I> Wege zu verbinden (mit
+einem 'define('confCON_EXPENSIVE", 'True')'). Der Aufruf von sendmail sollte
+keine Zeitangabe f&uuml;r die Option '-q' enthalten (d.h., nur '-bd
+-os -q'). '-os' bewirkt, da&szlig; alle Mails in die Warteschlange
+eingereiht werden (was nicht verhindert, da&szlig; lokale Mails sofort
+ausgeliefert werden). Der einzige Haken ist, da&szlig; sendmail beim
+Booten Mail, die noch in der Warteschlange liegt, ausliefern will,
+obwohl das Netzwerk noch nicht l&auml;uft. Deshalb solltest Du beim
+Booten alle Mails aus /var/mqueue entfernen bevor sendmail gestartet
+wird und nach dem Start von sendmail wieder dort ablegen.</P>
+<P>Mail an <I>teuere</I> Mailer wird nun nur durch den expliziten
+Aufruf 'sendmail -q' abgeschickt.</P>
+
+<H2><A NAME="dod_samba"></A> <A NAME="ss17.10">17.10</A> <A HREF="i4lfaq-de.html#toc17.10">dod_samba: Das Samba-Paket l&ouml;st bei mir immer W&auml;hlvorg&auml;nge aus. Wie kann ich das vermeiden? </A>
+</H2>
+
+<P>Andreas Glahn <CODE>
+<A HREF="mailto:andreas@tao.westfalen.de">andreas@tao.westfalen.de</A></CODE> schrieb am 31 Januar 1997: Ich
+hatte das gleiche Problem. Dann gab ich beim Start des Samba-Demons
+diesem die interne IP-Addresse, die ich hier zuhause benutze. Seither
+wird eine Anfrage von Samba nicht mehr an das default gateway
+geschickt sondern bleibt intern.</P>
+<P>Schau Dir die Konfiguration mit netstat und tcpdump an. Mit tcpdump
+findest Du schnell heraus, zu welcher IP-Addresse Samba verbinden
+will.</P>
+<P>Mein interner Linux Computer hat z.B.: 192.168.99.99
+und
+mein Win95 Computer hat:               192.168.99.88</P>
+<P>Auf dem Linux Computer starte ich Samba mit:
+<HR>
+<PRE>
+nmdb -S -B 192.168.99.255 -I 192.168.99.99
+</PRE>
+<HR>
+
+Schau Dir auch die vorherige Frage an: benutze -broadcast und
+vielleicht -arp bei der Definition des Interfaces!</P>
+<P>Durchsuche die Hilfeseiten der Samba-Konfigurationsdatei nach weiteren
+M&ouml;glichkeiten des Vermeidens von Ausw&auml;hlvorg&auml;ngen (mir
+wurde gesagt, da&szlig; es einige spezielle Parameter daf&uuml;r geben
+soll).</P>
+
+<H2><A NAME="dod_netscape"></A> <A NAME="ss17.11">17.11</A> <A HREF="i4lfaq-de.html#toc17.11">dod_netscape: Wie kann ich Netscape abgew&ouml;hnen, beim Start eine Verbindung aufzubauen? </A>
+</H2>
+
+<P>Meistens ist in den Preferences eine nicht lokale Homepage
+eingetragen. Nur eine Homepage, die Netscape sofort laden kann
+(z.B. 'file://localhost/xxx'), l&ouml;st keinen sofortigen
+W&auml;hlvorgang aus. Alternativ kannst Du einen Cache Demon
+einrichten, der oft ben&ouml;tigte Seiten speichert.</P>
+<P>Des weiteren pr&uuml;fe Deine Proxy-Einstellungen. Wenn Netscape einen
+kompletten Namen anstatt einer IP-Adresse beim Start bekommt, kann es
+versuchen, den Namen durch eine DNS-Anfrage aufzul&ouml;sen. In dem
+Fall gib Netscape eine IP-Adresse.</P>
+<P>Auch kann es sein, da&szlig; Netscape versucht, seinen Newsserver zu
+erreichen. Wenn Du dieses Feature nicht ben&ouml;tigst, kannst Du den
+Newsserver, den Netscape sucht (vermutlich 'news') in Deinen lokalen
+DNS oder in die /etc/hosts aufnehmen und auf 'localhost' verweisen.</P>
+
+<H2><A NAME="dod_closeipconnect"></A> <A NAME="ss17.12">17.12</A> <A HREF="i4lfaq-de.html#toc17.12">dod_closeipconnect: Nach dem Auflegen einer Leitung stelle ich mit <CODE>netstat -nt</CODE> fest, da&szlig; IP-Verbindungen noch offen sind. Wie kann ich diese manuell schlie&szlig;en? </A>
+</H2>
+
+<P>Dies mag nur mit dem RST-Revoking-Patch (auf den in Frage 
+<A HREF="#dod_causes">dod_causes</A> hingewiesen wird) funktionieren:
+Du kannst das Interface 'runterfahren' und dann wieder 'starten'. Dann
+wird es versuchen, hinaus zu w&auml;hlen. Wenn Du aber vorher die
+anzuw&auml;hlende Telefonnummer entfernt hast, erh&auml;ltst Du die
+Meldung 'no outgoing number...' im syslog und sobald das Interface
+wieder gestartet ist werden alle offenen Verbindungen geschlossen.</P>
+<P>Du kannst diese durch offene IP-Verbindungen ausgel&ouml;sten
+W&auml;,hlversuche vermeiden, indem Du eine spezielle
+Firewall-Einstellung in <CODE>/etc/ppp/ip-down</CODE> einf&uuml;gst und
+sie in <CODE>/etc/ppp/ip-up</CODE> wieder deaktivierst. Diese
+Firewall-Einstellung wehrt alle TCP-Pakete, die nicht den Status
+SYNSENT haben, ab. F&uuml;ge dies in Deine <CODE>/etc/ppp/ip-down</CODE>
+ein (bei einem 2.2.x kernel):
+<HR>
+<PRE>
+ipchains -A output -j DENY -p tcp -i 'interface' ! -y
+</PRE>
+<HR>
+
+Add this in <CODE>/etc/ppp/ip-up</CODE>:
+<HR>
+<PRE>
+ipchains -A output -j DENY -p tcp -i 'interface' ! -y
+</PRE>
+<HR>
+
+(Bei allen Firewall-Regeln gilt: Am besten schreibt man diese Regeln
+in ein Script, das dann mit einem start oder stop aufgerufen wird.).</P>
+<P>Beachte, da&szlig; diese Firewall-Regel nur ganze Pakete
+betrifft. Fragmente werden immer diese Firewall passieren und einen
+W&auml;hlvorgang ausl&ouml;sen.</P>
+
+<H2><A NAME="dod_onlineoncrash"></A> <A NAME="ss17.13">17.13</A> <A HREF="i4lfaq-de.html#toc17.13">dod_onlineoncrash: Ist es m&ouml;glich, da&szlig; selbst bei einem abgest&uuml;rzten Computer eine ISDN-Verbindung bestehen bleibt (und die Geb&uuml;hren weiterlaufen)? </A>
+</H2>
+
+<P>Der ISAC Chipset, der auf vielen ISDN-Karten benutzt wird, kann im
+auto Modus oder im non-auto Modus laufen. Im auto Modus kann die
+Verbindung bei abgest&uuml;rztem Computer bestehen bleiben (die Karte
+h&auml;lt sie am Leben). Da der HiSax Treiber den non-auto Modus
+benutzt, sollte das mit ISDN4LINUX nicht passieren. Wenn einmal kein
+Interrupt mehr auf Deiner Maschine verarbeitet wird, wird die
+Verbindung sp&auml;testens nach einer halben Minute beendet. Ein
+Weiterbestehen der Verbindung kann nur in dem unwahrscheinlichen Fall
+passieren, wenn die Maschine abst&uuml;rzt, jedoch Interrupts
+weiterhin normal verarbeitet werden.</P>
+
+<P>  </P>
+
+<HR>
+<A HREF="i4lfaq-de-18.html">Next</A>
+<A HREF="i4lfaq-de-16.html">Previous</A>
+<A HREF="i4lfaq-de.html#toc17">Contents</A>
+</BODY>
+</HTML>

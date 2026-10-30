@@ -1,0 +1,110 @@
+<html dir='ltr'>
+	<head>
+		<META http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+		<title>GAMMAINV</title>
+		<link rel='stylesheet' type='text/css' href='../css/main.css'/>
+		<script type='text/javascript' language='Javascript' src='../js/mexpcol.js'></script>
+		<script type='text/javascript' language='JavaScript' src='../js/glossary.js'></script>
+	</head>
+	<body>
+		<h1>&nbsp;<img align="absbottom" src="../image/external_images/crystal/svtools/res/new_doc.png"/>&nbsp;GAMMAINV</h1>
+		<p id='ExpandAllLine' class='ExpFav'>
+			<a href='#' onClick='ExpandAll()' onKeyPress='ExpandAll()' class='DropDown'>
+				<img id='picHeader' border='0' src='../image/image/common/expandtri.gif' alt='모두 표시'>
+				<span id='ExpandAll'>모두 표시</span>
+			</a>
+		</p>
+		<p><b class="bterm">참고항목</b>&emsp;
+			<a href="5.9.10.1.htm">통계함수목록</a>,
+			<a href="5.9.10.26.htm">GAMMADIST</a>
+		</p>
+		<p>역γ분포값을 구합니다.</p>
+		<p><b class="bterm">문법:&emsp;&emsp;		GAMMAINV(수값,α,β)</b></p>
+		<table>
+			<tr>
+				<th>인수명</th>
+				<th>설명</th>
+			</tr>
+			<tr>
+				<td>수값</td>
+				<td>역γ분포를 계산할 확률값입니다.</td>
+			</tr>
+			<tr>
+				<td>α</td>
+				<td>γ분포의 α파라메터입니다.</td>
+			</tr>
+			<tr>
+				<td>β</td>
+				<td>γ분포의 β파라메터입니다. β = 1이면 표준γ분포의 확률을 구합니다.</td>
+			</tr>
+		</table>
+		<p><b class="bterm">주의</b></p>
+			<ul>
+				<li>인수가 수자가 아니면 <b class="bterm">오유:[오유번호]</b>를 반환합니다.</li>
+				<li><b class="bterm">수값</b>이 부수이거나 1보다 크면 <b class="bterm">오유:[오유번호]</b>를 반환합니다.</li>
+				<li>α가 0이하이거나 β가 0이하이면 <b class="bterm">오유:[오유번호]</b>를 반환합니다.
+					<p><b class="bterm">수값</b>이 주어지면 <b class="bterm">GAMMADIST</b>(x, α, β, 1) = <b class="bterm">수값</b>에 해당하는 x 값을 구합니다. 따라서 <b class="bterm">GAMMAINV</b>의 정밀도는 <b class="bterm">GAMMADIST </b>정밀도에 따라 달라집니다. <b class="bterm">GAMMAINV</b>함수는 반복탐색기법을 사용하며 100번 반복한 후에도 값이 수렴하지 않으면 #<b class="bterm">N</b>/<b class="bterm">A</b> 오유값을 표시합니다.</p>
+				</li>
+			</ul>
+		<p><b class="bterm">실례</b></p>
+			<p><a href="1.5.1.htm">실례의 리용방법</a>을 참고하십시오.</p>
+			<table>
+				<tr>
+					<td>
+						<table>
+							<tr>
+								<td class="noborder">&nbsp;
+								</td>
+							</tr>
+							<tr>
+								<th>1</th>
+							</tr>
+							<tr>
+								<th>2</th>
+							</tr>
+							<tr>
+								<th>3</th>
+							</tr>
+							<tr>
+								<th>4</th>
+							</tr>
+						</table>
+					</td>
+					<td>
+						<table>
+							<tr>
+								<th>A</th>
+								<th>B</th>
+							</tr>
+							<tr>
+								<th>자료</th>
+								<th>설명</th>
+							</tr>
+							<tr>
+								<td>0.068094</td>
+								<td>γ분포와 관련된 확률입니다.</td>
+							</tr>
+							<tr>
+								<td>9</td>
+								<td>분포에 대한 α 파라메터입니다.</td>
+							</tr>
+							<tr>
+								<td>2</td>
+								<td>분포에 대한 β 파라메터입니다.</td>
+							</tr>
+							<tr>
+								<th>수식</th>
+								<th>설명(결과)</th>
+							</tr>
+							<tr>
+								<td>=GAMMAINV(A2,A3,A4)</td>
+								<td>우에 있는 조건에 대한 γ루적분포의 역함수값입니다. (10.00001119)</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+		<script type="text/javascript" language="Javascript">footerView()</script>
+	
+</body>
+</html>				

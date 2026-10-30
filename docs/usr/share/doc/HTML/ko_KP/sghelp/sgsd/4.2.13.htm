@@ -1,0 +1,125 @@
+﻿<html dir='ltr'>
+	<head>
+		<META http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+		<title>표용지의 서식지정에서 발생하는 문제의 해결</title>
+		<link rel='stylesheet' type='text/css' href='../css/main.css'/>
+		<script type='text/javascript' language='Javascript' src='../js/mexpcol.js'></script>
+		<script type='text/javascript' language='JavaScript' src='../js/glossary.js'></script>
+	</head>
+	<body>
+		<h1>&nbsp;<img align="absbottom" src="../image/external_images/crystal/svtools/res/new_doc.png"/>&nbsp;표용지의 서식지정에서 발생하는 문제의 해결</h1>
+		<p id='ExpandAllLine' class='ExpFav'>
+			<a href='#' onClick='ExpandAll()' onKeyPress='ExpandAll()' class='DropDown'>
+				<img id='picHeader' border='0' src='../image/image/common/expandtri.gif' alt='모두 표시'>
+				<span id='ExpandAll'>모두 표시</span>
+			</a>
+		</p>
+		<b class="bterm">수자, 날자 및 시간의 서식지정</b>
+<!--		<p>
+			<a href='#' class='DropDown' onClick='Outline2()' onKeyPress='Outline2()'>
+			<img border='0' src='../image/image/common/blueup.gif' alt='표시'>수자가 수값으로 표시되지 않거나 계산되지 않는 경우</a>
+		</p>
+		<div id='ExpCol' class='collapsed' border='0'>
+		<p>수자가 세포왼쪽에 맞추어져있는 상태에서 기정맞추기(<b class="bterm">&lt;표준&gt;</b>)를 바꾸지 않았으면 본문으로 서식이 지정되였거나 입력된것입니다. 이것을 수자로 변경하려면 다음과 같이 실행합니다.
+		</p>
+			<ol>
+				<li>일반수자서식이 지정된 빈세포를 선택합니다. 
+					<p>세포서식을 확인하려면 <b class="bterm">&lt;서식&gt;</b>차림표에서 <b class="bterm">&lt;세포&gt;</b>를 찰칵하고 <b class="bterm">&lt;수자&gt;</b>표쪽을 찰칵합니다. 다음 <b class="bterm">&lt;종류&gt;</b>목록칸에서 <b class="bterm">&lt;수값&gt;</b>을 찰칵한 다음 <b class="bterm">&lt;서식&gt;</b>목록칸에서 <b class="bterm">&lt;일반&gt;</b>을 찰칵하고 <b class="bterm">&lt;확인&gt;</b>단추를 찰칵합니다.</p>
+				</li>
+				<li>세포에 <b class="bterm">1</b>을 입력하고 <b class="bterm">[Enter]</b>건을 누릅니다.</li>
+				<li>세포를 찰칵하고 <b class="bterm">&lt;표준&gt;</b>도구띠에서 <b class="bterm">&lt;복사&gt;</b><img border='0' src='../image/external_images/crystal/res/commandimagelist/sc_copy.png' alt='표시'>를 찰칵합니다.</li>
+				<li>본문으로 수자서식이 지정된 세포범위를 선택합니다.</li>
+				<li><b class="bterm">&lt;편집&gt;</b>차림표에서 <b class="bterm">&lt;형식을 선택하여 붙이기&gt;</b>를 찰칵하고 <b class="bterm">&lt;곱하기&gt;</b>단일선택단추를 찰칵한 다음 <b class="bterm">&lt;확인&gt;</b>단추를 찰칵합니다.</li>
+			</ol>
+		</div>-->
+		<p>
+			<a href='#' class='DropDown' onClick='Outline2()' onKeyPress='Outline2()'>
+			<img border='0' src='../image/image/common/blueup.gif' alt='표시'>표용지세포의 수자가 수식띠의 수자와 다른 경우</a>
+		</p>
+		<div id='ExpCol' class='collapsed' border='0'>
+			<p>세포에 적용된 수자서식에 따라 표용지세포에 나타나는 수자모양이 다릅니다. 세포를 선택할 때 수식띠에 표시되며 계산에 사용되는 세포값은 서식의 영향을 받지 않습니다.</p>
+			<p>표시된 값에 영향을 줄수 있는 수자서식을 제거하려면 해당 세포를 선택합니다.</p>
+			<ol>
+				<li><b class="bterm">&lt;서식&gt;</b>차림표에서 <b class="bterm">&lt;세포&gt;</b>를 찰칵하고 <b class="bterm">&lt;수자&gt;</b>표쪽을 찰칵합니다.</li>
+				<li><b class="bterm">&lt;종류&gt;</b>목록칸에서 <b class="bterm">&lt;수값&gt;</b>을 찰칵하고 <b class="bterm">&lt;서식&gt;</b>목록칸에서 <b class="bterm">&lt;일반&gt;</b>을 찰칵한 다음 <b class="bterm">&lt;확인&gt;</b>단추를 찰칵합니다.</li>
+			</ol>
+		</div>
+		<b class="bterm">본문의 서식지정</b>
+		<p>
+			<a href='#' class='DropDown' onClick='Outline2()' onKeyPress='Outline2()'>
+			<img border='0' src='../image/image/common/blueup.gif' alt='표시'>서체색과 서체그림자와 같은 서식이 자동으로 바뀌는 경우</a>
+		</p>
+		<div id='ExpCol' class='collapsed' border='0'>
+			<p><a href="#" class="glossary" onClick="AppendPopup(this,'IDG_CONDITIONSTYLE')" onKeyPress="AppendPopup(this,'IDG_CONDITIONSTYLE')">조건부서식</a>을 세포에 적용하면 세포값이나 다른 자료값이 지정한 조건에 맞는가 맞지 않는가에 따라 서식이 적용됩니다.</p>
+			<ul>
+				<li>조건부 서식설정은 <b class="bterm">&lt;서식&gt;</b>차림표의 <b class="bterm">&lt;세포&gt;</b>지령이나 <b class="bterm">&lt;서식 설정&gt;</b><a href="#" class="glossary" onClick="AppendPopup(this,'IDG_TOOLBAR')" onKeyPress="AppendPopup(this,'IDG_TOOLBAR')">도구띠</a>의 그림기호들을 사용하여 세포에 직접 적용하는 서식보다 우선시됩니다. 지정한 조건이 참이면 그 조건의 서식이 수동으로 지정되는 서식보다 우선시됩니다.</li>
+			</ul>
+		</div>
+		<p>
+			<a href='#' class='DropDown' onClick='Outline2()' onKeyPress='Outline2()'>
+			<img border='0' src='../image/image/common/blueup.gif' alt='표시'>회전한 본문이 정확한 각도로 표시되지 않는 경우</a>
+		</p>
+		<div id='ExpCol' class='collapsed' border='0'>
+			<p>자료표문서를 다른 파일형식으로 보관하면 회전한 본문서식이 없어질수 있습니다. 표처리프로그람의 현재판본에서 지원되는 360°의 회전이 Microsoft Excel 파일형식에서는 180°까지밖에 지원되지 않습니다. 이 경우 회전각도가 달라지게 됩니다.</p>
+		</div>
+		<p>
+			<a href='#' class='DropDown' onClick='Outline2()' onKeyPress='Outline2()'>
+			<img border='0' src='../image/image/common/blueup.gif' alt='표시'>입력한 본문이나 다른 자료가 세포에 표시되지 않는 경우</a>
+		</p>
+		<div id='ExpCol' class='collapsed' border='0'>
+			<p><b class="bterm">수자서식 다시 설정:</b>   세포의 자료가 숨겨지도록 서식이 지정되여있는 경우 표시되는 값에 영향을 주는 특정한 수자서식을 제거하려면 세포를 선택하고 <b class="bterm">&lt;서식&gt;</b>차림표에서 <b class="bterm">&lt;세포&gt;</b>를 찰칵합니다. 
+				계속하여 <b class="bterm">&lt;수자&gt;</b>표쪽을 찰칵하고 <b class="bterm">&lt;종류&gt;</b>목록칸에서 <b class="bterm">&lt;수값&gt;</b>을 찰칵한 다음 <b class="bterm">&lt;서식&gt;</b>목록칸에서 <b class="bterm">&lt;일반&gt;</b>을 찰칵하고 <b class="bterm">&lt;확인&gt;</b>단추를 찰칵합니다.
+			</p>
+			<p><b class="bterm">본문색과 배경색 확인:</b>   세포의 본문색이 배경색과 같으면 세포에 아무것도 표시되지 않습니다. 이때에는 배경색을 변경하거나 본문색을 변경할수 있습니다.</p>
+		</div>
+		<p>
+			<a href='#' class='DropDown' onClick='Outline2()' onKeyPress='Outline2()'>
+			<img border='0' src='../image/image/common/blueup.gif' alt='표시'>본문회전 추가선택이 적용되지 않거나 사용할수 없는 경우</a>
+		</p>
+			<div id='ExpCol' class='collapsed' border='0'>
+			<p><b class="bterm">&lt;서식&gt;</b>차림표의 <b class="bterm">&lt;세포&gt;</b>를 찰칵하고 <b class="bterm">&lt;맞추기&gt;</b>표쪽의 <b class="bterm">&lt;가로&gt;</b>복합칸에서 <b class="bterm">&lt;채워짐&gt;</b>으로 서식이 지정된 세포는 회전할수 없습니다. 
+				선택한 모든 세포들에 이 항목으로 맞추기서식이 되여있으면 <b class="bterm">&lt;본문방향&gt;</b>부분의 설정을 할수 없습니다. 
+			</p>
+		</div>
+		<p>
+			<a href='#' class='DropDown' onClick='Outline2()' onKeyPress='Outline2()'>
+			<img border='0' src='../image/image/common/blueup.gif' alt='표시'>조건적서식이 제대로 적용되지 않는 경우</a>
+		</p>
+		<div id='ExpCol' class='collapsed' border='0'>
+			<ul>
+				<li><b class="bterm">여러 조건 확인:</b>   여러 조건을 지정했을 때 일치하는 조건이 한개이상이면 첫번째로 참인 조건에 대해서만 서식이 적용됩니다.</li>
+				<li><b class="bterm">조건이 중복되는가를 확인:</b>   중복되는 조건을 지정하면 첫번째로 참인 조건의 서식만 적용됩니다. 
+					례를 들어 첫번째 조건이 100부터 200까지의 세포값에 노란색 배경을 적용하는것이고 둘째 조건이 120미만의 세포값에 빨간색 배경을 적용하는것이라면 100부터 119.999 999 999 999까지의 세포값이 노란색 배경으로 나타납니다.
+				</li>
+			</ul>
+		</div>
+		<p>
+			<a href='#' class='DropDown' onClick='Outline2()' onKeyPress='Outline2()'>
+			<img border='0' src='../image/image/common/blueup.gif' alt='표시'>회전한 본문에 대각선이 나타나는 경우
+		</a>
+		</p>
+		<div id='ExpCol' class='collapsed' border='0'>
+			<p><b class="bterm">&lt;서식&gt;</b>차림표에서 <b class="bterm">&lt;세포&gt;</b>를 찰칵하고 <b class="bterm">&lt;테두리&gt;</b>표쪽을 찰칵한 다음 <b class="bterm">&lt;기정&gt;</b>에서 <b class="bterm">&lt;테두리 없애기 설정&gt;</b><img border='0' src='../image/image/sgsd/0151.gif' alt='표시'>을 찰칵하여 대각선테두리를 제거합니다. 
+				그다음 <b class="bterm">&lt;테두리의 네면을 모두 설정&gt;</b><img border='0' src='../image/ooo_custom_images/industrial/res/commandimagelist/sc_setborderstyleall.png' alt='표시'>을 찰칵합니다. 테두리는 회전한 본문과 같은 각도로 해당 세포의 가장자리에 적용됩니다.
+			</p>
+		</div>
+		<p>
+			<a href='#' class='DropDown' onClick='Outline2()' onKeyPress='Outline2()'>
+			<img border='0' src='../image/image/common/blueup.gif' alt='표시'>테두리가 요구대로 표시되지 않는 경우
+		</a>
+		</p>
+		<div id='ExpCol' class='collapsed' border='0'>
+			<ul>
+				<li><b class="bterm">린접한 세포 보기:</b>   선택한 세포에 테두리를 적용하면 테두리가 있는 세포경계를 공유하는 린접 세포에도 적용됩니다. 례를 들어 B1:C5 범위를 묶는 테두리에 적용하면 D1:D5 세포에 왼쪽테두리가 생깁니다.</li>
+				<li><b class="bterm">마지막으로 적용된 테두리 확인:</b>   공유된 세포경계에 종류가 다른 테두리 두개를 적용하면 제일 마지막에 적용한 테두리가 표시됩니다.</li>
+				<li><b class="bterm">적절한 테두리종류 선택:</b>   선택한 세포범위는 단일세포블로크로 서식이 지정됩니다. 
+					오른쪽테두리를 세포범위 B1:C5에 적용하면 C1:C5 세포의 오른쪽가장자리에만 테두리가 표시됩니다. 범위내부의 테두리를 표시하려면 <b class="bterm">&lt;서식 설정&gt;</b>도구띠의 <b class="bterm">&lt;테두리&gt;</b>에서  <img border='0' src='../image/external_images/crystal/res/commandimagelist/sc_setborderstyle.png' alt='표시'>를 사용합니다.
+				</li>
+				<li><b class="bterm">테두리가 페지가르기로 구분되는가를 확인:</b>   페지가르기로 구분된 세포에 똑같은 테두리를 인쇄하려고 하는데 테두리가 한페지에만 나타나는 경우에는 <b class="bterm">&lt;서식&gt;</b>차림표에서 <b class="bterm">&lt;세포&gt;</b>지령을 사용하여 내부테두리를 적용합니다. <b class="bterm">&lt;테두리&gt;</b>표쪽을 찰칵하고 <b class="bterm">&lt;테두리선 배치&gt;</b>에서   <b class="bterm">&lt;사용자정의&gt;</b>그림의 세로, 가로테두리를 한번 찰칵하면 테두리선이 표시되고 두번 찰칵하면 테두리선이 제거됩니다.
+				</li>
+			</ul>
+		</div>
+		<script type="text/javascript" language="Javascript">footerView()</script>
+	
+</body>
+</html>

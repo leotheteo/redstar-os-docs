@@ -1,0 +1,376 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <META NAME="GENERATOR" CONTENT="LinuxDoc-Tools 0.9.21">
+ <TITLE>ISDN4Linux Tutorial: Routing</TITLE>
+ <LINK HREF="EN-i4l-8.html" REL=next>
+ <LINK HREF="EN-i4l-6.html" REL=previous>
+ <LINK HREF="EN-i4l.html#toc7" REL=contents>
+</HEAD>
+<BODY>
+<A HREF="EN-i4l-8.html">Next</A>
+<A HREF="EN-i4l-6.html">Previous</A>
+<A HREF="EN-i4l.html#toc7">Contents</A>
+<HR>
+<H2><A NAME="routing"></A> <A NAME="s7">7.</A> <A HREF="EN-i4l.html#toc7">Routing</A>    </H2>
+
+
+<P>    </P>
+
+<H2><A NAME="routingWas"></A> <A NAME="ss7.1">7.1</A> <A HREF="EN-i4l.html#toc7.1">Was ist Routing?</A>
+            </H2>
+
+<P>In einem lokalen Netzwerk ist das Leben einfach: wenn ein TCP-IP
+Paket zu einem anderen Rechner gesendet werden soll, wird dieses
+auf dem Ethernet verschickt. </P>
+<P>Ist der Rechner am Internet 
+oder in einem grösseren Netzwerk (WAN) angeschlossen, ist die 
+Aufgabe schon etwas schwieriger, denn wenn der Ziel-Rechner
+(bzw. Ziel-IP-Nummer) nicht im lokalen Ethernet erreichbar ist, 
+so muss 
+dem Kernel gesagt werden, daß alle nicht lokal zustellbaren
+Pakete, freundlicherweise von einem Gatewayrechner
+weitergeleitet werden.</P>
+<P>Komplizierter ist es, wenn der betreffende Rechner selbst ein
+Gatewayrechner ist und mehrere Netzdevices (Ethernetkarten,
+Modems, ISDN-Karten etc.) zur Verfügung hat und jeweils über diese
+Devices unterschiedliche Rechner/Netze erreichbar sind. 
+Das ist die Aufgabe vom Routing:</P>
+<P>
+<BLOCKQUOTE><CODE>
+Für jede IP-Nummer muß definiert werden, auf welchem 
+Weg (Route) diese erreicht werden kann.
+</CODE></BLOCKQUOTE>
+</P>
+<P>Man unterscheidet folgende Typen:
+(die Beispiele werden unter konkretisiert)</P>
+<P>
+<DL>
+<DT><B>Netzrouten</B><DD><P>Hier wird angeben, wie ein komplettes Netz erreichbar
+ist. Beispiel für ein lokales Ethernet:
+<BLOCKQUOTE><CODE>
+Bsp 1: Das Netz 192.168.1.0 mit der Maske 255.255.255.0 ist
+über das Device eth0 erreichbar.
+</CODE></BLOCKQUOTE>
+</P>
+
+<DT><B>Hostrouten</B><DD><P>Man definiert, wie ein einzelner Rechner erreichbar ist.
+Beispiel für eine syncPPP Verbindung:
+<BLOCKQUOTE><CODE>
+Bsp 2: Der Rechner 192.168.0.1 ist über das
+Device ippp0 erreichbar.
+</CODE></BLOCKQUOTE>
+</P>
+
+<DT><B>Default-Route</B><DD><P>Im Internet gibt es recht viele IP-Nummern - es ist daher
+mühsam und langweilig für alle einzelnen IP-Nummern oder
+Netze einzelne Routing-Einträge zu machen. Daher gibt
+es die Möglichkeit zu sagen:
+<BLOCKQUOTE><CODE>
+Bsp 3: Alle IP-Nummern, für die keine spezielle 
+Regel vorhanden ist, schicke an den Rechner mit
+der IP-Nummer 192.168.0.1.
+</CODE></BLOCKQUOTE>
+
+Man beachte: es macht i.A. keinen Sinn, mehr als
+eine Default-Route anzugeben.</P>
+</DL>
+    </P>
+
+<H2><A NAME="routingWie"></A> <A NAME="ss7.2">7.2</A> <A HREF="EN-i4l.html#toc7.2">Wie konfiguriert man das Routing?</A>
+            </H2>
+
+<P>Die Routingeinträge werden dem Kernel zur Laufzeit
+mit dem Kommando <CODE>route</CODE> mitgeteilt (und wieder entzogen).</P>
+
+<H3>S.u.S.E. Methode            </H3>
+
+<P>Bei S.u.S.E. können die Routingeinträge fest in die Datei 
+<CODE>/etc/route.conf</CODE>
+eingetragen werden, die beim Booten oder durch einen
+Runlevelwechsel vom Script 
+<CODE>/sbin/init.d/route</CODE> ausgewertet wird.</P>
+<P>Die Einträge für die obigen Beispiele sehen so aus:
+<PRE>
+            # Bsp 1:
+            192.168.1.0     0.0.0.0     255.255.255.0   eth0
+            # Bsp 2:
+            192.168.0.1     0.0.0.0     255.255.255.255 ippp0
+            # Bsp 3:
+            default         192.168.0.1
+            
+</PRE>
+</P>
+<P>Die <B>1. Spalte</B> gibt das Ziel an, also das Netz, die IP-Nummer, 
+oder das Schlüßelwort <CODE>default</CODE>.
+In der <B>3. Spalte</B> steht die zugehörige Netzmaske 
+(falls notwendig).</P>
+<P>In der <B>2. Spalte</B> steht der Gatewayrechner, an den die Anfragen
+geschickt werden sollen. </P>
+<P>In der <B>4. Spalte</B> steht das zu verwendene Device.</P>
+<P>Hier sieht man auch in der 3. Zeile, 
+daß bei Verwendung eines Gatewayrechners die Angabe des Devices
+nicht nötig ist, da sie selbststämdig ermittelt wird.</P>
+<P>Allerdings muß (in diesem Beispiel) die Hostroute auf
+<CODE>192.168.0.1</CODE> definiert sein, bevor man sie zum Setzen
+der Defaultroute nutzen kann. Merke: <B>Die Reihenfolge
+ist wichtig.</B></P>
+<P>Manuelles Setzen und Löschen der Routingtabelle:</P>
+<P>
+<PRE>
+            /sbin/init.d/route start
+            /sbin/init.d/route stop
+            
+</PRE>
+</P>
+
+<H3>Manuelle Methode            </H3>
+
+<P>
+<PRE>
+            # Bsp 1:
+            route add -net 192.168.1.0 netmask 255.255.255.0 dev eth0
+            # Bsp 2:
+            route add -host 192.168.0.1 dev ippp0
+            # Bsp 3:
+            route add default gw 192.168.0.1 
+            
+</PRE>
+</P>
+<P>Mehr Infos: <CODE>man route</CODE>.</P>
+
+<H3>Löschen von Routing-Einträgen            </H3>
+
+<P>Routing-Einträge können zum einem direkt gelöscht werden,
+sie werden aber auch automatisch gelöscht, wenn das 
+zugrundeliegende Netzdevice gelöscht oder umkonfiguriert wird.</P>
+<P>Dies hat in diesem Zusammenhang einen ungewünschten Nebeneffekt.
+Der <CODE>ipppd</CODE> baut die Verbindung auf und bekommt eine
+neue IP-Nummer vom Server zugewiesen, wobei selbstständig
+eine neue Hostroute auf die IP-Nummer des Gegners
+eingerichtet wird.</P>
+<P>Allerdings wird eine ev. vorhandene Defaultroute über dieses
+Device gelöscht. </P>
+<P>Durch die PPP-Option <CODE>defaultroute</CODE>
+könnte man sich automatisch wieder eine Anlegen lassen.
+Allerdings ist diese Methode nicht sehr flexibel
+(vielleicht will man ja doch keine Defaultroute) und man
+hätte hiermit keine Möglichkeit zu steuern, wie sich beim
+Verbindungsabbau verhalten werden soll.
+Daher wird beim Verbindungaus- und abbau jeweils ein
+Script gestartet, siehe 
+<A HREF="#ipup">Kontrollieren der Routingtabelle beim Verbindungsauf- und              abbau</A>.</P>
+
+<H2><A NAME="ipup"></A> <A NAME="ss7.3">7.3</A> <A HREF="EN-i4l.html#toc7.3">Kontrollieren der Routingtabelle beim         Verbindungsauf- und abbau (/etc/ppp/ip-up)</A>
+             </H2>
+
+<P>Der <CODE>ipppd</CODE> bietet die einfache Möglichkeit
+beim Verbindungsaufbau das Script 
+<CODE>/etc/ppp/ip-up</CODE> und beim Abbau
+<CODE>/etc/ppp/ip-down</CODE> zu Starten, wobei jeweils
+die folgenden Parameter über den neuen Zustand 
+übergeben werden:</P>
+<P>
+<UL>
+<LI> $1: Interface</LI>
+<LI> $2: Device</LI>
+<LI> $3: Speed (nur aus Kompatibilitätsgründen)</LI>
+<LI> $4: lokale IP-Nummer</LI>
+<LI> $5: IP-Nummer des Gegners</LI>
+</UL>
+</P>
+<P>Durch Installation geeigneter Scripte kann also die
+Default-Route neu gesetzt werden.
+Die Scripte könnten jeweils so aussehen:</P>
+<P>
+<PRE>
+        #!/bin/sh
+        /sbin/route add default gw $5
+        
+</PRE>
+</P>
+<P>Bei S.u.S.E. wird ein Script <CODE>/etc/ppp/ip-up</CODE>
+welches für den <I>hausgebrauch</I> ausreicht. Die
+Routen werden aufgrund der Konfigurationsdateien
+gesetzt und wieder hergestellt. Weitere Kommandos
+können vom Administrator eingefügt werden (z.B. Mails
+verschicken).</P>
+<P>Das Script <CODE>ip-down</CODE> ist ein symbolischer Link auf
+<CODE>ip-up</CODE>, so daß man nur eine Datei zu verwalten hat.</P>
+
+<H3>Was macht das Script ip-up/ip-down?            </H3>
+
+<P>Es wird geprüft. ob das Interface ippp? ist, sollte also bei 
+Analog-PPP nicht stören, wer dort etwas eintragen will, 
+sollte die Stelle leicht finden.</P>
+<P>Wenn es als <CODE>ip-up</CODE> aufgerufen wird (also nach dem
+Verbindungsaufbau),
+wird eine Default-Route auf die gerade zugewiesene IP-Nummer
+gesetzt.</P>
+<P>Wenn es als <CODE>ip-up</CODE> aufgerufen wird (also nach dem
+Verbindungsabbau), dann wird das Interfacae gelöscht.
+Das Interface wird wie in <CODE>/etc/rc.config</CODE>
+wieder neu angelegt, es wird also wieder auf die 
+ursprünglichen IP-Nummer gesetzt.
+Nach den Angaben in <CODE>/etc/route.conf</CODE> werden die 
+Routingeinträge für dieses Device neu eingerichtet.
+Somit ist dial-on-demand wieder möglich.
+Ist dort keine Defaultroute angegeben, wird auch keine gesetzt.</P>
+
+<H3>Ich möchte aber kein dial-on-demand                </H3>
+
+<P>In der <CODE>/etc/route.conf</CODE> (bzw. in YaST) wird keine 
+Default-Route (Default-Gateway) angeben, dadurch
+existiert nur während einer Verbindung eine Default-Route, diese
+wird beim Verbindungsabbau gelöcht und nicht neu angelegt.
+Die Verbindung kann dann manuell (oder durch ein Script) durch
+<CODE>isdnctrl dial ippp0</CODE> aufgebaut werden
+(oder durch manuelles setzen der Default-Route).</P>
+<P>Dadurch kann z.B. auch erreicht werden, dass mit verschiedenen
+Providern gearbeitet wird, in dem Fall muss man ja 
+sowieso entscheiden, welche
+Verbindung nun hochgefahren werden soll, z.B. 
+<CODE>isdnctrl dial ippp17</CODE></P>
+
+<H2><A NAME="uebungRoute"></A> <A NAME="ss7.4">7.4</A> <A HREF="EN-i4l.html#toc7.4">Übung: Kontrolliere die IP-Nummer und die Routing-Tabelle</A>
+            </H2>
+
+<P>
+<OL>
+<LI><CODE>/var/log/messages</CODE> überwachen
+<P>Siehe 
+<A HREF="EN-i4l-3.html#lessVLM">Betrachte messages</A></P>
+
+</LI>
+<LI>Prüfe <CODE>ip-up</CODE> und <CODE>ip-down</CODE>
+<P>
+<HR>
+<PRE>
+glen:/root # ls -la /etc/ppp/ip-*
+lrwxrwxrwx   1 root     root            5 Mar 20 10:16 /etc/ppp/ip-down -> ip-up
+-rwxr-xr-x   1 root     root         1813 Mar 24 23:03 /etc/ppp/ip-up
+            
+</PRE>
+<HR>
+
+Siehe 
+<A HREF="EN-i4l-13.html#installation">Installation</A></P>
+
+</LI>
+<LI>Prüfe IP-Nummern und die Routingtabelle <B>vor</B>
+einer Verbindung
+<P>
+<HR>
+<PRE>
+glen:/root # ifconfig ippp0
+ippp0     Link encap:Point-Point Protocol  
+inet addr:192.168.0.99  P-t-P:192.168.0.1  Mask:255.0.0.0
+UP POINTOPOINT RUNNING NOARP  MTU:1500  Metric:1
+RX packets:0 errors:0 dropped:0 overruns:0
+TX packets:0 errors:0 dropped:0 overruns:0
+            
+</PRE>
+<HR>
+</P>
+<P>
+<HR>
+<PRE>
+glen:/root # route -n
+Kernel IP routing table
+Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
+192.168.0.1     0.0.0.0         255.255.255.255 UH    0      0        0 ippp0
+127.0.0.0       0.0.0.0         255.0.0.0       U     0      0        2 lo
+0.0.0.0         192.168.0.1     0.0.0.0         UG    0      0        0 ippp0
+            
+</PRE>
+<HR>
+</P>
+
+
+</LI>
+<LI>Verbindung initiieren
+<P>Man kann entweder eine Pakete verschicken (z.B.
+<CODE>ping 141.1.1.1</CODE> oder das Wählen direkt verlangen
+<CODE>isdnctrl dial ippp0</CODE></P>
+<P>Als Beispiel bekommen wir die IP-Nummer 
+<CODE>1.2.3.4</CODE> zugewiesen, der Gegner habe die
+IP-Nummer <CODE>5.6.7.8</CODE> (siehe messages).</P>
+
+</LI>
+<LI>Prüfe IP-Nummer und die Routingtabelle <B>während</B>
+einer Verbindung
+<P>
+<HR>
+<PRE>
+glen:/root # ifconfig ippp0
+ippp0     Link encap:Point-Point Protocol  
+inet addr:1.2.3.4  P-t-P:5.6.7.8  Mask:255.0.0.0
+UP POINTOPOINT RUNNING NOARP  MTU:1500  Metric:1
+RX packets:2 errors:0 dropped:0 overruns:0
+TX packets:3 errors:0 dropped:0 overruns:0
+            
+</PRE>
+<HR>
+</P>
+<P>
+<HR>
+<PRE>
+glen:/root # route -n
+Kernel IP routing table
+Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
+5.6.7.8         0.0.0.0         255.255.255.255 UH    0      0        0 ippp0
+127.0.0.0       0.0.0.0         255.0.0.0       U     0      0        2 lo
+0.0.0.0         5.6.7.8         0.0.0.0         UG    0      0        0 ippp0
+            
+</PRE>
+<HR>
+</P>
+
+</LI>
+<LI> Wir gehen in die große weite Welt:
+<P>Bestimme eine existierende IP-Nummer, die einzige,
+die ich mir merken kann ist die des DNS-Server von
+ECRC: <CODE>traceroute -n 141.1.1.1</CODE>.
+Man beachte, daß wir noch keinen DNS-Servive benutzen
+können, daher <CODE>-n</CODE>.</P>
+
+</LI>
+<LI>Timeout abwarten bis aufgelegt wird/
+<P>betrachte <CODE>/var/log/messages</CODE>, z.B.:
+<HR>
+<PRE>
+kernel: isdn_net: local hangup ippp0
+kernel: ippp0: Chargesum is 0
+isdnlog: Apr 03 09:20:49   tei 70 calling Eunet-N with KfrI I  Normal call clearing (User) 
+ipppd[135]: Modem hangup
+ipppd[135]: Connection terminated.
+ipppd[135]: taking down PHASE_DEAD link 0, linkunit: 0
+ipppd[135]: sent [0][LCP TermReq id=0x2 6c 69 6e 6b 20 63 6 c 6f 73 65 64]
+ipppd[135]: LCP is down
+ipppd[135]: link 0 closed , linkunit: 0
+ipppd[135]: reinit_unit: 0 
+ipppd[135]: Connect[0]: /dev/ippp0, fd: 6
+            
+</PRE>
+<HR>
+</P>
+
+</LI>
+<LI>IP-Nummern und Routing prüfen
+<P>sie müssen jetzt wieder genausogesetzt sein, wie
+<B>vor</B> dem Verbindungsaufbau.</P>
+
+</LI>
+</OL>
+</P>
+
+
+
+
+
+<HR>
+<A HREF="EN-i4l-8.html">Next</A>
+<A HREF="EN-i4l-6.html">Previous</A>
+<A HREF="EN-i4l.html#toc7">Contents</A>
+</BODY>
+</HTML>

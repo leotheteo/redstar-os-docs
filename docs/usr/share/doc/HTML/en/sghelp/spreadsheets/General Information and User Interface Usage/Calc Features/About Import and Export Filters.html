@@ -1,0 +1,305 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+	<TITLE></TITLE>
+	<META NAME="GENERATOR" CONTENT="《Sogwang 3.0》  (Linux)">
+	<META NAME="CREATED" CONTENT="20091209;10212100">
+	<META NAME="CHANGED" CONTENT="20091209;11463200">
+	<STYLE TYPE="text/css">
+	<!--
+		P.listitem { font-family: "Bitstream Vera Sans", "Arial", "Helvetica", "Lucida", "Geneva", "Helmet", sans-serif, "Andale Sans UI", "Arial Unicode MS", "Lucida Sans Unicode", "Tahoma" }
+		H2 { margin-bottom: 0.18cm; font-family: "Bitstream Vera Sans", "Arial", "Helvetica", "Lucida", "Geneva", "Helmet", sans-serif, "Andale Sans UI", "Arial Unicode MS", "Lucida Sans Unicode", "Tahoma"; font-size: 14pt }
+		H3 { margin-bottom: 0.18cm; font-family: "Bitstream Vera Sans", "Arial", "Helvetica", "Lucida", "Geneva", "Helmet", sans-serif, "Andale Sans UI", "Arial Unicode MS", "Lucida Sans Unicode", "Tahoma"; font-size: 12pt }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="ko-KP" DIR="LTR"><DIV style="margin-left: 25">
+<H1><A NAME="bm_id3152952"></A><FONT FACE="Thorndale, serif"><SPAN LANG="en-US">About
+Import and Export Filters</SPAN></FONT></H1>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">In
+</SPAN></FONT><FONT FACE="청봉, serif"><SPAN LANG="en-US">Sogwang ,
+apart from its own XML
+formats</A> you can also open and save many foreign XML formats.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">In UNIX,
+certain file formats cannot be recognized automatically. There may be
+cases where you have to select the file type yourself in the <B>Open</B>
+dialog. For example, if you have a database table in text format that
+you want to open as a database table, you need to specify the file
+type &quot;Text CSV&quot; after selecting the file.</SPAN></FONT></P>
+<H2><SPAN LANG="en-US">Basic Macros in MS Office Documents</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">In <A href="../../../Common Help Topics/Sg_Options/VBA.html">Sogwang Office - Reference - Load/Save - VBA Properties</A> you can specify the
+settings for the VBA macro codes in MS Office documents. VBA macros
+are unable to run in </SPAN></FONT><FONT FACE="청봉, serif"><SPAN LANG="en-US">Sogwang ;
+they must first be converted and adapted. Often you only want to use
+</SPAN></FONT><FONT FACE="청봉, serif"><SPAN LANG="en-US">Sogwang to
+change the visible content of a Word, Excel or PowerPoint file and
+then save the file again in Microsoft Office format without changing
+the macros they contain. You can set the behavior of </SPAN></FONT><FONT FACE="청봉, serif"><SPAN LANG="en-US">Sogwang as desired:
+Either the VBA macros are saved in commented form as a subroutine of
+</SPAN></FONT><FONT FACE="청봉, serif"><SPAN LANG="en-US">Sogwang and
+when the document is saved in MS Office format are written back
+correctly again, or you can select the Microsoft Office macros to be
+removed when loading. The last option is an effective protection
+against viruses within the Microsoft Office documents.</SPAN></FONT></P>
+<H2><SPAN LANG="en-US">Notes regarding external formats and file
+types</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Even if
+they are not installed, some filters can be selected in the <B>Open</B>
+and <B>Save</B> dialogs. If you select such a filter, a message will
+appear saying that you can still install the filter if you require.</SPAN></FONT></P>
+<TABLE WIDTH=947 BORDER=0 CELLPADDING=5 CELLSPACING=0>
+	<COL WIDTH=40>
+	<COL WIDTH=552>
+	<TR>
+		<TD WIDTH=44>
+			<P><IMG SRC="../../../Image/tip.png" NAME="graphics1" ALT="Tip Icon " ALIGN=BOTTOM WIDTH=40 HEIGHT=43 BORDER=0></P>
+		</TD>
+		<TD WIDTH=883>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">The
+			filter <B>Text Encoded</B> helps you open and save text documents
+			with another encoding font. The filter opens a dialog that enables
+			you to select character set, default fonts, language and paragraph
+			break.</SPAN></FONT></P>
+		</TD>
+	</TR>
+</TABLE>
+<P><BR><BR>
+</P>
+<H3><SPAN LANG="en-US">Importing and Exporting in HTML Format </SPAN>
+</H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">When
+borders in HTML documents are exported, lines are exported in a width
+of exactly 1 pixel since Netscape Navigator and MS Internet Explorer
+do not recognize smaller lines. When importing, a border of 1 pixel
+width will appear with 0.05 pt width.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">With
+</SPAN></FONT><FONT FACE="청봉, serif"><SPAN LANG="en-US">Sogwang Writer,
+you can insert footnotes and endnotes in your HTML document. They are
+exported as meta tags. The footnote and endnote characters are
+exported as hyperlinks.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Notes
+are used to include unknown characters in an HTML document. Every
+note that begins with &quot;HTML:...&quot; and ends with &quot;&gt;&quot;
+is treated as an HTML code, but is exported without these
+designations. Several tags around text can be included after
+&quot;HTML:...&quot; Accented characters are converted into the ANSI
+character set. Notes are created during import (for example, for meta
+tags that have no room in the file properties or unknown tags).</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">The HTML
+import of </SPAN></FONT><FONT FACE="청봉, serif"><SPAN LANG="en-US">Sogwang Writer is
+able to read files that have UTF-8 or UCS2 character coding. All
+characters that are contained in the ANSI character set or in the
+system's character set can be displayed.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">When
+exporting to HTML, the character set selected in <B>Sogwang Office - Reference -
+Load/Save - HTML Compatibility</B> is used. Characters not present
+there are written in a substitute form, which is displayed correctly
+in modern web browsers. When exporting such characters, you will
+receive an appropriate warning.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">If, in
+<B>Sogwang Office - Reference - Load/Save - HTML Compatibility</B>, you select
+Netscape Navigator, MS Internet Explorer, or </SPAN></FONT><FONT FACE="청봉, serif"><SPAN LANG="en-US">Sogwang Writer as
+the export option, upon export all important font attributes are
+exported as direct attributes (for example, text color, font size,
+bold, italic, and so on) in CSS1 styles. (<A HREF="../../../Common Help Topics/General_Information/Glo_InetTerms.html">CSS</A>
+stands for Cascading Style Sheets.) Importing is also carried out
+according to this standard.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">The
+&quot;font&quot; property corresponds to Netscape Navigator; that is,
+before the font size you can specify optional values for &quot;font-style&quot;
+(italic, none), &quot;font-variant&quot; (normal, small-caps) and
+&quot;font-weight&quot; (normal, bold).</SPAN></FONT></P>
+<UL>
+	<LI><P CLASS="listitem"><FONT FACE="청봉, serif"><SPAN LANG="en-US">For example, &quot;Font:
+	bold italic small-caps 12pt/200% Arial, Helvetica&quot; switches to
+	bold, italic, small caps, double-space with the font family Arial or
+	Helvetica, if Arial doesn't exist.</SPAN></FONT></P>
+</UL>
+<UL>
+	<LI><P CLASS="listitem"><FONT FACE="청봉, serif"><SPAN LANG="en-US">&quot;Font: 10pt&quot;
+	switches to a 10pt font, with bold, italic, small caps off.</SPAN></FONT></P>
+</UL>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">If MS
+Internet Explorer or </SPAN></FONT><FONT FACE="청봉, serif"><SPAN LANG="en-US">Sogwang Writer are
+set as the export option, the sizes of the control field and their
+internal margins are exported as styles (print formats). CSS1 size
+properties are based on &quot;width&quot; and &quot;height&quot; values. 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+The &quot;Margin&quot; property is used to set equal margins
+on all sides of the page. To allow different margins, the
+&quot;Margin-Left&quot;, &quot;Margin-Right&quot;, &quot;Margin-Top&quot;
+and &quot;Margin-Bottom&quot; properties are used.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">The
+distances of graphics and Plug-Ins to the content can be set
+individually for export to </SPAN></FONT><FONT FACE="청봉, serif"><SPAN LANG="en-US">Sogwang Writer and
+MS Internet Explorer. If the top/bottom or right/left margin is set
+differently, the distances are exported in a &quot;STYLE&quot; option
+for the corresponding tag as CSS1 size properties &quot;Margin-Top&quot;,
+&quot;Margin-Bottom&quot;, &quot;Margin-Left&quot; and
+&quot;Margin-Right&quot;.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Text
+frames are supported with the use of CSS1 extensions for absolute
+positioned objects. This applies only to the export options Netscape
+Navigator, MS Internet Explorer, and </SPAN></FONT><FONT FACE="청봉, serif"><SPAN LANG="en-US">Sogwang Writer.
+Text frames can be aligned as graphics, and Floating Frames, but
+character-linked frames are not possible.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Text
+frames are exported as &quot;&lt;SPAN&gt;&quot; or &quot;&lt;DIV&gt;&quot;
+tags if they do not contain columns. If they do contain columns then
+they are exported as &quot;&lt;MULTICOL&gt;&quot;.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">The
+measurement unit set in </SPAN></FONT><FONT FACE="청봉, serif"><SPAN LANG="en-US">Sogwang is used for
+HTML export of CSS1 properties. The unit can be set separately for
+text and HTML documents under <B>Sogwang Office - Reference - Sogwang Office Writer
+- General</B> or <B>Sogwang Office - Reference - Sogwang Office Writer/Web
+- View</B>. The number of exported decimal places depends on the
+unit.</SPAN></FONT></P>
+<TABLE WIDTH=410 BORDER=1 CELLPADDING=2 CELLSPACING=0>
+	<COL WIDTH=107>
+	<COL WIDTH=198>
+	<COL WIDTH=219>
+	<TR VALIGN=TOP>
+		<TD WIDTH=154>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Measurement
+			Unit</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=109>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Measurement
+			Unit Name in CSS1</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=127>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Maximum
+			Number of Decimal Places</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=154>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Millimeter</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=109>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">mm</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=127>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">2</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=154>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Centimeter</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=109>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">cm</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=127>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">2</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=154>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Inch</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=109>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">in</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=127>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">2</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=154>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Pica</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=109>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">pc</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=127>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">2</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=154>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Point</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=109>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">pt</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=127>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">1</SPAN></FONT></P>
+		</TD>
+	</TR>
+</TABLE>
+<P><BR><BR>
+</P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">The
+</SPAN></FONT><FONT FACE="청봉, serif"><SPAN LANG="en-US">Sogwang Web
+page filter supports certain capabilities of CSS2. However, to use
+it, print layout export must be activated in <B>Sogwang Office - Reference -
+Load/Save - HTML Compatibility</B>. Then, in HTML documents, besides
+the HTML Page Style, you can also use the styles &quot;First page&quot;,
+&quot;Left page&quot; and &quot;Right page&quot;. These styles should
+enable you to set different page sizes and margins for the first page
+and for right and left pages when printing.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Importing and Exporting Numbering</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">If, in
+<B>Sogwang Office - Reference - Load/Save - HTML Compatibility</B>, the export
+option &quot;</SPAN></FONT><FONT FACE="청봉, serif"><SPAN LANG="en-US">Sogwang Writer&quot;
+or &quot;Internet Explorer&quot; is selected, the indents of
+numberings are exported as &quot;margin-left&quot; CSS1 property in
+the STYLE attribute of the &lt;OL&gt; and &lt;UL&gt; tags. The
+property indicates the difference relative to the indent of the next
+higher level.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">A left
+paragraph indent in numbering is indicated as &quot;margin-left&quot;
+CSS1 property. First-line indents are ignored in numbering and not
+exported.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Importing and Exporting Spreadsheet Files</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Sogwang imports
+and exports references to deleted sections such as, for example, a
+referenced column. The whole formula can be viewed during the export
+process and the deleted reference contains an indication (#REF!) to
+the reference. A #REF! will be correspondingly created for the
+reference during the import.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Importing and Exporting Graphics Files</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">As with
+HTML documents, you can choose to use a filter with or without the
+element (</SPAN></FONT><FONT FACE="청봉, serif"><SPAN LANG="en-US">Sogwang Impress) in
+the name to open a </SPAN></FONT><FONT FACE="청봉, serif"><SPAN LANG="en-US">Sogwang graphics
+file. If without, the file will be opened as a </SPAN></FONT><FONT FACE="청봉, serif"><SPAN LANG="en-US">Sogwang Draw
+document. Otherwise, the file saved by an old program version is now
+opened in </SPAN></FONT><FONT FACE="청봉, serif"><SPAN LANG="en-US">Sogwang Impress.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">When you
+import an EPS file, a preview of the graphic is displayed in the
+document. If a preview is not available, a placeholder corresponding
+to the size of the graphic is displayed in the document. Under Unix
+and Microsoft Windows you can print the imported file by using a
+PostScript printer. When exporting EPS graphics, a preview is created
+and has the TIFF or EPSI format. If an EPS graphic together with
+other graphics is exported in the EPS format then this file will be
+embedded unchanged in the new file.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Multipage-TIFFs
+are allowed when graphics are imported or exported in TIFF format.
+The graphics are retrieved as a set of individual pictures in a
+single file, for example, the individual pages of a fax.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Some
+</SPAN></FONT><FONT FACE="청봉, serif"><SPAN LANG="en-US">Sogwang Draw
+and </SPAN></FONT><FONT FACE="청봉, serif"><SPAN LANG="en-US">Sogwang Impress
+options can be accessed through <B>File - Export</B>.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">PostScript</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">To
+export a document or graphic in PostScript format:</SPAN></FONT></P>
+<OL>
+	<LI><P CLASS="listitem"><FONT FACE="청봉, serif"><SPAN LANG="en-US">If you have not yet done
+	so, install a PostScript printer driver, such as the Apple
+	LaserWriter driver.</SPAN></FONT></P>
+	<LI><P CLASS="listitem"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Print the document with
+	the <B>File - Print</B> menu command.</SPAN></FONT></P>
+	<LI><P CLASS="listitem"><FONT FACE="청봉, serif"><SPAN LANG="en-US"><SPAN LANG="en-US"><SPAN STYLE="font-weight: medium">Select
+	the PostScript printer in the dialog and mark the </SPAN></SPAN></FONT><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Print
+	to file</B></SPAN></FONT><FONT FACE="청봉, serif"><SPAN LANG="en-US"><SPAN STYLE="font-weight: medium">
+	check box. A PostScript file will be created.</SPAN></SPAN></FONT></A></FONT></P>
+</OL>
+
+</DIV></BODY>
+</HTML>
+

@@ -1,0 +1,172 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <META NAME="GENERATOR" CONTENT="LinuxDoc-Tools 0.9.21">
+ <TITLE>FAQ for isdn4linux: lan: ISDN4LINUX in a LAN </TITLE>
+ <LINK HREF="i4lfaq-10.html" REL=next>
+ <LINK HREF="i4lfaq-8.html" REL=previous>
+ <LINK HREF="i4lfaq.html#toc9" REL=contents>
+</HEAD>
+<BODY>
+<A HREF="i4lfaq-10.html">Next</A>
+<A HREF="i4lfaq-8.html">Previous</A>
+<A HREF="i4lfaq.html#toc9">Contents</A>
+<HR>
+<H2><A NAME="lan"></A> <A NAME="s9">9.</A> <A HREF="i4lfaq.html#toc9">lan: ISDN4LINUX in a LAN </A></H2>
+
+<H2><A NAME="lan_config"></A> <A NAME="ss9.1">9.1</A> <A HREF="i4lfaq.html#toc9.1">lan_config: How can I set up Linux so that other computers in my LAN can access the internet via my Linux computer? </A>
+</H2>
+
+<P>There are several possibilities:
+<OL>
+<LI>Your LAN is an official Class C net with IP addresses valid on the Internet.
+This case is the easiest of configure. You give each network card on your
+network one of these addresses and set a default route on the ISDN card that
+goes to your provider.</LI>
+<LI>You'd only like to do http in Internet from your LAN. In this case you
+can make up IP addresses for your LAN; the only official IP address is that for
+your ISDN card. Then install a proxy server on your Linux router, and enter it
+in all of your browsers. In this case you do not need a default route.</LI>
+<LI>From your LAN you only want to log in to your Linux ISDN router and FROM
+THERE do your work on the Internet. This is even simpler, then you don't even
+need a proxy server.</LI>
+<LI>Use ip masquerading. This is the most comfortable one to use, but more
+difficult to set up. The Linux computer acts as a gateway. The trick is that it
+hides the ip addresses of the LAN, by giving its own internet address as
+response address. When receiving the response, it will forward it to the
+correct computer on the LAN. You can also use masquerading with dynamic ip
+addresses. If you don't want to start the ISDN connection from the Linux
+computer to your internet provider manually, then you can set up dial on demand
+functionality (see section 
+<A HREF="i4lfaq-16.html#dod">dod</A>).</LI>
+</OL>
+</P>
+
+<H2><A NAME="lan_modemserver"></A> <A NAME="ss9.2">9.2</A> <A HREF="i4lfaq.html#toc9.2">lan_modemserver: How can forward ISDN data from a local computer in my LAN to the ISDN card(s) in my Linux PC (like a modem server)? </A>
+</H2>
+
+<P>On the Linux PC you have to install a forwarding server.
+One option is to use <CODE>modemd</CODE>. This is a very short perl script
+(also see Linux Modem sharing mini-HOWTO at
+<CODE>
+<A HREF="http://www.linuxdoc.org/HOWTO/mini/Linux-Modem-Sharing.html">http://www.linuxdoc.org/HOWTO/mini/Linux-Modem-Sharing.html</A></CODE>):
+<HR>
+<PRE>
+#!/usr/bin/perl
+select((select(STDOUT), $| = 1)[$[]);
+select((select(STDIN), $| = 1)[$[]);
+exec &quot;cu&quot;,&quot;-E&quot;,&quot;''&quot;, &quot;-l&quot;, &quot;$ARGV[0]&quot;;
+die &quot;$0: Cannot exec cu: $!\n&quot;;
+</PRE>
+<HR>
+
+It has to be started by inetd, therefore this has to be added to
+<CODE>/etc/services</CODE>:
+<HR>
+<PRE>
+modem           20006/tcp       modemd  # Modem service via TCP
+isdn            20007/tcp       modemd  # ISDN  service via TCP
+</PRE>
+<HR>
+
+And this has to be added to <CODE>/etc/inet.conf</CODE>:
+<HR>
+<PRE>
+modemd stream tcp nowait root /usr/sbin/tcpd /usr/sbin/modemd ttyI5
+</PRE>
+<HR>
+</P>
+<P>Instead of modemd you can also use the program <CODE>mserver</CODE>, which has
+some additional functionality (e.g. rights based on ip address):
+<CODE>
+<A HREF="ftp://ftp.innet.be/pub/staff/carl/">ftp://ftp.innet.be/pub/staff/carl/</A></CODE></P>
+<P>Additionally, you need some software on your non-ISDN computer which emulates a
+serial port, but redirects it via telnet to the Linux ISDN computer.
+Some telnet clients allow this functionality (e.g. some uucicos).
+If you generally want to offer all applications a kind of &quot;remote COM
+port&quot;, then there is COMT for Windows (95), and
+&quot;telser.device&quot; for Amigas. Disadvantage of COMT: it is only
+visible to ancient 16bit Win applications, and not even working in the DOS box.
+Another program is DialOut/IP, but it's fairly expensive ($70).</P>
+<P>COMT may be found on Simtel:
+<CODE>
+<A HREF="http://educom.sce.fct.unl.pt/ftp/pub/shareware/win-utils/comt2.zip">http://educom.sce.fct.unl.pt/ftp/pub/shareware/win-utils/comt2.zip</A></CODE></P>
+<P>DialOut/IP can be found on:
+<CODE>
+<A HREF="http://tacticalsoftware.com">http://tacticalsoftware.com</A></CODE></P>
+<P>Those who just want to save their CrossPoint installation should be aware that
+it now offers tcp modem support, such that it will run without additional
+software. Check out:
+<CODE>
+<A HREF="http://www.openxp.de">http://www.openxp.de</A></CODE></P>
+
+<H2><A NAME="lan_remotedialing"></A> <A NAME="ss9.3">9.3</A> <A HREF="i4lfaq.html#toc9.3">lan_remotedialing: How can I allow the users in my LAN to trigger a dial out via   the ISDN card(s) in my Linux PC? </A>
+</H2>
+
+<P>For this you need two pieces of software. At the computer where the ISDN-line
+is connected you need to install a <CODE>dial daemon</CODE>. The dial daemon
+will execute any dial commands given from a <CODE>dial frontend</CODE> located on
+a different computer on the LAN. You have several options to choose a dial
+daemon and dial frontend.
+<OL>
+<LI>At first you can use the free software <CODE>smpppd</CODE> (SuSE Meta PPP
+Daemon) from SuSE as the dial daemon. smpppd gets used in the SuSE distribution
+for all ISDN, Modem and DSL connections. You can connect to smpppd locally or
+over a LAN via different dial frontends and trigger dial-out, hang-up and so
+on. The most known dial frontend is kinternet a small applet for the KDE
+Kicker. Others are the qt-only qinternet and the command line tool cinternet.
+Unfortunately there is no frontend for Windows or Mac OS available.
+
+Obviously this is the easiest way if you already have SuSE installed on the
+server, and all other involved computers are also based on Linux (installation
+of the dial frontend should not be too difficult with non-SuSE distributions).
+Some more hints:
+<UL>
+<LI>The software is available in SuSE-Linux within the packages smpppd,
+kinternet and qinternet, see 
+<A HREF="http://www.opensuse.org">http://www.opensuse.org</A></LI>
+<LI>In order to allow smpppd listening into the LAN change the following
+two options in /etc/smpppd.conf (see also "man smpppd.conf"):
+<HR>
+<PRE>
+open-inet-socket = yes # (default is no)
+bind-address = &lt;IP&gt; # IP of the LAN-network-card of the dial in server;
+# default is listening on all network cards (!)
+</PRE>
+<HR>
+</LI>
+<LI>On the client side you can either enter the dial server via GUI or via
+/etc/smpppd-c.conf (see also "man smpppd-c.conf").</LI>
+</UL>
+</LI>
+<LI>Another free software solution working the same way is <CODE>LineControl</CODE>.
+It has a dial daemon (linesrv) which you can configure dialing different
+connections (similar to smpppd) be it ISDN, Modem, DSL or another dial-out
+connection. Dial frontends are available for Linux (one for KDE and one for
+Gnome), Windows and Java.
+Some more hints:
+<UL>
+<LI>The software and tutorials can be found at
+<A HREF="http://linecontrol.srf.ch/">http://linecontrol.srf.ch/</A></LI>
+<LI>The config files is located at <CODE>/etc/linesrv.conf</CODE>
+(the relevant configuration options are similar to that of smpppd)</LI>
+<LI>Several dial and hang up scripts where you can define the system
+commands how to dial/hang up certain connections are below
+<CODE>/etc/linesrv/</CODE></LI>
+<LI>In order to have the linesrv daemon running at system start of your
+server you also need to enter it in your system start configuration.</LI>
+<LI>On the client side you now can enter the dial server via GUI in one of
+the frontends and dial/hang up a connection configured at the server.</LI>
+</UL>
+</LI>
+</OL>
+</P>
+
+
+
+<HR>
+<A HREF="i4lfaq-10.html">Next</A>
+<A HREF="i4lfaq-8.html">Previous</A>
+<A HREF="i4lfaq.html#toc9">Contents</A>
+</BODY>
+</HTML>

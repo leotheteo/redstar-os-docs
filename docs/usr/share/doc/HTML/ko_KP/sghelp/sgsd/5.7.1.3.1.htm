@@ -1,0 +1,68 @@
+﻿<html dir='ltr'>
+	<head>
+		<META http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+		<title>유효한 세포항목의 지정</title>
+		<link rel='stylesheet' type='text/css' href='../css/main.css'/>
+		<script type='text/javascript' language='Javascript' src='../js/mexpcol.js'></script>
+		<script type='text/javascript' language='JavaScript' src='../js/glossary.js'></script>
+	</head>
+	<body>
+		<h1>&nbsp;<img align="absbottom" src="../image/external_images/crystal/svtools/res/new_doc.png"/>&nbsp;유효한 세포항목의 지정</h1>
+		<p id='ExpandAllLine' class='ExpFav'>
+			<a href='#' onClick='ExpandAll()' onKeyPress='ExpandAll()' class='DropDown'>
+				<img id='picHeader' border='0' src='../image/image/common/expandtri.gif' alt='모두 표시'>
+				<span id='ExpandAll'>모두 표시</span>
+			</a>
+		</p>
+		<ol>
+			<li>유효성을 검사할 세포를 선택합니다.</li>
+			<li><b class="bterm">&lt;자료&gt;</b>차림표에서 <b class="bterm">&lt;유효성&gt;</b>을 찰칵하고 <b class="bterm">&lt;기준&gt;</b>표쪽을 찰칵합니다.</li>
+			<li>요구하는 유효성류형을 지정합니다.
+				<p><b class="bterm">수값의 유효성설정</b></p>
+					<ol>
+						<li><b class="bterm">&lt;허용&gt;</b>복합칸에서 <b class="bterm">&lt;옹근수&gt;</b> 또는 <b class="bterm">&lt;소수&gt;</b>를 찰칵합니다.</li>
+						<li><b class="bterm">&lt;자료&gt;</b>복합칸에서 요구하는 조건류형을 찰칵합니다. 례를 들어 제한값 범위를 설정하려면 <b class="bterm">&lt;다음의 값범위이다&gt;</b>를 찰칵합니다.</li>
+						<li><b class="bterm">&lt;최소값&gt;, </b><b class="bterm">&lt;최대값&gt;</b>본문칸에 허용하려는 특정값이나 최소, 최대값을 입력합니다.</li>
+					</ol>
+				<p><b class="bterm">날자 또는 시간의 설정</b></p>
+					<ol>
+						<li><b class="bterm">&lt;허용&gt;</b>합칸에서 <b class="bterm">&lt;날자&gt;</b> 또는 <b class="bterm">&lt;시간&gt;</b>을 찰칵합니다.</li>
+						<li><b class="bterm">&lt;자료&gt;</b>복합칸에서 요구하는 조건류형을 찰칵합니다. 례를 들어 특정한 날자후의 날자로 제한하려면 <b class="bterm">&lt;다음의 값보다 크다&gt;</b>를 찰칵합니다.</li>
+						<li><b class="bterm">&lt;최소값&gt;</b>본문칸에 시작날자나 시간, 또는 끝날자나 시간을 입력합니다.</li>
+					</ol>
+				<p><b class="bterm">특정한 길이의 본문으로 제한</b></p>
+					<ol>
+						<li><b class="bterm">&lt;허용&gt;</b>복합칸에서 <b class="bterm">&lt;본문길이&gt;</b>를 찰칵합니다.</li>
+						<li><b class="bterm">&lt;허용&gt;</b>복합칸에서 요구하는 조건류형을 찰칵합니다. 례를 들어 특정한 글자수까지로 제한하려면 <b class="bterm">&lt;다음의 값보다 작거나 같다&gt;</b>를 찰칵합니다.</li>
+						<li><b class="bterm">&lt;최대값&gt;</b>본문칸에 본문의 특정한 길이 또는 최대, 최소길이를 입력합니다.</li>
+					</ol>
+			</li>
+			<li>세포를 비워둘수 있는가를 지정합니다.
+				<ul>
+					<li>공백(Null)을 허용하려면 <b class="bterm">&lt;빈세포 허용&gt;</b>확인칸을 선택합니다.</li>
+					<li>공백(Null)을 방지하려면 <b class="bterm">&lt;빈세포 허용&gt;</b>확인칸의 선택을 취소합니다.</li>
+				</ul>
+			</li>
+			<li>세포를 찰칵했을 때 입력통보문이 표시되게 하려면 <b class="bterm">&lt;입력도움말&gt;</b>표쪽을 찰칵하고 <b class="bterm">&lt;세포선택시 입력도움말 현시&gt;</b>확인칸을 선택했는가를 확인한 다음 제목과 도움말을 입력합니다.</li>
+			<li>무효한 자료를 입력했을 때 표처리프로그람에서 어떻게 반응하겠는가 하는것을 지정합니다.
+				<p><b class="bterm">방법</b></p>
+					<ol>
+						<li><b class="bterm">&lt;오유통보문&gt;</b>표쪽을 찰칵하고 <b class="bterm">&lt;무효한 값을 입력할 때 오유통보문 현시&gt;</b>확인칸을 선택했는가를 확인합니다.</li>
+						<li><b class="bterm">&lt;동작&gt;</b>복합칸에 대해 다음의 방법들중에서 하나를 선택합니다.
+							<ul>
+								<li>무효한 자료입력을 방해하지 않고 정보통보문만 표시하려면 <b class="bterm">&lt;정보&gt;</b>를 찰칵합니다.</li>
+								<li>무효한 자료입력을 방해하지 않고 경고통보문만 표시하려면 <b class="bterm">&lt;경고&gt;</b>를 찰칵합니다.</li>
+								<li>무효한 자료를 입력하지 못하게 하려면 <b class="bterm">&lt;중지&gt;</b>를 찰칵합니다.</li>
+							</ul>
+						</li>
+						<li>오유통보문의 제목과 본문을 입력합니다.</li>
+					</ol>
+			</li>
+		</ol>
+		<p><b class="bterm">참고:</b>   우와 같이 지정한 유효성설정에 차이나는 세포들을 표시하기 위하여서는 <b class="bterm">&lt;도구&gt;</b>차림표에서 <b class="bterm">&lt;추적&gt;</b>을 찰칵하고 <b class="bterm">&lt;무효자료 표식&gt;</b>을 찰칵합니다. 
+			그러나 <b class="bterm">&lt;동작&gt;</b>복합칸이 <b class="bterm">&lt;중지&gt;</b>로 설정되였으면 이러한 기능을 사용할수 없습니다.
+		</p>
+		<script type="text/javascript" language="Javascript">footerView()</script>
+	
+</body>
+</html>

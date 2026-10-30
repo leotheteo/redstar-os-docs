@@ -1,0 +1,257 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <META NAME="GENERATOR" CONTENT="LinuxDoc-Tools 0.9.21">
+ <TITLE>ISDN4Linux Tutorial: Monitoring Dial-On-Demand </TITLE>
+ <LINK HREF="EN-i4l-10.html" REL=next>
+ <LINK HREF="EN-i4l-8.html" REL=previous>
+ <LINK HREF="EN-i4l.html#toc9" REL=contents>
+</HEAD>
+<BODY>
+<A HREF="EN-i4l-10.html">Next</A>
+<A HREF="EN-i4l-8.html">Previous</A>
+<A HREF="EN-i4l.html#toc9">Contents</A>
+<HR>
+<H2><A NAME="dodCtrl"></A> <A NAME="s9">9.</A> <A HREF="EN-i4l.html#toc9">Monitoring Dial-On-Demand </A>    </H2>
+
+<P>During the configuration you should monitor the system to determine
+when and why a connection is made. Otherwise you can quickly rack up
+unwanted phone bills.</P>
+<P>One can be sure, however, that a connection is never made or kept open
+for no reason. This occurs only even if packets are actually sent out
+over the line.</P>
+<P>Thus, you need to check the server services installed on the computer,
+whether they were configured correctly and to if necessary find out
+the cause of the connection.</P>
+
+
+<H2><A NAME="ss9.1">9.1</A> <A HREF="EN-i4l.html#toc9.1">Monitoring connections</A>
+        </H2>
+
+
+<P>There are a number of ISDN status monitors. The most important is
+imon; this console program can be started in any environment, reacts
+promptly and does not devour system resources.</P>
+<P>Other programs are: <CODE>xisdnload</CODE> (also shows the throughput),
+<CODE>isdnmon</CODE> and <CODE>isdnmonp</CODE>.  All monitors show the telephone
+number and the type of connection (incoming or outgoing on).</P>
+
+<H2><A NAME="verbose"></A> <A NAME="ss9.2">9.2</A> <A HREF="EN-i4l.html#toc9.2">Determining the reason for the connection</A>
+            </H2>
+
+<P>
+<UL>
+<LI> With the command <CODE>isdnctrl verbose 3</CODE> the i4l
+subsystem will write a message in
+<CODE>/var/log/messages</CODE> each time a connection is
+established so that one can determine between which IP
+numbers and port numbers a packet is being sent.  This
+example is an inquiry to the WWW server <CODE>www.suse.com</CODE>
+(Alias <CODE>goldengate</CODE>):
+
+<HR>
+<PRE>
+Apr 10 21:05:06 glen kernel: OPEN: 1.1.1.1 -> 209.0.51.1 TCP, port: 2224 -> 80
+                
+</PRE>
+<HR>
+
+Disadvantage: one cannot check why a connection is not being hung up.
+More: 
+<A HREF="EN-i4l-15.html#isdnDial">SDB: unwanted connections</A>
+</LI>
+<LI> <CODE>tcpdump</CODE> (Paket <CODE>tcpdump</CODE>) is a packet
+sniffer that checks all packets on a network device. The
+output of the program is not very user-freiends, but it at
+least shows the IP number and port numbers. This examples
+is an an inquiry to the WWW server <CODE>www.suse.com</CODE>
+(Alias <CODE>goldengate</CODE>)
+
+<HR>
+<PRE>
+glen:/root # tcpdump -i ippp0
+tcpdump: listening on ippp0
+21:05:39.382188 pec-30.au1.n.uunet.de.2230 > goldengate.suse.com.www: 
+    S 1384488919:1384488919(0) win 512 &lt;mss 1460>
+21:05:39.642188 goldengate.suse.com.www > pec-30.au1.n.uunet.de.2230: 
+    S 3326089293:3326089293(0) ack 1384488920 win 32736 &lt;mss 1460>
+21:05:39.642188 pec-30.au1.n.uunet.de.2230 > goldengate.suse.com.www: 
+    . ack 1 win 32120 (DF)
+                
+</PRE>
+<HR>
+
+
+Disadvantage: when using dynamic IP numbers, the ppp 
+daemon recreates the the interface <CODE>ippp0</CODE>.  <CODE>tcpdump</CODE> won't show any more data after this, and must be aborted and restarted.
+</LI>
+</UL>
+</P>
+
+
+<H2><A NAME="isdnrep"></A> <A NAME="ss9.3">9.3</A> <A HREF="EN-i4l.html#toc9.3">Analyzing connections</A>
+            </H2>
+
+<P>The program <CODE>isdnlog</CODE> runs in the backgroud, always
+listening to the D channel. All activity is logged to
+<CODE>/var/log/messages</CODE> and a protocol is written to
+<CODE>/var/log/isdn.log</CODE>.</P>
+<P>With the toolM <CODE>isdnrep</CODE>, this file can be read at some
+later time. There are a number of parameters; here are the
+most important:</P>
+<P>
+<UL>
+<LI> <CODE>isdnrep</CODE>: all of today's connections</LI>
+<LI> <CODE>isdnrep -a</CODE>: all logged connections</LI>
+<LI> <CODE>isdnrep -t01/04/98-03/04/98</CODE>: all connections 
+from 1 to 3 April 1998</LI>
+</UL>
+
+More information is in 
+<A HREF="file:/usr/doc/packages/i4l/isdnlog/README">file:/usr/doc/packages/i4l/isdnlog/README</A>
+or in the source package.</P>
+
+<H2><A NAME="dodOnOff"></A> <A NAME="ss9.4">9.4</A> <A HREF="EN-i4l.html#toc9.4">Dial-On-Demand an- und ausstellen</A>
+            </H2>
+
+<P>Das i4l-Subsystem ist (wenn es denn einmal gestartet wurde) nicht 
+dafür vorgesehen, daß Verbindungen
+nur manuell gestartet werden. Man könnte das Konzept bei i4l also 
+auch so formulieren: wenn es gestartet ist,
+besteht ständig eine Verbindung, die aber automatisch gekappt 
+wird, wenn nichts passiert.</P>
+<P>Wer es dennoch machen will, der entferne einfach die 
+Default-Route. In diesen Fall wird nur noch dann eine Verbindung
+aufgefgebaut, wenn ein IP-Paket an die direkte Gegenstelle geschickt 
+wird, was i.A. nicht vorkommt, da diese Gegenstelle keine
+Internetdienste anbietet und daher von keinem Client angesprochen
+wird.</P>
+<P>Als endgültigen Schritt, kann man auch das komplette Interface
+(ippp0) herunterfahren, dann können grundsätzlich keine
+Verbindungen aufgebaut werden.</P>
+
+<H2><A NAME="dodSuse"></A> <A NAME="ss9.5">9.5</A> <A HREF="EN-i4l.html#toc9.5">Tips im S.u.S.E. System</A>
+                    </H2>
+
+<P>Man kann die Runlevel-Scripts natürlich auch manuell benutzen:
+<HR>
+<PRE>
+/sbin/init.d/i4l stop
+            
+</PRE>
+<HR>
+
+fährt alle ISDN-Netzdevices runter,
+<HR>
+<PRE>
+/sbin/init.d/i4l start
+/sbin/init.d/route
+            
+</PRE>
+<HR>
+
+legt sie wieder an und setzt die Routen.</P>
+<P>Wer bei einer syncPPP-Verbindung die Verbindung nur manuell
+starten möchte, kann eine Eigenschaft des Scriptes
+<CODE>/etc/ppp/ip-up</CODE> ab S.u.S.E. 5.2 ausnutzen (Siehe FixMe).
+Dieses legt beim Verbindungsaufbau eine Defaultroute
+auf die neu erkannte PtP-Adresse. Beim Verbindungsabbau
+wird das Device neu angelegt und die Defaultroute 
+gelöscht. Schlisslich wird die Datei <CODE>/etc/route.conf</CODE>
+durchsucht und die Defaultroute wenn definiert neu angelegt.
+Definiert man dort keine Defaultroute, so hat man nach 
+Verbindungsabbau eben keine.</P>
+<P>Gestartet werden kann dann nur mit dem Kommando:
+<HR>
+<PRE>
+isdnctrl dial ippp0
+            
+</PRE>
+<HR>
+
+und wer manuell Auflegen will:
+<HR>
+<PRE>
+isdnctrl hangup ippp0
+            
+</PRE>
+<HR>
+</P>
+
+<H2><A NAME="sudo"></A> <A NAME="ss9.6">9.6</A> <A HREF="EN-i4l.html#toc9.6">Wie erlaube ich normalen Benutzern Dial-In-Demand</A>
+            zu aktivieren?                    </H2>
+
+<P>Am besten garnicht, denn das ist Aufgabe des Administrators.
+Es ist nur diesem vorbehalten, Netzdevices und
+Routen zu konfigurieren.</P>
+<P>Versuche nicht, den notwendigen Programmen suid-Attribute zu
+geben! Erstens ist die Aufgabe sehr schwer, und zweitens
+handelt man sich damit ein riesisges Sicherheitsloch ein,
+denn wenn diese Programme erstmal <I>offen</I> sind, lassen
+sich auch andere unerwünschte Dinge damit tun.</P>
+<P>Einem einzelnen Script suid-Attribute zu geben, ist unter
+Linux ebenfalls verboten.</P>
+<P>Wer es dennoch unbedingt machen will, der benutze ein Paket
+wie z.B. <CODE>sudo</CODE>. Damit lassen sich für einzelne Benutzer
+bestimmte Kommandos definieren, die diese dann als Benutzer
+<CODE>root</CODE> ausführen dürfen.</P>
+<P>Hier ein einfaches Beispiel:
+<OL>
+<LI> Paket <CODE>sudo</CODE> installieren.</LI>
+<LI> Mit <CODE>visudo</CODE> die Konfigurationsdatei editieren, z.B.
+soll der Benutzer <CODE>kfr</CODE> das Programm 
+<CODE>/usr/local/bin/dial</CODE> ausführen dürfen:
+<HR>
+<PRE>
+# User privilege specification
+kfr     ALL=/usr/local/bin/dial
+                
+</PRE>
+<HR>
+
+
+<B>Hinweis:</B> benutze nur das Kommando <CODE>visudo</CODE>, um
+dieKonfigurationsdatei (<CODE>/etc/sudoers</CODE>) zu
+verändern.
+</LI>
+<LI> Das Script <CODE>dial</CODE> könnte z.B. so sein:
+<HR>
+<PRE>
+#!/bin/sh
+
+DEVICE=ippp0
+
+if test $UID -ne 0; then
+    exec sudo $0 $*
+fi
+
+case "$1" in
+
+stop) 
+    echo stop
+    isdnctrl hangup $DEVICE
+    ;;
+*)
+    echo dial
+    isdnctrl dial $DEVICE
+    ;;
+
+esac
+                
+</PRE>
+<HR>
+
+Wird es nicht als User <CODE>root</CODE> aufgerufen, startet es sich
+selbst mit <CODE>sudo</CODE> neu. Mit <CODE>dial</CODE> wird gewählt,
+mit <CODE>dial stop</CODE> wird aufgelegt.</LI>
+<LI> sudo fragt beim ersten Start und danach von Zeit zu Zeit
+das Passwort des aufrufenden Benutzers ab.</LI>
+</OL>
+</P>
+
+<HR>
+<A HREF="EN-i4l-10.html">Next</A>
+<A HREF="EN-i4l-8.html">Previous</A>
+<A HREF="EN-i4l.html#toc9">Contents</A>
+</BODY>
+</HTML>

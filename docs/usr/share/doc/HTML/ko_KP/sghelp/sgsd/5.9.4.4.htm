@@ -1,0 +1,85 @@
+<html dir='ltr'>
+	<head>
+		<META http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+		<title>DATEVALUE</title>
+		<link rel='stylesheet' type='text/css' href='../css/main.css'/>
+		<script type='text/javascript' language='Javascript' src='../js/mexpcol.js'></script>
+		<script type='text/javascript' language='JavaScript' src='../js/glossary.js'></script>
+	</head>
+	<body>
+		<h1>&nbsp;<img align="absbottom" src="../image/external_images/crystal/svtools/res/new_doc.png"/>&nbsp;DATEVALUE</h1>
+		<p id='ExpandAllLine' class='ExpFav'>
+			<a href='#' onClick='ExpandAll()' onKeyPress='ExpandAll()' class='DropDown'>
+				<img id='picHeader' border='0' src='../image/image/common/expandtri.gif' alt='모두 표시'>
+				<span id='ExpandAll'>모두 표시</span>
+			</a>
+		</p>
+		<p><b class="bterm">참고항목</b>&emsp;   
+			<a href='5.9.4.1.htm'>날자 및 시간함수목록</a>, 
+			<a href='5.9.4.18.htm'>NOW</a>, 
+			<a href='5.9.4.21.htm'>TIMEVALUE</a>, 
+			<a href='5.9.4.22.htm'>TODAY</a>
+		</p>
+		<p>날자서식으로 표시된 본문의 내부수값을 구합니다.</p>
+		<p><b class="bterm">문법:&emsp;&emsp;		DATEVALUE(본문)</b></p>
+		<table>
+			<tr>
+				<th>인수명</th>
+				<th>설명</th>
+			</tr>
+			<tr>
+				<td>본문</td>
+				<td>《서광사무처리》 3.0프로그람의 날자서식으로 표시된 날자를 인용부호로 묶은 본문입니다. 례를 들어 "2008/1/30"과 같이 날자를 큰 옮김표로 묶은 본문문자렬입니다. 
+					<b class="bterm">본문</b>에서 년도를 나타내는 부분이 생략되면 사용중인 콤퓨터에서 제공되는 날자로부터 현재년도를 읽어 사용합니다.
+				</td>
+			</tr>
+		</table>
+		<p><b class="bterm">실례</b></p>
+		<p><a href='1.5.1.htm'>실례의 리용방법</a>을 참고하십시오.
+		</p>
+			<table>
+				<tr>
+					<td>
+						<table>
+							<tr><td>&nbsp;</td></tr>
+							<tr><th>1</th></tr>
+							<tr><th>2</th></tr>
+							<tr><th>3</th></tr>
+							<tr><th>4</th></tr>
+						</table>
+					</td>
+					<td>
+						<table>
+							<tr>
+								<th>A</th>
+								<th>B</th>
+							</tr>
+							<tr>
+								<th>수식</th>
+								<th>설명(결과)</th>
+							</tr>
+							<tr>
+								<td>=DATEVALUE("2008-8-22")</td>
+								<td>(39 682)</td>
+							</tr>
+							<tr>
+								<td>=DATEVALUE("2008.8.22")</td>
+								<td>(39 682)</td>
+							</tr>
+							<tr>
+								<td>=DATEVALUE("2009/02/23")</td>
+								<td>(39 867)</td>
+							</tr>
+							<tr>
+								<td>=DATEVALUE("02/23")</td>
+								<td>콤퓨터의 기본제공된 시계가 2009년으로 설정된것으로 가정한 본문날자의 내부수자입니다. (39 867)</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>		
+		<p><b class="bterm">참고:</b>   수자를 날자로 표시하려면 세포를 선택하고 <b class="bterm">&lt;서식&gt;</b>차림표에서 <b class="bterm">&lt;세포&gt;</b>를 찰칵한 다음 <b class="bterm">&lt;수자&gt;</b>표쪽을 찰칵하고 <b class="bterm">&lt;종류&gt;</b>목록칸에서 <b class="bterm">&lt;날자&gt;</b>를 찰칵합니다.</p>
+		<script type="text/javascript" language="Javascript">footerView()</script>
+	
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+	<TITLE></TITLE>
+	<META NAME="GENERATOR" CONTENT="《Sogwang 3.0》  (Linux)">
+	<META NAME="CREATED" CONTENT="20091205;11384400">
+	<META NAME="CHANGED" CONTENT="20091205;11434000">
+	<STYLE TYPE="text/css">
+	<!--
+		H2 { margin-bottom: 0.18cm; font-family: "Bitstream Vera Sans", "Arial", "Helvetica", "Lucida", "Geneva", "Helmet", sans-serif, "Andale Sans UI", "Arial Unicode MS", "Lucida Sans Unicode", "Tahoma"; font-size: 14pt }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="ko-KP" DIR="LTR"><DIV style="margin-left: 25">
+<H1>Sogwang <FONT FACE="Thorndale, serif"><SPAN LANG="en-US">Basic
+Glossary</SPAN></FONT></H1>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">This
+glossary explains some technical terms that you may come across when
+working with </SPAN></FONT><FONT FACE="청봉, serif"><SPAN LANG="en-US">Sogwang Basic.</SPAN></FONT></P>
+<H2><A NAME="dezimal"></A><SPAN LANG="en-US">Decimal Point</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">When
+converting numbers, </SPAN></FONT><FONT FACE="청봉, serif"><SPAN LANG="en-US">Sogwang Basic uses
+the locale settings of the system for determining the type of decimal
+and thousand separator.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">The
+behavior has an effect on both the implicit conversion ( 1 + &quot;2.3&quot;
+= 3.3 ) as well as the runtime function <A 
+HREF="../../Macros and Programming/Command Reference/Alphabetic List of Fuctions,Statements, and Operators/IsNumeric Function.html">IsNumeric</A>.</SPAN></FONT></P>
+<H2><A NAME="colors"></A><SPAN LANG="en-US">Colors</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">In
+</SPAN></FONT><FONT FACE="청봉, serif"><SPAN LANG="en-US">Sogwang Basic,
+colors are treated as long integer value. The return value of color
+queries is also always a long integer value. When defining
+properties, colors can be specified using their RGB code that is
+converted to a long integer value using the <A 
+HREF="../../Macros and Programming/Command Reference/Alphabetic List of Fuctions,Statements, and Operators/RGB Function.html">RGB
+function</A>.</SPAN></FONT></P>
+<H2><A NAME="measurementunits"></A><SPAN LANG="en-US">Measurement
+Units</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">In
+</SPAN></FONT><FONT FACE="청봉, serif"><SPAN LANG="en-US">Sogwang Basic,
+a <B>method parameter</B> or a <B>property</B> expecting unit
+information can be specified either as integer or long integer
+expression without a unit, or as a character string containing a
+unit. If no unit is passed to the method the default unit defined for
+the active document type will be used. If the parameter is passed as
+a character string containing a measurement unit, the default setting
+will be ignored. The default measurement unit for a document type can
+be set under <B>Sogwang Office - Reference - (Document Type) - General</B>.</SPAN></FONT></P>
+<H2><A NAME="twips"></A><A NAME="bm_id3145801"></A><SPAN LANG="en-US">Twips</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">A twip
+is a screen-independent unit which is used to define the uniform
+position and size of screen elements on all display systems. A twip
+is 1/1440th of an inch or 1/20 of a printer's point. There are 1440
+twips to an inch or about 567 twips to a centimeter.</SPAN></FONT></P>
+<H2><A NAME="urlnotation"></A><SPAN LANG="en-US">URL Notation</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">URLs
+(<B>Uniform Resource Locators</B>) are used to determine the location
+of a resource like a file in a file system, typically inside a
+network environment. A URL consists of a protocol specifier, a host
+specifier and a file and path specifier:</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>protocol</B>://<B>host.name</B>/<B>path/to/the/file.html</B>
+</SPAN></FONT>
+</P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">The most
+common usage of URLs is on the internet when specifying web pages.
+Example for protocols are <B>http</B>, <B>ftp</B>, or <B>file</B>.
+The <B>file</B> protocol specifier is used when referring to a file
+on the local file system.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">
+URL notation does not allow certain special characters to be used. These
+are either replaced by other characters or encoded. A slash (<B>/</B>)
+is used as a path separator. For example, a file referred to as </SPAN><B>C:\My
+File.sxw</B><SPAN STYLE="font-weight: medium"> on the local host in
+&quot;Windows notation&quot; becomes </SPAN><B>file:///C|/My%20File.sxw</B><SPAN STYLE="font-weight: medium">
+in URL notation.</SPAN></A></SPAN></FONT></P>
+
+</DIV></BODY>
+</HTML>

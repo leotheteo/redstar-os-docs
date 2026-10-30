@@ -1,0 +1,89 @@
+<html dir='ltr'>
+	<head>
+		<META http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+		<title>PRODUCT</title>
+		<link rel='stylesheet' type='text/css' href='../css/main.css'/>
+		<script type='text/javascript' language='Javascript' src='../js/mexpcol.js'></script>
+		<script type='text/javascript' language='JavaScript' src='../js/glossary.js'></script>
+	</head>
+	<body>
+		<h1>&nbsp;<img align="absbottom" src="../image/external_images/crystal/svtools/res/new_doc.png"/>&nbsp;PRODUCT</h1>
+		<p id='ExpandAllLine' class='ExpFav'>
+			<a href='#' onClick='ExpandAll()' onKeyPress='ExpandAll()' class='DropDown'>
+				<img id='picHeader' border='0' src='../image/image/common/expandtri.gif' alt='모두 표시'>
+				<span id='ExpandAll'>모두 표시</span>
+			</a>
+		</p>
+		<p><b class="bterm">참고항목</b>&emsp;
+			<a href="5.9.8.1.htm">수학함수목록</a>,
+			<a href="5.9.8.25.htm">FACT</a>,
+			<a href="5.9.8.58.htm">SUM</a>,
+			<a href="5.9.9.10.htm">SUMPRODUCT</a>
+		</p>
+		<p>인수를 곱합니다.</p>
+		<p><b class="bterm">문법:&emsp;&emsp;		PRODUCT(수값1,수값2,...)</b></p>
+		<table>
+			<tr>
+				<th>인수명</th>
+				<th>설명</th>
+			</tr>
+			<tr>
+				<td>수값1,수값2,… </td>
+				<td>곱하여 값을 구하는 1부터 30까지의 인수입니다.</td>
+			</tr>
+		</table>						
+		<p><b class="bterm">주의</b></p>
+			<ul>
+				<li>인수가 수값, 론리값, 수값으로 표시된 본문이면 계산되지만 인수가 오유값이거나 수값으로 변환될수 없는 본문이면 오유가 발생합니다.</li>
+				<li>인수가 배렬 또는 참조이면 해당 배렬 또는 참조범위에 있는 수값만 계산됩니다. 배렬 또는 참조범위에 있는 빈 세포, 론리값, 본문, 오유값 등은 무시됩니다.</li>
+			</ul>
+		<p><b class="bterm">실례</b></p>			
+<p><a href="1.5.1.htm">실례의 리용방법</a>을 참고하십시오.</p>
+			<table>
+				<tr>
+					<td>
+						<table>
+							<tr><td>&nbsp;</td></tr>
+							<tr><th>1</th></tr>
+							<tr><th>2</th></tr>
+							<tr><th>3</th></tr>
+							<tr><th>4</th></tr>
+						</table>
+					</td>
+					<td>
+						<table>
+							<tr>
+								<th>A</th>
+							</tr>
+							<tr>
+								<th>자료</th>
+							</tr>
+							<tr>
+								<td>5</td>
+							</tr>
+							<tr>
+								<td>15</td>
+							</tr>
+							<tr>
+								<td>30</td>
+							</tr>
+							<tr>
+								<th>수식</th>
+								<th>설명(결과)</th>
+							</tr>
+							<tr>
+								<td>=PRODUCT(A2:A4)</td>
+								<td>우에 있는 수값들을 곱한 값입니다. (2 250)</td>
+							</tr>
+							<tr>
+								<td>=PRODUCT(A2:A4, 2)</td>
+								<td>우에 있는 수값들과 2를 곱한 값입니다. (4 500)</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>		
+		<script type="text/javascript" language="Javascript">footerView()</script>
+	
+</body>
+</html>																

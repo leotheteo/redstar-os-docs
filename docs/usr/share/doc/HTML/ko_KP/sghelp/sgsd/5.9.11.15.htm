@@ -1,0 +1,109 @@
+<html dir='ltr'>
+	<head>
+		<META http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+		<title>OFFSET</title>
+		<link rel='stylesheet' type='text/css' href='../css/main.css'/>
+		<script type='text/javascript' language='Javascript' src='../js/mexpcol.js'></script>
+		<script type='text/javascript' language='JavaScript' src='../js/glossary.js'></script>
+	</head>
+	<body>
+		<h1>&nbsp;<img align="absbottom" src="../image/external_images/crystal/svtools/res/new_doc.png"/>&nbsp;OFFSET</h1>
+		<p id='ExpandAllLine' class='ExpFav'>
+			<a href='#' onClick='ExpandAll()' onKeyPress='ExpandAll()' class='DropDown'>
+				<img id='picHeader' border='0' src='../image/image/common/expandtri.gif' alt='모두 표시'>
+				<span id='ExpandAll'>모두 표시</span>
+			</a>
+		</p>
+		<p><b class="bterm">참고항목</b>&emsp;
+			<a href="5.9.11.1.htm">자료표함수목록</a>
+		</p>
+		<p>시작위치와 비교하여 이동한 참조를 구합니다.</p>
+		<p><b class="bterm">문법:&emsp;&emsp;		OFFSET(참조,행수,렬수,높이,너비)</b></p>
+		<table>
+			<tr>
+				<th>인수명</th>
+				<th>설명</th>
+			</tr>
+			<tr>
+				<td>참조</td>
+				<td>이동기준이 되는 참조(세포)입니다. <b class="bterm">참조</b>는 세포 또는 린접한 세포범위를 참조해야 합니다. 그렇지 않으면 OFFSET는 <b class="bterm">오유:[오유번호]</b>를 나타냅니다.</td>
+			</tr>
+			<tr>
+				<td>행수</td>
+				<td>웃쪽이나 아래쪽으로 이동할 행수입니다. <b class="bterm">행수</b>인수로 5를 사용하는것은 <b class="bterm">참조</b>의 왼쪽웃세포가 <b class="bterm">참조</b>아래쪽에 있는 5행임을 나타냅니다. 행은 정수(시작참조 아래쪽) 또는 부수(시작참조 웃쪽)일수 있습니다.</td>
+			</tr>
+			<tr>
+				<td>렬수</td>
+				<td>왼쪽이나 오른쪽으로 이동할 렬수입니다. <b class="bterm">렬수</b>인수로 5를 사용하는것은 <b class="bterm">참조</b>의 왼쪽웃세포가 <b class="bterm">참조</b>오른쪽에 있는 5렬임을 나타냅니다. <b class="bterm">렬수</b>는 정수(시작 참조의 오른쪽) 또는 부수(시작 참조의 왼쪽)일수 있습니다.</td>
+			</tr>
+			<tr>
+				<td>높이</td>
+				<td>이동한 참조의 행수입니다. 추가선택인수입니다. <b class="bterm">높이</b>는 정수이여야 합니다.</td>
+			</tr>
+			<tr>
+				<td>너비</td>
+				<td>이동된 참조의 렬수입니다. 추가선택인수입니다. <b class="bterm">너비</b>는 정수이여야 합니다.</td>
+			</tr>
+		</table>
+		<p><b class="bterm">주의</b></p>
+			<ul>
+				<li><b class="bterm">행수</b> 및 <b class="bterm">렬수</b> 파생이 자료표의 가장자리웃쪽을 참조하는 경우 OFFSET함수는 <b class="bterm">오유:[오유번호]</b>를 나타냅니다.</li>
+				<li><b class="bterm">높이</b> 또는 <b class="bterm">너비</b>를 생략하면 <b class="bterm">참조</b>와 높이나 너비가 같은것으로  간주합니다.</li>
+				<li><b class="bterm">OFFSET</b>는 세포를 실제로 이동하거나 선택을 변경하지 않으며 단지 참조를 구할뿐입니다. 
+					<p><b class="bterm">OFFSET</b>는 참조주소에 있는 값을 구하는 함수로 사용합니다. 례를 들어 수식 SUM(OFFSET(C2,1,2,3,1))은 세포 C2의 아래에 1행이 있고 오른쪽에 2렬이 있는 3행 x 1렬 범위의 합계를 계산합니다.</p>
+				</li>
+			</ul>
+		<p><b class="bterm">실례</b></p>
+			<p><a href="1.5.1.htm">실례의 리용방법</a>을 참고하십시오.</p>
+			<table>
+				<tr>
+					<td>
+						<table>
+							<tr>
+								<td class="noborder">&nbsp;
+								</td>
+							</tr>
+							<tr>
+								<th>1</th>
+							</tr>
+							<tr>
+								<th>2</th>
+							</tr>
+							<tr>
+								<th>3</th>
+							</tr>
+							<tr>
+								<th>4</th>
+							</tr>
+						</table>
+					</td>
+					<td>
+						<table>
+							<tr>
+								<th>A</th>
+								<th>B</th>
+							</tr>
+							<tr>
+								<th>수식</th>
+								<th>설명(결과)</th>
+							</tr>
+							<tr>
+								<td>=OFFSET(C3,2,3,1,1)</td>
+								<td>세포 F5의 값을 표시합니다. (0)</td>
+							</tr>
+							<tr>
+								<td>=SUM(OFFSET(C3:E5,-1,0,3,3))</td>
+								<td>범위 C2:E4의 합계입니다. (0)</td>
+							</tr>
+							<tr>
+								<td>=OFFSET(C3:E5,0,-3,3,3)</td>
+								<td>자료표에 참조가 없기때문에 오유를 표시합니다. (오유:502)</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+		<script type="text/javascript" language="Javascript">footerView()</script>
+	
+</body>
+</html>				

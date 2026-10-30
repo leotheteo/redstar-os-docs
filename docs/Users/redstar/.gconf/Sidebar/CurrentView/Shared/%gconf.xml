@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<gconf>
+	<entry name="List" mtime="1793386571" type="list" ltype="string">
+		<li type="string">
+			<stringvalue>lanis:/ : none : inode/directory : All...</stringvalue>
+		</li>
+	</entry>
+</gconf>

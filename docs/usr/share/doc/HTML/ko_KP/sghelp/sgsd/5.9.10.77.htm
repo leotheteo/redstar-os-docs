@@ -1,0 +1,125 @@
+<html dir='ltr'>
+	<head>
+		<META http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+		<title>WEIBULL</title>
+		<link rel='stylesheet' type='text/css' href='../css/main.css'/>
+		<script type='text/javascript' language='Javascript' src='../js/mexpcol.js'></script>
+		<script type='text/javascript' language='JavaScript' src='../js/glossary.js'></script>
+	</head>
+	<body>
+		<h1>&nbsp;<img align="absbottom" src="../image/external_images/crystal/svtools/res/new_doc.png"/>&nbsp;WEIBULL</h1>
+		<p id='ExpandAllLine' class='ExpFav'>
+			<a href='#' onClick='ExpandAll()' onKeyPress='ExpandAll()' class='DropDown'>
+				<img id='picHeader' border='0' src='../image/image/common/expandtri.gif' alt='모두 표시'>
+				<span id='ExpandAll'>모두 표시</span>
+			</a>
+		</p>
+		<p><b class="bterm">참고항목</b>&emsp;
+			<a href="5.9.10.1.htm">통계함수목록</a>,
+			<a href="5.9.10.19.htm">EXPONDIST</a>
+		</p>
+		<p>웨이블분포값을 구합니다.</p>
+		<p><b class="bterm">문법:&emsp;&emsp;		WEIBULL(수값,α,β,류형)</b></p>
+		<table>
+			<tr>
+				<th>인수명</th>
+				<th>설명</th>
+			</tr>
+			<tr>
+				<td>수값</td>
+				<td>웨이블분포를 계산할 값입니다.</td>
+			</tr>
+			<tr>
+				<td>α</td>
+				<td>웨이블분포의 α파라메터입니다.</td>
+			</tr>
+			<tr>
+				<td>β</td>
+				<td>웨이블분포의 β파라메터입니다.</td>
+			</tr>
+			<tr>
+				<td>류형</td>
+				<td>적분류형입니다. <b class="bterm">류형</b> = 0인 경우에는 밀도함수, <b class="bterm">류형</b> = 1인 경우에는 적분함수를 계산합니다.</td>
+			</tr>
+		</table>
+		<p><b class="bterm">주의</b></p>
+			<ul>
+				<li><b class="bterm">수값</b>, α, β 등이 수자가 아니면 <b class="bterm">WEIBULL</b>함수는 <b class="bterm">오유:[오유번호]</b>를 반환합니다.</li>
+				<li><b class="bterm">수값</b> < 0이면 <b class="bterm">오유:[오유번호]</b>를 반환합니다.</li>
+				<li>α나 β가 0이하이면 <b class="bterm">오유:[오유번호]</b>를 반환합니다.</li>
+				<li>웨이블루적분포함수의 식은 다음과 같습니다.
+					<p><img border='0' src='../image/image/sgsd/formula-81.gif' alt='표시'></p>
+				</li>
+				<li>웨이블확률밀도함수의 식은 다음과 같습니다.
+					<p><img border='0' src='../image/image/sgsd/formula-82.gif' alt='표시'></p>
+				</li>
+				<li>α = 1이면 웨이블함수는 다음의 식과 함께 지수분포를 반환합니다.
+					<p><img border='0' src='../image/image/sgsd/formula-83.gif' alt='표시'></p>
+				</li>
+			</ul>
+		<p><b class="bterm">실례</b></p>
+			<p><a href="1.5.1.htm">실례의 리용방법</a>을 참고하십시오.</p>
+			<table>
+				<tr>
+					<td>
+						<table>
+							<tr>
+								<td class="noborder">&nbsp;
+								</td>
+							</tr>
+							<tr>
+								<th>1</th>
+							</tr>
+							<tr>
+								<th>2</th>
+							</tr>
+							<tr>
+								<th>3</th>
+							</tr>
+							<tr>
+								<th>4</th>
+							</tr>
+						</table>
+					</td>
+					<td>
+						<table>
+							<tr>
+								<th>A</th>
+								<th>B</th>
+							</tr>
+							<tr>
+								<th>자료</th>
+								<th>설명</th>
+							</tr>
+							<tr>
+								<td>105</td>
+								<td>함수를 계산하려는 값입니다.</td>
+							</tr>
+							<tr>
+								<td>20</td>
+								<td>분포에 대한 α 파라메터입니다.</td>
+							</tr>
+							<tr>
+								<td>100</td>
+								<td>분포에 대한 β 파라메터입니다.</td>
+							</tr>
+							<tr>
+								<th>수식</th>
+								<th>설명(결과)</th>
+							</tr>
+							<tr>
+								<td>=WEIBULL(A2,A3,A4,1)</td>
+								<td>우에 있는 조건에 대한 웨이블루적분포함수입니다. (0.93)</td>
+							</tr>
+							<tr>
+								<td>=WEIBULL(A2,A3,A4,0)</td>
+								<td>우에 있는 조건에 대한 웨이블확률밀도함수입니다. (0.04)</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+		<script type="text/javascript" language="Javascript">footerView()</script>
+	
+</body>
+</html>				

@@ -1,0 +1,112 @@
+﻿<html dir='ltr'>
+	<head>
+		<META http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+		<title>REPLACE</title>
+		<link rel='stylesheet' type='text/css' href='../css/main.css'/>
+		<script type='text/javascript' language='Javascript' src='../js/mexpcol.js'></script>
+		<script type='text/javascript' language='JavaScript' src='../js/glossary.js'></script>
+	</head>
+	<body>
+		<h1>&nbsp;<img align="absbottom" src="../image/external_images/crystal/svtools/res/new_doc.png"/>&nbsp;REPLACE</h1>
+		<p id='ExpandAllLine' class='ExpFav'>
+			<a href='#' onClick='ExpandAll()' onKeyPress='ExpandAll()' class='DropDown'>
+				<img id='picHeader' border='0' src='../image/image/common/expandtri.gif' alt='모두 표시'>
+				<span id='ExpandAll'>모두 표시</span>
+			</a>
+		</p>
+		<p><b class="bterm">참고항목</b>&emsp;
+			<a href="5.9.12.1.htm">본문함수목록</a>,
+			<a href="5.9.12.16.htm">MID</a>,
+			<a href="5.9.12.23.htm">SEARCH</a>,
+			<a href="5.9.12.24.htm">SUBSTITUTE</a>,
+			<a href="5.9.12.27.htm">TRIM</a>
+		</p>
+		<p>본문문자렬의 문자를 다른 본문문자렬로 치환합니다.</p>
+		<p><b class="bterm">문법:&emsp;&emsp;		REPLACE(본문,시작위치,문자수,새 본문)</b></p>
+		<table>
+			<tr>
+				<th>인수명</th>
+				<th>설명</th>
+			</tr>
+			<tr>
+				<td>본문</td>
+				<td>일부 문자를 치환할 본문입니다.</td>
+			</tr>
+			<tr>
+				<td>시작위치</td>
+				<td>본문을 치환할 문자의 위치입니다.</td>
+			</tr>
+			<tr>
+				<td>문자수</td>
+				<td>치환할 문자수입니다.</td>
+			</tr>
+			<tr>
+				<td>새 본문</td>
+				<td>삽입할 본문입니다.</td>
+			</tr>
+		</table>
+		<p><b class="bterm">실례</b></p>
+			<p><a href="1.5.1.htm">실례의 리용방법</a>을 참고하십시오.</p>
+			<table>
+				<tr>
+					<td>
+						<table>
+							<tr>
+								<td class="noborder">&nbsp;
+								</td>
+							</tr>
+							<tr>
+								<th>1</th>
+							</tr>
+							<tr>
+								<th>2</th>
+							</tr>
+							<tr>
+								<th>3</th>
+							</tr>
+							<tr>
+								<th>4</th>
+							</tr>
+						</table>
+					</td>
+					<td>
+						<table>
+							<tr>
+								<th>A</th>
+							</tr>
+							<tr>
+								<th>자료</th>
+							</tr>
+							<tr>
+								<td>abcdefghijk</td>
+							</tr>
+							<tr>
+								<td>2009</td>
+							</tr>
+							<tr>
+								<td>123456</td>
+							</tr>
+							<tr>
+								<th>수식</th>
+								<th>설명(결과)</th>
+							</tr>
+							<tr>
+								<td>=REPLACE(A2,6,5,"*")</td>
+								<td>여섯번째 문자부터 다섯문자를 치환합니다. (abcde*k).</td>
+							</tr>
+							<tr>
+								<td>=REPLACE(A3,3,2,"10")</td>
+								<td>2009의 마지막 두자리를 10으로 치환합니다. (2010).</td>
+							</tr>
+							<tr>
+								<td>=REPLACE(A4,1,3,"@")</td>
+								<td>처음 세 문자를 @로 치환합니다. (@456).</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+		<script type="text/javascript" language="Javascript">footerView()</script>
+	
+</body>
+</html>				

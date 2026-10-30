@@ -1,0 +1,102 @@
+<html dir='ltr'>
+	<head>
+		<META http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+		<title>HEX2BIN</title>
+		<link rel='stylesheet' type='text/css' href='../css/main.css'/>
+		<script type='text/javascript' language='Javascript' src='../js/mexpcol.js'></script>
+		<script type='text/javascript' language='JavaScript' src='../js/glossary.js'></script>
+	</head>
+	<body>
+		<h1>&nbsp;<img align="absbottom" src="../image/external_images/crystal/svtools/res/new_doc.png"/>&nbsp;HEX2BIN</h1>
+		<p id='ExpandAllLine' class='ExpFav'>
+			<a href='#' onClick='ExpandAll()' onKeyPress='ExpandAll()' class='DropDown'>
+				<img id='picHeader' border='0' src='../image/image/common/expandtri.gif' alt='모두 표시'>
+				<span id='ExpandAll'>모두 표시</span>
+			</a>
+		</p>
+		<p><b class="bterm">참고항목</b>&emsp;
+			<a href="5.9.13.1.htm">추가함수목록</a>,
+			<a href="5.9.13.7.htm">BIN2HEX</a>,
+			<a href="5.9.13.12.htm">DEC2HEX</a>,
+			<a href="5.9.13.41.htm">OCT2HEX</a>
+		</p>
+		<p>16진수를 2진수로 변환합니다.</p>
+		<p><b class="bterm">문법:&emsp;&emsp;		HEX2BIN(16진수,자리수)</b></p>
+		<table>
+			<tr>
+				<th>인수명</th>
+				<th>설명</th>
+			</tr>
+			<tr>
+				<td>16진수</td>
+				<td>변환할 16진수입니다. 10자리까지 사용할수 있습니다. 최상위비트는 부호비트(오른쪽에서 40번째 비트)이고 나머지 39비트는 값을 나타내는 비트입니다. 부수는 2의 보수표기법으로 표시됩니다.</td>
+			</tr>
+			<tr>
+				<td>자리수</td>
+				<td>2진수의 자리수입니다. 추가선택인수입니다. <b class="bterm">자리수</b>를 생략하면 필요한 최소한의 자리수가 사용됩니다. <b class="bterm">자리수</b>는 반환값의 앞에 0을 넣어 자리수를 맞출 때 유용합니다.</td>
+			</tr>
+		</table>
+		<p><b class="bterm">주의</b></p>
+			<ul>
+				<li><b class="bterm">16진수</b>가 부수이면 <b class="bterm">오유:[오유번호]</b>가 반환됩니다.</li>
+				<li><b class="bterm">16진수</b>가 부수이면 FFFFFFFE00보다 크거나 같아야 하며 <b class="bterm">16진수</b>가 정수이면 1FF보다 작거나 같아야 합니다.</li>
+				<li><b class="bterm">16진수</b>가 유효한 16진수가 아니면 <b class="bterm">오유:[오유번호]</b>가 반환됩니다.</li>
+				<li><b class="bterm">자리수</b>로 지정한것보다 자리수가 더 많이 필요하면 <b class="bterm">오유:[오유번호]</b>가 반환됩니다.</li>
+				<li><b class="bterm">자리수</b>가 옹근수가 아니면 소수점이하는 무시됩니다.</li>
+				<li><b class="bterm">자리수</b>가 수자가 아니면 #<b class="bterm">NAME?</b>오유가 반환됩니다.</li>
+				<li><b class="bterm">자리수</b>가 부수이면 <b class="bterm">오유:[오유번호]</b>가 반환됩니다.</li>
+			</ul>
+		<p><b class="bterm">실례</b></p>
+			<p><a href="1.5.1.htm">실례의 리용방법</a>을 참고하십시오.</p>
+			<table>
+				<tr>
+					<td>
+						<table>
+							<tr>
+								<td class="noborder">&nbsp;
+								</td>
+							</tr>
+							<tr>
+								<th>1</th>
+							</tr>
+							<tr>
+								<th>2</th>
+							</tr>
+							<tr>
+								<th>3</th>
+							</tr>
+							<tr>
+								<th>4</th>
+							</tr>
+						</table>
+					</td>
+					<td>
+						<table>
+							<tr>
+								<th>A</th>
+								<th>B</th>
+							</tr>
+							<tr>
+								<th>수식</th>
+								<th>설명(결과)</th>
+							</tr>
+							<tr>
+								<td>=HEX2BIN("F", 8)</td>
+								<td>16진수 F를 8자리 2진수로 변환합니다. (00001111)</td>
+							</tr>
+							<tr>
+								<td>=HEX2BIN("B7")</td>
+								<td>16진수 B7을 2진수로 변환합니다. (10110111)</td>
+							</tr>
+							<tr>
+								<td>=HEX2BIN("FFFFFFFFFF")</td>
+								<td>16진수 FFFFFFFFFF를 2진수로 변환합니다. (1111111111)</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+		<script type="text/javascript" language="Javascript">footerView()</script>
+	
+</body>
+</html>				

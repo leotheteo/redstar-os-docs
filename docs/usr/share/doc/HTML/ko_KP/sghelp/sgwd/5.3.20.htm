@@ -1,0 +1,55 @@
+﻿<html dir='ltr'>
+	<head>
+		<META http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+		<title>표의 세포참조</title>
+		<link rel='stylesheet' type='text/css' href='../css/main.css'/>
+		<script type='text/javascript' language='Javascript' src='../js/mexpcol.js'></script>
+		<script type='text/javascript' language='JavaScript' src='../js/glossary.js'></script>
+	</head>
+	<body>
+		<h1>&nbsp;<img align="absbottom" src="../image/external_images/crystal/svtools/res/new_doc.png"/>&nbsp;표의 세포참조</h1>
+		<p id="ExpandAllLine" class="ExpFav">
+			<a href="#" onClick="ExpandAll()" onKeyPress="ExpandAll()" class="DropDown">
+				<img id="picHeader" border="0" src="../image/image/common/expandtri.gif" alt="모두 표시">
+				<span id="ExpandAll">모두 표시</span>
+			</a>
+		</p>
+		<p>표에서 계산을 수행하면 A1, A2, B1, B2 등으로 표세포를 참조하게 됩니다. 여기서 문자는 렬을 나타내고 수자는 행을 나타냅니다.
+			표처리프로그람의 세포참조와 달리 문서처리프로그람의 세포참조는 항상 <a href="#" class="glossary" onClick="AppendPopup(this,'IDG_ABSREFERENCE')" onKeyPress="AppendPopup(this,'IDG_ABSREFERENCE')">절대참조</a>이므로 기호《$》가 사용되지 않습니다.
+			례를 들어 문서처리프로그람에서 A1로 세포를 참조하면 표처리프로그람에서 $A$1로 세포를 참조하는것과 같습니다.
+		</p>
+		<p><img border="0" src="../image/image/sgwd/celltabl.gif"></p>
+		<h2>매개 세포의 참조</h2>
+		<p>수식에서 세포를 참조하려면 지정한 범위내의 첫 세포와 마지막세포를 구분할 때에는 두점을 사용하고 합계나 평균을 계산할 때에는 더하기기호를 사용합니다.
+			다음례를 참고하십시오.
+		</p>
+		<p><b class="bterm">평균을 계산할 세포</b></p>
+		<table>
+			<tr>
+				<th>선택형식</th>
+				<th>계산방식</th>
+			</tr>
+			<tr>
+				<td><img border="0" src="../image/image/sgwd/refcell1.gif" alt="표시"></td>
+				<td><b class="bterm">=mean&lt;B1:B3&gt;</b></td>
+			</tr>
+			<tr>
+				<td><img border="0" src="../image/image/sgwd/refcell3.gif" alt="스크립트 블록 기호"></td>
+				<td><b class="bterm">=mean&lt;A1:B2&gt;</b></td>
+			</tr>
+			<tr>
+				<td><img border="0" src="../image/image/sgwd/refcell4.gif" alt="스크립트 블록 기호"></td>
+				<td><b class="bterm">=mean&lt;A1:C2&gt;</b></td>
+			</tr>
+			<tr>
+				<td><img border="0" src="../image/image/sgwd/refcell5.gif" alt="스크립트 블록 기호"></td>
+				<td><b class="bterm">=mean&lt;A1&gt;+&lt;A3&gt;+&lt;C2&gt;</b></td>
+			</tr>
+		</table>
+		<h2>다른 표의 세포참조</h2>
+		<p>다른 표의 세포를 참조하거나 표외부의 세포를 참조하려면 <b class="bterm">=mean&lt;표2.B1: 표2.B3&gt;</b>과 같은 형식으로 입력합니다.
+		</p>
+		<script type="text/javascript" language="Javascript">footerView()</script>
+	
+</body>
+</html>

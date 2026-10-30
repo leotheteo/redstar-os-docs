@@ -1,0 +1,167 @@
+﻿<html dir='ltr'>
+	<head>
+		<META http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+		<title>TRANSPOSE</title>
+		<link rel='stylesheet' type='text/css' href='../css/main.css'/>
+		<script type='text/javascript' language='Javascript' src='../js/mexpcol.js'></script>
+		<script type='text/javascript' language='JavaScript' src='../js/glossary.js'></script>
+	</head>
+	<body>
+		<h1>&nbsp;<img align="absbottom" src="../image/external_images/crystal/svtools/res/new_doc.png"/>&nbsp;TRANSPOSE</h1>
+		<p id='ExpandAllLine' class='ExpFav'>
+			<a href='#' onClick='ExpandAll()' onKeyPress='ExpandAll()' class='DropDown'>
+				<img id='picHeader' border='0' src='../image/image/common/expandtri.gif' alt='모두 표시'>
+				<span id='ExpandAll'>모두 표시</span>
+			</a>
+		</p>
+		<p><b class="bterm">참고항목</b>&emsp;
+			<a href="5.9.9.1.htm">행렬함수목록</a>,
+			<a href="5.9.9.6.htm">MDETERM</a>,
+			<a href="5.9.9.7.htm">MINVERSE</a>,
+			<a href="5.9.9.8.htm">MMULT</a>
+		</p>
+		<p>행렬전위입니다. 행렬의 행과 렬을 교환합니다.</p>
+		<p><b class="bterm">문법:&emsp;&emsp;		TRANSPOSE(행렬)</b></p>
+		<table>
+			<tr>
+				<th>인수명</th>
+				<th>설명</th>
+			</tr>
+			<tr>
+				<td>행렬</td>
+				<td>행과 렬을 전위할 행렬입니다. 행렬의 첫 행을 새로운 행렬의 첫 렬로 두번째 행을 새로운 행렬의 두번째 렬로 바꾸는 식으로 행렬의 행과 렬이 바꾸어지게 됩니다.</td>
+		</table>
+		<p><b class="bterm">실례1</b></p>
+			<p><a href="1.5.1.htm">실례의 리용방법</a>을 참고하십시오.</p>
+			<table>
+				<tr>
+					<td>
+						<table>
+							<tr>
+								<td class="noborder">&nbsp;
+								</td>
+							</tr>
+							<tr>
+								<th>1</th>
+							</tr>
+							<tr>
+								<th>2</th>
+							</tr>
+						</table>
+					</td>
+					<td>
+						<table>
+							<tr>
+								<th>A</th>
+								<th>B</th>
+								<th>C</th>
+							</tr>
+							<tr>
+								<th>자료</th>
+								<th>자료</th>
+								<th>자료</th>
+							</tr>
+							<tr>
+								<td>1</td>
+								<td>2</td>
+								<td>3</td>
+							</tr>
+							<tr>
+								<th>수식</th>
+								<th>설명(결과)</th>
+								<td>&nbsp;</td>
+							</tr>
+							<tr>
+								<td>=TRANSPOSE($A$2:$C$2)</td>
+								<td>첫번째 렬의 값입니다. (1)</td>
+								<td>&nbsp;</td>
+							</tr>
+							<tr>
+								<td>&nbsp;</td>
+								<td>두번째 렬의 값입니다. (2)</td>
+								<td>&nbsp;</td>
+							</tr>
+							<tr>
+								<td>&nbsp;</td>
+								<td>세번째 렬의 값입니다. (3)</td>
+								<td>&nbsp;</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+			<p><b class="bterm">참고:</b>   실례의 수식은 행렬수식으로 입력하여야 합니다. 실례를 빈 자료표에 복사한 후 수식세포로 시작되는 A5:A7 범위를 선택하고 <b class="bterm">[F2]</b>건을 누른 다음 <b class="bterm">[Ctrl+Shift+Enter]</b>건을 누릅니다. 수식을 행렬수식으로 입력하지 않으면 단일결과는 1이 됩니다.</p>
+		<p><b class="bterm">실례2</b></p>
+			<p><a href="1.5.1.htm">실례의 리용방법</a>을 참고하십시오.</p>
+			<p><b class="bterm">LINEST</b>와 같은 일부 함수는 가로 행렬을 반환합니다. <b class="bterm">LINEST</b>은 선에 대한 경사와 Y축사영을 가로 행렬로 반환합니다. 다음수식은 LINEST의 경사와 Y축사영에 대한 세로 행렬을 반환합니다.</p>
+			<table>
+				<tr>
+					<td>
+						<table>
+							<tr>
+								<td class="noborder">&nbsp;</td>
+							</tr>
+							<tr>
+								<th>1</th>
+							</tr>
+							<tr>
+								<th>2</th>
+							</tr>
+							<tr>
+								<th>3</th>
+							</tr>
+							<tr>
+								<th>4</th>
+							</tr>
+							<tr>
+								<th>5</th>
+							</tr>
+						</table>
+					</td>
+					<td>
+						<table>
+							<tr>
+								<th>A</th>
+								<th>B</th>
+							</tr>
+							<tr>
+								<th>자료행렬_Y</th>
+								<th>자료행렬_X</th>
+							</tr>
+							<tr>
+								<td>1</td>
+								<td>0</td>
+							</tr>
+							<tr>
+								<td>9</td>
+								<td>4</td>
+							</tr>
+							<tr>
+								<td>5</td>
+								<td>2</td>
+							</tr>
+							<tr>
+								<td>7</td>
+								<td>3</td>
+							</tr>
+							<tr>
+								<th>수식</th>
+								<th>설명(결과)</th>
+							</tr>
+							<tr>
+								<td>=TRANSPOSE(LINEST(A2:A5,B2:B5,0))</td>
+								<td>경사입니다. (2)</td>
+							</tr>
+							<tr>
+								<td>&nbsp;</td>
+								<td>Y축사영입니다. (1)</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+			<p><b class="bterm">참고:</b>   실례의 수식은 행렬수식으로 입력하여야 합니다. 실례를 빈 자료표에 복사한 후 수식세포로 시작되는 A7:A8 범위를 선택하고 <b class="bterm">[F2]</b>건을 누른 다음 <b class="bterm">[Ctrl+Shift+Enter]</b>건을 누릅니다. 수식을 행렬수식으로 입력하지 않으면 단일결과는 2.31이 됩니다.</p>
+		<script type="text/javascript" language="Javascript">footerView()</script>
+	
+</body>
+</html>				

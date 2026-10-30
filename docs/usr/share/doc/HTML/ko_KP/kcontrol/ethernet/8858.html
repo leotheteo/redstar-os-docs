@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<title>수동 혹은 DHCP로 IP주소 지정</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<meta name="hatver" content="v1 beta4"/>
+<meta name="builddefid" content="1000"/>
+<meta name="topicid" content="8858"/>
+<meta name="keywords" content="인터네트에 련결하기, IP주소, DHCP"/>
+<!-- do not translate --><meta name="keywords" content="Internet Service Provider, dial-up, ISP"/><!-- end do not translate -->
+<meta name="description" content="ISP에서 DHCP를 사용한다면 IP주소가 자동으로 제공됩니다. ISP에서 IP주소를 수동으로 제공한다면 체계환경설정의 망입력칸에 이 주소를 입력하여야 합니다."/>
+<meta name="template" content="15"/>
+<meta name="pagetype" content="Task"/>
+<meta name="project" content="MacHelp"/>
+<meta name="release" content="First Release"/>
+<meta name="projectcomponent" content="mhNetworkDiagnosticLeopard"/>
+<link href="../sty/task_numbered.css" rel="stylesheet" type="text/css"/>
+</head>
+
+<body id="apple-pd">
+<!--top navigation area-->
+<div id="navbox">
+<a name="mh11774"></a>
+<a name="almh10090"></a>
+<div id="navleftbox"><a class="navlink_left" href="../index.html">첫 페지</a></div>
+</div><!--closes top navigation area-->
+<!--closes top navigation area-->
+
+<!--page head-->
+<div id="headerbox">
+<div id="iconbox">
+<img id="iconimg" src="../gfx/xicnnt.gif" alt="네트워크 그림기호" height="32" width="32"/>
+</div>
+<div id="pagetitle">
+<h1>&nbsp;&nbsp;수동 혹은 DHCP로 IP주소 지정</h1>
+</div>
+</div>
+<!--closes page header-->
+<div id="introbox">
+<div class="introprimtext">
+<p class="introprimtextlongtext">
+ISP(인터네트 봉사 제공업체) 또는 IP(인터네트 규약) 망으로 련결을 설정할 때 《붉은별》사용자용체계3.0판에 인터네트 또는 망련결에 사용하는 정확한 IP주소를 제공하여야 합니다.</p>
+<p class="introprimtextlongtext">IP주소는 인터네트 또는 IP망에 있는 정보를 보낸 사람 또는 받는 사람을 식별하는 수자렬입니다. 현재 가장 널리 사용되는 IP규약은 IPv4(IP 판본 4)입니다. IPv4주소는 3개의 점으로 분리되는 수자렬이며 보통 다음과 같은 형태를 가집니다. 123.45.67.89.</p>
+<p class="introprimtextlongtext">다른 IP규약인 IPv6은 더 많은 콤퓨터들에서 IP주소를 필요로 함에 따라 사용률이 높아지고있습니다. IPv6주소는 7개의 두점으로 분리되는 8개의 4자리 16진수들로서 보통 다음과 같은 형태를 가집니다. fa80:0000:0000:0123:0203:93ee:ef5b:44a0.</p>
+<p class="introprimtextlongtext">ISP 또는 망에서 IP주소를 제공하는 방법에는 여러가지가 있습니다. 일반적으로 DHCP(Dynamic Host Configuration Protocol)설정이 있습니다. ISP 또는 망계정에서 DHCP를 사용한다면 콤퓨터는 IP주소를 자동으로 제공받습니다. ISP 또는 망계정에서 IP주소를 수동으로 제공한다면 《붉은별》사용자용체계3.0판에서는 체계환경설정의 망입력칸에 해당 주소를 입력하여야 합니다. </p>
+</div><!--closes introprimtext-->
+</div> <!--closes introbox -->
+<div id="taskbox">
+<!--taskbox border top row-->
+<div class="border_top">
+<div class="border_topleft"></div>
+<div class="border_topright"></div>
+</div>
+<!--closes taskbox border top row-->
+<!--taskbox border left-->
+<div class="border_left">
+<!--taskbox border right-->
+<div class="border_right">
+<!--taskbox content-->
+<div class="content">
+<h2>IP주소를 받는 방법을 선택하려면</h2>
+<div class="taskprimtext">
+<div class="taskprimbullet">
+<img src="../gfx/step_1.gif" alt="1단계" class="bullet1"/>
+</div>
+<div class="taskprimcontent">
+<p class="taskprimtextlongtext">
+&lt;붉은별차림표/체계환경설정/망&gt;을 찰칵합니다.</p>
+</div><!--closes taskprimcontent-->
+</div><!-- closes taskprimtext -->
+<div class="taskprimtext">
+<div class="taskprimbullet">
+<img src="../gfx/step_2.gif" alt="2단계" class="bullet2"/>
+</div>
+<div class="taskprimcontent">
+<p class="taskprimtextlongtext">
+봉사목록에서 계정(내장이써네트 등)에 대한 망 또는 망포구구성을 선택합니다.</p>
+</div><!--closes taskprimcontent-->
+</div><!-- closes taskprimtext -->
+<div class="taskprimtext">
+<div class="taskprimbullet">
+<img src="../gfx/step_3.gif" alt="3단계" class="bullet3"/>
+</div>
+<div class="taskprimcontent">
+<p class="taskprimtextlongtext">
+&lt;구성&gt;내리펼침안내에서 &lt;수동&gt; 또는 &lt;DHCP사용&gt;을 선택합니다. 수동을 선택한 경우 IP주소 입력칸에 주소를 입력합니다. 대부분사용자의 ISP는 부분망마스크경로기, DNS와 같이 다른 주소를 제공합니다. 해당 마당에 이에 대한 주소를 입력합니다.</p>
+</div><!--closes taskprimcontent-->
+</div><!-- closes taskprimtext -->
+</div><!--closes taskbox content-->
+</div><!--closes taskbox border right-->
+</div><!--closes taskbox border left-->
+<!--taskbox border bottom row-->
+<div class="border_bottom">
+<div class="border_bottomleft"></div>
+<div class="border_bottomright"></div>
+</div><!--closes taskbox border bottom row-->
+</div><!--closes taskbox -->
+<div id="outrobox">
+</div><!--closes outrobox -->
+<!--<div id="linkinternalbox">
+<h3>관련주제</h3>
+<p class="linkinternal"><a href="help:topic_list=almh10420 bookID='Mac 도움말' template=sty/genlist.html stylesheet=sty/genlist_style.css Other=DHCP">DHCP <span class="linkarrow"></span></a></p>
+</div>--><!--closes linkinternalbox-->
+</body>
+</html>

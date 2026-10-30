@@ -1,0 +1,212 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <META NAME="GENERATOR" CONTENT="LinuxDoc-Tools 0.9.21">
+ <TITLE>FAQ for isdn4linux: glossary: ISDN specific words which are used in this FAQ </TITLE>
+ <LINK HREF="i4lfaq-28.html" REL=previous>
+ <LINK HREF="i4lfaq.html#toc29" REL=contents>
+</HEAD>
+<BODY>
+Next
+<A HREF="i4lfaq-28.html">Previous</A>
+<A HREF="i4lfaq.html#toc29">Contents</A>
+<HR>
+<H2><A NAME="glossary"></A> <A NAME="s29">29.</A> <A HREF="i4lfaq.html#toc29">glossary: ISDN specific words which are used in this FAQ </A></H2>
+
+<P>
+<DL>
+<DT><B>active card</B><DD><P>
+<A NAME="glossary_active"></A> 
+Cards can come in different versions: passive, semi-active, active.
+Active cards handle the D-channel and B-channel protocol in their hardware.
+The extra hardware makes them more expensive, but better suited to use
+where a low CPU usage is needed (e.g. when having many ISDN cards in one
+computer). Because of their special hardware, a special driver is required.
+Depending on the hardware/driver, special tasks like sending/receiving analog
+G3 faxes may be very easy to implement - if you need these features, get one
+of them.</P>
+
+<DT><B>AOC-D</B><DD><P>&quot;Advice Of Charge During the Call&quot;.</P>
+
+<DT><B>AOC-E</B><DD><P>&quot;Advice of Charge at the End of the Call&quot;. In Germany, this
+service is included in the &quot;Komfort&quot; connection.</P>
+
+<DT><B>BRI</B><DD><P>BRI means basic rate interface and is the most commonly used interface.
+In Europe, a BRI includes 2 B-channels for data communication, and 1
+D-channel for administration of the data communication. The alternative
+is a PRI interface.</P>
+
+<DT><B>CLIP</B><DD><P>CLIP (Calling Line Identification Presentation) can be offered
+by the ISDN provider. When you call somebody, then your telephone number
+will be transmitted to the other phone.
+The opposite of CLIP is CLIR.
+In Germany, CLIP is the default.</P>
+
+<DT><B>CLIR</B><DD><P>CLIR (Calling Line Identification Restriction) can be offered by
+the ISDN provider: one can (from call to call) restrict the
+identification of one's own caller ID to the other party.
+The opposite of CLIR is CLIP.
+In Germany, this must be applied for but is without charge (however
+call by call transmission of the caller ID costs extra).</P>
+
+<DT><B>COLP</B><DD><P>COLP (Connected Line Identification Presentation) can also be offered
+by the ISDN provider. If you've applied for COLP, you get an extended
+dialing protocol. You will receive feedback from your telecommunication
+company who picked up your outgoing call. Normally, you will get the
+same number as you dialed beforehand; however, with call diversion this
+could also be a different number.
+In Germany, it must be applied for, and costs extra. More information
+than COLP can be obtained with the help of a reverse-connected ISDN
+card.</P>
+
+<DT><B>CVS Tree</B><DD><P>The i4l developers have formed a team. The tool CVS allows the
+members to easily make patches. The history of the project is also
+thereby documented, and it is also not difficult to reproduce older
+versions.</P>
+
+<DT><B>EAZ</B><DD><P>This is a German name for an MSN. In Germany, EAZ and MSN are used
+as synonyms, though in theory one ought to differentiate according
+to the protocol used. That which is called MSN in the Euro-ISDN
+protocol was called EAZ in the German 1TR6-ISDN protocol (a German
+predecessor to Euro-ISDN).</P>
+
+<DT><B>HDLC</B><DD><P>A widely used low-level protocol, usually used to connect your computer
+with your internet provider. To connect to a computer mailbox, usually
+X.75 is being used.</P>
+
+<DT><B>HSCX</B><DD><P>A Siemens chip which is, similar to ISAC, on many passive cards.
+It takes over the serial bus from ISAC and demultiplexes when
+receiving or multiplexes (i.e. inserts the bits in the correct
+position) the B channels.</P>
+
+<DT><B>ISAC</B><DD><P>A Siemens chip which is, similar to HSCX, on many passive cards.
+It is responsible for Level 1, so it sits (almost) directly on
+the line. It handles the D channel protocol and sends the
+S0 data to a special serial bus (IOM). When sending it does the
+opposite.</P>
+
+<DT><B>leased line</B><DD><P>
+<A NAME="glossary_leased"></A> 
+Your telecommunication company can hardwire the connection between
+two of their ISDN users. Then these users are always connected to
+each other without dialing and can not dial out to someone else any more.</P>
+
+<DT><B>MSN</B><DD><P>Unlike a normal telephone connection, an ISDN connection can have more
+than one telephone number - each of these is called an MSN (Multiple
+Subscriber Number).</P>
+
+<DT><B>NT</B><DD><P>NT is the abbreviation of network terminator. This is the interface
+between an ISDN user and the ISDN provider. It is a small hardware box
+to which the user has to connect his ISDN devices via a so called S0
+interface.
+In most European countries, the ISDN provider supplies the NT. A user in
+North America usually has to buy one, therefore the NT is often integrated
+into the ISDN card there.</P>
+
+<DT><B>NT mode</B><DD><P>
+<A NAME="glossary_ntmode"></A> 
+When multiple devices are connected to the ISDN connection, then all
+user device behave as slaves, where the network terminator (NT) behaves
+as master and synchronizes the communication on the S0 bus. The special
+behavior of the network terminator is called NT mode. User devices are
+normally not capable of running in NT mode.
+As a result, user devices can not communicate with each other even when
+they are connected via a crossed cable.
+Only some special ISDN cards (HFC chipset) are capable of running in NT mode,
+and can directly communicate with other ISDN user devices via a crossed
+cable.</P>
+
+<DT><B>multi-device mode</B><DD><P>
+<A NAME="glossary_multidevicemode"></A> 
+Your ISDN interface can be configured either in multi-device mode
+(in German: Mehrgeraeteanschluss), or in point-to-point mode (in German:
+Anlagenanschluss).
+The multi-device mode is the normal connection mode for private ISDN users
+or very small business users. The user can attach multiple devices to the
+ISDN connection. The ISDN provider will assign a small number of fixed
+telephone numbers (usually up to 10 MSN), if any, to the ISDN connection.</P>
+
+<DT><B>passive card</B><DD><P>
+<A NAME="glossary_passive"></A> 
+Cards can come in different versions: passive, semi-active, active.
+Passive cards handle the D-channel and B-channel protocol in software.
+This makes them least expensive, but only suitable where the CPU is able
+to do the additional work (for normal data communication any computer
+starting from a 486 or even a 386 should be able to handle one or two cards).
+Since only a few hardware chips are in wide usage, a generic driver, HiSax,
+can handle almost all passive cards.</P>
+
+<DT><B>PBX</B><DD><P>A PBX (Private Branch eXchange) is used to connect different internal
+devices to the ISDN network. This is usually for analog devices that
+cannot be directly connected to an ISDN network. The PBX can also make
+an internal digital S0 bus available, on which ISDN devices can be
+connected. This allows for local calls without using the switching
+station (thereby avoiding the charges from your telephone company).</P>
+
+<DT><B>point-to-point mode</B><DD><P>
+<A NAME="glossary_pointtopointmode"></A> 
+Your ISDN interface can be configured either in multi-device mode
+(in German: Mehrgeraeteanschluss), or in point-to-point mode (in German:
+Anlagenanschluss).
+The point-to-point mode is the normal connection mode for business ISDN
+users. The user can attach only one single devices to the ISDN connection
+which will have to handle all calls (typically a PBX will be used). The
+ISDN provider will assign a range of numbers to the ISDN connection.
+Any call within this number range will be sent to the user. The ISDN
+provider will leave assignment of the last digits of the telephone number
+to the ISDN user.
+This setup usually allows for additional features, but is also more expensive.</P>
+
+<DT><B>PRI</B><DD><P>PRI means primary rate interface and is the used when a single or multiple
+BRI are not sufficient in bandwidth. In Europe, a PRI includes 30 B-channels
+for data communication, and 1 D-channel for administration of the data
+communication.</P>
+
+<DT><B>semi-active card</B><DD><P>
+<A NAME="glossary_semiactive"></A> 
+Cards can come in different versions: passive, semi-active, active.
+For semi-active cards there is no fixed definition, so here is what we think:
+semi-active cards handle the B-channel protocol in their hardware with
+special DSP (digital signal processor) support, but they leave the D-channel
+protocol to the software. This makes them better suitable to special tasks
+like sending/receiving analog G3 faxes. Because of their special hardware,
+a special driver is required. Be aware, that for marketing reasons some cards
+are called semi-active when in fact they are passive (e.g.: Teleint).</P>
+
+<DT><B>subaddressing</B><DD><P>When dialing, it is possible to provide an additional number, the subaddresss.
+The subaddress is transmitted to the remote side, and allows it to react on it.
+This feature may not be available, at least not for free (with the exception
+of France).</P>
+
+<DT><B>TEI</B><DD><P>TEI stands for Terminal End Identifier. The local switching station, or
+with an internal S0 the PBX, automatically or permanently assigns each
+end device a TEI. This simply allows the addressing of the D
+channels. TEIs have the following values:
+0-63 = permanent TEIs (e.g. 0 is used for point to point connections)
+64-126 = automatically assigned
+127 = broadcast to all devices (e.g. an incoming call)</P>
+
+<DT><B>UUS</B><DD><P>UUS is user to user signalling. It means, that when placing a call,
+a few bytes of user-specific data can be transmitted along with the call
+setup frame. This feature has been abused in the past in Germany, causing
+the local exchanges to run out of available channels (the call setup causes
+them to reserve a B-channel). Since then, this feature usually costs extra
+and there is a data limit on it (depends on your ISDN provider). Have a look at
+the usage condition, in short it's only allowed to use this feature, if
+indeed you want to setup a call. Please note that it has been reported that
+some buggy PBX (like ISTEC 1003) may refuse a connection when support of UUS is
+signalled to them.</P>
+
+<DT><B>X.75</B><DD><P>A widely used low-level protocol, usually used to connect your computer
+with a computer mailbox. For connections to the internet, HDLC is usually
+used.</P>
+
+</DL>
+</P>
+
+<HR>
+Next
+<A HREF="i4lfaq-28.html">Previous</A>
+<A HREF="i4lfaq.html#toc29">Contents</A>
+</BODY>
+</HTML>

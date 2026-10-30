@@ -1,0 +1,93 @@
+<html dir='ltr'>
+	<head>
+		<META http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+		<title>DEC2BIN</title>
+		<link rel='stylesheet' type='text/css' href='../css/main.css'/>
+		<script type='text/javascript' language='Javascript' src='../js/mexpcol.js'></script>
+		<script type='text/javascript' language='JavaScript' src='../js/glossary.js'></script>
+	</head>
+	<body>
+		<h1>&nbsp;<img align="absbottom" src="../image/external_images/crystal/svtools/res/new_doc.png"/>&nbsp;DEC2BIN</h1>
+		<p id='ExpandAllLine' class='ExpFav'>
+			<a href='#' onClick='ExpandAll()' onKeyPress='ExpandAll()' class='DropDown'>
+				<img id='picHeader' border='0' src='../image/image/common/expandtri.gif' alt='모두 표시'>
+				<span id='ExpandAll'>모두 표시</span>
+			</a>
+		</p>
+		<p><b class="bterm">참고항목</b>&emsp;
+			<a href="5.9.13.1.htm">추가함수목록</a>,
+			<a href="5.9.13.6.htm">BIN2DEC</a>,
+			<a href="5.9.13.20.htm">HEX2DEC</a>,
+			<a href="5.9.13.40.htm">OCT2DEZ</a>
+		</p>
+		<p>10진수를 2진수로 변환합니다.</p>
+		<p><b class="bterm">문법:&emsp;&emsp;		DEC2BIN(10진수,자리수)</b></p>
+		<table>
+			<tr>
+				<th>인수명</th>
+				<th>설명</th>
+			</tr>
+			<tr>
+				<td>10진수</td>
+				<td>변환할 10진수 옹근수입니다. <b class="bterm">10진수</b>가 부수이면 <b class="bterm">자리수</b>가 무시되며 최상위비트는 부호비트이고 나머지 9비트는 값을 나타내는 비트인 10자리(10 비트)의 2진수가 반환됩니다. 부수는 2의 보수표기법으로 표시됩니다.</td>
+			</tr>
+			<tr>
+				<td>자리수</td>
+				<td>2진수의 자리수입니다. 추가선택인수입니다. <b class="bterm">자리수</b>를 생략하면 최소한의 자리수가 사용됩니다. <b class="bterm">자리수</b>는 반환값의 앞에 0을 넣어 자리수를 맞출 때 유용합니다.</td>
+			</tr>
+		</table>
+		<p><b class="bterm">주의</b></p>
+			<ul>
+				<li><b class="bterm">10진수</b> < -512 또는 <b class="bterm">10진수</b> > 511이면 <b class="bterm">오유:[오유번호]</b>가 반환됩니다.</li>
+				<li><b class="bterm">10진수</b>가 수자가 아니면 #<b class="bterm">NAME?</b>오유가 반환됩니다.</li>
+				<li><b class="bterm">자리수</b>가 옹근수가 아니면 소수점이하는 무시됩니다.</li>
+				<li><b class="bterm">자리수</b>가 수자가 아니면 #<b class="bterm">NAME?</b>오유가 반환됩니다.</li>
+				<li><b class="bterm">자리수</b>가 부수이면 <b class="bterm">오유:[오유번호]</b>가 반환됩니다.</li>
+			</ul>
+		<p><b class="bterm">실례</b></p>
+			<p><a href="1.5.1.htm">실례의 리용방법</a>을 참고하십시오.</p>
+			<table>
+				<tr>
+					<td>
+						<table>
+							<tr>
+								<td class="noborder">&nbsp;
+								</td>
+							</tr>
+							<tr>
+								<th>1</th>
+							</tr>
+							<tr>
+								<th>2</th>
+							</tr>
+							<tr>
+								<th>3</th>
+							</tr>
+						</table>
+					</td>
+					<td>
+						<table>
+							<tr>
+								<th>A</th>
+								<th>B</th>
+							</tr>
+							<tr>
+								<th>수식</th>
+								<th>설명(결과)</th>
+							</tr>
+							<tr>
+								<td>=DEC2BIN(9, 4)</td>
+								<td>10진수 9를 네자리 2진수로 변환합니다. (1001)</td>
+							</tr>
+							<tr>
+								<td>=DEC2BIN(-100)</td>
+								<td>10진수 -100을 2진수로 변환합니다. (1110011100)</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+		<script type="text/javascript" language="Javascript">footerView()</script>
+	
+</body>
+</html>				

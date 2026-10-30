@@ -1,0 +1,87 @@
+﻿<html dir='ltr'>
+	<head>
+		<META http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+		<title>본문에서 문자제거</title>
+		<link rel='stylesheet' type='text/css' href='../css/main.css'/>
+		<script type='text/javascript' language='Javascript' src='../js/mexpcol.js'></script>
+		<script type='text/javascript' language='JavaScript' src='../js/glossary.js'></script>
+	</head>
+	<body>
+		<h1>&nbsp;<img align="absbottom" src="../image/external_images/crystal/svtools/res/new_doc.png"/>&nbsp;본문에서 문자제거</h1>
+		<p id='ExpandAllLine' class='ExpFav'>
+			<a href='#' onClick='ExpandAll()' onKeyPress='ExpandAll()' class='DropDown'>
+				<img id='picHeader' border='0' src='../image/image/common/expandtri.gif' alt='모두 표시'>
+				<span id='ExpandAll'>모두 표시</span>
+			</a>
+		</p>
+		<h2>본문에서 오른쪽이나 왼쪽으로 지정한 개수만큼 문자제거</h2>
+			<p>이 작업을 수행하려면 <b class="bterm">LEN</b>, <b class="bterm">LEFT</b>, <b class="bterm">RIGHT</b>함수를 사용합니다.</p>
+			<p><b class="bterm">실례</b></p>
+			<p><a href="1.5.1.htm">실례의 리용방법</a>을 참고하십시오.</p>
+			<table>
+				<tr>
+					<td>
+						<table>
+							<tr>
+								<td class="noborder">&nbsp;</td>
+							</tr>
+							<tr>
+								<th>1</th>
+							</tr>
+							<tr>
+								<th>2</th>
+							</tr>
+							<tr>
+								<th>3</th>
+							</tr>
+						</table>
+					</td>
+					<td>
+						<table>
+							<tr>
+								<th>A</th>
+							</tr>
+							<tr>
+								<th>자료</th>
+							</tr>
+							<tr>
+								<td>서광사무처리</td>
+							</tr>
+							<tr>
+								<td>문서처리프로그람</td>
+							</tr>
+							<tr>
+								<th>수식</th>
+								<th>설명(결과)</th>
+							</tr>
+							<tr>
+								<td>=LEFT(A2; LEN(A2)-2)</td>
+								<td>A2의 내용에서 마지막두글자를 제거합니다. (서광사무)</td>
+							</tr>
+							<tr>
+								<td>=RIGHT(A3; LEN(A3)-2)</td>
+								<td>A3의 내용에서 처음 두글자를 제거합니다. (처리프로그람)</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+			<p><b class="bterm">참조함수</b></p>
+			<p><a href='5.9.12.14.htm'>LEN</a></p>
+			<p><a href='5.9.12.13.htm'>LEFT</a></p>
+			<p><a href='5.9.12.20.htm'>RIGHT</a></p>
+		<h2><b class="bterm">&lt;치환&gt;</b>지령으로 표용지에서 본문문자렬의 제거</h2>
+			<ol>
+				<li>어떤 범위내에서만 찾으려면 그 세포<a href="#" class="glossary" onClick="AppendPopup(this,'IDG_SELECTRANGE')" onKeyPress="AppendPopup(this,'IDG_SELECTRANGE')">범위</a>를 선택합니다.</li>
+				<li><b class="bterm">&lt;편집&gt;</b>차림표에서 <b class="bterm">&lt;탐색 및 치환&gt;</b>을 찰칵합니다.</li>
+				<li><b class="bterm">&lt;탐색대상&gt;</b>복합칸에 찾으려는 본문 또는 수자를 입력하거나 복합칸에서 최근에 치환시킨 내용을 선택합니다.</li>
+				<li>찾을 서식을 지정하려면 <b class="bterm">&lt;상세히&gt;</b>단추를 찰칵하고 <b class="bterm">&lt;격식 탐색&gt;</b>확인칸을 선택하고 <b class="bterm">&lt;탐색대상&gt;</b>복합칸에서 치환시키려는 서식을 지정합니다.</li>
+				<li><b class="bterm">&lt;치환&gt;</b>복합칸에 바꿀 문자를 입력합니다.</li>
+					<p><b class="bterm">&lt;탐색대상&gt;</b>복합칸에 입력한 문자를 찾아 모두 지우려면 <b class="bterm">&lt;치환&gt;</b>복합칸을 빈채로 두십시오.</p>
+				<li><b class="bterm">&lt;탐색&gt;</b>단추를 찰칵합니다.</li>
+				<li>찾은 내용 또는 찾을 내용에 해당되는 모든 내용을 바꾸려면 <b class="bterm">&lt;치환&gt;</b> 또는 <b class="bterm">&lt;모두 치환&gt;</b>단추를 찰칵합니다.</li>
+			</ol>
+		<script type="text/javascript" language="Javascript">footerView()</script>
+	
+</body>
+</html>

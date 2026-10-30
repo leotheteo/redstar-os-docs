@@ -1,0 +1,161 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <META NAME="GENERATOR" CONTENT="LinuxDoc-Tools 0.9.21">
+ <TITLE>ISDN4Linux Tutorial</TITLE>
+ <LINK HREF="EN-i4l-1.html" REL=next>
+
+
+</HEAD>
+<BODY>
+<A HREF="EN-i4l-1.html">Next</A>
+Previous
+Contents
+<HR>
+<H1>ISDN4Linux Tutorial</H1>
+
+<H2>Klaus Franken, <CODE>i4l@klaus.franken.de</CODE></H2>v1.0, 19. Juni 1998
+$Id: EN-i4l.sgml,v 1.1 1998/11/30 20:38:38 shanson Exp $
+<HR>
+<EM>Setting up Internet access with ISDN4Linux - A practical description
+with exercises.  Translation by Scott Hanson <CODE>shanson@shcon.com</CODE>,
+August 1998, but still very incomplete! The table of contents should
+make clear what's been translated and what hasn't.</EM>
+<HR>
+<P>
+<H2><A NAME="toc1">1.</A> <A HREF="EN-i4l-1.html">Introduction</A></H2>
+
+<UL>
+<LI><A NAME="toc1.1">1.1</A> <A HREF="EN-i4l-1.html#ss1.1">Requirements     </A>
+<LI><A NAME="toc1.2">1.2</A> <A HREF="EN-i4l-1.html#ss1.2">Goal of this tutorial.</A>
+<LI><A NAME="toc1.3">1.3</A> <A HREF="EN-i4l-1.html#ss1.3">What must I read, what should I read?</A>
+<LI><A NAME="toc1.4">1.4</A> <A HREF="EN-i4l-1.html#ss1.4">No guarantee</A>
+<LI><A NAME="toc1.5">1.5</A> <A HREF="EN-i4l-1.html#ss1.5">Feedback</A>
+<LI><A NAME="toc1.6">1.6</A> <A HREF="EN-i4l-1.html#ss1.6">Copyright</A>
+</UL>
+<P>
+<H2><A NAME="toc2">2.</A> <A HREF="EN-i4l-2.html">Basics</A></H2>
+
+<UL>
+<LI><A NAME="toc2.1">2.1</A> <A HREF="EN-i4l-2.html#ss2.1">ISDN4Linux: modem or network?</A>
+<LI><A NAME="toc2.2">2.2</A> <A HREF="EN-i4l-2.html#ss2.2">Overview of features</A>
+<LI><A NAME="toc2.3">2.3</A> <A HREF="EN-i4l-2.html#ss2.3">Overview of missing features</A>
+<LI><A NAME="toc2.4">2.4</A> <A HREF="EN-i4l-2.html#ss2.4">Overview of the tools</A>
+</UL>
+<P>
+<H2><A NAME="toc3">3.</A> <A HREF="EN-i4l-3.html">Loading hardware modules</A></H2>
+
+<UL>
+<LI><A NAME="toc3.1">3.1</A> <A HREF="EN-i4l-3.html#ss3.1">Configuring isdnlog</A>
+<LI><A NAME="toc3.2">3.2</A> <A HREF="EN-i4l-3.html#ss3.2">Plug&amp;Play Cards</A>
+<LI><A NAME="toc3.3">3.3</A> <A HREF="EN-i4l-3.html#ss3.3">Loading the HiSax driver</A>
+<LI><A NAME="toc3.4">3.4</A> <A HREF="EN-i4l-3.html#ss3.4">Loading the ICN driver</A>
+<LI><A NAME="toc3.5">3.5</A> <A HREF="EN-i4l-3.html#ss3.5">Loading the AVM B1 driver</A>
+<LI><A NAME="toc3.6">3.6</A> <A HREF="EN-i4l-3.html#ss3.6">Testing the hardware</A>
+<LI><A NAME="toc3.7">3.7</A> <A HREF="EN-i4l-3.html#ss3.7">Übung: Hardware ansprechen.</A>
+</UL>
+<P>
+<H2><A NAME="toc4">4.</A> <A HREF="EN-i4l-4.html">Grundlagen ISDN, Parameter zur Verbindungskontrolle</A></H2>
+
+<UL>
+<LI><A NAME="toc4.1">4.1</A> <A HREF="EN-i4l-4.html#ss4.1">ISDN</A>
+<LI><A NAME="toc4.2">4.2</A> <A HREF="EN-i4l-4.html#ss4.2">TK-Anlagen</A>
+<LI><A NAME="toc4.3">4.3</A> <A HREF="EN-i4l-4.html#ss4.3">Was ist meine MSN?</A>
+<LI><A NAME="toc4.4">4.4</A> <A HREF="EN-i4l-4.html#ss4.4">Probleme beim Verbindungsaufbau, die Cause Meldungen</A>
+</UL>
+<P>
+<H2><A NAME="toc5">5.</A> <A HREF="EN-i4l-5.html">syncPPP Verbindung herstellen </A></H2>
+
+<UL>
+<LI><A NAME="toc5.1">5.1</A> <A HREF="EN-i4l-5.html#ss5.1">Unterschiede analog - ISDN</A>
+<LI><A NAME="toc5.2">5.2</A> <A HREF="EN-i4l-5.html#ss5.2">Was ist eigentlich synchrones PPP</A>
+<LI><A NAME="toc5.3">5.3</A> <A HREF="EN-i4l-5.html#ss5.3">Die Konfiguration</A>
+<LI><A NAME="toc5.4">5.4</A> <A HREF="EN-i4l-5.html#ss5.4">Probleme beim Verbindungsaufbau, Troubleshooting.</A>
+<LI><A NAME="toc5.5">5.5</A> <A HREF="EN-i4l-5.html#ss5.5">Übung: syncPPP-Verbindung herstellen</A>
+</UL>
+<P>
+<H2><A NAME="toc6">6.</A> <A HREF="EN-i4l-6.html">Problems with dynamic IP numbers</A></H2>
+
+<UL>
+<LI><A NAME="toc6.1">6.1</A> <A HREF="EN-i4l-6.html#ss6.1">Der RST-provoking mode</A>
+<LI><A NAME="toc6.2">6.2</A> <A HREF="EN-i4l-6.html#ss6.2">Welche IP-Nummer setze ich denn eigentlich?</A>
+</UL>
+<P>
+<H2><A NAME="toc7">7.</A> <A HREF="EN-i4l-7.html">Routing</A></H2>
+
+<UL>
+<LI><A NAME="toc7.1">7.1</A> <A HREF="EN-i4l-7.html#ss7.1">Was ist Routing?</A>
+<LI><A NAME="toc7.2">7.2</A> <A HREF="EN-i4l-7.html#ss7.2">Wie konfiguriert man das Routing?</A>
+<LI><A NAME="toc7.3">7.3</A> <A HREF="EN-i4l-7.html#ss7.3">Kontrollieren der Routingtabelle beim         Verbindungsauf- und abbau (/etc/ppp/ip-up)</A>
+<LI><A NAME="toc7.4">7.4</A> <A HREF="EN-i4l-7.html#ss7.4">Übung: Kontrolliere die IP-Nummer und die Routing-Tabelle</A>
+</UL>
+<P>
+<H2><A NAME="toc8">8.</A> <A HREF="EN-i4l-8.html">IP-Nummern Auflösung (DNS)</A></H2>
+
+<UL>
+<LI><A NAME="toc8.1">8.1</A> <A HREF="EN-i4l-8.html#ss8.1">feste IP-Nummern Auflösung über /etc/hosts</A>
+<LI><A NAME="toc8.2">8.2</A> <A HREF="EN-i4l-8.html#ss8.2">dynamische IP-Nummern Auflösung mit DNS</A>
+<LI><A NAME="toc8.3">8.3</A> <A HREF="EN-i4l-8.html#ss8.3">Konfiguration der Namensauflösung</A>
+<LI><A NAME="toc8.4">8.4</A> <A HREF="EN-i4l-8.html#ss8.4">Probleme mit der Namensauflösung</A>
+</UL>
+<P>
+<H2><A NAME="toc9">9.</A> <A HREF="EN-i4l-9.html">Monitoring Dial-On-Demand </A></H2>
+
+<UL>
+<LI><A NAME="toc9.1">9.1</A> <A HREF="EN-i4l-9.html#ss9.1">Monitoring connections</A>
+<LI><A NAME="toc9.2">9.2</A> <A HREF="EN-i4l-9.html#ss9.2">Determining the reason for the connection</A>
+<LI><A NAME="toc9.3">9.3</A> <A HREF="EN-i4l-9.html#ss9.3">Analyzing connections</A>
+<LI><A NAME="toc9.4">9.4</A> <A HREF="EN-i4l-9.html#ss9.4">Dial-On-Demand an- und ausstellen</A>
+<LI><A NAME="toc9.5">9.5</A> <A HREF="EN-i4l-9.html#ss9.5">Tips im S.u.S.E. System</A>
+<LI><A NAME="toc9.6">9.6</A> <A HREF="EN-i4l-9.html#ss9.6">Wie erlaube ich normalen Benutzern Dial-In-Demand</A>
+</UL>
+<P>
+<H2><A NAME="toc10">10.</A> <A HREF="EN-i4l-10.html">Preventing phone bill disasters, TimRu extension</A></H2>
+
+<P>
+<H2><A NAME="toc11">11.</A> <A HREF="EN-i4l-11.html">Konfiguration der Internet-Dienste     </A></H2>
+
+<UL>
+<LI><A NAME="toc11.1">11.1</A> <A HREF="EN-i4l-11.html#ss11.1">DNS-Cache</A>
+<LI><A NAME="toc11.2">11.2</A> <A HREF="EN-i4l-11.html#ss11.2">Squid</A>
+<LI><A NAME="toc11.3">11.3</A> <A HREF="EN-i4l-11.html#ss11.3">Fetchmail</A>
+<LI><A NAME="toc11.4">11.4</A> <A HREF="EN-i4l-11.html#ss11.4">Sendmail</A>
+<LI><A NAME="toc11.5">11.5</A> <A HREF="EN-i4l-11.html#ss11.5">News</A>
+<LI><A NAME="toc11.6">11.6</A> <A HREF="EN-i4l-11.html#ss11.6">Firewall</A>
+<LI><A NAME="toc11.7">11.7</A> <A HREF="EN-i4l-11.html#ss11.7">Masquerading</A>
+<LI><A NAME="toc11.8">11.8</A> <A HREF="EN-i4l-11.html#ss11.8">Accounting</A>
+<LI><A NAME="toc11.9">11.9</A> <A HREF="EN-i4l-11.html#ss11.9">Samba</A>
+</UL>
+<P>
+<H2><A NAME="toc12">12.</A> <A HREF="EN-i4l-12.html">Connecting a local network</A></H2>
+
+<P>
+<H2><A NAME="toc13">13.</A> <A HREF="EN-i4l-13.html">Installation </A></H2>
+
+<UL>
+<LI><A NAME="toc13.1">13.1</A> <A HREF="EN-i4l-13.html#ss13.1">Program versions used</A>
+<LI><A NAME="toc13.2">13.2</A> <A HREF="EN-i4l-13.html#ss13.2">Kernel/Module configuration and installation</A>
+<LI><A NAME="toc13.3">13.3</A> <A HREF="EN-i4l-13.html#ss13.3">I4L-Utils installation</A>
+</UL>
+<P>
+<H2><A NAME="toc14">14.</A> <A HREF="EN-i4l-14.html">Mailing Lists/News</A></H2>
+
+<UL>
+<LI><A NAME="toc14.1">14.1</A> <A HREF="EN-i4l-14.html#ss14.1">What mailing lists are there?</A>
+<LI><A NAME="toc14.2">14.2</A> <A HREF="EN-i4l-14.html#ss14.2">How do I ask questions on the mailing lists?</A>
+<LI><A NAME="toc14.3">14.3</A> <A HREF="EN-i4l-14.html#ss14.3">How do I give assistance on the mailing list?</A>
+</UL>
+<P>
+<H2><A NAME="toc15">15.</A> <A HREF="EN-i4l-15.html">Links </A></H2>
+
+<UL>
+<LI><A NAME="toc15.1">15.1</A> <A HREF="EN-i4l-15.html#ss15.1">WWW and FTP</A>
+<LI><A NAME="toc15.2">15.2</A> <A HREF="EN-i4l-15.html#ss15.2">Local Documentation</A>
+<LI><A NAME="toc15.3">15.3</A> <A HREF="EN-i4l-15.html#ss15.3">Books</A>
+</UL>
+<HR>
+<A HREF="EN-i4l-1.html">Next</A>
+Previous
+Contents
+</BODY>
+</HTML>

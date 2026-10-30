@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="text/rss">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <sub-class-of type="text/plain"/>
+  <comment>RSS summary</comment>
+  <acronym>RSS</acronym>
+  <expanded-acronym>RDF Site Summary</expanded-acronym>
+</mime-type>

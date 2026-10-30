@@ -1,0 +1,130 @@
+﻿<html dir='ltr'>
+	<head>
+		<META http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+		<title>DDB</title>
+		<link rel='stylesheet' type='text/css' href='../css/main.css'/>
+		<script type='text/javascript' language='Javascript' src='../js/mexpcol.js'></script>
+		<script type='text/javascript' language='JavaScript' src='../js/glossary.js'></script>
+	</head>
+	<body>
+		<h1>&nbsp;<img align="absbottom" src="../image/external_images/crystal/svtools/res/new_doc.png"/>&nbsp;DDB</h1>
+		<p id='ExpandAllLine' class='ExpFav'>
+			<a href='#' onClick='ExpandAll()' onKeyPress='ExpandAll()' class='DropDown'>
+				<img id='picHeader' border='0' src='../image/image/common/expandtri.gif' alt='모두 표시'>
+				<span id='ExpandAll'>모두 표시</span>
+			</a>
+		</p>
+		<p><b class="bterm">참고항목</b>&emsp;  
+			<a href="5.9.5.1.htm">재정함수목록</a>,
+			<a href="5.9.5.17.htm">DB</a>, 
+			<a href="5.9.5.50.htm">SLN</a>, 
+			<a href="5.9.5.51.htm">SYD</a>, 
+			<a href="5.9.5.55.htm">VDB</a> 
+		</p>
+		<p>2중체감법 또는 정률요소를 사용하여 특정기간동안 재산의 감가상각을 계산합니다.</p>
+		<p><b class="bterm">문법:&emsp;&emsp;		DDB(구입비용,잔존가치,내용년한,기간,요소)</b></p>
+		<table>
+			<tr>
+				<th>인수명</th>
+				<th>설명</th>
+			</tr>
+			<tr>
+				<td>구입비용</td>
+				<td>재산의 구입비용입니다.</td>
+			</tr>
+			<tr>
+				<td>잔존가치</td>
+				<td>잔존가치입니다. 재산의 내용년한이 끝나는 시점에서의 재산의 잔존가치입니다.</td>
+			</tr>
+			<tr>
+				<td>내용년한</td>
+				<td>내용년한입니다. 재산이 감가상각되는 기간수(재산의 내용년한)입니다.</td>
+			</tr>
+			<tr>
+				<td>기간</td>
+				<td>감가상각액을 계산하려는 기간입니다. <b class="bterm">내용년한</b>과 같은 단위를 사용하여야 합니다.</td>
+			</tr>
+			<tr>
+				<td>요소</td>
+				<td>요소입니다. 추가선택인수입니다. 잔액체감의 요소입니다. 생략하면 2(2중체감법)로 간주됩니다.</td>
+			</tr>
+		</table>
+		<p><b class="bterm">중요:</b>&emsp;   이 다섯개의 인수는 모두 정수로 지정해야 합니다.</p>
+		<p><b class="bterm">주의</b></p>
+			<ul>
+				<li>2중체감법은 루진비률로 감가상각액을 계산합니다. 처음 기간의 감가상각비률이 가장 크고 다음기간부터는 점점 작아집니다. 2중체감법에 따른 감가상각계산 수식은 다음과 같습니다.
+					<p>&emsp;((구입비용- 잔존가치) - (이전 기간의 총감가상각액) *(요소/내용년한)</p>
+				</li>
+				<li>2중체감법을 사용하지 않으려면 <b class="bterm">요소</b>를 변경합니다.</li>
+				<li>감가상각액이 2중체감법계산액보다 클 때 정액상각법으로 전환하려면 <b class="bterm">VDB</b>함수를 사용하십시오.</li>
+			</ul>
+		<p><b class="bterm">실례</b></p>
+			<p><a href='1.5.1.htm'>실례의 리용방법</a>을 참고하십시오.</p>
+			<table>
+				<tr>
+					<td>
+						<table>
+							<tr><td>&nbsp;</td></tr>
+							<tr><th>1</th></tr>
+							<tr><th>2</th></tr>
+							<tr><th>3</th></tr>
+							<tr><th>4</th></tr>
+						</table>
+					</td>
+					<td>
+						<table>
+							<tr>
+								<th>A</th>
+								<th>B</th>
+							</tr>
+							<tr>
+								<th>자료</th>
+								<th>설명</th>
+							</tr>
+							<tr>
+								<td>2400</td>
+								<td>재산의 구입비용입니다.</td>
+							</tr>
+							<tr>
+								<td>300</td>
+								<td>잔존가치입니다.</td>
+							</tr>
+							<tr>
+								<td>10</td>
+								<td>재산의 내용년한입니다.</td>
+							</tr>
+							<tr>
+								<th>수식</th>
+								<th>설명(결과)</th>
+							</tr>
+							<tr>
+								<td>=DDB(A2,A3,A4*365,1)</td>
+								<td>첫날의 감가상각액입니다. <b class="bterm">요소</b>는 2로 가정됩니다. (1.32￦)</td>
+							</tr>
+							<tr>
+								<td>=DDB(A2,A3,A4*12,1,2)</td>
+								<td>첫달의 감가상각액입니다. (40.00￦)</td>
+							</tr>
+							<tr>
+								<td>=DDB(A2,A3,A4,1,2)</td>
+								<td>첫해의 감가상각액입니다. (480.00￦)</td>
+							</tr>
+							<tr>
+								<td>=DDB(A2,A3,A4,2,1.5)</td>
+								<td>2중체감법대신 <b class="bterm">요소</b>를 1.5로 사용한 두번째 해의 감가상각입니다. (306.00￦)</td>
+							</tr>
+							<tr>
+								<td>=DDB(A2,A3,A4,10)</td>
+								<td>세번째 해의 감가상각액입니다. <b class="bterm">요소</b>는 2로 가정됩니다. (22.12￦)</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>	
+		<p>
+			<b class="bterm">참고:</b>   결과는 소수점이하 두자리에서 반올림됩니다.
+		</p>
+		<script type="text/javascript" language="Javascript">footerView()</script>
+	
+</body>
+</html>

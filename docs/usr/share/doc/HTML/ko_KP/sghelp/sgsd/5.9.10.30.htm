@@ -1,0 +1,126 @@
+<html dir='ltr'>
+	<head>
+		<META http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+		<title>GEOMEAN</title>
+		<link rel='stylesheet' type='text/css' href='../css/main.css'/>
+		<script type='text/javascript' language='Javascript' src='../js/mexpcol.js'></script>
+		<script type='text/javascript' language='JavaScript' src='../js/glossary.js'></script>
+	</head>
+	<body>
+		<h1>&nbsp;<img align="absbottom" src="../image/external_images/crystal/svtools/res/new_doc.png"/>&nbsp;GEOMEAN</h1>
+		<p id='ExpandAllLine' class='ExpFav'>
+			<a href='#' onClick='ExpandAll()' onKeyPress='ExpandAll()' class='DropDown'>
+				<img id='picHeader' border='0' src='../image/image/common/expandtri.gif' alt='모두 표시'>
+				<span id='ExpandAll'>모두 표시</span>
+			</a>
+		</p>
+		<p><b class="bterm">참고항목</b>&emsp;
+			<a href="5.9.10.1.htm">통계함수목록</a>,
+			<a href="5.9.10.4.htm">AVERAGEA</a>,
+			<a href="5.9.10.31.htm">HARMEAN</a>,
+			<a href="5.9.10.40.htm">MEDIAN</a>,
+			<a href="5.9.10.43.htm">MODE</a>,
+			<a href="5.9.10.71.htm">TRIMMEAN</a>
+		</p>
+		<p>표본집단의 기하평균값을 구합니다.</p>
+		<p><b class="bterm">문법:&emsp;&emsp;		GEOMEAN(수값 1,수값 2,...)</b></p>
+		<table>
+			<tr>
+				<th>인수명</th>
+				<th>설명</th>
+			</tr>
+			<tr>
+				<td>수값 1,수값 2,...</td>
+				<td>표본집단을 나타내는 1부터 30까지의 수값인수입니다. 배렬에 대한 참조 또는 단일배렬을 사용할수도 있습니다.</td>
+			</tr>
+		</table>
+		<p><b class="bterm">주의</b></p>
+			<ul>
+				<li>인수는 수자나 수자를 포함한 이름, 배렬, 참조범위 등이여야 합니다.</li>
+				<li>배렬 또는 참조인수에 본문, 론리값 또는 빈 세포가 있는 경우 이 값들은 포함되지 않지만 값이 0인 세포는 포함됩니다.</li>
+				<li>인수값이 0이하이면 <b class="bterm">오유:[오유번호]</b>를 반환합니다.</li>
+				<li>기하평균을 구하는 식은 다음과 같습니다.
+					<p><img border='0' src='../image/image/sgsd/formula-53.gif' alt='표시'></p>
+				</li>
+			</ul>
+		<p><b class="bterm">실례</b></p>
+			<p><a href="1.5.1.htm">실례의 리용방법</a>을 참고하십시오.</p>
+			<table>
+				<tr>
+					<td>
+						<table>
+							<tr>
+								<td class="noborder">&nbsp;
+								</td>
+							</tr>
+							<tr>
+								<th>1</th>
+							</tr>
+							<tr>
+								<th>2</th>
+							</tr>
+							<tr>
+								<th>3</th>
+							</tr>
+							<tr>
+								<th>4</th>
+							</tr>
+							<tr>
+								<th>5</th>
+							</tr>
+							<tr>
+								<th>6</th>
+							</tr>
+							<tr>
+								<th>7</th>
+							</tr>
+							<tr>
+								<th>8</th>
+							</tr>
+						</table>
+					</td>
+					<td>
+						<table>
+							<tr>
+								<th>A</th>
+							</tr>
+							<tr>
+								<th>자료</th>
+							</tr>
+							<tr>
+								<td>4</td>
+							</tr>
+							<tr>
+								<td>5</td>
+							</tr>
+							<tr>
+								<td>8</td>
+							</tr>
+							<tr>
+								<td>7</td>
+							</tr>
+							<tr>
+								<td>11</td>
+							</tr>
+							<tr>
+								<td>4</td>
+							</tr>
+							<tr>
+								<td>3</td>
+							</tr>
+							<tr>
+								<th>수식</th>
+								<th>설명(결과)</th>
+							</tr>
+							<tr>
+								<td>=GEOMEAN(A2:A8)</td>
+								<td>우에 있는 자료집합의 기하평균입니다. (5.48)</td>
+							</tr
+						></table>
+					</td>
+				</tr>
+			</table>
+		<script type="text/javascript" language="Javascript">footerView()</script>
+	
+</body>
+</html>				

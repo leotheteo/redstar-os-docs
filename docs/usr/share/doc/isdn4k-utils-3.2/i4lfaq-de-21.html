@@ -1,0 +1,107 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <META NAME="GENERATOR" CONTENT="LinuxDoc-Tools 0.9.21">
+ <TITLE>ISDN4LINUX - FAQ (deutsche Version): leased: Standleitungen </TITLE>
+ <LINK HREF="i4lfaq-de-22.html" REL=next>
+ <LINK HREF="i4lfaq-de-20.html" REL=previous>
+ <LINK HREF="i4lfaq-de.html#toc21" REL=contents>
+</HEAD>
+<BODY>
+<A HREF="i4lfaq-de-22.html">Next</A>
+<A HREF="i4lfaq-de-20.html">Previous</A>
+<A HREF="i4lfaq-de.html#toc21">Contents</A>
+<HR>
+<H2><A NAME="leased"></A> <A NAME="s21">21.</A> <A HREF="i4lfaq-de.html#toc21">leased: Standleitungen </A> </H2>
+
+<H2><A NAME="leased_flatrate"></A> <A NAME="ss21.1">21.1</A> <A HREF="i4lfaq-de.html#toc21.1">leased_flatrate: Was ist der Unterschied zwischen einer</A>
+Standleitung und einer Flatrate?</H2>
+
+<P>Eine Standleitung ben&ouml;tigt ein spezielles Setup des S0
+Interfaces. Danach kannst Du damit kein anderes Ziel mehr
+anw&auml;hlen als das f&uuml;r die Standleitung eingestellte. Sie ist
+auch sehr kostenintensiv.</P>
+<P>Eine Flatrate ist eine ganz normale W&auml;hlverbindung und das Setup
+wird auch entsprechend durchgef&uuml;hrt. Der einzige Unterschied zur
+normalen W&auml;hlverbindung ist die Kostenstruktur (siehe Abschnitt
+<A HREF="i4lfaq-de-11.html#dialout">dialout</A>). Beachte auch, da&szlig; bei einer
+Flatrate die Verbindung durch den Provider normalerweise getrennt
+wird, wenn Du zu lange online bleibst - also kannst Du Dich nicht
+darauf verlassen, dauernd online zu sein, falls es das ist, was Du
+wolltest.</P>
+
+
+<H2><A NAME="leased_nosignal"></A> <A NAME="ss21.2">21.2</A> <A HREF="i4lfaq-de.html#toc21.2">leased_nosignal: Wie funktioniert der Aufbau und das Beenden einer Verbindung mit D64S ohne Signal&uuml;bertragung? </A>
+</H2>
+
+<P>Die Daten werden einfach hinaus gesendet! Au&szlig;er mit einem ping
+gibt es keine andere M&ouml;glichkeit herauszufinden, ob die D64S-
+oder 2MBit-Leitung steht oder nicht. Nur S01- oder S02-Leitungen haben
+einen D-Kanal mit dem Signale &uuml;bertragen werden k&ouml;nnen. Die
+besten bekannten L&ouml;sungen benutzen diese 16kb auch f&uuml;r den
+Datentransport um auf 144kb/s anstatt 128kb/s zu kommen (I4L kann nur
+bis 128kb/s &uuml;bertragen).</P>
+
+<H2><A NAME="leased_hisaxconfig"></A> <A NAME="ss21.3">21.3</A> <A HREF="i4lfaq-de.html#toc21.3">leased_hisaxconfig: Wie konfiguriere ich meine Karte mit I4L auf einer D64-Standleitung? </A>
+</H2>
+
+<P>Eine sp&auml;tere Version des neuen HiSax-Treibers unterst&uuml;tzt
+D64. Die Konfiguration ist normal mit den folgenden
+Besonderheiten. HiSax muss im leased mode laufen:
+<HR>
+<PRE>
+/sbin/hisaxctrl HiSax 5 &lt;channel&gt;
+</PRE>
+<HR>
+
+wobei HiSax mit 'id=HiSax' aufgerufen wurde und &lt;channel&gt;
+entweder 0 oder 1 sein kann. Zus&auml;tzlich zur normalen
+Konfiguration sind die folgenden Befehle wichtig:
+<HR>
+<PRE>
+/sbin/isdnctrl bind HiSax,&lt;channel&gt;
+/sbin/isdnctrl eaz isdn0 1
+/sbin/isdnctrl addphone isdn0 out 2
+/sbin/isdnctrl addphone isdn0 in  3
+</PRE>
+<HR>
+
+wenn der Name des Interfaces 'isdn0' lautet. Das Interface muss auf
+"up" gesetzt werden und es muss eine Route auf das Interface gelegt
+werden. Schau Dir die Readmes im HiSax-Paket an.</P>
+
+<H2><A NAME="leased_x75"></A> <A NAME="ss21.4">21.4</A> <A HREF="i4lfaq-de.html#toc21.4">leased_x75: Wie konfiguriere ich X.75 auf einer D64-Standleitung? </A>
+</H2>
+
+<P>Benutze eine neuere Version von HiSax. Initialisiere zuerst das ttyI*
+Device, das Du benutzen willst, mit 'AT&amp;E0' (Verwendung des ersten
+B-Kanals) und 'ATS0=1' (automatisches Antworten auf das erste
+Signal). Dann versetzt Du HiSax in den leased mode:
+<HR>
+<PRE>
+/sbin/hisaxctrl HiSax 5 &lt;channel&gt;
+</PRE>
+<HR>
+
+wobei &lt;channel&gt; 0 oder 1 sein kann. Dadurch wird ein Anruf
+f&uuml;r MSN1 auf dem konfigurierten Kanal (0 oder 1) simuliert (Als
+incoming number wird LEASED0 gesetzt).</P>
+
+<H2><A NAME="leased_splitline"></A> <A NAME="ss21.5">21.5</A> <A HREF="i4lfaq-de.html#toc21.5">leased_splitline: Kann ich mit I4L einen Kanal als Standleitung und den anderen Kanal als W&auml;hlleitung benutzen? </A>
+</H2>
+
+<P>Ja und nein. Du kannst HiSax f&uuml;r beide Arten gleichzeitig
+konfigurieren. Allerdings kannst Du nicht beide gleichzeitig benutzen
+(Du musst die Standleitung trennen bevor Du hinausw&auml;hlst). Es
+kann ab und zu gleichzeitig funktionieren, jedoch ist der Treiber
+nicht dazu ausgelegt und das Resultat ist nicht vorhersehbar.</P>
+<P>Achte auch darauf, den jeweils richtigen Kanal zu benutzen!</P>
+
+
+
+<HR>
+<A HREF="i4lfaq-de-22.html">Next</A>
+<A HREF="i4lfaq-de-20.html">Previous</A>
+<A HREF="i4lfaq-de.html#toc21">Contents</A>
+</BODY>
+</HTML>

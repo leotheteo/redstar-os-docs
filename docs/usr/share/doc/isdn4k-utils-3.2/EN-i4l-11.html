@@ -1,0 +1,778 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <META NAME="GENERATOR" CONTENT="LinuxDoc-Tools 0.9.21">
+ <TITLE>ISDN4Linux Tutorial: Konfiguration der Internet-Dienste     </TITLE>
+ <LINK HREF="EN-i4l-12.html" REL=next>
+ <LINK HREF="EN-i4l-10.html" REL=previous>
+ <LINK HREF="EN-i4l.html#toc11" REL=contents>
+</HEAD>
+<BODY>
+<A HREF="EN-i4l-12.html">Next</A>
+<A HREF="EN-i4l-10.html">Previous</A>
+<A HREF="EN-i4l.html#toc11">Contents</A>
+<HR>
+<H2><A NAME="s11">11.</A> <A HREF="EN-i4l.html#toc11">Konfiguration der Internet-Dienste     </A></H2>
+
+<P>Voraussetzung: Die Internet-Verbindung über eine 
+Dial-On-Demand Wählverbindung und das Routing funktioniert.</P>
+<P>Jetzt sollen (je nach Bedarf) weitere Internetdienste eingerichtet
+werden.</P>
+
+<H2><A NAME="dnsCache"></A> <A NAME="ss11.1">11.1</A> <A HREF="EN-i4l.html#toc11.1">DNS-Cache</A>
+            </H2>
+
+<P>Hintergrund: siehe 
+<A HREF="EN-i4l-8.html#ipnummern">IP-Nummern Auflösung</A>
+<OL>
+<LI> Paket <CODE>bind</CODE> installieren.
+</LI>
+<LI> editiere <CODE>/etc/named.boot</CODE>:
+<P>
+<HR>
+<PRE>
+cache . root.cache
+options query-log
+forwarders 192.76.144.66
+slave
+                
+</PRE>
+<HR>
+
+Bei <CODE>forwarders</CODE> werden ein oder mehrere IP-Nummern
+der Nameserver eingetragen. Die Option <CODE>slave</CODE> steuert
+das Verhalten, wenn der Nameserver selbst noch keine
+Antwort hat, ohne die Option müßte jetzt der eigene
+Nameserver die Anfrage auflösen (aufwendig). Mit dieser
+Option (empfohlen) wird dem Forwarder gesagt, daß
+er soll die Anfrage auflösen. Bei der nächsten Anfrage
+hat er diese dann im Cache.</P>
+<P>Zur Diagnose ist zu empfehlen, noch die Zeile
+<CODE>options query-log</CODE> einzufügen, es werden dann über
+Syslog (also in <CODE>/var/log/messages</CODE> alle
+Anfragen an den Nameserver protokolliert, dadurch
+lassen sich einfach die <I>Übeltäter</I> im lokalen
+Netz finden. Bsp:
+<HR>
+<PRE>
+named[232]: XX /192.168.1.2/www.suse.de/A
+                
+</PRE>
+<HR>
+
+Der Rechner <CODE>192.168.1.2</CODE> fragt nach dem A-Record
+für <CODE>www.suse.de</CODE>.</P>
+</LI>
+<LI> Wir benutzen uns selbst als Nameserver. 
+<P>Trage
+als Nameserver die lokale IP-Nummer ein (<CODE>192.168.1.1</CODE>),
+siehe 
+<A HREF="EN-i4l-8.html#resolv">Konfiguration der Namensauflösung</A></P>
+</LI>
+<LI> Starte den Nameserver:
+<UL>
+<LI> S.u.S.E. Methode:
+Trage in <CODE>/etc/rc.config</CODE> ein:
+<HR>
+<PRE>
+START_NAMED=yes
+                        
+</PRE>
+<HR>
+
+Starte Nameserver durch Reboot oder direkt
+durch <CODE>/sbin/init.d/named start</CODE></LI>
+<LI> Manuelle Methode:
+<CODE>/usr/sbin/named</CODE></LI>
+</UL>
+</LI>
+<LI> Test: <CODE>nslookup www.suse.de</CODE>.
+<P> 
+Ergebnis: eine Verbindung wird aufgebaut, in messages 
+wird die Anfrage protokolliert und die IP-Nummer wird
+aufgelöst.</P>
+<P>Eine Wiederholung der Anfrage, wenn die Verbindung nicht 
+besteht, darf keine Verbindung aufbauen, die Anfrage
+muß sofort beantwortet werden.</P>
+
+</LI>
+</OL>
+</P>
+
+<H2><A NAME="squid"></A> <A NAME="ss11.2">11.2</A> <A HREF="EN-i4l.html#toc11.2">Squid</A>
+            </H2>
+
+<P>Squid ist ein WWW- und FTP-Proxy. Der Vorteil eines Proxies liegt
+nicht nur darin, Anfragen (für mehrere Benutzer) zu cachen, sondern
+auch darin, daß Clientrechner im lokalen Netz nicht unbedingt
+echten Internetzugriff (über Masquerading) haben müssen, was
+die Übersicht und die Sicherheit erhöht.</P>
+<P>Squid hat eine Vielzahl von Optionen und Features, die mitgelieferte
+Beispielkonfiguration in <CODE>/etc/squid.conf</CODE> ist sehr gut
+dokumentiert und funktioniert zunächst einmal ohne Änderung.</P>
+
+<H3>Starten von Squid            </H3>
+
+<P>Bei S.u.S.E. wird über die <CODE>rc.config</CODE>-Variable
+<CODE>START_SQUID</CODE> gesteuert, ob Squid gleich beim Systemstart
+hochgefahren werden soll (über <CODE>/sbin/init.d/squid</CODE>).</P>
+<P>Manuell kann man squid z.B. durch 
+<CODE>/usr/sbin/squid -sYD >> /var/squid/squid.out 2>&amp;1 &amp;</CODE>
+starten.</P>
+<P>Vor dem ersten Start muß das Cache-Directory
+initialisiert werden, dies sollte als Benutzer <CODE>squid</CODE>
+geschehen. Als <CODE>root</CODE> kann man einfach aufrufen:
+<CODE>su squid -c "</CODE>usr/sbin/squid -z"/.</P>
+
+<H3>Clients anpassen            </H3>
+
+<P>Die WWW-Browser müssen konfiguriert werden, damit Sie
+den Proxy ansprechen. Bei Netscape gibt es die
+Maske <CODE>Options/Network Preferences/Proxies/
+Manual Proxy Configuration</CODE>. In der Maske gibt man jeweils
+für FTP und HTTP-Proxy die IP-Nummer des IZG im lokalen
+Netz ein und als Portnummer <CODE>3128</CODE> (oder was in
+<CODE>/etc/squid.conf</CODE> definiert ist.</P>
+<P>Zusätzlich sollte man noch das Feld <CODE>No Proxy for</CODE>
+ausfüllen, für welche Domains nicht über den Proxy gegangen, 
+sondern direkt auf den WWW-Server zugegriffen werden soll,
+z.B.: <CODE>localhost isdnworkshop.de</CODE>.</P>
+
+<H2><A NAME="fetchmail"></A> <A NAME="ss11.3">11.3</A> <A HREF="EN-i4l.html#toc11.3">Fetchmail</A>
+            </H2>
+
+<P>Das Programm <CODE>fetchmail</CODE> (Paket <CODE>pop</CODE>) eignet sich dazu,
+Mails über das POP3-Protokoll vom Provider abzuholen.</P>
+<P>Das Abholen kann auch als normaler User durchgeführt werden,
+wir holen hier die Mails als Root ab, dadurch läßt sich der
+Vorgang besser automatisieren. Nach dem Abholen werden die
+Mails dem lokalen Sendmail übergeben und zugestellt.</P>
+<P>Der Mailserver sei mail.provider.de. Es gibt zwei Benutzer asterix
+und obelix, die auf dem lokalen Rechner eva und maria heissen. Als
+Passwörter werden (auf dem Mailserver) adam und josef benutzt. </P>
+<P>
+<UL>
+<LI> Lege eine Datei <CODE>/root/.fetchmailrc</CODE> an:
+<HR>
+<PRE>
+poll mail.provider.de protocol POP3 user asterix password adam is eva
+poll mail.provider.de protocol POP3 user obelix password josef is maria
+            
+</PRE>
+<HR>
+
+</LI>
+<LI> Zum Test starte:
+<HR>
+<PRE>
+fetchmail -v --keep -a
+            
+</PRE>
+<HR>
+
+Die Option <CODE>-v</CODE> gibt mehr Ausgaben, die Option
+<CODE>--keep</CODE> sorgt dafür, daß die Mails auf dem Server
+zunächst nicht gelöscht werden.
+</LI>
+<LI> Wenn das erfolgreich war, trage in <CODE>/etc/ppp/ip-up</CODE>
+das Kommando <CODE>fetchmail -a >> /var/log/fetchmail</CODE>
+in der Start-Section ein.
+</LI>
+</UL>
+    </P>
+<P>Mehr Infos: 
+<A HREF="http://www.suse.de/Support/sdb/fetchmail.html">http://www.suse.de/Support/sdb/fetchmail.html</A></P>
+<P>Übung: auf dem Server liegen Mails für jede Workstation
+bereit. Richte fetchmail so ein, daß bei jedem Verbindungsaufbau
+Mails abgeholt werden. Prüfe die lokale Zustellung.
+Siehe 
+<A HREF="/support-db/sdb/fetchmail.html">/support-db/sdb/fetchmail.html</A> und
+<CODE>/etc/ppp/ip-up</CODE>.</P>
+
+<H2><A NAME="sendmail"></A> <A NAME="ss11.4">11.4</A> <A HREF="EN-i4l.html#toc11.4">Sendmail</A>
+            </H2>
+
+<P>Über Sendmail kann man dicke Bücher schreiben ... (siehe 
+<A HREF="EN-i4l-15.html#bookSendmail">Sendmail</A>.</P>
+<P>Das S.u.S.E. Paket <CODE>sendmail</CODE> ist für diese Zwecke hier
+bestens gerüstet. Besonders wichtig sind hier zum einem, daß
+die Absenderadresse richtig gesetzt wird, denn die lokale
+Domain könnte ja zur E-Mail-Adresse beim Provider unterschiedlich
+sein. Zum anderen sollen lokale E-Mails sofort zugestellt
+werden, Mails die über die Wählleitung verschickt werden müssen,
+sollen dagegen in eine Queue gestellt werden, ohne daß eine 
+Verbindung aufgebaut wird.</P>
+<P>Wie immer gibt es mehrere Wege:</P>
+<P>
+<UL>
+<LI> Sendmail über <CODE>/etc/rc.config</CODE> konfigurieren:
+<P>
+<HR>
+<PRE>
+FROM_HEADER="klaus.franken.de"
+SENDMAIL_TYPE="yes"
+SENDMAIL_SMARTHOST="mail-n.franken.de"
+SENDMAIL_LOCALHOST="localhost franken.b.eunet.de glen.home.suse.de \
+        klaus.franken.de"
+SENDMAIL_RELAY=""
+SENDMAIL_ARGS="-bd -om"
+SENDMAIL_EXPENSIVE="yes"
+SENDMAIL_NOCANONIFY="yes"
+            
+</PRE>
+<HR>
+</P>
+
+</LI>
+<LI> Sendmail über m4-Macro-File konfigurieren:
+<P>Seit sendmail Version 8, bietet Sendmail ein Macro-Paket,
+bei dem die eigentlich Konfigurationsdatei
+<CODE>/etc/sendmail.cf</CODE> nicht <I>von Hand</I> erstellt
+werden muß, sondern über eine Meta-Datei generiert wird.
+Das Directory ist je nach Distribution unterschiedlich
+(z.B. <CODE>/usr/share/sendmail/m4</CODE>, bei S.u.S.E.
+auch in <CODE>/etc/mail</CODE>).</P>
+<P>In der Distribution sollten sich Vorlagen befinden.
+Bei S.u.S.E. ist eine gut kommentierte 
+<CODE>/etc/mail/linux.mc</CODE> dabei. Bevor man diese
+ändert, sollte man in <CODE>/etc/rc.config</CODE> das automatische
+Generieren abstellen (SENDMAIL_TYPE="no").</P>
+<P>Man generiert eine neu Konfig mit:
+<HR>
+<PRE>
+m4 linux.mc > /etc/sendmail.cf
+            
+</PRE>
+<HR>
+</P>
+<P>Mehr Infos: siehe <CODE>/etc/mail/README</CODE></P>
+
+</LI>
+<LI> Sendmail Finetuning
+<P>Bei ausgehenden E-Mails werden abhängig vom lokalen 
+Benutzernamen die E-Mail-Adressen umgeschrieben,
+Datei <CODE>/etc/mail/genericstable</CODE>:
+<HR>
+<PRE>
+kfr kfr@klaus.franken.de
+sandra sandra@klaus.franken.de
+sr sandra@klaus.franken.de
+            
+</PRE>
+<HR>
+</P>
+
+<P>Übung:
+<UL>
+<LI> Schreibe Dir selbst eine Mail auf dem lokalen Rechner</LI>
+<LI> Schreibe anderen Usern eine Mail auf dem lokalen Rechner</LI>
+<LI> Schreibe eine Mail an <CODE>root@server.isdnworkshop.de</CODE></LI>
+<LI> Schreibe eine Mail an andere User auf server.isdnworkshop.de
+(ws0, ws1, ....)</LI>
+<LI> Prüfe nach, wo Deine Mail sind</LI>
+<LI> Stelle sicher, daß Mails beim Verbindungaufbau 
+gequeued verschickt werden, lokale Mails aber sofort 
+zugestellt werden.
+(Siehe in <CODE>/etc/ppp/ip-up</CODE>).</LI>
+<LI> Prüfe die Mailqueue mit <CODE>mailq</CODE>    </LI>
+</UL>
+</P>
+</LI>
+</UL>
+</P>
+
+<H2><A NAME="ss11.5">11.5</A> <A HREF="EN-i4l.html#toc11.5">News</A>
+        </H2>
+
+<P>Online News lesen ist schon hiermit sehr einfach, als News-Server
+den Server des ISP angeben. Dazu muß man für die meisten 
+News-Read die Variable <CODE>NNTPSERVER</CODE> setzen, z.B. 
+<CODE>export NNTPSERVER='klaus.franken.de'</CODE>.
+Dies sollte man systemweit in der <CODE>/etc/profile</CODE>
+eintragen.</P>
+<P>Wünschenswert ist natürlich News-Offline zu lesen und entweder
+bei Bedarf zu holen bzw. zu verschicken oder dieses
+per Cron-Job z.B. jede Nacht durchführen zu lassen.</P>
+<P>Die Installation eines eigenen News-Servers ist recht
+aufwendig, es bieten sich <B>CNews</B> oder <B>INN</B> an.
+Siehe dazu News-Howto (fixme).</P>
+<P>Ein eigener News-Server ist aber eigentlich nur dann notwendig,
+wenn man auf diesem selber Newsgruppen einrichten möchte.
+Will man das nicht, sind CNews und INN vollkommen <I>overkilled</I>,
+deshalb möchte ich hier zwei andere Möglichkleiten vorstellen:</P>
+<P>Zwei Pakete bieten sich an: <B>Leafnode</B> und <B>slrn</B>.
+Beide sind einfach einzurichten und zu warten und eignen sich für
+ein mittleres Newsaufkommen vollkommen aus.</P>
+<P><B>slrn</B> ist eigentlich ein eigener News-Reader 
+(textorientiert, sehr flexibel und schnell) und bietet 
+ein eigenes Programm <CODE>slrnpull</CODE>, das die News abholt und in
+ein eigenes Spool-Verzeichnis stellt, auf welches direkt von
+<CODE>slrn</CODE> zugegriffen werden kann. 
+<B>Einschränkungen:</B> es kann kein anderes News-Programm
+darauf zugreifen; es kann nicht über Netzwerk auf die News
+zugegriffen werden (vielleicht über NFS, untestet), da kein
+lokaler News-Server läuft.</P>
+<P><B>Leafnode</B> stellt dagegen einen eigenen News-Server zur
+Verfügung, braucht aber insgesamt mehr Ressourcen.
+Der Trick bei <B>Leafnode</B> ist der, das sich der Server
+quasi selbst konfiguriert: wird von einem Client auf eine
+Gruppe zugegriffen, wird diese automatisch abonniert und ist
+beim nächsten Abgleich vorhanden; wird dagegen längere Zeit
+nicht (mehr) auf eine Gruppe zugegriffen, wird diese automatisch
+gelöscht. Man kann Leafnode also in einem kleineren Netz mit
+mehreren Lesern trotzdem nahezu unbeaufsichtigt laufen lassen.</P>
+<P>Beide Programme arbeiten sehr gut in dieser
+Dial-On-Demand-Umgebung, Zugriffe auf den News-Server
+beim Provider werden nur auf Wunsch, nie aber automatisch
+ausgeführt.</P>
+
+<H3>slrn installieren und konfigurieren            </H3>
+
+<P>Die getestete Version ist 0.9.5.2 von
+<A HREF="ftp://space.mit.edu/pub/davis/slrn">ftp://space.mit.edu/pub/davis/slrn</A></P>
+<P>Es wird die slang-Bibliothek ab Version
+1.0.3 benötigt (bei S.u.S.E. 5.2 ist noch  0.99.38 dabei),
+zu bekommen unter 
+<A HREF="ftp://space.mit.edu/pub/davis/slang">ftp://space.mit.edu/pub/davis/slang</A></P>
+<P>Beim Compilieren nicht vergessen auch
+<CODE>make slrnpull</CODE> anzugeben.
+Die Binaries z.B. nach <CODE>/usr/local/bin</CODE>
+kopieren, oder folgendes ausführen:
+<HR>
+<PRE>
+install -m 755 -o root -g root src/objs/slrn /usr/local/bin
+install -m 755 -o root -g root src/objs/slrnpull /usr/local/bin
+install -d /usr/doc/packages/slrn -m 755 -o root -g root
+install -m 644 -o root -g root doc/* /usr/doc/packages/slrn
+install -m 644 -o root -g root COPYRIGHT /usr/doc/packages/slrn
+install -m 644 -o root -g root COPYING /usr/doc/packages/slrn
+install -m 644 -o root -g root README /usr/doc/packages/slrn
+install -m 644 -o root -g root changes.txt /usr/doc/packages/slrn
+install -m 644 -o root -g root doc/slrn.1 /usr/local/man/man1
+install -d /usr/doc/packages/slrn/slrnpull -m 755 -o root -g root
+install -m 644 -o root -g root slrnpull/* /usr/doc/packages/slrn/slrnpull
+            
+</PRE>
+<HR>
+</P>
+<P>Dann das Spool-Verzeichnis anlegen und die Config-Datei
+erstellen:
+<HR>
+<PRE>
+mkdir /var/spool/slrnpull
+cd /var/spool/slrnpull
+cp /src/slrn/slrnpull/slrnpull.conf .
+            
+</PRE>
+<HR>
+</P>
+<P>In <CODE>slrnpull.conf</CODE> könnte z.B. folgendes stehen:
+<HR>
+<PRE>
+default                0   14
+de.alt.comm.isdn4linux
+            
+</PRE>
+<HR>
+</P>
+<P>Jetzt noch den News-Reader auf diesen Spool-Pfad
+konfigurieren, in <CODE>~/.slrnrc</CODE> anfügen (anpassen !):
+<HR>
+<PRE>
+%%% Spool
+set spool_inn_root   "/var/spool/slrnpull"
+set spool_root       "/var/spool/slrnpull/news"
+set spool_nov_root   "/var/spool/slrnpull/news"
+set use_slrnpull 1
+set read_active 1
+set server_object    "spool"
+hostname "klaus.franken.de"
+set username "kfr"
+            
+</PRE>
+<HR>
+</P>
+<P>Das Abholen, Verschicken eigener News und das Löschen alten Artikel
+geschieht mit einem einzigen Kommando (als root), z.B.:
+<HR>
+<PRE>
+slrnpull -d /var/spool/slrnpull -h news.franken.de
+            
+</PRE>
+<HR>
+</P>
+<P>Beim ersten Mal dauert das natürlich sehr lange und sollte daher
+manuell ausgeführt werden. Im Betrieb kann man das über einen
+Croneintrag oder in <CODE>/etc/ppp/ip-up</CODE> bei jedem
+Verbindungsaufbau durchführen lassen.</P>
+<P>Beim manuellen Start gibt <CODE>slrnpull</CODE> Meldungen
+auf der Console aus; wird es im Hintergrund
+gestartet, loggt es nach <CODE>/var/spool/slrnpull/log</CODE>
+(Achtung: diese Datei kann gross werden!).</P>
+
+
+<H3>Leafnode installieren und konfigurieren            </H3>
+
+<P>Leafnode (Version 1.4) gibt es 
+auf 
+<A HREF="ftp://ftp.troll.no/pub/freebies/">ftp://ftp.troll.no/pub/freebies/</A>.</P>
+<P>Die mitgelieferten Dateien <CODE>README</CODE> und <CODE>INSTALL</CODE>
+beschreiben die Installation sehr gut.</P>
+<P>Im folgenden Beispiel werden die Binaries
+<CODE>leafnode</CODE>, <CODE>fetch</CODE> und <CODE>texpire</CODE> nach
+<CODE>/usr/local/bin</CODE> installiert (Makefile anpassen!).</P>
+<P>Zunächst wird der NNTP-Server <CODE>leafnode</CODE>
+in der <CODE>/etc/inetd.conf</CODE> durch folgende Zeile
+aktiviert:
+<HR>
+<PRE>
+nntp    stream  tcp     nowait  news    /usr/sbin/tcpd /usr/local/bin/leafnode
+            
+</PRE>
+<HR>
+
+Danach ein <CODE>killall -1 inetd</CODE> ausführen.</P>
+<P>Als nächstes  muß ein User und eine Gruppe <CODE>news</CODE>
+angelegt werden, z.B. durch folgenden Eintrag
+in <CODE>/etc/passwd</CODE>:
+<HR>
+<PRE>
+news:x:9:13::/var/spool/news:/bin/bash
+            
+</PRE>
+<HR>
+
+Alle Arbeiten müssen dann als User <CODE>news</CODE> 
+ausgeführt werden (als Root: <CODE>su - news</CODE>)!</P>
+<P>Im Verzeichnis <CODE>/usr/lib/leafnode</CODE>
+wurde bei der Installation eine Bsp-Datei angelegt,
+die man kopieren und anpassen muss:
+<HR>
+<PRE>
+su - news
+cd /usr/lib/leafnode
+cp config.example config
+            
+</PRE>
+<HR>
+</P>
+<P>Die Datei ist kommentiert, hier arbeiten folgende
+Einträge:
+<HR>
+<PRE>
+server = news.franken.de
+expire = 20
+maxcount = 1000
+            
+</PRE>
+<HR>
+</P>
+<P>Jetzt muß man dafür sorgen, daß das Programm
+<CODE>texpire</CODE> regelmässig aufgerufen wird (ansonsten
+werden keine alten News wieder gelöscht), hier arbeitet
+folgender Crontab-Eintrag vom User root:
+<HR>
+<PRE>
+42  5 * * * su news -c texpire
+            
+</PRE>
+<HR>
+
+um jede Nacht um 5:42 zu löschen.</P>
+<P>Durch das Kommando <CODE>fetch</CODE> (besser <CODE>fetch -v</CODE>)
+wird nun der News-Server initialisiert, aber keine
+Gruppen sind aktiv.</P>
+<P>In dem man jetzt einmalig durch einen News-Reader
+auf diesen Newsserver und auf die interessanten
+Gruppen zugreift (es werden natürlich alle mit der
+Anzahl 0 angezeigt), werden die Gruppen abonniert.
+Beim nächsten Aufruf von <CODE>fetch</CODE> werden dann die Artikel
+geholt.</P>
+<P>Auch hier kann man <CODE>fetch</CODE> via Crontab regelmässig
+oder durch einen Eintrag in <CODE>/etc/ppp/ip-up</CODE>
+aufrufen.</P>
+<P><B>Probleme:</B> man hat keinen direkten Einfluß darauf,
+welche Gruppen abonniert werden. Es sei denn, daß man vor dem
+Aufruf von <CODE>fetch</CODE> das Verzeichnis 
+<CODE>/home/opt/spool/news/interesting.groups</CODE>
+<I>aufräumt</I>.</P>
+<P>Die Ausgabe von fetch sollte beachtet werden, abgelehnte
+eigene Postings werden nirgens abgespeichert, sondern
+einfach gelöscht.</P>
+
+<H2><A NAME="ipfwadm"></A> <A NAME="ss11.6">11.6</A> <A HREF="EN-i4l.html#toc11.6">Firewall</A>
+            </H2>
+
+<P><B>Hinweis:</B> Firewalls sind ein heikles Thema. Insbesondere
+Hierfür übernimmt der Autor keine Garantie!
+Wer eine wirklich sicheres System benötigt, soll zumindest
+das Firewall Howto lesen oder einen Experten dafür
+beauftragen.</P>
+<P>Über Firewalls kann man dicke Bücher schreiben ... (siehe 
+<A HREF="EN-i4l-15.html#bookFirewall">Firewall</A> oder das <B>Firewall Howto</B>.</P>
+<P>Die einfachste (aber wirkungsvolle) Methode ist die Benutzung
+eines Paketfilters, die direkt vom Linux-Kernel unterstützt wird und
+über das Kommando <CODE>ipfwadm</CODE> (IP-FireWall ADMinistration)
+konfiguriert wird.</P>
+
+<H3>Was ist ein Paketfilter?            </H3>
+
+<P>Jedes IP-Paket, das vom Kernel behandelt wird, wird nach einer
+Regelliste untersucht und entweder akzeptiert oder abgelehnt.</P>
+<P>Es werden drei verschiedene Listen geführt:
+<OL>
+<LI>Incoming (Schalter <CODE>-I</CODE>): einkommende Pakete</LI>
+<LI>Outgoing (Schalter <CODE>-O</CODE>): ausgehende Pakete</LI>
+<LI>Forwarding (Schalter <CODE>-F</CODE>): durchgehende Pakete</LI>
+</OL>
+</P>
+
+<H3>Wie gibt man eine Firewall-Regel an?            </H3>
+
+<P>Der <CODE>ipfwadm</CODE>-Aufruf setzt sich zusammen aus:</P>
+<P>
+<UL>
+<LI> Wann?: 
+<P>Incoming (-I), Outgoing (-O) oder Forwarding (-F)</P>
+
+</LI>
+<LI> Wohin? 
+<P> 
+Man kann neue Regeln an den Anfang der Liste
+(-i) oder an das Ende der Liste (-a).
+Die Regeln werden immer von vorne nach hinten interpretiert,
+bei der ersten passenden Regel wird nicht weitergesucht.</P>
+
+</LI>
+<LI> Was tun? 
+<P> 
+Soll das Paket akzeptiert werden (accept),
+oder abgewiesen (deny) werden.</P>
+
+</LI>
+<LI> Protokoll ? 
+<P> 
+Mögliche Protokolle sind tcp, udp, icmp oder alles (all)</P>
+
+</LI>
+<LI> Quell-IP?
+<P> 
+Angabe des Source-IP-Nummern-Bereiches (-S), z.B.
+<CODE>-S 192.168.42.0</CODE>24/</P>
+
+</LI>
+<LI> Ziel-IP?    
+<P> 
+Angabe des Ziel-IP-Nummern Bereiches (-D)</P>
+
+</LI>
+<LI> Port?
+<P> 
+Meist wird direkt hinter der Ziel-IP-Nummer noch der
+Ziel-Port mit angegeben, dies kann der numerische
+Wert oder der Alias, wie in <CODE>/etc/services</CODE>
+definiert.</P>
+
+</LI>
+<LI> Wo?
+<P> 
+Mit dem Schalter -W kann die Regel auf ein Netzdevice
+beschränkt werden.</P>
+
+</LI>
+</UL>
+</P>
+<P>Weiterhin gibt es folgende wichtige Optionen:
+<UL>
+<LI> -f: zurücksetzen des Reglewerkes für -I, -O oder -F</LI>
+<LI> -o: beim Zutreffen der Regel wird eine Meldung
+via syslog in <CODE>/var/log/messages</CODE> geschrieben.</LI>
+<LI> -m: Masquerading, s.u.</LI>
+<LI> -A: Accounting, s.u.</LI>
+<LI> -l oder -lne: Listet die Regeln.</LI>
+</UL>
+</P>
+
+
+
+
+
+
+
+<H3>Was für Regeln brauche ich mindestens?            </H3>
+
+<P>Eines der größten Sicherheitslöcher ist das sogenannte
+<B>Spoofing</B>. Darunter versteht man, daß eine eigentlich
+fremder Rechner behauptet eine IP-Nummer aus dem eigenen
+(sicheren) Netz zu haben. Daher müssen als ersten Regeln
+definiert werden, die verhindern, daß eigene IP-Nummern 
+aus dem unsicheren Netz hereinkommen können.</P>
+<P>Als nächstes sollte man alle Zugriffe von außen verbieten und
+nur (bei Bedarf) die benötigten Dienste (sendmail, www) 
+freischalten.</P>
+
+<H3>Ein einfacher Firewall            </H3>
+
+
+<P>Das lokale Ethernet ist auf 192.168.42.0 konfiguriert.
+Wir erwarten IP-Nummer aus dem Bereich 
+193.110.3.0/24 zugewiesen zu bekommen, wobei der
+PtP-Partner nicht aus diesem Bereich ist (sonst würden
+seine Pakete auch abgewiesen werden)</P>
+<P>
+<HR>
+<PRE>
+# spoofing verbieten:
+/sbin/ipfwadm -I -a deny -o -P all -S 192.168.42.0/24 -D 192.168.42.0/24 -W ippp0
+/sbin/ipfwadm -I -a deny -o -P all -S 192.168.42.0/24 -D 193.110.3.0/24 -W ippp0
+/sbin/ipfwadm -I -a deny -o -P all -S 193.110.3.0/24 -D 192.168.42.0/24 -W ippp0
+/sbin/ipfwadm -I -a deny -o -P all -S 193.110.3.0/24 -D 193.110.3.0/24 -W ippp0
+
+
+# Zugriffe von ueberall auf den Mail-Server (Port 25) erlauben:
+/sbin/ipfwadm -I -a accept -P tcp -S 0/0 -D 192.168.42.1 25 -W ippp0
+
+# Zugriffe von ueberall auf den DNS-Server (Port 53) erlauben:
+/sbin/ipfwadm -I -a accept -P tcp -S 0/0 -D 192.168.42.1 53 -W ippp0
+
+# sonst alles verbieten (getrennt fuer Protokoll tcp und udp)
+/sbin/ipfwadm -I -a deny -o -P tcp -S 0/0 -D 192.168.42.0/24 1:1023 -W ippp0 
+/sbin/ipfwadm -I -a deny -o -P tcp -S 0/0 -D 193.110.3.0/24 1:1023 -W ippp0
+
+/sbin/ipfwadm -I -a deny -o -P udp -S 0/0 -D 192.168.42.0/24 1:1023 -W ippp0
+/sbin/ipfwadm -I -a deny -o -P udp -S 0/0 -D 193.110.3.0/24 1:1023 -W ippp0
+            
+</PRE>
+<HR>
+</P>
+<P>Bei S.u.S.E. läßt sich obiges Bsp. auch in der <CODE>/etc/rc.config</CODE>
+einstellen:
+<HR>
+<PRE>
+FW_START="yes"
+FW_LOCALNETS="192.168.42.0/24 193.110.3.0/24"
+FW_MAILSERVER="192.168.42.1"
+FW_DNSSERVER="192.168.42.1"
+FW_WORLD_DEV="ippp0"
+FW_LOG_ACCEPT="no"
+FW_LOG_DENY="yes"
+FW_TCP_LOCKED_PORTS="1:1023"
+FW_UDP_LOCKED_PORTS="1:1023"
+        
+</PRE>
+<HR>
+
+Siehe auch <CODE>/usr/doc/packages/firewall</CODE></P>
+
+<H2><A NAME="ipfwadm-m"></A> <A NAME="ss11.7">11.7</A> <A HREF="EN-i4l.html#toc11.7">Masquerading</A>
+            </H2>
+
+<P>Masquerading (auch <B>Network Adress Translation</B> genannt) 
+braucht man dann, wenn man ein internes Netz mit
+privaten IP-Nummern hat, vom ISP aber nur eine IP-Nummer
+(und diese vielleicht sogar dynamisch) bekommt. Die
+IP-Pakete werden beim rausschicken auf der Internetleitung
+umgeschrieben und mit der eigenen IP-Nummer versehen.
+Umgekehrt wird eine Tabelle der offenen Verbindungen gehalten,
+damit einkommende Pakete wieder dem ursprünglichen Absender
+zugestellt werden können.</P>
+<P>Hat man sich mit dem Firewall (Paketfilter via ipfwadm, s.o.)
+vertraut gemacht, ist Masquerading fast trivial, denn
+es findet an derselben Stelle statt und wird fast genauso
+konfiguriert, es wird lediglich der Schalter <CODE>-m</CODE> dazugegeben.</P>
+<P>Beispiel: 
+Pakete aus dem internen Netzwerk (192.168.42.0/24), die zum Provider
+(Device <CODE>ippp0</CODE>) verschickt werden, sollen mit der jeweils 
+gültigen IP-Nummer maskiert werden. Es wird einer
+Forwarding-Rule der Schalter <CODE>-m</CODE> mitgegeben:
+<HR>
+<PRE>
+/sbin/ipfwadm -F -a accept -P all -S 192.168.42.0/24 -D 0/0 -m -W ippp0
+        
+</PRE>
+<HR>
+</P>
+<P>Bei manchen Internet-Diensten (z.B. ftp) wird nicht nur ein Socket
+geöffnet, sondern auch ein zweiter für die Datenübertragung,
+die der Server zum Client aufbaut. Da der Client aber selbst nicht
+erreichbar ist (private IP-Nummer) und der Server die Verbindung
+zum falschen Rechner (IZG) aufbaut, klappt diese Methode 
+ohne weiteres Wissen über die speziellen Eigenheiten des
+entsprechenden Protokolls nicht. Abhilfe schaffen dafür 
+spezielle Routinen, die auch dafür <I>re-maskieren</I> können.
+Diese werden durch Kernel-Module geladen:
+<HR>
+<PRE>
+/sbin/insmod ip_masq_cuseeme
+/sbin/insmod ip_masq_ftp
+/sbin/insmod ip_masq_irc
+/sbin/insmod ip_masq_quake
+/sbin/insmod ip_masq_raudio
+/sbin/insmod ip_masq_vdolive
+        
+</PRE>
+<HR>
+</P>
+<P>Bei S.u.S.E. läßt sich obiges Bsp. auch in der <CODE>/etc/rc.config</CODE>
+einstellen:
+<HR>
+<PRE>
+MSQ_START="yes"
+MSQ_NETWORKS="192.168.42.0/24"
+MSQ_DEV="ippp0"
+MSQ_MODULES="ip_masq_cuseeme ip_masq_ftp ip_masq_irc ip_masq_quake ip_masq_raudio ip_masq_vdolive"
+        
+</PRE>
+<HR>
+
+Siehe auch <CODE>/usr/doc/packages/firewall</CODE></P>
+
+
+
+<H2><A NAME="accounting"></A> <A NAME="ss11.8">11.8</A> <A HREF="EN-i4l.html#toc11.8">Accounting</A>
+            </H2>
+
+<P>Siehe  <CODE>man ipfwadm</CODE> Stichwort <CODE>-A</CODE></P>
+
+<H2><A NAME="samba"></A> <A NAME="ss11.9">11.9</A> <A HREF="EN-i4l.html#toc11.9">Samba</A>
+            </H2>
+
+<P>Samba ist ein File- und Druckerserver für das unter
+Windows benutzte SMB-Protokoll.</P>
+<P>Das Thema gehört also garnicht hier her... doch: denn
+es kann in unserem Fall Probleme machen.</P>
+<P>Beim SMB-Protokoll wird sehr viel mit Broadcasts gearbeitet,
+die Rechner schicken sich ständig (auch wenn eigentlich keine
+Aktionen ausgeführt werden) Nachrichten zu.
+Der Samba-Server wird meist so ausgeliefert, daß dieser
+alle verwendendbaren Netzdevices benutzt und dorthin
+Nachrichten schickt, also auch an das ippp0-Device.</P>
+<P>Folge: <B>es werden ständig Verbindungen aufgebaut!</B></P>
+<P>Abhilfe:
+<OL>
+<LI> Starte Samba nur, wenn Du es auch brauchst.
+<P>Bei S.u.S.E. wird Samba schon aktiviert, wenn das Paket
+installiert ist.
+Setze in <CODE>/etc/rc.config</CODE>: <CODE>START_SMB="no"</CODE></P>
+
+</LI>
+<LI> Wenn Du es brauchst, sage Samba, welche Devices
+benutzt werden dürfen.
+
+In der <CODE>/etc/smb.conf</CODE> setze z.B, in der 
+<CODE>global</CODE>-Section:
+<CODE>interfaces = 192.168.2.1/24</CODE>
+
+Mehr Infos: 
+<A HREF="http://www.suse.de/Support/sdb/isdn_samba.html">http://www.suse.de/Support/sdb/isdn_samba.html</A>
+</LI>
+</OL>
+</P>
+
+
+<HR>
+<A HREF="EN-i4l-12.html">Next</A>
+<A HREF="EN-i4l-10.html">Previous</A>
+<A HREF="EN-i4l.html#toc11">Contents</A>
+</BODY>
+</HTML>

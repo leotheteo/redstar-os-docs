@@ -1,0 +1,145 @@
+<html dir='ltr'>
+	<head>
+		<META http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+		<title>STDEVA</title>
+		<link rel='stylesheet' type='text/css' href='../css/main.css'/>
+		<script type='text/javascript' language='Javascript' src='../js/mexpcol.js'></script>
+		<script type='text/javascript' language='JavaScript' src='../js/glossary.js'></script>
+	</head>
+	<body>
+		<h1>&nbsp;<img align="absbottom" src="../image/external_images/crystal/svtools/res/new_doc.png"/>&nbsp;STDEVA</h1>
+		<p id='ExpandAllLine' class='ExpFav'>
+			<a href='#' onClick='ExpandAll()' onKeyPress='ExpandAll()' class='DropDown'>
+				<img id='picHeader' border='0' src='../image/image/common/expandtri.gif' alt='모두 표시'>
+				<span id='ExpandAll'>모두 표시</span>
+			</a>
+		</p>
+		<p><b class="bterm">참고항목</b>&emsp;
+			<a href="5.9.10.1.htm">통계함수목록</a>,
+			<a href="5.9.3.11.htm">DSTDEV</a>,
+			<a href="5.9.3.12.htm">DSTDEVP</a>,
+			<a href="5.9.10.64.htm">STDEV</a>,
+			<a href="5.9.10.67.htm">STDEVPA</a>
+		</p>
+		<p>표본집단에 기초하여 표준편차를 구합니다. 본문은 0으로 평가합니다.</p>
+		<p><b class="bterm">문법:&emsp;&emsp;		STDEVA(값1,값2,...)</b></p>
+		<table>
+			<tr>
+				<th>인수명</th>
+				<th>설명</th>
+			</tr>
+			<tr>
+				<td>값1,값2,...</td>
+				<td>기본모집단에서 추출한 표본집단을 나타내는 1부터 30까지의 인수입니다. 배렬의 참조 또는 단일배렬을 사용할수도 있습니다.</td>
+			</tr>
+		</table>
+		<p><b class="bterm">주의</b></p>
+			<ul>
+				<li><b class="bterm">STDEVA</b>함수는 모집단의 표본을 인수로 간주합니다. 모집단전체가 인수라면 <b class="bterm">STDEVPA</b>함수로 표준편차를 계산합니다.</li>
+				<li>계산에 본문이나 론리값이 없으면 <b class="bterm">STDEV</b>함수를 사용합니다.</li>
+				<li>표준편차는 <b class="bterm">비편향(unbiased)</b> 또는 <b class="bterm">n-1</b> 방법을 사용하여 계산합니다.</li>
+				<li><b class="bterm">STDEVA</b>함수식은 다음과 같습니다.
+					<p><img border='0' src='../image/image/sgsd/formula-73.gif' alt='표시'></p>
+					<p>여기서 x는 표본평균 AVERAGE(값1,값2,…)이고 n은 표본크기입니다.</p>
+				</li>
+			</ul>
+		<p><b class="bterm">실례</b></p>
+			<p><a href="1.5.1.htm">실례의 리용방법</a>을 참고하십시오.</p>
+			<p>생산가동중 같은 기계에서 만들어낸 10개의 공구를 우연적으로 뽑아 표본을 만들어 분쇄강도를 측정합니다.</p>
+			<table>
+				<tr>
+					<td>
+						<table>
+							<tr>
+								<td class="noborder">&nbsp;
+								</td>
+							</tr>
+							<tr>
+								<th>1</th>
+							</tr>
+							<tr>
+								<th>2</th>
+							</tr>
+							<tr>
+								<th>3</th>
+							</tr>
+							<tr>
+								<th>4</th>
+							</tr>
+							<tr>
+								<th>5</th>
+							</tr>
+							<tr>
+								<th>6</th>
+							</tr>
+							<tr>
+								<th>7</th>
+							</tr>
+							<tr>
+								<th>8</th>
+							</tr>
+							<tr>
+								<th>9</th>
+							</tr>
+							<tr>
+								<th>10</th>
+							</tr>
+							<tr>
+								<th>11</th>
+							</tr>
+						</table>
+					</td>
+					<td>
+						<table>
+							<tr>
+								<th>A</th>
+							</tr>
+							<tr>
+								<th>강도</th>
+							</tr>
+							<tr>
+								<td>1345</td>
+							</tr>
+							<tr>
+								<td>1301</td>
+							</tr>
+							<tr>
+								<td>1368</td>
+							</tr>
+							<tr>
+								<td>1322</td>
+							</tr>
+							<tr>
+								<td>1310</td>
+							</tr>
+							<tr>
+								<td>1370</td>
+							</tr>
+							<tr>
+								<td>1318</td>
+							</tr>
+							<tr>
+								<td>1350</td>
+							</tr>
+							<tr>
+								<td>1303</td>
+							</tr>
+							<tr>
+								<td>1299</td>
+							</tr>
+							<tr>
+								<th>수식</th>
+								<th>설명(결과)</th>
+							</tr>
+							<tr>
+								<td>=STDEVA(A2:A11)</td>
+								<td>모든 공구에 대한 분쇄강도의 표준편차입니다. (27.46)</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+		<script type="text/javascript" language="Javascript">footerView()</script>
+	
+</body>
+</html>				

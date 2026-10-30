@@ -1,0 +1,115 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+	<TITLE></TITLE>
+	<META NAME="GENERATOR" CONTENT="《Sogwang 3.0》  (Linux)">
+	<META NAME="CREATED" CONTENT="20091207;14240900">
+	<META NAME="CHANGED" CONTENT="20091207;15022000">
+	<STYLE TYPE="text/css">
+	<!--
+		P.listitem { font-family: "Bitstream Vera Sans", "Arial", "Helvetica", "Lucida", "Geneva", "Helmet", sans-serif, "Andale Sans UI", "Arial Unicode MS", "Lucida Sans Unicode", "Tahoma" }
+		P.related { margin-top: 0.71cm; margin-bottom: 0.05cm; border-top: 1px solid #000000; border-bottom: none; border-left: none; border-right: none; padding-top: 0.05cm; padding-bottom: 0cm; padding-left: 0cm; padding-right: 0cm; font-weight: bold }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="ko-KP" DIR="LTR"><DIV style="margin-left: 25">
+<H1><A NAME="bm_id3147399"></A><A NAME="hyperlink_rel_abs"></A><FONT FACE="Thorndale, serif"><SPAN LANG="en-US">Relative
+and Absolute Links </SPAN></FONT>
+</H1>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">When you
+include hyperlinks, two factors must be taken into account: whether
+they are set as relative or absolute on saving, and whether or not
+the file is present.</SPAN></FONT></P>
+<UL>
+	<LI><P CLASS="listitem"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Choose <A 
+HREF="../Sg_Options/General_Load_Save.html"><B>Sogwang Office - Reference - Load/Save - General</B></A> and specify in the <B>Save
+	URLs relative to</B> field if </SPAN>Sogwang
+	<SPAN LANG="en-US">creates relative
+	and absolute hyperlinks</A>. Relative linking is only possible when
+	the document you are working on and the link destination are on the
+	same drive.</SPAN></FONT></P>
+	<LI><P CLASS="listitem"><FONT FACE="청봉, serif"><SPAN LANG="en-US">You should create the
+	same directory structure on your hard disk as that which exists in
+	the web space hosted by your Internet provider. Call the root
+	directory for the homepage on your hard disk &quot;homepage&quot;,
+	for example. The start file is then &quot;index.html&quot;, the full
+	path being &quot;C:\homepage\index.html&quot; (assuming Windows
+	operating system). The URL on your Internet provider's server might
+	then be as follows: &quot;http://www.sogwang.inf.kp/index.html&quot;.
+	With relative addressing, you indicate the link relative to the
+	location of the output document. For example, if you placed all the
+	graphics for your homepage in a subfolder called
+	&quot;C:\homepage\images&quot;, you would need to give the following
+	path to access the graphic &quot;picture.gif&quot;:
+	&quot;images\picture.gif&quot;. This is the relative path, starting
+	from the location of the file &quot;index.html&quot;. On the
+	provider's server, you would place the picture in the folder
+	&quot;mypage/images&quot;. When you transfer the document
+	&quot;index.html&quot; to the provider's server through the <B>File
+	- Save As</B> dialog, and if you have marked the option <B>Copy
+	local graphics to Internet</B> under <B>Sogwang Office - Reference - Load/Save
+	- HTML Compatibility</B>, </SPAN>Sogwang
+	<SPAN LANG="en-US">will automatically copy the graphic to the
+	correct directory on the server.</SPAN></FONT></P>
+	<LI><P CLASS="listitem"><FONT FACE="청봉, serif"><SPAN LANG="en-US">An absolute path such as
+	&quot;C:\homepage\graphics\picture.gif&quot; would no longer
+	function on the provider server. Neither a server nor the computer
+	of a reader needs to have a C hard drive: operating systems such as
+	Unix or MacOS do not recognize drive letters, and even if the folder
+	homepage\graphics existed, your picture would not be available. It
+	is better to use relative addressing for file links.</SPAN></FONT></P>
+	<LI><P CLASS="listitem"><FONT FACE="청봉, serif"><SPAN LANG="en-US">A link to a web page, for
+	example, &quot;www.sogwang .inf.kp&quot; or
+	&quot;www.sogwang.inf.kp/index.html&quot; is an absolute
+	link.</SPAN></FONT></P>
+	<LI><P CLASS="listitem"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Sogwangalso reacts differently, depending on whether the
+	file referred to in the link exists, and where it is located.
+	</SPAN>Sogwang <SPAN LANG="en-US">checks
+	every new link and sets a target and protocol automatically. The
+	result can be seen in the generated HTML code after saving the
+	source document.</SPAN></FONT></P>
+	<LI><P CLASS="listitem"><FONT FACE="청봉, serif"><SPAN LANG="en-US">The following rules
+	apply: A relative reference (&quot;graphic/picture.gif&quot;) is
+	only possible when both files exist on the same drive. If the files
+	are on different drives in your local file system, the absolute
+	reference follows the &quot;file:&quot; protocol
+	(&quot;file:///data1/xyz/picture.gif&quot;). If the files are on
+	different servers or if the target of the link is not available, the
+	absolute reference uses the &quot;http:&quot; protocol
+	(&quot;http://data2/abc/picture.gif&quot;).</SPAN></FONT></P>
+	<LI><P CLASS="listitem"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Be sure to organize all
+	files for your homepage on the same drive as the start file of the
+	homepage. In this way, </SPAN>Sogwang
+	<SPAN LANG="en-US">can set the protocol and target so that the
+	reference on the server is always correct.</SPAN></FONT></P>
+</UL>
+<TABLE WIDTH=966 BORDER=0 CELLPADDING=5 CELLSPACING=0>
+	<COL WIDTH=25>
+	<COL WIDTH=566>
+	<TR>
+		<TD WIDTH=48>
+			<P><IMG SRC="../../Image/warning.png" NAME="graphics1" ALT="Warning Icon " ALIGN=BOTTOM WIDTH=25 HEIGHT=42 BORDER=0></P>
+		</TD>
+		<TD WIDTH=898>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">When
+			you rest your mouse on a hyperlink, a help tip displays the
+			absolute reference, since </SPAN></FONT><FONT FACE="청봉, serif"><SPAN LANG="en-US">Sogwang uses
+			absolute path names internally. The complete path and address can
+			only be seen when you view the result of the HTML export, by
+			loading the HTML file as &quot;Text&quot; or opening it with a
+			text editor.</SPAN></FONT></P>
+		</TD>
+	</TR>
+</TABLE>
+<P><BR><BR>
+</P>
+<P CLASS="related"><A NAME="related"></A><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Related
+Topics</B> </SPAN></FONT>
+</P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><SPAN STYLE="font-weight: medium"><A HREF="./Editing Hyperlinks.html">Editing Hyperlinks</A><A HREF="vnd.sun.star.help://shared/text/shared/guide/error_report.xhp?Language=en-US&amp;System=UNIX&amp;UseDB=no&amp;DbPAR=shared">
+</A></SPAN></SPAN></FONT>
+</P>
+
+</DIV></BODY>
+</HTML>

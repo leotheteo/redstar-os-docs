@@ -1,0 +1,117 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+	<TITLE></TITLE>
+	<META NAME="GENERATOR" CONTENT="《Sogwang 3.0》  (Linux)">
+	<META NAME="CREATED" CONTENT="20091205;15361500">
+	<META NAME="CHANGED" CONTENT="20091205;15423600">
+	<STYLE TYPE="text/css">
+	<!--
+		H2 { margin-bottom: 0.18cm; font-family: "Bitstream Vera Sans", "Arial", "Helvetica", "Lucida", "Geneva", "Helmet", sans-serif, "Andale Sans UI", "Arial Unicode MS", "Lucida Sans Unicode", "Tahoma"; font-size: 14pt }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="ko-KP" DIR="LTR"><DIV style="margin-left: 25">
+<H1><A NAME="redim"></A><A NAME="bm_id3150398"></A><FONT FACE="Thorndale, serif"><SPAN LANG="en-US">ReDim
+Statement [Runtime]</SPAN></FONT></H1>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Declares
+a variable or an array.</SPAN></FONT></P>
+<H2><SPAN LANG="en-US">Syntax:</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">[ReDim]Dim
+VarName [(start To end)] [As VarType][, VarName2 [(start To end)] [As
+VarType][,...]]</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Optionally,
+you can add the <B>Preserve</B> keyword as a parameter to preserve
+the contents of the array that is redimensioned.</SPAN></FONT></P>
+<H2><SPAN LANG="en-US">Parameters:</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>VarName:</B>
+Any variable or array name.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Start,
+End:</B> Numerical values or constants that define the number of
+elements (NumberElements=(end-start)+1) and the index range.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Start
+and End can be numeric expressions if ReDim is used at the procedure
+level.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>VarType:</B>
+Keyword that declares the data type of a variable.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Keyword:</B>
+Variable type</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Bool:
+</B>Boolean variable (True, False)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Date:</B>
+Date variable</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Double:</B>
+Double floating point variable (1.79769313486232x10E308 -
+4.94065645841247x10E-324)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Integer:</B>
+Integer variable (-32768 - 32767)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Long:</B>
+Long integer variable (-2,147,483,648 - 2,147,483,647)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Object:</B>
+Object variable (can only be subsequently defined by Set!)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>[Single]:</B>
+Single floating-point variable (3.402823x10E38 - 1.401298x10E-45). If
+no key word is specified, a variable is defined as Single, unless a
+statement from DefBool to DefVar is used.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>String:</B>
+String variable containing a maximum of 64,000 ASCII characters.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Variant:
+</B>Variant variable type (can contain all types and is set by
+definition).</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">In
+</SPAN></FONT><FONT FACE="청봉, serif"><SPAN LANG="en-US">Sogwang Basic,
+you do not need to declare variables explicitly. However, you need to
+declare an array before you can use them. You can declare a variable
+with the Dim statement, using commas to separate multiple
+declarations. To declare a variable type, enter a type-declaration
+character following the name or use a corresponding key word.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Sogwang Basic
+supports single or multi-dimensional arrays that are defined by a
+specified variable type. Arrays are suitable if the program contains
+lists or tables that you want to edit. The advantage of arrays is
+that it is possible to address individual elements according to
+indexes, which can be formulated as numeric expressions or variables.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">There
+are two ways to set the range of indices for arrays declared with the
+Dim statement:</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">DIM
+text(20) As String REM 21 elements numbered from 0 to 20</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">DIM
+text(5 to 25) As String REM 21 elements numbered from 5 to 25</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">DIM
+text$(-15 to 5) As String REM 21 elements (0 inclusive),</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">rem
+numbered from -15 to 5</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Variable
+fields, regardless of type, can be made dynamic if they are
+dimensioned by ReDim at the procedure level in subroutines or
+functions. Normally, you can only set the range of an array once and
+you cannot modify it. Within a procedure, you can declare an array
+using the ReDim statement with numeric expressions to define the
+range of the field sizes.</SPAN></FONT></P>
+<H2><SPAN LANG="en-US">Example:</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Sub
+ExampleRedim</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Dim
+iVar() As Integer, iCount As Integer</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">ReDim
+iVar(5) As integer</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">For
+iCount = 1 To 5</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">iVar(iCount)
+= iCount</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Next
+iCount</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">ReDim
+iVar(10) As integer</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">For
+iCount = 1 To 10</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">iVar(iCount)
+= iCount</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Next
+iCount</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">end sub</SPAN></FONT></P>
+
+</DIV></BODY>
+</HTML>

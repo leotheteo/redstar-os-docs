@@ -1,0 +1,151 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <META NAME="GENERATOR" CONTENT="LinuxDoc-Tools 0.9.21">
+ <TITLE>ISDN4LINUX - FAQ (deutsche Version): callback: Callback </TITLE>
+ <LINK HREF="i4lfaq-de-24.html" REL=next>
+ <LINK HREF="i4lfaq-de-22.html" REL=previous>
+ <LINK HREF="i4lfaq-de.html#toc23" REL=contents>
+</HEAD>
+<BODY>
+<A HREF="i4lfaq-de-24.html">Next</A>
+<A HREF="i4lfaq-de-22.html">Previous</A>
+<A HREF="i4lfaq-de.html#toc23">Contents</A>
+<HR>
+<H2><A NAME="callback"></A> <A NAME="s23">23.</A> <A HREF="i4lfaq-de.html#toc23">callback: Callback </A></H2>
+
+<H2><A NAME="callback_delay"></A> <A NAME="ss23.1">23.1</A> <A HREF="i4lfaq-de.html#toc23.1">callback_delay: Ein hereinkommender Ruf wird von I4L abgelehnt. Anschlie&szlig;end ruft I4L zur&uuml;ck. Die Rufablehnung wird von der anderen Seite nicht erkannt und sie versucht, sich weiterhin bei I4L einzuw&auml;hlen. </A>
+</H2>
+
+<P>Die meisten Probleme bei Callback k&ouml;nnen durch die Einstellung
+des callback delay mit <CODE>isdnctrl cbdelay</CODE> gel&ouml;st
+werden. Eine Sekunde auf der w&auml;hlenden Seite A (den Callbackmodus
+auf 'out' setzen) und zwei Sekunden auf der angew&auml;hlten Seite B
+(den Callbackmodus auf 'in' setzen) gen&uuml;gt in den meisten
+F&auml;llen.</P>
+<P>Der Grund f&uuml;r dieses Problem liegt in einem Designfehler des
+Treibers f&uuml;r den Verbindungslevel.</P>
+<P>A w&auml;hlt B an um einen R&uuml;ckruf auszul&ouml;sen. B wehrt den Anruf ab und ruft A zur&uuml;ck und stellt so eine arbeitende Verbindung innerhalb weniger als 4 Sekunden her. Der ausl&ouml;sende Anruf von A nach B wird jedoch erst nach 4 Sekunden vom ISDN Dienstleister beendet (um anderen Ger&auml;ten auf der B Seite eine Chance der Rufannahme zu geben). Wenn dieser Ruf beendet wird, wird leider auch die bestehende Verbindung von B nach A beendet.</P>
+
+<H2><A NAME="callback_cisco"></A> <A NAME="ss23.2">23.2</A> <A HREF="i4lfaq-de.html#toc23.2">callback_cisco: Aus irgendeinem Grund kann I4L nicht bei einer Cisco zur&uuml;ckrufen? </A>
+</H2>
+
+<P>Torsten Hentschel <CODE>
+<A HREF="mailto:Torsten.Hentschel@DInet.de">Torsten.Hentschel@DInet.de</A></CODE> schrieb am 03. Oktober 1996:
+<BLOCKQUOTE>
+Eine Cisco w&auml;hlt m&ouml;glicherweise so schnell und h&auml;ufig,
+da&szlig; der ipppd keine Chance des Zur&uuml;ckrufens hat. Die Ciscos
+sind so programmiert (klare Aussage eines Cisco-Entwicklers):
+Wenn eine Cisco ein Paket empf&auml;ngt, das durch eine auf 'dial on
+demand' eingestellte Telefonverbindung hinausgehen soll, und es ist
+ein B-Kanal zur Hinauswahl frei, wird sofort gew&auml;hlt. Wenn in
+einem solchen Fall (wie bei Delta Internet seit einem halben Jahr)
+eine Cisco mit 8 B-Kan&auml;len auf der anderen Seite steht und jemand
+ein einfaches 'ping RemoteIP' eingibt, wird die Cisco im schlimmsten
+Fall alle 8 B-Kan&auml;le zum Hinausw&auml;hlen
+benutzen. Nat&uuml;rlich kann sie nicht eine Telefonnummer
+gleichzeitig auf zwei B-Kan&auml;len w&auml;hlen (es w&auml;re sofort
+"besetzt"). Die Programmierung der Cisco ist nicht so dumm, sie
+richtet den n&auml;chsten B-Kanal zum Hinausw&auml;hlen ein bevor sie
+annimmt, da&szlig; der vorherige B-Kanal versagt hat. Solch eine Cisco
+arbeitet wie ein Maschinengewehr was das Hinausw&auml;hlen
+betrifft. Und I4L bekommt keinen freien B-Kanal zur Einwahl wenn die
+Cisco das nicht will.  Das Schlechte daran ist, da&szlig; eine Cisco
+immer (auch bei einer Konfiguration mit 'callback client' = I4L ruft
+zur&uuml;ck) erwartet, da&szlig; die andere Seite den Ruf annimmt,
+beide auflegen und dann der R&uuml;ckruf kommt. Username und Password
+m&uuml;ssen beim Gebrauch von PPP immer vor einem R&uuml;ckruf
+ausgetauscht werden. Dadurch stellt man sicher, da&szlig; die Person,
+die den R&uuml;ckruf verlangt, auch dazu berechtigt ist. (Cisco
+scheint sich an die Regel der (Deutschen) Telekom zu halten, da&szlig;
+keine Informationen ohne B-Kanal-Verbindung ausgetauscht werden
+d&uuml;rfen. Ein R&uuml;ckruf-Verlangen, identifiziert nur durch die
+anrufende Telefonnummer, kann im Zweifelsfall als &Uuml;bertragung von
+Informationen betrachtet werden).
+</BLOCKQUOTE>
+</P>
+<P>Torsten Hentschel <CODE>
+<A HREF="mailto:Torsten.Hentschel@DInet.de">Torsten.Hentschel@DInet.de</A></CODE> schrieb zus&auml;tzlich am 20. November 1996:
+<BLOCKQUOTE>
+Ich habe den R&uuml;ckruf &uuml;ber PPP mit zwei CISCOs oft
+versucht. Nach meiner Erfahrung werden Versuche mit der Kombination
+CISCO - Linux nicht funktionieren.  Eine CISCO handelt ein
+R&uuml;ckruf-Verlangen immer per PPP aus. Dazu muss die Gegenseite
+zuerst den Ruf annehmen und die gesamte Verhandlung (Berechtigung,...)
+durchf&uuml;hren. Dann legen beide auf und der R&uuml;ckruf wird
+durchgef&uuml;hrt.  Die Befehle von isdnctrl in Linux beeinflussen nur
+die Netzwerk-Devices des Kernels und haben keinen oder nur wenig
+Einflu&szlig; darauf, wie ipppd R&uuml;ckrufe durchf&uuml;hrt. ipppd
+erkennt nicht, da&szlig; er einen R&uuml;ckruf der Gegenseite erwarten
+soll.
+Daher lehnt er das Angebot der CISCO &uuml;ber PPP, da&szlig; sie zum
+R&uuml;ckruf bereit ist, ab. Dann nimmt die CISCO an, da&szlig; sie
+nicht zur&uuml;ck rufen soll (sie erwartet ein explizites
+R&uuml;ckruf-Verlangen w&auml;hrend der PPP-Verhandlung zu sehen).
+Die CISCO best&auml;tigt dies, wenn Du bei ihr einloggst und ihre
+Debug-Meldungen &uuml;ber die Einwahlversuche Deines Linux-Computers
+mit den folgenden Befehlen ansiehst:
+<HR>
+<PRE>
+deb ppp chap
+deb ppp negotiotion
+deb ppp error
+term mon
+</PRE>
+<HR>
+
+Du musst Dich &uuml;ber telnet einloggen, nicht auf der Konsole, da
+sonst die CISCO das Loggen nicht &uuml;ber das serielle Interface
+durchf&uuml;hren kann.
+</BLOCKQUOTE>
+</P>
+
+<H2><A NAME="callback_ascend"></A> <A NAME="ss23.3">23.3</A> <A HREF="i4lfaq-de.html#toc23.3">callback_ascend: Callback von einer Ascend funktioniert nur, wenn ich im Ascend-Menue 'Active=Yes' eingebe. Dann w&auml;hlt die Ascend mich aber auch an, wenn meine Maschine ausgeschaltet ist. </A>
+</H2>
+
+<P>Ulrich Klein <CODE>
+<A HREF="mailto:ulik@hprc.tandem.com">ulik@hprc.tandem.com</A></CODE> schrieb am 14. Dezember 1996:
+<BLOCKQUOTE>
+Irgendwo in den Ascend-Menues kannst Du 'dial broadcast' auf "no" oder
+"off" setzen. Anderenfalls wird das Ding mit jedem Rundruf
+w&auml;hlen. Zumindest mir half das. Falls jemand aus dem Netzwerk, an
+das die Ascend angeschlossen ist, wirklich eine Verbindung aufbauen
+will, musst Du die etwas seltsamen Filter benutzen. Ich glaube, es
+gibt da einen, der nur als R&uuml;ckruf hinausw&auml;hlt.
+</BLOCKQUOTE>
+</P>
+
+<H2><A NAME="callback_banzai"></A> <A NAME="ss23.4">23.4</A> <A HREF="i4lfaq-de.html#toc23.4">callback_banzai: Wie kann ich eine Banzai zur&uuml;ckrufen?</A>
+</H2>
+
+<P>Jan-Olaf Droese <CODE>
+<A HREF="mailto:jano@layla.RoBIN.de">jano@layla.RoBIN.de</A></CODE> schrieb am 31. Januar 1997:
+<BLOCKQUOTE>
+Auf der Seite der Banzai sollte ein 'c' zu der zu w&auml;hlenden
+Nummer hinzugef&uuml;gt werden. Dadurch ist sie bereit f&uuml;r den
+R&uuml;ckruf. Zur Sicherheit kannst Du die Anzahl der
+W&auml;hlversuche der Banzai auf 1 setzen, soda&szlig; es keine
+Ruf&uuml;berschneidungen gibt.  Auf der I4L-Maschine habe ich folgende
+Einstellungen vorgenommen:
+<HR>
+<PRE>
+isdnctrl callback isdn0 in
+isdnctrl cbdelay isdn0 1
+</PRE>
+<HR>
+</BLOCKQUOTE>
+</P>
+
+<H2><A NAME="callback_microsoft"></A> <A NAME="ss23.5">23.5</A> <A HREF="i4lfaq-de.html#toc23.5">callback_microsoft: Unterst&uuml;tzt ISDN4LINUX Microsoft Callback (CBCP)? </A>
+</H2>
+
+<P>Nein, das geht mit ISDN4LINUX nicht. Da es nicht so trivial zu
+implementieren ist, gibt es z.Zt. keinen Plan daf&uuml;r.</P>
+
+
+<HR>
+<A HREF="i4lfaq-de-24.html">Next</A>
+<A HREF="i4lfaq-de-22.html">Previous</A>
+<A HREF="i4lfaq-de.html#toc23">Contents</A>
+</BODY>
+</HTML>

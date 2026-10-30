@@ -1,0 +1,118 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+	<TITLE></TITLE>
+	<META NAME="GENERATOR" CONTENT="《Sogwang 3.0》  (Linux)">
+	<META NAME="CREATED" CONTENT="20091205;10241300">
+	<META NAME="CHANGED" CONTENT="20091205;11232000">
+	<STYLE TYPE="text/css">
+	<!--
+		H2 { margin-bottom: 0.18cm; font-family: "Bitstream Vera Sans", "Arial", "Helvetica", "Lucida", "Geneva", "Helmet", sans-serif, "Andale Sans UI", "Arial Unicode MS", "Lucida Sans Unicode", "Tahoma"; font-size: 14pt }
+		P.related { margin-top: 0.71cm; margin-bottom: 0.05cm; border-top: 1px solid #000000; border-bottom: none; border-left: none; border-right: none; padding-top: 0.05cm; padding-bottom: 0cm; padding-left: 0cm; padding-right: 0cm; font-weight: bold }
+body {
+	margin-left: 0px;
+	margin-right: 0px;
+}
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="ko-KP" DIR="LTR"><DIV style="margin-left: 25">
+<H1><A NAME="bm_id3156423"></A><A NAME="relativ_absolut_ref"></A><FONT FACE="Thorndale, serif"><SPAN LANG="en-US">Addresses
+and References, Absolute and Relative </SPAN></FONT>
+</H1>
+<H2><SPAN LANG="en-US">Relative Addressing</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">The cell
+in column A, row 1 is addressed as A1. You can address a range of
+adjacent cells by first entering the coordinates of the upper left
+cell of the area, then a colon followed by the coordinates of the
+lower right cell. For example, the square formed by the first four
+cells in the upper left corner is addressed as A1:B2.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">By
+addressing an area in this way, you are making a relative reference
+to A1:B2. Relative here means that the reference to this area will be
+adjusted automatically when you copy the formulas.</SPAN></FONT></P>
+<H2><SPAN LANG="en-US">Absolute Addressing</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Absolute
+references are the opposite of relative addressing. A dollar sign is
+placed before each letter and number in an absolute reference, for
+example, $A$1:$B$2.</SPAN></FONT></P>
+<TABLE WIDTH=947 BORDER=0 CELLPADDING=5 CELLSPACING=0>
+	<COL WIDTH=40>
+	<COL WIDTH=577>
+	<TR>
+		<TD WIDTH=46>
+			<P><IMG SRC="../../Image/tip.png" NAME="graphics1" ALT="Tip Icon " ALIGN=BOTTOM WIDTH=40 HEIGHT=43 BORDER=0></P>
+		</TD>
+		<TD WIDTH=881>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Sogwang can
+			convert the current reference, in which the cursor is positioned
+			in the input line, from relative to absolute and vice versa by
+			pressing Shift +F4. If you start with a relative address such as
+			A1, the first time you press this key combination, both row and
+			column are set to absolute references ($A$1). The second time,
+			only the row (A$1), and the third time, only the column ($A1). If
+			you press the key combination once more, both column and row
+			references are switched back to relative (A1)</SPAN></FONT></P>
+		</TD>
+	</TR>
+</TABLE>
+<P><BR><BR>
+</P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Sogwang Calc
+shows the references to a formula. If, for example you click the
+formula =SUM(A1:C5;D15:D24) in a cell, the two referenced areas in
+the sheet will be highlighted in color. For example, the formula
+component &quot;A1:C5&quot; may be in blue and the cell range in
+question bordered in the same shade of blue. The next formula
+component &quot;D15:D24&quot; can be marked in red in the same way.</SPAN></FONT></P>
+<H2><SPAN LANG="en-US">When to Use Relative and Absolute References</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">What
+distinguishes a relative reference? Assume you want to calculate in
+cell E1 the sum of the cells in range A1:B2. 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+The formula to enter
+into E1 would be: =SUM(A1:B2). If you later decide to insert a new
+column in front of column A, the elements you want to add would then
+be in B1:C2 and the formula would be in F1, not in E1. After
+inserting the new column, you would therefore have to check and
+correct all formulas in the sheet, and possibly in other sheets.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Fortunately,
+</SPAN></FONT><FONT FACE="청봉, serif"><SPAN LANG="en-US">Sogwang does
+this work for you. After having inserted a new column A, the formula
+=SUM(A1:B2) will be automatically updated to =SUM(B1:C2). Row numbers
+will also be automatically adjusted when a new row 1 is inserted.
+Absolute and relative references are always adjusted in
+</SPAN></FONT><FONT FACE="청봉, serif"><SPAN LANG="en-US">Sogwang Calc
+whenever the referenced area is moved. But be careful if you are
+copying a formula since in that case only the relative references
+will be adjusted, not the absolute references.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Absolute
+references are used when a calculation refers to one specific cell in
+your sheet. If a formula that refers to exactly this cell is copied
+relatively to a cell below the original cell, the reference will also
+be moved down if you did not define the cell coordinates as absolute.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Aside
+from when new rows and columns are inserted, references can also
+change when an existing formula referring to particular cells is
+copied to another area of the sheet. Assume you entered the formula
+=SUM(A1:A9) in row 10. If you want to calculate the sum for the
+adjacent column to the right, simply copy this formula to the cell to
+the right. The copy of the formula in column B will be automatically
+adjusted to =SUM(B1:B9).</SPAN></FONT></P>
+<P CLASS="related"><A NAME="relatedtopics"></A><A NAME="related"></A><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Related
+Topics</B> </SPAN></FONT>
+</P>
+<P STYLE="margin-left: 0.13cm; margin-top: 0.05cm; margin-bottom: 0.05cm"><A NAME="value_with_name"></A>
+<FONT FACE="청봉, serif"><SPAN LANG="en-US"><SPAN STYLE="font-weight: medium"><A HREF="../Formatting/Naming Cells.html">Naming
+Cells</A> </SPAN></SPAN></FONT>
+</P>
+<P STYLE="margin-left: 0.13cm; margin-top: 0.05cm; margin-bottom: 0.05cm">
+<FONT FACE="청봉, serif"><SPAN LANG="en-US"><SPAN STYLE="font-weight: medium"><A HREF="Recognizing Names as Addressing.html">Recognizing
+Names as Addressing
+</A></SPAN></SPAN></FONT>
+</P>
+
+</DIV></BODY>
+</HTML>
+

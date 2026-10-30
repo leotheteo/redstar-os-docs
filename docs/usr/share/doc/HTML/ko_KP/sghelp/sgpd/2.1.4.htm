@@ -1,0 +1,202 @@
+﻿<html dir="ltr">
+	<head>
+		<META http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+		<title>삽입</title>
+		<link rel="stylesheet" type="text/css" href="../css/main.css"/>
+		<script type="text/javascript" language="Javascript" src="../js/mexpcol.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../js/glossary.js"></script>
+	</head>
+	<body>
+		<h1>&nbsp;<img align="absbottom" src="../image/external_images/crystal/svtools/res/new_doc.png"/>&nbsp;삽입</h1>
+		<p id='ExpandAllLine' class='ExpFav'>
+			<a href='#' onClick='ExpandAll()' onKeyPress='ExpandAll()' class='DropDown'>
+				<img id='picHeader' border='0' src='../image/image/common/expandtri.gif' alt='모두 표시'>
+				<span id='ExpandAll'>모두 표시</span>
+			</a>
+		</p>
+		<table>
+			<tr>
+				<th>지령명</th>
+				<th>설명</th>
+			</tr>
+			<tr>
+				<td>투영편</td>
+				<td>현재 선택한 투영편의 다음에 투영편을 삽입합니다.</td>
+			</tr>
+			<tr>
+				<td>투영편 복제</td>
+				<td>현재투영편의 다음에 현재투영편의 복사본을 삽입합니다.</td>
+			</tr>
+			<tr>
+				<td>투영편 확장</td>
+				<td>선택한 투영편의 모든 맨 웃준위 개요항목(개요층구조에서 제목본문보다 한 준위만큼 아래에 있는 본문)에서 새 투영편을 만듭니다. 개요본문은 새 투영편의 제목으로 됩니다.</td>
+			</tr>
+			<tr>
+				<td>개요투영편</td>
+				<td>선택한 투영편의 다음에 오는 투영편제목의 항목기호목록을 포함한 새 투영편을 만듭니다. 마지막투영편의 다음에 개요투영편이 삽입됩니다.</td>
+			</tr>
+			<tr>
+				<td>머리부 및 바닥부</td>
+				<td>투영편과 주해 및 배포물의 머리부와 바닥부에 본문을 추가하거나 변경하는 대화창을 엽니다.</td>
+			</tr>
+			<tr>
+				<td><a href="#ID_FILD">마당</a></td>
+				<td>투영편에 삽입가능한 마당을 추가합니다.</td>
+			</tr>
+			<tr>
+				<td>특수문자</a></td>
+				<td>특수문자를 삽입합니다.</td>
+			</tr>
+			<tr>
+				<td><a href="#ID_FONTSTYLE">서식설정 표식</a></td>
+				<td>객체에 삽입된 문서에 각종 서식을 적용합니다．</td>
+		       </tr>
+			<tr>
+				<td>하이퍼련결</td>
+				<td>하이퍼련결을 만들고 편집할수 있는 대화창을 엽니다.</td>
+			</tr>
+<!--			<tr>
+				<td>동화</td>
+				<td>투영편에 삽입된 객체들에 적용된 동화를 보여주는 대화창을 엽니다.</td>
+			</tr>-->
+			<tr>
+				<td><a href="#ID_PICTURE">그림</a></td>
+				<td>삽입할 그림의 원본을 선택합니다.</td>
+			</tr>
+		      	<tr>
+				<td>표</td>
+				<td>현재투영편에 표를 삽입하기 위한 <b class="bterm">&lt;표 삽입&gt;</b>대화창을 엽니다.</td>
+			</tr>
+			<tr>
+				<td><a href="#ID_OBJECT">객체</a></td>
+				<td>문서에 객체를 삽입합니다. 수학식을 삽입하려면 <b class="bterm">&lt;삽입&gt;</b>/<b class="bterm">&lt;객체&gt;</b>/<b class="bterm">&lt;수학식&gt;</b>을 사용합니다.</td>
+			</tr>
+			<tr>
+				<td>파일</td>
+				<td>현재투영편에 파일을 삽입합니다.</td>
+			</tr>
+			<tr>
+				<td>흡착점/흡착선 삽입</td>
+				<td>현재투영편의 지정한 위치에 흡착을 위한 점이나 선을 삽입하는 대화창을 엽니다.</td>
+			</tr>
+		</table>
+		<a name="ID_FILD"></a>
+		<p>
+			<a href="#" class="DropDown" onClick="Outline2()" onKeyPress="Outline2()">
+			<img border="0" src="../image/image/common/blueup.gif" alt="표시">마당</a>
+		</p>
+		<div id="ExpCol" class="collapsed" border="0">
+			<table>
+				<tr>
+					<th>지령명</th>
+					<th>설명</th>
+				</tr>
+				<tr>
+					<td>날자(고정)</td>
+					<td>투영편에 현재날자를 고정마당으로 삽입합니다. 날자가 자동적으로 갱신되지 않습니다.</td>
+				</tr>
+				<tr>
+					<td>날자(가변)</td>
+					<td>투영편에 현재날자를 가변마당으로 삽입합니다. 파일을 다시 적재하면 날자가 자동적으로 갱신됩니다.</td>
+				</tr>
+				<tr>
+					<td>시간(고정)</td>
+					<td>투영편에 현재시간을 고정마당으로 삽입합니다. 시간은 자동적으로 갱신되지 않습니다.</td>
+				</tr>
+				<tr>
+					<td>시간(가변)</td>
+					<td>투영편에 현재시간을 가변마당으로 삽입합니다. 파일을 다시 적재하면 시간이 자동적으로 갱신됩니다.</td>
+				</tr>
+				<tr>
+					<td>작성자</td>
+					<td>《서광사무처리》 3.0 사용자자료에 입력된 성과 이름을 현재투영편에 삽입합니다.</td>
+				</tr>
+				<tr>
+					<td>페지번호</td>
+					<td>현재투영편 또는 페지에 페지번호를 삽입합니다.</td>
+				</tr>
+				<tr>
+					<td>파일이름</td>
+					<td>파일의 이름을 삽입합니다.</td>
+				</tr>
+			</table>
+		</div>
+		<a name="ID_FONTSTYLE"></a>
+		<p>
+			<a href="#" class="DropDown" onClick="Outline2()" onKeyPress="Outline2()">
+			<img border="0" src="../image/image/common/blueup.gif" alt="표시">서식설정 표식</a>
+		</p>
+		<div id="ExpCol" class="collapsed" border="0">
+		        <table>
+		    	    <tr>
+						<th>지령명</th>
+						<th>설명</th>
+						<th>지름건</th>
+		    	    </tr>
+					<tr>
+						<td>행바꾸기 하지 않는 공백</td>
+						<td>공백을 삽입하여 공백 앞뒤의 문자를 함께 행바꾸어 현시합니다.</td>
+						<td>Ctrl+Shift+Space</td>
+					</tr>
+					<tr>
+						<td>행바꾸기 하지 않는 이음표</td>
+						<td>이음표를 삽입하여 이음표 앞뒤의 문자를 함께 행바꾸어 현시합니다.</td>
+						<td>&nbsp;</td>
+					</tr>	
+					<tr>
+						<td>임의의 이음표</td>
+						<td>단어에 보이지 않는 이음표를 삽입하여 단어가 행에서 마지막단어가 되면 이음표가 표시되고 행바꾸기되도록 합니다.</td>
+						<td>&nbsp;</td>
+					</tr>
+		    	</table>
+		</div>
+		<a name="ID_PICTURE"></a>
+		<p>
+			<a href="#" class="DropDown" onClick="Outline2()" onKeyPress="Outline2()">
+			<img border="0" src="../image/image/common/blueup.gif" alt="표시">그림</a>
+		</p>
+		<div id="ExpCol" class="collapsed" border="0">
+			<table>
+				<tr>
+					<th>지령명</th>
+					<th>설명</th>
+				</tr>
+				<tr>
+					<td>파일로부터</td>
+					<td>현재문서에 그림을 삽입합니다.</td>
+				</tr>
+				<tr>
+					<td>주사</td>
+					<td>주사한 화상을 문서에 삽입합니다.</td>
+				</tr>
+			</table>
+		</div>
+		<a name="ID_OBJECT"></a>
+		<p>
+			<a href="#" class="DropDown" onClick="Outline2()" onKeyPress="Outline2()">
+			<img border="0" src="../image/image/common/blueup.gif" alt="표시">객체</a>
+		</p>
+		<div id="ExpCol" class="collapsed" border="0">
+			<table>
+				<tr>
+					<th>지령명</th>
+					<th>설명</th>
+				</tr>
+				<tr>
+					<td>OLE 객체</td>
+					<td>현재문서에 OLE 객체를 삽입합니다. OLE 객체는 련결된 객체나 포함된 객체로 삽입됩니다.</td>
+				</tr>
+				<tr>
+					<td>수학식</td>
+					<td>현재문서에 수학식을 삽입합니다.</td>
+				</tr>
+				<tr>
+					<td>도표</td>
+					<td>현재문서에 도표를 삽입합니다. </td>
+				</tr>
+			</table>
+		</div>
+		<script type="text/javascript" language="Javascript">footerView()</script>
+	
+</body>
+</html>

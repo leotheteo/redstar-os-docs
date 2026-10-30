@@ -1,0 +1,102 @@
+﻿<html dir='ltr'>
+	<head>
+		<META http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+		<title>자료범위의 고유항목수를 계산</title>
+		<link rel='stylesheet' type='text/css' href='../css/main.css'/>
+		<script type='text/javascript' language='Javascript' src='../js/mexpcol.js'></script>
+		<script type='text/javascript' language='JavaScript' src='../js/glossary.js'></script>
+	</head>
+	<body>
+		<h1>&nbsp;<img align="absbottom" src="../image/external_images/crystal/svtools/res/new_doc.png"/>&nbsp;자료범위의 고유항목수를 계산</h1>
+		<p id='ExpandAllLine' class='ExpFav'>
+			<a href='#' onClick='ExpandAll()' onKeyPress='ExpandAll()' class='DropDown'>
+				<img id='picHeader' border='0' src='../image/image/common/expandtri.gif' alt='모두 표시'>
+				<span id='ExpandAll'>모두 표시</span>
+			</a>
+		</p>
+		<h2>세포범위에서 조건에 일치하는 세포의 개수를 계산</h2>
+			<p>이 작업을 수행하려면 <b class="bterm">COUNTIF</b>함수를 사용합니다.</p>
+			<p><b class="bterm">실례</b></p>
+			<p><a href="1.5.1.htm">실례의 리용방법</a>을 참고하십시오.</p>
+			<table>
+				<tr>
+					<td>
+						<table>
+							<tr><td>&nbsp;</td></tr>
+							<tr><th>1</th></tr>
+							<tr><th>2</th></tr>
+							<tr><th>3</th></tr>
+							<tr><th>4</th></tr>
+							<tr><th>5</th></tr>
+							<tr><th>6</th></tr>
+							<tr><th>7</th></tr>
+						</table>
+					</td>
+					<td>
+						<table>
+								<tr>
+									<th>A</th>
+									<th>B</th>
+								</tr>
+								<tr>
+									<th>판매원</th>
+									<th>전표</th>
+								</tr>
+								<tr>
+									<td>김순희</td>
+									<td>5 000</td>
+								</tr>
+								<tr>
+									<td>장철진</td>
+									<td>9 000</td>
+								</tr>
+								<tr>
+									<td>강영철</td>
+									<td>8 000</td>
+								</tr>
+								<tr>
+									<td>김순희</td>
+									<td>12 000</td>
+								</tr>
+								<tr>
+									<td>강영철</td>
+									<td>5 000</td>
+								</tr>
+								<tr>
+									<td>박진혁</td>
+									<td>9 500</td>
+								</tr>
+								<tr>
+									<th>수식</th>
+									<th>설명(결과)</th>
+								</tr>
+								<tr>
+									<td>=COUNTIF(A2:A7;"김순희")</td>
+									<td>김순희의 전표개수입니다. (2)</td>
+								</tr>
+								<tr>
+									<td>=COUNTIF(A2:A7;A4)</td>
+									<td>강영철의 전표개수입니다. (2)</td>
+								</tr>
+							</table>
+					</td>
+				</tr>
+			</table>
+			<p><b class="bterm">참조함수</b></p>
+			<p><a href='5.9.8.21.htm'>COUNTIF</a></p>
+		<h2>고유값의 개수를 계산</h2>
+			<p>례를 들어 렬에 1, 2, 2, 2가 있으면 이 렬에 있는 고유값은 두개입니다.</p>
+			<ol>
+				<li><b class="bterm">&lt;자료&gt;</b>차림표에서 <b class="bterm">&lt;려과기&gt;</b>를 찰칵한 다음 <b class="bterm">&lt;고급려과기&gt;</b>를 찰칵합니다.</li>
+				<li><b class="bterm">&lt;고급려과기&gt;</b>대화창에서 <b class="bterm">&lt;려과기준의 범위&gt;</b>복합칸옆에 있는 <b class="bterm">&lt;늘이기/줄이기&gt;</b><img border='0' src='../image/image/sgsd/minmaxdb.gif' alt='표시'>를 찰칵하여 고유값을 계산할 세포범위를 선택합니다.</li>
+				<li><b class="bterm">&lt;상세히&gt;</b>단추를 찰칵하고 <b class="bterm">&lt;결과를 복사하는 위치&gt;</b>확인칸을 선택합니다.</li>
+				<li>그 밑의 본문칸옆에 있는 <b class="bterm">&lt;늘이기/줄이기&gt;</b><img border='0' src='../image/image/sgsd/minmaxdb.gif' alt='표시'>를 찰칵하여 고유값을 복사할 세포를 선택합니다.</li>
+				<li><b class="bterm">&lt;중복 없음&gt;</b>확인칸을 선택하고 <b class="bterm">&lt;확인&gt;</b>단추를 찰칵합니다.</li>
+				<li>고유값이 복사된 범위에서 마지막세포 아래의 빈 세포를 선택합니다.</li>
+				<li><b class="bterm">COUNT</b>함수를 입력하고 인수로 고유값이 복사된 범위를 설정합니다.</li>
+				<li>다음 <b class="bterm">[Enter]</b>건을 누릅니다.</li>
+			</ol>
+		<script type="text/javascript" language="Javascript">footerView()</script>
+	
+</body>
+</html>

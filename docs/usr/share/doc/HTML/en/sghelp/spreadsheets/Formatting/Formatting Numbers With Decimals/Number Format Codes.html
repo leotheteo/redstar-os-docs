@@ -1,0 +1,1141 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+	<TITLE></TITLE>
+	<META NAME="GENERATOR" CONTENT="《Sogwang 3.0》  (Linux)">
+	<META NAME="CREATED" CONTENT="20091212;10531700">
+	<META NAME="CHANGED" CONTENT="20091212;17221900">
+	<META NAME="Info 1" CONTENT="">
+	<META NAME="Info 2" CONTENT="">
+	<META NAME="Info 3" CONTENT="">
+	<META NAME="Info 4" CONTENT="">
+	<STYLE TYPE="text/css">
+	<!--
+		H2 { margin-bottom: 0.18cm; font-family: "Bitstream Vera Sans", "Arial", "Helvetica", "Lucida", "Geneva", "Helmet", sans-serif, "Andale Sans UI", "Arial Unicode MS", "Lucida Sans Unicode", "Tahoma"; font-size: 14pt }
+		H3 { margin-bottom: 0.18cm; font-family: "Bitstream Vera Sans", "Arial", "Helvetica", "Lucida", "Geneva", "Helmet", sans-serif, "Andale Sans UI", "Arial Unicode MS", "Lucida Sans Unicode", "Tahoma"; font-size: 12pt }
+		P.listitem { font-family: "Bitstream Vera Sans", "Arial", "Helvetica", "Lucida", "Geneva", "Helmet", sans-serif, "Andale Sans UI", "Arial Unicode MS", "Lucida Sans Unicode", "Tahoma" }
+		TD P.tableheadintable { margin-bottom: 0.05cm; font-weight: bold }
+		TD P.tablecontentintable { font-family: "Bitstream Vera Sans", "Arial", "Helvetica", "Lucida", "Geneva", "Helmet", sans-serif, "Andale Sans UI", "Arial Unicode MS", "Lucida Sans Unicode", "Tahoma" }
+		TD P.codeintable { margin-top: 0.04cm; margin-bottom: 0.04cm; font-family: "Bitstream Vera Sans Mono", "Cumberland", "Courier New", "Courier", "Lucida Sans Typewriter", "Lucida Typewriter", "Monaco", "Monospaced" }
+		P.example { margin-top: 0.04cm; margin-bottom: 0.04cm; font-family: "Bitstream Vera Sans Mono", "Cumberland", "Courier New", "Courier", "Lucida Sans Typewriter", "Lucida Typewriter", "Monaco", "Monospaced" }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="ko-KP" DIR="LTR"><DIV style="margin-left: 25">
+<H1><A NAME="bm_id3153514"></A><A NAME="zahlenformatcodes"></A><FONT FACE="Thorndale, serif"><SPAN LANG="en-US">Number
+Format Codes </SPAN></FONT>
+</H1>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Number
+format codes can consist of up to three sections separated by a
+semicolon (;).</SPAN></FONT></P>
+<UL>
+	<LI><P CLASS="listitem"><FONT FACE="청봉, serif"><SPAN LANG="en-US">In a number format code
+	with two sections, the first section applies to positive values and
+	zero, and the second section applies to negative values.</SPAN></FONT></P>
+	<LI><P CLASS="listitem"><FONT FACE="청봉, serif"><SPAN LANG="en-US">In a number format code
+	with three sections, the first section applies to positive values,
+	the second section to negative values, and the third section to the
+	value zero.</SPAN></FONT></P>
+</UL>
+<UL>
+	<LI><P CLASS="listitem"><FONT FACE="청봉, serif"><SPAN LANG="en-US">You can also assign
+	conditions to the three sections, so that the format is only applied
+	if a condition is met.</SPAN></FONT></P>
+</UL>
+<H2><SPAN LANG="en-US">Decimal Places and Significant Digits</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Use zero
+(0) or the number sign (#) as placeholders in your number format code
+to represent numbers. The (#) only displays significant digits, while
+the (0) displays zeroes if there are fewer digits in the number than
+in the number format.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Use
+question marks (?) to represent the number of digits to include in
+the numerator and the denominator of a fraction. Fractions that do
+not fit the pattern that you define are displayed as floating point
+numbers.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">If a
+number contains more digits to the right of the decimal delimiter
+than there are placeholders in the format, the number is rounded
+accordingly. If a number contains more digits to the left of the
+decimal delimiter than there are placeholders in the format, the
+entire number is displayed. Use the following list as a guide for
+using placeholders when you create a number format code:</SPAN></FONT></P>
+<TABLE WIDTH=745 BORDER=1 CELLPADDING=2 CELLSPACING=0>
+	<COL WIDTH=82>
+	<COL WIDTH=443>
+	<TR VALIGN=TOP>
+		<TD WIDTH=110>
+			<P CLASS="tableheadintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Placeholders</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=621>
+			<P CLASS="tableheadintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Explanation</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=110>
+			<P CLASS="codeintable"><SPAN LANG="en-US">#</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=621>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Does not display
+			extra zeros.</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=110>
+			<P CLASS="codeintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">0 (Zero)</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=621>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Displays extra
+			zeros if the number has less places than zeros in the format.</SPAN></FONT></P>
+		</TD>
+	</TR>
+</TABLE>
+<P><BR><BR>
+</P>
+<H3><SPAN LANG="en-US">Examples</SPAN></H3>
+<TABLE WIDTH=398 BORDER=1 CELLPADDING=2 CELLSPACING=0>
+	<COL WIDTH=212>
+	<COL WIDTH=83>
+	<TR VALIGN=TOP>
+		<TD WIDTH=257>
+			<P CLASS="tableheadintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Number
+			Format</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=127>
+			<P CLASS="tableheadintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Format
+			Code</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=257>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">3456.78 as
+			3456.8</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=127>
+			<P CLASS="codeintable"><SPAN LANG="en-US">####.#</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=257>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">9.9 as 9.900</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=127>
+			<P CLASS="codeintable"><SPAN LANG="en-US">#.000</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=257>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">13 as 13.0 and
+			1234.567 as 1234.57</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=127>
+			<P CLASS="codeintable"><SPAN LANG="en-US">#.0#</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=257>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">5.75 as 5 3/4
+			and 6.3 as 6 3/10</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=127>
+			<P CLASS="codeintable"><SPAN LANG="en-US"># ???/???</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=257>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">.5 as 0.5</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=127>
+			<P CLASS="codeintable"><SPAN LANG="en-US">0.##</SPAN></FONT></P>
+		</TD>
+	</TR>
+</TABLE>
+<P><BR><BR>
+</P>
+<H3><SPAN LANG="en-US">Thousands Separator</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Depending
+on your language setting, you can use a comma or a period as a
+thousands separator. You can also use the separator to reduce the
+size of the number that is displayed by a multiple of 1000.</SPAN></FONT></P>
+<TABLE WIDTH=191 BORDER=1 CELLPADDING=2 CELLSPACING=0>
+	<COL WIDTH=98>
+	<COL WIDTH=83>
+	<TR VALIGN=TOP>
+		<TD WIDTH=98>
+			<P CLASS="tableheadintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Number
+			Format</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=83>
+			<P CLASS="tableheadintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Format
+			Code</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=98>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">15000 as 15,000</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=83>
+			<P CLASS="codeintable"><SPAN LANG="en-US">#,###</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=98>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">16000 as 16</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=83>
+			<P CLASS="codeintable"><SPAN LANG="en-US">#,</SPAN></FONT></P>
+		</TD>
+	</TR>
+</TABLE>
+<P><BR><BR>
+</P>
+<H2><SPAN LANG="en-US">Including Text in Number Format Codes</SPAN></H2>
+<H3><SPAN LANG="en-US">Text and Numbers</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">To
+include text in a number format that is applied to a cell containing
+numbers, place a double quotation mark (&quot;) in front of and
+behind the text, or a backslash (\) before a single character. For
+example, enter <B>#.# &quot;meters&quot;</B> to display &quot;3.5
+meters&quot; or <B>#.# \m</B> to display &quot;3.5 m&quot;.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Text and Text</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">To
+include text in a number format that is applied to a cell that might
+contain text, enclose the text by double quotation marks (&quot; &quot;),
+and then add an at sign (@). For example, enter <B>&quot;Total for &quot;@</B>
+to display &quot;Total for December&quot;.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Spaces</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">To use a
+character to define the width of a space in a number format, type an
+underscore ( _ ) followed by the character. The width of the space
+varies according to the width of the character that you choose. For
+example, <B>_M</B> creates a wider space than <B>_i</B>.</SPAN></FONT></P>
+<H2><SPAN LANG="en-US">Color</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">To set
+the color of a section of a number format code, insert one of the
+following color names in square brackets [ ]:</SPAN></FONT></P>
+<TABLE WIDTH=118 BORDER=1 CELLPADDING=2 CELLSPACING=0>
+	<COL WIDTH=57>
+	<COL WIDTH=51>
+	<TR VALIGN=TOP>
+		<TD WIDTH=57>
+			<P CLASS="codeintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">CYAN</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=51>
+			<P CLASS="codeintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">GREEN</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=57>
+			<P CLASS="codeintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">BLACK</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=51>
+			<P CLASS="codeintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">BLUE</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=57>
+			<P CLASS="codeintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">MAGENTA</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=51>
+			<P CLASS="codeintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">RED</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=57>
+			<P CLASS="codeintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">WHITE</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=51>
+			<P CLASS="codeintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">YELLOW</SPAN></FONT></P>
+		</TD>
+	</TR>
+</TABLE>
+<P><BR><BR>
+</P>
+<H2><SPAN LANG="en-US">Conditions</SPAN></H2>
+<H3><SPAN LANG="en-US">Conditional Brackets</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">You can
+define a number format so that it only applies when the condition
+that you specify is met. Conditions are enclosed by square brackets [
+].</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">You can
+use any combination of numbers and the &lt;, &lt;=, &gt;, &gt;=, =
+and &lt;&gt; operators.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">For
+example, if you want to apply different colors to different
+temperature data, enter:</SPAN></FONT></P>
+<P CLASS="example"><FONT FACE="청봉, serif"><SPAN LANG="en-US">[BLUE][&lt;0]#,0
+&quot;°C&quot;;[RED][&gt;30]#,0 &quot;°C&quot;;[BLACK]#,0 &quot;°C&quot;</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">All
+temperatures below zero are blue, temperatures between 0 and 30 °C
+are black, and temperatures higher than 30 °C are red.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Positive and Negative Numbers</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">To
+define a number format that adds a different text to a number
+depending on if the number is positive, negative, or equal to zero,
+use the following format:</SPAN></FONT></P>
+<P CLASS="example"><FONT FACE="청봉, serif"><SPAN LANG="en-US">&quot;plus&quot; 0;&quot;minus&quot;
+0;&quot;null&quot; 0</SPAN></FONT></P>
+<H2><SPAN LANG="en-US">Percentages and Scientific Notation</SPAN></H2>
+<H3><SPAN LANG="en-US">Percentages</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">To
+display numbers as percentages, add the percent sign (%) to the
+number format.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Scientific Notation</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Scientific
+notation lets you write very large numbers or very small fractions in
+a compact form. For example, in scientific notation, 650000 is
+written as 6.5 x 10^5, and 0.000065 as 6.5 x 10^-5. In
+</SPAN></FONT><FONT FACE="청봉, serif"><SPAN LANG="en-US">Sogwang ,
+these numbers are written as 6.5E+5 and 6.5E-5, respectively. To
+create a number format that displays numbers using scientific
+notation, enter a # or 0, and then one of the following codes E-, E+,
+e- or e+.</SPAN></FONT></P>
+<H2><SPAN LANG="en-US">Number Format Codes of Currency Formats</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">The
+default currency format for the cells in your spreadsheet is
+determined by the regional setting of your operating system. If you
+want, you can apply a custom currency symbol to a cell. For example,
+enter #,##0.00 € to display 4.50 € (Euros).</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">You can
+also specify the locale setting for the currency by entering the
+locale code for the country after the symbol. 
+&nbsp;&nbsp;&nbsp;&nbsp;For example, [$€-407]
+represents Euros in Germany. To view the locale code for a country,
+select the country in the <B>Language</B> list on the <B>Numbers</B>
+tab of the <B>Format Cells</B> dialog.</SPAN></FONT></P>
+<TABLE WIDTH=945 BORDER=0 CELLPADDING=5 CELLSPACING=0>
+	<COL WIDTH=33>
+	<COL WIDTH=484>
+	<TR>
+		<TD WIDTH=47>
+			<P><IMG SRC="../../../Image/note.png" NAME="graphics1" ALT="Note Icon " ALIGN=BOTTOM WIDTH=33 HEIGHT=42 BORDER=0></P>
+		</TD>
+		<TD WIDTH=878>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">The
+			format code for currencies uses the form [$xxx-nnn], where xxx is
+			the currency symbol, and nnn the country code. Special banking
+			symbols, such as EUR (for Euro), do not require the country code.
+			The currency format is not dependent on the language that you
+			select in the <B>Language</B> box. </SPAN></FONT>
+			</P>
+		</TD>
+	</TR>
+</TABLE>
+<P><BR><BR>
+</P>
+<H2><SPAN LANG="en-US">Date and Time Formats</SPAN></H2>
+<H3><SPAN LANG="en-US">Date Formats</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">To
+display days, months and years, use the following number format
+codes. </SPAN></FONT>
+</P>
+<TABLE WIDTH=704 BORDER=0 CELLPADDING=5 CELLSPACING=0>
+	<COL WIDTH=25>
+	<COL WIDTH=359>
+	<TR>
+		<TD WIDTH=47>
+			<P><IMG SRC="../../../Image/warning.png" NAME="graphics2" ALT="Warning Icon " ALIGN=BOTTOM WIDTH=25 HEIGHT=42 BORDER=0></P>
+		</TD>
+		<TD WIDTH=637>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Not
+			all format codes give meaningful results for all languages.</SPAN></FONT></P>
+		</TD>
+	</TR>
+</TABLE>
+<P STYLE="margin-top: 0.05cm; margin-bottom: 0cm"><BR>
+</P>
+<TABLE WIDTH=537 BORDER=1 CELLPADDING=2 CELLSPACING=0>
+	<COL WIDTH=280>
+	<COL WIDTH=247>
+	<TR VALIGN=TOP>
+		<TD WIDTH=280>
+			<P CLASS="tableheadintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Format</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=247>
+			<P CLASS="tableheadintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Format
+			Code</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=280>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Month as 3.</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=247>
+			<P CLASS="codeintable"><SPAN LANG="en-US">M</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=280>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Month as 03.</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=247>
+			<P CLASS="codeintable"><SPAN LANG="en-US">MM</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=280>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Month as Jan-Dec</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=247>
+			<P CLASS="codeintable"><SPAN LANG="en-US">MMM</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=280>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Month as
+			January-December</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=247>
+			<P CLASS="codeintable"><SPAN LANG="en-US">MMMM</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=280>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">First letter of
+			Name of Month</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=247>
+			<P CLASS="codeintable"><SPAN LANG="en-US">MMMMM</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=280>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Day as 2</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=247>
+			<P CLASS="codeintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">D</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=280>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Day as 02</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=247>
+			<P CLASS="codeintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">DD</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=280>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Day as Sun-Sat</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=247>
+			<P CLASS="codeintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">NN or DDD</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=280>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Day as Sunday to
+			Saturday</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=247>
+			<P CLASS="codeintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">NNN or DDDD</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=280>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Day followed by
+			comma, as in &quot;Sunday,&quot;</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=247>
+			<P CLASS="codeintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">NNNN</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=280>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Year as 00-99</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=247>
+			<P CLASS="codeintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">YY</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=280>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Year as
+			1900-2078</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=247>
+			<P CLASS="codeintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">YYYY</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=280>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Calendar week</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=247>
+			<P CLASS="codeintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">WW</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=280>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Quarterly as Q1
+			to Q4</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=247>
+			<P CLASS="codeintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Q (K in swedish locales,
+			T in french and spanish locales)</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=280>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Quarterly as 1st
+			quarter to 4th quarter</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=247>
+			<P CLASS="codeintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">QQ</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=280>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Era on the
+			Japanese Gengou calendar, single character (possible values are:
+			M, T, S, H)</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=247>
+			<P CLASS="codeintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">G</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=280>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Era,
+			abbreviation</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=247>
+			<P CLASS="codeintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">GG</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=280>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Era, full name</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=247>
+			<P CLASS="codeintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">GGG</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=280>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Number of the
+			year within an era, without a leading zero for single-digit years</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=247>
+			<P CLASS="codeintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">E</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=280>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Number of the
+			year within an era, with a leading zero for single-digit years</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=247>
+			<P CLASS="codeintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">EE or R</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=280>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Era, full name
+			and year</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=247>
+			<P CLASS="codeintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">RR or GGGEE</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=280>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Arabic Islamic
+			format</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=247>
+			<P CLASS="codeintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">AAA or AAAA</SPAN></FONT></P>
+		</TD>
+	</TR>
+</TABLE>
+<P><BR><BR>
+</P>
+<H3><SPAN LANG="en-US">Entering Dates</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">To enter
+a date in a cell, use the Gregorian calendar format. For example, in
+an English locale, enter 1/2/2002 for Jan 2, 2002.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">All date
+formats are dependent on the locale that is set in <B>Sogwang Office - Reference
+- Language settings - Languages</B>. For example, if your locale is
+set to 'Japanese', then the Gengou calendar is used. The default date
+format in </SPAN></FONT><FONT FACE="청봉, serif"><SPAN LANG="en-US">Sogwang uses the
+Gregorian Calendar.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">To
+specify a calendar format that is independent of the locale, add a
+modifier in front of the date format. For example, to display a date
+using the Jewish calendar format in a non-Hebrew locale, enter:
+[~jewish]DD/MM/YYYY.</SPAN></FONT></P>
+<TABLE WIDTH=594 BORDER=1 CELLPADDING=2 CELLSPACING=0>
+	<COL WIDTH=149>
+	<COL WIDTH=378>
+	<TR VALIGN=TOP>
+		<TD WIDTH=148>
+			<P CLASS="tableheadintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Modifier</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=432>
+			<P CLASS="tableheadintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Calendar</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=148>
+			<P CLASS="codeintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">[~buddhist]</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=432>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Thai Buddhist
+			Calendar</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=148>
+			<P CLASS="codeintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">[~gengou]</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=432>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Japanese Gengou
+			Calendar</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=148>
+			<P CLASS="codeintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">[~gregorian]</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=432>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Gregorian
+			Calendar</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=148>
+			<P CLASS="codeintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">[~hanja] or
+			[~hanja_yoil]</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=432>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Korean Calendar</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=148>
+			<P CLASS="codeintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">[~hijri]</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=432>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Arabic Islamic
+			Calendar, currently supported for the following locales: ar_EG,
+			ar_LB, ar_SA, and ar_TN</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=148>
+			<P CLASS="codeintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">[~jewish]</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=432>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Jewish Calendar</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=148>
+			<P CLASS="codeintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">[~ROC]</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=432>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Republic Of
+			China Calendar</SPAN></FONT></P>
+		</TD>
+	</TR>
+</TABLE>
+<P><BR><BR>
+</P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">If you
+perform a calculation that involves one or more cells using a date
+format, the result is formatted according to the following mappings: </SPAN></FONT>
+</P>
+<TABLE WIDTH=247 BORDER=1 CELLPADDING=2 CELLSPACING=0>
+	<COL WIDTH=147>
+	<COL WIDTH=90>
+	<TR VALIGN=TOP>
+		<TD WIDTH=147>
+			<P CLASS="tableheadintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Initial
+			Format</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=90>
+			<P CLASS="tableheadintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Result
+			Format</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=147>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Date + Date</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=90>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Number (Days)</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=147>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Date + Number</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=90>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Date</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=147>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Date + Time</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=90>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Date&amp;Time</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=147>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Date + Date&amp;Time</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=90>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Number</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=147>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Time + Time</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=90>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Time</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=147>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Time + Number</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=90>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Time</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=147>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Time + Date&amp;Time</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=90>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Date&amp;Time</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=147>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Date&amp;Time +
+			Date&amp;Time</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=90>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Time</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=147>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Date&amp;Time +
+			Number</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=90>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Date&amp;Time</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=147>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Number + Number</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=90>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Number</SPAN></FONT></P>
+		</TD>
+	</TR>
+</TABLE>
+<P><BR><BR>
+</P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">The
+Date&amp;Time format displays the date and time that an entry was
+made to a cell with this format. </SPAN></FONT>
+</P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">In
+</SPAN></FONT><FONT FACE="청봉, serif"><SPAN LANG="en-US">Sogwang ,
+years are indicated by four digits, so that the difference between
+1/1/99 and 1/1/01 is two years. This <B>Year (two digits)</B> setting
+allows the user to define the years in which two-digit dates are
+added to 2000. To illustrate, if you specify a date of 1/1/30 or
+later, the entry &quot;1/1/20&quot; is recognized as 1/1/2020 instead
+of 1/1/1920.</SPAN></FONT></P>
+<TABLE WIDTH=877 BORDER=0 CELLPADDING=5 CELLSPACING=0>
+	<COL WIDTH=33>
+	<COL WIDTH=484>
+	<TR>
+		<TD WIDTH=48>
+			<P><IMG SRC="../../../Image/note.png" NAME="graphics3" ALT="Note Icon " ALIGN=BOTTOM WIDTH=33 HEIGHT=42 BORDER=0></P>
+		</TD>
+		<TD WIDTH=809>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">In
+			</SPAN></FONT><FONT FACE="청봉, serif"><SPAN LANG="en-US">Sogwang ,
+			a date with the value &quot;0&quot; corresponds to Dec 30, 1899.</SPAN></FONT></P>
+		</TD>
+	</TR>
+</TABLE>
+<P><BR><BR>
+</P>
+<H3><SPAN LANG="en-US">Time Formats</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">To
+display hours, minutes and seconds use the following number format
+codes.</SPAN></FONT></P>
+<TABLE WIDTH=199 BORDER=1 CELLPADDING=2 CELLSPACING=0>
+	<COL WIDTH=106>
+	<COL WIDTH=83>
+	<TR VALIGN=TOP>
+		<TD WIDTH=106>
+			<P CLASS="tableheadintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Format</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=83>
+			<P CLASS="tableheadintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Format
+			Code</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=106>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Hours as 0-23</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=83>
+			<P CLASS="codeintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">h</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=106>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Hours as 00-23</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=83>
+			<P CLASS="codeintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">hh</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=106>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Minutes as 0-59</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=83>
+			<P CLASS="codeintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">m</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=106>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Minutes as 00-59</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=83>
+			<P CLASS="codeintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">mm</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=106>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Seconds as 0-59</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=83>
+			<P CLASS="codeintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">s</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=106>
+			<P CLASS="tablecontentintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Seconds as 00-59</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=83>
+			<P CLASS="codeintable"><FONT FACE="청봉, serif"><SPAN LANG="en-US">ss</SPAN></FONT></P>
+		</TD>
+	</TR>
+</TABLE>
+<P STYLE="margin-top: 0.05cm; margin-bottom: 0cm"><BR>
+</P>
+<TABLE WIDTH=945 BORDER=0 CELLPADDING=5 CELLSPACING=0>
+	<COL WIDTH=33>
+	<COL WIDTH=484>
+	<TR>
+		<TD WIDTH=47>
+			<P><IMG SRC="../../../Image/note.png" NAME="graphics4" ALT="Note Icon " ALIGN=BOTTOM WIDTH=33 HEIGHT=42 BORDER=0></P>
+		</TD>
+		<TD WIDTH=878>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">To
+			display seconds as fractions, add the decimal delimiter to your
+			number format code. For example, enter <B>hh:mm:ss.00</B> to
+			display the time as &quot;01:02:03.45&quot;.</SPAN></FONT></P>
+		</TD>
+	</TR>
+</TABLE>
+<P><BR><BR>
+</P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">If a
+time is entered in the form 02:03.45 or 01:02:03.45 or 25:01:02, the
+following formats are assigned if no other time format has been
+specified: MM:SS.00 or [HH]:MM:SS.00 or [HH]:MM:SS</SPAN></FONT></P>
+<H2><SPAN LANG="en-US">Displaying Numbers Using Native Characters</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">To
+display numbers using native number characters, use a [NatNum1],
+[NatNum2], ... [NatNum11] modifier at the beginning of a number
+format codes.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">The
+[NatNum1] modifier always uses a one to one character mapping to
+convert numbers to a string that matches the native number format
+code of the corresponding locale. The other modifiers produce
+different results if they are used with different locales. A locale
+can be the language and the territory for which the format code is
+defined, or a modifier such as [$-yyy] that follows the native number
+modifier. In this case, yyy is the hexadecimal MS-LCID that is also
+used in currency format codes. For example, to display a number using
+Japanese short Kanji characters in an English US locale, use the
+following number format code:</SPAN></FONT></P>
+<P CLASS="example"><FONT FACE="청봉, serif"><SPAN LANG="en-US">[NatNum1][$-411]0</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">In the
+following list, the Microsoft Excel [DBNumX] modifier that
+corresponds to </SPAN></FONT><FONT FACE="청봉, serif"><SPAN LANG="en-US">Sogwang [NatNum]
+modifier is shown. 
+&nbsp;&nbsp;
+If you want, you can use a [DBNumX] modifier
+instead of [NatNum] modifier for your locale. Whenever possible,
+</SPAN></FONT><FONT FACE="청봉, serif"><SPAN LANG="en-US">Sogwang internally
+maps [DBNumX] modifiers to [NatNumN] modifiers.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Displaying
+dates using [NatNum] modifiers can have a different effect than
+displaying other types of numbers. 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Such effects are indicated by
+'CAL: '. For example, 'CAL: 1/4/4' indicates that the year is
+displayed using the [NatNum1] modifier, while the day and month are
+displayed using the [NatNum4] modifier. If 'CAL' is not specified,
+the date formats for that particular modifier are not supported.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">[NatNum1] Transliterations</SPAN></H3>
+<TABLE WIDTH=605 BORDER=1 CELLPADDING=2 CELLSPACING=0>
+	<COL WIDTH=423>
+	<TR>
+		<TD WIDTH=597 VALIGN=TOP>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Chinese:
+			Chinese lower case characters; CAL: 1/7/7 [DBNum1]</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=597 VALIGN=TOP>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Japanese:
+			short Kanji characters [DBNum1]; CAL: 1/4/4 [DBNum1]</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=597 VALIGN=TOP>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Korean:
+			Korean lower case characters [DBNum1]; CAL: 1/7/7 [DBNum1]</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=597 VALIGN=TOP>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Thai:
+			Thai characters</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=597 VALIGN=TOP>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Arabic:
+			Indic characters</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=597 VALIGN=TOP>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Indic:
+			Indic characters</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=597 VALIGN=TOP>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Hebrew:
+			Hebrew letters</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=597 VALIGN=TOP>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">[NatNum2]
+			Transliteration in</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=597 VALIGN=TOP>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Chinese:
+			Chinese upper case characters; CAL: 2/8/8 [DBNum2]</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=597 VALIGN=TOP>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Japanese:
+			traditional Kanji characters; CAL: 2/5/5 [DBNum2]</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=597 VALIGN=TOP>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Korean:
+			Korean upper case characters [DBNum2]; CAL: 2/8/8 [DBNum2]</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=597 VALIGN=TOP>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">[NatNum3]
+			Transliteration in</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=597 VALIGN=TOP>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Chinese:
+			fullwidth Arabic digits; CAL: 3/3/3 [DBNum3]</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=597 VALIGN=TOP>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Japanese:
+			fullwidth Arabic digits; CAL: 3/3/3 [DBNum3]</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=597 VALIGN=TOP>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Korean:
+			fullwidth Arabic digits [DBNum3]; CAL: 3/3/3 [DBNum3]</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=597 VALIGN=TOP>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">[NatNum4]
+			Transliteration in</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=597 VALIGN=TOP>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Chinese:
+			lower case text [DBNum1]</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=597 VALIGN=TOP>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Japanese:
+			modern long Kanji text [DBNum2]</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=597 VALIGN=TOP>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Korean:
+			formal lower case text</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=597 VALIGN=TOP>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">[NatNum5]
+			Transliteration in</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=597 VALIGN=TOP>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Chinese:
+			Chinese upper case text [DBNum2]</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=597 VALIGN=TOP>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Japanese:
+			traditional long Kanji text [DBNum3]</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=597 VALIGN=TOP>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Korean:
+			formal upper case text</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=597 VALIGN=TOP>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">[NatNum6]
+			Transliteration in</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=597 VALIGN=TOP>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Chinese:
+			fullwidth text [DBNum3]</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=597 VALIGN=TOP>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Japanese:
+			fullwidth text</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=597 VALIGN=TOP>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Korean:
+			fullwidth text</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=597 VALIGN=TOP>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">[NatNum7]
+			Transliteration in</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=597 VALIGN=TOP>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Japanese:
+			modern short Kanji text</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=597 VALIGN=TOP>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Korean:
+			informal lower case text</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=597 VALIGN=TOP>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">[NatNum8]
+			Transliteration in</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=597 VALIGN=TOP>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Japanese:
+			traditional short Kanji text [DBNum4]</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=597 VALIGN=TOP>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Korean:
+			informal upper case text</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=597 VALIGN=TOP>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">[NatNum9]
+			Transliteration in</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=597 VALIGN=TOP>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Korean:
+			Hangul characters</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=597 VALIGN=TOP>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">[NatNum10]
+			Transliteration in</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=597 VALIGN=TOP>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Korean:
+			formal Hangul text [DBNum4]; CAL: 9/11/11 [DBNum4]</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=597 VALIGN=TOP>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">[NatNum11]
+			Transliteration in</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=597 VALIGN=TOP>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Korean:
+			informal Hangul text</SPAN></FONT></P>
+		</TD>
+	</TR>
+</TABLE>
+<P><BR><BR>
+</P>
+
+</DIV></BODY>
+</HTML>

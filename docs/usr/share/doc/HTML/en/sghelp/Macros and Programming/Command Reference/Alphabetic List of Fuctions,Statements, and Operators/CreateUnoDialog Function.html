@@ -1,0 +1,45 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+	<TITLE></TITLE>
+	<META NAME="GENERATOR" CONTENT="《Sogwang 3.0》  (Linux)">
+	<META NAME="CREATED" CONTENT="20091205;11384400">
+	<META NAME="CHANGED" CONTENT="20091205;11570600">
+	<STYLE TYPE="text/css">
+	<!--
+		H2 { margin-bottom: 0.18cm; font-family: "Bitstream Vera Sans", "Arial", "Helvetica", "Lucida", "Geneva", "Helmet", sans-serif, "Andale Sans UI", "Arial Unicode MS", "Lucida Sans Unicode", "Tahoma"; font-size: 14pt }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="ko-KP" DIR="LTR"><DIV style="margin-left: 25">
+<H1><A NAME="createunodialog"></A><A NAME="bm_id3150040"></A><FONT FACE="Thorndale, serif"><SPAN LANG="en-US">CreateUnoDialog
+Function [Runtime]</SPAN></FONT></H1>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Creates
+a Basic Uno object that represents a Uno dialog control during Basic
+runtime.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Dialogs
+are defined in the dialog libraries. To display a dialog, a &quot;live&quot;
+dialog must be created from the library.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">See
+
+Examples.</SPAN></FONT></P>
+<H2><SPAN LANG="en-US">Syntax:</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">CreateUnoDialog(
+oDlgDesc )</SPAN></FONT></P>
+<H2><SPAN LANG="en-US">Example:</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">' Get
+dialog description from the dialog library</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">oDlgDesc
+= DialogLibraries.Standard.Dialog1</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">'
+generate &quot;live&quot; dialog</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">oDlgControl
+= CreateUnoDialog( oDlgDesc )</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">'
+display &quot;live&quot; dialog</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">
+<SPAN STYLE="font-weight: medium">oDlgControl.execute</SPAN></SPAN></FONT></P>
+
+</DIV></BODY>
+</HTML>

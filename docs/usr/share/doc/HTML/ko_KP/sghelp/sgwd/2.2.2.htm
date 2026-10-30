@@ -1,0 +1,158 @@
+<html dir="ltr">
+	<head>
+		<META http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+		<title>도형</title>
+		<link rel="stylesheet" type="text/css" href="../css/main.css"/>
+		<script type="text/javascript" language="Javascript" src="../js/mexpcol.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../js/glossary.js"></script>
+	</head>
+	<body>
+		<h1>&nbsp;<img align="absbottom" src="../image/external_images/crystal/svtools/res/new_doc.png"/>&nbsp;도형</h1>
+		<p id="ExpandAllLine" class="ExpFav">
+			<a href="#" onClick="ExpandAll()" onKeyPress="ExpandAll()" class="DropDown">
+				<img id="picHeader" border="0" src="../image/image/common/expandtri.gif" alt="모두 표시">
+				<span id="ExpandAll">모두 표시</span>
+			</a>
+		</p>
+		<p><img border="0" src="../image/image/bars/Bars_w11.gif" alt="표시"></p>
+		<table>
+			<tr>
+				<th>그림기호</th>
+				<th>지령명</th>
+				<th>기능</th>
+			</tr>
+			<tr>
+				<td><img border="0" src="../image/external_images/crystal/res/commandimagelist/sc_selectmode.png" alt="표시"></td>
+				<td>선택</td>
+				<td>객체를 선택합니다.</td>
+			</tr>
+			<tr>
+				<td><img border="0" src="../image/external_images/crystal/res/commandimagelist/sc_line.png" alt="표시"></td>
+				<td>선</td>
+				<td>마우스로 끌기한 위치에 직선을 그립니다. 선의 각도를 45°로 제한하려면 <b class="bterm">[Shift]</b>건을 누른 상태에서 마우스를 끕니다.</td>
+			</tr>
+			<tr>
+				<td><img border="0" src="../image/external_images/crystal/res/commandimagelist/sc_rectangletoolbox.png" alt="표시"></td>
+				<td>직사각형</td>
+				<td>마우스로 끌기한 위치에 직사각형을 그립니다. 바른사각형을 그리려면 <b class="bterm">[Shift]</b>건을 누른 상태에서 끕니다. 직사각형의 모서리의 시작 위치를 찰칵하고 요구하는 크기가 될 때까지 끕니다.</td>
+			</tr>
+			<tr>
+				<td><img border="0" src="../image/external_images/crystal/res/commandimagelist/sc_ellipse.png" alt="표시"></td>
+				<td>타원</td>
+				<td>마우스로 끌기한 위치에 타원을 그립니다. 타원을 그릴 위치를 찰칵하고 요구하는 크기가 될 때까지 끕니다. 원을 그리려면 <b class="bterm">[Shift]</b>건을 누른 상태에서 마우스를 끕니다.</td>
+			</tr>
+			<tr>
+				<td><img border="0" src="../image/external_images/crystal/res/commandimagelist/sc_polygon_unfilled.png" alt="표시"></td>
+				<td>다각형</td>
+				<td>일련의 직선토막으로 구성된 도형을 그립니다. 마우스로 끌어서 선토막을 그리고 마우스로 찰칵하여 선토막의 끝점을 지정한 다음 다시 끌어서 새로운 선토막을 그립니다. 두번 찰칵하면 선 그리기를 끝낼수 있습니다. 닫긴 도형을 만들려면 선의 시작점을 두번 찰칵합니다.</td>
+			</tr>
+			<tr>
+				<td><img border="0" src="../image/external_images/crystal/res/commandimagelist/sc_bezier_unfilled.png" alt="표시"></td>
+				<td>곡선</td>
+				<td>부드러운 베제곡선을 그립니다. 곡선을 시작할 위치를 찰칵하고 곡선을 끌어놓은 다음 곡선을 끝낼 위치로 마우스유표를 이동하고 찰칵합니다. 곡선에 직선토막을 추가하려면 마우스유표를 이동하고 다시 찰칵합니다. 곡선그리기를 끝내려면 두번 찰칵합니다. 닫긴 도형을 만들려면 곡선의 시작점을 두번 찰칵합니다.</td>
+			</tr>
+			<tr>
+				<td><img border="0" src="../image/external_images/crystal/res/commandimagelist/sc_freeline_unfilled.png" alt="표시"></td>
+				<td>자유곡선</td>
+				<td>마우스로 끈 위치에 자유곡선을 그립니다. 선긋기를 끝내려면 마우스단추를 놓습니다. 닫긴 도형을 그리려면 선의 시작점근처에서 마우스단추를 놓습니다.</td>
+			</tr>
+			<tr>
+				<td><img border="0" src="../image/external_images/crystal/res/commandimagelist/sc_circlearc.png" alt="표시"></td>
+				<td>활등</td>
+				<td>타원을 기준으로 하여 활등을 그립니다. 활등을 그리려면 타원을 요구하는 크기가 될 때까지 끈 다음 찰칵하여 활등의 시작점을 지정합니다. 두번째 위치로 마우스유표를 이동한 다음 찰칵합니다. 타원의 꼭대기를 찰칵할 필요는 없습니다. 원을 기준으로 하여 활등을 그리려면 <b class="bterm">[Shift]</b>건을 누른 상태에서 끕니다.</td>
+			</tr>
+			<tr>
+				<td><img border="0" src="../image/external_images/crystal/res/commandimagelist/sc_pie.png" alt="표시"></td>
+				<td>타원부채형</td>
+				<td>타원의 활등과 두개의 반경으로 채운 도형을 그립니다. 타원의 부채모양을 그리려면 타원을 요구하는 크기가 될 때까지 끈 다음 찰칵하여 첫번째 반경을 지정합니다. 두번째 반경을 두려는 위치로 마우스유표를 이동한 다음 찰칵합니다. 타원의 우를 찰칵할 필요는 없습니다. 원의 부채모양을 그리려면 <b class="bterm">[Shift]</b>건을 누른 상태에서 마우스를 끕니다.</td>
+			</tr>
+			<tr>
+				<td><img border="0" src="../image/external_images/crystal/res/commandimagelist/sc_circlecut.png" alt="표시"></td>
+				<td>원토막</td>
+				<td>원의 활등과 한개의 직경에 의해 정의되는 채운 도형을 그립니다. 타원토막을 그리려면 타원을 요구하는 크기가 될 때까지 끈 다음 찰칵하여 직경의 시작점을 지정합니다. 직경의 끝점을 두려는 위치로 마우스유표를 이동한 다음 찰칵합니다. 타원의 우를 찰칵할 필요는 없습니다. 원토막을 그리려면 <b class="bterm">[Shift]</b>건을 누른 상태에서 끕니다.</td>
+			</tr>
+			<tr>
+				<td><img border="0" src="../image/ooo_custom_images/industrial/res/commandimagelist/sc_drawtext.png" alt="표시"></td>
+				<td>본문</td>
+				<td>마우스로 찰칵하여 끌기한 위치에 가로방향의 본문칸을 그립니다. 문서에서 임의의 위치에 요구하는 크기만큼 마우스를 끌어서 본문칸을 만든 다음 본문을 입력하거나 붙여넣습니다.</td>
+			</tr>
+			<tr>
+				<td><img border="0" src="../image/ooo_custom_images/industrial/res/commandimagelist/sc_verticaltext.png" alt="표시"></td>
+				<td>세로쓰기 본문</td>
+				<td>마우스로 찰칵하여 끌기한 위치에 세로방향의 본문칸을 그립니다. 문서에서 임의의 위치에 요구하는 크기만큼 마우스를 끌어서 본문칸을 만든 다음 본문을 입력하거나 붙여넣습니다.</td>
+			</tr>
+			<tr>
+				<td><img border="0" src="../image/ooo_custom_images/industrial/res/commandimagelist/ko/sc_text_marquee.png" alt="표시"></td>
+				<td>본문동화</td>
+				<td>가로본문방향으로 본문동화를 삽입합니다. 본문칸을 만든 다음 본문을 입력하거나 붙여넣습니다.</td>
+			</tr>
+			<tr>
+				<td><img border="0" src="../image/external_images/crystal/res/commandimagelist/sc_drawcaption.png" alt="표시"></td>
+				<td>가로방향 설명부</td>
+				<td>마우스로 끌기한 위치에서 직사각형의 설명부로 끝나는 선을 가로본문방향으로 그립니다. 설명부의 꼭지를 끌어서 설명부의 크기를 변경합니다. 본문을 추가하려면 설명부테두리를 찰칵한 다음 본문을 입력하거나 붙여넣습니다. 4각형설명부의 모서리를 둥그린 설명부로 변경하려면 마우스유표모양이 손모양으로 변할 때 가장 큰 모서리꼭지를 끕니다.</td>
+			</tr>
+			<tr>
+				<td><img border="0" src="../image/ooo_custom_images/industrial/res/commandimagelist/sc_verticalcaption.png" alt="표시"></td>
+				<td>세로방향 설명부</td>
+				<td>마우스로 끌기한 위치에서 직사각형의 설명부로 끝나는 선을 세로본문방향으로 그립니다. 설명부의 꼭지를 끌어서 설명부의 크기를 변경합니다. 본문을 추가하려면 설명부테두리를 찰칵한 다음 본문을 입력하거나 붙여넣습니다.  4각형설명부의 모서리를 둥그린 설명부로 변경하려면 마우스유표모양이 손모양으로 변할 때 가장 큰 모서리꼭지를 끕니다.</td>
+			</tr>
+			<tr>
+				<td><img border="0" src="../image/external_images/crystal/res/commandimagelist/sc_basicshapes.png" alt="표시"></td>
+				<td>기본도형</td>
+				<td>직사각형, 타원, 원, 3각형, 원통을 비롯한 기본도형들을 그리는 도형객체도구들을 현시합니다.</td>
+			</tr>
+			<tr>
+				<td><img border="0" src="../image/external_images/crystal/res/commandimagelist/sc_symbolshapes.png" alt="표시"></td>
+				<td>기호도형</td>
+				<td>웃는 얼굴, 해, 달, 괄호를 비롯한 기호도형들을 그리는 도형객체도구들을 현시합니다.</td>
+			</tr>
+			<tr>
+				<td><img border="0" src="../image/external_images/crystal/res/commandimagelist/sc_arrowshapes.png" alt="표시"></td>
+				<td>블로크화살표</td>
+				<td>각종 블로크화살표들을 그릴수 있는 도형객체도구들을 현시합니다.</td>
+			</tr>
+			<tr>
+				<td><img border='0' src='../image/external_images/crystal/res/commandimagelist/sc_connector.png' alt='표시'></td>
+				<td>접속기</td>
+				<td>문서의 객체에 접속기를 추가할수 있는 도형객체도구들을 현시합니다.</td>
+			</tr>
+			<tr>
+				<td><img border="0" src="../image/default_images/res/commandimagelist/sc_flowchartshapes.png" alt="표시"></td>
+				<td>흐름도</td>
+				<td>흐름도를 작성하는데 필요한 도형들을 그리는 도형객체도구들을 현시합니다.</td>
+			</tr>
+			<tr>
+				<td><img border="0" src="../image/external_images/crystal/res/commandimagelist/sc_calloutshapes.png" alt="표시"></td>
+				<td>설명부</td>
+				<td>해당한 객체에 대한 설명을 추가하는 각종 설명선을 그리는데 필요한 도형객체도구들을 현시합니다.</td>
+			</tr>
+			<tr>
+				<td><img border="0" src="../image/external_images/crystal/res/commandimagelist/sc_starshapes.png" alt="표시"></td>
+				<td>별 및 현수막</td>
+				<td>각종 별 및 기발모양의 도형들을 그리는 도형객체도구들을 현시합니다.</td>
+			</tr>
+			<tr>
+				<td><img border="0" src="../image/external_images/crystal/res/commandimagelist/sc_toggleobjectbeziermode.png" alt="표시"></td>
+				<td>점</td>
+				<td>도형객체의 꼭지점을 현시합니다.</td>
+			</tr>
+			<tr>
+				<td><img border="0" src="../image/external_images/crystal/res/commandimagelist/sc_fontworkgalleryfloater.png" alt="표시"></td>
+				<td>장식문자 화첩</td>
+				<td>그림기호를 찰칵하면 장식문자를 삽입하는 <b class="bterm">&lt;장식문자 화첩&gt;</b>대화창이 현시됩니다.</td>
+			</tr>
+			<tr>
+				<td><img border="0" src="../image/external_images/crystal/res/commandimagelist/sc_insertgraphic.png" alt="표시"></td>
+				<td>파일로부터</td>
+				<td>현재문서에 그림을 삽입합니다.</td>
+			</tr>
+			<tr>
+				<td><img border="0" src="../image/ooo_custom_images/industrial/res/commandimagelist/sc_convertinto3d.png" alt="표시"></td>
+				<td>립체면 설정/해제</td>
+				<td>선택한 객체에 대해 3D효과를 설정하거나 해제합니다.</td>
+			</tr>
+		</table>
+		<script type="text/javascript" language="Javascript">footerView()</script>
+	
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <META NAME="GENERATOR" CONTENT="LinuxDoc-Tools 0.9.21">
+ <TITLE>ISDN4Linux Tutorial: Basics</TITLE>
+ <LINK HREF="EN-i4l-3.html" REL=next>
+ <LINK HREF="EN-i4l-1.html" REL=previous>
+ <LINK HREF="EN-i4l.html#toc2" REL=contents>
+</HEAD>
+<BODY>
+<A HREF="EN-i4l-3.html">Next</A>
+<A HREF="EN-i4l-1.html">Previous</A>
+<A HREF="EN-i4l.html#toc2">Contents</A>
+<HR>
+<H2><A NAME="Grundlagen"></A> <A NAME="s2">2.</A> <A HREF="EN-i4l.html#toc2">Basics</A>    </H2>
+
+<P>I know a little bit about Linux. Maybe I can already connect to the
+Internet with my modem.</P>
+<P>Now I have ISDN -  and I can't get anywhere at all. Why?</P>
+
+<H2><A NAME="ModemNetzwerk"></A> <A NAME="ss2.1">2.1</A> <A HREF="EN-i4l.html#toc2.1">ISDN4Linux: modem or network?</A>
+            </H2>
+
+<P>Forget everything that you know about modems.</P>
+<P>ISDN is completely different.</P>
+<P>
+<OL>
+<LI> There are no clicks or whistles.</LI>
+<LI> There are no blinking lights.</LI>
+<LI> The connections are made so quickly, that it's possble 
+to spend your entire paycheck within a matter of hours.</LI>
+<LI> It's more fun.    </LI>
+</OL>
+</P>
+<P>The concepts are different:
+<OL>
+<LI> the methods of hardware connection</LI>
+<LI> the methods of use</LI>
+<LI> the methods of control possibilities</LI>
+<LI> the methods of configuration</LI>
+</OL>
+    </P>
+<P>Under ISDN4Linux, the ISDN card is treated as a network card, only with
+special characteristics.</P>
+
+
+<H2><A NAME="ss2.2">2.2</A> <A HREF="EN-i4l.html#toc2.2">Overview of features</A>
+        </H2>
+
+<P>
+<UL>
+<LI> Quick ISDN connections</LI>
+<LI> Full integration as network</LI>
+<LI> Client and Server</LI>
+<LI> syncPPP</LI>
+<LI> Modem emulation (AT command set)</LI>
+<LI> Dial-On-Demand (DoD)</LI>
+<LI> Full overview and control</LI>
+<LI> Callback</LI>
+<LI> Channel bundling</LI>
+</UL>
+</P>
+
+<H2><A NAME="ss2.3">2.3</A> <A HREF="EN-i4l.html#toc2.3">Overview of missing features</A>
+        </H2>
+
+<P>
+<UL>
+<LI> Serial connections (e.g. Fax)</LI>
+<LI> CAPI interface (e.g. network)</LI>
+<LI> Uniform environment...</LI>
+<LI> PmX cards</LI>
+</UL>
+</P>
+
+<H2><A NAME="ss2.4">2.4</A> <A HREF="EN-i4l.html#toc2.4">Overview of the tools</A>
+        </H2>
+
+<P>
+<DL>
+<DT><B>isdnlog</B><DD><P>isdnlog <EM>listens</EM> in the background to the S0 bus and logs
+incoming and outgoing connections for later analysis (including cost
+control) and diagnosis.</P>
+
+<DT><B>isdnctrl</B><DD><P>Sets important parameters specific to I4L (e.g. telephone numbers).</P>
+
+<DT><B>HiSax</B><DD><P>The driver (as module or compiled into the kernel) for almost all passive
+ISDN cards.</P>
+
+<DT><B>hisaxctrl</B><DD><P>Controls the HiSax driver.</P>
+
+<DT><B>ipppd</B><DD><P>The PPP daemon for ISDN (syncPPP).</P>
+
+<DT><B>messages</B><DD><P>ISDN activity is logged in <CODE>/var/log/messages</CODE> (or via Syslog) - 
+important for diagnosing problems!</P>
+
+<DT><B>ttyI</B><DD><P>Using the terminal devices <CODE>/dev/ttyI0</CODE> to
+<CODE>/dev/ttyI64</CODE> <EM>normal</EM> terminal programs can access ISDN -
+but not analog access!</P>
+
+<DT><B>vbox</B><DD><P>The ISDN answering machine.</P>
+
+</DL>
+</P>
+
+
+<HR>
+<A HREF="EN-i4l-3.html">Next</A>
+<A HREF="EN-i4l-1.html">Previous</A>
+<A HREF="EN-i4l.html#toc2">Contents</A>
+</BODY>
+</HTML>

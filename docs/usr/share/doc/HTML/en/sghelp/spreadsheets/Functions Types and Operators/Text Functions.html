@@ -1,0 +1,568 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+	<TITLE></TITLE>
+	<META NAME="GENERATOR" CONTENT="《Sogwang 3.0》  (Linux)">
+	<META NAME="CREATED" CONTENT="20091205;10241300">
+	<META NAME="CHANGED" CONTENT="20091205;11064400">
+	<STYLE TYPE="text/css">
+	<!--
+		H3 { margin-bottom: 0.18cm; font-family: "Bitstream Vera Sans", "Arial", "Helvetica", "Lucida", "Geneva", "Helmet", sans-serif, "Andale Sans UI", "Arial Unicode MS", "Lucida Sans Unicode", "Tahoma"; font-size: 12pt }
+		H2 { margin-bottom: 0.18cm; font-family: "Bitstream Vera Sans", "Arial", "Helvetica", "Lucida", "Geneva", "Helmet", sans-serif, "Andale Sans UI", "Arial Unicode MS", "Lucida Sans Unicode", "Tahoma"; font-size: 14pt }
+		TD P.howtogetheader { background: #ffffff; border: 1px solid #999999; padding: 0.08cm; font-weight: bold }
+		P.code { margin-top: 0.04cm; margin-bottom: 0.04cm; font-family: "Bitstream Vera Sans Mono", "Cumberland", "Courier New", "Courier", "Lucida Sans Typewriter", "Lucida Typewriter", "Monaco", "Monospaced" }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="ko-KP" DIR="LTR"><DIV style="margin-left: 25">
+<H1><A NAME="bm_id3145389"></A><FONT FACE="Thorndale, serif"><SPAN LANG="en-US">Text
+Functions</SPAN></FONT></H1>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">This
+section contains descriptions of the <B>Text</B> functions. </SPAN></FONT>
+</P>
+
+<TABLE WIDTH=95% BORDER=1 CELLPADDING=3 CELLSPACING=0 BGCOLOR="#eeeeee">
+	<COL WIDTH=256*>
+	<TR>
+		<TD WIDTH=100%>
+			<P CLASS="howtogetheader"><FONT FACE="청봉, serif"><SPAN LANG="en-US">To
+			access this command... </SPAN></FONT>
+			</P>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><SPAN STYLE="background: #eeeeee"><B>Insert
+			- Function</B> - Category <B>Text</B> </SPAN></SPAN></FONT>
+			</P>
+		</TD>
+	</TR>
+</TABLE>
+<P>
+<BR>
+<BR>
+</P>
+<H2><SPAN LANG="en-US">ARABIC</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Calculates
+the value of a Roman number. The value range must be between 0 and
+3999.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Syntax</SPAN></H3>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">ARABIC(&quot;Text&quot;)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Text</B>
+is the text that represents a Roman number.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Example</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">=ARABIC(&quot;MXIV&quot;)
+returns 1014</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">=ARABIC(&quot;MMII&quot;)
+returns 2002</SPAN></FONT></P>
+<H2><A NAME="asc"></A><A NAME="bm_id8796349"></A><A NAME="bm_id3187353"></A>
+<SPAN LANG="en-US">ASC</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">The ASC
+function converts full-width to half-width ASCII and katakana
+characters. Returns a text string.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Syntax</SPAN></H3>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">ASC(&quot;Text&quot;)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Text</B>
+is the text that contains characters to be converted.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">See also
+JIS function.</SPAN></FONT></P>
+<H2><A NAME="bahttext"></A><A NAME="bm_id9323709"></A><A NAME="bm_id744346"></A>
+<SPAN LANG="en-US">BAHTTEXT</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Converts
+a number to Thai text, including the Thai currency names.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Syntax</SPAN></H3>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">BAHTTEXT(Number)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Number</B>
+is any number. &quot;Baht&quot; is appended to the integral part of
+the number, and &quot;Satang&quot; is appended to the decimal part of
+the number.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Example</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">=BAHTTEXT(12.65)
+returns a string in Thai characters with the meaning of &quot;Twelve
+Baht and sixty five Satang&quot;.</SPAN></FONT></P>
+<H2><A NAME="base"></A><A NAME="bm_id3153072"></A><A NAME="bm_id3150957"></A>
+<SPAN LANG="en-US">BASE</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Converts
+a positive integer to a specified base into a text from the <A HREF="../../Common Help Topics/General_Information/General_Glossary.html#zahlensystem">numbering
+system</A>. The digits 0-9 and the letters A-Z are used.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Syntax</SPAN></H3>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">BASE(Number; Radix;
+[MinimumLength])</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Number</B>
+is the positive integer to be converted.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Radix</B>
+indicates the base of the number system. It may be any positive
+integer between 2 and 36.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>MinimumLength</B>
+(optional) determines the minimum length of the character sequence
+that has been created. If the text is shorter than the indicated
+minimum length, zeros are added to the left of the string.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Example</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">=BASE(17;10;4)
+returns 0017 in the decimal system.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">=BASE(17;2)
+returns 10001 in the binary system.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">=BASE(255;16;4)
+returns 00FF in the hexadecimal system.</SPAN></FONT></P>
+<H2><A NAME="char"></A><A NAME="bm_id3149321"></A><A NAME="bm_id3159128"></A>
+<SPAN LANG="en-US">CHAR</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Converts
+a number into a character according to the current code table. The
+number can be a two-digit or three-digit integer number.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Codes
+greater than 127 may depend on your system's character mapping (for
+example iso-8859-1, iso-8859-2, Windows-1252, Windows-1250), and
+hence may not be portable. </SPAN></FONT>
+</P>
+<H3><SPAN LANG="en-US">Syntax</SPAN></H3>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">CHAR(Number)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Number</B>
+is a number between 1 and 255 representing the code value for the
+character.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Example</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">=CHAR(100)
+returns the character d.</SPAN></FONT></P>
+<H2><A NAME="clean"></A><A NAME="bm_id3149009"></A><A NAME="bm_id3148729"></A>
+<SPAN LANG="en-US">CLEAN</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">All
+non-printing characters are removed from the string.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Syntax</SPAN></H3>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">CLEAN(&quot;Text&quot;)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Text</B>
+refers to the text from which to remove all non-printable characters.</SPAN></FONT></P>
+<H2><A NAME="code"></A><A NAME="bm_id3155498"></A><A NAME="bm_id3159084"></A>
+<SPAN LANG="en-US">CODE</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Returns
+a numeric code for the first character in a text string.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Syntax</SPAN></H3>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">CODE(&quot;Text&quot;)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Text</B>
+is the text for which the code of the first character is to be found.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Codes
+greater than 127 may depend on your system's character mapping (for
+example iso-8859-1, iso-8859-2, Windows-1252, Windows-1250), and
+hence may not be portable. </SPAN></FONT>
+</P>
+<H3><SPAN LANG="en-US">Example</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">=CODE(&quot;Hieronymus&quot;)
+returns 72, =CODE(&quot;hieroglyphic&quot;) returns 104.</SPAN></FONT></P>
+<TABLE WIDTH=885 BORDER=0 CELLPADDING=5 CELLSPACING=0>
+	<COL WIDTH=33>
+	<COL WIDTH=481>
+	<TR>
+		<TD WIDTH=47>
+			<P><IMG SRC="../../Image/note.png" NAME="graphics1" ALT="Note Icon " ALIGN=BOTTOM WIDTH=33 HEIGHT=42 BORDER=0></P>
+		</TD>
+		<TD WIDTH=818>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">The
+			code used here does not refer to ASCII, but to the code table
+			currently loaded.</SPAN></FONT></P>
+		</TD>
+	</TR>
+</TABLE>
+<P>
+<BR>
+<BR>
+</P>
+<H2><SPAN LANG="en-US">CONCATENATE</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Combines
+several text strings into one string.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Syntax</SPAN></H3>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">CONCATENATE(&quot;Text1&quot;;
+...; &quot;Text30&quot;)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Text
+1; Text 2; ...</B> represent up to 30 text passages which are to be
+combined into one string.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Example</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">=CONCATENATE(&quot;Good
+&quot;;&quot;Morning &quot;;&quot;Mrs. &quot;;&quot;Doe&quot;)
+returns: Good Morning Mrs. Doe.</SPAN></FONT></P>
+<H2><A NAME="decimal"></A><A NAME="bm_id3145166"></A><A NAME="bm_id3150338"></A>
+<SPAN LANG="en-US">DECIMAL</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Converts
+text with characters from a <A HREF="../../Common Help Topics/General_Information/General_Glossary.html#zahlensystem">number
+system</A> to a positive integer in the base radix given. The radix
+must be in the range 2 to 36. Spaces and tabs are ignored. The <B>Text</B>
+field is not case-sensitive.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">If the
+radix is 16, a leading x or X or 0x or 0X, and an appended h or H, is
+disregarded. If the radix is 2, an appended b or B is disregarded.
+Other characters that do not belong to the number system generate an
+error.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Syntax</SPAN></H3>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">DECIMAL(&quot;Text&quot;; Radix)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Text</B>
+is the text to be converted. To differentiate between a hexadecimal
+number, such as A1 and the reference to cell A1, you must place the
+number in quotation marks, for example, &quot;A1&quot; or &quot;FACE&quot;.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Radix</B>
+indicates the base of the number system. It may be any positive
+integer between 2 and 36.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Example</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">=DECIMAL(&quot;17&quot;;10)
+returns 17.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">=DECIMAL(&quot;FACE&quot;;16)
+returns 64206.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">=DECIMAL(&quot;0101&quot;;2)
+returns 5.</SPAN></FONT></P>
+<H2><A NAME="dollar"></A><A NAME="bm_id3148402"></A><A NAME="bm_id3149532"></A>
+<SPAN LANG="en-US">DOLLAR</SPAN></H2>
+<P STYLE="margin-top: 0.04cm; margin-bottom: 0.04cm"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Converts
+a number to an amount in the currency format, rounded to a specified
+decimal place. In the Value
+field enter the number to be converted to currency. Optionally, you
+may enter the number of decimal places in the Decimals field. 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+If no value is specified, all numbers in currency format will
+be displayed with two decimal places. </SPAN></FONT>
+</P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">You set
+the currency format in your system settings.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Syntax</SPAN></H3>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">DOLLAR(Value; Decimals)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Value</B>
+is a number, a reference to a cell containing a number, or a formula
+which returns a number.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Decimals</B>
+is the optional number of decimal places.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Example</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">=DOLLAR(255)
+returns $255.00.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">=DOLLAR(367.456;2)
+returns $367.46. Use the decimal separator that corresponds to the
+<A HREF="Text Functions/Languages.html">current
+locale setting</A>.</SPAN></FONT></P>
+<H2><A NAME="exact"></A><A NAME="bm_id3150685"></A><A NAME="bm_id3155081"></A>
+<SPAN LANG="en-US">EXACT</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Compares
+two text strings and returns TRUE if they are identical. This
+function is case-sensitive.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Syntax</SPAN></H3>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">EXACT(&quot;Text1&quot;; &quot;Text2&quot;)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Text1</B>
+refers to the first text to compare.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Text2</B>
+is the second text to compare.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Example</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">=EXACT(&quot;Sun
+microsystems&quot;;&quot;Sun Microsystems&quot;) returns FALSE.</SPAN></FONT></P>
+<H2><A NAME="find"></A><A NAME="bm_id3152589"></A><A NAME="bm_id3147482"></A>
+<SPAN LANG="en-US">FIND</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Looks
+for a string of text within another string. You can also define where
+to begin the search. The search term can be a number or any string of
+characters. The search is case-sensitive.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Syntax</SPAN></H3>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">FIND(&quot;FindText&quot;; &quot;Text&quot;;
+Position)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>FindText</B>
+refers to the text to be found.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Text</B>
+is the text where the search takes place.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Position</B>
+(optional) is the position in the text from which the search starts.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Example</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">=FIND(76;998877665544)
+returns 6.</SPAN></FONT></P>
+<H2><A NAME="fixed"></A><A NAME="bm_id3149268"></A><A NAME="bm_id3149450"></A>
+<SPAN LANG="en-US">FIXED</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Returns
+a number as text with a specified number of decimal places and
+optional thousands separators.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Syntax</SPAN></H3>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">FIXED(Number; Decimals;
+NoThousandsSeparators)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Number</B>
+refers to the number to be formatted.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Decimals</B>
+refers to the number of decimal places to be displayed.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>NoThousandsSeparators</B>
+(optional) determines whether the thousands separator is used. If the
+parameter is a number not equal to 0, the thousands separator is
+suppressed. If the parameter is equal to 0 or if it is missing
+altogether, the thousands separators of your <A HREF="Text Functions/Languages.html">current
+locale setting</A> are displayed.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Example</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">=FIXED(1234567.89;3)
+returns 1,234,567.890 as a text string. </SPAN></FONT>
+</P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">=FIXED(1234567.89;3;1)
+returns 1234567.890 as a text string.</SPAN></FONT></P>
+<H2><A NAME="jis"></A><A NAME="bm_id7319864"></A><A NAME="bm_id3818475"></A>
+<SPAN LANG="en-US">JIS</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">The JIS
+function converts half-width to full-width ASCII and katakana
+characters. Returns a text string.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Syntax</SPAN></H3>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">JIS(&quot;Text&quot;)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Text</B>
+is the text that contains characters to be converted.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">See also
+ASC function.</SPAN></FONT></P>
+<H2><A NAME="left"></A><A NAME="bm_id3147083"></A><A NAME="bm_id3154645"></A>
+<SPAN LANG="en-US">LEFT</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Returns
+the first character or characters of a text.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Syntax</SPAN></H3>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">LEFT(&quot;Text&quot;; Number)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Text</B>
+is the text where the initial partial words are to be determined.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Number</B>
+(optional) specifies the number of characters for the start text. If
+this parameter is not defined, one character is returned.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Example</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">=LEFT(&quot;output&quot;;3)
+returns “out”.</SPAN></FONT></P>
+<H2><A NAME="len"></A><A NAME="bm_id3156110"></A><A NAME="bm_id3154050"></A>
+<SPAN LANG="en-US">LEN</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Returns
+the length of a string including spaces.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Syntax</SPAN></H3>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">LEN(&quot;Text&quot;)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Text</B>
+is the text whose length is to be determined.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Example</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">=LEN(&quot;Good
+Afternoon&quot;) returns 14.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">=LEN(12345.67)
+returns 8.</SPAN></FONT></P>
+<H2><A NAME="lower"></A><A NAME="bm_id3153983"></A><A NAME="bm_id3151173"></A>
+<SPAN LANG="en-US">LOWER</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Converts
+all uppercase letters in a text string to lowercase.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Syntax</SPAN></H3>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">LOWER(&quot;Text&quot;)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Text</B>
+refers to the text to be converted.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Example</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">=LOWER(&quot;Sun&quot;)
+returns sun.</SPAN></FONT></P>
+<H2><A NAME="mid"></A><A NAME="bm_id3154589"></A><A NAME="bm_id3155392"></A>
+<SPAN LANG="en-US">MID</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Returns
+a text string of a text. The parameters specify the starting position
+and the number of characters.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Syntax</SPAN></H3>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">MID(&quot;Text&quot;; Start;
+Number)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Text</B>
+is the text containing the characters to extract.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Start</B>
+is the position of the first character in the text to extract.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Number</B>
+specifies the number of characters in the part of the text.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Example</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">=MID(&quot;Sun
+Microsystems&quot;;5;5) returns Micro.</SPAN></FONT></P>
+<H2><A NAME="proper"></A><A NAME="bm_id3159143"></A><A NAME="bm_id3154897"></A>
+<SPAN LANG="en-US">PROPER</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Capitalizes
+the first letter in all words of a text string.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Syntax</SPAN></H3>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">PROPER(&quot;Text&quot;)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Text</B>
+refers to the text to be converted.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Example</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">=PROPER(&quot;sun
+microsystems&quot;) returns Sun Microsystems.</SPAN></FONT></P>
+<H2><A NAME="replace"></A><A NAME="bm_id3149171"></A><A NAME="bm_id3149990"></A>
+<SPAN LANG="en-US">REPLACE</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Replaces
+part of a text string with a different text string. This function can
+be used to replace both characters and numbers (which are
+automatically converted to text). The result of the function is
+always displayed as text. If you intend to perform further
+calculations with a number which has been replaced by text, you will
+need to convert it back to a number using the VALUE function.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Any text
+containing numbers must be enclosed in quotation marks if you do not
+want it to be interpreted as a number and automatically converted to
+text.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Syntax</SPAN></H3>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">REPLACE(&quot;Text&quot;;
+Position; Length; &quot;NewText&quot;)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Text</B>
+refers to text of which a part will be replaced.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Position</B>
+refers to the position within the text where the replacement will
+begin.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Length</B>
+is the number of characters in <B>Text</B> to be replaced.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>NewText</B>
+refers to the text which replaces <B>Text</B>.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Example</SPAN></H3>
+<P STYLE="margin-top: 0.04cm; margin-bottom: 0.04cm"><FONT FACE="청봉, serif"><SPAN LANG="en-US">=REPLACE(&quot;1234567&quot;;1;1;&quot;444&quot;)
+returns &quot;444234567&quot;. One character at position 1 is
+replaced by the complete NewText.</SPAN></FONT></P>
+<H2><A NAME="rept"></A><A NAME="bm_id3149741"></A><A NAME="bm_id3155582"></A>
+<SPAN LANG="en-US">REPT</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Repeats
+a character string by the given <B>number</B> of copies.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Syntax</SPAN></H3>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">REPT(&quot;Text&quot;; Number)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Text</B>
+is the text to be repeated.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Number</B>
+is the number of repetitions.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">The
+result can be a maximum of 255 characters.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Example</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">=REPT(&quot;Good
+morning&quot;;2) returns Good morningGood morning.</SPAN></FONT></P>
+<H2><A NAME="right"></A><A NAME="bm_id3149805"></A><A NAME="bm_id3154602"></A>
+<SPAN LANG="en-US">RIGHT</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Returns
+the last character or characters of a text.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Syntax</SPAN></H3>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">RIGHT(&quot;Text&quot;; Number)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Text</B>
+is the text of which the right part is to be determined.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Number</B>
+(optional) is the number of characters from the right part of the
+text.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Example</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">=RIGHT(&quot;Sun&quot;;2)
+returns un.</SPAN></FONT></P>
+<H2><A NAME="roman"></A><A NAME="bm_id3153534"></A><A NAME="bm_id3144755"></A>
+<SPAN LANG="en-US">ROMAN</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Converts
+a number into a Roman numeral. The value range must be between 0 and
+3999, the modes can be integers from 0 to 4.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Syntax</SPAN></H3>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">ROMAN(Number; Mode)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Number</B>
+is the number that is to be converted into a Roman numeral.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Mode</B>
+(optional) indicates the degree of simplification. The higher the
+value, the greater is the simplification of the Roman number.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Example</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">=ROMAN(999)
+returns CMXCIX</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">=ROMAN(999;0)
+returns CMXCIX</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">=ROMAN
+(999;1) returns LMVLIV</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">=ROMAN(999;2)
+returns XMIX</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">=ROMAN(999;3)
+returns VMIV</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">=ROMAN(999;4)
+returns IM</SPAN></FONT></P>
+<H2><A NAME="search"></A><A NAME="bm_id3151005"></A><A NAME="bm_id3149484"></A>
+<SPAN LANG="en-US">SEARCH</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Returns
+the position of a text segment within a character string. You can set
+the start of the search as an option. 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+The search text can be a number
+or any sequence of characters. The search is not case-sensitive.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">The
+search supports <A HREF="../../Common Help Topics/Search_Repl/list.html">regular
+expressions</A>. You can enter &quot;all.*&quot;, for example to find
+the first location of &quot;all&quot; followed by any characters. If
+you want to search for a text that is also a regular expression, you
+must precede every character with a \ character. You can switch the
+automatic evaluation of regular expression on and off in <A HREF="../General Information and User Interface Usage/Error Codes in/Calculate.html">Sogwang Office - Reference - Sogwang Office Calc -
+Calculate</A>. </SPAN></FONT>
+</P>
+<H3><SPAN LANG="en-US">Syntax</SPAN></H3>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">SEARCH(&quot;FindText&quot;;
+&quot;Text&quot;; Position)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>FindText</B>
+is the text to be searched for.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Text</B>
+is the text where the search will take place.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Position</B>
+(optional) is the position in the text where the search is to start.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Example</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">=SEARCH(54;998877665544)
+returns 10.</SPAN></FONT></P>
+<H2><A NAME="substitute"></A><A NAME="bm_id3154830"></A><A NAME="bm_id3147090"></A>
+<SPAN LANG="en-US">SUBSTITUTE</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Substitutes
+new text for old text in a string.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Syntax</SPAN></H3>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">SUBSTITUTE(&quot;Text&quot;;
+&quot;SearchText&quot;; &quot;NewText&quot;; Occurrence)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Text</B>
+is the text in which text segments are to be exchanged.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>SearchText
+</B>is the text segment that is to be replaced (a number of times).</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>NewText</B>
+is the text that is to replace the text segment.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Occurrence</B>
+(optional) indicates which occurrence of the search text is to be
+replaced. If this parameter is missing the search text is replaced
+throughout.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Example</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">=SUBSTITUTE(&quot;123123123&quot;;&quot;3&quot;;&quot;abc&quot;)
+returns 12abc12abc12abc.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">=SUBSTITUTE(&quot;123123123&quot;;&quot;3&quot;;&quot;abc&quot;;2)
+returns 12312abc123.</SPAN></FONT></P>
+<H2><A NAME="t"></A><A NAME="bm_id3148977"></A><A NAME="bm_id3156051"></A>
+<SPAN LANG="en-US">T</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">This
+function returns the target text, or a blank text string if the
+target is not text.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Syntax</SPAN></H3>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">T(Value)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">If <B>Value</B>
+is a text string or refers to a text string, T returns that text
+string; otherwise it returns a blank text string.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Example</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">=T(12345)
+returns an empty string. </SPAN></FONT>
+</P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">=T(&quot;12345&quot;)
+returns the string 12345.</SPAN></FONT></P>
+<H2><A NAME="text"></A><A NAME="bm_id3147132"></A><A NAME="bm_id3156426"></A>
+<SPAN LANG="en-US">TEXT</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Converts
+a number into text according to a given format.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Syntax</SPAN></H3>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">TEXT(Number; Format)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Number</B>
+is the numerical value to be converted.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Format</B>
+is the text which defines the format. Use decimal and thousands
+separators according to the language set in the cell format.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Example</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">=TEXT(12.34567;&quot;###.##&quot;)
+returns the text 12.35</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">=TEXT(12.34567;&quot;000.00&quot;)
+returns the text 012.35</SPAN></FONT></P>
+<H2><A NAME="trim"></A><A NAME="bm_id3151039"></A><A NAME="bm_id3150584"></A>
+<SPAN LANG="en-US">TRIM</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Removes
+spaces from a string, leaving only a single space character between
+words.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Syntax</SPAN></H3>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">TRIM(&quot;Text&quot;)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Text</B>
+refers to text in which spaces are removed.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Example</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">=TRIM(&quot;hello&quot;)
+returns hello.</SPAN></FONT></P>
+<H2><A NAME="upper"></A><A NAME="bm_id3145178"></A><A NAME="bm_id3145189"></A>
+<SPAN LANG="en-US">UPPER</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Converts
+the string specified in the <B>text</B> field to uppercase.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Syntax</SPAN></H3>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">UPPER(&quot;Text&quot;)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Text</B>
+refers to the lower case letters you want to convert to upper case.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Example</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">=UPPER(&quot;Good
+Morning&quot;) returns GOOD MORNING.</SPAN></FONT></P>
+<H2><A NAME="value"></A><A NAME="bm_id3150802"></A><A NAME="bm_id3150814"></A>
+<SPAN LANG="en-US">VALUE</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Converts
+a text string into a number.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Syntax</SPAN></H3>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">VALUE(&quot;Text&quot;)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Text</B>
+is the text to be converted to a number.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Example</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><SPAN STYLE="font-weight: medium">=VALUE(&quot;4321&quot;)
+returns 4321.</SPAN></A></SPAN></FONT></P>
+
+</DIV></BODY>
+</HTML>
+

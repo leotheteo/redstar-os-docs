@@ -1,0 +1,315 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <META NAME="GENERATOR" CONTENT="LinuxDoc-Tools 0.9.21">
+ <TITLE>ISDN4LINUX - FAQ (deutsche Version): dialout: Konfiguration des Hinausw&auml;hlens </TITLE>
+ <LINK HREF="i4lfaq-de-12.html" REL=next>
+ <LINK HREF="i4lfaq-de-10.html" REL=previous>
+ <LINK HREF="i4lfaq-de.html#toc11" REL=contents>
+</HEAD>
+<BODY>
+<A HREF="i4lfaq-de-12.html">Next</A>
+<A HREF="i4lfaq-de-10.html">Previous</A>
+<A HREF="i4lfaq-de.html#toc11">Contents</A>
+<HR>
+<H2><A NAME="dialout"></A> <A NAME="s11">11.</A> <A HREF="i4lfaq-de.html#toc11">dialout: Konfiguration des Hinausw&auml;hlens </A></H2>
+
+<H2><A NAME="dialout_config"></A> <A NAME="ss11.1">11.1</A> <A HREF="i4lfaq-de.html#toc11.1">dialout_config: Wie richte ich das Hinausw&auml;hlen richtig ein? </A>
+</H2>
+
+<P>Zuerst musst Du entscheiden wie Du hinausw&auml;hlen willst. Du wirst
+Dich da nach Deinem Verbindungspartner richten m&uuml;ssen. Dies sind
+die haupts&auml;chlichen M&ouml;glichkeiten:
+<UL>
+<LI> Sync PPP: Das erwarten die meisten Internet Service Provider von
+Dir. Siehe Abschnitt 
+<A HREF="i4lfaq-de-13.html#syncppp">syncppp</A>.</LI>
+<LI> Async PPP: Kann ebenfalls von Deinem Internet Service Provider
+benutzt werden. Nimm es, wenn Sync PPP nicht funktioniert. Siehe
+Abschnitt 
+<A HREF="i4lfaq-de-14.html#asyncppp">asyncppp</A>.</LI>
+<LI> Raw IP: Am effizientesten f&uuml;r TCP/IP &uuml;ber ISDN. Es
+bietet sehr schnelles Hinausw&auml;hlen, ist aber nicht sehr
+verbreitet. Siehe Abschnitt 
+<A HREF="i4lfaq-de-15.html#rawip">rawip</A>.</LI>
+<LI> X.75: Das brauchst Du zur Einwahl in eine ISDN-Mailbox. Siehe
+Abschnitt 
+<A HREF="i4lfaq-de-16.html#ttyI">ttyI</A>.</LI>
+<LI> Leased line (Standleitung): Zu diesem speziellen Fall siehe
+Abschnitt 
+<A HREF="i4lfaq-de-21.html#leased">leased</A>.</LI>
+</UL>
+</P>
+<P>Im Abschnitt 
+<A HREF="i4lfaq-de-17.html#dod">dod</A> liest Du wie dial on demand
+eingerichtet wird - und welche Gefahren es birgt.</P>
+<P>Mehr &uuml;ber erweiterte Eigenheiten des Hinausw&auml;hlens findest
+Du bei der Frage 
+<A HREF="#dialout_advanced">dialout_advanced</A>.</P>
+<P>Du solltest Dir auch den Abschnitt 
+<A HREF="i4lfaq-de-20.html#remote">remote</A>
+ansehen, wenn Du eine Verbindung mit einem speziellen entfernten
+ISDN-Ger&auml;t aufbauen willst.</P>
+
+<H2><A NAME="dialout_dialmode"></A> <A NAME="ss11.2">11.2</A> <A HREF="i4lfaq-de.html#toc11.2">dialout_dialmode: Wenn ein IP-Paket &uuml;ber die Verbindung geschickt werden soll (was normalerweise ein W&auml;hlen ausl&ouml;st), bekomme ich im Log nur die Meldung 'dial rejected: interface not in dialmode <CODE>auto</CODE>' zu sehen? </A>
+</H2>
+
+<P>Die neuen ISDN-Treiber in 2.0.36 sind auf den manuellen W&auml;hlmodus
+eingestellt, nicht auf die automatische Anwahl. Das wurde gemacht, um
+unerwartete (und unbemerkte) W&auml;hlvorg&auml;nge zu
+verhindern. (Lies den umfangreichen Abschnitt &uuml;ber diese
+W&auml;hl-vorg&auml;nge und ihre Gefahren: 
+<A HREF="i4lfaq-de-17.html#dod">dod</A>).
+Um autodial f&uuml;r ein bestimmtes Interface (z.B. ippp0)
+einzurichten, nimmst Du den Befehl 
+<HR>
+<PRE>
+isdnctrl dialmode ippp0
+auto
+</PRE>
+<HR>
+</P>
+<P>Die Bedeutung der Werte f&uuml;r dialmode ist:
+<DL>
+<DT><B>off</B><DD><P>bewirkt, da&szlig; Du (oder das System) keine Verbindung
+aufbauen kannst (weder eingehende noch ausgehende Verbindungen sind
+m&ouml;glich). Benutze diese Option um sicherzustellen, da&szlig;
+keine Verbindungen aufgebaut werden.</P>
+<DT><B>auto</B><DD><P>bewirkt, da&szlig; sich das Interface im automatischen
+W&auml;hlmodus befindet und jedesmal, wenn ein Datenpaket des
+Netzwerkes den Verbindungsweg des Interfaces benutzen will, eine
+Verbindung aufbauen wird. Du solltest beachten, da&szlig; das
+unerwartete W&auml;hlvorg&auml;nge ausl&ouml;sen und zu einer hohen
+Telefonrechnung f&uuml;hren kann! Das kann durch einige demons oder
+andere PCs, die auf das Interface zugreifen, ausgel&ouml;st
+werden. Eingehende Anrufe sind ebenfalls m&ouml;glich.</P>
+<DT><B>manual</B><DD><P>(VOREINSTELLUNG) ist ein W&auml;hlmodus, der dazu
+geschaffen wurde, die unerwarteten Verbindungsaufbauten zu
+verhindern. In diesem Modus wird das Interface nie eine Verbindung von
+selbst aufbauen. Du musst die Verbindung explizit mit:
+<HR>
+<PRE>
+isdnctrl dial ippp0
+</PRE>
+<HR>
+
+aufbauen.  Zum Beenden der Verbindung schreibst Du: 
+<HR>
+<PRE>
+isdnctrl hangup ippp0
+</PRE>
+<HR>
+.  
+Beachte bitte, da&szlig; <CODE>huptimeout</CODE> die Verbindung trotzdem
+automatisch beendet! Du musst dies mit: 
+<HR>
+<PRE>
+isdnctrl huptimeout ippp0 0
+</PRE>
+<HR>
+ 
+abstellen, um sicherzustellen, da&szlig; die Verbindung nur durch
+manuelles Auflegen beendet wird. </P>
+</DL>
+</P>
+<P>Wie Du einem normalen Benutzer das Hinausw&auml;hlen gestattest,
+erf&auml;hrst Du bei der Frage 
+<A HREF="#dialout_permission">dialout_permission</A>.</P>
+
+<H2><A NAME="dialout_advanced"></A> <A NAME="ss11.3">11.3</A> <A HREF="i4lfaq-de.html#toc11.3">dialout_advanced: Welche speziellen Leistungsmerkmale des Hinausw&auml;hlens gibt es? </A>
+</H2>
+
+<P>Sieh Dir diese speziellen Leistungsmerkmale an:
+<UL>
+<LI> Spare Geld, indem Du kurz vor dem n&auml;chsten
+Geb&uuml;hrenimpuls einh&auml;ngst: Siehe Abschnitt 
+<A HREF="i4lfaq-de-18.html#chargeint">chargeint</A>.</LI>
+<LI> Gleichzeitige Verbindungen auf mehr als einem Kanal: Siehe
+Abschnitt 
+<A HREF="i4lfaq-de-19.html#2channel">2channel</A>.</LI>
+<LI> Hinauswahl auf einem bestimmten Kanal:
+see question 
+<A HREF="#dialout_fixedchannel">dialout_fixedchannel</A>.</LI>
+<LI> R&uuml;ckruf: Siehe Abschnitt 
+<A HREF="i4lfaq-de-23.html#callback">callback</A>.</LI>
+</UL>
+</P>
+
+<H2><A NAME="dialout_permission"></A> <A NAME="ss11.4">11.4</A> <A HREF="i4lfaq-de.html#toc11.4">dialout_permission: Wie gestatte ich einem normalen Nutzer, Verbindungen aufzubauen? </A>
+</H2>
+
+<P>Der Gebrauch von ISDN h&auml;ngt ab von den Benutzerrechten an den
+Devices <CODE>/dev/ttyI*</CODE> und <CODE>/dev/cui*</CODE>. Du hast mehrere
+M&ouml;glichkeiten, um gezielt Nutzern ISDN Verbindungen zu erlauben.
+<OL>
+<LI>Du kannst die Gruppe 'isdn' in <CODE>/etc/group</CODE> erstellen und
+dann:
+<HR>
+<PRE>
+chgrp isdn /dev/ttyI* /dev/cui*
+chmod o-rw /dev/ttyI* /dev/cui*
+</PRE>
+<HR>
+
+eingeben.
+Es wird berichtet, da&szlig; Du ebenfalls bei den Programmen
+<CODE>ipppd</CODE> und <CODE>isdnctrl</CODE> die Gruppe und die Benutzerrechte auf
+"isdn" setzen musst. Dann haben alle Nutzer, die nicht in der Gruppe
+"isdn" sind, keine Schreib- oder Leserechte f&uuml;r die ISDN
+ttys. Diejenigen, die ISDN benutzen d&uuml;rfen, m&uuml;ssen explizit
+in die Gruppe 'isdn' aufgenommen werden.</LI>
+<LI>Du kannst festlegen, da&szlig; nur root hinausw&auml;hlen darf,
+jedoch Ausnahmen f&uuml;r andere Nutzer mit su1 schaffen (siehe man
+su1). Editiere als root <CODE>/etc/su1.priv</CODE>. F&uuml;ge diese Zeilen
+hinzu, wenn sie (oder &auml;hnliche) nicht schon vorhanden sind, und
+erlaube damit den Nutzern XXXX und YYYY das W&auml;hlen und Auflegen:
+<HR>
+<PRE>
+# log all dialouts in syslog
+syslog all
+define PPPUSER XXXX YYYY
+alias dial /sbin/isdnctrl dial ippp0
+alias hangup /sbin/isdnctrl hangup ippp0
+ask never
+allow PPPUSER prefix dial
+allow PPPUSER prefix hangup
+</PRE>
+<HR>
+
+Dann erstelle zwei Links f&uuml;r dial und hangup:
+<HR>
+<PRE>
+ln -s /usr/bin/su1 /usr/local/bin/dial
+ln -s /usr/bin/su1 /usr/local/bin/hangup
+</PRE>
+<HR>
+
+Nun k&ouml;nnen die Nutzer XXXX und YYYY mit der Eingabe von <CODE>dial</CODE>
+hinausw&auml;hlen und mit <CODE>hangup</CODE> auflegen.</LI>
+<LI>Wenn Du nur einen User f&uuml;r die ISDN-Aktionen benutzt,
+kannst Du ihn zum Eigent&uuml;mer des ISDN-Interfaces machen.</LI>
+</OL>
+</P>
+
+<H2><A NAME="dialout_manycards"></A> <A NAME="ss11.5">11.5</A> <A HREF="i4lfaq-de.html#toc11.5">dialout_manycards: Wie konfiguriere ich die Hinauswahl mit mehr als einer ISDN-Karte? </A>
+</H2>
+
+<P>Es gibt mehrere M&ouml;glichkeiten, die Hinauswahl einzurichten.
+<UL>
+<LI>Hinauswahl auf irgendeiner Karte (Voreinstellung: alle
+verf&uuml;gbaren Karten bilden einen Pool, zur Hinauswahl wird eine
+MSN benutzt): Konfiguriere Deine Karten einfach in der Reihenfolge,
+die zum W&auml;hlen benutzt werden soll. Zuerst werden alle
+Kan&auml;le der ersten Karte benutzt, dann alle Kan&auml;le der
+zweiten Karte, usw. Beachte bitte, da&szlig; das Netz-Interface oder
+das ttyI-Device versuchen wird, auf allen Karten die ihm zugeordnete
+MSN zu benutzen, sogar auf den Karten, denen diese MSN nicht
+zugewiesen wurde! In diesem Fall wird die Telefongesellschaft diese
+ung&uuml;ltige MSN durch die korrekte MSN ersetzen. Mit dem Befehl
+<CODE>isdnctrl mapping</CODE> stellst Du die korrekten MSNs ein (siehe Punkt
+"Hinauswahl mit einer bestimmten Karte").</LI>
+<LI>Hinauswahl auf einem bestimmten Kanal: Zur Angabe, welcher Kanal
+benutzt werden soll, dient der Befehl <CODE>isdnctrl bind</CODE> (nicht
+pppbind).  Dieser Befehl sollte erst erfolgen, wenn die komplette
+Konfiguration mittels isdnctrl durchgef&uuml;hrt wurde. Mit
+<CODE>isdnctrl list</CODE> pr&uuml;fst Du die Anbindung.
+</LI>
+<LI> Hinauswahl mit einer verschiedenen MSN f&uuml;r jede Karte: Du
+stellst dies ein mit dem Befehl <CODE>isdnctrl mapping</CODE>.  Definiere
+einfach eine Zuordnung der Ziffern 0 bis 9 zu den MSN's, etwa so:
+<HR>
+<PRE>
+isdnctrl mapping &lt;carddriver1&gt; 111,222,333,,
+isdnctrl mapping &lt;carddriver2&gt; 999,888,,777
+</PRE>
+<HR>
+
+Jetzt k&ouml;nntest Du bei der Konfiguration die Telefonnummer 0
+verwenden, wenn Du eigentlich auf &lt;carddriver1&gt; die MSN 111 oder
+auf &lt;carddriver2&gt; die MSN 999 meinst. (Weil aber 0 eine
+besondere Bedeutung hat, versuche die Nummer 0 nicht zu benutzen.).
+Konfiguriere zum Beispiel f&uuml;r die Telefonnummer die 1, wenn Du
+tats&auml;chlich die MSN 222 auf &lt;carddriver1&gt; oder MSN 888 auf
+&lt;carddriver2&gt; benutzen m&ouml;chtest.  Konfiguriere f&uuml;r die
+Telefonnummer die 2, wenn Du tats&auml;chlich die MSN 333 auf
+&lt;carddriver1&gt; benutzen m&ouml;chtest (&lt;carddriver2&gt; wird
+bei Benutzung die standardm&auml;ssige MSN verwenden.).  Konfiguriere
+f&uuml;r die Telefonnummer 3, wenn Du tats&auml;chlich die MSN 777 auf
+&lt;carddriver2&gt; benutzen m&ouml;chtest &lt;carddriver1&gt; wird
+bei Benutzung die standardm&auml;ssige MSN verwenden.).</LI>
+<LI>Hinauswahl mit einer bestimmten Karte: Nach Installation eines
+Patches gegen Kernel 2.2.12, den Karsten Keil auf der Mailingliste zur
+Verf&uuml;gung stellte, kannst Du mit den Funktionen des Befehls
+<CODE>isdnctrl mapping</CODE> das W&auml;hlen mit einigen Karten verhindern.
+<HR>
+<PRE>
+isdnctrl mapping &lt;carddriver1&gt; 111,222,333,-,
+isdnctrl mapping &lt;carddriver2&gt; 999,888,-,777
+</PRE>
+<HR>
+
+Das funktioniert wie in "Hinauswahl mit einer verschiedenen MSN
+f&uuml;r jede Karte" beschrieben, das "-" bewirkt jedoch, da&szlig;
+das W&auml;hlen nicht erlaubt ist. Das W&auml;hlen mit Telefonnummer 2
+wird nun nur mit der MSN 333 mit &lt;carddriver1&gt;
+durchgef&uuml;hrt, w&auml;hrend das W&auml;hlen mit der Nummer 3 nur
+mit MSN 777 mit &lt;carddriver2&gt; geschieht.</LI>
+</UL>
+</P>
+
+<H2><A NAME="dialout_fixedchannel"></A> <A NAME="ss11.6">11.6</A> <A HREF="i4lfaq-de.html#toc11.6">dialout_fixedchannel: Wie erreiche ich, da&szlig; HiSax immer auf einem bestimmten B-Kanal hinausw&auml;hlt?</A>
+</H2>
+
+<P>HiSax besitzt daf&uuml;r eine undokumentierte Eigenschaft. Setze 'P1'
+vor die zu w&auml;hlende Telefonnummer f&uuml;r den ersten und 'P2'
+f&uuml;r den zweiten B-Kanal; ungef&auml;hr so:
+<HR>
+<PRE>
+isdnctrl addphone &lt;device&gt; out P1&lt;your_out_number&gt;
+</PRE>
+<HR>
+
+Bedenke, da&szlig; in diesem Fall ein Hinausw&auml;hlen
+mi&szlig;lingt, wenn ein anderes Ger&auml;t (Telefon, Fax) bereits den
+entsprechenden Kanal belegt.</P>
+
+<H2><A NAME="dialout_dynip"></A> <A NAME="ss11.7">11.7</A> <A HREF="i4lfaq-de.html#toc11.7">dialout_dynip: Wie finde ich bei dynamischer IP-Vergabe heraus, welche IP zur Hinauswahl benutzt wird? </A>
+</H2>
+
+<P>Erstelle ein Script mit Namen <CODE>ip-up</CODE>. Das wird (mit den
+entsprechenden Parametern) bei jedem Verbindungsaufbau vom ipppd
+aufgerufen. Die IP-Adresse steht dort als vierter Parameter
+(<CODE>$4</CODE>).</P>
+
+<H2><A NAME="dialout_bind"></A> <A NAME="ss11.8">11.8</A> <A HREF="i4lfaq-de.html#toc11.8">dialout_bind: Wegen einer DNS-Anfrage w&auml;hlt bind hinaus. Warum ben&ouml;tigt die Antwort bis zu einer Minute? Gibt es daf&uuml;r ein Workaround?</A>
+</H2>
+
+<P>Du benutzt vermutlich den Name-Server im 'forward' Modus und Dein ISP
+arbeitet mit dynamischen IPs. Die erste UDP-Anfrage geht verloren, da
+sie die falsche IP-Adresse besitzt. Leider wartet bind eine volle
+Minute bevor es die Anfrage wiederholt.</P>
+<P>Als Workaround kannst Du 4 mal die gleiche Adresse in named.conf
+eintragen und erreichst so, da&szlig; eine k&uuml;rzere
+Wiederholungszeit (im 'forward' Modus wiederholt bind seine Anfragen
+nach folgendem Zeitschema: 60 Sekunden geteilt durch die Anzahl der
+Nameserver in der Sektion "forwarders" der named.conf).
+<HR>
+<PRE>
+forwarders { 10.0.0.40; 10.0.0.40; 10.0.0.40; 10.0.0.40; }
+</PRE>
+<HR>
+
+Bind wird dann die Anfrage alle 15 Sekunden wiederholen (in diesem
+Fall an 10.0.0.40). Das gleiche Prinzip gilt f&uuml;r zwei oder mehr
+Adressen.
+Weitere M&ouml;glichkeiten sind die Programme <CODE>ip_resend</CODE> und
+<CODE>ip_resend_wakeup</CODE> die Du bei 
+<A HREF="http://www.baty.hanse.de/ip_resend/">http://www.baty.hanse.de/ip_resend/</A> findest.</P>
+
+
+<HR>
+<A HREF="i4lfaq-de-12.html">Next</A>
+<A HREF="i4lfaq-de-10.html">Previous</A>
+<A HREF="i4lfaq-de.html#toc11">Contents</A>
+</BODY>
+</HTML>

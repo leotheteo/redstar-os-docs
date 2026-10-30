@@ -1,0 +1,129 @@
+﻿<html dir='ltr'>
+	<head>
+		<META http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+		<title>AVEDEV</title>
+		<link rel='stylesheet' type='text/css' href='../css/main.css'/>
+		<script type='text/javascript' language='Javascript' src='../js/mexpcol.js'></script>
+		<script type='text/javascript' language='JavaScript' src='../js/glossary.js'></script>
+	</head>
+	<body>
+		<h1>&nbsp;<img align="absbottom" src="../image/external_images/crystal/svtools/res/new_doc.png"/>&nbsp;AVEDEV</h1>
+		<p id='ExpandAllLine' class='ExpFav'>
+			<a href='#' onClick='ExpandAll()' onKeyPress='ExpandAll()' class='DropDown'>
+				<img id='picHeader' border='0' src='../image/image/common/expandtri.gif' alt='모두 표시'>
+				<span id='ExpandAll'>모두 표시</span>
+			</a>
+		</p>
+		<p><b class="bterm">참고항목</b>&emsp;
+			<a href="5.9.10.1.htm">통계함수목록</a>,
+			<a href="5.9.10.3.htm">AVERAGE</a>,
+			<a href="5.9.10.4.htm">AVERAGEA</a>,
+			<a href="5.9.10.18.htm">DEVSQ</a>,
+			<a href="5.9.10.64.htm">STDEV</a>,
+			<a href="5.9.10.66.htm">STDEVP</a>,
+			<a href="5.9.10.73.htm">VAR</a>,
+			<a href="5.9.10.75.htm">VARP</a>
+		</p>
+		<p>평균값으로부터의 표본집단의 절대편차평균값을 구합니다.</p>
+		<p><b class="bterm">AVEDEV</b>는 자료집합의 흩어진 정도를 나타내는 척도입니다.</p>
+		<p><b class="bterm">문법:&emsp;&emsp;		AVEDEV(수값1,수값2,...)</b></p>
+		<table>
+			<tr>
+				<th>인수명</th>
+				<th>설명</th>
+			</tr>
+			<tr>
+				<td>수값1, 수값2, ...</td>
+				<td>표본집단을 나타내는 1부터 30까지의 수값인수입니다. 배렬이나 배렬참조를 사용할수도 있습니다.</td>
+			</tr>
+		</table>
+		<p><b class="bterm">주의</b></p>
+			<ul>
+				<li>인수는 수자 또는 수자가 들어있는 이름이나 배렬, 참조범위 등이여야 합니다.</li>
+				<li>배렬이나 참조인수에 본문, 론리값, 빈 세포 등이 들어있으면 그러한 값들은 무시됩니다. 그러나 0값이 들어있는 세포는 포함됩니다.
+					<p>평균편차를 구하는 수식은 다음과 같습니다.</p>
+					<p><img border='0' src='../image/image/sgsd/formula-36.gif' alt='표시'></p>
+					<p>AVEDEV는 입력자료의 단위에 따라 영향을 받습니다.</p>
+				</li>
+			</ul>
+		<p><b class="bterm">실례</b></p>
+			<p><a href="1.5.1.htm">실례의 리용방법</a>을 참고하십시오.</p>
+			<table>
+				<tr>
+					<td>
+						<table>
+							<tr>
+								<td class="noborder">&nbsp,
+								</td>
+							</tr>
+							<tr>
+								<th>1</th>
+							</tr>
+							<tr>
+								<th>2</th>
+							</tr>
+							<tr>
+								<th>3</th>
+							</tr>
+							<tr>
+								<th>4</th>
+							</tr>
+							<tr>
+								<th>5</th>
+							</tr>
+							<tr>
+								<th>6</th>
+							</tr>
+							<tr>
+								<th>7</th>
+							</tr>
+							<tr>
+								<th>8</th>
+							</tr>
+						</table>
+					</td>
+					<td>
+						<table>
+							<tr>
+								<th>A</th>
+							</tr>
+							<tr>
+								<th>자료</th>
+							</tr>
+							<tr>
+								<td>4</td>
+							</tr>
+							<tr>
+								<td>5</td>
+							</tr>
+							<tr>
+								<td>6</td>
+							</tr>
+							<tr>
+								<td>7</td>
+							</tr>
+							<tr>
+								<td>5</td>
+							</tr>
+							<tr>
+								<td>4</td>
+							</tr>
+							<tr>
+								<td>3</td>
+							</tr>
+							<tr>
+								<th>수식</th>
+								<th>설명(결과)</th>
+							</tr>
+							<tr>
+								<td>=AVEDEV(A2:A8)</td>
+								<td>우에 있는 수자들의 절대편차의 평균값입니다. (1.02)</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+		<script type="text/javascript" language="Javascript">footerView()</script>
+	
+</body>
+</html>				

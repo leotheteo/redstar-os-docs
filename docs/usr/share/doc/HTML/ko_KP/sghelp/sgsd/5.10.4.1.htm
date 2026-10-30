@@ -1,0 +1,43 @@
+﻿<html dir='ltr'>
+	<head>
+		<META http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+		<title>자료표문서에서의 계산</title>
+		<link rel='stylesheet' type='text/css' href='../css/main.css'/>
+		<script type='text/javascript' language='Javascript' src='../js/mexpcol.js'></script>
+		<script type='text/javascript' language='JavaScript' src='../js/glossary.js'></script>
+	</head>
+	<body>
+		<h1>&nbsp;<img align="absbottom" src="../image/external_images/crystal/svtools/res/new_doc.png"/>&nbsp;자료표문서에서의 계산</h1>
+		<p id='ExpandAllLine' class='ExpFav'>
+			<a href='#' onClick='ExpandAll()' onKeyPress='ExpandAll()' class='DropDown'>
+				<img id='picHeader' border='0' src='../image/image/common/expandtri.gif' alt='모두 표시'>
+				<span id='ExpandAll'>모두 표시</span>
+			</a>
+		</p>
+		<p>자료표문서에서 계산은 수식을 계산하여 그 결과를 수식이 포함된 세포에 값으로 표시하는 과정입니다.</p>
+		<h2>표처리프로그람에서 계산이 이루어지는 시점과 계산을 조종하는 방법</h2>
+			<p><b class="bterm">기존수식이 다시 계산되는 시점:</b>&emsp;   표용지에서는 변경된 값이 들어있는 다른 세포를 참조하는 세포들이 다시 계산됩니다. 
+				이러한 류형의 계산은 불필요한 계산을 피하는데 도움이 됩니다. 또한 표용지에서는 자료표문서를 열 때마다 자료표문서의 수식이 계산됩니다.
+			</p>
+			<p><b class="bterm">다른 작업하면서 계산:</b>&emsp;   계산이 진행되는 동안 지령을 선택하거나 수자나 수식을 입력하는 등의 작업을 수행할수 있습니다. 
+				다른 지령이나 작업을 수행하기 위하여 계산이 잠시 중단되였다가 계속됩니다. 
+				자료표문서에 수식이 많이 들어있거나 자료표문서가 다시 계산될 때마다 자동으로 다시 계산되는 함수가 들어있으면 계산시간이 더 길어질수 있습니다. 
+				또한 표용지에 다른 표용지나 자료표문서에 대한 련결이 들어있으면 계산시간이 더 길어질수 있습니다. 계산과정을 수동계산으로 변경하면 계산이 이루어지는 시점을 조종할수 있습니다.
+			</p>
+			<h2>계산정밀도</h2>
+			<p><b class="bterm">15자리정밀도:</b>&emsp;   표용지에서는 유효자리수15자리의 정밀도로 저장하고 계산합니다.</p>
+			<p><b class="bterm">표시된 값이 아닌 저장된 값계산:</b>&emsp;   저장된 값에 대한 표시방법이나 서식의 선택에 따라 표시되거나 인쇄되는 값이 달라집니다. 
+				례를 들어 날자를 《2008-6-22》로 나타내는 세포에는 이 세포의 날자에 대해 저장된 번호값도 들어있습니다. 
+				이 세포의 날자표시형식을 《22-Jun-2008》과 같이 다른 형식으로 바꿀수 있지만 표용지에서 값표시형식을 바꿔도 저장된 값은 바뀌지 않습니다.
+			</p>
+			<p><b class="bterm">계산의 정밀도변경:</b>&emsp;   수식이 계산될 때에는 수식에서 참조하는 세포에 저장된 값이 사용됩니다. 
+				례를 들면 두 세포에 각각 10.005의 값이 들어있고 세포의 서식이 통화형식으로 표시되도록 설정되여있으면 각 세포에 $10.01가 표시됩니다. 
+				두 세포를 더하면 표시된 값이 아니라 저장된 값 10.005와 10.005를 더하기때문에 결과는 $20.01가 됩니다. 수식이 다시 계산될 때 저장된 값대신 표시된 값을 사용하도록 계산의 정밀도를 변경할수 있습니다.
+			</p>
+			<p><b class="bterm">수식계산 또는 반복회수변경:</b>&emsp;   수식이 들어있는 세포를 직접 또는 간접적으로 참조하는 수식은 자동으로 계산될수 없습니다. 이것을 순환참조라고 합니다. 
+				수식이 자체세포중 하나를 다시 참조하는 경우에는 수식이 다시 계산되는 회수를 결정해야 합니다.
+			</p>
+		<script type="text/javascript" language="Javascript">footerView()</script>
+	
+</body>
+</html>

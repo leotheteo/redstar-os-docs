@@ -1,0 +1,90 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+	<TITLE></TITLE>
+	<META NAME="GENERATOR" CONTENT="《Sogwang 3.0》  (Linux)">
+	<META NAME="CREATED" CONTENT="20091205;11384400">
+	<META NAME="CHANGED" CONTENT="20091205;12070300">
+	<STYLE TYPE="text/css">
+	<!--
+		H2 { margin-bottom: 0.18cm; font-family: "Bitstream Vera Sans", "Arial", "Helvetica", "Lucida", "Geneva", "Helmet", sans-serif, "Andale Sans UI", "Arial Unicode MS", "Lucida Sans Unicode", "Tahoma"; font-size: 14pt }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="ko-KP" DIR="LTR"><DIV style="margin-left: 25">
+<H1><A NAME="function"></A><A NAME="bm_id3153346"></A><FONT FACE="Thorndale, serif"><SPAN LANG="en-US">Function
+Statement [Runtime]</SPAN></FONT></H1>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Defines
+a subroutine that can be used as an expression to determine a return
+type.</SPAN></FONT></P>
+<H2><SPAN LANG="en-US">Syntax</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">see
+Parameter</SPAN></FONT></P>
+<H2><SPAN LANG="en-US">Parameters:</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Syntax</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Function
+Name[(VarName1 [As Type][, VarName2 [As Type][,...]]]) [As Type]</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">statement
+block</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">[Exit
+Function]</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">statement
+block</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">End
+Function</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Parameter</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Name:</B>
+Name of the subroutine to contain the value returned by the function.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>VarName:</B>
+Parameter to be passed to the subroutine.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Type:</B>
+Type-declaration keyword.</SPAN></FONT></P>
+<H2><SPAN LANG="en-US">Example:</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Sub
+ExampleExit</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Dim
+sReturn As String</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Dim
+sListArray(10) as String</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Dim
+siStep as Single</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">For
+siStep = 0 to 10 REM Fill array with test data</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">sListArray(siStep)
+= chr$(siStep + 65)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">msgbox
+sListArray(siStep)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">next
+siStep</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">sReturn
+= LinSearch(sListArray(), &quot;B&quot;)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Print
+sReturn</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">end sub</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Function
+LinSearch( sList(), sItem As String ) as integer</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">dim
+iCount as Integer</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">REM
+Linsearch searches a TextArray:sList() for a TextEntry:</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">REM
+Return value is the index of the entry or 0 (Null)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">for
+iCount=1 to Ubound( sList() )</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">if
+sList( iCount ) = sItem then</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">exit for
+REM sItem found</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">end if</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">next
+iCount</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">if
+iCount = Ubound( sList() ) then iCount = 0</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">LinSearch
+= iCount</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><SPAN STYLE="font-weight: medium">end
+function</SPAN></SPAN></FONT></P>
+
+</DIV></BODY>
+</HTML>

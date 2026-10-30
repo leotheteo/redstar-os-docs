@@ -1,0 +1,140 @@
+﻿<html dir='ltr'>
+	<head>
+		<META http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+		<title>DB</title>
+		<link rel='stylesheet' type='text/css' href='../css/main.css'/>
+		<script type='text/javascript' language='Javascript' src='../js/mexpcol.js'></script>
+		<script type='text/javascript' language='JavaScript' src='../js/glossary.js'></script>
+	</head>
+	<body>
+		<h1>&nbsp;<img align="absbottom" src="../image/external_images/crystal/svtools/res/new_doc.png"/>&nbsp;DB</h1>
+		<p id='ExpandAllLine' class='ExpFav'>
+			<a href='#' onClick='ExpandAll()' onKeyPress='ExpandAll()' class='DropDown'>
+				<img id='picHeader' border='0' src='../image/image/common/expandtri.gif' alt='모두 표시'>
+				<span id='ExpandAll'>모두 표시</span>
+			</a>
+		</p>
+		<p><b class="bterm">참고항목</b>&emsp;   
+			<a href="5.9.5.1.htm">재정함수목록</a>,
+			<a href="5.9.5.18.htm">DDB</a>, 
+			<a href="5.9.5.50.htm">SLN</a>, 
+			<a href="5.9.5.51.htm">SYD</a>, 
+			<a href="5.9.5.55.htm">VDB</a> 
+		</p>
+		<p>정률법을 사용하여 특정기간동안 재산의 감가상각액을 구합니다.</p>
+		<p><b class="bterm">문법:&emsp;&emsp;		DB(구입비용,잔존가치,내용년한,기간,월)</b></p>
+		<table>
+			<tr>
+				<th>인수명</th>
+				<th>설명</th>
+			</tr>
+			<tr>
+				<td>구입비용</td>
+				<td>재산의 구입비용입니다.</td>
+			</tr>
+			<tr>
+				<td>잔존가치</td>
+				<td>잔존가치입니다. 재산의 내용년한이 끝나는 시점에서의 재산의 잔존가치입니다.</td>
+			</tr>
+			<tr>
+				<td>내용년한</td>
+				<td>내용년한입니다. 재산이 감가상각되는 기간수(재산의 내용년한)입니다.</td>
+			</tr>
+			<tr>
+				<td>기간</td>
+				<td>기간입니다. 감가상각을 계산할 기간입니다. 기간에 사용되는 시간단위는 내용년한의 시간단위와 같아야 합니다.</td>
+			</tr>
+			<tr>
+				<td>월</td>
+				<td>달수입니다. 감가상각하는 첫번째 해의 달수입니다.</td>
+			</tr>
+		</table>
+		<p><b class="bterm">주의</b></p>
+			<ul>
+				<li>정률법은 고정비률로 감가상각액을 계산하는 방법입니다. <b class="bterm">DB</b>함수는 다음수식을 사용하여 지정된 기간의 감가상각액을 계산합니다.
+					<p><b class="bterm">   (구입비용 - 이전 기간의 총 감가상각액) * 리자률</b></p>
+					<p>여기서</p>
+					<p>리자률 = 1 - ((잔존가치 / 구입비용) ^ (1 / 내용년한))이며 소수점이하 세자리로 반올림됩니다.</p>
+				</li>
+				<li>처음과 마지막기간의 감가상각액은 특별하게 처리됩니다. 처음기간의 감가상각액 수식은 다음과 같습니다.
+					<p>구입비용 * 리자률 * 월/ 12</p>
+				</li>
+				<li>마지막기간의 감가상각액 수식은 다음과 같습니다.
+					<p>   ((구입비용 - 이전 기간의 총감가상각액) * 리자률 * (12 - 월)) / 12</p>
+				</li>
+			</ul>
+		<p><b class="bterm">실례</b></p>
+			<p><a href='1.5.1.htm'>실례의 리용방법</a>을 참고하십시오.</p>
+			<table>
+				<tr>
+					<td>
+						<table>
+							<tr><td>&nbsp;</td></tr>
+							<tr><th>1</th></tr>
+							<tr><th>2</th></tr>
+							<tr><th>3</th></tr>
+							<tr><th>4</th></tr>
+						</table>
+					</td>
+					<td>
+						<table>
+							<tr>
+								<th>A</th>
+								<th>B</th>
+							</tr>
+							<tr>
+								<th>자료</th>
+								<th>설명</th>
+							</tr>
+							<tr>
+								<td>1 000 000</td>
+								<td>재산의 구입비용이다.</td>
+							</tr>
+							<tr>
+								<td>100 000</td>
+								<td>잔존가치입니다.</td>
+							</tr>
+							<tr>
+								<td>6</td>
+								<td>재산의 내용년한입니다.</td>
+							</tr>
+							<tr>
+								<th>수식</th>
+								<th>설명(결과)</th>
+							</tr>
+							<tr>
+								<td>=DB(A2,A3,A4,1,7)</td>
+								<td>7개월만 계산된 첫 해의 감가상각액입니다. (186 083.33￦)</td>
+							</tr>
+							<tr>
+								<td>=DB(A2,A3,A4,2,7)</td>
+								<td>두번째 해의 감가상각액입니다. (259 639.42￦)</td>
+							</tr>
+							<tr>
+								<td>=DB(A2,A3,A4,3,7)</td>
+								<td>세번째 해의 감가상각액입니다. (176 814.44￦)</td>
+							</tr>
+							<tr>
+								<td>=DB(A2,A3,A4,4,7)</td>
+								<td>네번째 해의 감가상각액입니다. (120 411.64￦)</td>
+							</tr>
+							<tr>
+								<td>=DB(A2,A3,A4,5,7)</td>
+								<td>다섯번째 해의 감가상각액입니다. (81 999.64￦)</td>
+							</tr>
+							<tr>
+								<td>=DB(A2,A3,A4,6,7)</td>
+								<td>여섯번째 해의 감가상각액입니다. (55 841.76￦)</td>
+							</tr>
+							<tr>
+								<td>=DB(A2,A3,A4,7,7)</td>
+								<td>5개월만 계산된 일곱번째 해의 감가상각액입니다. (15 845.10￦)</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>	
+		<script type="text/javascript" language="Javascript">footerView()</script>
+	
+</body>
+</html>

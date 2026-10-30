@@ -1,0 +1,380 @@
+﻿<html dir='ltr'>
+	<head>
+		<META http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+		<title>수자의 올림</title>
+		<link rel='stylesheet' type='text/css' href='../css/main.css'/>
+		<script type='text/javascript' language='Javascript' src='../js/mexpcol.js'></script>
+		<script type='text/javascript' language='JavaScript' src='../js/glossary.js'></script>
+	</head>
+	<body>
+		<h1>&nbsp;<img align="absbottom" src="../image/external_images/crystal/svtools/res/new_doc.png"/>&nbsp;수자의 올림</h1>
+		<p id='ExpandAllLine' class='ExpFav'>
+			<a href='#' onClick='ExpandAll()' onKeyPress='ExpandAll()' class='DropDown'>
+				<img id='picHeader' border='0' src='../image/image/common/expandtri.gif' alt='모두 표시'>
+				<span id='ExpandAll'>모두 표시</span>
+			</a>
+		</p>
+		<p>
+			<a href='#' class='DropDown' onClick='Outline2()' onKeyPress='Outline2()'>
+			<img border='0' src='../image/image/common/blueup.gif' alt='표시'>수자를 변경하지 않고 표시되는 소수점자리수의 변경</a>
+		</p>
+		<div id='ExpCol' class='collapsed' border='0'>
+			<p><b class="bterm">표용지에서</b></p>
+			<ol>
+				<li>서식을 지정할 세포를 선택합니다.</li>
+				<li>표시되는 소수점아래자리수를 변경하려면 <b class="bterm">&lt;서식 설정&gt;</b><a href="#" class="glossary" onClick="AppendPopup(this,'IDG_TOOLBAR')" onKeyPress="AppendPopup(this,'IDG_TOOLBAR')">도구띠</a>에서 <b class="bterm">&lt;수자서식: 소수부 추가&gt;</b><img border='0' src='../image/external_images/crystal/res/commandimagelist/sc_numberformatincdecimals.png' alt='표시'> 또는 <b class="bterm">&lt;수자서식: 소수부 삭제&gt;</b><img border='0' src='../image/external_images/crystal/res/commandimagelist/sc_numberformatdecdecimals.png' alt='표시'>를 찰칵합니다.</li>
+			</ol>
+			<p><b class="bterm">기본적으로 제공하는 수자서식에서</b></p>
+			<ol>
+				<li><b class="bterm">&lt;서식&gt;</b>차림표에서 <b class="bterm">&lt;세포&gt;</b>를 찰칵한 다음 <b class="bterm">&lt;수자&gt;</b>표쪽을 찰칵합니다.</li>
+				<li><b class="bterm">&lt;종류&gt;</b>목록칸에서 <b class="bterm">&lt;통화&gt;</b>, <b class="bterm">&lt;백분률&gt;</b> 또는 <b class="bterm">&lt;수값&gt;</b>을 찰칵합니다.</li>
+				<li>표시할 소수점 자리수를 <b class="bterm">&lt;소수점 아래자리수&gt;</b>본문칸에 입력합니다.</li>
+			</ol>
+		</div>
+		<p>
+			<a href='#' class='DropDown' onClick='Outline2()' onKeyPress='Outline2()'>
+			<img border='0' src='../image/image/common/blueup.gif' alt='표시'>수자의 올림</a>
+		</p>
+		<div id='ExpCol' class='collapsed' border='0'>
+			<p>이 작업을 수행하려면 <b class="bterm">ROUNDUP</b>, <b class="bterm">EVEN</b>, <b class="bterm">ODD</b>함수를 사용합니다.</p>
+			<p><b class="bterm">실례</b></p>
+			<p><a href='1.5.1.htm'>실례의 리용방법</a>을 참고하십시오.</p>
+			<table>
+				<tr>
+					<td>
+						<table>
+							<tr>
+								<td class="noborder">&nbsp;</td>
+							</tr>
+							<tr>
+								<th>1</th>
+							</tr>
+							<tr>
+								<th>2</th>
+							</tr>
+							<tr>
+								<th>3</th>
+							</tr>
+							<tr>
+								<th>4</th>
+							</tr>
+						</table>
+					</td>
+					<td>
+						<table>
+							<tr>
+								<th>A</th>
+							</tr>
+							<tr>
+								<th>자료</th>
+							</tr>
+							<tr>
+								<td>20.2</td>
+							</tr>
+							<tr>
+								<td>-5.7</td>
+							</tr>
+							<tr>
+								<td>12.6278</td>
+							</tr>
+							<tr>
+								<th>수식</th>
+								<th>설명(결과)</th>
+							</tr>
+							<tr>
+								<td>=ROUNDUP(A2;0)</td>
+								<td>20.2를 올림합니다. (21)</td>
+							</tr>
+							<tr>
+								<td>=ROUNDUP(A3;0)</td>
+								<td>-5.7를 올림합니다. (-6)</td>
+							</tr>
+							<tr>
+								<td>=ROUNDUP(A4;2)</td>
+								<td>12.6278을 소수점아래 두자리까지 올림합니다. (12.63)</td>
+							</tr>
+							<tr>
+								<td>=EVEN(A2)</td>
+								<td>20.2을 짝수로 올림합니다. (22)</td>
+							</tr>
+							<tr>
+								<td>=ODD(A2)</td>
+								<td>20.2을 홀수로 올림합니다. (21)</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+			<p><b class="bterm">참조함수</b></p>
+			<p><a href='5.9.8.50.htm'>ROUNDUP</a></p>
+			<p><a href='5.9.8.23.htm'>EVEN</a></p>
+			<p><a href='5.9.8.40.htm'>ODD</a></p>
+		</div>
+		<p>
+			<a href='#' class='DropDown' onClick='Outline2()' onKeyPress='Outline2()'>
+			<img border='0' src='../image/image/common/blueup.gif' alt='표시'>수자의 내림</a>
+		</p>
+		<div id='ExpCol' class='collapsed' border='0'>
+			<p>이 작업을 수행하려면 <b class="bterm">ROUNDDOWN</b>함수를 사용합니다.</p>
+			<p><b class="bterm">실례</b></p>
+			<p><a href='1.5.1.htm'>실례의 리용방법</a>을 참고하십시오.</p>
+			<table>
+				<tr>
+					<td>
+						<table>
+							<tr>
+								<td class="noborder">&nbsp;</td>
+							</tr>
+							<tr>
+								<th>1</th>
+							</tr>
+							<tr>
+								<th>2</th>
+							</tr>
+							<tr>
+								<th>3</th>
+							</tr>
+							<tr>
+								<th>4</th>
+							</tr>
+						</table>
+					</td>
+					<td>
+						<table>
+							<tr>
+								<th>A</th>
+							</tr>
+							<tr>
+								<th>자료</th>
+							</tr>
+							<tr>
+								<td>20.2</td>
+							</tr>
+							<tr>
+								<td>-5.7</td>
+							</tr>
+							<tr>
+								<td>12.6278</td>
+							</tr>
+							<tr>
+								<th>수식</th>
+								<th>설명(결과)</th>
+							</tr>
+							<tr>
+								<td>=ROUNDDOWN(A2;0)</td>
+								<td>20.2를 내림합니다. ( 20)</td>
+							</tr>
+							<tr>
+								<td>=ROUNDDOWN(A3;0)</td>
+								<td>-5.7을 내림합니다. (-5)</td>
+							</tr>
+							<tr>
+								<td>=ROUNDDOWN(A4;2)</td>
+								<td>소수점아래 두자리까지 내림합니다. (12.62)</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+			<p><b class="bterm">참조함수</b></p>
+			<p><a href='5.9.8.49.htm'>ROUNDDOWN</a></p>
+		</div>
+		<p>
+			<a href='#' class='DropDown' onClick='Outline2()' onKeyPress='Outline2()'>
+			<img border='0' src='../image/image/common/blueup.gif' alt='표시'>수자의 반올림</a>
+		</p>
+		<div id='ExpCol' class='collapsed' border='0'>
+			<p>이 작업을 수행하려면 <b class="bterm">ROUND</b>함수를 사용합니다.</p>
+			<p><b class="bterm">실례</b></p>
+			<p><a href='1.5.1.htm'>실례의 리용방법</a>을 참고하십시오.</p>
+				<table>
+					<tr>
+						<td>
+							<table>
+								<tr>
+									<td class="noborder">&nbsp;</td>
+								</tr>
+								<tr>
+									<th>1</th>
+								</tr>
+								<tr>
+									<th>2</th>
+								</tr>
+								<tr>
+									<th>3</th>
+								</tr>
+								<tr>
+									<th>4</th>
+								</tr>
+							</table>
+						</td>
+						<td>
+							<table>
+								<tr>
+									<th>A</th>
+								</tr>
+								<tr>
+									<th>자료</th>
+								</tr>
+								<tr>
+									<td>20.2</td>
+								</tr>
+								<tr>
+									<td>5.7</td>
+								</tr>
+								<tr>
+									<td>-5.7</td>
+								</tr>
+								<tr>
+									<th>수식</th>
+									<th>설명(결과)</th>
+								</tr>
+								<tr>
+									<td>=ROUND(A2;0)</td>
+									<td>20.2는 소수부분이 0.5보다 작으므로 내림합니다. (20)</td>
+								</tr>
+								<tr>
+									<td>=ROUND(A3;0)</td>
+									<td>5.7은 소수부분이 0.5보다 크므로 올림합니다. (6)</td>
+								</tr>
+								<tr>
+									<td>=ROUND(A4;0)</td>
+									<td>-5.7은 소수부분이 -0.5보다 작으므로 내림합니다. (-6)</td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+				</table>
+			<p><b class="bterm">참조함수</b></p>
+			<p><a href='5.9.8.48.htm'>ROUND</a></p>
+		</div>
+		<p>
+			<a href='#' class='DropDown' onClick='Outline2()' onKeyPress='Outline2()'>
+			<img border='0' src='../image/image/common/blueup.gif' alt='표시'>자리수에 따르는 수자의 반올림 </a>
+		</p>
+		<div id='ExpCol' class='collapsed' border='0'>
+			<p>이 작업을 수행하려면 <b class="bterm">ROUND</b>함수를 사용합니다.</p>
+			<p><b class="bterm">실례</b></p>
+			<p><a href='1.5.1.htm'>실례의 리용방법</a>을 참고하십시오.</p>
+			<table>
+				<tr>
+					<td>
+						<table>
+							<tr>
+								<td class="noborder">&nbsp;</td>
+							</tr>
+							<tr>
+								<th>1</th>
+							</tr>
+							<tr>
+								<th>2</th>
+							</tr>
+							<tr>
+								<th>3</th>
+							</tr>
+						</table>
+					</td>
+					<td>
+						<table>
+							<tr>
+								<th>A</th>
+							</tr>
+							<tr>
+								<th>자료</th>
+							</tr>
+							<tr>
+								<td>1.25</td>
+							</tr>
+							<tr>
+								<td>30.452</td>
+							</tr>
+							<tr>
+								<th>수식</th>
+								<th>설명(결과)</th>
+							</tr>
+							<tr>
+								<td>=ROUND(A2;1)</td>
+								<td>수자를 소수점아래 한자리까지 반올림합니다. 반올림할 부분이 0.05이상이므로 올림합니다. (결과: 1.3)</td>
+							</tr>
+							<tr>
+								<td>=ROUND(A3;2)</td>
+								<td>수자를 소수점아래 두자리까지 반올림합니다. 반올림할 부분이 0.002므로, 즉 0.005보다 작으므로 내림합니다. (결과: 30.45)</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+			<p><b class="bterm">참조함수</b></p>
+			<p><a href='5.9.8.48.htm'>ROUND</a></p>
+		</div>
+		<p>
+			<a href='#' class='DropDown' onClick='Outline2()' onKeyPress='Outline2()'>
+			<img border='0' src='../image/image/common/blueup.gif' alt='표시'>수자를 0우의 유효자리수로 반올림</a>
+		</p>
+		<div id='ExpCol' class='collapsed' border='0'>
+			<p>이 작업을 수행하려면 <b class="bterm">ROUND</b>, <b class="bterm">ROUNDUP</b>, <b class="bterm">ROUNDDOWN</b>, <b class="bterm">LEN</b>, <b class="bterm">INT</b>함수를 사용합니다.</p>
+			<p><b class="bterm">실례</b></p>
+			<p><a href='1.5.1.htm'>실례의 리용방법</a>을 참고하십시오.</p>
+			<table>
+				<tr>
+					<td>
+						<table>
+							<tr>
+								<td class="noborder">&nbsp;</td>
+							</tr>
+							<tr>
+								<th>1</th>
+							</tr>
+							<tr>
+								<th>2</th>
+							</tr>
+							<tr>
+								<th>3</th>
+							</tr>
+						</table>
+					</td>
+					<td>
+						<table>
+							<tr>
+								<th>A</th>
+							</tr>
+							<tr>
+								<th>자료</th>
+							</tr>
+							<tr>
+								<td>5492 820</td>
+							</tr>
+							<tr>
+								<td>22 230</td>
+							</tr>
+							<tr>
+								<th>수식</th>
+								<th>설명(결과)</th>
+							</tr>
+							<tr>
+								<td>=ROUND(A2;3-LEN(INT(A2)))</td>
+								<td>제일 우에 있는 수자를 유효자리수 세자리로 반올림합니다. (5490 000)</td>
+							</tr>
+							<tr>
+								<td>=ROUNDDOWN(A3;3-LEN(INT(A3)))</td>
+								<td>제일 아래에 있는 수자를 유효자리수 세자리로 내림합니다. (22 200)</td>
+							</tr>
+							<tr>
+								<td>=ROUNDUP(A2;6-LEN(INT(A2)))</td>
+								<td>제일 우에 있는 수자를 유효자리수 다섯자리로 올림합니다. (5492 820)</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+			<p><b class="bterm">참조함수</b></p>
+			<p><a href='5.9.8.50.htm'>ROUNDUP</a></p>
+			<p><a href='5.9.8.49.htm'>ROUNDDOWN</a></p>
+			<p><a href='5.9.8.48.htm'>ROUND</a></p>
+			<p><a href='5.9.12.14.htm'>LEN</a></p>
+			<p><a href='5.9.8.29.htm'>INT</a></p>
+		</div>
+		<script type="text/javascript" language="Javascript">footerView()</script>
+	
+</body>
+</html>																

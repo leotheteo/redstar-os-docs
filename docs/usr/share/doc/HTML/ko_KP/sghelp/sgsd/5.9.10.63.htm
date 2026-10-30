@@ -1,0 +1,113 @@
+<html dir='ltr'>
+	<head>
+		<META http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+		<title>STANDARDIZE</title>
+		<link rel='stylesheet' type='text/css' href='../css/main.css'/>
+		<script type='text/javascript' language='Javascript' src='../js/mexpcol.js'></script>
+		<script type='text/javascript' language='JavaScript' src='../js/glossary.js'></script>
+	</head>
+	<body>
+		<h1>&nbsp;<img align="absbottom" src="../image/external_images/crystal/svtools/res/new_doc.png"/>&nbsp;STANDARDIZE</h1>
+		<p id='ExpandAllLine' class='ExpFav'>
+			<a href='#' onClick='ExpandAll()' onKeyPress='ExpandAll()' class='DropDown'>
+				<img id='picHeader' border='0' src='../image/image/common/expandtri.gif' alt='모두 표시'>
+				<span id='ExpandAll'>모두 표시</span>
+			</a>
+		</p>
+		<p><b class="bterm">참고항목</b>&emsp;
+			<a href="5.9.10.1.htm">통계함수목록</a>,
+			<a href="5.9.10.45.htm">NORMDIST</a>,
+			<a href="5.9.10.46.htm">NORMINV</a>,
+			<a href="5.9.10.47.htm">NORMSDIST</a>,
+			<a href="5.9.10.48.htm">NORMSINV</a>,
+			<a href="5.9.10.78.htm">ZTEST</a>
+		</p>
+		<p>확률변수를 정규화된 값으로 변환합니다.</p>
+		<p><b class="bterm">문법:&emsp;&emsp;		STANDARDIZE(수값,평균값,표준편차)</b></p>
+		<table>
+			<tr>
+				<th>인수명</th>
+				<th>설명</th>
+			</tr>
+			<tr>
+				<td>수값</td>
+				<td>표준화할 값입니다.</td>
+			</tr>
+			<tr>
+				<td>평균값</td>
+				<td>이동에 사용할 평균값입니다.</td>
+			</tr>
+			<tr>
+				<td>표준편차</td>
+				<td>척도비률에 사용할 표준편차입니다.</td>
+			</tr>
+		</table>
+		<p><b class="bterm">주의</b></p>
+			<ul>
+				<li><b class="bterm">표준편차</b>가 0이하이면 <b class="bterm">오유:[오유번호]</b>를 표시합니다.</li>
+				<li>표준화값을 구하는 식은 다음과 같습니다.
+					<p><img border='0' src='../image/image/sgsd/formula-71.gif' alt='표시'></p>
+				</li>
+			</ul>
+		<p><b class="bterm">실례</b></p>
+			<p><a href="1.5.1.htm">실례의 리용방법</a>을 참고하십시오.</p>
+			<table>
+				<tr>
+					<td>
+						<table>
+							<tr>
+								<td class="noborder">&nbsp;
+								</td>
+							</tr>
+							<tr>
+								<th>1</th>
+							</tr>
+							<tr>
+								<th>2</th>
+							</tr>
+							<tr>
+								<th>3</th>
+							</tr>
+							<tr>
+								<th>4</th>
+							</tr>
+						</table>
+					</td>
+					<td>
+						<table>
+							<tr>
+								<th>A</th>
+								<th>B</th>
+							</tr>
+							<tr>
+								<th>자료</th>
+								<th>설명</th>
+							</tr>
+							<tr>
+								<td>42</td>
+								<td>표준화할 값입니다.</td>
+							</tr>
+							<tr>
+								<td>40</td>
+								<td>분포의 산수 평균값입니다.</td>
+							</tr>
+							<tr>
+								<td>1.5</td>
+								<td>분포의 표준편차입니다.</td>
+							</tr>
+							<tr>
+								<th>수식</th>
+								<th>설명(결과)</th>
+							</tr>
+							<tr>
+								<td>=STANDARDIZE(A2,A3,A4)</td>
+								<td>우에 있는 조건에 대한 42의 정규화된 값입니다. (1.33)</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+		<script type="text/javascript" language="Javascript">footerView()</script>
+	
+</body>
+</html>				

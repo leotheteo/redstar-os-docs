@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="video/x-ms-wmv">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>WMV video</comment>
+  <acronym>WMV</acronym>
+  <expanded-acronym>Windows Media Video</expanded-acronym>
+</mime-type>

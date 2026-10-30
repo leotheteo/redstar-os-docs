@@ -1,0 +1,114 @@
+﻿<html dir='ltr'>
+	<head>
+		<META http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+		<title>CONFIDENCE</title>
+		<link rel='stylesheet' type='text/css' href='../css/main.css'/>
+		<script type='text/javascript' language='Javascript' src='../js/mexpcol.js'></script>
+		<script type='text/javascript' language='JavaScript' src='../js/glossary.js'></script>
+	</head>
+	<body>
+		<h1>&nbsp;<img align="absbottom" src="../image/external_images/crystal/svtools/res/new_doc.png"/>&nbsp;CONFIDENCE</h1>
+		<p id='ExpandAllLine' class='ExpFav'>
+			<a href='#' onClick='ExpandAll()' onKeyPress='ExpandAll()' class='DropDown'>
+				<img id='picHeader' border='0' src='../image/image/common/expandtri.gif' alt='모두 표시'>
+				<span id='ExpandAll'>모두 표시</span>
+			</a>
+		</p>
+		<p><b class="bterm">참고항목</b>&emsp;
+			<a href="5.9.10.1.htm">통계함수목록</a>,
+			<a href="5.9.10.78.htm">ZTEST</a>
+		</p>
+		<p>정규분포에 대한 (1-α)믿음구간을 구합니다.</p>
+		<p><b class="bterm">문법:&emsp;&emsp;		CONFIDENCE(α,표준편차,모집단크기)</b></p>
+		<table>
+			<tr>
+				<th>인수명</th>
+				<th>설명</th>
+			</tr>
+			<tr>
+				<td>α</td>
+				<td>유의수준값입니다. 믿음도 계산에 사용하는 유의수준으로 믿음도는 100*(1 - α)%로 계산하는데 만일 α가 0.05이면 믿음도는 95%가 됩니다.</td>
+			</tr>
+			<tr>
+				<td>표준편차</td>
+				<td>모집단의 표준편차로서 그 값을 알고있다고 가정합니다.</td>
+			</tr>
+			<tr>
+				<td>모집단크기</td>
+				<td>표본의 모집단크기입니다.</td>
+			</tr>
+		</table>
+		<p><b class="bterm">주의</b></p>
+			<ul>
+				<li>인수가 수자가 아니면 <b class="bterm">오유:[오유번호]</b>를 반환합니다.</li>
+				<li>α ≦  0 또는 α ≧ 1이면 <b class="bterm">오유:[오유번호]</b>를 반환합니다.</li>
+				<li><b class="bterm">표준편차</b> ≦ 0이면 <b class="bterm">오유:[오유번호]</b>를 반환합니다.</li>
+				<li><b class="bterm">모집단크기</b>가 옹근수가 아니면 소수점이하를 잘라 옹근수로 변환합니다.</li>
+				<li><b class="bterm">모집단크기</b> < 1이면 <b class="bterm">오유:[오유번호]</b>를 반환합니다.</li>
+				<li>α가 0.05라고 가정하면 표준정규곡선에서 면적이 (1 - α) 또는 95%가 되는 구간을 계산해야 합니다. 이 값은 ± 1.96입니다. 따라서 믿음구간은 다음과 같습니다.
+					<p><img border='0' src='../image/image/sgsd/formula-39.gif' alt='표시'></p>
+				</li>
+			</ul>
+		<p><b class="bterm">실례</b></p>
+			<p><a href="1.5.1.htm">실례의 리용방법</a>을 참고하십시오.</p>
+			<p>50명의 통근생을 대상으로 조사한 결과 평균통근시간이 30분일 때 모집단표준편차를 2.5라고 가정하면 α = .05, CONFIDENCE(.05, 2.5, 50)은 0.69291입니다. 해당 믿음구간은 30 ± 0.69291 = 약 [29.3, 30.7]입니다. 이 간격에 속하는 임의의 모집단평균 μ0의 경우 30보다 μ0에서 표본평균을 구하려는 확률이 0.05보다 큽니다. 마찬가지로 이 구간에 속하지 않는 임의의 모집단평균 μ0의 경우 30보다 μ0에서 표본평균을 구하려는 확률이 0.05보다 작습니다.</p>
+			<table>
+				<tr>
+					<td>
+						<table>
+							<tr>
+								<td class="noborder">&nbsp;
+								</td>
+							</tr>
+							<tr>
+								<th>1</th>
+							</tr>
+							<tr>
+								<th>2</th>
+							</tr>
+							<tr>
+								<th>3</th>
+							</tr>
+							<tr>
+								<th>4</th>
+							</tr>
+						</table>
+					</td>
+					<td>
+						<table>
+							<tr>
+								<th>A</th>
+								<th>B</th>
+							</tr>
+							<tr>
+								<th>자료</th>
+								<th>설명</th>
+							</tr>
+							<tr>
+								<td>0.05</td>
+								<td>유의수준</td>
+							</tr>
+							<tr>
+								<td>2.5</td>
+								<td>모집단의 표준편차</td>
+							</tr>
+							<tr>
+								<td>50</td>
+								<td>표본 모집단크기</td>
+							</tr>
+							<tr>
+								<th>수식</th>
+								<th>설명(결과)</th>
+							</tr>
+							<tr>
+								<td>=CONFIDENCE(A2,A3,A4)</td>
+								<td>모집단평균의 믿음구간입니다. 즉 통근시간의 기본 모집단평균 믿음구간은 30 ± 0.692951분 또는 29.3 또는 30.7분입니다. (0.69)</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+		<script type="text/javascript" language="Javascript">footerView()</script>
+	
+</body>
+</html>				

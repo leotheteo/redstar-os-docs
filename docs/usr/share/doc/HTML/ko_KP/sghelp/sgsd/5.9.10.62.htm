@@ -1,0 +1,156 @@
+<html dir='ltr'>
+	<head>
+		<META http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+		<title>SMALL</title>
+		<link rel='stylesheet' type='text/css' href='../css/main.css'/>
+		<script type='text/javascript' language='Javascript' src='../js/mexpcol.js'></script>
+		<script type='text/javascript' language='JavaScript' src='../js/glossary.js'></script>
+	</head>
+	<body>
+		<h1>&nbsp;<img align="absbottom" src="../image/external_images/crystal/svtools/res/new_doc.png"/>&nbsp;SMALL</h1>
+		<p id='ExpandAllLine' class='ExpFav'>
+			<a href='#' onClick='ExpandAll()' onKeyPress='ExpandAll()' class='DropDown'>
+				<img id='picHeader' border='0' src='../image/image/common/expandtri.gif' alt='모두 표시'>
+				<span id='ExpandAll'>모두 표시</span>
+			</a>
+		</p>
+		<p><b class="bterm">참고항목</b>&emsp;
+			<a href="5.9.10.1.htm">통계함수목록</a>,
+			<a href="5.9.10.35.htm">LARGE</a>,
+			<a href="5.9.10.38.htm">MAX</a>,
+			<a href="5.9.10.40.htm">MEDIAN</a>,
+			<a href="5.9.10.41.htm">MIN</a>,
+			<a href="5.9.10.50.htm">PERCENTILE</a>,
+			<a href="5.9.10.51.htm">PERCENTRANK</a>,
+			<a href="5.9.10.57.htm">QUARTILE</a>
+		</p>
+		<p>표본집단의 k번째 최소값을 구합니다.</p>
+		<p><b class="bterm">문법:&emsp;&emsp;		SMALL(자료,값의 순위)</b></p>
+		<table>
+			<tr>
+				<th>인수명</th>
+				<th>설명</th>
+			</tr>
+			<tr>
+				<td>자료</td>
+				<td>표본집단의 자료배렬입니다. <b class="bterm">값의 순위</b>번째로 작은 값을 구하기 위한 수자자료의 범위 또는 배렬입니다.</td>
+			</tr>
+			<tr>
+				<td>값의 순위</td>
+				<td>값의 순위입니다. 자료범위나 배렬에서 구하려는 가장 작은 값으로부터의 위치입니다.</td>
+			</tr>
+		</table>
+		<p><b class="bterm">주의</b></p>
+			<ul>
+				<li><b class="bterm">자료</b>가 비여있으면 <b class="bterm">오유:[오유번호]</b>를 표시합니다.</li>
+				<li><b class="bterm">값의 순위</b>가 0이하이거나 <b class="bterm">값의 순위</b>가 자료수를 초과하면 <b class="bterm">오유:[오유번호]</b>를 표시합니다.</li>
+				<li>n이 배렬의 자료요소수일 때 <b class="bterm">SMALL</b>(자료,1)은 최소값이고 <b class="bterm">SMALL</b>(자료,n)은 최대값입니다.</li>
+			</ul>
+		<p><b class="bterm">실례</b></p>
+			<p><a href="1.5.1.htm">실례의 리용방법</a>을 참고하십시오.</p>
+			<table>
+				<tr>
+					<td>
+						<table>
+							<tr>
+								<td class="noborder">&nbsp;
+								</td>
+							</tr>
+							<tr>
+								<th>1</th>
+							</tr>
+							<tr>
+								<th>2</th>
+							</tr>
+							<tr>
+								<th>3</th>
+							</tr>
+							<tr>
+								<th>4</th>
+							</tr>
+							<tr>
+								<th>5</th>
+							</tr>
+							<tr>
+								<th>6</th>
+							</tr>
+							<tr>
+								<th>7</th>
+							</tr>
+							<tr>
+								<th>8</th>
+							</tr>
+							<tr>
+								<th>9</th>
+							</tr>
+							<tr>
+								<th>10</th>
+							</tr>
+						</table>
+					</td>
+					<td>
+						<table>
+							<tr>
+								<th>A</th>
+								<th>B</th>
+							</tr>
+							<tr>
+								<th>자료</th>
+								<th>자료</th>
+							</tr>
+							<tr>
+								<td>3</td>
+								<td>1</td>
+							</tr>
+							<tr>
+								<td>4</td>
+								<td>4</td>
+							</tr>
+							<tr>
+								<td>5</td>
+								<td>8</td>
+							</tr>
+							<tr>
+								<td>2</td>
+								<td>3</td>
+							</tr>
+							<tr>
+								<td>3</td>
+								<td>7</td>
+							</tr>
+							<tr>
+								<td>4</td>
+								<td>12</td>
+							</tr>
+							<tr>
+								<td>6</td>
+								<td>54</td>
+							</tr>
+							<tr>
+								<td>4</td>
+								<td>8</td>
+							</tr>
+							<tr>
+								<td>7</td>
+								<td>23</td>
+							</tr>
+							<tr>
+								<th>수식</th>
+								<th>설명(결과)</th>
+							</tr>
+							<tr>
+								<td>=SMALL(A2:A10,4)</td>
+								<td>첫번째 렬에서 네번째 작은 수값입니다. (4)</td>
+							</tr>
+							<tr>
+								<td>=SMALL(B2:B10,2)</td>
+								<td>두번째 렬에서 두번째 작은 수값입니다. (3)</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+		<script type="text/javascript" language="Javascript">footerView()</script>
+	
+</body>
+</html>				

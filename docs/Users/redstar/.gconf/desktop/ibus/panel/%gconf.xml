@@ -1,0 +1,4 @@
+<?xml version="1.0"?>
+<gconf>
+	<entry name="langbar_always_hide" mtime="1793385069" type="int" value="0"/>
+</gconf>

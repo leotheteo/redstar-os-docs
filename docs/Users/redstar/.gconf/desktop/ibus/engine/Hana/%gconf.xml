@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<gconf>
+	<entry name="hanja_conv" mtime="1793384552" type="int" value="0"/>
+	<entry name="width_mode" mtime="1793384552" type="int" value="0"/>
+	<entry name="lang_mode" mtime="1793384552" type="int" value="1"/>
+</gconf>

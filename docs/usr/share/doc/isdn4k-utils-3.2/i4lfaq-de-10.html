@@ -1,0 +1,114 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <META NAME="GENERATOR" CONTENT="LinuxDoc-Tools 0.9.21">
+ <TITLE>ISDN4LINUX - FAQ (deutsche Version): lan: ISDN4LINUX im LAN </TITLE>
+ <LINK HREF="i4lfaq-de-11.html" REL=next>
+ <LINK HREF="i4lfaq-de-9.html" REL=previous>
+ <LINK HREF="i4lfaq-de.html#toc10" REL=contents>
+</HEAD>
+<BODY>
+<A HREF="i4lfaq-de-11.html">Next</A>
+<A HREF="i4lfaq-de-9.html">Previous</A>
+<A HREF="i4lfaq-de.html#toc10">Contents</A>
+<HR>
+<H2><A NAME="lan"></A> <A NAME="s10">10.</A> <A HREF="i4lfaq-de.html#toc10">lan: ISDN4LINUX im LAN </A></H2>
+
+<H2><A NAME="lan_config"></A> <A NAME="ss10.1">10.1</A> <A HREF="i4lfaq-de.html#toc10.1">lan_config: Wie kann ich Linux so einstellen, da&szlig; andere Computer in meinem LAN das Internet &uuml;ber meinen Linux Computer erreichen k&ouml;nnen? </A>
+</H2>
+
+<P>Dazu gibt es verschiedene M&ouml;glichkeiten:
+<OL>
+<LI>Dein LAN ist ein offizielles Klasse-C-Netz mit im Internet
+g&uuml;ltigen IP-Nummern. Das ist am einfachsten einzustellen. Du
+gibst jeder Netzwerkkarte in Deinem Netz eine dieser Addressen und
+setzt auf dem Linux Rechner eine defaultroute auf die ISDN-Karte, die
+zu Deinem Provider f&uuml;hrt. Die anderen Rechner im LAN erhalten die
+Adresse der Netzkarte des Linux Rechners als Gateway bzw defaultroute.</LI>
+<LI>Du m&ouml;chtest von Deinem LAN nur auf HTTP im Internet
+zugreifen. In diesem Fall kannst Du beliebige IP-Addressen f&uuml;r
+Dein LAN einrichten; die einzige offizielle IP ist die Deiner
+ISDN-Karte. Dann installierst Du einen Proxyserver auf Deinem
+Linux-Router und tr&auml;gst ihn in allen Browsern ein. Hier brauchst
+Du keine defaultroute einzurichten.</LI>
+<LI>Du m&ouml;chtest Dich von Deinem LAN nur in Deinen Linux-Router
+einloggen und VON DORT aus im Internet arbeiten. Das ist sogar noch
+einfacher. Du brauchst noch nicht einmal einen Proxyserver.</LI>
+<LI>Benutze ip masquerading. Es ist am bequemsten im Gebrauch aber
+schwieriger einzurichten. Der Linux Computer agiert als Gateway. Der
+Trick dabei ist, da&szlig; er die IP-Addressen des LANs verbirgt und nur
+seine eigene Internetaddresse als Antwort-Addresse angibt. Wenn
+Antworten eintreffen werden sie an den richtigen Computer im LAN
+weitergeleitet. Du kannst masquerading auch mit dynamischen IP-Addressen
+benutzen. Wenn Du die ISDN-Verbindung vom Linux Computer zu Deinem
+Internetprovider nicht manuell starten willst solltest Du dial on demand
+einrichten (siehe Abschnitt 
+<A HREF="i4lfaq-de-17.html#dod">dod</A>).</LI>
+</OL>
+</P>
+
+<H2><A NAME="lan_modemserver"></A> <A NAME="ss10.2">10.2</A> <A HREF="i4lfaq-de.html#toc10.2">lan_modemserver: Wie erm&ouml;gliche ich den Usern in meinem LAN, zum W&auml;hlen die ISDN-Karte(n) in meinem Linux-PC zu benutzen (wie bei einem Modem-Server)? </A>
+</H2>
+
+<P>Auf dem Linux-PC benutzt Du modemd, ein sehr kurzes Perl-Script (siehe
+auch Linux-Modem-Sharing-MiniHowto auf <CODE>
+<A HREF="http://www.linuxdoc.org/HOWTO/mini/Linux-Modem-Sharing.html">http://www.linuxdoc.org/HOWTO/mini/Linux-Modem-Sharing.html</A></CODE>):
+<HR>
+<PRE>
+#!/usr/bin/perl
+select((select(STDOUT), $| = 1)($[]);
+select((select(STDIN), $| = 1)($[]);
+exec 'cu','-E','''', '-l', '$ARGV[0]';
+die '$0: Cannot exec cu: $!\n';
+</PRE>
+<HR>
+
+Das muss vom inetd gestartet werden, daher muss dies in
+<CODE>/etc/services</CODE> eingetragen werden:
+<HR>
+<PRE>
+ modem           20006/tcp       modemd  # Modem service via TCP
+ isdn            20007/tcp       modemd  # ISDN  service via TCP
+</PRE>
+<HR>
+
+Und dies muss in <CODE>/etc/inetd.conf</CODE> eingetragen werden:
+<HR>
+<PRE>
+modemd stream tcp nowait root /usr/sbin/tcpd /usr/sbin/modemd ttyI5
+</PRE>
+<HR>
+</P>
+<P>Anstatt modemd kannst Du auch das Programm mserver einsetzen, das ein
+paar zus&auml;tzliche Funktionen aufweist (z.B., auf IP-Adressen
+basierende Rechte): <CODE>
+<A HREF="ftp://ftp.innet.be/pub/staff/carl/">ftp://ftp.innet.be/pub/staff/carl/</A></CODE></P>
+<P>Zus&auml;tzlich ben&ouml;tigst Du eine Software auf Deinen Computern
+ohne ISDN-Karte, die einen seriellen Port emuliert, ihn aber per
+telnet auf den Linux-ISDN-Computer umleitet. Einige Versionen von
+telnet besitzen diese F&auml;higkeit (z.B. einige uucicos).</P>
+<P>Wenn Du generell allen Anwendungen eine Art 'remote COM port' anbieten
+willst, gibt es COMT f&uuml;r Windows (95) und 'telser.device'
+f&uuml;r Amigas. Nachteil von COMT: es steht nur antiken
+16Bit-Windows-Anwendungen zur Verf&uuml;gung und l&auml;uft nicht
+einmal in der DOS-Box.
+COMT kannst Du bei Simtel finden: <CODE>
+<A HREF="http://educom.sce.fct.unl.pt/ftp/pub/shareware/win-utils/comt2.zip">http://educom.sce.fct.unl.pt/ftp/pub/shareware/win-utils/comt2.zip</A></CODE></P>
+<P>Eine weitere M&ouml;glichkeit bietet DialOut/IP, es ist jedoch recht
+teuer (USD 70). Du findest das Programm auf: <CODE>
+<A HREF="http://tacticalsoftware.com">http://tacticalsoftware.com</A></CODE></P>
+<P>Alle, die nur ihre CrossPoint-Installation bewahren wollen, sollten
+wissen, da&szlig; es nun auch Unterst&uuml;tzung f&uuml;r TCP-Modem
+bietet, so da&szlig; CrossPoint ohne zus&auml;tzliche Software
+l&auml;uft. Sieh Dich bei <CODE>
+<A HREF="http://www.openxp.de">http://www.openxp.de</A></CODE>
+um.</P>
+
+
+
+<HR>
+<A HREF="i4lfaq-de-11.html">Next</A>
+<A HREF="i4lfaq-de-9.html">Previous</A>
+<A HREF="i4lfaq-de.html#toc10">Contents</A>
+</BODY>
+</HTML>

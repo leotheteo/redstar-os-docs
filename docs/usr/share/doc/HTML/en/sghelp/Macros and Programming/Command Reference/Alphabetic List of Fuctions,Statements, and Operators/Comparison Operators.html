@@ -1,0 +1,70 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+	<TITLE></TITLE>
+	<META NAME="GENERATOR" CONTENT="《Sogwang 3.0》  (Linux)">
+	<META NAME="CREATED" CONTENT="20091205;11384400">
+	<META NAME="CHANGED" CONTENT="20091205;12020800">
+	<STYLE TYPE="text/css">
+	<!--
+		H2 { margin-bottom: 0.18cm; font-family: "Bitstream Vera Sans", "Arial", "Helvetica", "Lucida", "Geneva", "Helmet", sans-serif, "Andale Sans UI", "Arial Unicode MS", "Lucida Sans Unicode", "Tahoma"; font-size: 14pt }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="ko-KP" DIR="LTR"><DIV style="margin-left: 25">
+<H1><A NAME="operatoren"></A><A NAME="bm_id3150682"></A><FONT FACE="Thorndale, serif"><SPAN LANG="en-US">Comparison
+Operators [Runtime]</SPAN></FONT></H1>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Comparison
+operators compare two expressions. The result is returned as a
+Boolean expression that determines if the comparison is True (-1) or
+False (0).</SPAN></FONT></P>
+<H2><SPAN LANG="en-US">Syntax:</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Result =
+Expression1 { = | &lt; | &gt; | &lt;= | &gt;= } Expression2</SPAN></FONT></P>
+<H2><SPAN LANG="en-US">Parameters:</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Result:</B>
+Boolean expression that specifies the result of the comparison (True,
+or False)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Expression1,
+Expression2:</B> Any numeric values or strings that you want to
+compare.</SPAN></FONT></P>
+<H2><SPAN LANG="en-US">Comparison operators</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">= :
+Equal to</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">&lt; :
+Less than</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">&gt; :
+Greater than</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">&lt;= :
+Less than or equal to</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">&gt;= :
+Greater than or equal to</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">&lt;&gt;
+: Not equal to</SPAN></FONT></P>
+<H2><SPAN LANG="en-US">Example:</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Sub
+ExampleUnequal</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">DIM
+sFile As String</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">DIM
+sRoot As String REM ' Root directory for file in and output</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">sRoot =
+&quot;c:\&quot;</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">sFile =
+Dir$( sRoot ,22)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">If sFile
+&lt;&gt; &quot;&quot; Then</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Do</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Msgbox
+sFile</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">sFile =
+Dir$</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Loop
+Until sFile = &quot;&quot;</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">End If</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><SPAN STYLE="font-weight: medium">End
+sub</SPAN></SPAN></FONT></P>
+
+</DIV></BODY>
+</HTML>

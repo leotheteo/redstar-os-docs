@@ -1,0 +1,253 @@
+﻿<html dir='ltr'>
+	<head>
+		<META http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+		<title>날자의 더하기</title>
+		<link rel='stylesheet' type='text/css' href='../css/main.css'/>
+		<script type='text/javascript' language='Javascript' src='../js/mexpcol.js'></script>
+		<script type='text/javascript' language='JavaScript' src='../js/glossary.js'></script>
+	</head>
+	<body>
+		<h1>&nbsp;<img align="absbottom" src="../image/external_images/crystal/svtools/res/new_doc.png"/>&nbsp;날자의 더하기</h1>
+		<p id='ExpandAllLine' class='ExpFav'>
+			<a href='#' onClick='ExpandAll()' onKeyPress='ExpandAll()' class='DropDown'>
+				<img id='picHeader' border='0' src='../image/image/common/expandtri.gif' alt='모두 표시'>
+				<span id='ExpandAll'>모두 표시</span>
+			</a>
+		</p>
+		<h2>날자에 날자수를 더하기</h2>
+			<p>이 작업을 수행하려면 더하기(+) 연산자를 사용합니다.</p>
+			<p><b class="bterm">실례</b></p>
+			<p><a href="1.5.1.htm">실례의 리용방법</a>을 참고하십시오.</p>
+			<table>
+				<tr>
+					<td>
+						<table>
+							<tr><td>&nbsp;</td></tr>
+							<tr><th>1</th></tr>
+							<tr><th>2</th></tr>
+							<tr><th>3</th></tr>
+							<tr><th>4</th></tr>
+						</table>
+					</td>
+					<td>
+						<table>
+							<tr>
+								<th>A</th>
+								<th>B</th>
+							</tr>
+							<tr>
+								<th>날자</th>
+								<th>더하는 날자수</th>
+							</tr>
+							<tr>
+								<td>07/6/9</td>
+								<td>3</td>
+							</tr>
+							<tr>
+								<td>=TODAY()</td>
+								<td>5</td>
+							</tr>
+							<tr>
+								<td>08/12/10</td>
+								<td>54</td>
+							</tr>
+							<tr>
+								<th>수식</th>
+								<th>설명(결과)</th>
+							</tr>
+							<tr>
+								<td>=A2+B2</td>
+								<td>2007/6/9에 3일을 더합니다. (07/6/12)</td>
+							</tr>
+							<tr>
+								<td>=A3+B3</td>
+								<td>현재날자에 5일을 더합니다. (현재날자에 따라 달라짐)</td>
+							</tr>
+							<tr>
+								<td>=A4+B4</td>
+								<td>2008/12/10에 54일을 더합니다. (09/2/2)</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+		<h2>날자에 달수를 더하기</h2>
+			<p>이 작업을 수행하려면 <b class="bterm">DATE</b>, <b class="bterm">YEAR</b>, <b class="bterm">MONTH</b>, <b class="bterm">DAY</b>함수를 사용합니다.</p>
+			<p><b class="bterm">실례</b></p>
+			<p><a href="1.5.1.htm">실례의 리용방법</a>을 참고하십시오.</p>
+			<table>
+				<tr>
+					<td>
+						<table>
+							<tr><td>&nbsp;</td></tr>
+							<tr><th>1</th></tr>
+							<tr><th>2</th></tr>
+							<tr><th>3</th></tr>
+							<tr><th>4</th></tr>
+						</table>
+					</td>
+					<td>
+						<table>
+							<tr>
+								<th>A</th>
+								<th>B</th>
+							</tr>
+							<tr>
+								<th>날자</th>
+								<th>더하는 달수</th>
+							</tr>
+							<tr>
+								<td>07/6/9</td>
+								<td>3</td>
+							</tr>
+							<tr>
+								<td>07/9/2</td>
+								<td>5</td>
+							</tr>
+							<tr>
+								<td>08/12/10</td>
+								<td>25</td>
+							</tr>
+							<tr>
+								<th>수식</th>
+								<th>설명(결과)</th>
+							</tr>
+							<tr>
+								<td>=DATE(YEAR(A2);MONTH(A2)+B2;DAY(A2))</td>
+								<td>2007/6/9에 3개월을 더합니다. (07/9/9)</td>
+							</tr>
+							<tr>
+								<td>=DATE(YEAR(A3);MONTH(A3)+B3;DAY(A3))</td>
+								<td>2007/9/2에 5개월을 더합니다. (08/2/2)</td>
+							</tr>
+							<tr>
+								<td>=DATE(YEAR(A4);MONTH(A4)+B4;DAY(A4))</td>
+								<td>2008/12/10에 25개월을 더합니다. (11/1/10)</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+			<p><b class="bterm">참조함수</b></p>
+			<p><a href='5.9.4.3.htm'>DATE</a></p>
+			<p><a href='5.9.4.29.htm'>YEAR</a></p>
+			<p><a href='5.9.4.15.htm'>MONTH</a></p>
+			<p><a href='5.9.4.5.htm'>DAY</a></p>
+		<h2>날자에 년수를 더하기</h2>
+			<p>이 작업을 수행하려면 <b class="bterm">DATE</b>, <b class="bterm">YEAR</b>, <b class="bterm">MONTH</b>, <b class="bterm">DAY</b>함수를 사용합니다.</p>
+			<p><b class="bterm">실례</b></p>
+			<p><a href="1.5.1.htm">실례의 리용방법</a>을 참고하십시오.</p>
+			<table>
+				<tr>
+					<td>
+						<table>
+							<tr><td>&nbsp;</td></tr>
+							<tr><th>1</th></tr>
+							<tr><th>2</th></tr>
+							<tr><th>3</th></tr>
+							<tr><th>4</th></tr>
+						</table>
+					</td>
+					<td>
+						<table>
+							<tr>
+								<th>A</th>
+								<th>B</th>
+							</tr>
+							<tr>
+								<th>날자</th>
+								<th>더하는 년수</th>
+							</tr>
+							<tr>
+								<td>07/6/9</td>
+								<td>3</td>
+							</tr>
+							<tr>
+								<td>07/9/2</td>
+								<td>5</td>
+							</tr>
+							<tr>
+								<td>08/12/10</td>
+								<td>25</td>
+							</tr>
+							<tr>
+								<th>수식</th>
+								<th>설명(결과)</th>
+							</tr>
+							<tr>
+								<td>=DATE(YEAR(A2)+B2;MONTH(A2);DAY(A2))</td>
+								<td>2007/6/9에 3년을 더합니다. (10/6/9)</td>
+							</tr>
+							<tr>
+								<td>=DATE(YEAR(A3)+B3;MONTH(A3);DAY(A3))</td>
+								<td>2007/9/2에 5년을 더합니다. (12/9/2)</td>
+							</tr>
+							<tr>
+								<td>=DATE(YEAR(A4)+B4;MONTH(A4);DAY(A4))</td>
+								<td>2008/12/10에 25년을 더합니다. (33/12/10)</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+			<p><b class="bterm">참조함수</b></p>
+			<p><a href='5.9.4.3.htm'>DATE</a></p>
+			<p><a href='5.9.4.29.htm'>YEAR</a></p>
+			<p><a href='5.9.4.15.htm'>MONTH</a></p>
+			<p><a href='5.9.4.5.htm'>DAY</a></p>
+		<h2>날자에 날자, 월, 년도의 조합더하기</h2>
+			<p>이 작업을 수행하려면 <b class="bterm">DATE</b>, <b class="bterm">YEAR</b>, <b class="bterm">MONTH</b>, <b class="bterm">DAY</b>함수를 사용합니다.</p>
+			<p><b class="bterm">실례</b></p>
+			<p><a href="1.5.1.htm">실례의 리용방법</a>을 참고하십시오.</p>
+			<table>
+				<tr>
+					<td>
+						<table>
+							<tr><td>&nbsp;</td></tr>
+							<tr><th>1</th></tr>
+							<tr><th>2</th></tr>
+						</table>
+					</td>
+					<td>
+						<table>
+							<tr>
+								<th>A</th>
+							</tr>
+							<tr>
+								<th>날자</th>
+							</tr>
+							<tr>
+								<td>07/6/9</td>
+							</tr>
+							<tr>
+								<th>수식</th>
+								<th>설명(결과)</th>
+							</tr>
+							<tr>
+								<td>=DATE(YEAR(A2)+3;MONTH(A2)+1;DAY(A2)+5)</td>
+								<td>2007/6/9에 3년 1개월 5일을 더합니다. (10/7/14)</td>
+							</tr>
+							<tr>
+								<td>=DATE(YEAR(A2)+1;MONTH(A2)+7;DAY(A2)+5)</td>
+								<td>2007/6/9에 1년 7개월 5일을 더합니다. (09/1/14)</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+			<p>우의 수식에서 사용하는 인수는 다음과 같습니다.</p>
+			<p><img border='0' src='../image/image/sgsd/adddate.gif' alt='표시'></p>
+			<p>날자 더하기를 위한 수식</p>
+			<p><img border='0' src='../image/image/common/callout1.gif' alt='표시'> 시작날자&emsp;   날자 또는 날자가 들어있는 세포에 대한 참조</p>
+			<p><img border='0' src='../image/image/common/callout2.gif' alt='표시'> 년수&emsp;   더하는 년수</p>
+			<p><img border='0' src='../image/image/common/callout3.gif' alt='표시'> 달수&emsp;   더하는 달수</p>
+			<p><img border='0' src='../image/image/common/callout4.gif' alt='표시'> 날자수&emsp;   더하는 날자수</p>
+			<p><b class="bterm">참조함수</b></p>
+			<p><a href='5.9.4.3.htm'>DATE</a></p>
+			<p><a href='5.9.4.29.htm'>YEAR</a></p>
+			<p><a href='5.9.4.15.htm'>MONTH</a></p>
+			<p><a href='5.9.4.5.htm'>DAY</a></p>
+		<script type="text/javascript" language="Javascript">footerView()</script>
+	
+</body>
+</html>

@@ -1,0 +1,86 @@
+<html dir='ltr'>
+	<head>
+		<META http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+		<title>DAYS360</title>
+		<link rel='stylesheet' type='text/css' href='../css/main.css'/>
+		<script type='text/javascript' language='Javascript' src='../js/mexpcol.js'></script>
+		<script type='text/javascript' language='JavaScript' src='../js/glossary.js'></script>
+	</head>
+	<body>
+		<h1>&nbsp;<img align="absbottom" src="../image/external_images/crystal/svtools/res/new_doc.png"/>&nbsp;DAYS360</h1>
+		<p id='ExpandAllLine' class='ExpFav'>
+			<a href='#' onClick='ExpandAll()' onKeyPress='ExpandAll()' class='DropDown'>
+				<img id='picHeader' border='0' src='../image/image/common/expandtri.gif' alt='모두 표시'>
+				<span id='ExpandAll'>모두 표시</span>
+			</a>
+		</p>
+		<p><b class="bterm">참고항목</b>&emsp;
+		   <a href='5.9.4.1.htm'>날자 및 시간함수목록</a>,  
+		    <a href='5.9.4.5.htm'>DAY</a>
+		</p>
+		<p>1년을 360일로 기준하여 두 날자사이의 날자수를 계산합니다.</p>
+		<p><b class="bterm">문법:&emsp;&emsp;		DAYS360(시작날자,마감날자,류형)</b></p>
+		<table>
+			<tr>
+				<th>인수명</th>
+				<th>설명</th>
+			</tr>
+			<tr>
+				<td>시작날자</td>
+				<td>날자수의 차이를 계산하기 위한 시작날자입니다.</td>
+			</tr>
+			<tr>
+				<td>마감날자</td>
+				<td>날자수의 차이를 계산하기 위한 마감날자입니다. <b class="bterm">마감날자</b>가 <b class="bterm">시작날자</b>보다 앞서면 부수가 반환됩니다. </td>
+			</tr>
+			<tr>
+				<td>류형</td>
+				<td>차이계산에 사용되는 방법: <b class="bterm">류형</b> = 0인 경우에는 표준방법, <b class="bterm">류형</b> = 1인 경우에는 유럽방법이 사용됩니다. 추가선택인수입니다.
+					<p><b class="bterm">표준방법:</b>   시작날자가 어떤 달의 31일이면 그달의 30일로 처리됩니다. 마감날자가 31일이고 시작날자가 30일보다 이전이면 마감날자는 다음달 1일로 처리됩니다. 그렇지 않으면 마감날자는 그달의 30일로 처리됩니다.</p>
+					<p><b class="bterm">유럽방법:</b>   시작날자나 마감날자가 어떤달의 31일이면 그달의 30일로 처리됩니다.</p>
+				</td>
+			</tr>
+		</table>
+		<p><b class="bterm">실례</b></p>
+			<p><a href='1.5.1.htm'>실례의 리용방법</a>을 참고하십시오.
+			</p>
+			<table>
+				<tr>
+					<td>
+						<table>
+							<tr><td>&nbsp;</td></tr>
+							<tr><th>1</th></tr>
+							<tr><th>2</th></tr>
+							<tr><th>3</th></tr>
+						</table>
+					</td>
+					<td>
+						<table>
+							<tr>
+								<th>A</th>
+							</tr>
+							<tr>
+								<th>날자</th>
+							</tr>
+							<tr>
+								<td>2008-1-30</td>
+							</tr>
+							<tr>
+								<td>2008-2-1</td>
+							</tr>
+							<tr>
+								<th>수식</th>
+								<th>설명(결과)</th>
+							</tr>
+							<tr>
+								<td>=DAYS360(A2,A3)</td>
+								<td>1년을 360일로 기준할 때 우에서 지적된 두 날자사이의 날자수입니다. (1)</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>	
+		<script type="text/javascript" language="Javascript">footerView()</script>
+	
+</body>
+</html>

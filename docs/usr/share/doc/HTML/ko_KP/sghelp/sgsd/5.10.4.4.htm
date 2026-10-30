@@ -1,0 +1,43 @@
+﻿<html dir='ltr'>
+	<head>
+		<META http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+		<title>수식계산시점과 방법의 바꾸기</title>
+		<link rel='stylesheet' type='text/css' href='../css/main.css'/>
+		<script type='text/javascript' language='Javascript' src='../js/mexpcol.js'></script>
+		<script type='text/javascript' language='JavaScript' src='../js/glossary.js'></script>
+	</head>
+	<body>
+		<h1>&nbsp;<img align="absbottom" src="../image/external_images/crystal/svtools/res/new_doc.png"/>&nbsp;수식계산시점과 방법의 바꾸기</h1>
+		<p id='ExpandAllLine' class='ExpFav'>
+			<a href='#' onClick='ExpandAll()' onKeyPress='ExpandAll()' class='DropDown'>
+				<img id='picHeader' border='0' src='../image/image/common/expandtri.gif' alt='모두 표시'>
+				<span id='ExpandAll'>모두 표시</span>
+			</a>
+		</p>
+		<p>기본적으로 수식과 련결된 세포가 바뀌면 수식이 자동으로 다시 계산됩니다.</p>
+		<p><b class="bterm">표용지나 자료표문서의 계산</b></p>
+			<p><b class="bterm">[F9]건 누르기:</b>&emsp;   열려있는 모든 자료표문서에서 마지막으로 계산된 이후에 변경된 수식과 그 수식에 련결된 수식을 다시 계산합니다. 
+				자료표문서가 자동계산으로 설정된 경우에는 계산을 하기 위하여 <b class="bterm">[F9]</b>건를 누르지 않아도 됩니다.
+			</p>
+			<p><b class="bterm">[Shift+F9]건 누르기:</b>&emsp;   현재표용지에서 마지막으로 계산된 이후에 변경된 수식과 그 수식에 련결된 수식을 다시 계산합니다.</p>
+			<p><b class="bterm">[Ctrl+Shift+F9]건 누르기:</b>&emsp;   열려있는 자료표문서에서 마지막으로 계산된 이후에 변경되였는가 안되였는가에 관계없이 모든 수식을 계산합니다.</p>
+<!--			<p><b class="bterm">[Ctrl+Shift+Alt+F9]건 누르기:</b>&emsp; 련결된 수식을 다시 검사하고 열려있는 자료표문서에서 마지막으로 계산된 이후에 변경되였는가에 관계없이 모든 수식을 계산합니다.</p>-->
+		<p><b class="bterm">자료표문서의 계산정밀도의 변경</b></p>
+			<p><b class="bterm">주의:</b>&emsp;   표시된(서식이 지정된) 값을 사용하여 자료표문서에서 계산정밀도를 변경하면 해당 자료표문서에서 표용지의 모든 상수값이 영구적으로 변경됩니다. 
+				후에 최상정밀도로 계산하도록 선택하더라도 원래값을 복원할수 없습니다.
+			</p>
+			<ol>
+				<li><b class="bterm">&lt;서광사무처리&gt;</b>차림표에서 <b class="bterm">&lt;환경설정&gt;</b>을 찰칵하고 <b class="bterm">&lt;서광사무처리 표처리프로그람&gt;</b>의 <b class="bterm">&lt;계산&gt;</b>을 찰칵합니다.</li>
+				<li><b class="bterm">&lt;표시정확도&gt;</b>확인칸을 선택합니다.</li>
+			</ol>
+		<p><b class="bterm">표처리프로그람에서 수식이 반복계산되는 회수의 변경</b></p>
+			<ol>
+				<li><b class="bterm">&lt;서광사무처리&gt;</b>차림표에서 <b class="bterm">&lt;환경설정&gt;</b>을 찰칵하고 <b class="bterm">&lt;서광사무처리 표처리프로그람&gt;</b>의 <b class="bterm">&lt;계산&gt;</b>을 찰칵합니다.</li>
+				<li><b class="bterm">&lt;반복회수&gt;</b>확인칸을 선택합니다.</li>
+				<li>반복회수를 입력합니다. 반복회수가 많을수록 표용지계산에 필요한 시간이 더 길어집니다.</li>
+				<li>계산결과사이에 허용되는 최대변화정도를 설정하려면 <b class="bterm">&lt;최소변경값&gt;</b>본문칸에서 값을 설정합니다. 값이 작을수록 결과는 더 정확하고 표용지계산에 필요한 시간은 더 길어집니다.</li>
+			</ol>
+		<script type="text/javascript" language="Javascript">footerView()</script>
+	
+</body>
+</html>

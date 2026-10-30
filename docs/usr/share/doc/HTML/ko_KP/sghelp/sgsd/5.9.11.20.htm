@@ -1,0 +1,79 @@
+<html dir='ltr'>
+	<head>
+		<META http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+		<title>STYLE</title>
+		<link rel='stylesheet' type='text/css' href='../css/main.css'/>
+		<script type='text/javascript' language='Javascript' src='../js/mexpcol.js'></script>
+		<script type='text/javascript' language='JavaScript' src='../js/glossary.js'></script>
+	</head>
+	<body>
+		<h1>&nbsp;<img align="absbottom" src="../image/external_images/crystal/svtools/res/new_doc.png"/>&nbsp;STYLE</h1>
+		<p id='ExpandAllLine' class='ExpFav'>
+			<a href='#' onClick='ExpandAll()' onKeyPress='ExpandAll()' class='DropDown'>
+				<img id='picHeader' border='0' src='../image/image/common/expandtri.gif' alt='모두 표시'>
+				<span id='ExpandAll'>모두 표시</span>
+			</a>
+		</p>
+		<p><b class="bterm">참고항목</b>&emsp;
+			<a href="5.9.11.1.htm">자료표함수목록</a>
+		</p>
+		<p>수식세포에 격식을 적용합니다.</p>
+		<p><b class="bterm">문법:&emsp;&emsp;		STYLE(격식,시간,격식2)</b></p>
+		<table>
+			<tr>
+				<th>인수명</th>
+				<th>설명</th>
+			</tr>
+			<tr>
+				<td>격식</td>
+				<td>세포에 할당된 세포격식의 이름입니다. 격식이름은 큰 옮김표로 묶어야 합니다.</td>
+			</tr>
+			<tr>
+				<td>시간</td>
+				<td>초단위의 선택할수 있는 시간입니다. 추가선택인수입니다. 이 인수가 없으면 류형이 특정한 시간후에 절환되지 않습니다.</td>
+			</tr>
+			<tr>
+				<td>격식2</td>
+				<td>일정한 시간이 경과된 후에 세포에 할당된 세포격식의 선택적이름입니다. 추가선택인수입니다.  이 인수를 생략하면 《기정》인것으로 가정합니다.</td>
+			</tr>
+		</table>
+		<p><b class="bterm">실례</b></p>
+			<p><a href="1.5.1.htm">실례의 리용방법</a>을 참고하십시오.</p>
+			<table>
+				<tr>
+					<td>
+						<table>
+							<tr>
+								<td class="noborder">&nbsp;
+								</td>
+							</tr>
+							<tr>
+								<th>1</th>
+							</tr>
+							<tr>
+								<th>2</th>
+							</tr>
+						</table>
+					</td>
+					<td>
+						<table>
+							<tr>
+								<th>A</th>
+								<th>B</th>
+							</tr>
+							<tr>
+								<th>수식</th>
+								<th>설명</th>
+							</tr>
+							<tr>
+								<td>=STYLE("장절제목", 60, "기정")</td>
+								<td>문서의 재계산이나 적재이후 60초동안 《장절제목》격식을 사용하여 세포의 격식을 지정하며 그다음에 세포는 《기정》격식을 유지합니다.</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+		<script type="text/javascript" language="Javascript">footerView()</script>
+	
+</body>
+</html>				

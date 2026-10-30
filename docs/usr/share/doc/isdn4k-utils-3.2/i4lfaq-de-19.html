@@ -1,0 +1,191 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <META NAME="GENERATOR" CONTENT="LinuxDoc-Tools 0.9.21">
+ <TITLE>ISDN4LINUX - FAQ (deutsche Version): 2channel: Kanalb&uuml;ndelung (MPPP, raw bundling) </TITLE>
+ <LINK HREF="i4lfaq-de-20.html" REL=next>
+ <LINK HREF="i4lfaq-de-18.html" REL=previous>
+ <LINK HREF="i4lfaq-de.html#toc19" REL=contents>
+</HEAD>
+<BODY>
+<A HREF="i4lfaq-de-20.html">Next</A>
+<A HREF="i4lfaq-de-18.html">Previous</A>
+<A HREF="i4lfaq-de.html#toc19">Contents</A>
+<HR>
+<H2><A NAME="2channel"></A> <A NAME="s19">19.</A> <A HREF="i4lfaq-de.html#toc19">2channel: Kanalb&uuml;ndelung (MPPP, raw bundling) </A></H2>
+
+<H2><A NAME="2channel_whatis"></A> <A NAME="ss19.1">19.1</A> <A HREF="i4lfaq-de.html#toc19.1">2channel_whatis: Was ist Kanalb&uuml;ndelung und wie kann ich es verwenden? </A>
+</H2>
+
+<P>Kanalb&uuml;ndelung wird von ISDN4LINUX zur Zeit in zwei Variationen
+unterst&uuml;tzt:
+<UL>
+<LI><B>Raw Bundling</B> (Konfiguration von sogenannten <CODE>slave
+channels</CODE>)</LI>
+<LI><B>MPPP</B> (basiert auf syncPPP)</LI>
+</UL>
+
+Beide Variationen haben ihre Vor- und Nachteile. Schau Dir die
+folgenden Fragen an. Eine dynamische Handhabung f&uuml;r MPPP kann mit
+dem Programm <CODE>ibod</CODE> erreicht werden - siehe Frage 
+<A HREF="#2channel_mpppconfig">2channel_mpppconfig</A>.</P>
+
+<H2><A NAME="2channel_raw"></A> <A NAME="ss19.2">19.2</A> <A HREF="i4lfaq-de.html#toc19.2">2channel_raw: Was ist 'raw bundling'? </A>
+</H2>
+
+<P>Raw bundling arbeitet &auml;hnlich wie rawIP, nur mit mehreren
+Kan&auml;len. Daher hat es auch die theoretischen Vor- und Nachteile
+von rawIP. Raw bundling ben&ouml;tigt f&uuml;r jeden benutzten Kanal
+ein Netzwerk-Interface. Eines davon, das sogenannte Master Interface,
+kontrolliert das Herstellen und Abbrechen der Verbindungen. F&uuml;r
+jeden weiteren Kanal wird ein sogenanntes Slave Interface
+eingerichtet, das automatisch vom Master Interface aktiviert wird.</P>
+
+<H2><A NAME="2channel_rawconfig"></A> <A NAME="ss19.3">19.3</A> <A HREF="i4lfaq-de.html#toc19.3">2channel_rawconfig: Wie konfiguriere ich raw bundling? </A>
+</H2>
+
+<P>Das Master Interface wird wie normal mit 
+<HR>
+<PRE>
+isdnctrl addif &lt;master_interface&gt;
+</PRE>
+<HR>
+
+erstellt und konfiguriert. F&uuml;r alle ben&ouml;tigten
+abh&auml;ngigen Kan&auml;le werden dann Slave Interfaces mit dem
+Befehl:
+<HR>
+<PRE>
+isdnctrl addslave &lt;master_interface&gt; &lt;slave_interface&gt;
+</PRE>
+<HR>
+
+erstellt und wie &uuml;blich konfiguriert (z.B. 'isdnctrl sdelay
+slave_interface delay').</P>
+
+<H2><A NAME="2channel_rawgoodbad"></A> <A NAME="ss19.4">19.4</A> <A HREF="i4lfaq-de.html#toc19.4">2channel_rawgoodbad: Was sind die Vor- und Nachteile des raw bundling? </A>
+</H2>
+
+<P>Raw bundling hat alle Vor- und Nachteile des rawIP. Im Vergleich zu
+MPPP hat raw bundling den Vorteil, da&szlig; ISDN4LINUX die
+ben&ouml;tigten abh&auml;ngigen Kan&auml;le selbst &ouml;ffnet und
+schlie&szlig;t. Leider hat raw bundling immer noch Probleme mit den
+Transferraten. Siehe weiter unten.</P>
+
+<H2><A NAME="2channel_mppp"></A> <A NAME="ss19.5">19.5</A> <A HREF="i4lfaq-de.html#toc19.5">2channel_mppp: Was ist MPPP? </A>
+</H2>
+
+<P>MPPP oder MP oder MPP (Warnung: MP ist auch eine Abk&uuml;rzung von
+"Multi Processor") steht f&uuml;r Multi Point to Point und bedeutet
+das B&uuml;ndeln von mehreren Kan&auml;len zu einem logischen
+Strom. Es ist eine Abart des normalen syncPPP. Deshalb erbt es auch
+dessen Vor- und Nachteile. Nur zur Information: ipppd betreibt MPPP
+nach RFC 1717 anstatt nach dem neueren RFC 1990 (MLP).</P>
+<P>Im Gegensatz zu raw bundling wird als Interface zum ipppd nur ein
+Netzinterface ben&ouml;tigt, da der ipppd alle seine Kan&auml;le
+selbst verwaltet. Herein kommende Daten werden vom ipppd zuf&auml;llig
+auf alle verf&uuml;gbaren Kan&auml;le verteilt. Diese Kan&auml;le
+m&uuml;ssen nicht unbedingt ISDN-Kan&auml;le sein. Theoretisch
+k&ouml;nnen Modemverbindungen mit ISDN-Kan&auml;len vermischt
+werden. Hier jedoch besch&auml;ftigen wir uns nur mit
+ISDN-Kan&auml;len.</P>
+
+<H2><A NAME="2channel_mpppgoodbad"></A> <A NAME="ss19.6">19.6</A> <A HREF="i4lfaq-de.html#toc19.6">2channel_mpppgoodbad: Was sind die Vor- und Nachteile von MPPP? </A>
+</H2>
+
+<P>Ein Nachteil besteht darin, da&szlig; der 2.Kanal 'manuell' aktiviert
+werden muss. Der ipppd kann den 2.Kanal nicht nach Bedarf an- oder
+abschalten. Die normalen automatischen Funktionen des ipppd sind
+entweder unzuverl&auml;ssig (automatisches Auflegen) oder
+funktionieren &uuml;berhaupt nicht (automatische Anwahl). Das gilt
+nicht f&uuml;r die anderen Encapsulations. Die &Uuml;bertragungsraten
+sind allerdings sehr gut (ca. 30 KB/s mit 4 Kan&auml;en).</P>
+
+<H2><A NAME="2channel_mpppconfig"></A> <A NAME="ss19.7">19.7</A> <A HREF="i4lfaq-de.html#toc19.7">2channel_mpppconfig: Wie richte ich MPPP ein? </A>
+</H2>
+
+<P>Zuerst muss die Unterst&uuml;tzung f&uuml;r MPPP bei der Kompilation
+der ISDN-Module aktiviert werden. Dann definierst Du ein (normales)
+Interface f&uuml;r ipppd (i.a. 'isdnctrl addif ippp0', usw.). Dieses
+Interface wird als Master Interface benutzt. Anschlie&szlig;end musst
+Du f&uuml;r jeden zus&auml;tzlichen Kanal ein Slave Device einrichten
+(z.B.: 'isdnctrl addslave ippp0 &lt;slave_interface&gt;', mehr Details
+im I4L Manual). Die Aktivierung der Kanalb&uuml;ndelung erfolgt durch
+die Option '+mp' beim Aufruf des ipppd un durch die Bindung beider
+Devices an ipppd. Achte darauf, da&szlig; die Namen beider Devices mit
+"ippp" beginnen m&uuml;ssen.</P>
+<P>Zum Gebrauch der Kanalb&uuml;ndlung musst Du zuerst das 'Master
+Device' aktivieren. Anschlie&szlig;end werden die Slave Channels
+hinzugef&uuml;gt:
+<HR>
+<PRE>
+isdnctrl addlink device
+</PRE>
+<HR>
+
+Sie werden mit dem Befehl:
+<HR>
+<PRE>
+isdnctrl removelink ippp0
+</PRE>
+<HR>
+
+wieder deaktiviert. Dies ist anders als bei den anderen encapsulations
+von ISDN4LINUX!
+Meldet addlink einen Fehler -2 so sind keine Slave Devices
+eingerichtet. Der Fehler -5 bedeutet, da&szlig; ippp0 nicht verbunden
+ist.  Beachte auch, da&szlig; das Slave Device dazu im W&auml;hlmodus
+<CODE>auto</CODE> sein muss. Zur manuellen Steuerung benutzt Du
+<HR>
+<PRE>
+isdnctrl dial slave
+</PRE>
+<HR>
+
+und
+<HR>
+<PRE>
+isdnctrl hangup slave
+</PRE>
+<HR>
+</P>
+<P>Bei syncPPP gibt es keine automatische Aktivierung der Slave
+Devices. Sie m&uuml;ssen manuell hinzugef&uuml;gt und wieder entfernt
+werden. Es gibt daf&uuml;r jedoch das Programm <CODE>ibod</CODE>, das das
+automatisch erledigt. Du findest es auf:
+(
+<A HREF="http://www.compound.se/ibod.html">http://www.compound.se/ibod.html</A>)
+oder in einer von Karsten Keil erweiterten Version auf:
+<A HREF="http://www.suse.de/~kkeil/xibod/">http://www.suse.de/~kkeil/xibod/</A>.</P>
+<P>Ein Beispielscript findest Du in der Datei
+<CODE>etc/rc.isdn.syncppp.MPPP</CODE> im isdn4k-utils Paket (leider nicht
+in allen I4L-Versionen).</P>
+<P>Denke daran, da&szlig; Dein Provider den Gebrauch dieser Features
+erlauben muss. Es kann auch vorkommen, da&szlig; die Menge der
+gleichzeitig ge&ouml;ffneten Kan&auml;le limitiert ist und bei
+&Uuml;berschreitung dieses Limits alle Verbindungen abgebrochen
+werden.</P>
+
+<H2><A NAME="2channel_mpppcompile"></A> <A NAME="ss19.8">19.8</A> <A HREF="i4lfaq-de.html#toc19.8">2channel_mpppcompile: Ich habe MPPP ausprobiert aber es funktioniert nicht. Der ipppd schreibt im debug log so etwas wie das: ' ...  rcvd (0)(proto=0x3d) c0 00 00 00 80 fd 01 01 00 0a ... sent (0)(LCP ProtRej id=0x2 00 3d c0 00 00 00 80 fd 01 ...' </A>
+</H2>
+
+<P>Du hast vergessen, die Unterst&uuml;tzung f&uuml;r MPPP/RFC1717 in das
+ISDN Subsystem zu kompilieren. Kompiliere den Kernel mit dieser
+aktivierten Option neu.</P>
+
+<H2><A NAME="2channel_cantlocateippp1"></A> <A NAME="ss19.9">19.9</A> <A HREF="i4lfaq-de.html#toc19.9">2channel_cantlocateippp1: Beim Versuch mit MPPP bekomme ich die Fehlermeldung 'modprobe: Can't locate module ippp1' und 'ipppd: ioctl(SIOCSIFMTU): No such device...'? </A>
+</H2>
+
+<P>Das ist eine Eigenheit des ipppd. Er versucht, beiden Kan&auml;len die
+gleiche MTU zuzuordnen und der Kernel kann kein entsprechendes
+Netzwerk-Device finden. Du kannst diese Meldung ohne Probleme
+ignorieren, MPPP sollte trotzdem funktionieren.</P>
+
+
+
+<HR>
+<A HREF="i4lfaq-de-20.html">Next</A>
+<A HREF="i4lfaq-de-18.html">Previous</A>
+<A HREF="i4lfaq-de.html#toc19">Contents</A>
+</BODY>
+</HTML>

@@ -1,0 +1,94 @@
+<html><head><title>Setting up your Account</title><link rel="stylesheet" href="help:/common/kde-default.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.67.2"><meta name="keywords" content="KDE, Mail, email, Client, POP3, IMAP, PGP, GnuPG, GPG, Kolab"><link rel="start" href="index.html" title="The Mail Handbook"><link rel="up" href="getting-started.html" title="Chapter 2. Getting Started"><link rel="prev" href="getting-started.html" title="Chapter2. Getting Started"><link rel="next" href="testing-your-setup.html" title="Testing your Setup"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta name="GENERATOR" content="KDE XSL Stylesheet V1.13 using libxslt"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Setting up your Account</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="getting-started.html">Prev</a> </td><th width="60%" align="center">Chapter 2. Getting Started</th><td width="20%" align="right"> <a accesskey="n" href="testing-your-setup.html">Next</a></td></tr></table><hr></div><div class="sect1" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="setting-up-your-account"></a>Setting up your Account</h2></div></div></div><p>The <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Network</span></span> page contains the settings that
+tell <span class="application">Mail</span> how to send and receive your email messages. Many of these settings
+can vary greatly depending on the setup of your system and on the kind
+of network that your mail server is located in. If you do not know what
+setting to choose or what to put in a field, consult your Internet
+Service Provider (<span class="acronym">ISP</span>) or system
+administrator.</p><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="sending-mail"></a>Sending Messages</h3></div></div></div><p>The <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Sending</span></span> tab provides a list of
+ways to send messages. The first item in the list is the default
+way to send messages. Using the <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guibutton">Add...</span></span>
+button you can choose between two different ways of sending messages:
+<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">SMTP</span></span> and
+<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Sendmail</span></span>. <span class="application"><span class="trademark">sendmail</span>®</span> here
+means a local software installation -- this has a
+reputation of being difficult to set up, so if you do not already have a
+working <span class="application"><span class="trademark">sendmail</span>®</span> configuration, choose
+<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">SMTP</span></span> and fill in the <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Name</span></span>
+field with a descriptive name 
+(<span class="abbrev">e.g.</span> <strong class="userinput"><code>My Mail Account</code></strong>)
+and the <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Host</span></span>
+field with the name and domain of your mail server 
+(<span class="abbrev">e.g.</span> <strong class="userinput"><code>smtp.provider.com</code></strong>). You will probably
+not need to change the <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Port</span></span> setting (the default is
+<strong class="userinput"><code>25</code></strong>).</p><p>The way of sending messages configured here will be used for
+your default identity and for all other identities that have no own
+way of sending messages. You can use different ways of sending
+messages for different identities by selecting the <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Special
+transport</span></span> checkbox in the <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Advanced</span></span>
+tab of the <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Identities</span></span> section.</p><p>A description of the other options can be found
+in the <a href="configure-accounts.html#configure-accounts-sending" title="Sending">Configuration</a>
+chapter.</p><div class="sect3" lang="en"><div class="titlepage"><div></div></div></div></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="receiving-mail"></a>Receiving Messages</h3></div></div></div><p>To set up an account so you can receive mail, press the
+<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guibutton">Add...</span></span> button in the <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Receiving</span></span>
+tab. You will then be prompted for the type of your email account.  Most users should
+select <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">POP3</span></span> or <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">IMAP</span></span>.</p><p>You will then be presented with
+the <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Add account</span></span> window. First, fill in the
+<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Name</span></span> field to name your account. You can choose any name
+you like.  <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Login</span></span>, <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Password</span></span>, and
+<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Host</span></span> should be filled in with the appropriate information
+from your <span class="acronym">ISP</span> or system administrator. You should not
+need to change the <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Port</span></span> setting (the default for POP3 is
+<strong class="userinput"><code>110</code></strong>, the default for <span class="acronym">IMAP</span> is
+<strong class="userinput"><code>143</code></strong>).</p><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="receiving-mail-imap"></a>Options only relevant to <span class="acronym">IMAP</span></h4></div></div></div><p>If you are using <span class="acronym">IMAP</span>, you can optionally
+specify a path in the <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Prefix to folders</span></span> field. This
+tells <span class="application">Mail</span> where it can find your folders on the server. If you also
+have a shell account on the server and the messages are stored in your home
+folder it might be useful to store the messages in a subfolder
+<code class="filename">Mail</code>. Use this as a value in
+the <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Prefix to folders</span></span> field so that <span class="application">Mail</span> does
+not mix up mailbox files and other files. If you are not interested in 
+this feature, simple leave the field blank.</p><p>If you check <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Automatically compact folders</span></span> 
+<span class="application">Mail</span> removes the messages you deleted from the
+server as soon as you leave a folder. Otherwise the messages are
+only marked as deleted and it is up to you to compact the folders
+manually by using the menu item <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guimenu">File</span></span>/<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guimenuitem">Compact All
+Folders</span></span>.</p><p>If you check <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Show hidden folders</span></span>,
+folders whose name starts with a dot are also displayed.</p></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="receiving-mail-pop3"></a>Options only relevant to POP3</h4></div></div></div><p>Select <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Leave fetched messages on the server</span></span> if you want to
+leave your messages on the server after you downloaded them.</p><p>Select <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Exclude from "Check Mail"</span></span> if you
+do not want to check this account whenever you use <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guimenu">File</span></span>/<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guimenuitem">Check
+Mail</span></span>.  You can still check for new messages on this account
+with <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guimenu">File</span></span>/<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guimenuitem">Check Mail
+In</span></span>.</p><p>Select <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Enable interval mail checking</span></span> if you want
+<span class="application">Mail</span> to check for new messages automatically. The interval can be specified below
+under <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Check interval</span></span>.</p><p><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">inbox</span></span> is the default folder for incoming
+messages. If you want to change that for some reason, you can do so with
+<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Destination folder</span></span>. But what you probably want is a
+<a href="filters.html" title="Message Filters">filter</a>, which has nothing to do with this
+option.</p><p>With <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Precommand</span></span> you can specify any program that <span class="application">Mail</span>
+will execute just before fetching mail. Please specify the full path 
+(do not use “<span class="quote">~</span>”) and note that <span class="application">Mail</span> will not continue 
+until the program returns.</p><p>On the <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Extras</span></span> tab you can select <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Use
+pipelining for faster mail download</span></span> if this is supported by your
+server. You should carefully test this to make sure it works safely.</p></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="receiving-mail-imap-pop3"></a>Options for both <span class="acronym">IMAP</span> and POP3</h4></div></div></div><p>If you select <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Store POP password in configuration
+file</span></span> or <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Store IMAP password in configuration
+file</span></span> <span class="application">Mail</span> will remember your password so you will not have to
+type it every time you start <span class="application">Mail</span> and fetch new mail.</p><div class="warning" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Note</h3><p>Be warned that <span class="application">Mail</span> cannot really encrypt your password, so
+people who can access your configuration files (<span class="abbrev">e.g.</span> system
+administrators) can easily get your password if you select this
+option.</p></div><p><span class="application">Mail</span> supports encryption via <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">SSL</span></span> and
+<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">TLS</span></span> (<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">TLS</span></span> should be preferred
+if it is available).</p><p>For POP3 <span class="application">Mail</span> supports:</p><div class="itemizedlist"><ul type="disc"><li><p><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Clear text</span></span>, </p></li><li><p><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">PLAIN</span></span>, </p></li><li><p><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">LOGIN</span></span>, </p></li><li><p><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">CRAM-MD5</span></span> (recommended 
+if <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">DIGEST-MD5</span></span> is not available),</p></li><li><p><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">DIGEST-MD5</span></span> (recommended) and</p></li><li><p><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">APOP</span></span> authentication.</p></li></ul></div><p><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">DIGEST-MD5</span></span>, <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">CRAM-MD5</span></span> and
+<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">APOP</span></span> are secure on their own, the other
+options are only secure when used together with <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">SSL</span></span>
+or <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">TLS</span></span>.  You should only use <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Clear
+text</span></span> if your server does not support any of the other
+authentication methods. Additionally, for <span class="acronym">IMAP</span>
+<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Anonymous</span></span> is supported, but <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">APOP</span></span>
+is not. Use the <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guibutton">Check what the server supports</span></span> button
+on the <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Extras</span></span> or <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Security</span></span> tab
+to automatically select the most secure settings supported by your server.</p><p>You are now ready to send and receive mail. For
+<span class="acronym">IMAP</span>, just open your folders in the
+folder tree in <span class="application">Mail</span>'s main window. <span class="application">Mail</span> then connects to your
+server and displays the messages it finds. For POP3 use
+<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guimenu">File</span></span>/<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guimenuitem">Check
+Mail</span></span>.</p></div></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="getting-started.html">Prev</a> </td><td width="20%" align="center"><a accesskey="u" href="getting-started.html">Up</a></td><td width="40%" align="right"> <a accesskey="n" href="testing-your-setup.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">Chapter 2. Getting Started </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top"> Testing your Setup</td></tr></table></div></body></html>

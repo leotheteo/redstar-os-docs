@@ -1,0 +1,468 @@
+﻿<html dir='ltr'>
+	<head>
+		<META http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+		<title>수자의 더하기</title>
+		<link rel='stylesheet' type='text/css' href='../css/main.css'/>
+		<script type='text/javascript' language='Javascript' src='../js/mexpcol.js'></script>
+		<script type='text/javascript' language='JavaScript' src='../js/glossary.js'></script>
+	</head>
+	<body>
+		<h1>&nbsp;<img align="absbottom" src="../image/external_images/crystal/svtools/res/new_doc.png"/>&nbsp;수자의 더하기</h1>
+		<p id='ExpandAllLine' class='ExpFav'>
+			<a href='#' onClick='ExpandAll()' onKeyPress='ExpandAll()' class='DropDown'>
+				<img id='picHeader' border='0' src='../image/image/common/expandtri.gif' alt='모두 표시'>
+				<span id='ExpandAll'>모두 표시</span>
+			</a>
+		</p>
+		<p>
+			<a href='#' class='DropDown' onClick='Outline2()' onKeyPress='Outline2()'>
+			<img border='0' src='../image/image/common/blueup.gif' alt='표시'>수자의 더하기</a>
+		</p>
+		<div id='ExpCol' class='collapsed' border='0'>
+			<p>수자를 세포에 입력하여 더하기를 수행할수 있습니다. 례를 들어 세포에 =5+10을 입력하면 결과 15가 표시됩니다.</p>
+		</div>
+		<p>
+			<a href='#' class='DropDown' onClick='Outline2()' onKeyPress='Outline2()'>
+			<img border='0' src='../image/image/common/blueup.gif' alt='표시'>린접한 행이나 렬의 모든 수자를 더하기</a>
+		</p>
+		<div id='ExpCol' class='collapsed' border='0'>
+			<p>이 작업을 수행하려면 <b class="bterm">&lt;합계&gt;</b><img border='0' src='../image/external_images/crystal/res/commandimagelist/sc_autosum.png' alt='표시'>를 사용합니다.</p>
+			<ol>
+				<li>수자들이 있는 렬 아래의 세포나 행 오른쪽의 세포를 찰칵합니다.</li>
+				<li>수식띠에서 <b class="bterm">&lt;합계&gt;</b><img border='0' src='../image/external_images/crystal/res/commandimagelist/sc_autosum.png' alt='표시'>를 찰칵하고 <b class="bterm">[Enter]</b>건을 누릅니다.</li>
+			</ol>
+		</div>
+		<p>
+			<a href='#' class='DropDown' onClick='Outline2()' onKeyPress='Outline2()'>
+			<img border='0' src='../image/image/common/blueup.gif' alt='표시'>린접하지 않은 행이나 렬의 수자를 더하기</a>
+		</p>
+		<div id='ExpCol' class='collapsed' border='0'>
+			<p>이 작업을 수행하려면 다음실례와 같이 <b class="bterm">SUM</b>함수를 사용합니다.</p>
+			<p><b class="bterm">실례</b></p>
+			<p><a href='1.5.1.htm'>실례의 리용방법</a>을 참고하십시오.</p>
+			<table>
+				<tr>
+					<td>
+						<table>
+							<tr><td class="noborder">&nbsp;</td></tr>
+							<tr><th>1</th></tr>
+							<tr><th>2</th></tr>
+							<tr><th>3</th></tr>
+							<tr><th>4</th></tr>
+							<tr><th>5</th></tr>
+							<tr><th>6</th></tr>
+							<tr><th>7</th></tr>
+						</table>
+					</td>
+					<td>
+						<table>
+							<tr>
+								<th>A</th>
+								<th>B</th>
+							</tr>
+							<tr>
+								<th>판매원</th>
+								<th>전표</th>
+							</tr>
+							<tr>
+								<td>김순희</td>
+								<td>15 000</td>
+							</tr>
+							<tr>
+								<td>김순희</td>
+								<td>9 000</td>
+							</tr>
+							<tr>
+								<td>강영철</td>
+								<td>8 000</td>
+							</tr>
+							<tr>
+								<td>강영철</td>
+								<td>20 000</td>
+							</tr>
+							<tr>
+								<td>김순희</td>
+								<td>5 000</td>
+							</tr>
+							<tr>
+								<td>박진혁</td>
+								<td>22 500</td>
+							</tr>
+							<tr>
+								<th>수식</th>
+								<th>설명(결과)</th>
+							</tr>
+							<tr>
+								<td>=SUM(B2:B3;B5)</td>
+								<td>김순희의 전표 두개와 강영철의 전표 한개를 더합니다. (44 000)</td>
+							</tr>
+							<tr>
+								<td>=SUM(B2;B5;B7)</td>
+								<td>김순희, 강영철, 박진혁의 전표를 각각 더합니다. (57 500)</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+			<p>자세한 내용은 <a href='5.9.8.58.htm'>SUM</a>함수를 참고하십시오.</p>
+		</div>
+		<p>
+			<a href='#' class='DropDown' onClick='Outline2()' onKeyPress='Outline2()'>
+			<img border='0' src='../image/image/common/blueup.gif' alt='표시'>한개의 조건을 기준으로 수자를 더하기</a>
+		</p>
+		<div id='ExpCol' class='collapsed' border='0'>
+			<p><b class="bterm">SUMIF</b>함수를 사용하여 다음실례와 같이 다른 범위의 값을 기준으로 한 범위에 대한 합계값을 만들수 있습니다.</p>
+			<p><b class="bterm">실례</b></p>
+			<p><a href='1.5.1.htm'>실례의 리용방법</a>을 참고하십시오.</p>
+			<table>
+				<tr>
+					<td>
+						<table>
+							<tr><td class="noborder">&nbsp;</td></tr>
+							<tr><th>1</th></tr>
+							<tr><th>2</th></tr>
+							<tr><th>3</th></tr>
+							<tr><th>4</th></tr>
+							<tr><th>5</th></tr>
+							<tr><th>6</th></tr>
+							<tr><th>7</th></tr>
+						</table>
+					</td>
+					<td>
+						<table>
+							<tr>
+								<th>A</th>
+								<th>B</th>
+							</tr>
+							<tr>
+								<th>판매원</th>
+								<th>전표</th>
+							</tr>
+							<tr>
+								<td>김순희</td>
+								<td>15 000</td>
+							</tr>
+							<tr>
+								<td>김순희</td>
+								<td>9 000</td>
+							</tr>
+							<tr>
+								<td>강영철</td>
+								<td>8 000</td>
+							</tr>
+							<tr>
+								<td>강영철</td>
+								<td>20 000</td>
+							</tr>
+							<tr>
+								<td>김순희</td>
+								<td>5 000</td>
+							</tr>
+							<tr>
+								<td>박진혁</td>
+								<td>22 500</td>
+							</tr>
+							<tr>
+								<th>수식</th>
+								<th>설명(결과)</th>
+							</tr>
+							<tr>
+								<td>=SUMIF(A2:A7;"김순희";B2:B7)</td>
+								<td>김순희의 전표합계입니다. (29 000)</td>
+							</tr>
+							<tr>
+								<td>=SUMIF(B2:B7;">=9000";B2:B7)</td>
+								<td>9 000이상의 금액이 큰 전표합계입니다. (66 500)</td>
+							</tr>
+							<tr>
+								<td>=SUMIF(B2:B7;"<9000";B2:B7)</td>
+								<td>9 000미만의 금액이 작은 전표합계입니다. (13 000)</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+			<p><b class="bterm">SUMIF</b>함수에 사용하는 인수는 다음과 같습니다.</p>
+			<p><img border='0' src='../image/image/sgsd/sumif.gif' alt='표시'></p>
+			<p><img border='0' src='../image/image/common/callout1.gif' alt='표시'><b class="bterm"> 범위</b>: 이 범위의 세포에 있는 행이 조건에 맞는가 맞지 않는가를 확인합니다.</p>
+			<p><img border='0' src='../image/image/common/callout2.gif' alt='표시'><b class="bterm"> 기준</b>: 행이 합계에 포함되기 위하여 세포가 갖추어야 할 조건입니다.</p>
+			<p><img border='0' src='../image/image/common/callout3.gif' alt='표시'><b class="bterm"> 합계범위</b>: 행이 조건에 맞으면 범위의 세포에 있는 수자들을 더합니다.</p>
+			<p>자세한 내용은 <a href='5.9.8.59.htm'>SUMIF</a>함수를 참고하십시오.</p>
+		</div>
+		<p>
+			<a href='#' class='DropDown' onClick='Outline2()' onKeyPress='Outline2()'>
+			<img border='0' src='../image/image/common/blueup.gif' alt='표시'>여러 조건을 기준으로 수자를 더하기</a>
+		</p>
+		<div id='ExpCol' class='collapsed' border='0'>
+			<p>이 작업을 수행하려면 다음실례와 같이 <b class="bterm">IF</b>와 <b class="bterm">SUM</b>함수를 사용합니다.</p>
+			<p><b class="bterm">실례</b></p>
+			<p><a href='1.5.1.htm'>실례의 리용방법</a>을 참고하십시오.</p>
+			<table>
+				<tr>
+					<td>
+						<table>
+							<tr><td class="noborder">&nbsp;</td></tr>
+							<tr><th>1</th></tr>
+							<tr><th>2</th></tr>
+							<tr><th>3</th></tr>
+							<tr><th>4</th></tr>
+							<tr><th>5</th></tr>
+							<tr><th>6</th></tr>
+							<tr><th>7</th></tr>
+							<tr><th>8</th></tr>
+							<tr><th>9</th></tr>
+							<tr><th>10</th></tr>
+							<tr><th>11</th></tr>
+						</table>
+					</td>
+					<td>
+						<table>
+							<tr>
+								<th>A</th>
+								<th>B</th>
+								<th>C</th>
+								<th>D</th>
+							</tr>
+							<tr>
+								<th>지역</th>
+								<th>판매원</th>
+								<th>종류</th>
+								<th>판매량</th>
+							</tr>
+							<tr>
+								<td>남부</td>
+								<td>김순희</td>
+								<td>음료</td>
+								<td>3 571</td>
+							</tr>
+							<tr>
+								<td>서부</td>
+								<td>리설경</td>
+								<td>잡화</td>
+								<td>3 338</td>
+							</tr>
+							<tr>
+								<td>동부</td>
+								<td>강영철</td>
+								<td>음료</td>
+								<td>5 122</td>
+							</tr>
+							<tr>
+								<td>북부</td>
+								<td>강영철</td>
+								<td>잡화</td>
+								<td>6 239</td>
+							</tr>
+							<tr>
+								<td>남부</td>
+								<td>박진혁</td>
+								<td>과일</td>
+								<td>8 677</td>
+							</tr>
+							<tr>
+								<td>남부</td>
+								<td>리설경</td>
+								<td>과일</td>
+								<td>450</td>
+							</tr>
+							<tr>
+								<td>남부</td>
+								<td>리설경</td>
+								<td>학용품</td>
+								<td>7 673</td>
+							</tr>
+							<tr>
+								<td>동부</td>
+								<td>강영철</td>
+								<td>과일</td>
+								<td>664</td>
+							</tr>
+							<tr>
+								<td>북부</td>
+								<td>리설경</td>
+								<td>과일</td>
+								<td>1 500</td>
+							</tr>
+							<tr>
+								<td>남부</td>
+								<td>박진혁</td>
+								<td>학용품</td>
+								<td>6 596</td>
+							</tr>
+							<tr>
+								<th>수식</th>
+								<th>설명(결과)</th>
+								<td>&nbsp;</td>
+								<td>&nbsp;</td>
+							</tr>
+							<tr>
+								<td>=SUM(IF((A2:A11="남부")*(C2:C11="학용품");D2:D11))</td>
+								<td>남부지역의 학용품판매량의 합계입니다. (14 719)</td>
+								<td>&nbsp;</td>
+								<td>&nbsp;</td>
+							</tr>
+							<tr>
+								<td>=SUM(IF((A2:A11="남부")+(A2:A11="동부");D2:D11))</td>
+								<td>지역이 남부나 동부인 판매량의 합계입니다. (32 753)</td>
+								<td>&nbsp;</td>
+								<td>&nbsp;</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+			<p><b class="bterm">참고:</b>   실례의 수식은 <a href="#" class="glossary" onClick="AppendPopup(this,'IDG_ARRAYFORMULA')" onKeyPress="AppendPopup(this,'IDG_ARRAYFORMULA')">행렬수식</a>으로 입력하여야 합니다. 실례를 빈 표용지에 복사하고 수식 세포를 선택한 다음 <b class="bterm">[F2]</b>건을 누르고 <b class="bterm">[Ctrl+Shift+Enter]</b>건을 누릅니다. 수식을 행렬수식으로 입력하지 않으면 <b class="bterm">#VALUE!</b> 오유가 반환됩니다.</p>
+			<p>자세한 내용은 <a href='5.9.8.58.htm'>SUM</a>과 <a href='5.9.7.4.htm'>IF</a>함수를 참고하십시오.</p>
+		</div>
+		<p>
+			<a href='#' class='DropDown' onClick='Outline2()' onKeyPress='Outline2()'>
+			<img border='0' src='../image/image/common/blueup.gif' alt='표시'>별도의 범위에 보관된 기준을 조건으로 수자를 더하기</a>
+		</p>
+		<div id='ExpCol' class='collapsed' border='0'>
+			<p>이 작업을 수행하려면 아래의 실례와 같이 <b class="bterm">DSUM</b>함수를 사용합니다.</p>
+			<p><b class="bterm">실례</b></p>
+			<p><a href='1.5.1.htm'>실례의 리용방법</a>을 참고하십시오.</p>
+			<table>
+				<tr>
+					<td>
+						<table>
+							<tr><td class="noborder">&nbsp;</td></tr>
+							<tr><th>1</th></tr>
+							<tr><th>2</th></tr>
+							<tr><th>3</th></tr>
+							<tr><th>4</th></tr>
+							<tr><th>5</th></tr>
+							<tr><th>6</th></tr>
+							<tr><th>7</th></tr>
+							<tr><th>8</th></tr>
+							<tr><th>9</th></tr>
+							<tr><th>10</th></tr>
+							<tr><th>11</th></tr>
+							<tr><th>12</th></tr>
+						</table>
+					</td>
+					<td>
+						<table>
+							<tr>
+								<th>A</th>
+								<th>B</th>
+								<th>C</th>
+								<th>D</th>
+							</tr>
+							<tr>
+								<th>지역</th>
+								<th>판매원</th>
+								<th>종류</th>
+								<th>판매량</th>
+							</tr>
+							<tr>
+								<td>남부</td>
+								<td>김순희</td>
+								<td>음료</td>
+								<td>3 571</td>
+							</tr>
+							<tr>
+								<td>서부</td>
+								<td>리설경</td>
+								<td>잡화</td>
+								<td>3 338</td>
+							</tr>
+							<tr>
+								<td>동부</td>
+								<td>강영철</td>
+								<td>음료</td>
+								<td>5 122</td>
+							</tr>
+							<tr>
+								<td>북부</td>
+								<td>강영철</td>
+								<td>잡화</td>
+								<td>6 239</td>
+							</tr>
+							<tr>
+								<td>남부</td>
+								<td>박진혁</td>
+								<td>과일</td>
+								<td>8 677</td>
+							</tr>
+							<tr>
+								<td>남부</td>
+								<td>리설경</td>
+								<td>과일</td>
+								<td>450</td>
+							</tr>
+							<tr>
+								<td>남부</td>
+								<td>리설경</td>
+								<td>학용품</td>
+								<td>7 673</td>
+							</tr>
+							<tr>
+								<td>동부</td>
+								<td>강영철</td>
+								<td>과일</td>
+								<td>664</td>
+							</tr>
+							<tr>
+								<td>북부</td>
+								<td>리설경</td>
+								<td>과일</td>
+								<td>1 500</td>
+							</tr>
+							<tr>
+								<td>남부</td>
+								<td>박진혁</td>
+								<td>학용품</td>
+								<td>6 596</td>
+							</tr>
+							<tr>
+								<th>지역</th>
+								<th>판매원</th>
+								<th>종류</th>
+								<th>판매량</th>
+							</tr>
+							<tr>
+								<td>남부</td>
+								<td>&nbsp;</td>
+								<td>학용품</td>
+								<td>&nbsp;</td>
+							</tr>
+							<tr>
+								<td>&nbsp;</td>
+								<td>&nbsp;</td>
+								<td>과일</td>
+								<td>&nbsp;</td>
+							</tr>
+							<tr>
+								<th>수식</th>
+								<th>설명(결과)</th>
+								<td>&nbsp;</td>
+								<td>&nbsp;</td>
+							</tr>
+							<tr>
+								<td>=DSUM(A1:D11; "판매량"; A12:D13)</td>
+								<td>남부지역의 학용품 판매량 합계입니다. (14 719)</td>
+								<td>&nbsp;</td>
+								<td>&nbsp;</td>
+							</tr>
+							<tr>
+								<td>=DSUM(A1:D11; "판매량"; A12:D14)</td>
+								<td>남부지역의 학용품와 과일판매량 합계입니다. (25 560)</td>
+								<td>&nbsp;</td>
+								<td>&nbsp;</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+			<p><b class="bterm">DSUM</b>함수에 사용하는 인수는 다음과 같습니다.</p>
+			<p><img border='0' src='../image/image/sgsd/dsum.gif' alt='표시'></p>
+			<p><img border='0' src='../image/image/common/callout1.gif' alt='표시'><b class="bterm"> 자료기지</b>: 합계를 구할 목록입니다.</p>
+			<p><img border='0' src='../image/image/common/callout2.gif' alt='표시'><b class="bterm"> 자료기지마당</b>: 합계를 구할 렬의 표제입니다.</p>
+			<p><img border='0' src='../image/image/common/callout3.gif' alt='표시'><b class="bterm"> 탐색기준</b>: 조건이 들어있는 세포범위입니다.</p>
+			<p>자세한 내용은 <a href='5.9.3.13.htm'>DSUM</a>함수를 참고하십시오.</p>
+		</div>
+		<script type="text/javascript" language="Javascript">footerView()</script>
+	
+</body>
+</html>														

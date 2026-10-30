@@ -1,0 +1,188 @@
+﻿<html dir='ltr'>
+	<head>
+		<META http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+		<title>CELL</title>
+		<link rel='stylesheet' type='text/css' href='../css/main.css'/>
+		<script type='text/javascript' language='Javascript' src='../js/mexpcol.js'></script>
+		<script type='text/javascript' language='JavaScript' src='../js/glossary.js'></script>
+	</head>
+	<body>
+		<h1>&nbsp;<img align="absbottom" src="../image/external_images/crystal/svtools/res/new_doc.png"/>&nbsp;CELL</h1>
+		<p id='ExpandAllLine' class='ExpFav'>
+			<a href='#' onClick='ExpandAll()' onKeyPress='ExpandAll()' class='DropDown'>
+				<img id='picHeader' border='0' src='../image/image/common/expandtri.gif' alt='모두 표시'>
+				<span id='ExpandAll'>모두 표시</span>
+			</a>
+		</p>
+		<p><b class="bterm">참고항목</b>&emsp;
+			<a href="5.9.6.1.htm">정보함수목록</a>
+		</p>
+		<p>세포의 주소, 서식 또는 내용에 대한 정보를 결정합니다.</p>
+		<p><b class="bterm">문법:&emsp;&emsp;		CELL(정보류형,참조)</b></p>
+		<table>
+			<tr>
+				<th>인수명</th>
+				<th>설명</th>
+			</tr>
+			<tr>
+				<td>정보류형</td>
+				<td>원하는 세포정보의 류형을 지정하는 본문값으로 <b class="bterm">정보류형</b>과 해당 결과값은 다음표와 같습니다.</td>
+			</tr>
+			<tr>
+				<td>참조</td>
+				<td>시험하려는 세포의 위치입니다. 추가선택인수입니다.
+					생략된 경우 <b class="bterm">정보류형</b>에 지정된 정보는 변경된 마지막세포에 대한것입니다. 
+					다음목록은 <b class="bterm">정보류형</b>이 "format"이고 <b class="bterm">참조</b>가 제공된 수자서식으로 지정된 세포인 경우 <b class="bterm">CELL</b>수식에 의해 반환되는 본문값을 설명합니다.
+				</td>
+			</tr>
+		</table>
+		<table>
+			<tr>
+				<th>정보류형</th>
+				<th>의미</th>
+			</tr>
+			<tr>
+				<td>COL</td>
+				<td>참조된 렬의 번호로 됩니다. 세포("COL", D2)는 4로 됩니다.</td>
+			</tr>
+			<tr>
+				<td>ROW</td>
+				<td>참조된 행의 번호로 됩니다. 세포("ROW", D2)는 2로 됩니다.</td>
+			</tr>
+			<tr>
+				<td>SHEET</td>
+				<td>참조된 표용지의 번호로 됩니다. Cell("Sheet", 표용지3.D2)의 결과는 3입니다.</td>
+			</tr>
+			<tr>
+				<td>ADDRESS</td>
+				<td>참조된 세포의 절대주소로 됩니다.
+					<p>CELL("ADDRESS", D2)은 $D$2로 됩니다.</p>
+					<p>CELL("ADDRESS",표용지3.D2)은 $표용지3.$D$2로 됩니다.</p>
+					<p>CELL("ADDRESS", '/test/1.ods'#$표용지2.D2)은 'file:///test/1.ods'#$표용지2.$D$2로 됩니다.</p></td>
+			</tr>
+			<tr>
+				<td>FILENAME</td>
+				<td>참조된 세포의 표용지이름과 파일이름으로 됩니다.
+					<p>수식이 현재문서/test/1.ods 표용지1에 위치하고있는 경우 CELL("FILENAME", D2)은 'file:///test/1.ods'#$표용지1로 됩니다.</p>
+					<p>CELL("FILENAME",'/test/1.ods'#$표용지1.D2)은 'file:///test/1.ods'#$표용지1로 됩니다.</p></td>
+			</tr>
+			<tr>
+				<td>COORD</td>
+				<td>결과로 Lotus(TM)-Notation의 적당한 세포주소가 산출됩니다.
+					<p>CELL("COORD", D2)은 $A:$D$2로 됩니다.</p>
+					<p>CELL("COORD", 표용지3.D2)은 $C:$D$2로 됩니다.</p></td>
+			</tr>
+			<tr>
+				<td>CONTENTS</td>
+				<td>결과로 서식지정없이 참조된 세포의 내용이 산출됩니다.</td>
+			</tr>
+			<tr>
+				<td>TYPE</td>
+				<td>결과로 세포내용의 류형이 산출됩니다.
+					<p>b = blank. 빈 세포</p>
+					<p>l = label. 본문, 수식결과를 본문으로</p>
+					<p>v = value. 값, 수식결과를 수자로</p></td>
+			</tr>
+			<tr>
+				<td>WIDTH</td>
+				<td>결과로 참조된 렬의 너비가 산출됩니다. 측정단위는 기정크기의 기정서체인 렬에 맞는 령(0)의 개수입니다.</td>
+			</tr>
+			<tr>
+				<td>PREFIX</td>
+				<td>참조된 세포의 맞추기상태를 제공합니다.
+					<p>' = 왼쪽 또는 량쪽맞추기</p>
+					<p>" = 오른쪽맞추기</p>
+					<p>^ = 중심맞추기</p>
+					<p>\ = 반복(현재 대화식)</p></td>
+			</tr>
+			<tr>
+				<td>PROTECT</td>
+				<td>결과로 세포보호상태를 제공합니다.
+					<p>1 = 세포가 보호됨</p>
+					<p>0 = 세포가 보호되지 않음</p></td>
+			</tr>
+			<tr>
+				<td>FORMAT</td>
+				<td>결과로 수자서식을 지정하는 문자렬이 산출됩니다.
+					<p> = 천단위구분기호가 있는 수자(공백)</p>
+					<p>F = 천단위구분기호가 없는 수자</p>
+					<p>C = 통화형식</p>
+					<p>S = 지수표시 례를 들면 1.234+E56</p>
+					<p>P = 백분률값(%)</p>
+					<p>우의 서식에서 소수구분기호뒤의 소수자리수는 수자로 주어집니다. 례를 들어 수자서식 #.##0.0은 1을 구하며 수자서식 00.000%은 P3을 구합니다.</p>
+					<p>  D1 = YY-MMM-D, YY-MM-D 그리고 류사한 서식</p>
+					<p> D2 = MM-DD</p>
+					<p> D3 = YY-MM</p>
+					<p> D4 = YYYY-MM-DD HH:MM:SS</p>
+					<p> D5 = MM-DD</p>
+					<p>  D6 = 오전/오후 HH:MM:SS </p>
+					<p> D7 = 오전/오후 HH:MM </p>
+					<p> D8 = HH:MM:SS</p>
+					<p> D9 = HH:MM</p>
+					<p>  G = 다른 모든 서식</p>
+					<p>끝에 - (미누스) = 부수는 색갈로 서식지정됩니다.</p>
+					<p>끝에 () (괄호) = 서식코드에 열려있는 괄호가 있습니다</p></td>
+			</tr>
+			<tr>
+				<td>COLOR</td>
+				<td>부수값이 색갈로 서식지정되여있으면 결과는 1이 되고 그렇지 않은 경우 0으로 됩니다.</td>
+			</tr>
+			<tr>
+				<td>PARENTHESES</td>
+				<td>서식코드에 열려있는 괄호 (가 포함되여있으면 결과는 1이 되고 그렇지 않으면 0으로 됩니다.</td>
+			</tr>
+		</table>
+		<p><b class="bterm">CELL</b> 수식의 <b class="bterm">정보류형</b>인수가 "format"이고 나중에 사용자지정서식으로 세포의 서식을 지정하면 자료표를 다시 계산하여 <b class="bterm">CELL</b> 수식을 갱신해야 합니다.</p>
+		<p><b class="bterm">주의</b></p>
+			<p><b class="bterm">CELL</b>함수는 다른 표처리프로그람과의 호환성을 위하여 제공됩니다.</p>
+		<p><b class="bterm">실례</b></p>			
+<p><a href="1.5.1.htm">실례의 리용방법</a>을 참고하십시오.</p>
+			<table>
+				<tr>
+					<td>
+						<table>
+							<tr><td>&nbsp;</td></tr>
+							<tr><th>1</th></tr>
+							<tr><th>2</th></tr>
+							<tr><th>3</th></tr>
+						</table>
+					</td>
+					<td>
+						<table>
+							<tr>
+								<th>A</th>
+							</tr>
+							<tr>
+								<th>자료</th>
+							</tr>
+							<tr>
+								<td>2008/8/8</td>
+							</tr>
+							<tr>
+								<td>합계</td>
+							</tr>
+							<tr>
+								<th>수식</th>
+								<th>설명(결과)</th>
+							</tr>
+							<tr>
+								<td>=CELL("row",A2)</td>
+								<td>세포 A2의 행 번호입니다. (2)</td>
+							</tr>
+							<tr>
+								<td>=CELL("format", A2)</td>
+								<td>첫번째 문자렬의 서식코드입니다. (D1)</td>
+							</tr>
+							<tr>
+								<td>=CELL("contents", A3)</td>
+								<td>세포 A3의 내용입니다. (합계)</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>		
+		</div>	
+		<script type="text/javascript" language="Javascript">footerView()</script>
+	
+</body>
+</html>														

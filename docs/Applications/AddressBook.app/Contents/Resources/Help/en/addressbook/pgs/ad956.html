@@ -1,0 +1,61 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html401/sgml/loosedtd.html">
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link media="all" rel="stylesheet" href="../sty/task_style.css">
+<title>Using network directories with Address Book</title>
+<meta name="generator" content="APD XSL 1.0e">
+<meta name="keywords" content="alab11053, alab11488, alab11478, alab11539, alab11518, alab11453, adrbk1452, LDAP, NetInfo, directory, look up">
+<meta name="description" content="Address Book searches for addresses in your NetInfo domain and on LDAP servers you specify.">
+</head>
+<body>
+<div id="banner">
+<a name="adrbk1452"></a><a name="alab11053"></a><a name="alab11488"></a><a name="alab11478"></a><a name="alab11539"></a><a name="alab11518"></a><a name="alab11453"></a>
+<div id="machelp">
+<a class="bread" href="../index.html">Address Book Help</a>
+</div>
+<div id="index">
+<a class="leftborder" href="../xpgs/xall.html">Index</a>
+</div>
+</div>
+<div id="mainbox">
+<div id="caticon">
+<img width="32" height="32" alt="Address Book Icon" src="../gfx/xicnadb.gif"></div>
+<div id="pagetitle">
+<h1>Using network directories with Address Book</h1>
+</div>
+<p>If your computer is set up to access directory services on your network, Address Book automatically searches the directory services for addresses. 
+<p>
+You can also set up Address Book to search LDAP servers for addresses. LDAP is an Internet protocol used for looking up contact information on servers.
+<p>
+</p>
+<div summary="To do this" id="taskbox">
+<ol>
+<li>Choose Address Book / Preferences, then click LDAP.
+<li>Click Add (+) to specify the settings for the LDAP server you want to use. Contact your server administrator for the information you need to enter. Some common settings may look like this:
+Server: ldap.mycompany.com
+Search Base: ou=people, o=mycompany
+<li>If required, fill in the &ldquo;User name&rdquo; and Password fields, using the name and password of your user account on the LDAP server. Choose None or Simple from the Auth Type pop-up menu, as instructed by the administrator. 
+<li>For additional security on LDAP servers configured to use SSL, select the Use SSL checkbox. 
+<p>
+SSL (Secure Sockets Layer) is an Internet protocol that allows your computer to send encrypted, authenticated information across the Internet. Ask your system administrator if this option should be selected.
+<li>Click Save.
+<li>To have contact information automatically updated for LDAP network directory cards that you drag to your personal address book, select &ldquo;Auto Update LDAP Cards.&rdquo;</ol>
+<p>
+</div>
+<p>Information from network directories appear only when searching. To search a network directory, select Directories in the Group column and a directory in the Directory column, and then type text in the search field. To add someone from the network directory to your personal address book, drag the card from the directory to All in the Group column.
+<p>
+For instructions on setting up your computer to access directory services on your network, open Directory Access and choose Help / Directory Access Help.
+<p>
+For a list of public LDAP directories that you can add to Address Book, go to www.emailman.com/ldap/public.html or www.nd.edu/~eds/search/ldap_search.shtml.
+<p>
+</p>
+<h2 class="seealso">See also</h2>
+<p class="seealso"><a href="../pgs/ad1065.html">Why don't any contacts appear in my network directories?</a></p>
+<h2 class="seealso">Open this for me</h2>
+<p class="seealso"><a href="help:runscript=AddressBookHelp/shrd/opnbndsig.scpt string='com.apple.DirectoryService.Config'">Directory Access</a></p>
+<p class="seealso"><a href="http://www.emailman.com/ldap/public.html">eMailman website</a></p>
+<p class="seealso"><a href="http://www.nd.edu/~eds/search/ldap_search.shtml">Notre Dame website</a></p>
+</div>
+</body>
+</html>

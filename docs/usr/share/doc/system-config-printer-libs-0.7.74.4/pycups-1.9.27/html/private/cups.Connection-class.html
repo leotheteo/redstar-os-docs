@@ -1,0 +1,1678 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>cups.Connection</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css"></link>
+</head>
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+
+<!-- =========== START OF NAVBAR =========== -->
+<table class="navbar" border="0" width="100%" cellpadding="0" bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="center">
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="cups-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="trees.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="indices.html">Index</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <font size="-1"><b class="breadcrumbs">
+        <a href="cups-module.html">Module&nbsp;cups</a> ::
+        Class&nbsp;Connection
+      </b></font></br>
+    </td>
+    <td><table cellpadding="0" cellspacing="0">
+      <tr><td align="right"><font size="-2">[show&nbsp;private&nbsp;|&nbsp;<a href="../public/cups.Connection-class.html">hide&nbsp;private</a>]</font></td></tr>
+      <tr><td align="right"><font size="-2">[<a href="frames.html"target="_top">frames</a>&nbsp;|&nbsp;<a href="cups.Connection-class.html" target="_top">no&nbsp;frames</a>]</font></td></tr>
+    </table></td>
+</tr></table>
+
+<!-- =========== START OF CLASS DESCRIPTION =========== -->
+<h2 class="class">Type Connection</h2>
+
+<pre class="base-tree">
+<a href="__builtin__.object-class.html"><code>object</code></a> --+
+         |
+        <b>Connection</b>
+</pre><br />
+
+<hr/>
+
+<h1 class="heading">CUPS connection</h1>
+  A connection to the CUPS server. Before it is created the connection 
+  server and username should be set using <a 
+  href="cups-module.html#setServer" 
+  class="link"><code>cups.setServer</code></a> and <a 
+  href="cups-module.html#setUser" 
+  class="link"><code>cups.setUser</code></a>; otherwise the defaults will 
+  be used. When a Connection object is instantiated it results in a call 
+  to the libcups function httpConnectEncrypt().
+<hr/>
+
+
+<!-- =========== START OF METHOD SUMMARY =========== -->
+<table class="summary" border="1" cellpadding="3" cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="summary">
+  <th colspan="2">Method Summary</th></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="cups.Connection-class.html#__init__" class="summary-sig-name"><code>__init__</code></a>(<span class="summary-sig-vararg">...</span>)</span></code>
+<br />
+x.__init__(...) initializes x; see x.__class__.__doc__ for 
+signature</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="cups.Connection-class.html#__new__" class="summary-sig-name"><code>__new__</code></a>(<span class=summary-sig-arg>T</span>,
+          <span class=summary-sig-arg>S</span>,
+          <span class="summary-sig-vararg">...</span>)</span></code>
+<br />
+T.__new__(S, ...) -&gt; a new object with type S, a subtype of T</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">None</font></td>
+  <td><code><span class="summary-sig"><a href="cups.Connection-class.html#acceptJobs" class="summary-sig-name"><code>acceptJobs</code></a>(<span class=summary-sig-arg>name</span>)</span></code>
+<br />
+Cause printer to accept jobs.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">None</font></td>
+  <td><code><span class="summary-sig"><a href="cups.Connection-class.html#addPrinter" class="summary-sig-name"><code>addPrinter</code></a>(<span class=summary-sig-arg>name</span>)</span></code>
+<br />
+Add or adjust a print queue.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">None</font></td>
+  <td><code><span class="summary-sig"><a href="cups.Connection-class.html#addPrinterOptionDefault" class="summary-sig-name"><code>addPrinterOptionDefault</code></a>(<span class=summary-sig-arg>name</span>,
+          <span class=summary-sig-arg>option</span>,
+          <span class=summary-sig-arg>value</span>)</span></code>
+<br />
+Set a network default option.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">None</font></td>
+  <td><code><span class="summary-sig"><a href="cups.Connection-class.html#addPrinterToClass" class="summary-sig-name"><code>addPrinterToClass</code></a>(<span class=summary-sig-arg>name</span>,
+          <span class=summary-sig-arg>class</span>)</span></code>
+<br />
+Add a printer to a class.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">dict</font></td>
+  <td><code><span class="summary-sig"><a href="cups.Connection-class.html#adminGetServerSettings" class="summary-sig-name"><code>adminGetServerSettings</code></a>()</span></code>
+<br />
+Get server settings.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">None</font></td>
+  <td><code><span class="summary-sig"><a href="cups.Connection-class.html#adminSetServerSettings" class="summary-sig-name"><code>adminSetServerSettings</code></a>(<span class=summary-sig-arg>settings</span>)</span></code>
+<br />
+Set server settings.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">None</font></td>
+  <td><code><span class="summary-sig"><a href="cups.Connection-class.html#cancelJob" class="summary-sig-name"><code>cancelJob</code></a>(<span class=summary-sig-arg>jobid</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">None</font></td>
+  <td><code><span class="summary-sig"><a href="cups.Connection-class.html#cancelSubscription" class="summary-sig-name"><code>cancelSubscription</code></a>(<span class=summary-sig-arg>id</span>)</span></code>
+<br />
+Cancel a subscription.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">integer</font></td>
+  <td><code><span class="summary-sig"><a href="cups.Connection-class.html#createSubscription" class="summary-sig-name"><code>createSubscription</code></a>(<span class=summary-sig-arg>uri</span>)</span></code>
+<br />
+Create a subscription.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">None</font></td>
+  <td><code><span class="summary-sig"><a href="cups.Connection-class.html#deleteClass" class="summary-sig-name"><code>deleteClass</code></a>(<span class=summary-sig-arg>class</span>)</span></code>
+<br />
+Delete a class.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">None</font></td>
+  <td><code><span class="summary-sig"><a href="cups.Connection-class.html#deletePrinter" class="summary-sig-name"><code>deletePrinter</code></a>(<span class=summary-sig-arg>name</span>)</span></code>
+<br />
+Delete a printer.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">None</font></td>
+  <td><code><span class="summary-sig"><a href="cups.Connection-class.html#deletePrinterFromClass" class="summary-sig-name"><code>deletePrinterFromClass</code></a>(<span class=summary-sig-arg>name</span>,
+          <span class=summary-sig-arg>class</span>)</span></code>
+<br />
+Remove a printer from a class.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">None</font></td>
+  <td><code><span class="summary-sig"><a href="cups.Connection-class.html#deletePrinterOptionDefault" class="summary-sig-name"><code>deletePrinterOptionDefault</code></a>(<span class=summary-sig-arg>name</span>,
+          <span class=summary-sig-arg>option</span>)</span></code>
+<br />
+Removes a network default option.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">None</font></td>
+  <td><code><span class="summary-sig"><a href="cups.Connection-class.html#disablePrinter" class="summary-sig-name"><code>disablePrinter</code></a>(<span class=summary-sig-arg>name</span>)</span></code>
+<br />
+Disable printer.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">None</font></td>
+  <td><code><span class="summary-sig"><a href="cups.Connection-class.html#enablePrinter" class="summary-sig-name"><code>enablePrinter</code></a>(<span class=summary-sig-arg>name</span>)</span></code>
+<br />
+Enable printer.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">dict</font></td>
+  <td><code><span class="summary-sig"><a href="cups.Connection-class.html#getClasses" class="summary-sig-name"><code>getClasses</code></a>()</span></code>
+<br />
+Return a dict, indexed by name, of objects representing classes.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">dict</font></td>
+  <td><code><span class="summary-sig"><a href="cups.Connection-class.html#getDests" class="summary-sig-name"><code>getDests</code></a>()</span></code>
+<br />
+Return a dict representing available destinations.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">dict</font></td>
+  <td><code><span class="summary-sig"><a href="cups.Connection-class.html#getDevices" class="summary-sig-name"><code>getDevices</code></a>()</span></code>
+<br />
+Return a dict, indexed by device URI, of dicts representing devices, indexed 
+by attribute.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">None</font></td>
+  <td><code><span class="summary-sig"><a href="cups.Connection-class.html#getFile" class="summary-sig-name"><code>getFile</code></a>(<span class=summary-sig-arg>resource</span>,
+          <span class=summary-sig-arg>filename</span>)</span></code>
+<br />
+Fetch a CUPS server resource to a local file.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">dict</font></td>
+  <td><code><span class="summary-sig"><a href="cups.Connection-class.html#getJobs" class="summary-sig-name"><code>getJobs</code></a>(<span class=summary-sig-arg>which_jobs</span>,
+          <span class=summary-sig-arg>my_jobs</span>)</span></code>
+<br />
+Fetch a list of jobs.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">list</font></td>
+  <td><code><span class="summary-sig"><a href="cups.Connection-class.html#getNotifications" class="summary-sig-name"><code>getNotifications</code></a>(<span class=summary-sig-arg>subscription_ids</span>)</span></code>
+<br />
+Get notifications for subscribed events.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">string</font></td>
+  <td><code><span class="summary-sig"><a href="cups.Connection-class.html#getPPD" class="summary-sig-name"><code>getPPD</code></a>(<span class=summary-sig-arg>name</span>)</span></code>
+<br />
+Fetch a printer's PPD.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">dict</font></td>
+  <td><code><span class="summary-sig"><a href="cups.Connection-class.html#getPPDs" class="summary-sig-name"><code>getPPDs</code></a>()</span></code>
+<br />
+Return a dict, indexed by PPD name, of dicts representing PPDs, indexed by 
+attribute.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">dict</font></td>
+  <td><code><span class="summary-sig"><a href="cups.Connection-class.html#getPrinterAttributes" class="summary-sig-name"><code>getPrinterAttributes</code></a>(<span class=summary-sig-arg>name</span>)</span></code>
+<br />
+Fetch the attributes for a printer.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">dict</font></td>
+  <td><code><span class="summary-sig"><a href="cups.Connection-class.html#getPrinters" class="summary-sig-name"><code>getPrinters</code></a>()</span></code>
+<br />
+Return a dict, indexed by name, of dicts representing queues, indexed by 
+attribute.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">string</font></td>
+  <td><code><span class="summary-sig"><a href="cups.Connection-class.html#getServerPPD" class="summary-sig-name"><code>getServerPPD</code></a>(<span class=summary-sig-arg>ppd_name</span>)</span></code>
+<br />
+Fetches the named PPD and stores it in a temporary file.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">integer list</font></td>
+  <td><code><span class="summary-sig"><a href="cups.Connection-class.html#getSubscriptions" class="summary-sig-name"><code>getSubscriptions</code></a>(<span class=summary-sig-arg>uri</span>)</span></code>
+<br />
+Get subscriptions.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">job ID</font></td>
+  <td><code><span class="summary-sig"><a href="cups.Connection-class.html#printTestPage" class="summary-sig-name"><code>printTestPage</code></a>(<span class=summary-sig-arg>name</span>)</span></code>
+<br />
+Print a test page.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">None</font></td>
+  <td><code><span class="summary-sig"><a href="cups.Connection-class.html#putFile" class="summary-sig-name"><code>putFile</code></a>(<span class=summary-sig-arg>resource</span>,
+          <span class=summary-sig-arg>filename</span>)</span></code>
+<br />
+This is for uploading new configuration files for the CUPS server.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="cups.Connection-class.html#rejectJobs" class="summary-sig-name"><code>rejectJobs</code></a>(<span class=summary-sig-arg>name</span>)</span></code>
+<br />
+Cause printer to reject jobs.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">None</font></td>
+  <td><code><span class="summary-sig"><a href="cups.Connection-class.html#renewSubscription" class="summary-sig-name"><code>renewSubscription</code></a>(<span class=summary-sig-arg>id</span>)</span></code>
+<br />
+Renew a subscription.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">None</font></td>
+  <td><code><span class="summary-sig"><a href="cups.Connection-class.html#restartJob" class="summary-sig-name"><code>restartJob</code></a>(<span class=summary-sig-arg>jobid</span>)</span></code>
+<br />
+Restart a job.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">None</font></td>
+  <td><code><span class="summary-sig"><a href="cups.Connection-class.html#setDefault" class="summary-sig-name"><code>setDefault</code></a>(<span class=summary-sig-arg>name</span>)</span></code>
+<br />
+Set the system default printer.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">None</font></td>
+  <td><code><span class="summary-sig"><a href="cups.Connection-class.html#setJobHoldUntil" class="summary-sig-name"><code>setJobHoldUntil</code></a>(<span class=summary-sig-arg>jobid</span>,
+          <span class=summary-sig-arg>job_hold_until</span>)</span></code>
+<br />
+Specifies when a job should be printed.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">None</font></td>
+  <td><code><span class="summary-sig"><a href="cups.Connection-class.html#setPrinterDevice" class="summary-sig-name"><code>setPrinterDevice</code></a>(<span class=summary-sig-arg>name</span>,
+          <span class=summary-sig-arg>device_uri</span>)</span></code>
+<br />
+Set the device URI for a printer.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">None</font></td>
+  <td><code><span class="summary-sig"><a href="cups.Connection-class.html#setPrinterErrorPolicy" class="summary-sig-name"><code>setPrinterErrorPolicy</code></a>(<span class=summary-sig-arg>name</span>,
+          <span class=summary-sig-arg>policy</span>)</span></code>
+<br />
+Set the printer's error policy.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">None</font></td>
+  <td><code><span class="summary-sig"><a href="cups.Connection-class.html#setPrinterInfo" class="summary-sig-name"><code>setPrinterInfo</code></a>(<span class=summary-sig-arg>name</span>,
+          <span class=summary-sig-arg>info</span>)</span></code>
+<br />
+Set the human-readable information about a printer.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">None</font></td>
+  <td><code><span class="summary-sig"><a href="cups.Connection-class.html#setPrinterJobSheets" class="summary-sig-name"><code>setPrinterJobSheets</code></a>(<span class=summary-sig-arg>name</span>,
+          <span class=summary-sig-arg>start</span>,
+          <span class=summary-sig-arg>end</span>)</span></code>
+<br />
+Specifies job sheets for a printer.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">None</font></td>
+  <td><code><span class="summary-sig"><a href="cups.Connection-class.html#setPrinterLocation" class="summary-sig-name"><code>setPrinterLocation</code></a>(<span class=summary-sig-arg>name</span>,
+          <span class=summary-sig-arg>location</span>)</span></code>
+<br />
+Set the human-readable printer location</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">None</font></td>
+  <td><code><span class="summary-sig"><a href="cups.Connection-class.html#setPrinterOpPolicy" class="summary-sig-name"><code>setPrinterOpPolicy</code></a>(<span class=summary-sig-arg>name</span>,
+          <span class=summary-sig-arg>policy</span>)</span></code>
+<br />
+Set the printer's operation policy.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">None</font></td>
+  <td><code><span class="summary-sig"><a href="cups.Connection-class.html#setPrinterShared" class="summary-sig-name"><code>setPrinterShared</code></a>(<span class=summary-sig-arg>name</span>,
+          <span class=summary-sig-arg>shared</span>)</span></code>
+<br />
+Set whether a printer is shared with other people.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">None</font></td>
+  <td><code><span class="summary-sig"><a href="cups.Connection-class.html#setPrinterUsersAllowed" class="summary-sig-name"><code>setPrinterUsersAllowed</code></a>(<span class=summary-sig-arg>name</span>,
+          <span class=summary-sig-arg>allowed</span>)</span></code>
+<br />
+Set the list of users allowed to use a printer.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">None</font></td>
+  <td><code><span class="summary-sig"><a href="cups.Connection-class.html#setPrinterUsersDenied" class="summary-sig-name"><code>setPrinterUsersDenied</code></a>(<span class=summary-sig-arg>name</span>,
+          <span class=summary-sig-arg>denied</span>)</span></code>
+<br />
+Set the list of users denied the use of a printer.</td></tr>
+<tr bgcolor="#e8f0f8" class="group">
+  <th colspan="2">&nbsp;&nbsp;&nbsp;&nbsp;Inherited from object</th></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="__builtin__.object-class.html#__delattr__" class="summary-sig-name"><code>__delattr__</code></a>(<span class="summary-sig-vararg">...</span>)</span></code>
+<br />
+x.__delattr__('name') &lt;==&gt; del x.name</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="__builtin__.object-class.html#__format__" class="summary-sig-name"><code>__format__</code></a>(<span class="summary-sig-vararg">...</span>)</span></code>
+<br />
+default object formatter</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="__builtin__.object-class.html#__getattribute__" class="summary-sig-name"><code>__getattribute__</code></a>(<span class="summary-sig-vararg">...</span>)</span></code>
+<br />
+x.__getattribute__('name') &lt;==&gt; x.name</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="__builtin__.object-class.html#__hash__" class="summary-sig-name"><code>__hash__</code></a>(<span class=summary-sig-arg>x</span>)</span></code>
+<br />
+x.__hash__() &lt;==&gt; hash(x)</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="__builtin__.object-class.html#__reduce__" class="summary-sig-name"><code>__reduce__</code></a>(<span class="summary-sig-vararg">...</span>)</span></code>
+<br />
+helper for pickle</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="__builtin__.object-class.html#__reduce_ex__" class="summary-sig-name"><code>__reduce_ex__</code></a>(<span class="summary-sig-vararg">...</span>)</span></code>
+<br />
+helper for pickle</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="__builtin__.object-class.html#__repr__" class="summary-sig-name"><code>__repr__</code></a>(<span class=summary-sig-arg>x</span>)</span></code>
+<br />
+x.__repr__() &lt;==&gt; repr(x)</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="__builtin__.object-class.html#__setattr__" class="summary-sig-name"><code>__setattr__</code></a>(<span class="summary-sig-vararg">...</span>)</span></code>
+<br />
+x.__setattr__('name', value) &lt;==&gt; x.name = value</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">size of object in memory, in bytes</font></td>
+  <td><code><span class="summary-sig"><a href="__builtin__.object-class.html#__sizeof__" class="summary-sig-name"><code>__sizeof__</code></a>()</span></code>
+<br />
+__sizeof__() -&gt; size of object in memory, in bytes</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="__builtin__.object-class.html#__str__" class="summary-sig-name"><code>__str__</code></a>(<span class=summary-sig-arg>x</span>)</span></code>
+<br />
+x.__str__() &lt;==&gt; str(x)</td></tr>
+<tr bgcolor="#e8f0f8" class="group">
+  <th colspan="2">&nbsp;&nbsp;&nbsp;&nbsp;Inherited from type</th></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="__builtin__.type-class.html#__subclasshook__" class="summary-sig-name"><code>__subclasshook__</code></a>(<span class="summary-sig-vararg">...</span>)</span></code>
+<br />
+Abstract classes can override this to customize issubclass().</td></tr>
+</table><br />
+
+
+<!-- =========== START OF METHOD DETAILS =========== -->
+<table class="details" border="1" cellpadding="3" cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="details">
+  <th colspan="2">Method Details</th></tr>
+</table>
+
+<a name="__init__"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">__init__</span>(<span class="sig-vararg">...</span>)</span>
+    <br /><i>(Constructor)</i>
+  </h3>
+  x.__init__(...) initializes x; see x.__class__.__doc__ for 
+  signature
+  <dl><dt></dt><dd>
+    <dl><dt><b>Overrides:</b></dt>
+      <dd><a href="__builtin__.object-class.html#__init__"><code>__builtin__.object.__init__</code></a></dd>
+    </dl>
+  </dd></dl>
+</td></tr></table>
+
+<a name="__new__"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">__new__</span>(<span class=sig-arg>T</span>,
+          <span class=sig-arg>S</span>,
+          <span class="sig-vararg">...</span>)</span>
+  </h3>
+  T.__new__(S, ...) -&gt; a new object with type S, a subtype of T
+  <dl><dt></dt><dd>
+    <dl><dt><b>Returns:</b></dt>
+      <dd>
+<pre class="literalblock">
+a new object with type S, a subtype of T
+</pre>
+      </dd>
+    </dl>
+    <dl><dt><b>Overrides:</b></dt>
+      <dd><a href="__builtin__.object-class.html#__new__"><code>__builtin__.object.__new__</code></a></dd>
+    </dl>
+  </dd></dl>
+</td></tr></table>
+
+<a name="acceptJobs"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">acceptJobs</span>(<span class=sig-arg>name</span>)</span>
+  </h3>
+  Cause printer to accept jobs.
+  <dl><dt></dt><dd>
+    <dl><dt><b>Parameters:</b></dt>
+      <dd><code><b>name</b></code> -
+         queue name
+        <br /><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        (type=string)</i>
+      </dd>
+    </dl>
+    <dl><dt><b>Returns:</b></dt>
+      <dd>
+None      </dd>
+    </dl>
+    <dl><dt><b>Raises:</b></dt>
+      <dd><code><b>IPPError</b></code> -
+        IPP problem
+    </dl>
+  </dd></dl>
+</td></tr></table>
+
+<a name="addPrinter"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">addPrinter</span>(<span class=sig-arg>name</span>)</span>
+  </h3>
+  Add or adjust a print queue. Several parameters can select which PPD 
+  to use (filename, ppdname, and ppd) but only one may be given.
+  <dl><dt></dt><dd>
+    <dl><dt><b>Keyword Parameters:</b></dt>
+      <dd><code><b>filename</b></code> -
+         local filename of PPD file
+        <br /><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        (type=string)</i>
+      <dd><code><b>ppdname</b></code> -
+         filename from <a href="cups.Connection-class.html#getPPDs" 
+        class="link"><code>getPPDs</code></a>
+        <br /><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        (type=string)</i>
+      <dd><code><b>info</b></code> -
+         human-readable information about the printer
+        <br /><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        (type=string)</i>
+      <dd><code><b>location</b></code> -
+         human-readable printer location
+        <br /><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        (type=string)</i>
+      <dd><code><b>device</b></code> -
+         device URI string
+        <br /><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        (type=string)</i>
+      <dd><code><b>ppd</b></code> -
+         PPD object
+        <br /><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        (type=<a href="cups.PPD-class.html" 
+              class="link"><code>cups.PPD</code></a> instance)</i>
+      </dd>
+    </dl>
+    <dl><dt><b>Returns:</b></dt>
+      <dd>
+None      </dd>
+    </dl>
+    <dl><dt><b>Raises:</b></dt>
+      <dd><code><b>IPPError</b></code> -
+        IPP problem
+    </dl>
+  </dd></dl>
+</td></tr></table>
+
+<a name="addPrinterOptionDefault"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">addPrinterOptionDefault</span>(<span class=sig-arg>name</span>,
+          <span class=sig-arg>option</span>,
+          <span class=sig-arg>value</span>)</span>
+  </h3>
+  Set a network default option. Jobs submitted to the named queue will 
+  have the job option added if it is not already present in the job. This 
+  works with CUPS servers of at least version 1.2.
+  <dl><dt></dt><dd>
+    <dl><dt><b>Parameters:</b></dt>
+      <dd><code><b>name</b></code> -
+         queue name
+        <br /><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        (type=string)</i>
+      <dd><code><b>option</b></code> -
+         option name, for example 'job-priority'
+        <br /><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        (type=string)</i>
+      <dd><code><b>value</b></code> -
+         option value as a string
+        <br /><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        (type=string)</i>
+      </dd>
+    </dl>
+    <dl><dt><b>Returns:</b></dt>
+      <dd>
+None      </dd>
+    </dl>
+    <dl><dt><b>Raises:</b></dt>
+      <dd><code><b>IPPError</b></code> -
+        IPP problem
+    </dl>
+  </dd></dl>
+</td></tr></table>
+
+<a name="addPrinterToClass"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">addPrinterToClass</span>(<span class=sig-arg>name</span>,
+          <span class=sig-arg>class</span>)</span>
+  </h3>
+  Add a printer to a class. If the class does not yet exist, it is 
+  created.
+  <dl><dt></dt><dd>
+    <dl><dt><b>Parameters:</b></dt>
+      <dd><code><b>name</b></code> -
+         queue name
+        <br /><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        (type=string)</i>
+      <dd><code><b>class</b></code> -
+         class name
+        <br /><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        (type=string)</i>
+      </dd>
+    </dl>
+    <dl><dt><b>Returns:</b></dt>
+      <dd>
+None      </dd>
+    </dl>
+    <dl><dt><b>Raises:</b></dt>
+      <dd><code><b>IPPError</b></code> -
+        IPP problem
+    </dl>
+  </dd></dl>
+</td></tr></table>
+
+<a name="adminGetServerSettings"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">adminGetServerSettings</span>()</span>
+  </h3>
+  Get server settings.
+  <dl><dt></dt><dd>
+    <dl><dt><b>Returns:</b></dt>
+      <dd>
+        dict representing server settings; keywords include <a 
+        href="cups-module.html#CUPS_SERVER_DEBUG_LOGGING" 
+        class="link"><code>CUPS_SERVER_DEBUG_LOGGING</code></a>, <a 
+        href="cups-module.html#CUPS_SERVER_REMOTE_ADMIN" 
+        class="link"><code>CUPS_SERVER_REMOTE_ADMIN</code></a>, <a 
+        href="cups-module.html#CUPS_SERVER_REMOTE_PRINTERS" 
+        class="link"><code>CUPS_SERVER_REMOTE_PRINTERS</code></a>, <a 
+        href="cups-module.html#CUPS_SERVER_SHARE_PRINTERS" 
+        class="link"><code>CUPS_SERVER_SHARE_PRINTERS</code></a>, <a 
+        href="cups-module.html#CUPS_SERVER_USER_CANCEL_ANY" 
+        class="link"><code>CUPS_SERVER_USER_CANCEL_ANY</code></a>
+        <br /><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        (type=dict)</i>
+      </dd>
+    </dl>
+    <dl><dt><b>Raises:</b></dt>
+      <dd><code><b>IPPError</b></code> -
+        IPP problem
+    </dl>
+<p><b>See Also:</b> <a href="cups.Connection-class.html#adminSetServerSettings" 
+class="link"><code>adminSetServerSettings</code></a>
+</p>
+
+  </dd></dl>
+</td></tr></table>
+
+<a name="adminSetServerSettings"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">adminSetServerSettings</span>(<span class=sig-arg>settings</span>)</span>
+  </h3>
+  Set server settings.
+  <dl><dt></dt><dd>
+    <dl><dt><b>Parameters:</b></dt>
+      <dd><code><b>settings</b></code> -
+         dict of server settings
+        <br /><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        (type=dict)</i>
+      </dd>
+    </dl>
+    <dl><dt><b>Returns:</b></dt>
+      <dd>
+None      </dd>
+    </dl>
+    <dl><dt><b>Raises:</b></dt>
+      <dd><code><b>IPPError</b></code> -
+        IPP problem
+    </dl>
+<p><b>See Also:</b> <a href="cups.Connection-class.html#adminGetServerSettings" 
+class="link"><code>adminGetServerSettings</code></a>
+</p>
+
+  </dd></dl>
+</td></tr></table>
+
+<a name="cancelJob"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">cancelJob</span>(<span class=sig-arg>jobid</span>)</span>
+  </h3>
+  <dl><dt></dt><dd>
+    <dl><dt><b>Parameters:</b></dt>
+      <dd><code><b>jobid</b></code> -
+         job ID to cancel
+        <br /><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        (type=integer)</i>
+      </dd>
+    </dl>
+    <dl><dt><b>Returns:</b></dt>
+      <dd>
+None      </dd>
+    </dl>
+    <dl><dt><b>Raises:</b></dt>
+      <dd><code><b>IPPError</b></code> -
+        IPP problem
+    </dl>
+  </dd></dl>
+</td></tr></table>
+
+<a name="cancelSubscription"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">cancelSubscription</span>(<span class=sig-arg>id</span>)</span>
+  </h3>
+  Cancel a subscription.
+  <dl><dt></dt><dd>
+    <dl><dt><b>Parameters:</b></dt>
+      <dd><code><b>id</b></code> -
+         subscription ID
+        <br /><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        (type=integer)</i>
+      </dd>
+    </dl>
+    <dl><dt><b>Returns:</b></dt>
+      <dd>
+None      </dd>
+    </dl>
+    <dl><dt><b>Raises:</b></dt>
+      <dd><code><b>IPPError</b></code> -
+        IPP problem
+    </dl>
+  </dd></dl>
+</td></tr></table>
+
+<a name="createSubscription"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">createSubscription</span>(<span class=sig-arg>uri</span>)</span>
+  </h3>
+  Create a subscription.
+  <dl><dt></dt><dd>
+    <dl><dt><b>Parameters:</b></dt>
+      <dd><code><b>uri</b></code> -
+         URI for object
+        <br /><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        (type=string)</i>
+      </dd>
+    </dl>
+    <dl><dt><b>Keyword Parameters:</b></dt>
+      <dd><code><b>events</b></code> -
+         events to receive notifications for
+        <br /><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        (type=string list)</i>
+      <dd><code><b>job_id</b></code> -
+         job ID to receive notifications for
+        <br /><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        (type=integer)</i>
+      <dd><code><b>recipient_uri</b></code> -
+         URI for notifications recipient
+        <br /><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        (type=string)</i>
+      <dd><code><b>lease_duration</b></code> -
+         lease duration in seconds
+        <br /><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        (type=integer)</i>
+      <dd><code><b>time_interval</b></code> -
+         time interval
+        <br /><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        (type=integer)</i>
+      <dd><code><b>user_data</b></code> -
+         user data to receieve with notifications
+        <br /><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        (type=string)</i>
+      </dd>
+    </dl>
+    <dl><dt><b>Returns:</b></dt>
+      <dd>
+        subscription ID
+        <br /><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        (type=integer)</i>
+      </dd>
+    </dl>
+    <dl><dt><b>Raises:</b></dt>
+      <dd><code><b>IPPError</b></code> -
+        IPP problem
+    </dl>
+  </dd></dl>
+</td></tr></table>
+
+<a name="deleteClass"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">deleteClass</span>(<span class=sig-arg>class</span>)</span>
+  </h3>
+  Delete a class.
+  <dl><dt></dt><dd>
+    <dl><dt><b>Parameters:</b></dt>
+      <dd><code><b>class</b></code> -
+         class name
+        <br /><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        (type=string)</i>
+      </dd>
+    </dl>
+    <dl><dt><b>Returns:</b></dt>
+      <dd>
+None      </dd>
+    </dl>
+    <dl><dt><b>Raises:</b></dt>
+      <dd><code><b>IPPError</b></code> -
+        IPP problem
+    </dl>
+  </dd></dl>
+</td></tr></table>
+
+<a name="deletePrinter"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">deletePrinter</span>(<span class=sig-arg>name</span>)</span>
+  </h3>
+  Delete a printer.
+  <dl><dt></dt><dd>
+    <dl><dt><b>Parameters:</b></dt>
+      <dd><code><b>name</b></code> -
+         queue name
+        <br /><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        (type=string)</i>
+      </dd>
+    </dl>
+    <dl><dt><b>Returns:</b></dt>
+      <dd>
+None      </dd>
+    </dl>
+    <dl><dt><b>Raises:</b></dt>
+      <dd><code><b>IPPError</b></code> -
+        IPP problem
+    </dl>
+  </dd></dl>
+</td></tr></table>
+
+<a name="deletePrinterFromClass"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">deletePrinterFromClass</span>(<span class=sig-arg>name</span>,
+          <span class=sig-arg>class</span>)</span>
+  </h3>
+  Remove a printer from a class. If the class would be left empty, it 
+  is removed.
+  <dl><dt></dt><dd>
+    <dl><dt><b>Parameters:</b></dt>
+      <dd><code><b>name</b></code> -
+         queue name
+        <br /><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        (type=string)</i>
+      <dd><code><b>class</b></code> -
+         class name
+        <br /><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        (type=string)</i>
+      </dd>
+    </dl>
+    <dl><dt><b>Returns:</b></dt>
+      <dd>
+None      </dd>
+    </dl>
+    <dl><dt><b>Raises:</b></dt>
+      <dd><code><b>IPPError</b></code> -
+        IPP problem
+    </dl>
+  </dd></dl>
+</td></tr></table>
+
+<a name="deletePrinterOptionDefault"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">deletePrinterOptionDefault</span>(<span class=sig-arg>name</span>,
+          <span class=sig-arg>option</span>)</span>
+  </h3>
+  Removes a network default option. See <a 
+  href="cups.Connection-class.html#addPrinterOptionDefault" 
+  class="link"><code>addPrinterOptionDefault</code></a>.
+  <dl><dt></dt><dd>
+    <dl><dt><b>Parameters:</b></dt>
+      <dd><code><b>name</b></code> -
+         queue name
+        <br /><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        (type=string)</i>
+      <dd><code><b>option</b></code> -
+         option name, for example 'job-priority'
+        <br /><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        (type=string)</i>
+      </dd>
+    </dl>
+    <dl><dt><b>Returns:</b></dt>
+      <dd>
+None      </dd>
+    </dl>
+    <dl><dt><b>Raises:</b></dt>
+      <dd><code><b>IPPError</b></code> -
+        IPP problem
+    </dl>
+  </dd></dl>
+</td></tr></table>
+
+<a name="disablePrinter"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">disablePrinter</span>(<span class=sig-arg>name</span>)</span>
+  </h3>
+  Disable printer. This prevents the printer from processing its job 
+  queue.
+  <dl><dt></dt><dd>
+    <dl><dt><b>Parameters:</b></dt>
+      <dd><code><b>name</b></code> -
+         queue name
+        <br /><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        (type=string)</i>
+      </dd>
+    </dl>
+    <dl><dt><b>Keyword Parameters:</b></dt>
+      <dd><code><b>reason</b></code> -
+         optional human-readable reason for disabling the printer
+        <br /><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        (type=string)</i>
+      </dd>
+    </dl>
+    <dl><dt><b>Returns:</b></dt>
+      <dd>
+None      </dd>
+    </dl>
+    <dl><dt><b>Raises:</b></dt>
+      <dd><code><b>IPPError</b></code> -
+        IPP problem
+    </dl>
+  </dd></dl>
+</td></tr></table>
+
+<a name="enablePrinter"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">enablePrinter</span>(<span class=sig-arg>name</span>)</span>
+  </h3>
+  Enable printer. This allows the printer to process its job 
+  queue.
+  <dl><dt></dt><dd>
+    <dl><dt><b>Parameters:</b></dt>
+      <dd><code><b>name</b></code> -
+         queue name
+        <br /><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        (type=string)</i>
+      </dd>
+    </dl>
+    <dl><dt><b>Returns:</b></dt>
+      <dd>
+None      </dd>
+    </dl>
+    <dl><dt><b>Raises:</b></dt>
+      <dd><code><b>IPPError</b></code> -
+        IPP problem
+    </dl>
+  </dd></dl>
+</td></tr></table>
+
+<a name="getClasses"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">getClasses</span>()</span>
+  </h3>
+  <dl><dt></dt><dd>
+    <dl><dt><b>Returns:</b></dt>
+      <dd>
+        a dict, indexed by name, of objects representing classes. Each 
+        class object is either a string, in which case it is for the 
+        remote class; or a list, in which case it is a list of queue 
+        names.
+        <br /><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        (type=dict)</i>
+      </dd>
+    </dl>
+    <dl><dt><b>Raises:</b></dt>
+      <dd><code><b>IPPError</b></code> -
+        IPP problem
+    </dl>
+  </dd></dl>
+</td></tr></table>
+
+<a name="getDests"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">getDests</span>()</span>
+  </h3>
+  <dl><dt></dt><dd>
+    <dl><dt><b>Returns:</b></dt>
+      <dd>
+        a dict representing available destinations. Each dictionary 
+        key is a pair of (queue, instance) strings, and the dictionary 
+        value is a <a href="cups.Dest-class.html" 
+        class="link"><code>cups.Dest</code></a> object.
+        <br /><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        (type=dict)</i>
+      </dd>
+    </dl>
+    <dl><dt><b>Raises:</b></dt>
+      <dd><code><b>IPPError</b></code> -
+        IPP problem
+    </dl>
+  </dd></dl>
+</td></tr></table>
+
+<a name="getDevices"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">getDevices</span>()</span>
+  </h3>
+  <dl><dt></dt><dd>
+    <dl><dt><b>Returns:</b></dt>
+      <dd>
+        a dict, indexed by device URI, of dicts representing devices, 
+        indexed by attribute.
+        <br /><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        (type=dict)</i>
+      </dd>
+    </dl>
+    <dl><dt><b>Raises:</b></dt>
+      <dd><code><b>IPPError</b></code> -
+        IPP problem
+    </dl>
+  </dd></dl>
+</td></tr></table>
+
+<a name="getFile"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">getFile</span>(<span class=sig-arg>resource</span>,
+          <span class=sig-arg>filename</span>)</span>
+  </h3>
+  <p>Fetch a CUPS server resource to a local file.</p>
+  This is for obtaining CUPS server configuration files and log 
+  files.
+  <dl><dt></dt><dd>
+    <dl><dt><b>Parameters:</b></dt>
+      <dd><code><b>resource</b></code> -
+         resource name
+        <br /><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        (type=string)</i>
+      <dd><code><b>filename</b></code> -
+         name of local file for storage
+        <br /><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        (type=string)</i>
+      </dd>
+    </dl>
+    <dl><dt><b>Returns:</b></dt>
+      <dd>
+None      </dd>
+    </dl>
+    <dl><dt><b>Raises:</b></dt>
+      <dd><code><b>HTTPError</b></code> -
+        HTTP problem
+    </dl>
+  </dd></dl>
+</td></tr></table>
+
+<a name="getJobs"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">getJobs</span>(<span class=sig-arg>which_jobs</span>=<span class=sig-default>'not-completed'</span>,
+          <span class=sig-arg>my_jobs</span>=<span class=sig-default>False</span>)</span>
+  </h3>
+  Fetch a list of jobs.
+  <dl><dt></dt><dd>
+    <dl><dt><b>Parameters:</b></dt>
+      <dd><code><b>which_jobs</b></code> -
+         which jobs to fetch; possible values: 'completed', 
+        'not-completed', 'all'
+        <br /><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        (type=string)</i>
+      <dd><code><b>my_jobs</b></code> -
+         whether to restrict the returned jobs to those owned by the 
+        current CUPS user (as set by <a href="cups-module.html#setUser" 
+        class="link"><code>cups.setUser</code></a>).
+        <br /><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        (type=boolean)</i>
+      </dd>
+    </dl>
+    <dl><dt><b>Returns:</b></dt>
+      <dd>
+        a dict, indexed by job ID, of dicts representing job 
+        attributes.
+        <br /><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        (type=dict)</i>
+      </dd>
+    </dl>
+    <dl><dt><b>Raises:</b></dt>
+      <dd><code><b>IPPError</b></code> -
+        IPP problem
+    </dl>
+  </dd></dl>
+</td></tr></table>
+
+<a name="getNotifications"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">getNotifications</span>(<span class=sig-arg>subscription_ids</span>)</span>
+  </h3>
+  Get notifications for subscribed events.
+  <dl><dt></dt><dd>
+    <dl><dt><b>Parameters:</b></dt>
+      <dd><code><b>subscription_ids</b></code> -
+         list of subscription IDs to receive notifications for
+        <br /><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        (type=integer list)</i>
+      </dd>
+    </dl>
+    <dl><dt><b>Returns:</b></dt>
+      <dd>
+        list of dicts, each representing an event
+        <br /><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        (type=list)</i>
+      </dd>
+    </dl>
+    <dl><dt><b>Raises:</b></dt>
+      <dd><code><b>IPPError</b></code> -
+        IPP problem
+    </dl>
+  </dd></dl>
+</td></tr></table>
+
+<a name="getPPD"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">getPPD</span>(<span class=sig-arg>name</span>)</span>
+  </h3>
+  Fetch a printer's PPD.
+  <dl><dt></dt><dd>
+    <dl><dt><b>Parameters:</b></dt>
+      <dd><code><b>name</b></code> -
+         queue name
+        <br /><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        (type=string)</i>
+      </dd>
+    </dl>
+    <dl><dt><b>Returns:</b></dt>
+      <dd>
+        temporary PPD file name
+        <br /><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        (type=string)</i>
+      </dd>
+    </dl>
+    <dl><dt><b>Raises:</b></dt>
+      <dd><code><b>IPPError</b></code> -
+        IPP problem
+    </dl>
+  </dd></dl>
+</td></tr></table>
+
+<a name="getPPDs"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">getPPDs</span>()</span>
+  </h3>
+  <dl><dt></dt><dd>
+    <dl><dt><b>Returns:</b></dt>
+      <dd>
+        a dict, indexed by PPD name, of dicts representing PPDs, 
+        indexed by attribute.
+        <br /><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        (type=dict)</i>
+      </dd>
+    </dl>
+    <dl><dt><b>Raises:</b></dt>
+      <dd><code><b>IPPError</b></code> -
+        IPP problem
+    </dl>
+  </dd></dl>
+</td></tr></table>
+
+<a name="getPrinterAttributes"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">getPrinterAttributes</span>(<span class=sig-arg>name</span>)</span>
+  </h3>
+  Fetch the attributes for a printer.
+  <dl><dt></dt><dd>
+    <dl><dt><b>Parameters:</b></dt>
+      <dd><code><b>name</b></code> -
+         queue name
+        <br /><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        (type=string)</i>
+      </dd>
+    </dl>
+    <dl><dt><b>Returns:</b></dt>
+      <dd>
+        <p>a dict, indexed by attribute, of printer attributes for the 
+        printer 'name'.</p>
+        Attributes:
+        <ul>
+          <li>
+            'job-sheets-supported': list of strings
+          </li>
+          <li>
+            'job-sheets-default': tuple of strings (start, end)
+          </li>
+          <li>
+            'printer-error-policy-supported': if present, list of 
+            strings
+          </li>
+          <li>
+            'printer-error-policy': if present, string
+          </li>
+          <li>
+            'printer-op-policy-supported': if present, list of 
+            strings
+          </li>
+          <li>
+            'printer-op-policy': if present, string
+          </li>
+        </ul>
+        There are other attributes; the exact list of attributes 
+        returned will depend on the CUPS server.
+        <br /><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        (type=dict)</i>
+      </dd>
+    </dl>
+    <dl><dt><b>Raises:</b></dt>
+      <dd><code><b>IPPError</b></code> -
+        IPP problem
+    </dl>
+  </dd></dl>
+</td></tr></table>
+
+<a name="getPrinters"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">getPrinters</span>()</span>
+  </h3>
+  <dl><dt></dt><dd>
+    <dl><dt><b>Returns:</b></dt>
+      <dd>
+        a dict, indexed by name, of dicts representing queues, indexed 
+        by attribute.
+        <br /><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        (type=dict)</i>
+      </dd>
+    </dl>
+    <dl><dt><b>Raises:</b></dt>
+      <dd><code><b>IPPError</b></code> -
+        IPP problem
+    </dl>
+  </dd></dl>
+</td></tr></table>
+
+<a name="getServerPPD"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">getServerPPD</span>(<span class=sig-arg>ppd_name</span>)</span>
+  </h3>
+  Fetches the named PPD and stores it in a temporary file.
+  <dl><dt></dt><dd>
+    <dl><dt><b>Parameters:</b></dt>
+      <dd><code><b>ppd_name</b></code> -
+         the ppd-name of a PPD
+        <br /><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        (type=string)</i>
+      </dd>
+    </dl>
+    <dl><dt><b>Returns:</b></dt>
+      <dd>
+        temporary filename holding the PPD
+        <br /><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        (type=string)</i>
+      </dd>
+    </dl>
+    <dl><dt><b>Raises:</b></dt>
+      <dd><code><b>RuntimeError</b></code> -
+        Not supported in libcups until 1.3
+      <dd><code><b>IPPError</b></code> -
+        IPP problem
+    </dl>
+  </dd></dl>
+</td></tr></table>
+
+<a name="getSubscriptions"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">getSubscriptions</span>(<span class=sig-arg>uri</span>)</span>
+  </h3>
+  Get subscriptions.
+  <dl><dt></dt><dd>
+    <dl><dt><b>Parameters:</b></dt>
+      <dd><code><b>uri</b></code> -
+         URI for object
+        <br /><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        (type=string)</i>
+      </dd>
+    </dl>
+    <dl><dt><b>Keyword Parameters:</b></dt>
+      <dd><code><b>my_subscriptions</b></code> -
+         only return subscriptions belonging to the current user 
+        (default False)
+        <br /><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        (type=boolean)</i>
+      <dd><code><b>job_id</b></code> -
+         only return subscriptions relating to this job
+        <br /><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        (type=integer)</i>
+      </dd>
+    </dl>
+    <dl><dt><b>Returns:</b></dt>
+      <dd>
+        list of subscriptions
+        <br /><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        (type=integer list)</i>
+      </dd>
+    </dl>
+    <dl><dt><b>Raises:</b></dt>
+      <dd><code><b>IPPError</b></code> -
+        IPP problem
+    </dl>
+  </dd></dl>
+</td></tr></table>
+
+<a name="printTestPage"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">printTestPage</span>(<span class=sig-arg>name</span>)</span>
+  </h3>
+  Print a test page.
+  <dl><dt></dt><dd>
+    <dl><dt><b>Parameters:</b></dt>
+      <dd><code><b>name</b></code> -
+         queue name
+        <br /><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        (type=string)</i>
+      </dd>
+    </dl>
+    <dl><dt><b>Keyword Parameters:</b></dt>
+      <dd><code><b>file</b></code> -
+         input file (default is CUPS test page)
+        <br /><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        (type=string)</i>
+      <dd><code><b>title</b></code> -
+         job title (default 'Test Page')
+        <br /><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        (type=string)</i>
+      <dd><code><b>format</b></code> -
+         document format (default 'application/postscript')
+        <br /><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        (type=string)</i>
+      <dd><code><b>user</b></code> -
+         user to submit the job as (default 'guest')
+        <br /><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        (type=string)</i>
+      </dd>
+    </dl>
+    <dl><dt><b>Returns:</b></dt>
+      <dd>
+job ID      </dd>
+    </dl>
+    <dl><dt><b>Raises:</b></dt>
+      <dd><code><b>IPPError</b></code> -
+        IPP problem
+    </dl>
+  </dd></dl>
+</td></tr></table>
+
+<a name="putFile"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">putFile</span>(<span class=sig-arg>resource</span>,
+          <span class=sig-arg>filename</span>)</span>
+  </h3>
+  This is for uploading new configuration files for the CUPS server. 
+  Note: <a href="cups.Connection-class.html#adminSetServerSettings" 
+  class="link"><code>adminSetServerSettings</code></a> is a way of 
+  adjusting server settings without needing to parse the configuration 
+  file.
+  <dl><dt></dt><dd>
+    <dl><dt><b>Parameters:</b></dt>
+      <dd><code><b>resource</b></code> -
+         resource name
+        <br /><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        (type=string)</i>
+      <dd><code><b>filename</b></code> -
+         name of local file to upload
+        <br /><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        (type=string)</i>
+      </dd>
+    </dl>
+    <dl><dt><b>Returns:</b></dt>
+      <dd>
+None      </dd>
+    </dl>
+    <dl><dt><b>Raises:</b></dt>
+      <dd><code><b>HTTPError</b></code> -
+        HTTP problem
+    </dl>
+  </dd></dl>
+</td></tr></table>
+
+<a name="rejectJobs"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">rejectJobs</span>(<span class=sig-arg>name</span>)</span>
+  </h3>
+  Cause printer to reject jobs.
+  <dl><dt></dt><dd>
+    <dl><dt><b>Parameters:</b></dt>
+      <dd><code><b>name</b></code> -
+         queue name
+        <br /><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        (type=string)</i>
+      </dd>
+    </dl>
+    <dl><dt><b>Keyword Parameters:</b></dt>
+      <dd><code><b>reason</b></code> -
+         optional human-readable reason for rejecting jobs
+        <br /><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        (type=string)</i>
+      </dd>
+    </dl>
+    <dl><dt><b>Raises:</b></dt>
+      <dd><code><b>IPPError</b></code> -
+        IPP problem
+    </dl>
+  </dd></dl>
+</td></tr></table>
+
+<a name="renewSubscription"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">renewSubscription</span>(<span class=sig-arg>id</span>)</span>
+  </h3>
+  Renew a subscription.
+  <dl><dt></dt><dd>
+    <dl><dt><b>Parameters:</b></dt>
+      <dd><code><b>id</b></code> -
+         subscription ID
+        <br /><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        (type=integer)</i>
+      </dd>
+    </dl>
+    <dl><dt><b>Returns:</b></dt>
+      <dd>
+None      </dd>
+    </dl>
+    <dl><dt><b>Raises:</b></dt>
+      <dd><code><b>IPPError</b></code> -
+        IPP problem
+    </dl>
+  </dd></dl>
+</td></tr></table>
+
+<a name="restartJob"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">restartJob</span>(<span class=sig-arg>jobid</span>)</span>
+  </h3>
+  Restart a job.
+  <dl><dt></dt><dd>
+    <dl><dt><b>Parameters:</b></dt>
+      <dd><code><b>jobid</b></code> -
+         job ID to restart
+        <br /><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        (type=integer)</i>
+      </dd>
+    </dl>
+    <dl><dt><b>Returns:</b></dt>
+      <dd>
+None      </dd>
+    </dl>
+    <dl><dt><b>Raises:</b></dt>
+      <dd><code><b>IPPError</b></code> -
+        IPP problem
+    </dl>
+  </dd></dl>
+</td></tr></table>
+
+<a name="setDefault"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">setDefault</span>(<span class=sig-arg>name</span>)</span>
+  </h3>
+  Set the system default printer. Note that this can be over-ridden on 
+  a per-user basis using the lpoptions command.
+  <dl><dt></dt><dd>
+    <dl><dt><b>Parameters:</b></dt>
+      <dd><code><b>name</b></code> -
+         queue name
+        <br /><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        (type=string)</i>
+      </dd>
+    </dl>
+    <dl><dt><b>Returns:</b></dt>
+      <dd>
+None      </dd>
+    </dl>
+    <dl><dt><b>Raises:</b></dt>
+      <dd><code><b>IPPError</b></code> -
+        IPP problem
+    </dl>
+  </dd></dl>
+</td></tr></table>
+
+<a name="setJobHoldUntil"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">setJobHoldUntil</span>(<span class=sig-arg>jobid</span>,
+          <span class=sig-arg>job_hold_until</span>)</span>
+  </h3>
+  Specifies when a job should be printed.
+  <dl><dt></dt><dd>
+    <dl><dt><b>Parameters:</b></dt>
+      <dd><code><b>jobid</b></code> -
+         job ID to adjust
+        <br /><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        (type=integer)</i>
+      <dd><code><b>job_hold_until</b></code> -
+         when to print the job; examples: 'hold', 'immediate', 
+        'restart', resume'
+        <br /><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        (type=string)</i>
+      </dd>
+    </dl>
+    <dl><dt><b>Returns:</b></dt>
+      <dd>
+None      </dd>
+    </dl>
+    <dl><dt><b>Raises:</b></dt>
+      <dd><code><b>IPPError</b></code> -
+        IPP problem
+    </dl>
+  </dd></dl>
+</td></tr></table>
+
+<a name="setPrinterDevice"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">setPrinterDevice</span>(<span class=sig-arg>name</span>,
+          <span class=sig-arg>device_uri</span>)</span>
+  </h3>
+  Set the device URI for a printer.
+  <dl><dt></dt><dd>
+    <dl><dt><b>Parameters:</b></dt>
+      <dd><code><b>name</b></code> -
+         queue name
+        <br /><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        (type=string)</i>
+      <dd><code><b>device_uri</b></code> -
+         device URI
+        <br /><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        (type=string)</i>
+      </dd>
+    </dl>
+    <dl><dt><b>Returns:</b></dt>
+      <dd>
+None      </dd>
+    </dl>
+    <dl><dt><b>Raises:</b></dt>
+      <dd><code><b>IPPError</b></code> -
+        IPP problem
+    </dl>
+  </dd></dl>
+</td></tr></table>
+
+<a name="setPrinterErrorPolicy"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">setPrinterErrorPolicy</span>(<span class=sig-arg>name</span>,
+          <span class=sig-arg>policy</span>)</span>
+  </h3>
+  Set the printer's error policy.
+  <dl><dt></dt><dd>
+    <dl><dt><b>Parameters:</b></dt>
+      <dd><code><b>name</b></code> -
+         queue name
+        <br /><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        (type=string)</i>
+      <dd><code><b>policy</b></code> -
+         policy name; supported policy names can be found by using the 
+        <a href="cups.Connection-class.html#getPrinterAttributes" 
+        class="link"><code>getPrinterAttributes</code></a> function and 
+        looking for the 'printer-error-policy-supported' attribute
+        <br /><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        (type=string)</i>
+      </dd>
+    </dl>
+    <dl><dt><b>Returns:</b></dt>
+      <dd>
+None      </dd>
+    </dl>
+    <dl><dt><b>Raises:</b></dt>
+      <dd><code><b>IPPError</b></code> -
+        IPP problem
+    </dl>
+  </dd></dl>
+</td></tr></table>
+
+<a name="setPrinterInfo"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">setPrinterInfo</span>(<span class=sig-arg>name</span>,
+          <span class=sig-arg>info</span>)</span>
+  </h3>
+  Set the human-readable information about a printer.
+  <dl><dt></dt><dd>
+    <dl><dt><b>Parameters:</b></dt>
+      <dd><code><b>name</b></code> -
+         queue name
+        <br /><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        (type=string)</i>
+      <dd><code><b>info</b></code> -
+         human-readable information about the printer
+        <br /><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        (type=string)</i>
+      </dd>
+    </dl>
+    <dl><dt><b>Returns:</b></dt>
+      <dd>
+None      </dd>
+    </dl>
+    <dl><dt><b>Raises:</b></dt>
+      <dd><code><b>IPPError</b></code> -
+        IPP problem
+    </dl>
+  </dd></dl>
+</td></tr></table>
+
+<a name="setPrinterJobSheets"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">setPrinterJobSheets</span>(<span class=sig-arg>name</span>,
+          <span class=sig-arg>start</span>,
+          <span class=sig-arg>end</span>)</span>
+  </h3>
+  Specifies job sheets for a printer.
+  <dl><dt></dt><dd>
+    <dl><dt><b>Parameters:</b></dt>
+      <dd><code><b>name</b></code> -
+         queue name
+        <br /><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        (type=string)</i>
+      <dd><code><b>start</b></code> -
+         name of a sheet to print before each job
+        <br /><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        (type=string)</i>
+      <dd><code><b>end</b></code> -
+         name of a sheet to print after each job
+        <br /><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        (type=string)</i>
+      </dd>
+    </dl>
+    <dl><dt><b>Returns:</b></dt>
+      <dd>
+None      </dd>
+    </dl>
+    <dl><dt><b>Raises:</b></dt>
+      <dd><code><b>IPPError</b></code> -
+        IPP problem
+    </dl>
+  </dd></dl>
+</td></tr></table>
+
+<a name="setPrinterLocation"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">setPrinterLocation</span>(<span class=sig-arg>name</span>,
+          <span class=sig-arg>location</span>)</span>
+  </h3>
+  Set the human-readable printer location
+  <dl><dt></dt><dd>
+    <dl><dt><b>Parameters:</b></dt>
+      <dd><code><b>name</b></code> -
+         queue name
+        <br /><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        (type=string)</i>
+      <dd><code><b>location</b></code> -
+         human-readable printer location
+        <br /><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        (type=string)</i>
+      </dd>
+    </dl>
+    <dl><dt><b>Returns:</b></dt>
+      <dd>
+None      </dd>
+    </dl>
+    <dl><dt><b>Raises:</b></dt>
+      <dd><code><b>IPPError</b></code> -
+        IPP problem
+    </dl>
+  </dd></dl>
+</td></tr></table>
+
+<a name="setPrinterOpPolicy"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">setPrinterOpPolicy</span>(<span class=sig-arg>name</span>,
+          <span class=sig-arg>policy</span>)</span>
+  </h3>
+  Set the printer's operation policy.
+  <dl><dt></dt><dd>
+    <dl><dt><b>Parameters:</b></dt>
+      <dd><code><b>name</b></code> -
+         queue name
+        <br /><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        (type=string)</i>
+      <dd><code><b>policy</b></code> -
+         policy name; supported policy names can be found by using the 
+        <a href="cups.Connection-class.html#getPrinterAttributes" 
+        class="link"><code>getPrinterAttributes</code></a> function and 
+        looking for the 'printer-op-policy-supported' attribute
+        <br /><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        (type=string)</i>
+      </dd>
+    </dl>
+    <dl><dt><b>Returns:</b></dt>
+      <dd>
+None      </dd>
+    </dl>
+    <dl><dt><b>Raises:</b></dt>
+      <dd><code><b>IPPError</b></code> -
+        IPP problem
+    </dl>
+  </dd></dl>
+</td></tr></table>
+
+<a name="setPrinterShared"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">setPrinterShared</span>(<span class=sig-arg>name</span>,
+          <span class=sig-arg>shared</span>)</span>
+  </h3>
+  Set whether a printer is shared with other people. This works with 
+  CUPS servers of at least version 1.2, by setting the printer-is-shared 
+  printer attribute.
+  <dl><dt></dt><dd>
+    <dl><dt><b>Parameters:</b></dt>
+      <dd><code><b>name</b></code> -
+         queue name
+        <br /><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        (type=string)</i>
+      <dd><code><b>shared</b></code> -
+         whether printer should be shared
+        <br /><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        (type=boolean)</i>
+      </dd>
+    </dl>
+    <dl><dt><b>Returns:</b></dt>
+      <dd>
+None      </dd>
+    </dl>
+    <dl><dt><b>Raises:</b></dt>
+      <dd><code><b>IPPError</b></code> -
+        IPP problem
+    </dl>
+  </dd></dl>
+</td></tr></table>
+
+<a name="setPrinterUsersAllowed"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">setPrinterUsersAllowed</span>(<span class=sig-arg>name</span>,
+          <span class=sig-arg>allowed</span>)</span>
+  </h3>
+  Set the list of users allowed to use a printer. This works with CUPS 
+  server of at least version 1.2, by setting the 
+  requesting-user-name-allowed printer attribute.
+  <dl><dt></dt><dd>
+    <dl><dt><b>Parameters:</b></dt>
+      <dd><code><b>name</b></code> -
+         queue name
+        <br /><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        (type=string)</i>
+      <dd><code><b>allowed</b></code> -
+         list of allowed users; ['all'] means there will be no 
+        user-name restriction.
+        <br /><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        (type=string list)</i>
+      </dd>
+    </dl>
+    <dl><dt><b>Returns:</b></dt>
+      <dd>
+None      </dd>
+    </dl>
+    <dl><dt><b>Raises:</b></dt>
+      <dd><code><b>IPPError</b></code> -
+        IPP problem
+    </dl>
+  </dd></dl>
+</td></tr></table>
+
+<a name="setPrinterUsersDenied"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">setPrinterUsersDenied</span>(<span class=sig-arg>name</span>,
+          <span class=sig-arg>denied</span>)</span>
+  </h3>
+  Set the list of users denied the use of a printer. This works with 
+  CUPS servers of at least version 1.2, by setting the 
+  requesting-user-name-denied printer attribute.
+  <dl><dt></dt><dd>
+    <dl><dt><b>Parameters:</b></dt>
+      <dd><code><b>name</b></code> -
+         queue name
+        <br /><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        (type=string)</i>
+      <dd><code><b>denied</b></code> -
+         list of denied users; ['none'] means there will be no 
+        user-name restriction.
+        <br /><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        (type=string list)</i>
+      </dd>
+    </dl>
+    <dl><dt><b>Returns:</b></dt>
+      <dd>
+None      </dd>
+    </dl>
+    <dl><dt><b>Raises:</b></dt>
+      <dd><code><b>IPPError</b></code> -
+        IPP problem
+    </dl>
+  </dd></dl>
+</td></tr></table>
+<br />
+
+
+<!-- =========== START OF NAVBAR =========== -->
+<table class="navbar" border="0" width="100%" cellpadding="0" bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="center">
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="cups-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="trees.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="indices.html">Index</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <tr>
+    <td align="left"><font size="-2">Generated by Epydoc 2.1 on Sun Oct  7 15:58:18 2012</font></td>
+    <td align="right"><a href="http://epydoc.sourceforge.net"
+                      ><font size="-2">http://epydoc.sf.net</font></a></td>
+  </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,167 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+	<TITLE></TITLE>
+	<META NAME="GENERATOR" CONTENT="《Sogwang 3.0》  (Linux)">
+	<META NAME="CREATED" CONTENT="20091205;10241300">
+	<META NAME="CHANGED" CONTENT="20091205;11131100">
+	<STYLE TYPE="text/css">
+	<!--
+		H2 { margin-bottom: 0.18cm; font-family: "Bitstream Vera Sans", "Arial", "Helvetica", "Lucida", "Geneva", "Helmet", sans-serif, "Andale Sans UI", "Arial Unicode MS", "Lucida Sans Unicode", "Tahoma"; font-size: 14pt }
+		P.listitem { font-family: "Bitstream Vera Sans", "Arial", "Helvetica", "Lucida", "Geneva", "Helmet", sans-serif, "Andale Sans UI", "Arial Unicode MS", "Lucida Sans Unicode", "Tahoma" }
+		P.related { margin-top: 0.71cm; margin-bottom: 0.05cm; border-top: 1px solid #000000; border-bottom: none; border-left: none; border-right: none; padding-top: 0.05cm; padding-bottom: 0cm; padding-left: 0cm; padding-right: 0cm; font-weight: bold }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="ko-KP" DIR="LTR"><DIV style="margin-left: 25">
+<H1><A NAME="bm_id3149263"></A><A NAME="cellstyle_conditional"></A><FONT FACE="Thorndale, serif"><SPAN LANG="en-US">Applying
+Conditional Formatting </SPAN></FONT>
+</H1>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Using
+the menu command <B>Format - Conditional formatting</B>, the dialog
+allows you to define up to three conditions per cell, which must be
+met in order for the selected cells to have a particular format.</SPAN></FONT></P>
+<TABLE WIDTH=955 BORDER=0 CELLPADDING=5 CELLSPACING=0>
+	<COL WIDTH=25>
+	<COL WIDTH=592>
+	<TR>
+		<TD WIDTH=34>
+			<P><IMG SRC="../../Image/warning.png" NAME="graphics1" ALT="Warning Icon " ALIGN=BOTTOM WIDTH=25 HEIGHT=42 BORDER=0></P>
+		</TD>
+		<TD WIDTH=901>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">To
+			apply conditional formatting, AutoCalculate must be enabled.
+			Choose <B>Tools - Cell Contents - AutoCalculate</B> (you see a
+			check mark next to the command when AutoCalculate is enabled).</SPAN></FONT></P>
+		</TD>
+	</TR>
+</TABLE>
+<P><BR><BR>
+</P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">With
+conditional formatting, you can, for example, highlight the totals
+that exceed the average value of all totals.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+If the totals change, the formatting changes correspondingly, without 
+having to apply other styles manually.</SPAN></FONT></P>
+<OL>
+	<LI><P CLASS="listitem"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Select the cells to which
+	you want to apply a conditional style.</SPAN></FONT></P>
+	<LI><P CLASS="listitem"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Choose <B>Format -
+	Conditional Formatting</B>.</SPAN></FONT></P>
+	<LI><P CLASS="listitem"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Enter the condition(s)
+	into the dialog box. The dialog is described in detail in
+	</SPAN><A HREF="../Command and Menu Reference/Menus/Format/Conditional Formatting.html">Sogwang
+	<SPAN LANG="en-US">Help</A>, and an example is provided below:</P>
+</OL>
+<H2><SPAN LANG="en-US">Example of Conditional Formatting: Generate
+Number Values</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">You want
+to give certain values in your tables particular emphasis. For
+example, in a table of turnovers, you can show all the values above
+the average in green and all those below the average in red. This is
+possible with conditional formatting.</SPAN></FONT></P>
+<OL>
+	<LI><P CLASS="listitem"><FONT FACE="청봉, serif"><SPAN LANG="en-US">First of all, write a
+	table in which a few different values occur. For your test you can
+	create tables with any random numbers:</SPAN></FONT></P>
+	<P CLASS="listitem"><FONT FACE="청봉, serif"><SPAN LANG="en-US">In one of the cells enter the
+	formula =RAND(), and you will obtain a random number between 0 and
+	1. If you want integers of between 0 and 50, enter the formula
+	=INT(RAND()*50).</SPAN></FONT></P>
+	<LI><P CLASS="listitem"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Copy the formula to
+	create a row of random numbers. Click the bottom right corner of the
+	selected cell, and drag to the right until the desired cell range is
+	selected.</SPAN></FONT></P>
+	<LI><P CLASS="listitem"><FONT FACE="청봉, serif"><SPAN LANG="en-US">In the same way as
+	described above, drag down the corner of the rightmost cell in order
+	to create more rows of random numbers.</SPAN></FONT></P>
+</OL>
+<H2><SPAN LANG="en-US">Example of Conditional Formatting: Define Cell
+Styles</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">The next
+step is to apply a cell style to all values that represent
+above-average turnover, and one to those that are below the average.
+Ensure that the Styles and Formatting window is visible before
+proceeding.</SPAN></FONT></P>
+<OL>
+	<LI><P CLASS="listitem"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Click in a blank cell and
+	select the command <B>Format Cells</B> in the context menu.</SPAN></FONT></P>
+	<LI><P CLASS="listitem"><FONT FACE="청봉, serif"><SPAN LANG="en-US">In the <B>Format Cells</B>
+	dialog on the <B>Background</B> tab, select a background color.
+	Click <B>OK</B>.</SPAN></FONT></P>
+	<LI><P CLASS="listitem"><FONT FACE="청봉, serif"><SPAN LANG="en-US">In the Styles and
+	Formatting window, click the <B>New Style from Selection</B> icon.
+	Enter the name of the new style. For this example, name the style
+	&quot;Above&quot;.</SPAN></FONT></P>
+	<LI><P CLASS="listitem"><FONT FACE="청봉, serif"><SPAN LANG="en-US">To define a second style,
+	click again in a blank cell and proceed as described above. Assign a
+	different background color for the cell and assign a name (for this
+	example, &quot;Below&quot;).</SPAN></FONT></P>
+</OL>
+<H2><SPAN LANG="en-US">Example of Conditional Formatting: Calculate
+Average</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">In our
+particular example, we are calculating the average of the random
+values. The result is placed in a cell:</SPAN></FONT></P>
+<OL>
+	<LI><P CLASS="listitem"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Set the cursor in a blank
+	cell, for example, J14, and choose <B>Insert - Function</B>.</SPAN></FONT></P>
+	<LI><P CLASS="listitem"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Select the AVERAGE
+	function. Use the mouse to select all your random numbers. If you
+	cannot see the entire range, because Function Wizard is obscuring
+	it, you can temporarily shrink the dialog using the <A HREF="Applying Conditional Formatting/Frequently-Used Buttons.html">Shrink
+	/ Maximize</A> icon.</SPAN></FONT></P>
+	<LI><P CLASS="listitem"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Close Function Wizard
+	with <B>OK</B>.</SPAN></FONT></P>
+</OL>
+<H2><SPAN LANG="en-US">Example of Conditional Formatting: Apply Cell
+Style</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Now you
+can apply the conditional formatting to the sheet:</SPAN></FONT></P>
+<OL>
+	<LI><P CLASS="listitem"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Select all cells with the
+	random numbers.</SPAN></FONT></P>
+	<LI><P CLASS="listitem"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Choose the <B>Format -
+	Conditional Formatting</B> command to open the corresponding dialog.</SPAN></FONT></P>
+	<LI><P CLASS="listitem"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Define the condition as
+	follows: If cell value is less than J14, format with cell style
+	&quot;Below&quot;, and if cell value is greater than or equal to
+	J14, format with cell style &quot;Above&quot;.</SPAN></FONT></P>
+</OL>
+<H2><SPAN LANG="en-US">Example of Conditional Formatting: Copy Cell
+Style</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">To apply
+the conditional formatting to other cells later:</SPAN></FONT></P>
+<OL>
+	<LI><P CLASS="listitem"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Click one of the cells
+	that has been assigned conditional formatting.</SPAN></FONT></P>
+	<LI><P CLASS="listitem"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Copy the cell to the
+	clipboard.</SPAN></FONT></P>
+	<LI><P CLASS="listitem"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Select the cells that are
+	to receive this same formatting.</SPAN></FONT></P>
+	<LI><P CLASS="listitem"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Choose <B>Edit - Paste
+	Special</B>. The <B>Paste Special</B> dialog appears.</SPAN></FONT></P>
+	<LI><P CLASS="listitem"><FONT FACE="청봉, serif"><SPAN LANG="en-US">In the <B>Selection</B>
+	area, check only the <B>Formats</B> box. All other boxes must be
+	unchecked. Click <B>OK</B>.</SPAN></FONT></P>
+</OL>
+<P CLASS="related"><A NAME="relatedtopics"></A><A NAME="related"></A><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Related
+Topics</B> </SPAN></FONT>
+</P>
+<P STYLE="margin-left: 0.13cm; margin-top: 0.05cm; margin-bottom: 0.05cm"><A NAME="cellstyle_by_formula"></A>
+<FONT FACE="청봉, serif"><SPAN LANG="en-US"><SPAN STYLE="font-weight: medium"><A HREF="Assigning Formats by Formula.html">Assigning
+Formats by Formula</A> </SPAN></SPAN></FONT>
+</P>
+<P STYLE="margin-left: 0.13cm; margin-top: 0.05cm; margin-bottom: 0.05cm"><A NAME="cellstyle_minusvalue"></A>
+<FONT FACE="청봉, serif"><SPAN LANG="en-US"><SPAN STYLE="font-weight: medium"><A HREF="Highlighting Negative Numbers.html">Highlighting
+Negative Numbers</A> </SPAN></SPAN></FONT>
+</P>
+<P STYLE="margin-left: 0.13cm; margin-top: 0.05cm; margin-bottom: 0.05cm">
+<FONT FACE="청봉, serif"><SPAN LANG="en-US"><A HREF="../Command and Menu Reference/Menus/Format/Conditional Formatting.html"><SPAN STYLE="font-weight: medium">Format
+- Conditional formatting</SPAN></A></SPAN></FONT></P>
+
+</DIV></BODY>
+</HTML>
+

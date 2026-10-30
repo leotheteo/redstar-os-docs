@@ -1,0 +1,94 @@
+<?xml version="1.0"?>
+<gconf>
+	<dir name="schemas">
+		<dir name="desktop">
+			<dir name="ibus">
+				<dir name="panel">
+					<entry name="custom_font">
+						<local_schema short_desc="사용자 정의 글꼴">
+							<longdesc>언어 패널 용 사용자 정의 글꼴 이름</longdesc>
+						</local_schema>
+					</entry>
+					<entry name="use_custom_font">
+						<local_schema short_desc="사용자 정의 글꼴 사용  ">
+							<longdesc>언어 패널 용 사용자 정의 글꼴 이름 사용</longdesc>
+						</local_schema>
+					</entry>
+					<entry name="show_im_name">
+						<local_schema short_desc="입력 방식 이름 보여주기">
+							<longdesc>언어 도구 모음에 입력 방식 이름 보여주기</longdesc>
+						</local_schema>
+					</entry>
+					<entry name="show_icon_on_systray">
+						<local_schema short_desc="시스템 트레이에 아이콘 보여주기">
+							<longdesc>시스템 트레이에 아이콘 보여주기</longdesc>
+						</local_schema>
+					</entry>
+					<entry name="lookup_table_orientation">
+						<local_schema short_desc="검색 테이블의 방향  ">
+							<longdesc>검색 테이블의 방향. 0 = 가로, 1 = 세로  </longdesc>
+						</local_schema>
+					</entry>
+					<entry name="y">
+						<local_schema short_desc="언어 패널 위치">
+						</local_schema>
+					</entry>
+					<entry name="x">
+						<local_schema short_desc="언어 패널 위치">
+						</local_schema>
+					</entry>
+					<entry name="show">
+						<local_schema short_desc="자동 숨기기">
+							<longdesc>언어 패널의 동작 0 = 메뉴에 포함, 1 = 자동 숨기기, 2 = 항상 표시  </longdesc>
+						</local_schema>
+					</entry>
+				</dir>
+				<dir name="general">
+					<entry name="use_global_engine">
+						<local_schema short_desc="전역 입력 방식 사용">
+							<longdesc>모든 어플리케이션에서 동일한 입력 방식 공유</longdesc>
+						</local_schema>
+					</entry>
+					<entry name="embed_preedit_text">
+						<local_schema short_desc="편집전 텍스트 포함">
+							<longdesc>어플리케이션 창에 편집전 텍스트를 포함</longdesc>
+						</local_schema>
+					</entry>
+					<entry name="use_system_keyboard_layout">
+						<local_schema short_desc="시스템 키보드 레이아웃 사용  ">
+							<longdesc>시스템 키보드 (XKB) 레이아웃 사용  </longdesc>
+						</local_schema>
+					</entry>
+					<entry name="preload_engines">
+						<local_schema short_desc="엔진 미리로드">
+							<longdesc>ibus 시작 시 엔진 미리 로드  </longdesc>
+						</local_schema>
+					</entry>
+					<dir name="hotkey">
+						<entry name="previous_engine">
+							<local_schema short_desc="이전 엔진 단축키">
+							</local_schema>
+						</entry>
+						<entry name="prev_engine">
+							<local_schema short_desc="이전 엔진 단축키">
+							</local_schema>
+						</entry>
+						<entry name="next_engine_in_menu">
+							<local_schema short_desc="다음 엔진 단축키">
+							</local_schema>
+						</entry>
+						<entry name="next_engine">
+							<local_schema short_desc="다음 엔진 단축키">
+							</local_schema>
+						</entry>
+						<entry name="trigger">
+							<local_schema short_desc="트리거 단축키">
+								<longdesc>입력 방식을 활성 또는 해제하기 위한 단축키</longdesc>
+							</local_schema>
+						</entry>
+					</dir>
+				</dir>
+			</dir>
+		</dir>
+	</dir>
+</gconf>

@@ -1,0 +1,79 @@
+<html dir='ltr'>
+	<head>
+		<META http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+		<title>부분합의 삽입</title>
+		<link rel='stylesheet' type='text/css' href='../css/main.css'/>
+		<script type='text/javascript' language='Javascript' src='../js/mexpcol.js'></script>
+		<script type='text/javascript' language='JavaScript' src='../js/glossary.js'></script>
+	</head>
+	<body>
+		<h1>&nbsp;<img align="absbottom" src="../image/external_images/crystal/svtools/res/new_doc.png"/>&nbsp;부분합의 삽입</h1>
+		<p id='ExpandAllLine' class='ExpFav'>
+			<a href='#' onClick='ExpandAll()' onKeyPress='ExpandAll()' class='DropDown'>
+				<img id='picHeader' border='0' src='../image/image/common/expandtri.gif' alt='모두 표시'>
+				<span id='ExpandAll'>모두 표시</span>
+			</a>
+		</p>
+		<p><b class="bterm">개별부분합의 삽입</b></p>
+			<p><img border='0' src='../image/image/sgsd/subt1.gif' alt='표시'></p>
+			<p><img border='0' src='../image/image/common/callout1.gif' alt='표시'> 부분합을 구하려는 렬</p>
+			<p><img border='0' src='../image/image/common/callout2.gif' alt='표시'> 부분합</p>
+			<ol>
+				<li>부분합을 구하려는 자료가 다음의 형식으로 되여있는가를 확인합니다. 
+					즉 각 렬에는 첫행에 표식자가 있고 류사한 내용을 포함하며 범위안에 빈 행이나 빈 렬이 없어야 합니다.
+				</li>
+				<li>부분합을 구하려는 렬을 정렬합니다. (<a href='5.5.8.htm'>범위정렬</a>을 참고하십시오.)</li>
+				<li>부분합을 구하려는 자료가 들어있는 세포범위를 선택하고 <b class="bterm">&lt;자료&gt;</b>차림표에서 <b class="bterm">&lt;부분합&gt;</b>을 찰칵합니다.
+				<p><b class="bterm">참고:</b> 세포범위를 선택할 때 반드시 렬표식자를 함께 선택하십시오.</p>
+				</li>
+				<li><b class="bterm">&lt;그룹기준&gt;</b>복합칸에서 부분합을 구하려는 렬을 선택합니다. 우의 그림에서는 <b class="bterm">제품</b>렬이 해당됩니다.</li>
+				<li><b class="bterm">&lt;부분합을 계산하는 렬&gt;</b>목록칸에서 부분합을 계산할 렬을 찰칵합니다. 우의 그림에서는 <b class="bterm">가격</b>렬이 해당됩니다.</li>
+				<li><b class="bterm">&lt;함수 사용&gt;</b>목록칸에서 부분합계산에 사용하려는 함수를 찰칵합니다.</li>
+				<li>각 부분합 다음에 자동적으로 페지가르기를 넣으려면 <b class="bterm">&lt;추가선택&gt;</b>표쪽을 찰칵하고 <b class="bterm">&lt;그룹사이에서 페지 가르기&gt;</b>확인칸을 선택합니다.</li>
+				<li><b class="bterm">&lt;확인&gt;</b>단추를 찰칵합니다.</li>
+			</ol>
+		<p><b class="bterm">중첩된 부분합의 삽입</b></p>
+			<p><img border='0' src='../image/image/sgsd/subt2.gif' alt='표시'></p>
+			<p><img border='0' src='../image/image/common/callout1.gif' alt='표시'> 외부부분합</p>
+			<p><img border='0' src='../image/image/common/callout2.gif' alt='표시'> 중첩된 부분합</p>
+			<ol>
+				<li>부분합을 구하려는 자료가 다음형식으로 되여있는가를 확인합니다. 
+					즉 각 렬에는 첫행에 표식자가 있고 류사한 내용을 포함하며 범위안에 빈 행이나 빈 렬이 없어야 합니다.
+				</li>
+				<li>여러 렬을 기준으로 범위를 정렬합니다. 첫째 기준으로는 외부 부분합렬, 그다음 기준으로는 중첩된 부분합렬을 지정합니다.
+					 우의 그림에서는 첫째 기준으로 <b class="bterm">공장</b>을, 둘째 기준으로 <b class="bterm">제품명</b>을 지정하면 됩니다.
+					(<a href='5.5.8.htm'>범위정렬</a>을 참고하십시오.)
+				</li>
+				<li>외부부분합을 삽입합니다.
+					<p>
+						<a href='#' class='DropDown' onClick='Outline2()' onKeyPress='Outline2()'>
+						<img border='0' src='../image/image/common/blueup.gif' alt='표시'>방법 </a>
+					</p>
+					<div id='ExpCol' class='collapsed' border='0'>
+						<ol>
+							<li><b class="bterm">&lt;자료&gt;</b>차림표에서 <b class="bterm">&lt;부분합&gt;</b>을 찰칵합니다.</li>
+							<li><b class="bterm">&lt;그룹기준&gt;</b>복합칸에서 외부부분합에 대한 렬을 찰칵합니다.</li>
+							<li><b class="bterm">&lt;함수 사용&gt;</b>목록칸에서 부분합계산에 사용할 요약함수를 찰칵합니다.</li>
+							<li><b class="bterm">&lt;부분합을 계산하는 렬&gt;</b>목록칸에서 부분합을 계산할 값이 들어있는 렬에 대한 확인칸을 선택합니다.</li>
+							<li>각 부분합 다음에 자동적으로 페지가르기를 넣으려면 <b class="bterm">&lt;추가선택&gt;</b>표쪽을 찰칵하고 <b class="bterm">&lt;그룹사이에서 페지 가르기&gt;</b>확인칸을 선택합니다.</li>
+						</ol>
+					</div>
+				</li>
+				<li>중첩된 부분합을 삽입합니다.
+					<p>
+						<a href='#' class='DropDown' onClick='Outline2()' onKeyPress='Outline2()'>
+						<img border='0' src='../image/image/common/blueup.gif' alt='표시'>방법  </a>
+					</p>
+					<div id='ExpCol' class='collapsed' border='0'>
+						<ol>
+							<li><b class="bterm">&lt;두번째 그룹&gt;</b>표쪽을 찰칵하고 <b class="bterm">&lt;그룹기준&gt;</b>복합칸에서 중첩된 부분합렬을 찰칵합니다.</li>
+							<li>함수와 그밖의 항목을 선택합니다.</li>
+							<li><b class="bterm">&lt;확인&gt;</b>단추를 찰칵합니다.</li>
+						</ol>
+					</div>		
+				</li>
+			</ol>
+		<script type="text/javascript" language="Javascript">footerView()</script>
+	
+</body>
+</html>

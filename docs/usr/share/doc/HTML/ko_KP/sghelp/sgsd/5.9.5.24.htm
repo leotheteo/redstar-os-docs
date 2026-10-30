@@ -1,0 +1,91 @@
+﻿<html dir='ltr'>
+	<head>
+		<META http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+		<title>EFFECT_ADD</title>
+		<link rel='stylesheet' type='text/css' href='../css/main.css'/>
+		<script type='text/javascript' language='Javascript' src='../js/mexpcol.js'></script>
+		<script type='text/javascript' language='JavaScript' src='../js/glossary.js'></script>
+	</head>
+	<body>
+		<h1>&nbsp;<img align="absbottom" src="../image/external_images/crystal/svtools/res/new_doc.png"/>&nbsp;EFFECT_ADD</h1>
+		<p id='ExpandAllLine' class='ExpFav'>
+			<a href='#' onClick='ExpandAll()' onKeyPress='ExpandAll()' class='DropDown'>
+				<img id='picHeader' border='0' src='../image/image/common/expandtri.gif' alt='모두 표시'>
+				<span id='ExpandAll'>모두 표시</span>
+			</a>
+		</p>
+		<p><b class="bterm">참고항목</b>&emsp; 
+			<a href="5.9.5.1.htm">재정함수목록</a>,
+			<a href="5.9.5.35.htm">NOMINAL_ADD</a> 
+		</p>
+		<p>실지 년간액면비률을 구합니다.</p>
+		<p><b class="bterm">문법:&emsp;&emsp;		EFFECT_ADD(액면비률,기간)</b></p>
+		<table>
+			<tr>
+				<th>인수명</th>
+				<th>설명</th>
+			</tr>
+			<tr>
+				<td>액면비률</td>
+				<td>년간 명목액면비률입니다.</td>
+			</tr>
+			<tr>
+				<td>기간</td>
+				<td>년간 복리계산기간입니다.</td>
+			</tr>
+		</table>
+		<p><b class="bterm">주의</b></p>
+			<ul>
+				<li><b class="bterm">기간</b>은 소수점이하를 잘라서 옹근수로 변환됩니다.</li>
+				<li> 수자가 아닌 인수가 하나라도 있으면 <b class="bterm">오유:[오유번호]</b>가 반환됩니다.</li>
+				<li><b class="bterm">액면비률</b> ≦ 0 또는 <b class="bterm">기간</b> < 1일 때에는 <b class="bterm">오유:[오유번호]</b>가 반환됩니다.</li>
+				<li> <b class="bterm">EFFECT_ADD</b>를 계산하는 식은 다음과 같습니다.
+					<p><img border="0" src="../image/image/sgsd/formula-2.gif" alt="표시"></p>
+				</li>
+			</ul>
+		<p><b class="bterm">실례</b></p>
+			<p><a href='1.5.1.htm'>실례의 리용방법</a>을 참고하십시오.</p>
+			<table>
+				<tr>
+					<td>
+						<table>
+							<tr><td>&nbsp;</td></tr>
+							<tr><th>1</th></tr>
+							<tr><th>2</th></tr>
+							<tr><th>3</th></tr>
+						</table>
+					</td>
+					<td>
+						<table>
+							<tr>
+								<th>A</th>
+								<th>B</th>
+							</tr>
+							<tr>
+								<th>자료</th>
+								<th>설명</th>
+							</tr>
+							<tr>
+								<td>5.25%</td>
+								<td>년간 명목액면비률입니다.</td>
+							</tr>
+							<tr>
+								<td>4</td>
+								<td>년간 복리계산기간입니다.</td>
+							</tr>
+							<tr>
+								<th>수식</th>
+								<th>설명(결과)</th>
+							</tr>
+							<tr>
+								<td>=EFFECT_ADD(A2,A3)</td>
+								<td>우와 같은 조건에서 실지 년간액면비률입니다. (0.05, 즉 5%)</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>	
+		<script type="text/javascript" language="Javascript">footerView()</script>
+	
+</body>
+</html>		

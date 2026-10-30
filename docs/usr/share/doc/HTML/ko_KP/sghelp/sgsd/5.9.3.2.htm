@@ -1,0 +1,253 @@
+<html dir='ltr'>
+	<head>
+		<META http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+		<title>자료기지함수의 실례</title>
+		<link rel='stylesheet' type='text/css' href='../css/main.css'/>
+		<script type='text/javascript' language='Javascript' src='../js/mexpcol.js'></script>
+		<script type='text/javascript' language='JavaScript' src='../js/glossary.js'></script>
+	</head>
+	<body>
+		<h1>&nbsp;<img align="absbottom" src="../image/external_images/crystal/svtools/res/new_doc.png"/>&nbsp;자료기지함수의 실례</h1>
+		<p id='ExpandAllLine' class='ExpFav'>
+		<a href='#' onClick='ExpandAll()' onKeyPress='ExpandAll()' class='DropDown'>
+		<img id='picHeader' border='0' src='../image/image/common/expandtri.gif' alt='모두 표시'>
+		<span id='ExpandAll'>모두 표시</span>
+		</a>
+		</p>
+		<p>자료기지함수들은 아래의 실례를 적용하여 확인해 보십시오.	</p>
+		<p><a href='1.5.1.htm'>실례의 리용방법</a>을 참고하십시오.</p>
+		<table>
+			<tr>
+				<td>
+					<table>
+						<tr><td class="noborder">&nbsp;</td></tr>
+						<tr><th>1</th></tr>
+						<tr><th>2</th></tr>
+						<tr><th>3</th></tr>
+						<tr><th>4</th></tr>
+						<tr><th>5</th></tr>
+						<tr><th>6</th></tr>
+						<tr><th>7</th></tr>
+						<tr><th>8</th></tr>
+						<tr><th>9</th></tr>
+						<tr><th>10</th></tr>
+					</table>
+				</td>
+				<td>
+					<table>
+						<tr>
+							<th>A</th>
+							<th width="450">B</th>
+							<th>C</th>
+							<th>D</th>
+							<th>E</th>
+							<th>F</th>
+						</tr>
+						<tr>
+							<th>나무</th>
+							<th>높이</th>
+							<th>나이</th>
+							<th>수확량</th>
+							<th>리익금</th>
+							<th>높이</th>
+						</tr>
+						<tr>
+							<td>사과</td>
+							<td>>10</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+							<td>＜16</td>
+						</tr>
+						<tr>
+							<td>배</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+						</tr>
+						<tr>
+							<th>나무</th>
+							<th>높이</th>
+							<th>나이</th>
+							<th>수확량</th>
+							<th>리익금</th>
+							<td>&nbsp;</td>
+						</tr>
+						<tr>
+							<td>사과</td>
+							<td>18</td>
+							<td>20</td>
+							<td>14</td>
+							<td>105.00</td>
+							<td>&nbsp;</td>
+						</tr>
+						<tr>
+							<td>배</td>
+							<td>12</td>
+							<td>12</td>
+							<td>10</td>
+							<td>96.00</td>
+							<td>&nbsp;</td>
+						</tr>
+						<tr>
+							<td>복숭아</td>
+							<td>13</td>
+							<td>14</td>
+							<td>9</td>
+							<td>105.00</td>
+							<td>&nbsp;</td>
+						</tr>
+						<tr>
+							<td>사과</td>
+							<td>14</td>
+							<td>15</td>
+							<td>10</td>
+							<td>75.00</td>
+							<td>&nbsp;</td>
+						</tr>
+						<tr>
+							<td>배</td>
+							<td>9</td>
+							<td>8</td>
+							<td>8</td>
+							<td>76.00</td>
+							<td>&nbsp;</td>
+						</tr>
+						<tr>
+							<td>사과</td>
+							<td>8</td>
+							<td>9</td>
+							<td>6</td>
+							<td>45.00</td>
+							<td>&nbsp;</td>
+						</tr>
+						<tr>
+							<th>수식</th>
+							<th>설명(결과)</th>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+						</tr>
+						<tr>
+							<td>=DCOUNT(A4:E10, "나이", A1:F2)</td>
+							<td>높이가 10과 16사이인 사과나무 기록편을 찾아 해당 기록편에서 수자가 있는 나이마당의 개수를 구합니다. (1)</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+						</tr>
+						<tr>
+							<td>=DCOUNTA(A4:E10, "리익금", A1:F2)</td>
+							<td>높이가 10과 16사이인 사과나무 기록편을 찾아 해당 기록편에서 값이 있는 리익금마당의 개수를 구합니다. (1)</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+						</tr>
+						<tr>
+							<td>=DMAX(A4:E10, "리익금", A1:A3)</td>
+							<td>사과와 배나무의 리익금중 최대값입니다. (105)</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+						</tr>
+						<tr>
+							<td>=DMIN(A4:E10, "리익금", A1:B2)</td>
+							<td>높이가 10을 넘는 사과나무의 리익금중 최소값입니다. (75)</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+						</tr>
+						<tr>
+							<td>=DSUM(A4:E10, "리익금", A1:A2)</td>
+							<td>사과나무의 총리익금입니다. (225)</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+						</tr>
+						<tr>
+							<td>=DSUM(A4:E10, "리익금", A1:F2)</td>
+							<td>높이가 10과 16사이인 사과나무의 총리익금입니다. (75)</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+						</tr>
+						<tr>
+							<td>=DPRODUCT(A4:E10, "수확량", A1:B2)</td>
+							<td>높이가 10을 넘는 사과나무의 수확량을 곱한값입니다. (140)</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+						</tr>
+						<tr>
+							<td>=DAVERAGE(A4:E10, "수확량", A1:B2)</td>
+							<td>높이가 10을 넘는 사과나무수확량의 평균값입니다. (12)</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+						</tr>
+						<tr>
+							<td>=DAVERAGE(A4:E10,3, A4:E10)</td>
+							<td>자료기지에 있는 모든 나무의 평균나이입니다. (13)</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+						</tr>
+						<tr>
+							<td>=DSTDEV(A4:E10, "수확량", A1:A3)</td>
+							<td>자료기지의 자료가 전체 과수원모집단의 한 표본일 때 사과와 배나무의 수확량에 대한 추정표준편차입니다. (2.97)</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+						</tr>
+						<tr>
+							<td>=DSTDEVP(A4:E10, "수확량", A1:A3)</td>
+							<td>자료기지의 자료가 전체 모집단일 때 사과와 배나무의 수확량에 대한 실제표준편차입니다. (2.65) </td>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+						</tr>
+						<tr>
+							<td>=DVAR(A4:E10,"수확량", A1:A3)</td>
+							<td>자료기지의 자료가 전체 과수원모집단의 한 표본일 때 사과와 배나무의 수확량에 대한 추정분산입니다. (8.8)</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+						</tr>
+						<tr>
+							<td>=DVARP(A4:E10, "수확량", A1:A3)</td>
+							<td>자료기지의 자료가 전체 과수원모집단일 때 사과와 배나무의 수확량에 대한 실제분산입니다. (7.04)</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+						</tr>
+						<tr>
+							<td>=DGET(A4:E10, "수확량", A1:A3)</td>
+							<td>탐색기준에 맞는 기록편이 여러개이므로 <b class="bterm">오유:[오유번호]</b>가 반환됩니다. (오유:502)</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+		</table>		
+		<script type="text/javascript" language="Javascript">footerView()</script>
+	
+</body>
+</html>

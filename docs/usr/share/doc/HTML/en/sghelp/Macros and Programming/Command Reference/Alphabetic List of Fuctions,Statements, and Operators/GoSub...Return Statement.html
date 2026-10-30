@@ -1,0 +1,101 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+	<TITLE></TITLE>
+	<META NAME="GENERATOR" CONTENT="《Sogwang 3.0》  (Linux)">
+	<META NAME="CREATED" CONTENT="20091205;11384400">
+	<META NAME="CHANGED" CONTENT="20091205;12085800">
+	<STYLE TYPE="text/css">
+	<!--
+		H2 { margin-bottom: 0.18cm; font-family: "Bitstream Vera Sans", "Arial", "Helvetica", "Lucida", "Geneva", "Helmet", sans-serif, "Andale Sans UI", "Arial Unicode MS", "Lucida Sans Unicode", "Tahoma"; font-size: 14pt }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="ko-KP" DIR="LTR"><DIV style="margin-left: 25">
+<H1><A NAME="gosubreturn"></A><A NAME="bm_id3147242"></A><FONT FACE="Thorndale, serif"><SPAN LANG="en-US">GoSub...Return
+Statement [Runtime]</SPAN></FONT></H1>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Calls a
+subroutine that is indicated by a label from a subroutine or a
+function. The statements following the label are executed until the
+next Return statement. Afterwards, the program continues with the
+statement that follows the <B>GoSub </B>statement.</SPAN></FONT></P>
+<H2><SPAN LANG="en-US">Syntax:</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">see
+Parameters</SPAN></FONT></P>
+<H2><SPAN LANG="en-US">Parameters:</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Sub/Function</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">statement
+block</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Label</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">statement
+block</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">GoSub
+Label</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Exit
+Sub/Function</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Label:</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">statement
+block</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Return</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">End
+Sub/Function</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">The
+<B>GoSub</B> statement calls a local subroutine indicated by a label
+from within a subroutine or a function. The name of the label must
+end with a colon (&quot;:&quot;).</SPAN></FONT></P>
+<TABLE WIDTH=927 BORDER=0 CELLPADDING=5 CELLSPACING=0>
+	<COL WIDTH=25>
+	<COL WIDTH=596>
+	<TR>
+		<TD WIDTH=25>
+			<P><IMG SRC="../../../Image/warning.png" NAME="graphics1" ALT="Warning Icon " ALIGN=BOTTOM WIDTH=25 HEIGHT=42 BORDER=0></P>
+		</TD>
+		<TD WIDTH=882>
+			<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">If
+			the program encounters a Return statement not preceded by <B>GoSub</B>,
+			</SPAN></FONT><FONT FACE="청봉, serif"><SPAN LANG="en-US">Sogwang Basic
+			returns an error message. Use <B>Exit Sub</B> or <B>Exit Function</B>
+			to ensure that the program leaves a Sub or Function before
+			reaching the next Return statement.</SPAN></FONT></P>
+		</TD>
+	</TR>
+</TABLE>
+<P><BR><BR>
+</P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">The
+following example demonstrates the use of <B>GoSub</B> and <B>Return</B>.
+By executing a program section twice, the program calculates the
+square root of two numbers that are entered by the user.</SPAN></FONT></P>
+<H2><SPAN LANG="en-US">Example:</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Sub
+ExampleGoSub</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">dim
+iInputa as Single</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">dim
+iInputb as Single</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">dim
+iInputc as Single</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">iInputa
+= Int(InputBox$ &quot;Enter the first number: &quot;,&quot;NumberInput&quot;))</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">iInputb
+= Int(InputBox$ &quot;Enter the second number: &quot;,&quot;NumberInput&quot;))</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">iInputc=iInputa</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">GoSub
+SquareRoot</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Print
+&quot;The square root of&quot;;iInputa;&quot; is&quot;;iInputc</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">iInputc=iInputb</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">GoSub
+SquareRoot</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Print
+&quot;The square root of&quot;;iInputb;&quot; is&quot;;iInputc</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Exit Sub</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">SquareRoot:</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">iInputc=sqr(iInputc)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Return</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><SPAN STYLE="font-weight: medium">End
+Sub</SPAN></SPAN></FONT></P>
+
+</DIV></BODY>
+</HTML>

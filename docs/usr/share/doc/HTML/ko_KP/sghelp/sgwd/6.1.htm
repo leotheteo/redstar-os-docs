@@ -1,0 +1,272 @@
+﻿<html dir='ltr'>
+	<head>
+		<META http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+		<title>본문과 객체의 선택</title>
+		<link rel='stylesheet' type='text/css' href='../css/main.css'/>
+		<script type='text/javascript' language='Javascript' src='../js/mexpcol.js'></script>
+		<script type='text/javascript' language='JavaScript' src='../js/glossary.js'></script>
+	</head>
+	<body>
+		<h1>&nbsp;<img align="absbottom" src="../image/external_images/crystal/svtools/res/new_doc.png"/>&nbsp;본문과 객체의 선택</h1>
+		<p id='ExpandAllLine' class='ExpFav'>
+			<a href='#' onClick='ExpandAll()' onKeyPress='ExpandAll()' class='DropDown'>
+				<img id='picHeader' border='0' src='../image/image/common/expandtri.gif' alt='모두 표시'>
+				<span id='ExpandAll'>모두 표시</span>
+			</a>
+		</p>
+		<p>마우스나 건반을 사용하여 서로 린접하거나 린접하지 않은 본문과 객체를 선택할수 있습니다.
+			례를 들어 1페지에 있는 단락과 3페지에 있는 문장을 선택할수 있습니다.
+		</p>
+		<h3>서로 린접한 항목의 선택</h3>
+		<p>마우스를 누른채로 끌기하거나 <b class="bterm">[Shift]</b>건을 누른채로 방향건 또는 <b class="bterm">[Home]</b>, <b class="bterm">[End]</b>, <b class="bterm">[PageUp]</b>, <b class="bterm">[PageDown]</b>건을 눌러서 선택할수 있습니다.</p>
+		<h3>서로 린접하지 않은 항목의 선택</h3>
+		<ol>
+			<li>
+				표의 세포나 단락 등 첫번째 항목을 선택합니다.
+			</li>
+			<li>
+				<b class="bterm">[Ctrl]</b>건을 누른채로 요구하는 다른 항목을 선택합니다.
+			</li>
+		</ol>
+		<p>
+			<a href='#' class='DropDown' onClick='Outline2()' onKeyPress='Outline2()'>
+				<img border='0' src='../image/image/common/blueup.gif' alt='표시'>마우스로 본문과 객체의 선택
+			</a>
+		</p>
+		<div id='ExpCol' class='collapsed' border='0'>
+			<p>마우스로 본문과 객체를 선택하는 방법에는 여러가지가 있습니다.</p>
+			<table>
+				<tr>
+					<th>선택대상</th>
+					<th>선택방법</th>
+				</tr>
+				<tr>
+					<td><b class="bterm">본문</b></td>
+					<td>본문우로 마우스를 끕니다.</td>
+				</tr>
+				<tr>
+					<td><b class="bterm">단어</b></td>
+					<td>해당 단어를 두번 찰칵합니다.</td>
+				</tr>
+				<tr>
+					<td><b class="bterm">본문의 한 문장</b></td>
+					<td>선택할 문장의 임의의 위치에서 마우스단추를 세번 찰칵합니다. 이때 점(.)으로 구분된 한개 문장만이 선택됩니다.</td>
+				</tr>
+				<tr>
+					<td><b class="bterm">단락</b></td>
+					<td>선택할 단락의 아무 위치에서 마우스단추를 네번 찰칵합니다. 이때 단락기호로 구분된 한개 단락이 선택됩니다. 단락에 한개 문장만 있는 경우에는 세번 찰칵하면 단락이 선택됩니다.</td>
+				</tr>
+				<tr>
+					<td><b class="bterm">본문령역</b></td>
+					<td>선택할 령역의 시작위치를 찰칵하고 <b class="bterm">[Shift]</b>건을 누른채로 선택할 령역의 끝위치를 찰칵합니다.</td>
+				</tr>
+				<tr>
+					<td><b class="bterm">머리부 또는 바닥부의 령역</b></td>
+					<td><a href="#" class="glossary" onClick="AppendPopup(this,'IDG_PRINTSTYLEVIEW')" onKeyPress="AppendPopup(this,'IDG_PRINTSTYLEVIEW')">인쇄배치</a>에서 회색의 머리부 또는 바닥부의 본문이 있는 령역을 두번 찰칵합니다.
+						머리부 또는 바닥부령역이 활성화됩니다.</td>
+				</tr>
+				<tr>
+					<td><b class="bterm">머리부 또는 바닥부의 본문</b></td>
+					<td><a href="#" class="glossary" onClick="AppendPopup(this,'IDG_PRINTSTYLEVIEW')" onKeyPress="AppendPopup(this,'IDG_PRINTSTYLEVIEW')">인쇄배치</a>에서 회색의 머리부 또는 바닥부의 본문을 세번 찰칵합니다.
+						머리부 또는 바닥부령역이 활성화되고 머리부 또는 바닥부의 본문이 선택됩니다.</td>
+				</tr>
+				<tr>
+					<td><b class="bterm">각주 또는 본문끝주</b></td>
+					<td>각주 또는 본문끝주 참조기호를 찰칵합니다.</td>
+				</tr>
+				<tr>
+					<td><b class="bterm">객체</b></td>
+					<td>객체를 찰칵합니다.</td>
+				</tr>
+				<tr>
+					<td><b class="bterm">본문칸이나 틀</b></td>
+					<td>테두리로 마우스유표를 이동한 다음 틀이나 본문칸의 테두리를 찰칵하여 <a href="#" class="glossary" onClick="AppendPopup(this,'IDG_SIZEHANDLE')" onKeyPress="AppendPopup(this,'IDG_SIZEHANDLE')">크기조종꼭지</a>를 나타냅니다.</td>
+				</tr>
+			</table>
+		</div>
+		<p>
+			<a href='#' class='DropDown' onClick='Outline2()' onKeyPress='Outline2()'>
+				<img border='0' src='../image/image/common/blueup.gif' alt='표시'>건반으로 본문을 선택
+			</a>
+		</p>
+		<div id='ExpCol' class='collapsed' border='0'>
+			<div class="ind">
+				<p>
+					<a href='#' class='DropDown' onClick='Outline2()' onKeyPress='Outline2()'>
+						<img border='0' src='../image/image/common/blueup.gif' alt='표시'>Shift건에 의한 선택
+					</a>
+				</p>
+				<div id='ExpCol' class='collapsed' border='0'>
+					<p>Shift건을 누른채로 유표이동건을 눌러 본문을 선택합니다.</p>
+					<table>
+						<tr>
+							<th>선택방법</th>
+							<th>선택내용</th>
+						</tr>
+						<tr>
+							<td><b class="bterm">Shift+오른쪽이동건</b></td>
+							<td>한 글자 오른쪽으로</td>
+						</tr>
+						<tr>
+							<td><b class="bterm">Shift+왼쪽이동건</b></td>
+							<td>한 글자 왼쪽으로</td>
+						</tr>
+						<tr>
+							<td><b class="bterm">Ctrl+Shift+오른쪽이동건</b></td>
+							<td>단어의 끝까지</td>
+						</tr>
+						<tr>
+							<td><b class="bterm">Ctrl+Shift+왼쪽이동건</b></td>
+							<td>단어의 시작위치까지</td>
+						</tr>
+						<tr>
+							<td><b class="bterm">Shift+End</b></td>
+							<td>행의 끝으로</td>
+						</tr>
+						<tr>
+							<td><b class="bterm">Shift+Home</b></td>
+							<td>행의 시작위치로</td>
+						</tr>
+						<tr>
+							<td><b class="bterm">Shift+아래쪽이동건</b></td>
+							<td>아래쪽으로 한행</td>
+						</tr>
+						<tr>
+							<td><b class="bterm">Shift+웃쪽이동건</b></td>
+							<td>웃쪽으로 한행</td>
+						</tr>
+						<tr>
+							<td><b class="bterm">Shift+Page Down</b></td>
+							<td>한 화면 아래쪽으로</td>
+						</tr>
+						<tr>
+							<td><b class="bterm">Shift+Page Up</b></td>
+							<td>한 화면 웃쪽으로</td>
+						</tr>
+						<tr>
+							<td><b class="bterm">Ctrl+Shift+Home</b></td>
+							<td>문서의 시작위치까지</td>
+						</tr>
+						<tr>
+							<td><b class="bterm">Ctrl+Shift+End</b></td>
+							<td>문서의 끝까지</td>
+						</tr>
+						<tr>
+							<td><b class="bterm">Ctrl+A</b></td>
+							<td>문서전체</td>
+						</tr>
+					</table>
+				</div>
+				<p>
+					<a href='#' class='DropDown' onClick='Outline2()' onKeyPress='Outline2()'>
+						<img border='0' src='../image/image/common/blueup.gif' alt='표시'>확장방식설정에 의한 선택
+					</a>
+				</p>
+				<div id='ExpCol' class='collapsed' border='0'>
+					<p>확장방식을 설정하고 유표를 이동하는 건을 눌러 본문을 선택합니다.</p>
+					<p><b class="bterm">[F8]</b>건을 한번 누르면 확장방식이 설정됩니다.
+						확장방식이 설정된 상태는 <b class="bterm">[Shift]</b>건을 누른 상태와 같습니다. 따라서 <b class="bterm">[Shift]</b>건에 의한 선택방법과 같습니다.
+					</p>
+					<p><b class="bterm">[F8]</b>건을 다시 한번 누르면 확장방식의 설정이 해제됩니다.</p>
+				</div>
+			</div>
+		</div>
+		<p><b class="bterm">참고:</b>	유표를 이동하는 건의 조합을 알면 일반적으로 <b class="bterm">[Shift]</b>건을 누른채로 같은 건조합을 사용하여 본문을 선택할수 있습니다.
+				례를 들어 유표를 다음단어로 이동하려면 <b class="bterm">[Ctrl+오른쪽이동건]</b>을 누르고 유표위치에서 다음단어의 시작위치까지 본문을 선택하려면 <b class="bterm">[Ctrl+Shift+오른쪽이동건]</b>을 누릅니다.
+			</p>
+		<p>
+			<a href='#' class='DropDown' onClick='Outline2()' onKeyPress='Outline2()'>
+				<img border='0' src='../image/image/common/blueup.gif' alt='표시'>마우스로 표의 항목을 선택
+			</a>
+		</p>
+		<div id='ExpCol' class='collapsed' border='0'>
+			<p>마우스로 표의 요구하는 항목들에 대한 선택을 진행할수 있습니다.</p>
+			<p><b class="bterm">참고:</b>   <a href="#" class="glossary" onClick="AppendPopup(this,'IDG_TABLE')" onKeyPress="AppendPopup(this,'IDG_TABLE')">표</a>의 일부 요소는 <b class="bterm">&lt;표준&gt;</b><a href="#" class="glossary" onClick="AppendPopup(this,'IDG_TOOLBAR')" onKeyPress="AppendPopup(this,'IDG_TOOLBAR')">도구띠</a>에서 
+			<b class="bterm">&lt;인쇄하지 않는 문자&gt;</b>그림기호<img border="0" src="../image/external_images/crystal/res/commandimagelist/sc_controlcodes.png">를 찰칵하여 모든 서식기호를 표시한 경우에만 볼수 있습니다.</p>
+			<table>
+				<tr>
+					<th>선택할 요소</th>
+					<th>선택방법</th>
+				</tr>
+				<tr>
+					<td><b class="bterm">행</b></td>
+					<td><p>행의 왼쪽을 찰칵합니다.</p>
+						<p><img border="0" src="../image/image/sgwd/select3.png" alt="표시"></p>
+					</td>
+				</tr>
+				<tr>
+					<td><b class="bterm">렬</b></td>
+					<td><p>렬의 맨 우의 눈금선이나 테두리를 찰칵합니다.</p>
+						<p><img border="0" src="../image/image/sgwd/select2.png" alt="표시"></p>
+					</td>
+				</tr>
+				<tr>
+					<td><b class="bterm">다음세포의 본문</b></td>
+					<td><b class="bterm">[Tab]</b>건을 누릅니다.</td>
+				</tr>
+				<tr>
+					<td><b class="bterm">이전 세포의 본문</b></td>
+					<td><b class="bterm">[Shift+Tab]</b>건을 누릅니다.</td>
+				</tr>
+			</table>
+			<p><b class="bterm">참고:</b>&nbsp; &nbsp;표를 찰칵하고 <b class="bterm">&lt;표&gt;</b>차림표의 <b class="bterm">&lt;선택&gt;</b>지령이나 건반지름건을 사용하여 행, 렬, 표의 전체를 선택할수 있습니다.</p>
+		</div>
+		<p>
+			<a href='#' class='DropDown' onClick='Outline2()' onKeyPress='Outline2()'>
+				<img border='0' src='../image/image/common/blueup.gif' alt='표시'>건반으로 표의 항목을 선택
+			</a>
+		</p>
+		<div id='ExpCol' class='collapsed' border='0'>
+			<p>지름건을 리용하여 표의 요구하는 항목들에 대한 선택을 진행할수 있습니다.</p>
+			<table>
+				<tr>
+					<th>건지정방식</th>
+					<th>선택내용</th>
+				</tr>
+				<tr>
+					<td>Tab건</td>
+					<td>다음세포의 내용을 선택</td>
+				</tr>
+				<tr>
+					<td>Shift+Tab</td>
+					<td>이전 세포의 내용을 선택</td>
+				</tr>
+				<tr>
+					<td>[Shift]건을 누른채로 이동건을 반복해서 누릅니다.</td>
+					<td>린접한 세포로 선택범위를 확장</td>
+				</tr>
+				<tr>
+					<td>선택할 렬의 맨 웃쪽이나 맨 아래쪽의 세포를 찰칵합니다. [Shift]건을 누른채로 웃쪽이동건이나 아래쪽이동건을 반복해서 누릅니다.</td>
+					<td>렬을 선택</td>
+				</tr>
+			</table>
+		</div>
+		<p>
+			<a href='#' class='DropDown' onClick='Outline2()' onKeyPress='Outline2()'>
+				<img border='0' src='../image/image/common/blueup.gif' alt='표시'>건반으로 객체를 선택
+			</a>
+		</p>
+		<div id='ExpCol' class='collapsed' border='0'>
+			<p>유표가 문서의 본문안에 있는 경우 다음의 방법을 수행합니다.</p>
+			<ol>
+				<li>
+					<b class="bterm">[F6]</b>건을 눌러 도구띠를 활성화합니다.
+				</li>
+				<li>
+					<b class="bterm">&lt;도형&gt;</b><a href="#" class="glossary" onClick="AppendPopup(this,'IDG_TOOLBAR')" onKeyPress="AppendPopup(this,'IDG_TOOLBAR')">도구띠</a>가 활성화될 때까지 <b class="bterm">[F6]</b>건을 누릅니다.
+				</li>
+				<li>
+					오른쪽이동건을 눌러 <b class="bterm">&lt;선택&gt;</b>그림기호<img border="0" src="../image/ooo_custom_images/industrial/res/commandimagelist/lc_selectobject.png ">를 선택합니다.
+				</li>
+				<li>
+					첫번째 객체를 선택하려면 <b class="bterm">[Ctrl+Enter]</b>건을 누릅니다.
+				</li>
+				<li>
+					<b class="bterm">[Esc]</b>건을 누른 다음 선택할 객체에 크기조종꼭지가 나타날 때까지 앞쪽으로 이동하려면 <b class="bterm">[Tab]</b>건을 누르고 뒤쪽으로 이동하려면 <b class="bterm">[Shift+Tab]</b>건을 누릅니다.
+				</li>
+			</ol>
+		</div>
+		<script type="text/javascript" language="Javascript">footerView()</script>
+	
+</body>
+</html>

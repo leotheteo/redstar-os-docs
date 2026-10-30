@@ -1,0 +1,60 @@
+﻿<html dir='ltr'>
+	<head>
+		<META http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+		<title>규칙 및 검사항목</title>
+		<link rel='stylesheet' type='text/css' href='../css/main.css'/>
+		<script type='text/javascript' language='Javascript' src='../js/mexpcol.js'></script>
+		<script type='text/javascript' language='JavaScript' src='../js/glossary.js'></script>
+	</head>
+	<body>
+		<h1>&nbsp;<img align="absbottom" src="../image/external_images/crystal/svtools/res/new_doc.png"/>&nbsp;규칙 및 검사항목</h1>
+		<p id='ExpandAllLine' class='ExpFav'>
+			<a href='#' onClick='ExpandAll()' onKeyPress='ExpandAll()' class='DropDown'>
+				<img id='picHeader' border='0' src='../image/image/common/expandtri.gif' alt='모두 표시'>
+				<span id='ExpandAll'>모두 표시</span>
+			</a>
+		</p>
+		<p><b class="bterm">오유코드:</b>   수식에 사용해야 할 문법, <a href="#" class="glossary" onClick="AppendPopup(this,'IDG_PARAMETER')" onKeyPress="AppendPopup(this,'IDG_PARAMETER')">인수</a> 또는 자료형식을 사용하지 않았습니다. 각각의 오유코드는 발생한 리유가 서로 다르며 각기 다른 방식으로 해결됩니다. 
+			<a href='5.10.5.5.htm'>수식의 오유 찾기 및 수정</a>의 오유코드표를 참고하십시오.
+		</p>
+		<p><b class="bterm">수자를 본문으로 저장:</b>   본문으로 보관된 수자가 세포에 들어있습니다. 이러한 수자는 대체로 다른 원본에서 가져온 자료로부터 만들어진것입니다. 
+			본문으로 저장된 수자로 하여 예견하지 못한 정렬동작이 진행될수 있으며 이 경우에는 수자로 변환하는것이 좋습니다.
+		</p>
+		<p><b class="bterm">수식을 포함한 세포를 잠그지 않음</b></p>
+			<p>기본적으로 모든 세포는 보호를 위하여 잠그도록 설정되여있습니다. 수식이 보호되는 경우 수식을 수정하려면 보호를 해제해야 합니다. 
+				세포를 보호하지 않았는가를 확인하십시오.
+			</p>
+			<p>수식이 포함된 세포를 보호하면 수식이 변경되지 않으며 이후 오유발생을 방지하는데 도움이 될수 있습니다.</p>
+		<p><b class="bterm">수식에서 빈 세포의 참조</b></p>
+			<p>수식에 빈 세포에 대한 참조가 들어있으면 다음실례와 같이 예상치 않는 결과가 발생할수 있습니다.</p>
+			<p>아래 수자들의 평균을 구한다고 가정할 때 세번째 세포가 비여있으면 그 결과는 22.75가 되고 세번째 세포에 0이 있으면 그 결과는 18.2가 됩니다.</p>
+			<table>
+				<tr>
+					<th>자료</th>
+				</tr>
+				<tr>
+					<td>24</td>
+				</tr>
+				<tr>
+					<td>12</td>
+				</tr>
+				<tr>
+					<td>&nbsp;</td>
+				</tr>
+				<tr>
+					<td>45</td>
+				</tr>
+				<tr>
+					<td>10</td>
+				</tr>
+				<tr>
+					<th>수식</th>
+				</tr>
+				<tr>
+					<td>=AVERAGE(A2:A6)</td>
+				</tr>
+			</table>
+		<script type="text/javascript" language="Javascript">footerView()</script>
+	
+</body>
+</html>

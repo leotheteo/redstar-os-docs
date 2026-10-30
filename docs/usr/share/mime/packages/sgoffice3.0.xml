@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mime-info xmlns="http://www.freedesktop.org/standards/shared-mime-info">
+  <mime-type type="application/vnd.sun.xml.draw">
+    <comment>LibreOffice Drawing</comment>
+    <comment xml:lang="ko">LibreOffice 그림</comment>
+    <comment xml:lang="qtz">IKI0‖LibreOffice Drawing</comment>
+    <glob pattern="*.sxd"/>
+  </mime-type>
+  <mime-type type="application/vnd.sun.xml.draw.template">
+    <comment>LibreOffice Drawing Template</comment>
+    <comment xml:lang="ko">LibreOffice 그림형판</comment>
+    <comment xml:lang="qtz">ybhv‖LibreOffice Drawing Template</comment>
+    <glob pattern="*.std"/>
+  </mime-type>
+  <mime-type type="application/vnd.openofficeorg.extension">
+    <comment>LibreOffice Extension</comment>
+    <comment xml:lang="ko">LibreOffice 확장</comment>
+    <comment xml:lang="qtz">oyqn‖LibreOffice Extension</comment>
+    <glob pattern="*.oxt"/>
+  </mime-type>
+  <mime-type type="application/vnd.sun.xml.math">
+    <comment>LibreOffice Formula</comment>
+    <comment xml:lang="ko">LibreOffice 수학식</comment>
+    <comment xml:lang="qtz">lwiP‖LibreOffice Formula</comment>
+    <glob pattern="*.sxm"/>
+  </mime-type>
+  <mime-type type="application/vnd.sun.xml.writer.global">
+    <comment>LibreOffice Master Document</comment>
+    <comment xml:lang="ko">LibreOffice 주 문서</comment>
+    <comment xml:lang="qtz">h1b2‖LibreOffice Master Document</comment>
+    <glob pattern="*.sxg"/>
+  </mime-type>
+  <mime-type type="application/vnd.ms-excel">
+    <comment>Microsoft Excel Worksheet</comment>
+    <comment xml:lang="ko">Microsoft Excel 작업표</comment>
+    <comment xml:lang="qtz">rjWE‖Microsoft Excel Worksheet</comment>
+    <glob pattern="*.xls"/>
+  </mime-type>
+  <mime-type type="application/vnd.ms-excel.sheet.macroenabled.12">
+    <comment>Microsoft Excel Worksheet</comment>
+    <comment xml:lang="ko">Microsoft Excel 작업표</comment>
+    <comment xml:lang="qtz">lnQf‖Microsoft Excel Worksheet</comment>
+    <glob pattern="*.xlsm"/>
+  </mime-type>
+  <mime-type type="application/vnd.ms-excel.sheet.binary.macroenabled.12">
+    <comment>Microsoft Excel Worksheet</comment>
+    <comment xml:lang="ko">Microsoft Excel 작업표</comment>
+    <comment xml:lang="qtz">c5vn‖Microsoft Excel Worksheet</comment>
+    <glob pattern="*.xlsb"/>
+  </mime-type>
+  <mime-type type="application/vnd.ms-excel.template.macroenabled.12">
+    <comment>Microsoft Excel Worksheet Template</comment>
+    <comment xml:lang="ko">Microsoft Excel 작업표형판</comment>
+    <comment xml:lang="qtz">FYch‖Microsoft Excel Worksheet Template</comment>
+    <glob pattern="*.xltm"/>
+  </mime-type>
+  <mime-type type="application/vnd.ms-powerpoint">
+    <comment>Microsoft PowerPoint Presentation</comment>
+    <comment xml:lang="ko">Microsoft PowerPoint 연시물</comment>
+    <comment xml:lang="qtz">yxoA‖Microsoft PowerPoint Presentation</comment>
+    <glob pattern="*.ppt"/>
+  </mime-type>
+  <mime-type type="application/vnd.ms-powerpoint.presentation.macroenabled.12">
+    <comment>Microsoft PowerPoint Presentation</comment>
+    <comment xml:lang="ko">Microsoft PowerPoint 연시물</comment>
+    <comment xml:lang="qtz">SFaE‖Microsoft PowerPoint Presentation</comment>
+    <glob pattern="*.pptm"/>
+  </mime-type>
+  <mime-type type="application/vnd.ms-powerpoint.template.macroenabled.12">
+    <comment>Microsoft PowerPoint Presentation Template</comment>
+    <comment xml:lang="ko">Microsoft PowerPoint 연시물형판</comment>
+    <comment xml:lang="qtz">x7RA‖Microsoft PowerPoint Presentation Template</comment>
+    <glob pattern="*.potm"/>
+  </mime-type>
+  <mime-type type="application/msword">
+    <comment>Microsoft Word Document</comment>
+    <comment xml:lang="ko">Microsoft Word 문서</comment>
+    <comment xml:lang="qtz">5N5u‖Microsoft Word Document</comment>
+    <glob pattern="*.doc"/>
+  </mime-type>
+  <mime-type type="application/vnd.ms-word.document.macroenabled.12">
+    <comment>Microsoft Word Document</comment>
+    <comment xml:lang="ko">Microsoft Word 문서</comment>
+    <comment xml:lang="qtz">qMIo‖Microsoft Word Document</comment>
+    <glob pattern="*.docm"/>
+  </mime-type>
+  <mime-type type="application/vnd.ms-word">
+    <comment>Microsoft Word Document</comment>
+    <comment xml:lang="ko">Microsoft Word 문서</comment>
+    <comment xml:lang="qtz">ELSl‖Microsoft Word Document</comment>
+    <glob pattern="*.doc"/>
+  </mime-type>
+  <mime-type type="application/vnd.ms-word.template.macroenabled.12">
+    <comment>Microsoft Word Document Template</comment>
+    <comment xml:lang="ko">Microsoft Word 문서형판</comment>
+    <comment xml:lang="qtz">IaSW‖Microsoft Word Document Template</comment>
+    <glob pattern="*.dotm"/>
+  </mime-type>
+  <mime-type type="application/vnd.sun.xml.base">
+    <comment>OpenDocument Database</comment>
+    <comment xml:lang="ko">OpenDocument 자료기지</comment>
+    <comment xml:lang="qtz">L1Gv‖OpenDocument Database</comment>
+    <glob pattern="*.odb"/>
+    <magic>
+        <match type="string" offset="38" value="application/vnd.sun.xml.base"/>
+    </magic>
+  </mime-type>
+  <mime-type type="application/vnd.oasis.opendocument.graphics">
+    <comment>OpenDocument Drawing</comment>
+    <comment xml:lang="ko">OpenDocument 그림</comment>
+    <comment xml:lang="qtz">#C7B‖OpenDocument Drawing</comment>
+    <glob pattern="*.odg"/>
+    <magic>
+        <match type="string" offset="38" value="application/vnd.oasis.opendocument.graphics"/>
+    </magic>
+  </mime-type>
+  <mime-type type="application/vnd.oasis.opendocument.graphics-template">
+    <comment>OpenDocument Drawing Template</comment>
+    <comment xml:lang="ko">OpenDocument 그림형판</comment>
+    <comment xml:lang="qtz">eTcV‖OpenDocument Drawing Template</comment>
+    <glob pattern="*.otg"/>
+    <magic priority="60">
+        <match type="string" offset="38" value="application/vnd.oasis.opendocument.graphics-template"/>
+    </magic>
+  </mime-type>
+  <mime-type type="application/vnd.oasis.opendocument.formula">
+    <comment>OpenDocument Formula</comment>
+    <comment xml:lang="ko">OpenDocument 수학식</comment>
+    <comment xml:lang="qtz">3YvI‖OpenDocument Formula</comment>
+    <glob pattern="*.odf"/>
+    <magic>
+        <match type="string" offset="38" value="application/vnd.oasis.opendocument.formula"/>
+    </magic>
+  </mime-type>
+  <mime-type type="application/vnd.oasis.opendocument.text-master">
+    <comment>OpenDocument Master Document</comment>
+    <comment xml:lang="ko">OpenDocument 주 문서</comment>
+    <comment xml:lang="qtz">zyfa‖OpenDocument Master Document</comment>
+    <glob pattern="*.odm"/>
+    <magic priority="60">
+        <match type="string" offset="38" value="application/vnd.oasis.opendocument.text-master"/>
+    </magic>
+  </mime-type>
+  <mime-type type="application/vnd.oasis.opendocument.presentation">
+    <comment>OpenDocument Presentation</comment>
+    <comment xml:lang="ko">OpenDocument 연시물</comment>
+    <comment xml:lang="qtz">ByBm‖OpenDocument Presentation</comment>
+    <glob pattern="*.odp"/>
+    <magic>
+        <match type="string" offset="38" value="application/vnd.oasis.opendocument.presentation"/>
+    </magic>
+  </mime-type>
+  <mime-type type="application/vnd.oasis.opendocument.presentation-template">
+    <comment>OpenDocument Presentation Template</comment>
+    <comment xml:lang="ko">OpenDocument 연시물형판</comment>
+    <comment xml:lang="qtz">gz_#‖OpenDocument Presentation Template</comment>
+    <glob pattern="*.otp"/>
+    <magic priority="60">
+        <match type="string" offset="38" value="application/vnd.oasis.opendocument.presentation-template"/>
+    </magic>
+  </mime-type>
+  <mime-type type="application/vnd.oasis.opendocument.spreadsheet">
+    <comment>OpenDocument Spreadsheet</comment>
+    <comment xml:lang="ko">OpenDocument 자료표</comment>
+    <comment xml:lang="qtz">fkKs‖OpenDocument Spreadsheet</comment>
+    <glob pattern="*.ods"/>
+    <magic>
+        <match type="string" offset="38" value="application/vnd.oasis.opendocument.spreadsheet"/>
+    </magic>
+  </mime-type>
+  <mime-type type="application/vnd.oasis.opendocument.spreadsheet-template">
+    <comment>OpenDocument Spreadsheet Template</comment>
+    <comment xml:lang="ko">OpenDocument 자료표형판</comment>
+    <comment xml:lang="qtz">tHqa‖OpenDocument Spreadsheet Template</comment>
+    <glob pattern="*.ots"/>
+    <magic priority="60">
+        <match type="string" offset="38" value="application/vnd.oasis.opendocument.spreadsheet-template"/>
+    </magic>
+  </mime-type>
+  <mime-type type="application/vnd.oasis.opendocument.text">
+    <comment>OpenDocument Text</comment>
+    <comment xml:lang="ko">OpenDocument 본문</comment>
+    <comment xml:lang="qtz">hv3b‖OpenDocument Text</comment>
+    <glob pattern="*.odt"/>
+    <magic>
+        <match type="string" offset="38" value="application/vnd.oasis.opendocument.text"/>
+    </magic>
+  </mime-type>
+  <mime-type type="application/vnd.oasis.opendocument.text-template">
+    <comment>OpenDocument Text Template</comment>
+    <comment xml:lang="ko">OpenDocument 본문형판</comment>
+    <comment xml:lang="qtz">ddKU‖OpenDocument Text Template</comment>
+    <glob pattern="*.ott"/>
+    <magic priority="60">
+        <match type="string" offset="38" value="application/vnd.oasis.opendocument.text-template"/>
+    </magic>
+  </mime-type>
+  <mime-type type="application/vnd.oasis.opendocument.text-web">
+    <comment>HTML Document Template</comment>
+    <comment xml:lang="ko">HTML 문서형판</comment>
+    <comment xml:lang="qtz">EdMi‖HTML Document Template</comment>
+    <glob pattern="*.oth"/>
+    <magic priority="60">
+        <match type="string" offset="38" value="application/vnd.oasis.opendocument.text-web"/>
+    </magic>
+  </mime-type>
+  <mime-type type="application/vnd.openxmlformats-officedocument.presentationml.presentation">
+    <comment>Microsoft PowerPoint Presentation</comment>
+    <comment xml:lang="ko">Microsoft PowerPoint 연시물</comment>
+    <comment xml:lang="qtz">3NND‖Microsoft PowerPoint Presentation</comment>
+    <glob pattern="*.pptx"/>
+  </mime-type>
+  <mime-type type="application/vnd.openxmlformats-officedocument.presentationml.template">
+    <comment>Microsoft PowerPoint Presentation Template</comment>
+    <comment xml:lang="ko">Microsoft PowerPoint 연시물형판</comment>
+    <comment xml:lang="qtz">DMPp‖Microsoft PowerPoint Presentation Template</comment>
+    <glob pattern="*.potx"/>
+  </mime-type>
+  <mime-type type="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet">
+    <comment>Microsoft Excel Worksheet</comment>
+    <comment xml:lang="ko">Microsoft Excel 작업표</comment>
+    <comment xml:lang="qtz">jcbf‖Microsoft Excel Worksheet</comment>
+    <glob pattern="*.xlsx"/>
+  </mime-type>
+  <mime-type type="application/vnd.openxmlformats-officedocument.spreadsheetml.template">
+    <comment>Microsoft Excel Worksheet Template</comment>
+    <comment xml:lang="ko">Microsoft Excel 작업표형판</comment>
+    <comment xml:lang="qtz">tUZd‖Microsoft Excel Worksheet Template</comment>
+    <glob pattern="*.xltx"/>
+  </mime-type>
+  <mime-type type="application/vnd.openxmlformats-officedocument.wordprocessingml.document">
+    <comment>Microsoft Word Document</comment>
+    <comment xml:lang="ko">Microsoft Word 문서</comment>
+    <comment xml:lang="qtz">H2sF‖Microsoft Word Document</comment>
+    <glob pattern="*.docx"/>
+  </mime-type>
+  <mime-type type="application/vnd.openxmlformats-officedocument.wordprocessingml.template">
+    <comment>Microsoft Word Document Template</comment>
+    <comment xml:lang="ko">Microsoft Word 문서형판</comment>
+    <comment xml:lang="qtz">VVHC‖Microsoft Word Document Template</comment>
+    <glob pattern="*.dotx"/>
+  </mime-type>
+  <mime-type type="application/vnd.sun.xml.impress">
+    <comment>LibreOffice Presentation</comment>
+    <comment xml:lang="ko">LibreOffice 연시물</comment>
+    <comment xml:lang="qtz">pZ0j‖LibreOffice Presentation</comment>
+    <glob pattern="*.sxi"/>
+  </mime-type>
+  <mime-type type="application/vnd.sun.xml.impress.template">
+    <comment>LibreOffice Presentation Template</comment>
+    <comment xml:lang="ko">LibreOffice 연시물형판</comment>
+    <comment xml:lang="qtz">AjVV‖LibreOffice Presentation Template</comment>
+    <glob pattern="*.sti"/>
+  </mime-type>
+  <mime-type type="application/vnd.sun.xml.calc">
+    <comment>LibreOffice Spreadsheet</comment>
+    <comment xml:lang="ko">LibreOffice 자료표</comment>
+    <comment xml:lang="qtz">b6tH‖LibreOffice Spreadsheet</comment>
+    <glob pattern="*.sxc"/>
+  </mime-type>
+  <mime-type type="application/vnd.sun.xml.calc.template">
+    <comment>LibreOffice Spreadsheet Template</comment>
+    <comment xml:lang="ko">LibreOffice 자료표형판</comment>
+    <comment xml:lang="qtz">lwR0‖LibreOffice Spreadsheet Template</comment>
+    <glob pattern="*.stc"/>
+  </mime-type>
+  <mime-type type="application/vnd.sun.xml.writer">
+    <comment>LibreOffice Text Document</comment>
+    <comment xml:lang="ko">LibreOffice 본문문서</comment>
+    <comment xml:lang="qtz">N1lU‖LibreOffice Text Document</comment>
+    <glob pattern="*.sxw"/>
+  </mime-type>
+  <mime-type type="application/vnd.sun.xml.writer.template">
+    <comment>LibreOffice Text Document Template</comment>
+    <comment xml:lang="ko">LibreOffice 본문문서형판</comment>
+    <comment xml:lang="qtz">qkMZ‖LibreOffice Text Document Template</comment>
+    <glob pattern="*.stw"/>
+  </mime-type>
+</mime-info>

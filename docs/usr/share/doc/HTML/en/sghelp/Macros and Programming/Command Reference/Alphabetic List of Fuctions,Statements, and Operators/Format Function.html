@@ -1,0 +1,167 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+	<TITLE></TITLE>
+	<META NAME="GENERATOR" CONTENT="《Sogwang 3.0》  (Linux)">
+	<META NAME="CREATED" CONTENT="20091205;11384400">
+	<META NAME="CHANGED" CONTENT="20091205;12063700">
+	<STYLE TYPE="text/css">
+	<!--
+		H2 { margin-bottom: 0.18cm; font-family: "Bitstream Vera Sans", "Arial", "Helvetica", "Lucida", "Geneva", "Helmet", sans-serif, "Andale Sans UI", "Arial Unicode MS", "Lucida Sans Unicode", "Tahoma"; font-size: 14pt }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="ko-KP" DIR="LTR"><DIV style="margin-left: 25">
+<H1><A NAME="format"></A><A NAME="bm_id3153539"></A><FONT FACE="Thorndale, serif"><SPAN LANG="en-US">Format
+Function [Runtime]</SPAN></FONT></H1>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Converts
+a number to a string, and then formats it according to the format
+that you specify.</SPAN></FONT></P>
+<H2><SPAN LANG="en-US">Syntax:</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Format
+(Number [, Format As String])</SPAN></FONT></P>
+<H2><SPAN LANG="en-US">Return value:</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">String</SPAN></FONT></P>
+<H2><SPAN LANG="en-US">Parameters:</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Number:</B>
+Numeric expression that you want to convert to a formatted string.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Format:</B>
+String that specifies the format code for the number. If <B>Format</B>
+is omitted, the Format function works like the <B>Str</B> function.</SPAN></FONT></P>
+<H2><SPAN LANG="en-US">Formatting Codes</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">The
+following list describes the codes that you can use for formatting a
+number:</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>0:</B>
+If <B>Number</B> has a digit at the position of the 0 in the format
+code, the digit is displayed, otherwise a zero is displayed.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">If
+<B>Number</B> has fewer digits than the number of zeros in the format
+code, (on either side of the decimal), leading or trailing zeros are
+displayed. If the number has more digits to the left of the decimal
+separator than the amount of zeros in the format code, the additional
+digits are displayed without formatting.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Decimal
+places in the number are rounded according to the number of zeros
+that appear after the decimal separator in the <B>Format </B>code.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>#:</B>
+If <B>Number</B> contains a digit at the position of the #
+placeholder in the <B>Format</B> code, the digit is displayed,
+otherwise nothing is displayed at this position.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">This
+symbol works like the 0, except that leading or trailing zeroes are
+not displayed if there are more # characters in the format code than
+digits in the number. Only the relevant digits of the number are
+displayed.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>.:</B>
+The decimal placeholder determines the number of decimal places to
+the left and right of the decimal separator.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">If the
+format code contains only # placeholders to the left of this symbol,
+numbers less than 1 begin with a decimal separator. To always display
+a leading zero with fractional numbers, use 0 as a placeholder for
+the first digit to the left of the decimal separator.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>%:</B>
+Multiplies the number by 100 and inserts the percent sign (%) where
+the number appears in the format code.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>E- E+
+e- e+ :</B> If the format code contains at least one digit
+placeholder (0 or #) to the right of the symbol E-, E+, e-, or e+,
+the number is formatted in the scientific or exponential format. The
+letter E or e is inserted between the number and the exponent. The
+number of placeholders for digits to the right of the symbol
+determines the number of digits in the exponent.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">If the
+exponent is negative, a minus sign is displayed directly before an
+exponent with E-, E+, e-, e+. If the exponent is positive, a plus
+sign is only displayed before exponents with E+ or e+.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">The
+thousands delimiter is displayed if the format code contains the
+delimiter enclosed by digit placeholders (0 or #).</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">The use
+of a period as a thousands and decimal separator is dependent on the
+regional setting. When you enter a number directly in Basic source
+code, always use a period as decimal delimiter. The actual character
+displayed as a decimal separator depends on the number format in your
+system settings.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>- + $
+( ) space:</B> A plus (+), minus (-), dollar ($), space, or brackets
+entered directly in the format code is displayed as a literal
+character.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">To
+display characters other than the ones listed here, you must precede
+it by a backslash (\), or enclose it in quotation marks (&quot; &quot;).</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">\ : The
+backslash displays the next character in the format code.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Characters
+in the format code that have a special meaning can only be displayed
+as literal characters if they are preceded by a backslash. The
+backslash itself is not displayed, unless you enter a double
+backslash (\\) in the format code.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Characters
+that must be preceded by a backslash in the format code in order to
+be displayed as literal characters are date- and time-formatting
+characters (a, c, d, h, m, n, p, q, s, t, w, y, /, :),
+numeric-formatting characters (#, 0, %, E, e, comma, period), and
+string-formatting characters (@, &amp;, &lt;, &gt;, !).</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">You can
+also use the following predefined number formats. Except for &quot;General
+Number&quot;, all of the predefined format codes return the number as
+a decimal number with two decimal places.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">If you
+use predefined formats, the name of the format must be enclosed in
+quotation marks.</SPAN></FONT></P>
+<H2><SPAN LANG="en-US">Predefined format</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>General
+Number:</B> Numbers are displayed as entered.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Currency:</B>
+Inserts a dollar sign in front of the number and encloses negative
+numbers in brackets.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Fixed:</B>
+Displays at least one digit in front of the decimal separator.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Standard:</B>
+Displays numbers with a thousands separator.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Percent:</B>
+Multiplies the number by 100 and appends a percent sign to the
+number.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Scientific:</B>
+Displays numbers in scientific format (for example, 1.00E+03 for
+1000).</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">A format
+code can be divided into three sections that are separated by
+semicolons. The first part defines the format for positive values,
+the second part for negative values, and the third part for zero. If
+you only specify one format code, it applies to all numbers.</SPAN></FONT></P>
+<P><A NAME="languageformat"></A><FONT FACE="청봉, serif"><SPAN LANG="en-US">You
+can set the locale used for controlling the formatting numbers, dates
+and currencies in </SPAN></FONT><FONT FACE="청봉, serif"><SPAN LANG="en-US">Sogwang Basic in
+<B>Sogwang Office - Reference - Language Settings - Languages</B>. In Basic
+format codes, the decimal point (<B>.</B>) is always used as
+<B>placeholder</B> for the decimal separator defined in your locale
+and will be replaced by the corresponding character.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">The same
+applies to the locale settings for date, time and currency formats.
+The Basic format code will be interpreted and displayed according to
+your locale setting.</SPAN></FONT></P>
+<H2><A NAME="errorcode"></A><SPAN LANG="en-US">Error Codes </SPAN>
+</H2>
+<P><A NAME="err5"></A><FONT FACE="청봉, serif"><SPAN LANG="en-US">5
+Invalid procedure call </SPAN></FONT>
+</P>
+<H2><SPAN LANG="en-US">Example:</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Sub
+ExampleFormat</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">MsgBox
+Format(6328.2, &quot;##,##0.00&quot;)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">REM
+always use a period as decimal delimiter when you enter numbers in
+Basic source code.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">REM
+displays for example 6,328.20 in English locale, 6.328,20 in German
+locale.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><SPAN STYLE="font-weight: medium">End
+Sub</SPAN></SPAN></FONT></P>
+
+</DIV></BODY>
+</HTML>

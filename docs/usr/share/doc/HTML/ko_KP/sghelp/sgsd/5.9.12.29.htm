@@ -1,0 +1,87 @@
+﻿<html dir='ltr'>
+	<head>
+		<META http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+		<title>VALUE</title>
+		<link rel='stylesheet' type='text/css' href='../css/main.css'/>
+		<script type='text/javascript' language='Javascript' src='../js/mexpcol.js'></script>
+		<script type='text/javascript' language='JavaScript' src='../js/glossary.js'></script>
+	</head>
+	<body>
+		<h1>&nbsp;<img align="absbottom" src="../image/external_images/crystal/svtools/res/new_doc.png"/>&nbsp;VALUE</h1>
+		<p id='ExpandAllLine' class='ExpFav'>
+			<a href='#' onClick='ExpandAll()' onKeyPress='ExpandAll()' class='DropDown'>
+				<img id='picHeader' border='0' src='../image/image/common/expandtri.gif' alt='모두 표시'>
+				<span id='ExpandAll'>모두 표시</span>
+			</a>
+		</p>
+		<p><b class="bterm">참고항목</b>&emsp;
+			<a href="5.9.12.1.htm">본문함수목록</a>,
+			<a href="5.9.12.9.htm">DOLLAR</a>,
+			<a href="5.9.12.12.htm">FIXED</a>,
+			<a href="5.9.12.26.htm">TEXT</a>
+		</p>
+		<p>본문을 수값으로 변환합니다.</p>
+		<p><b class="bterm">문법:&emsp;&emsp;		VALUE(본문)</b></p>
+		<table>
+			<tr>
+				<th>인수명</th>
+				<th>설명</th>
+			</tr>
+			<tr>
+				<td>본문</td>
+				<td>수값으로 변환할 본문입니다. 큰 옮김표로 묶인 본문 또는 변경할 본문이 들어있는 세포의 참조입니다.</td>
+			</tr>
+		</table>
+		<p><b class="bterm">주의</b></p>
+			<ul>
+				<li><b class="bterm">본문</b>은 표처리프로그람에서 인식되는 상수, 날자 또는 시간서식중 어느 서식으로 입력될수 있습니다. <b class="bterm">본문</b>이 이와 같은 서식들중에서 어느 서식으로도 되여있지 않으면 <b class="bterm">VALUE</b>함수는 <b class="bterm">오유:[오유번호]</b>를 표시합니다.</li>
+				<li>표처리프로그람에서는 필요한 경우 본문을 수자로 자동변환하기때문에 수식에 <b class="bterm">VALUE</b>함수를 사용할 필요가 없습니다. 이 함수는 다른 표계산프로그람과의 호환성을 위하여 제공됩니다.</li>
+			</ul>
+		<p><b class="bterm">실례</b></p>
+			<p><a href="1.5.1.htm">실례의 리용방법</a>을 참고하십시오.</p>
+			<table>
+				<tr>
+					<td>
+						<table>
+							<tr>
+								<td class="noborder">&nbsp;
+								</td>
+							</tr>
+							<tr>
+								<th>1</th>
+							</tr>
+							<tr>
+								<th>2</th>
+							</tr>
+							<tr>
+								<th>3</th>
+							</tr>
+						</table>
+					</td>
+					<td>
+						<table>
+							<tr>
+								<th>A</th>
+								<th>B</th>
+							</tr>
+							<tr>
+								<th>수식</th>
+								<th>설명(결과)</th>
+							</tr>
+							<tr>
+								<td>=VALUE("1 000")</td>
+								<td>문자렬에 해당되는 수자입니다. (1000)</td>
+							</tr>
+							<tr>
+								<td>=VALUE("16:48:00")-VALUE("12:00:00")</td>
+								<td>"16:48:00"-"12:00:00"로서 내부수자는 4시간 48분과 동일합니다. (0.2 또는 4:48)</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+			<p><b class="bterm">참고:</b>   수자를 시간으로 표시하려면 세포를 선택하고 <b class="bterm">&lt;서식&gt;</b>차림표에서 <b class="bterm">&lt;세포&gt;</b>를 찰칵합니다. <b class="bterm">&lt;수자&gt;</b>표쪽을 찰칵한 다음 <b class="bterm">&lt;종류&gt;</b>목록칸에서 <b class="bterm">&lt;시간&gt;</b>을 찰칵합니다.</p>
+		<script type="text/javascript" language="Javascript">footerView()</script>
+	
+</body>
+</html>				

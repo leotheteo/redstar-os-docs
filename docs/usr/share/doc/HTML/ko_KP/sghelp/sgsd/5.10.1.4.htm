@@ -1,0 +1,30 @@
+﻿<html dir='ltr'>
+	<head>
+		<META http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+		<title>중첩함수</title>
+		<link rel='stylesheet' type='text/css' href='../css/main.css'/>
+		<script type='text/javascript' language='Javascript' src='../js/mexpcol.js'></script>
+		<script type='text/javascript' language='JavaScript' src='../js/glossary.js'></script>
+	</head>
+	<body>
+		<h1>&nbsp;<img align="absbottom" src="../image/external_images/crystal/svtools/res/new_doc.png"/>&nbsp;중첩함수</h1>
+		<p id='ExpandAllLine' class='ExpFav'>
+			<a href='#' onClick='ExpandAll()' onKeyPress='ExpandAll()' class='DropDown'>
+				<img id='picHeader' border='0' src='../image/image/common/expandtri.gif' alt='모두 표시'>
+				<span id='ExpandAll'>모두 표시</span>
+			</a>
+		</p>
+		<p>경우에 따라 함수를 다른 함수의 <a href="#" class="glossary" onClick="AppendPopup(this,'IDG_PARAMETER')" onKeyPress="AppendPopup(this,'IDG_PARAMETER')">인수</a>로 사용할수 있습니다. 례를 들어 다음의 수식은 중첩된 <b class="bterm">AVERAGE</b>함수의 결과값과 50을 비교합니다.</p>
+		<p><img border='0' src='../image/image/sgsd/nested.gif' alt='표시'></p>
+		<ul>
+			<li><b class="bterm">유효한 반환값:</b>   중첩된 함수는 그것을 사용한 함수가 요구하는 인수와 같은 류형의 값을 반환해야 합니다. 
+				례를 들어 <b class="bterm">ROUND</b>함수의 첫번째 인수가 수자를 요구하므로 중첩된 함수의 반환값은 2.12와 같은 수자가 되여야 합니다. 무효한 값을 반환하면 <b class="bterm">#VALUE!</b>오유값이 표시됩니다.
+			</li>
+			<li><b class="bterm">중첩수준:</b>   함수B가 함수A의 인수로 사용되면 함수B는 2수준함수가 됩니다. 
+				례를 들어 <b class="bterm">AVERAGE</b>함수와 <b class="bterm">SUM</b>함수는 모두 <b class="bterm">IF</b>함수의 인수이므로 2수준함수입니다. <b class="bterm">AVERAGE</b>함수안에 중첩된 함수는 3수준함수로 됩니다.
+			</li>
+		</ul>
+		<script type="text/javascript" language="Javascript">footerView()</script>
+	
+</body>
+</html>

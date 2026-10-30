@@ -1,0 +1,100 @@
+﻿<html dir='ltr'>
+	<head>
+		<META http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+		<title>0값의 보이기/숨기기</title>
+		<link rel='stylesheet' type='text/css' href='../css/main.css'/>
+		<script type='text/javascript' language='Javascript' src='../js/mexpcol.js'></script>
+		<script type='text/javascript' language='JavaScript' src='../js/glossary.js'></script>
+	</head>
+	<body>
+		<h1>&nbsp;<img align="absbottom" src="../image/external_images/crystal/svtools/res/new_doc.png"/>&nbsp;0값의 보이기/숨기기</h1>
+		<p id='ExpandAllLine' class='ExpFav'>
+			<a href='#' onClick='ExpandAll()' onKeyPress='ExpandAll()' class='DropDown'>
+				<img id='picHeader' border='0' src='../image/image/common/expandtri.gif' alt='모두 표시'>
+				<span id='ExpandAll'>모두 표시</span>
+			</a>
+		</p>
+		<h2>표용지의 모든 0값의 보이기/숨기기</h2>
+			<ol>
+				<li><b class="bterm">&lt;서광사무처리&gt;</b>차림표에서 <b class="bterm">&lt;환경설정&gt;</b>을 찰칵하고 <b class="bterm">&lt;서광사무처리 표처리프로그람&gt;</b>에서 <b class="bterm">&lt;보기&gt;</b>를 찰칵합니다.</li>
+				<li>다음의 방법들중에서 하나를 실행합니다.</li>
+					<ul>
+						<li>세포에 0값을 나타내려면 <b class="bterm">&lt;0값&gt;</b>확인칸을 선택합니다.</li>
+						<li>0값을 빈 세포로 나타내려면 이 확인칸의 선택을 취소합니다.</li>
+					</ul>
+			</ol>
+		<h2>선택한 세포에서 0값을 숨기는 수자서식사용</h2>
+			<p><b class="bterm">주의:</b>   이 항목은 선택한 세포의 0값을 숨기기 위한 서식을 적용합니다. 이 세포중 하나의 값이 0이 아닌 값으로 변경되면 값의 서식은 일반수자형식과 류사해집니다.</p>
+			<ol>
+				<li>숨기려는 0값이 들어있는 세포를 선택합니다.</li>
+				<li><b class="bterm">&lt;서식&gt;</b>차림표에서 <b class="bterm">&lt;세포&gt;</b>를 찰칵하고 <b class="bterm">&lt;수자&gt;</b>표쪽을 찰칵합니다.</li>
+				<li><b class="bterm">&lt;종류&gt;</b>목록칸에서 <b class="bterm">&lt;사용자정의&gt;</b>를 찰칵합니다.</li>
+				<li><b class="bterm">&lt;서식코드&gt;</b>본문칸에 0;-0;;@를 입력합니다.</li>
+			</ol>
+			<p><b class="bterm">참고:</b></p>
+			<ul>
+				<li>숨겨진 값은 수식띠<img border='0' src='../image/image/sgsd/formbar.gif' alt='표시'> 또는 세포에서 편집한 경우에는 세포에만 나타나고 인쇄되지는 않습니다.</li>
+				<li>숨겨진 값을 다시 나타내려면 세포를 선택하고 <b class="bterm">&lt;서식&gt;</b>차림표에서 <b class="bterm">&lt;세포&gt;</b>를 찰칵한 다음 <b class="bterm">&lt;수자&gt;</b>표쪽을 찰칵합니다. <b class="bterm">&lt;서식&gt;</b>목록칸에서 <b class="bterm">&lt;일반&gt;</b>을 찰칵하여 기본적인 수자서식을 적용합니다. 날자나 시간을 다시 나타내려면 <b class="bterm">&lt;수자&gt;</b>표쪽에서 해당 날자나 시간서식을 선택합니다.</li>
+			</ul>
+		<h2>수식에서 반환되는 0값 숨기기</h2>
+			<p>이 작업을 수행하려면 IF함수를 사용합니다.</p>
+			<p><b class="bterm">실례</b></p>
+			<p><a href="1.5.1.htm">실례의 리용방법</a>을 참고하십시오.</p>
+			<table>
+				<tr>
+					<td>
+						<table>
+							<tr>
+								<td class="noborder">&nbsp;</td>
+							</tr>
+							<tr>
+								<th>1</th>
+							</tr>
+							<tr>
+								<th>2</th>
+							</tr>
+							<tr>
+								<th>3</th>
+							</tr>
+						</table>
+					</td>
+					<td>
+						<table>
+							<tr>
+								<th>A</th>
+							</tr>
+							<tr>
+								<th>자료</th>
+							</tr>
+							<tr>
+								<td>10</td>
+							</tr>
+							<tr>
+								<td>10</td>
+							</tr>
+							<tr>
+								<th>수식</th>
+								<th>설명(결과)</th>
+							</tr>
+							<tr>
+								<td>=A2-A3</td>
+								<td>첫번째 수자에서 두번째 수자를 덥니다. (0)</td>
+							</tr>
+							<tr>
+								<td>=IF(A2-A3=0;"";A2-A3)</td>
+								<td>값이 0이면 빈 세포를 반환합니다. (빈 세포)</td>
+							</tr>
+							<tr>
+								<td>=IF(A2-A3=0;"-";A2-A3)</td>
+								<td>값이 0이면 풀이표를 반환합니다. (-)</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+			<p><b class="bterm">참조함수</b></p>
+			<p><a href='5.9.7.4.htm'>IF</a></p>
+		<script type="text/javascript" language="Javascript">footerView()</script>
+	
+</body>
+</html>

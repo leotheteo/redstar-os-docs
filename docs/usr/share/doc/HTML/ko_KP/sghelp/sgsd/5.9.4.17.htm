@@ -1,0 +1,112 @@
+<html dir='ltr'>
+	<head>
+		<META http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+		<title>NETWORKDAYS</title>
+		<link rel='stylesheet' type='text/css' href='../css/main.css'/>
+		<script type='text/javascript' language='Javascript' src='../js/mexpcol.js'></script>
+		<script type='text/javascript' language='JavaScript' src='../js/glossary.js'></script>
+	</head>
+	<body>
+		<h1>&nbsp;<img align="absbottom" src="../image/external_images/crystal/svtools/res/new_doc.png"/>&nbsp;NETWORKDAYS</h1>
+		<p id='ExpandAllLine' class='ExpFav'>
+			<a href='#' onClick='ExpandAll()' onKeyPress='ExpandAll()' class='DropDown'>
+				<img id='picHeader' border='0' src='../image/image/common/expandtri.gif' alt='모두 표시'>
+				<span id='ExpandAll'>모두 표시</span>
+			</a>
+		</p>
+		<p><b class="bterm">참고항목</b>&emsp;
+		   <a href='5.9.4.1.htm'>날자 및 시간함수목록</a>,  
+		   <a href='5.9.4.10.htm'>EDATE</a>, 
+		   <a href='5.9.4.11.htm'>EOMONTH</a>, 
+		   <a href='5.9.4.18.htm'>NOW</a>, 
+		   <a href='5.9.4.28.htm'>WORKDAY</a>	
+		</p>
+		<p>두 날자사이의 로동일수를 구합니다.</p>
+		<p><b class="bterm">문법:&emsp;&emsp;		NETWORKDAYS(시작날자,마감날자,휴식일)</b></p>
+		<table>
+			<tr>
+				<th>인수명</th>
+				<th>설명</th>
+			</tr>
+			<tr>
+				<td>시작날자</td>
+				<td>시작날자입니다.</td>
+			</tr>
+			<tr>
+				<td>마감날자</td>
+				<td>마감날자입니다. <b class="bterm">마감날자</b>가 <b class="bterm">시작날자</b>보다 앞서면 부수가 반환됩니다. </td>
+			</tr>
+			<tr>
+				<td>휴식일</td>
+				<td>휴식일(휴가, 휴식일 등)의 날자값목록을 나타냅니다. 추가선택인수입니다.</td>
+			</tr>
+		</table>
+		<p><b class="bterm">실례</b></p>
+			<p><a href='1.5.1.htm'>실례의 리용방법</a>을 참고하십시오.</p>
+			<table>
+				<tr>
+					<td>
+						<table>
+							<tr><td>&nbsp;</td></tr>
+							<tr><th>1</th></tr>
+							<tr><th>2</th></tr>
+							<tr><th>3</th></tr>
+							<tr><th>4</th></tr>
+							<tr><th>5</th></tr>
+							<tr><th>6</th></tr>
+						</table>
+					</td>
+					<td>
+						<table>
+							<tr>
+								<th>A</th>
+								<th>B</th>
+							</tr>
+							<tr>
+								<th>날자</th>
+								<th>설명</th>
+							</tr>
+							<tr>
+								<td>2008-10-01</td>
+								<td>시작날자입니다.</td>
+							</tr>
+							<tr>
+								<td>2009-3-01</td>
+								<td>마감날자입니다.</td>
+							</tr>
+							<tr>
+								<td>2009-1-18</td>
+								<td>일요일입니다.</td>
+							</tr>
+							<tr>
+								<td>2009-1-26</td>
+								<td>설명절입니다.</td>
+							</tr>
+							<tr>
+								<td>2009-2-1</td>
+								<td>일요일입니다.</td>
+							</tr>
+							<tr>
+								<th>수식</th>
+								<th>설명(결과)</th>
+							</tr>
+							<tr>
+								<td>=NETWORKDAYS(A2,A3)</td>
+								<td>우에서 지적된 시작날자와 마감날자사이의 로동일수입니다. (130)</td>
+							</tr>
+							<tr>
+								<td>=NETWORKDAYS(A2,A3,A4)</td>
+								<td>첫번째 휴식일을 제외하고 시작날자와 마감날자사이의 로동일수입니다. (130)</td>
+							</tr>
+							<tr>
+								<td>=NETWORKDAYS(A2,A3,A4:A6)</td>
+								<td>우에서 지적된 모든 휴식일을 제외하고 시작날자와 마감날자사이의 로동일수입니다. (129)</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>	
+		<script type="text/javascript" language="Javascript">footerView()</script>
+	
+</body>
+</html>

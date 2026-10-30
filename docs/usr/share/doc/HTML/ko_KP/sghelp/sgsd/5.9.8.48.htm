@@ -1,0 +1,97 @@
+﻿<html dir='ltr'>
+	<head>
+		<META http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+		<title>ROUND</title>
+		<link rel='stylesheet' type='text/css' href='../css/main.css'/>
+		<script type='text/javascript' language='Javascript' src='../js/mexpcol.js'></script>
+		<script type='text/javascript' language='JavaScript' src='../js/glossary.js'></script>
+	</head>
+	<body>
+		<h1>&nbsp;<img align="absbottom" src="../image/external_images/crystal/svtools/res/new_doc.png"/>&nbsp;ROUND</h1>
+		<p id='ExpandAllLine' class='ExpFav'>
+			<a href='#' onClick='ExpandAll()' onKeyPress='ExpandAll()' class='DropDown'>
+				<img id='picHeader' border='0' src='../image/image/common/expandtri.gif' alt='모두 표시'>
+				<span id='ExpandAll'>모두 표시</span>
+			</a>
+		</p>
+		<p><b class="bterm">참고항목</b>&emsp;
+			<a href="5.9.8.1.htm">수학함수목록</a>,
+			<a href="5.9.8.12.htm">CEILING</a>,
+			<a href="5.9.8.26.htm">FLOOR</a>,
+			<a href="5.9.8.29.htm">INT</a>,
+			<a href="5.9.8.40.htm">ODD</a>,
+
+			<a href="5.9.8.49.htm">ROUNDDOWN</a>,
+			<a href="5.9.8.50.htm">ROUNDUP</a>,
+			<a href="5.9.8.63.htm">TRUNC</a>
+		</p>
+		<p>미리 정의된 정확도로 수값을 반올림합니다.</p>
+		<p><b class="bterm">문법:&emsp;&emsp;		ROUND(수값,자리수)</b></p>
+		<table>
+			<tr>
+				<th>인수명</th>
+				<th>설명</th>
+			</tr>
+			<tr>
+				<td>수값</td>
+				<td>반올림할 수값입니다.</td>
+			</tr>
+			<tr>
+				<td>자리수</td>
+				<td>반올림할 수값의 자리수입니다. 추가선택인수입니다.</td>
+			</tr>
+		</table>						
+		<p><b class="bterm">주의</b></p>
+			<ul>
+				<li><b class="bterm">자리수</b>가 0보다 크면 수값은 지정한 소수값자리수로 반올림됩니다.</li>
+				<li><b class="bterm">자리수</b>가 0이면 가장 가까운 옹근수로 반올림됩니다.</li>
+				<li><b class="bterm">자리수</b>가 0보다 작으면 소수점 왼쪽에서 반올림됩니다.</li>
+			</ul>
+		<p><b class="bterm">실례</b></p>			
+<p><a href="1.5.1.htm">실례의 리용방법</a>을 참고하십시오.</p>
+			<table>
+				<tr>
+					<td>
+						<table>
+							<tr><td>&nbsp;</td></tr>
+							<tr><th>1</th></tr>
+							<tr><th>2</th></tr>
+							<tr><th>3</th></tr>
+							<tr><th>4</th></tr>
+							<tr><th>5</th></tr>
+						</table>
+					</td>
+					<td>
+						<table>
+							<tr>
+								<th>A</th>
+								<th>B</th>
+							</tr>
+							<tr>
+								<th>수식</th>
+								<th>설명(결과)</th>
+							</tr>
+							<tr>
+								<td>=ROUND(2.15, 1)</td>
+								<td>2.15를 소수점 한자리로 반올림합니다. (2.2)</td>
+							</tr>
+							<tr>
+								<td>=ROUND(2.149, 1)</td>
+								<td>2.149를 소수점 한자리로 반올림합니다. (2.1)</td>
+							</tr>
+							<tr>
+								<td>=ROUND(-1.475, 2)</td>
+								<td>-1.475를 소수점 두자리로 반올림합니다. (-1.48)</td>
+							</tr>
+							<tr>
+								<td>=ROUND(21.5, -1)</td>
+								<td>21.5를 소수점 왼쪽한자리로 반올림합니다. (20)</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>		
+		<script type="text/javascript" language="Javascript">footerView()</script>
+	
+</body>
+</html>																

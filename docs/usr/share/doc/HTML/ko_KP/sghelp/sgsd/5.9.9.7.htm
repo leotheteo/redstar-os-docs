@@ -1,0 +1,190 @@
+﻿<html dir='ltr'>
+	<head>
+		<META http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+		<title>MINVERSE</title>
+		<link rel='stylesheet' type='text/css' href='../css/main.css'/>
+		<script type='text/javascript' language='Javascript' src='../js/mexpcol.js'></script>
+		<script type='text/javascript' language='JavaScript' src='../js/glossary.js'></script>
+	</head>
+	<body>
+		<h1>&nbsp;<img align="absbottom" src="../image/external_images/crystal/svtools/res/new_doc.png"/>&nbsp;MINVERSE</h1>
+		<p id='ExpandAllLine' class='ExpFav'>
+			<a href='#' onClick='ExpandAll()' onKeyPress='ExpandAll()' class='DropDown'>
+				<img id='picHeader' border='0' src='../image/image/common/expandtri.gif' alt='모두 표시'>
+				<span id='ExpandAll'>모두 표시</span>
+			</a>
+		</p>
+		<p><b class="bterm">참고항목</b>&emsp;
+			<a href="5.9.9.1.htm">행렬함수목록</a>,
+			<a href="5.9.9.6.htm">MDETERM</a>,
+			<a href="5.9.9.8.htm">MMULT</a>,
+			<a href="5.9.9.14.htm">TRANSPOSE</a>
+		</p>
+		<p>역행렬을 구합니다.</p>
+		<p><b class="bterm">문법:&emsp;&emsp;		MINVERSE(행렬)</b></p>
+				<table>
+			<tr>
+				<th>인수명</th>
+				<th>설명</th>
+			</tr>
+			<tr>
+				<td>행렬</td>
+				<td>역행렬을 구할 행렬입니다.</td>
+			</tr>
+		</table>
+		<p><b class="bterm">주의</b></p>
+			<ul>
+				<li><b class="bterm">행렬</b>은 A1:C3과 같은 세포범위로 지정할수 있습니다.</li>
+				<li><b class="bterm">행렬</b>에 빈 세포나 본문이 들어있는 세포가 있으면 <b class="bterm">오유:[오유번호]</b>가 반환됩니다.</li>
+				<li><b class="bterm">행렬</b>의 행과 렬수가 같지 않으면 <b class="bterm">오유:[오유번호]</b>가 반환됩니다.</li>
+				<li>행렬을 반환하는 수식은 행렬수식으로 입력되여야 합니다.</li>
+				<li>역행렬은 행렬식과 마찬가지로 일반적으로 몇개의 변수가 포함된 수학방정식을 푸는데 사용됩니다. 행렬과 그 역행렬의 적은 단위행렬(대각선의 값은 1이고 나머지 다른 모든 값은 0인 바른행렬)입니다.</li>
+				<li>2행 2렬의 행렬을 계산하는 방법에 대한 실례로 수자를 나타내는 a, b, c, d가 들어있는 범위 A1:B2를 가정하면 다음의 표에서는 행렬 A1:B2의 역행렬을 보여줍니다.
+					<p>
+					<table>
+						<tr>
+							<th></th>
+							<th>렬 A</th>
+							<th>렬 B</th>
+						</tr>
+						<tr>
+							<td><b class="bterm">행 1</b></td>
+							<td>d/(a*d-b*c)</td>
+							<td>b/(b*c-a*d)</td>
+						</tr>
+						<tr>
+							<td><b class="bterm">행 2</b></td>
+							<td>c/(b*c-a*d)</td>
+							<td>a/(a*d-b*c)</td>
+						</tr>
+					</table>
+					</p>
+				</li>
+				<li><b class="bterm">MINVERSE</b>함수는 대략16자리의 정밀도로 계산되는데 완전히 계산되지 않으면 작은 수값오유가 생길수 있습니다.</li>
+				<li>일부 바른행렬은 역행렬을 구할수 없으므로 <b class="bterm">오유:[오유번호]</b>가 반환됩니다. 역행렬을 구할수 없는 행렬의 행렬식은 0입니다.</li>
+			</ul>
+		<p><b class="bterm">실례1</b></p>
+			<p><a href="1.5.1.htm">실례의 리용방법</a>을 참고하십시오.</p>
+			<table>
+				<tr>
+					<td>
+						<table>
+							<tr>
+								<td class="noborder">&nbsp;
+								</td>
+							</tr>
+							<tr>
+								<th>1</th>
+							</tr>
+							<tr>
+								<th>2</th>
+							</tr>
+							<tr>
+								<th>3</th>
+							</tr>
+						</table>
+					</td>
+					<td>
+						<table>
+							<tr>
+								<th>A</th>
+								<th>B</th>
+							</tr>
+							<tr>
+								<th>자료</th>
+								<th>자료</th>
+							</tr>
+							<tr>
+								<td>4</td>
+								<td>-1</td>
+							</tr>
+							<tr>
+								<td>2</td>
+								<td>0</td>
+							</tr>
+							<tr>
+								<th>수식</th>
+								<th>수식</th>
+							</tr>
+							<tr>
+								<td>=MINVERSE(A2:B3)</td>
+								<td>&nbsp;</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+			<p><b class="bterm">참고:</b>   실례의 수식은 행렬수식으로 입력하여야 합니다. 실례를 빈 자료표에 복사한 후 수식세포로 시작되는 A5:B6 범위를 선택하고 <b class="bterm">[F2]</b>건을 누른 다음 <b class="bterm">[Ctrl+Shift+Enter]</b>건을 누릅니다. 수식을 행렬수식으로 입력하지 않으면 단일결과는 0이 됩니다.</p>
+		<p><b class="bterm">실례2</b></p>
+			<p><a href="1.5.1.htm">실례의 리용방법</a>을 참고하십시오.</p>
+			<table>
+				<tr>
+					<td>
+						<table>
+							<tr>
+								<td class="noborder">&nbsp;
+								</td>
+							</tr>
+							<tr>
+								<th>1</th>
+							</tr>
+							<tr>
+								<th>2</th>
+							</tr>
+							<tr>
+								<th>3</th>
+							</tr>
+							<tr>
+								<th>4</th>
+							</tr>
+						</table>
+					</td>
+					<td>
+						<table>
+							<tr>
+								<th>A</th>
+								<th>B</th>
+								<th>C</th>
+							</tr>
+							<tr>
+								<th>자료</th>
+								<th>자료</th>
+								<th>자료</th>
+							</tr>
+							<tr>
+								<td>1</td>
+								<td>2</td>
+								<td>1</td>
+							</tr>
+							<tr>
+								<td>3</td>
+								<td>4</td>
+								<td>-1</td>
+							</tr>
+							<tr>
+								<td>0</td>
+								<td>2</td>
+								<td>0</td>
+							</tr>
+							<tr>
+								<th>수식</th>
+								<th>수식</th>
+								<th>수식</th>
+							</tr>
+							<tr>
+								<td>=MINVERSE(A2:C4)</td>
+								<td>&nbsp;</td>
+								<td>&nbsp;</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+			<p><b class="bterm">참고:</b>   실례의 수식은 행렬수식으로 입력하여야 합니다. 실례를 빈 자료표에 복사한 후 수식세포로 시작되는 A6:C8 범위를 선택하고 <b class="bterm">[F2]</b>건을 누른 다음 <b class="bterm">[Ctrl+Shift+Enter]</b>건을 누릅니다. 수식을 행렬수식으로 입력하지 않으면 단일결과는 0.25가 됩니다.</p>
+		</div>		
+		<p><b class="bterm">즉시도움말</b></p>
+			<p><b class="bterm">INDEX</b>함수를 사용하면 역행렬의 각 요소를 참조할수 있습니다.</p>
+		<script type="text/javascript" language="Javascript">footerView()</script>
+	
+</body>
+</html>				

@@ -1,0 +1,87 @@
+<html dir='ltr'>
+	<head>
+		<META http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+		<title>WEEKNUM</title>
+		<link rel='stylesheet' type='text/css' href='../css/main.css'/>
+		<script type='text/javascript' language='Javascript' src='../js/mexpcol.js'></script>
+		<script type='text/javascript' language='JavaScript' src='../js/glossary.js'></script>
+	</head>
+	<body>
+		<p id='ExpandAllLine' class='ExpFav'>
+			<a href='#' onClick='ExpandAll()' onKeyPress='ExpandAll()' class='DropDown'>
+				<img id='picHeader' border='0' src='../image/image/common/expandtri.gif' alt='모두 표시'>
+				<span id='ExpandAll'>모두 표시</span>
+			</a>
+		</p>
+		<h1>&nbsp;<img align="absbottom" src="../image/external_images/crystal/svtools/res/new_doc.png"/>&nbsp;WEEKNUM</h1>
+		<p><b class="bterm">참고항목</b>&emsp; 
+		   <a href='5.9.4.1.htm'>날자 및 시간함수목록</a>, 
+		   <a href='5.9.4.7.htm'>DAYS360</a>, 
+		   <a href='5.9.4.23.htm'>WEEKDAY</a>
+		</p>
+		<p>지정한 날자가 1년중 몇번째 주에 해당하는가를 계산합니다.</p>
+		<p><b class="bterm">문법:&emsp;&emsp;	WEEKNUM(날자,방식)</b></p>
+		<table>
+			<tr>
+				<th>인수명</th>
+				<th>설명</th>
+			</tr>
+			<tr>
+				<td>날자</td>
+				<td>해당 주에 속하는 날자입니다.</td>
+			</tr>
+			<tr>
+				<td>방식</td>
+				<td>주의 시작요일을 결정합니다. 기본값은 1입니다. 1이면 일요일부터 주가 시작되고 2이면 월요일부터 주가 시작됩니다. 요일에는1부터 7까지의 번호가 부여됩니다.</td>
+			</tr>
+		</table>
+		<p><b class="bterm">주의</b></p>
+			<ul>
+				<li>국제표준 ISO 8601은 월요일을 주의 첫날로 규정하였습니다. 두해에 걸쳐 포함되는 주에는 해당되는 날자수가 더 많은 년도의 번호가 할당됩니다. 즉 모든 년도의 주번호1은 1월 4일이 포함된 주입니다.</li>
+				<li><b class="bterm">WEEKNUM_ADD</b>함수는 <b class="bterm">Microsoft Excel</b>과 꼭같은 방식으로 요일번호를 계산합니다. 
+					<b class="bterm">ISO 8601</b>요일번호가 필요한 경우 <b class="bterm">WEEKNUM</b>함수를 사용하거나 날자세포의 서식을 설정합니다.
+				</li>
+			</ul>
+		<p><b class="bterm">실례</b></p>
+			<p><a href='1.5.1.htm'>실례의 리용방법</a>을 참고하십시오.</p>
+			<table>
+				<tr>
+					<td>
+						<table>
+							<tr><td>&nbsp;</td></tr>
+							<tr><th>1</th></tr>
+							<tr><th>2</th></tr>
+						</table>
+					</td>
+					<td>
+						<table>
+							<tr>
+								<th>A</th>
+							</tr>
+							<tr>
+								<th>자료</th>
+							</tr>
+							<tr>
+								<td>2008/3/9</td>
+							</tr>
+							<tr>
+								<th>수식</th>
+								<th>설명(결과)</th>
+							</tr>
+							<tr>
+								<td>=WEEKNUM(A2,1)</td>
+								<td>주의 시작요일이 일요일인 경우의 1년중 해당 주의 번호입니다. (11)</td>
+							</tr>
+							<tr>
+								<td>=WEEKNUM(A2,2)</td>
+								<td>주의 시작요일이 월요일인 경우의 1년중 해당 주의 번호입니다. (10)</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>	
+		<P><b class="bterm">참고:</b>&emsp;&emsp;   2008년 3월 9일은 일요일입니다.</P>
+		<script type="text/javascript" language="Javascript">footerView()</script>
+	
+</body>
+</html>

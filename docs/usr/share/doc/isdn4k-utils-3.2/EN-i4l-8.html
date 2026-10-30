@@ -1,0 +1,251 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <META NAME="GENERATOR" CONTENT="LinuxDoc-Tools 0.9.21">
+ <TITLE>ISDN4Linux Tutorial: IP-Nummern Auflösung (DNS)</TITLE>
+ <LINK HREF="EN-i4l-9.html" REL=next>
+ <LINK HREF="EN-i4l-7.html" REL=previous>
+ <LINK HREF="EN-i4l.html#toc8" REL=contents>
+</HEAD>
+<BODY>
+<A HREF="EN-i4l-9.html">Next</A>
+<A HREF="EN-i4l-7.html">Previous</A>
+<A HREF="EN-i4l.html#toc8">Contents</A>
+<HR>
+<H2><A NAME="ipnummern"></A> <A NAME="s8">8.</A> <A HREF="EN-i4l.html#toc8">IP-Nummern Auflösung (DNS)</A>    </H2>
+
+<P>Bekanntlich werden Rechner im Internet über die IP-Nummern angesprochen.
+Niemand möchte sich aber die IP-Nummern direkt merken, praktischer
+ist es, Namen zu verwenden, z.B. <CODE>www.franken.de</CODE>.
+Aber nicht nur für die bessere Merkbarkeit sind diese Namen 
+wichtig, sondern sie dienen auch als Variable, deren 
+Inhalt sich verändern kann. Wenn ein wichtiger Server eine neue
+IP-Nummer bekommt (z.B. durch Umzug oder Providerwechsel), so wird
+der Name einfach auf die neue IP-Nummer aufgelöst.</P>
+<P>Genauso wichtig (und das wird gerne vergessen) wie die Auflösung von
+Namen in IP-Nummern 
+ist der umgekehrte Fall, also IP-Nummer in einen Rechnernamen 
+auflösen.</P>
+<P>Diese umgekehrte Auflösung ist oft diejenige, die Probleme im
+lokalen Netzwerk (also ungewollte Verbindungen) macht, denn
+viele Services nutzen diese Möglichkeit zur Verifikation bei
+einer einkommenden Verbindung, denn in den Regeln wer was machen
+darf, werden meist Rechnernamen anstatt IP-Nummern verwendet. Über das
+Netzwerk ist aber zunächst nur die IP-Nummer sichtbar und muß
+also in einen Namen aufgelöst werden.</P>
+
+<P>Es gibt zwei wichtige Methode zur Namensauflösung, die
+gleichzeitig benutzt werden können (und müssen):</P>
+
+<H2><A NAME="etcHosts"></A> <A NAME="ss8.1">8.1</A> <A HREF="EN-i4l.html#toc8.1">feste IP-Nummern Auflösung über /etc/hosts</A>
+            </H2>
+
+<P>Alle bekannten IP-Nummer werden fest in einer Datei
+gespeichert, die der Adminsitrator manuell pflegen (oder
+kopieren) muß.</P>
+<P>In der Datei <CODE>/etc/hosts</CODE> werden alle Rechnernamen und
+IP-Nummern fest eingetragen.</P>
+<P>Beispiel: In der Domain <CODE>isdnworkshop.de</CODE> gibt es die
+Rechner Asterix (<CODE>192.168.1.1</CODE>) und Obelix (<CODE>192.168.1.2</CODE>).
+Dann sieht die Datei so aus:</P>
+<P>
+<HR>
+<PRE>
+# IP        FQN                     Kurzname
+
+192.168.1.1 Asterix.isdnworkshop.de Asterix
+192.168.1.2 Obelix.isdnworkshop.de Obelix
+        
+</PRE>
+<HR>
+</P>
+
+<H2><A NAME="dns"></A> <A NAME="ss8.2">8.2</A> <A HREF="EN-i4l.html#toc8.2">dynamische IP-Nummern Auflösung mit DNS</A>
+            </H2>
+
+<P>Es wird schnell ersichtlich, daß eine feste Auflösung über eine
+Datei, die ständig aktuell auf jedem Rechner installiert sein
+muß das Internet nicht funktionieren würde. Die feste
+Auflösung kann nur in einem übersichtlichen lokalen Netz benutzt 
+werden.</P>
+<P>DNS (Domain Name Service) dient ebenfalls zum Auflösen von Rechnernamen
+in eine IP-Nummer und umgekehrt. Der Unterschied liegt darin, daß es
+ein Internet-Service ist, den man auf Anforderung abfragen kann.
+ES gibt sehr viele DNS-Server im Internet, wobei es eine 
+hierarchische Struktur gibt, die sich an den Domainnamen
+orientiert. Jeder DNS-Server ist für eine Sub-(Sub-....) Domain
+zuständig. Beim Abfragen <I>hangelt</I> man sich von den Root-Servern
+herunter, bis man den Server gefunden hat, der die Anfrage
+tatsächlich beantworten kann.</P>
+<P>Das Einrichten eines DNS-Server soll an anderer Stelle
+beschrieben werden, z.B. im DNS-HowTo.</P>
+<P>Für unsere Zwecke reicht es zu wissen, wie der Service
+aktiviert wird und wo man einstellt, welches der Nameserver
+ist.</P>
+
+<H2><A NAME="resolv"></A> <A NAME="ss8.3">8.3</A> <A HREF="EN-i4l.html#toc8.3">Konfiguration der Namensauflösung</A>
+            </H2>
+
+<P>Es ist wie gesagt durchaus sinnvoll beide Methoden
+der Namensauflösung zu kombinieren. Wichtig ist hier, daß 
+auch ohne Internetverbindung lokal gearbeitet werden kann.
+Üblicherweise werden die lokalen Rechner (mindestens der
+eigene) über die <CODE>/etc/hosts</CODE> aufgelöst, alle nicht
+bekannten Anfragen werden dann über den Nameserver beim
+ISP aufgelöst.</P>
+<P>Um die Namensauflösung muß sich eine Applikation nicht selber
+kümmern, sondern wird durch <CODE>libc</CODE>-Funktionen (z.b.
+<CODE>gethostbyname()</CODE> erledigt. Diese libc-Funktionen gilt es also
+zu konfigurieren.</P>
+<P>Über die Datei <CODE>/etc/host.conf</CODE> wird zunächst gesteuert,
+welche Methoden überhaupt benutzt werden sollen und sehr wichtig
+auch in welcher <B>Reihenfolge</B> dies geschehen soll.</P>
+<P>Beispiel <CODE>/etc/host.conf</CODE>:
+<HR>
+<PRE>
+order hosts bind
+multi on
+        
+</PRE>
+<HR>
+
+gibt an, daß zunächst in der <CODE>/etc/hosts</CODE> gesucht werden soll,
+bei Mißerfolg dort, soll der DNS-Server (<CODE>bind</CODE>) bemüht werden.</P>
+<P>Wenn ein Nameserver benutzt werden soll, ist noch eine zweite
+Datei <CODE>/etc/resolv.conf</CODE> zu konfigurieren:
+<HR>
+<PRE>
+search isdnworkshop.de suse.de 
+nameserver 192.168.200.7.1
+        
+</PRE>
+<HR>
+
+Die 2. Zeile sollte selbsterklärend sein, in der ersten
+wird eine sogenannte Searchlist angegeben, diese ist nur dann
+von Bedeutung, wenn ein Rechnername ohne vollständige Domain 
+versucht wird aufzulösen. Beispiel: es wird nach einem
+Rechner <CODE>Goedel</CODE> gesucht, den der Nameserver nicht kennt,
+dann wird zunächst <CODE>isdnworkshop.de</CODE> angehängt und damit versucht
+einen Rechner <CODE>Goedel.isdnworkshop.de</CODE> zu finden; ist auch das nicht
+erfolgreich, wird nach <CODE>Goedel.suse.de</CODE> gesucht.</P>
+<P>Änderungen an diesen beiden Dateien sind sofort wirksam.</P>
+
+<H3><A NAME="dnsSuse"></A> Namensauflösung bei S.u.S.E.                    </H3>
+
+<P>Setze die Variablen in <CODE>/etc/rc.config</CODE>, für obiges
+Beispiel:
+<HR>
+<PRE>
+SEARCHLIST="isdnworkshop.de suse.de"
+NAMESERVER="192.168.200.7.1"
+            
+</PRE>
+<HR>
+</P>
+
+<H2><A NAME="resolvTrouble"></A> <A NAME="ss8.4">8.4</A> <A HREF="EN-i4l.html#toc8.4">Probleme mit der Namensauflösung</A>
+            </H2>
+
+<P>Probleme bei der Namensauflösung erkennt man schnell an seiner
+Telefonrechnung ;-(</P>
+<P>Ein Beispiel: eine Benutzer macht im lokalen Netz ein
+Telnet von der IP-Nummer <CODE>192.168.1.2</CODE> auf den IZG <CODE>192.168.1.1</CODE>. 
+Der Server prüft vor dem eigentlichen Start des Telnet-Daemons,
+welche IP-Nummer reinkommt (Stichwort TCP-Wrapper), da diese
+Nummer nicht aufgelöst werden kann, wird der Nameser befragt,
+dieser ist beim ISP, eine Verbindung wird automatisch
+aufgebaut. Ergebnis: der Telnet braucht nicht nur etwa eine
+Minute bis zum Login (der DNS-Server kann diese private
+IP-Nummer nicht auflösen), sondern kostet auch noch 12 Pfennige.</P>
+
+<H3><A NAME="resolvCheck"></A> Checkliste                    </H3>
+
+<P>
+<OL>
+<LI> Ist die eigene IP-Nummer in der <CODE>/etc/hosts</CODE>
+eingetragen?
+</LI>
+<LI> Sind alle Rechner des lokalen Netzwerks in der
+<CODE>/etc/hosts</CODE> eingetragen?
+            </LI>
+<LI> Ist das Paket <CODE>bind</CODE> installiert:
+<HR>
+<PRE>
++/kfr $ rpm -q bind
+bind-4.9.6-5
+                
+</PRE>
+<HR>
+
+                </LI>
+<LI> Kann der Nameserver angesprochen werden?
+Test: 
+<HR>
+<PRE>
++/kfr $ nslookup www.suse.de
+Server:  Plato.suse.de
+Address:  192.168.100.1
+
+Name:    Turing.suse.de
+Addresses:  195.125.217.200, 192.168.102.3
+Aliases:  www.suse.de
+                
+</PRE>
+<HR>
+
+</LI>
+<LI> Einen beliebigen anderen Nameserver kann man direkt 
+testen, z.B.:
+<HR>
+<PRE>
++/kfr $ nslookup www.suse.de 141.1.1.1    
+Server:  ecrc.de
+Address:  141.1.1.1
+
+Non-authoritative answer:
+Name:    Turing.suse.de
+Address:  195.125.217.200
+Aliases:  www.suse.de
+                
+</PRE>
+<HR>
+</LI>
+</OL>
+</P>
+<P>Tips:
+<OL>
+<LI> Für das gesamte Subnetz IP-Nummern und Namen in
+die <CODE>/etc/hosts</CODE> eintragen, auch wenn sie
+(noch) nicht verwendet werden. Bsp:
+<HR>
+<PRE>
+192.168.1.1     Server.isdnworkshop.de Server
+192.168.1.2     Client.isdnworkshop.de Client
+192.168.1.3     Dummy.isdnworkshop.de Dummy
+192.168.1.4     Dummy.isdnworkshop.de Dummy
+192.168.1.5     Dummy.isdnworkshop.de Dummy
+                
+</PRE>
+<HR>
+
+u.s.w.
+                </LI>
+<LI> Einrichten eines eigenen DNS-Proxy-Servers.
+Neben der schnelleren Auflösung, werden auch die
+fehlerhaften Anfragen gecacht, so daß nicht so 
+häufig eine Verbindung aufgebaut wird
+(Siehe 
+<A HREF="EN-i4l-11.html#dnsCache">DNS-Cache</A>).</LI>
+</OL>
+</P>
+
+
+
+
+<HR>
+<A HREF="EN-i4l-9.html">Next</A>
+<A HREF="EN-i4l-7.html">Previous</A>
+<A HREF="EN-i4l.html#toc8">Contents</A>
+</BODY>
+</HTML>

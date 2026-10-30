@@ -1,0 +1,398 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+	<TITLE></TITLE>
+	<META NAME="GENERATOR" CONTENT="《Sogwang 3.0》  (Linux)">
+	<META NAME="CREATED" CONTENT="20091205;10241300">
+	<META NAME="CHANGED" CONTENT="20091205;11061600">
+	<STYLE TYPE="text/css">
+	<!--
+		H3 { margin-bottom: 0.18cm; font-family: "Bitstream Vera Sans", "Arial", "Helvetica", "Lucida", "Geneva", "Helmet", sans-serif, "Andale Sans UI", "Arial Unicode MS", "Lucida Sans Unicode", "Tahoma"; font-size: 12pt }
+		H2 { margin-bottom: 0.18cm; font-family: "Bitstream Vera Sans", "Arial", "Helvetica", "Lucida", "Geneva", "Helmet", sans-serif, "Andale Sans UI", "Arial Unicode MS", "Lucida Sans Unicode", "Tahoma"; font-size: 14pt }
+		P.code { margin-top: 0.04cm; margin-bottom: 0.04cm; font-family: "Bitstream Vera Sans Mono", "Cumberland", "Courier New", "Courier", "Lucida Sans Typewriter", "Lucida Typewriter", "Monaco", "Monospaced" }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="ko-KP" DIR="LTR"><DIV style="margin-left: 25">
+<H1><A NAME="rz"></A><FONT FACE="Thorndale, serif"><SPAN LANG="en-US">Statistical
+Functions Part Five </SPAN></FONT>
+</H1>
+<H2><A NAME="rank"></A><A NAME="bm_id3155071"></A><A NAME="bm_id3146778"></A>
+<SPAN LANG="en-US">RANK</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Returns
+the rank of a number in a sample.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Syntax</SPAN></H3>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">RANK(Value; Data; Type)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Value</B>
+is the value, whose rank is to be determined.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Data</B>
+is the array or range of data in the sample.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Type</B>
+(optional) is the sequence order.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Type = 0
+means descending from the last item of the array to the first (this
+is the default), </SPAN></FONT>
+</P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Type = 1
+means ascending from the first item of the range to the last.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Example</SPAN></H3>
+<P STYLE="margin-top: 0.04cm; margin-bottom: 0.04cm"><FONT FACE="청봉, serif"><SPAN LANG="en-US">=RANK(A10;A1:A50)
+returns the ranking of the value in A10 in value range A1:A50. If
+Value does not exist within the range an error message is displayed.</SPAN></FONT></P>
+<H2><A NAME="skew"></A><A NAME="bm_id3153556"></A><A NAME="bm_id3153801"></A>
+<SPAN LANG="en-US">SKEW</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Returns
+the skewness of a distribution.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Syntax</SPAN></H3>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">SKEW(Number1; Number2;
+...Number30)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Number1,
+Number2...Number30</B> are numerical values or ranges.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Example</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">=SKEW(A1:A50)
+calculates the value of skew for the data referenced.</SPAN></FONT></P>
+<H2><A NAME="forecast"></A><A NAME="bm_id3149051"></A><A NAME="bm_id3146102"></A>
+<SPAN LANG="en-US">FORECAST</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Extrapolates
+future values based on existing x and y values.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Syntax</SPAN></H3>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">FORECAST(Value; DataY; DataX)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Value</B>
+is the x value, for which the y value on the linear regression is to
+be returned.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>DataY</B>
+is the array or range of known y's.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>DataX</B>
+is the array or range of known x's.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Example</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">=FORECAST(50;A1:A50;B1;B50)
+returns the Y value expected for the X value of 50 if the X and Y
+values in both references are linked by a linear trend.</SPAN></FONT></P>
+<H2><A NAME="stdev"></A><A NAME="bm_id3149143"></A><A NAME="bm_id3153121"></A>
+<SPAN LANG="en-US">STDEV</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Estimates
+the standard deviation based on a sample.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Syntax</SPAN></H3>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">STDEV(Number1; Number2;
+...Number30)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Number1,
+Number2, ... Number30</B> are numerical values or ranges representing
+a sample based on an entire population.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Example</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">=STDEV(A1:A50)
+returns the estimated standard deviation based on the data
+referenced.</SPAN></FONT></P>
+<H2><A NAME="stdeva"></A><A NAME="bm_id3144745"></A><A NAME="bm_id3154846"></A>
+<SPAN LANG="en-US">STDEVA</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Calculates
+the standard deviation of an estimation based on a sample.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Syntax</SPAN></H3>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">STDEVA(Value1;Value2;...Value30)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Value1,
+Value2, ...Value30</B> are values or ranges representing a sample
+derived from an entire population. Text has the value 0.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Example</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">=STDEVA(A1:A50)
+returns the estimated standard deviation based on the data
+referenced.</SPAN></FONT></P>
+<H2><A NAME="stdevp"></A><A NAME="bm_id3149734"></A><A NAME="bm_id3146139"></A>
+<SPAN LANG="en-US">STDEVP</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Calculates
+the standard deviation based on the entire population.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Syntax</SPAN></H3>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">STDEVP(Number1;Number2;...Number30)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Number
+1,Number 2,...Number 30</B> are numerical values or ranges
+representing a sample based on an entire population.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Example</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">=STDEVP(A1:A50)
+returns a standard deviation of the data referenced.</SPAN></FONT></P>
+<H2><A NAME="stdevpa"></A><A NAME="bm_id3154522"></A><A NAME="bm_id3150902"></A>
+<SPAN LANG="en-US">STDEVPA</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Calculates
+the standard deviation based on the entire population.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Syntax</SPAN></H3>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">STDEVPA(Value1;Value2;...Value30)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Value1,value2,...value30</B>
+are values or ranges representing a sample derived from an entire
+population. Text has the value 0.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Example</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">=STDEVPA(A1:A50)
+returns the standard deviation of the data referenced.</SPAN></FONT></P>
+<H2><A NAME="standardize"></A><A NAME="bm_id3155928"></A><A NAME="bm_id3148764"></A>
+<SPAN LANG="en-US">STANDARDIZE</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Converts
+a random variable to a normalized value.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Syntax</SPAN></H3>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">STANDARDIZE(Number; Mean; StDev)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Number</B>
+is the value to be standardized.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Mean</B>
+is the arithmetic mean of the distribution.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>StDev</B>
+is the standard deviation of the distribution.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Example</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">=STANDARDIZE(11;10;1)
+returns 1. The value 11 in a normal distribution with a mean of 10
+and a standard deviation of 1 is as much above the mean of 10, as the
+value 1 is above the mean of the standard normal distribution.</SPAN></FONT></P>
+<H2><A NAME="normsinv"></A><A NAME="bm_id3157986"></A><A NAME="bm_id3148389"></A>
+<SPAN LANG="en-US">NORMSINV</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Returns
+the inverse of the standard normal cumulative distribution.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Syntax</SPAN></H3>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">NORMINV(Number)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Number</B>
+is the probability to which the inverse standard normal distribution
+is calculated.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Example</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">=NORMSINV(0.908789)
+returns 1.3333.</SPAN></FONT></P>
+<H2><A NAME="normsdist"></A><A NAME="bm_id3147538"></A><A NAME="bm_id3145269"></A>
+<SPAN LANG="en-US">NORMSDIST</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Returns
+the standard normal cumulative distribution function. The
+distribution has a mean of zero and a standard deviation of one.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">It is
+GAUSS(x)=NORMSDIST(x)-0.5</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Syntax</SPAN></H3>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">NORMSDIST(Number)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Number</B>
+is the value to which the standard normal cumulative distribution is
+calculated.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Example</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">=NORMSDIST(1)
+returns 0.84. The area below the standard normal distribution curve
+to the left of X value 1 is 84% of the total area.</SPAN></FONT></P>
+<H2><A NAME="slope"></A><A NAME="bm_id3152592"></A><A NAME="bm_id3153716"></A>
+<SPAN LANG="en-US">SLOPE</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Returns
+the slope of the linear regression line. The slope is adapted to the
+data points set in the y and x values.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Syntax</SPAN></H3>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">SLOPE(DataY; DataX)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>DataY</B>
+is the array or matrix of Y data.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>DataX</B>
+is the array or matrix of X data.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Example</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">=SLOPE(A1:A50;B1:B50)
+</SPAN></FONT>
+</P>
+<H2><A NAME="steyx"></A><A NAME="bm_id3155836"></A><A NAME="bm_id3150964"></A>
+<SPAN LANG="en-US">STEYX</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Returns
+the standard error of the predicted y value for each x in the
+regression.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Syntax</SPAN></H3>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">STEYX(DataY; DataX)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>DataY</B>
+is the array or matrix of Y data.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>DataX</B>
+is the array or matrix of X data.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Example</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">=STEXY(A1:A50;B1:B50)
+</SPAN></FONT>
+</P>
+<H2><A NAME="devsq"></A><A NAME="bm_id3150873"></A><A NAME="bm_id3156317"></A>
+<SPAN LANG="en-US">DEVSQ</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Returns
+the sum of squares of deviations based on a sample mean.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Syntax</SPAN></H3>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">DEVSQ(Number1; Number2;
+...Number30)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Number1,
+Number2, ...Number30</B> numerical values or ranges representing a
+sample. </SPAN></FONT>
+</P>
+<H3><SPAN LANG="en-US">Example</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">=DEVSQ(A1:A50)
+</SPAN></FONT>
+</P>
+<H2><A NAME="tinv"></A><A NAME="bm_id3149579"></A><A NAME="bm_id3153155"></A>
+<SPAN LANG="en-US">TINV</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Returns
+the inverse of the t-distribution.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Syntax</SPAN></H3>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">TINV(Number; DegreesFreedom)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Number</B>
+is the probability associated with the two-tailed t-distribution.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>DegreesFreedom</B>
+is the number of degrees of freedom for the t-distribution.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Example</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">=TINV(0.1;6)
+returns 1.94</SPAN></FONT></P>
+<H2><A NAME="ttest"></A><A NAME="bm_id3154129"></A><A NAME="bm_id3153981"></A>
+<SPAN LANG="en-US">TTEST</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Returns
+the probability associated with a Student's t-Test.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Syntax</SPAN></H3>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">TTEST(Data1; Data2; Mode; Type)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Data1</B>
+is the dependent array or range of data for the first record.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Data2</B>
+is the dependent array or range of data for the second record.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Mode</B>
+= 1 calculates the one-tailed test, <B>Mode</B> = 2 the two- tailed
+test.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Type</B>
+is the kind of t-test to perform. Type 1 means paired. Type 2 means
+two samples, equal variance (homoscedastic). Type 3 means two
+samples, unequal variance (heteroscedastic).</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Example</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">=TTEST(A1:A50;B1:B50;2;2)
+</SPAN></FONT>
+</P>
+<H2><A NAME="tdist"></A><A NAME="bm_id3154930"></A><A NAME="bm_id3153095"></A>
+<SPAN LANG="en-US">TDIST</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Returns
+the t-distribution.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Syntax</SPAN></H3>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">TDIST(Number; DegreesFreedom;
+Mode)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Number</B>
+is the value for which the t-distribution is calculated.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>DegreesFreedom</B>
+is the number of degrees of freedom for the t-distribution.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Mode</B>
+= 1 returns the one-tailed test, <B>Mode</B> = 2 returns the
+two-tailed test.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Example</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">=TDIST(12;5;1)
+</SPAN></FONT>
+</P>
+<H2><A NAME="var"></A><A NAME="bm_id3153828"></A><A NAME="bm_id3154898"></A>
+<SPAN LANG="en-US">VAR</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Estimates
+the variance based on a sample.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Syntax</SPAN></H3>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">VAR(Number1; Number2; ...Number30)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Number1,
+Number2, ...Number30</B> are numerical values or ranges representing
+a sample based on an entire population.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Example</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">=VAR(A1:A50)
+</SPAN></FONT>
+</P>
+<H2><A NAME="vara"></A><A NAME="bm_id3151045"></A><A NAME="bm_id3148473"></A>
+<SPAN LANG="en-US">VARA</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Estimates
+a variance based on a sample. The value of text is 0.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Syntax</SPAN></H3>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">VARA(Value1; Value2; ...Value30)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Value1,
+Value2,...Value30</B> are values or ranges representing a sample
+derived from an entire population. Text has the value 0.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Example</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">=VARA(A1:A50)
+</SPAN></FONT>
+</P>
+<H2><A NAME="varp"></A><A NAME="bm_id3166441"></A><A NAME="bm_id3152359"></A>
+<SPAN LANG="en-US">VARP</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Calculates
+a variance based on the entire population.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Syntax</SPAN></H3>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">VARP(Number1; Number2;
+...Number30)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Number1,
+Number2, ...Number30</B> are numerical values or ranges representing
+an entire population.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Example</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">=VARP(A1:A50)
+</SPAN></FONT>
+</P>
+<H2><A NAME="varpa"></A><A NAME="bm_id3153688"></A><A NAME="bm_id3159276"></A>
+<SPAN LANG="en-US">VARPA</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Calculates
+the variance based on the entire population. The value of text is 0.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Syntax</SPAN></H3>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">VARPA(Value1; Value2; ...Value30)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Value1,value2,...Value30</B>
+are values or ranges representing an entire population.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Example</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">=VARPA(A1:A50)
+</SPAN></FONT>
+</P>
+<H2><A NAME="permut"></A><A NAME="bm_id3154599"></A><A NAME="bm_id3154610"></A>
+<SPAN LANG="en-US">PERMUT</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Returns
+the number of permutations for a given number of objects.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Syntax</SPAN></H3>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">PERMUT(Count1; Count2)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Count1</B>
+is the total number of objects.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Count2</B>
+is the number of objects in each permutation.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Example</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">=PERMUT(6;3)
+returns 120. There are 120 different possibilities, to pick a
+sequence of 3 playing cards out of 6 playing cards.</SPAN></FONT></P>
+<H2><A NAME="permutationa"></A><A NAME="bm_id3143276"></A><A NAME="bm_id3153531"></A>
+<SPAN LANG="en-US">PERMUTATIONA</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Returns
+the number of permutations for a given number of objects (repetition
+allowed).</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Syntax</SPAN></H3>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">PERMUTATIONA(Count1; Count2)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Count1</B>
+is the total number of objects.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Count2</B>
+is the number of objects in each permutation.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Example</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">How
+often can 2 objects be selected from a total of 11 objects?</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">=PERMUTATIONA(11;2)
+returns 121.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">=PERMUTATIONA(6;3)
+returns 216. There are 216 different possibilities to put a sequence
+of 3 playing cards together out of six playing cards if every card is
+returned before the next one is drawn.</SPAN></FONT></P>
+<H2><A NAME="prob"></A><A NAME="bm_id3152952"></A><A NAME="bm_id3152963"></A>
+<SPAN LANG="en-US">PROB</SPAN></H2>
+<P STYLE="margin-top: 0.04cm; margin-bottom: 0.04cm"><FONT FACE="청봉, serif"><SPAN LANG="en-US">Returns
+the probability that values in a range are between two limits. If
+there is no End
+value, this function calculates the probability based on the
+principle that the Data values are equal to the value of Start.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Syntax</SPAN></H3>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">PROB(Data; Probability; Start;
+End)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Data</B>
+is the array or range of data in the sample.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Probability</B>
+is the array or range of the corresponding probabilities.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Start</B>
+is the start value of the interval whose probabilities are to be
+summed.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>End</B>
+(optional) is the end value of the interval whose probabilities are
+to be summed. If this parameter is missing, the probability for the
+<B>Start </B>value is calculated.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Example</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">=PROB(A1:A50;B1:B50;50;60)
+returns the probability with which a value within the range of A1:A50
+is also within the limits between 50 and 60. Every value within the
+range of A1:A50 has a probability within the range of B1:B50.</SPAN></FONT></P>
+<H2><A NAME="weibull"></A><A NAME="bm_id3150941"></A><A NAME="bm_id3150405"></A>
+<SPAN LANG="en-US">WEIBULL</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Returns
+the values of the Weibull distribution.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Syntax</SPAN></H3>
+<P CLASS="code"><FONT FACE="청봉, serif"><SPAN LANG="en-US">WEIBULL(Number; Alpha; Beta; C)</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Number</B>
+is the value at which to calculate the Weibull distribution.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Alpha
+</B>is the Alpha parameter of the Weibull distribution.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>Beta</B>
+is the Beta parameter of the Weibull distribution.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><B>C</B>
+indicates the type of function. If C equals 0 the form of the
+function is calculated, if C equals 1 the distribution is calculated.</SPAN></FONT></P>
+<H3><SPAN LANG="en-US">Example</SPAN></H3>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><SPAN STYLE="font-weight: medium">=WEIBULL(2;1;1;1)
+returns 0.86.</SPAN></SPAN></FONT></P>
+
+</DIV></BODY>
+</HTML>
+

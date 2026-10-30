@@ -1,0 +1,73 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+	<TITLE></TITLE>
+	<META NAME="GENERATOR" CONTENT="《Sogwang 3.0》  (Linux)">
+	<META NAME="CREATED" CONTENT="20100316;10345100">
+	<META NAME="CHANGED" CONTENT="20100316;10350200">
+	<STYLE TYPE="text/css">
+	<!--
+		H2 { margin-bottom: 0.18cm; font-family: "Bitstream Vera Sans", "Arial", "Helvetica", "Lucida", "Geneva", "Helmet", sans-serif, "Andale Sans UI", "Arial Unicode MS", "Lucida Sans Unicode", "Tahoma"; font-size: 14pt }
+		P.example { margin-top: 0.04cm; margin-bottom: 0.04cm; font-family: "Bitstream Vera Sans Mono", "Cumberland", "Courier New", "Courier", "Lucida Sans Typewriter", "Lucida Typewriter", "Monaco", "Monospaced" }
+		P.listitem { font-family: "Bitstream Vera Sans", "Arial", "Helvetica", "Lucida", "Geneva", "Helmet", sans-serif, "Andale Sans UI", "Arial Unicode MS", "Lucida Sans Unicode", "Tahoma" }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="ko-KP" DIR="LTR"><DIV style="margin-left: 25">
+<H1><A NAME="bm_id5900753"></A><FONT FACE="Thorndale, serif"><SPAN LANG="en-US">Oracle
+Database Connection</SPAN></FONT></H1>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Specifies the
+options to access an Oracle database.</SPAN></FONT></P>
+<H2><SPAN LANG="en-US">Oracle database</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">You can use a JDBC
+driver to access an Oracle database from Solaris or Linux. To access
+the database from Windows, you need an ODBC driver.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">On UNIX, ensure that
+the Oracle database client is installed with JDBC support. The JDBC
+driver class for the Solaris Oracle client version 8.x is located in
+the &lt;Oracle client&gt;/product/jdbc/lib/classes111.zip directory.
+You can also download the latest version of the driver from the
+Oracle web site:</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">http://otn.oracle.com/tech/java/sqlj_jdbc/content.html</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">In the <B>Data
+source URL</B> box, enter the location of the Oracle database server.
+The syntax of the URL depends on the database type. See the
+documentation that came with the JDBC driver for more information.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">For an Oracle
+database, the syntax of the URL is:</SPAN></FONT></P>
+<P CLASS="example"><SPAN LANG="en-US">oracle:thin:@hostname:port:database_name</SPAN></FONT></P>
+<UL>
+	<LI><P CLASS="listitem"><FONT FACE="청봉, serif"><SPAN LANG="en-US">hostname is the name of
+	the machine that runs the Oracle database. You can also replace
+	hostname with the IP address of the server.</SPAN></FONT></P>
+	<LI><P CLASS="listitem"><FONT FACE="청봉, serif"><SPAN LANG="en-US">port is the port where
+	the Oracle database listens. Ask your database administrator for the
+	correct port address.</SPAN></FONT></P>
+	<LI><P CLASS="listitem"><FONT FACE="청봉, serif"><SPAN LANG="en-US">database_name is the name
+	of the Oracle database. Ask your database administrator for the
+	correct name.</SPAN></FONT></P>
+</UL>
+<H2><A NAME="bm_id6442152"></A><SPAN LANG="en-US">Name of the Oracle
+database</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Enter the name of
+the Oracle database.</SPAN></FONT></P>
+<H2><A NAME="bm_id7636036"></A><SPAN LANG="en-US">Server URL</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Enter the URL for
+the database server. </SPAN></FONT>
+</P>
+<H2><A NAME="bm_id7325357"></A><SPAN LANG="en-US">Port number</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Enter the port
+number for the database server.</SPAN></FONT></P>
+<H2><A NAME="bm_id3172399"></A><SPAN LANG="en-US">Oracle JDBC Driver
+Class</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Enter the name of
+the JDBC driver.</SPAN></FONT></P>
+<H2><A NAME="bm_id209051"></A><SPAN LANG="en-US">Test Class</SPAN></H2>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US">Tests the connection
+with the current settings.</SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><a href="Authentication.html">Authentication</A></SPAN></FONT></P>
+<P><FONT FACE="청봉, serif"><SPAN LANG="en-US"><A href="../Database Wizard.html">Database
+Wizard</A></SPAN></FONT></P>
+</DIV></BODY>
+</HTML>

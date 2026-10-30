@@ -1,0 +1,127 @@
+<html dir='ltr'>
+	<head>
+		<META http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+		<title>N</title>
+		<link rel='stylesheet' type='text/css' href='../css/main.css'/>
+		<script type='text/javascript' language='Javascript' src='../js/mexpcol.js'></script>
+		<script type='text/javascript' language='JavaScript' src='../js/glossary.js'></script>
+	</head>
+	<body>
+		<h1>&nbsp;<img align="absbottom" src="../image/external_images/crystal/svtools/res/new_doc.png"/>&nbsp;N</h1>
+		<p id='ExpandAllLine' class='ExpFav'>
+			<a href='#' onClick='ExpandAll()' onKeyPress='ExpandAll()' class='DropDown'>
+				<img id='picHeader' border='0' src='../image/image/common/expandtri.gif' alt='모두 표시'>
+				<span id='ExpandAll'>모두 표시</span>
+			</a>
+		</p>
+		<p><b class="bterm">참고항목</b>&emsp;
+			<a href="5.9.6.1.htm" >정보함수목록</a>,
+			<a href="5.9.12.25.htm" >T</a>
+		</p>
+		<p>값을 수값으로 변환합니다.</p>
+		<p><b class="bterm">문법:&emsp;&emsp;		N(값)</b></p>
+		<table>
+			<tr>
+				<th>인수명</th>
+				<th>설명</th>
+			</tr>
+			<tr>
+				<td> 값</td>
+				<td>수값으로 해석할 값입니다. <b class="bterm">N</b>이 변환하는 값은 다음표와 같습니다.</td>
+			</tr>
+		</table>
+		<table>
+			<tr>
+			<th>값이나 참조</th>
+			<th>결과값</th>
+			</tr>
+			<tr>
+			<td>수자</td>
+			<td>같은 수자</td>
+			</tr>
+			<tr>
+			<td>표처리프로그람에서 제공된 날자서식에 따르는 날자</td>
+			<td>해당 날자의 내부수값</td>
+			</tr>
+			<tr>
+			<td>참</td>
+			<td>1</td>
+			</tr>
+			<tr>
+			<td>거짓</td>
+			<td>0</td>
+			</tr>
+			<tr>
+			<td>오유:503과 같은 오유값</td>
+			<td>오유:503</td>
+			</tr>
+			<tr>
+			<td>기타</td>
+			<td>0</td>
+			</tr>
+		</table>
+		<p><b class="bterm">주의</b></p>
+			<P>일반적으로 표처리프로그람에서는 필요에 따라 값이 자동으로 변환되므로 수식에서 <b class="bterm">N</b>함수를 사용할 필요가 없습니다. 이 함수는 다른 표처리프로그람과의 호환을 위하여 제공됩니다.</P>
+		<p><b class="bterm">실례</b></p>			
+<p><a href="1.5.1.htm">실례의 리용방법</a>을 참고하십시오.</p>
+			<table>
+				<tr>
+					<td>
+						<table>
+							<tr><td>&nbsp;</td></tr>
+							<tr><th>1</th></tr>
+							<tr><th>2</th></tr>
+							<tr><th>3</th></tr>
+							<tr><th>4</th></tr>
+							<tr><th>5</th></tr>
+						</table>
+					</td>
+					<td>
+						<table>
+							<tr>
+								<th>A</th>
+							</tr>
+							<tr>
+								<th>자료</th>
+							</tr>
+							<tr>
+								<td>7</td>
+							</tr>
+							<tr>
+								<td>짝수</td>
+							</tr>
+							<tr>
+								<td>=ISNUMBER(8)</td>
+							</tr>
+							<tr>
+								<td>2008/4/17</td>
+							</tr>						
+							<tr>
+								<th>수식</th>
+								<th>설명(결과)</th>
+							</tr>
+							<tr>
+								<td>=N(A2)</td>
+								<td>A2에 수자가 있기때문에 그 값이 반환됩니다. (7)</td>
+							</tr>
+							<tr>
+								<td>=N(A3)</td>
+								<td>A3에는 본문이 있기때문에 0이 반환됩니다. (0)</td>
+							</tr>
+							<tr>
+								<td>=N(A4)</td>
+								<td>A4에는 론리값 참이 있기때문에 1이 반환됩니다. (1)</td>
+							</tr>
+							<tr>
+								<td>=N(A5)</td>
+								<td>A5는 날자이기때문에 내부수값을 구합니다. (사용되는 날자체계에 따라 다릅니다.)</td>
+							</tr>						
+						</table>
+					</td>
+				</tr>
+			</table>		
+		</div>	
+		<script type="text/javascript" language="Javascript">footerView()</script>
+	
+</body>
+</html>														

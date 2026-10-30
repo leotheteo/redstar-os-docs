@@ -1,0 +1,247 @@
+﻿<html dir='ltr'>
+	<head>
+		<META http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+		<title>편집</title>
+		<link rel='stylesheet' type='text/css' href='../css/main.css'/>
+		<script type='text/javascript' language='Javascript' src='../js/mexpcol.js'></script>
+		<script type='text/javascript' language='JavaScript' src='../js/glossary.js'></script>
+	</head>
+	<body>
+		<h1>&nbsp;<img align="absbottom" src="../image/external_images/crystal/svtools/res/new_doc.png"/>&nbsp;편집</h1>
+		<p id='ExpandAllLine' class='ExpFav'>
+			<a href='#' onClick='ExpandAll()' onKeyPress='ExpandAll()' class='DropDown'>
+				<img id='picHeader' border='0' src='../image/image/common/expandtri.gif' alt='모두 표시'>
+				<span id='ExpandAll'>모두 표시</span>
+			</a>
+		</p>
+		<table>
+			<tr>
+				<th>지령명</th>
+				<th>설명</th>
+				<th>지름건</th>
+			</tr>
+			<tr>
+				<td>실행 취소</td>
+				<td>마지막지령의 실행을 취소합니다. 실행 취소할 지령을 선택하려면 <b class="bterm">&lt;표준&gt;</b>도구띠에서 <b class="bterm">&lt;실행 취소&gt;</b>그림기호옆의 화살표를 찰칵합니다.</td>
+				<td>Ctrl+Z</td>
+			</tr>
+			<tr>
+				<td>다시 실행</td>
+				<td>취소하였던 지령을 다시 실행합니다. 다시 실행하려는 단계를 선택하려면 <b class="bterm">&lt;표준&gt;</b>도구띠에서 <b class="bterm">&lt;다시 실행&gt;</b>그림기호옆에 있는 화살표를 찰칵합니다.</td>
+				<td>Ctrl+Y</td>
+			</tr>
+			<tr>
+				<td>반복</td>
+				<td>마지막작업실행을 반복하여 실행합니다.</td>
+				<td>Ctrl+Shift+Y</td>
+			</tr>
+			<tr>
+				<td>자르기</td>
+				<td>선택한 내용을 잘라내여 오림판에 복사합니다.</td>
+				<td>Ctrl+X</td>
+			</tr>
+			<tr>
+				<td>복사</td>
+				<td>선택한 내용을 오림판에 복사합니다.</td>
+				<td>Ctrl+C</td>
+			</tr>
+			<tr>
+				<td>붙이기</td>
+				<td>현재유표위치에 오림판내용을 삽입합니다. 선택된 본문이나 객체는 모두 오림판의 내용으로 바뀝니다. 서식을 선택하려면 <b class="bterm">&lt;표준&gt;</b>도구띠에서 <b class="bterm">&lt;붙이기&gt;</b>그림기호옆의 화살표를 찰칵합니다.</td>
+				<td>Ctrl+V</td>
+			</tr>
+			<tr>
+				<td>형식을 선택하여 붙이기</td>
+				<td>오림판의 내용을 지정한 서식으로 현재파일에 삽입합니다.</td>
+				<td>Ctrl+Shift+V</td>
+			</tr>
+			<tr>
+				<td>모두선택</td>
+				<td>현재문서의 전체 내용을 선택합니다.</td>
+				<td>Ctrl+A</td>
+			</tr>
+			<tr>
+				<td><a href="#ID_CHANGE">변경</a></td>
+				<td>파일의 변경을 추적하는데 사용할수 있는 지령을 라렬합니다</td>
+				<td>&nbsp;</td>
+			</tr>
+			<tr>
+				<td>탐색 및 치환</td>
+				<td>현재문서에서 본문 또는 서식을 탐색하거나 치환합니다.</td>
+				<td>Ctrl+Shift+H</td>
+			</tr>
+			<tr>
+				<td>항행기</td>
+				<td>문서의 다른 부분으로 빨리 이동할수 있는 항행기를 보이거나 숨깁니다.</td>
+				<td>F5</td>
+			</tr>
+			<tr>
+				<td>머리부 및 바닥부</td>
+				<td>머리부 및 바닥부를 정의 및 서식지정할수 있습니다.</td>
+				<td>&nbsp;</td>
+			</tr>
+			<tr>
+				<td><a href="#ID_FILL">련속자료 채우기</a></td>
+				<td>세포내용을 자동적으로 채웁니다.</td>
+				<td>&nbsp;</td>
+			</tr>
+			<tr>
+				<td>내용 삭제</td>
+				<td>활성화된 세포나 선택한 세포범위에서 삭제할 내용을 지정합니다.</td>
+				<td>BackSpace</td>
+			</tr>
+			<tr>
+				<td>세포 삭제</td>
+				<td>선택한 세포, 렬 또는 행을 삭제합니다. 삭제한 세포의 아래쪽 또는 오른쪽에 있는 세포가 공백을 채웁니다.</td>
+				<td>Ctrl+-</td>
+			</tr>
+			<tr>
+				<td><a href="#ID_SHEET">표용지</a></td>
+				<td>전체 표용지에 대한 지령을 편집합니다.</td>
+				<td>&nbsp;</td>
+			</tr>
+			<tr>
+				<td><a href="#ID_MANUALDEL">페지가르기 삭제</a></td>
+				<td>제거할 가르기의 류형을 선택합니다.</td>
+				<td>&nbsp;</td>
+			</tr>
+			<tr>
+				<td>련결</td>
+				<td>원본파일의 경로를 포함하여 현재문서에 있는 모든 련결의 속성을 편집할수 있습니다. 현재문서에 다른 파일에 대한 련결이 없으면 이 지령을 사용할수 없습니다.</td>
+				<td>&nbsp;</td>
+			</tr>
+			<tr>
+				<td>화상</td>
+				<td>그림을 수정하거나 그림의 하이퍼련결부에 URL을 첨부할수 있습니다. 여기서 그림은 하나이상의 하이퍼련결부로 구성된 묶음입니다.</td>
+				<td>&nbsp;</td>
+			</tr>
+			<tr>
+				<td>객체</td>
+				<td>삽입된 OLE 객체를 편집하거나 이름을 달아 보관할수 있습니다.</td>
+				<td>&nbsp;</td>
+			</tr>
+		</table>
+		<a name="ID_CHANGE"></a>
+		<p>
+			<a href="#" class="DropDown" onClick="Outline2()" onKeyPress="Outline2()">
+			<img border="0" src="../image/image/common/blueup.gif" alt="표시">변경</a>
+		</p>
+		<div id="ExpCol" class="collapsed" border="0">
+			<table>
+				<tr>
+					<th width="165">지령명</th>
+					<th width="63">설명</th>
+				</tr>
+				<tr>
+					<td>기록</td>
+					<td>현재문서의 모든 변경을 작성자 및 날자별로 추적합니다.</td>
+				</tr>
+				<tr>
+					<td>기록 보호</td>
+					<td>기록보호는 사용자가 기록변경기능을 비활성상태로 만들거나 암호를 입력하지 않고 변경을 수락하거나 거부할수 없게 합니다.</td>
+				</tr>
+				<tr>
+					<td>현시</td>
+					<td>기록된 변경을 보이거나 숨깁니다.</td>
+				</tr>
+				<tr>
+					<td>수락 또는 거부</td>
+					<td>기록된 변경을 수락하거나 거부합니다.</td>
+				</tr>
+				<tr>
+					<td>설명</td>
+					<td>기록된 변경에 대한 설명을 입력합니다.</td>
+				</tr>
+				<tr>
+					<td>문서 합치기</td>
+					<td>기록된 변경을 합치기 위한 <b class="bterm">&lt;삽입&gt;</b>대화창을 엽니다.</td>
+				</tr>
+			</table>
+		</div>
+		<a name="ID_FILL"></a>
+		<p>
+			<a href="#" class="DropDown" onClick="Outline2()" onKeyPress="Outline2()">
+			<img border="0" src="../image/image/common/blueup.gif" alt="표시">련속자료 채우기</a>
+		</p>
+		<div id="ExpCol" class="collapsed" border="0">
+			<table>
+				<tr>
+					<th width="165">지령명</th>
+					<th width="63">설명</th>
+				</tr>
+				<tr>
+					<td>아래쪽</td>
+					<td>최소한 두개이상의 행이 선택될 때 선택한 범위의 제일 웃쪽세포의 내용으로 채웁니다.</td>
+				</tr>
+				<tr>
+					<td>오른쪽</td>
+					<td>최소한 두개이상의 렬이 선택될 때 선택한 범위의 제일 왼쪽세포의 내용으로 채웁니다.</td>
+				</tr>
+				<tr>
+					<td>웃쪽</td>
+					<td>최소한 두개이상의 행이 선택될 때 선택한 범위의 제일 아래쪽세포의 내용으로 채웁니다.</td>
+				</tr>
+				<tr>
+					<td>왼쪽</td>
+					<td>최소한 두개이상의 렬이 선택될 때 선택한 범위의 제일 오른쪽세포의 내용으로 채웁니다.</td>
+				</tr>
+				<tr>
+					<td>표용지</td>
+					<td>자료표나 특정한 자료표의 범위를 전송하기 위한 추가선택을 지정합니다.</td>
+				</tr>
+				<tr>
+					<td>련속자표 채우기</td>
+					<td>련속자료를 자동적으로 생성합니다. 방향, 증분, 시간단위 및 련속자료류형을 결정합니다.</td>
+				</tr>
+			</table>
+		</div>
+		<a name="ID_SHEET"></a>
+		<p>
+			<a href="#" class="DropDown" onClick="Outline2()" onKeyPress="Outline2()">
+			<img border="0" src="../image/image/common/blueup.gif" alt="표시">표용지</a>
+		</p>
+		<div id="ExpCol" class="collapsed" border="0">
+			<table>
+				<tr>
+					<th width="165">지령명</th>
+					<th width="63">설명</th>
+				</tr>
+				<tr>
+					<td>이동/복사</td>
+					<td>표용지를 문서의 새 위치나 다른 문서로 이동 또는 복사합니다.</td>
+				</tr>
+				<tr>
+					<td>선택</td>
+					<td>여러개의 표용지를 선택합니다.</td>
+				</tr>
+				<tr>
+					<td>삭제</td>
+					<td>질문을 확인한 후 현재표용지를 삭제합니다.</td>
+				</tr>
+			</table>
+		</div>
+		<a name="ID_MANUALDEL"></a>
+		<p>
+			<a href="#" class="DropDown" onClick="Outline2()" onKeyPress="Outline2()">
+			<img border="0" src="../image/image/common/blueup.gif" alt="표시">페지가르기 삭제</a>
+		</p>
+		<div id="ExpCol" class="collapsed" border="0">
+			<table>
+				<tr>
+					<th width="165">지령명</th>
+					<th width="63">설명</th>
+				</tr>
+				<tr>
+					<td>행 가르기</td>
+					<td>활성상태로 만든 세포우의 행가르기를 삭제합니다.</td>
+				</tr>
+				<tr>
+					<td>렬가르기</td>
+					<td>활성상태로 만든 세포왼쪽의 렬가르기를 삭제합니다.</td>
+				</tr>
+			</table>
+		</div>
+		<script type="text/javascript" language="Javascript">footerView()</script>
+	
+</body>
+</html>

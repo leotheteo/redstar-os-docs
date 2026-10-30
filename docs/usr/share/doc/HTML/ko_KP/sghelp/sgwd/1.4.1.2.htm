@@ -1,0 +1,95 @@
+﻿<html dir='ltr'>
+	<head>
+		<META http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+		<title>파일열기에서 발생하는 문제의 해결</title>
+		<link rel='stylesheet' type='text/css' href='../css/main.css'/>
+		<script type='text/javascript' language='Javascript' src='../js/mexpcol.js'></script>
+		<script type='text/javascript' language='JavaScript' src='../js/glossary.js'></script>
+	</head>
+	<body>
+		<h1>&nbsp;<img align="absbottom" src="../image/external_images/crystal/svtools/res/new_doc.png"/>&nbsp;파일열기에서 발생하는 문제의 해결</h1>
+		<p id="ExpandAllLine" class="ExpFav">
+			<a href="#" onClick="ExpandAll()" onKeyPress="ExpandAll()" class="DropDown">
+				<img id="picHeader" border="0" src="../image/image/common/expandtri.gif" alt="모두 표시">
+				<span id="ExpandAll">모두 표시</span>
+			</a>
+		</p>
+		<p>
+			<a href='#' class='DropDown' onClick='Outline2()' onKeyPress='Outline2()'>
+				<img border='0' src='../image/image/common/blueup.gif' alt='표시'>정상완료를 하지 못하여 파일이 손상된 경우
+			</a>
+		</p>
+		<div id='ExpCol' class='collapsed' border='0'>
+			<p>정전이나 기타 원인으로 정상완료를 하지 못한 경우에 열려는 파일이 손상되였을수 있습니다.</p>
+			<p>손상된 파일이 있으면  문서처리프로그람이 기동할 때 복구자동안내처리가 동작합니다.</p>
+			<p>복구자동안내처리프로그람이 기동하면 <b class="bterm">&lt;복구된 문서의 상태&gt;</b>목록칸에 복구할 문서들의 이름이 현시됩니다.</p>
+			<p><b class="bterm">&lt;복구 시작&gt;</b>단추를 찰칵하면 목록칸에 현시된 문서들에 대한 복구를 시작합니다.</p>
+			<p>복구가 완료되면 목록칸의 <b class="bterm">&lt;상태&gt;</b>렬에 <b class="bterm">&lt;성공적으로 복구되였습니다.&gt;</b>라는 문자렬이 현시됩니다.</p>
+			<p><b class="bterm">&lt;완료&gt;</b>단추를 찰칵하면 복구된 문서가 열립니다.</p>
+		</div>
+		<p>
+			<a href='#' class='DropDown' onClick='Outline2()' onKeyPress='Outline2()'>
+				<img border='0' src='../image/image/common/blueup.gif' alt='표시'>파일이름이 너무 긴 경우
+			</a>
+		</p>
+		<div id='ExpCol' class='collapsed' border='0'>
+			<p>파일이름이나 경로이름은 256문자를 초과할수 없습니다.</p>
+			<p>다음의 방법들중에서 어느 하나를 실행합니다.</p>
+			<ul>
+				<li>
+					파일이름을 줄입니다.
+				</li>
+				<li>
+					서류철구조의 맨 우에 있는 서류철이나 그와 가까운 서류철로 파일을 옮깁니다.
+				</li>
+				<li>
+					파일을 다시 열어봅니다.
+				</li>
+			</ul>
+		</div>
+		<p>
+			<a href='#' class='DropDown' onClick='Outline2()' onKeyPress='Outline2()'>
+				<img border='0' src='../image/image/common/blueup.gif' alt='표시'>파일이 있는 디스크가 꽉 찬 경우
+			</a>
+		</p>
+		<div id='ExpCol' class='collapsed' border='0'>
+			<p>파일을 다른 디스크로 옮겨 디스크 공간을 확보합니다.</p>
+		</div>
+		<p>
+			<a href='#' class='DropDown' onClick='Outline2()' onKeyPress='Outline2()'>
+				<img border='0' src='../image/image/common/blueup.gif' alt='표시'>찾고있는 파일이 <열기>대화창에 현시되지 않는 경우
+			</a>
+		</p>
+		<div id='ExpCol' class='collapsed' border='0'>
+			<p><b class="bterm">&lt;파일형식&gt;</b>복합칸에서 정확한 파일형식을 선택하였는가를 확인합니다.</p>
+		</div>
+		<p>
+			<a href='#' class='DropDown' onClick='Outline2()' onKeyPress='Outline2()'>
+				<img border='0' src='../image/image/common/blueup.gif' alt='표시'>암호로 보호된 파일을 열수 없는 경우
+			</a>
+		</p>
+		<div id='ExpCol' class='collapsed' border='0'>
+			<p><a href="#" class="glossary" onClick="AppendPopup(this,'IDG_PASSWORD')" onKeyPress="AppendPopup(this,'IDG_PASSWORD')">암호</a>는 대소문자를 구분합니다. <b class="bterm">[Caps Lock]</b>건의 등이 켜져있는지 확인하거나 암호를 다시 입력하십시오.</p>
+		</div>
+<!--		<p>
+			<a href='#' class='DropDown' onClick='Outline2()' onKeyPress='Outline2()'>
+				<img border='0' src='../image/image/common/blueup.gif' alt='표시'>파일에 대한 지름그림기호가 동작하지 않는 경우
+			</a>
+		</p>
+		<div id='ExpCol' class='collapsed' border='0'>
+			<p>파일에 대한 지름그림기호가 제대로 동작하지 않는 경우는 다음과 같이 원인을 찾을수 있습니다.</p>
+			<ul>
+				<li>
+					<p><b class="bterm">파일이름이 바뀌였거나 파일이 삭제된 경우</b></p>
+					<p>대상파일의 이름이나 확장자가 변경된 경우에 지름그림기호가 실행되지 않습니다. 《붉은별》사용자용체계3.0의 파일탐색기능을 사용하여 열려는 파일과 이름이 비슷한 파일이나 같은 날자에 수정되였거나 작성된 파일을 찾습니다.</p>
+				</li>
+				<li>
+					<p><b class="bterm">파일을 일시적으로 사용할수 없는 경우</b></p>
+					<p>파일이 플로피디스크와 같은 이동식 매체에 있는 경우 대상 파일이 있는 매체를 구동기나 장치에 제대로 넣었는지 확인합니다.</p>
+				</li>
+			</ul>
+		</div>-->
+		<script type="text/javascript" language="Javascript">footerView()</script>
+	
+</body>
+</html>

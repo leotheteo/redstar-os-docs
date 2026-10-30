@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="audio/x-vorbis+ogg">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <sub-class-of type="application/ogg"/>
+  <comment>Ogg Vorbis audio</comment>
+</mime-type>

@@ -1,0 +1,138 @@
+﻿<html dir='ltr'>
+	<head>
+		<META http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+		<title>IF함수를 사용하여 조건부수식의 만들기</title>
+		<link rel='stylesheet' type='text/css' href='../css/main.css'/>
+		<script type='text/javascript' language='Javascript' src='../js/mexpcol.js'></script>
+		<script type='text/javascript' language='JavaScript' src='../js/glossary.js'></script>
+	</head>
+	<body>
+		<h1>&nbsp;<img align="absbottom" src="../image/external_images/crystal/svtools/res/new_doc.png"/>&nbsp;IF함수를 사용하여 조건부수식의 만들기</h1>
+		<p id='ExpandAllLine' class='ExpFav'>
+			<a href='#' onClick='ExpandAll()' onKeyPress='ExpandAll()' class='DropDown'>
+				<img id='picHeader' border='0' src='../image/image/common/expandtri.gif' alt='모두 표시'>
+				<span id='ExpandAll'>모두 표시</span>
+			</a>
+		</p>
+		<h2>결과가 론리값(<b class="bterm">참</b> 또는 <b class="bterm">거짓</b>)인 경우</h2>
+			<p>이 작업을 수행하려면 <b class="bterm">AND</b>, <b class="bterm">OR</b>, <b class="bterm">NOT</b>함수와 <a href="#" class="glossary" onClick="AppendPopup(this,'IDG_OPERATOR')" onKeyPress="AppendPopup(this,'IDG_OPERATOR')">연산자</a>를 사용합니다.</p>
+			<p><b class="bterm">실례</b></p>
+			<p><a href="1.5.1.htm">실례의 리용방법</a>을 참고하십시오.</p>
+			<table>
+				<tr>
+					<td>
+						<table>
+							<tr><td>&nbsp;</td></tr>
+							<tr><th>1</th></tr>
+							<tr><th>2</th></tr>
+							<tr><th>3</th></tr>
+							<tr><th>4</th></tr>
+						</table>
+					</td>
+					<td>
+						<table>
+							<tr>
+								<th>A</th>
+							</tr>
+							<tr>
+								<th>자료</th>
+							</tr>
+							<tr>
+								<td>15</td>
+							</tr>
+							<tr>
+								<td>9</td>
+							</tr>
+							<tr>
+								<td>8</td>
+							</tr>
+							<tr>
+								<th>수식</th>
+								<th>설명(결과)</th>
+							</tr>
+							<tr>
+								<td>=AND(A2>A3; A2＜A4)</td>
+								<td>15가 9보다 크고 8보다 작습니다. (거짓)</td>
+							</tr>
+							<tr>
+								<td>=OR(A2>A3; A2＜A4)</td>
+								<td>15가 9보다 크거나 8보다 작습니다. (참)</td>
+							</tr>
+							<tr>
+								<td>=NOT(A2+A3=24)</td>
+								<td>15 더하기 9는 24와 같지 않습니다. (거짓)</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+			<p><b class="bterm">참조함수</b></p>
+			<p><a href='5.9.7.2.htm'>AND</a></p>
+			<p><a href='5.9.7.6.htm'>OR</a></p>
+			<p><a href='5.9.7.5.htm'>NOT</a></p>
+		<h2>결과가 론리값이 아닌 경우</h2>
+			<p>이 작업을 수행하려면 <b class="bterm">IF</b>, <b class="bterm">AND</b>, <b class="bterm">OR</b>함수를 사용합니다.</p>
+			<p><b class="bterm">실례</b></p>
+			<p><a href="1.5.1.htm">실례의 리용방법</a>을 참고하십시오.</p>
+			<table>
+				<tr>
+					<td>
+						<table>
+							<tr><td>&nbsp;</td></tr>
+							<tr><th>1</th></tr>
+							<tr><th>2</th></tr>
+							<tr><th>3</th></tr>
+							<tr><th>4</th></tr>
+						</table>
+					</td>
+					<td>
+						<table>
+							<tr>
+								<th>A</th>
+							</tr>
+							<tr>
+								<th>자료</th>
+							</tr>
+							<tr>
+								<td>15</td>
+							</tr>
+							<tr>
+								<td>9</td>
+							</tr>
+							<tr>
+								<td>8</td>
+							</tr>
+							<tr>
+								<th>수식</th>
+								<th>설명(결과)</th>
+							</tr>
+							<tr>
+								<td>=IF(A2=15; "성공"; "실패")</td>
+								<td>A2 세포값이 15이면 《성공》을 반환합니다. (성공)</td>
+							</tr>
+							<tr>
+								<td>=IF(AND(A2>A3; A2＜A4); "성공"; "실패")</td>
+								<td>15가 9보다 크고 8보다 작으면 《성공》을 반환합니다. (실패)</td>
+							</tr>
+							<tr>
+								<td>=IF(OR(A2>A3; A2＜A4); "성공"; "실패")</td>
+								<td>15가 9보다 크거나 8보다 작으면 《성공》을 반환합니다. (성공)</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+			<p>IF 함수에 사용하는 인수는 다음과 같습니다.</p>
+			<p><img border='0' src='../image/image/sgsd/if.gif' alt='표시'></p>
+			<p>IF함수를 사용한 수식</p>
+			<p><img border='0' src='../image/image/common/callout1.gif' alt='표시'> <b class="bterm">검사식</b>&emsp;   검사할 조건입니다.</p>
+			<p><img border='0' src='../image/image/common/callout2.gif' alt='표시'> 참일 때 결과값&emsp;   조건이 참일 때 반환할 값입니다.</p>
+			<p><img border='0' src='../image/image/common/callout3.gif' alt='표시'> 거짓일 때 결과값&emsp;   조건이 거짓일 때 반환할 값입니다.</p>
+			<p><b class="bterm">참조함수</b></p>
+			<p><a href='5.9.7.2.htm'>AND</a></p>
+			<p><a href='5.9.7.6.htm'>OR</a></p>
+			<p><a href='5.9.7.4.htm'>IF</a></p>
+		<script type="text/javascript" language="Javascript">footerView()</script>
+	
+</body>
+</html>
